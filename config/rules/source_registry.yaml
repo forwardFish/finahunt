@@ -1,0 +1,36 @@
+default_schedule: "0 */1 * * *"
+sources:
+  - source_id: "cninfo-announcement"
+    source_class: "exchange"
+    status: "active"
+    base_url: "https://www.cninfo.com.cn/"
+  - source_id: "sse-disclosure"
+    source_class: "exchange"
+    status: "active"
+    base_url: "https://www.sse.com.cn/"
+  - source_id: "authorized-fastfeed"
+    source_class: "authorized_feed"
+    status: "active"
+    base_url: "https://example.com/feed"
+legality_evidence:
+  cninfo-announcement: "official public disclosure platform"
+  sse-disclosure: "official exchange disclosure platform"
+  authorized-fastfeed: "contract required before production"
+access_profiles:
+  cninfo-announcement:
+    robots_respected: true
+    auth_mode: "public"
+    rate_limit: "60/hour"
+  sse-disclosure:
+    robots_respected: true
+    auth_mode: "public"
+    rate_limit: "60/hour"
+  authorized-fastfeed:
+    robots_respected: true
+    auth_mode: "api_key"
+    rate_limit: "120/hour"
+risk_matrix:
+  regulator: "low"
+  exchange: "low"
+  authorized_feed: "medium"
+  public_site: "medium"

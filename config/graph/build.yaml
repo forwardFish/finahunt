@@ -1,0 +1,3 @@
+graph_name: build_graph
+checkpoint_enabled: true
+approval_mode: auto

@@ -1,0 +1,3 @@
+graph_name: runtime_graph
+checkpoint_enabled: true
+schedule: hourly

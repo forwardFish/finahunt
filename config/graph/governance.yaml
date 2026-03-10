@@ -1,0 +1,3 @@
+graph_name: governance_graph
+checkpoint_enabled: true
+audit_mode: strict

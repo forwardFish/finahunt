@@ -1,0 +1,11 @@
+standard_version: "v1"
+standards_manual:
+  naming: "snake_case for Python modules and payload keys"
+  logging: "include trace_id, task_id, run_id, agent_name, stage, timestamp"
+  contracts: "all cross-agent payloads must be structured"
+standard_update_log:
+  - version: "v1"
+    note: "Initial scaffold based on design doc"
+standard_violation_rules:
+  - "log as governance issue"
+  - "block production release if compliance-critical"

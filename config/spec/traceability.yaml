@@ -1,0 +1,64 @@
+canonical_sources:
+  vision: "docs/01_战略/远景目标.md"
+  mvp: "docs/02_MVP/mvp.md"
+  mvp_features: "docs/02_MVP/mvp功能.md"
+  system_design: "docs/03_架构/Agent 体系设计文档 v1.0 正式落地版.md"
+  traceability_matrix: "docs/04_规范/Agent体系 - 需求追踪矩阵&落地规范.md"
+  complete_manual: "docs/04_规范/Agent体系 - 完整规范手册.md"
+goals:
+  system:
+    description: "合规资讯源接入全流程 Agent 自主执行"
+    design_ref: "docs/04_规范/设计切片与边界附录.md"
+    config_refs:
+      - "config/spec/traceability.yaml"
+      - "config/spec/gate_registry.yaml"
+    test_refs:
+      - "tests/spec/test_traceability_registry.py"
+      - "tests/spec/test_gate_check.py"
+  build_plane:
+    description: "从需求到发布的交付闭环"
+    design_ref: "docs/04_规范/设计切片与边界附录.md"
+    config_refs:
+      - "config/graph/build.yaml"
+      - "config/spec/agent_contract_registry.json"
+    test_refs:
+      - "tests/integration/test_build_workflow.py"
+  runtime_plane:
+    description: "抓取、合规守门、标准化、审计"
+    design_ref: "docs/04_规范/设计切片与边界附录.md"
+    config_refs:
+      - "config/graph/runtime.yaml"
+      - "config/rules/source_registry.yaml"
+    test_refs:
+      - "tests/spec/test_traceability_registry.py"
+  governance_plane:
+    description: "标准、策略、审计、评估"
+    design_ref: "docs/04_规范/设计切片与边界附录.md"
+    config_refs:
+      - "config/graph/governance.yaml"
+      - "config/rules/standards.yaml"
+    test_refs:
+      - "tests/e2e/test_final_gate.py"
+boundaries:
+  human_roles:
+    design_ref: "docs/04_规范/设计切片与边界附录.md"
+    enforced_by:
+      - "config/spec/gate_registry.yaml"
+      - "tools/gate_check/validate_norms.py"
+  agent_roles:
+    design_ref: "docs/04_规范/设计切片与边界附录.md"
+    enforced_by:
+      - "config/spec/agent_contract_registry.json"
+      - "tests/spec/test_traceability_registry.py"
+  three_plane:
+    design_ref: "docs/04_规范/设计切片与边界附录.md"
+    enforced_by:
+      - "graphs/build_graph.py"
+      - "graphs/runtime_graph.py"
+      - "graphs/governance_graph.py"
+gates:
+  registry: "config/spec/gate_registry.yaml"
+  validator: "tools/gate_check/validate_norms.py"
+impact_analysis:
+  template: "config/spec/impact_analysis_template.json"
+  validator: "tools/impact_analysis/analysis_tool.py"

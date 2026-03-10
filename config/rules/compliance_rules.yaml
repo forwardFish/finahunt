@@ -1,0 +1,33 @@
+compliance_policy:
+  name: "compliance-first"
+  description: "All outputs must remain objective, traceable, and within approved source/field scope."
+  required_source_classes:
+    - "regulator"
+    - "exchange"
+    - "authorized_feed"
+    - "public_site"
+source_whitelist_policy:
+  allowed_classes:
+    - "regulator"
+    - "exchange"
+    - "authorized_feed"
+    - "public_site"
+  require_legality_evidence: true
+field_capture_policy:
+  allowed_fields:
+    - "title"
+    - "summary"
+    - "published_at"
+    - "source_name"
+    - "source_url"
+  forbidden_fields:
+    - "full_paid_report"
+    - "private_user_data"
+blocking_rules:
+  blocked_terms:
+    - "买入建议"
+    - "收益承诺"
+    - "内幕消息"
+  blocked_behaviors:
+    - "crawl_unlicensed_source"
+    - "store_sensitive_secrets_in_logs"

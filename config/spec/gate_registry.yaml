@@ -1,0 +1,39 @@
+gates:
+  - gate_id: "vision_to_mvp"
+    description: "远景、MVP、设计总纲必须一致"
+    required_files:
+      - "docs/01_战略/远景目标.md"
+      - "docs/02_MVP/mvp.md"
+      - "docs/03_架构/Agent 体系设计文档 v1.0 正式落地版.md"
+      - "docs/04_规范/Agent体系 - 完整规范手册.md"
+    blocking_conditions:
+      - "canonical source missing"
+      - "goal mapping missing"
+  - gate_id: "mvp_to_orchestration"
+    description: "Agent 编排前必须明确边界和契约登记"
+    required_files:
+      - "docs/04_规范/设计切片与边界附录.md"
+      - "config/spec/agent_contract_registry.json"
+    blocking_conditions:
+      - "agent not registered"
+      - "plane/stage mismatch"
+  - gate_id: "orchestration_to_code"
+    description: "编码前必须完成结构化契约和配置追踪"
+    required_files:
+      - "config/spec/agent_contract_registry.json"
+      - "config/rules/compliance_rules.yaml"
+      - "config/rules/source_registry.yaml"
+      - "config/rules/standards.yaml"
+    blocking_conditions:
+      - "missing contract fields"
+      - "missing config reference"
+  - gate_id: "code_to_acceptance"
+    description: "完成前必须通过编译、测试、工作流执行"
+    required_commands:
+      - "python tools/gate_check/validate_norms.py"
+      - "python -m compileall agents packages graphs workflows tests tools"
+      - "python -m pytest"
+    blocking_conditions:
+      - "gate validation failed"
+      - "compile failed"
+      - "tests failed"

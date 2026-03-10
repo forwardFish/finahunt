@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  agent:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.agent
+    command: python -m pytest
+    working_dir: /app
+
+  temporal:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.temporal
