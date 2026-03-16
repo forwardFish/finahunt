@@ -1,0 +1,54 @@
+task_id: "S2-009"
+task_name: "发酵题材候选结果流"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.3 Result Warehouse and Fermentation Engine"
+story_id: "S2-009"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "基于题材热度快照，输出可直接给用户消费的发酵题材候选结果流，明确告诉用户当前哪些题材值得继续跟踪。"
+business_value: "这是“发酵题材发现引擎”的直接业务输出，决定用户是否能快速看到真正有价值的方向。"
+
+entry_criteria:
+  - "S2-008 已完成。"
+
+acceptance_criteria:
+  - "结果流按 theme_heat_score 排序。"
+  - "每条结果包含 theme_name、catalyst_summary、top_evidence、linked_assets、risk_notice、theme_heat_score。"
+  - "低证据或风险过高的题材会被降权或标记为 watch-only。"
+  - "结果流可直接供 Sprint 3 排序和 Sprint 4 输出层消费。"
+  - "同一主题不会在结果流里重复出现多个近似条目。"
+
+constraints:
+  - "必须显示证据摘要和风险提示。"
+  - "不能把热度分数直接等同于投资建议。"
+
+out_of_scope:
+  - "不做最终前端页面。"
+  - "不做通知推送。"
+
+dependencies:
+  - "S2-008"
+
+related_files:
+  - "packages/schema/models.py"
+  - "packages/schema/state.py"
+  - "docs/02_MVP/mvp功能.md"
+  - "docs/02_MVP/mvp功能_表格版.md"
+
+primary_files:
+  - "packages/schema/state.py"
+  - "packages/schema/models.py"
+
+secondary_files:
+  - "docs/02_MVP/mvp功能.md"
+  - "docs/02_MVP/mvp功能_表格版.md"
+
+test_cases:
+  normal:
+    - "可以稳定输出一份按发酵程度排序的题材候选结果流。"
+    - "每条结果都带有证据摘要和风险提示。"
+  exception:
+    - "缺少 theme_heat_score 的题材不会进入结果流。"
+    - "证据不足的题材会被标记为 watch-only 或被过滤。"

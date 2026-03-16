@@ -1,0 +1,54 @@
+task_id: "S2-007"
+task_name: "结构化结果仓库"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.3 Result Warehouse and Fermentation Engine"
+story_id: "S2-007"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把抓取、标准化、事件化、题材候选和结构化结果卡片真正落盘到统一的结构化结果仓库，供后续热度计算、结果回放和用户输出复用。"
+business_value: "没有结构化结果仓库，发酵题材发现只能停留在一次运行结果，无法沉淀、复盘或做后续排序。"
+
+entry_criteria:
+  - "S2-006 已完成。"
+
+acceptance_criteria:
+  - "每次运行会落盘 raw_documents、normalized_documents、canonical_events、theme_candidates、structured_result_cards。"
+  - "每次运行会生成 manifest，包含 trace_id、运行时间、文档数、事件数、题材数、结果卡片数。"
+  - "所有落盘对象都保留 source_ref、created_at、evidence_refs 等追溯字段。"
+  - "下游 Story 可以通过稳定目录和 manifest 读取结果，而不是只依赖内存结果。"
+  - "某次运行失败不会破坏历史成功批次的数据。"
+
+constraints:
+  - "必须使用统一目录结构和命名规则。"
+  - "必须保留可追溯链路，不允许只存最终摘要。"
+
+out_of_scope:
+  - "不做数据库化存储。"
+  - "不做用户页面展示。"
+
+dependencies:
+  - "S2-006"
+
+related_files:
+  - "workflows/runtime_schedule.py"
+  - "tools/run_live_event_cognition.py"
+  - "packages/schema/state.py"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "workflows/runtime_schedule.py"
+  - "packages/schema/state.py"
+
+secondary_files:
+  - "tools/run_live_event_cognition.py"
+  - "packages/schema/models.py"
+
+test_cases:
+  normal:
+    - "完成一次 live 运行后，workspace/artifacts/runtime 下可看到带 manifest 的结构化结果批次。"
+    - "通过 manifest 能找到 canonical_events 和 structured_result_cards。"
+  exception:
+    - "结果缺少 trace_id 或 source_ref 时，该批次会被判定为不完整。"
+    - "本次写入失败不会污染历史批次。"

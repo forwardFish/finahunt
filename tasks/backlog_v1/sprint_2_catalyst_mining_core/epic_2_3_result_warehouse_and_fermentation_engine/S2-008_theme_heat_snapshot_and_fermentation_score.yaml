@@ -1,0 +1,52 @@
+task_id: "S2-008"
+task_name: "题材热度快照与发酵评分"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.3 Result Warehouse and Fermentation Engine"
+story_id: "S2-008"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "基于结构化结果仓库，按时间窗口生成题材热度快照，并计算题材是否正在发酵所需的热度、加速度和综合评分。"
+business_value: "要找到真正值得跟踪的题材，不能只看单条资讯，必须看主题在一段时间内是否持续增强。"
+
+entry_criteria:
+  - "S2-007 已完成。"
+
+acceptance_criteria:
+  - "每个题材快照至少包含 theme_name、mention_count、source_count、high_strength_catalyst_count、linked_asset_count。"
+  - "会计算 velocity_score、acceleration_score、theme_heat_score。"
+  - "同一时间窗口内，证据更多、来源更多、催化更强的题材得分更高。"
+  - "低证据、低来源、过期催化的题材不会被误判为高热度。"
+  - "热度快照可直接供后续发酵题材候选结果流使用。"
+
+constraints:
+  - "必须保留评分依据，不能只输出黑盒分数。"
+  - "必须基于时间窗口计算，不能只做静态累加。"
+
+out_of_scope:
+  - "不做用户个性化排序。"
+  - "不做历史相似案例推荐。"
+
+dependencies:
+  - "S2-007"
+
+related_files:
+  - "packages/schema/models.py"
+  - "packages/schema/state.py"
+  - "config/rules/standards.yaml"
+
+primary_files:
+  - "packages/schema/models.py"
+  - "packages/schema/state.py"
+
+secondary_files:
+  - "config/rules/standards.yaml"
+
+test_cases:
+  normal:
+    - "同一主题在短时间内出现更多强催化和更多来源时，theme_heat_score 会提升。"
+    - "输出包含可解释的评分依据。"
+  exception:
+    - "过期或证据薄弱的主题不会进入高热度区间。"
+    - "缺少时间字段的结果不会进入快照计算。"
