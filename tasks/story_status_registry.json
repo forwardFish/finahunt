@@ -77,6 +77,124 @@
         "agents/approval/checkpoint.py validates ManualCorrectionRecord",
         "tests/e2e/test_final_gate.py covers manual review blocking"
       ]
+    },
+    {
+      "story_id": "S1-001",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T21:20:00+08:00",
+      "validation_summary": "Source runtime now fetches latest public content from CLS telegraph and Jiuyangongshe live pages.",
+      "evidence": [
+        "skills/fetch/client.py implements cls_telegraph_html and jiuyangongshe_live_html connectors",
+        "tests/unit/test_fetch_client.py validates both public-source parsers",
+        "tools/run_live_event_cognition.py runs live fetch against public pages"
+      ]
+    },
+    {
+      "story_id": "S1-002",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T21:20:00+08:00",
+      "validation_summary": "Normalize stage now cleans text, drops low-signal posts, and deduplicates repeated items.",
+      "evidence": [
+        "skills/normalize/formatter.py assigns quality_score, dedup_key, and filter_reasons",
+        "agents/runtime/normalize/agent.py emits normalized_documents and dropped_documents"
+      ]
+    },
+    {
+      "story_id": "S1-003",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T21:20:00+08:00",
+      "validation_summary": "Normalized news is converted into traceable event objects with source and evidence references.",
+      "evidence": [
+        "agents/runtime/event_extract/agent.py emits candidate_events",
+        "packages/schema/models.py EventObject now supports runtime event cognition fields"
+      ]
+    },
+    {
+      "story_id": "S1-004",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T21:20:00+08:00",
+      "validation_summary": "Candidate events are unified into canonical events while preserving source and evidence chains.",
+      "evidence": [
+        "agents/runtime/event_unify/agent.py emits canonical_events",
+        "skills/event/engine.py unify_events merges source_refs and evidence_refs"
+      ]
+    },
+    {
+      "story_id": "S1-005",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T21:20:00+08:00",
+      "validation_summary": "Canonical events now receive rule-based theme tags with explicit evidence.",
+      "evidence": [
+        "config/rules/standards.yaml defines theme_rules",
+        "agents/runtime/theme_detection/agent.py emits theme_enriched_events"
+      ]
+    },
+    {
+      "story_id": "S1-006",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T21:20:00+08:00",
+      "validation_summary": "Events are classified into catalyst types and strengths using objective rule sets.",
+      "evidence": [
+        "config/rules/standards.yaml defines catalyst_rules",
+        "agents/runtime/catalyst_classification/agent.py emits catalyst_events"
+      ]
+    },
+    {
+      "story_id": "S1-007",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T21:20:00+08:00",
+      "validation_summary": "Events now carry direct and weak stock/sector/theme linkages for downstream ranking and display.",
+      "evidence": [
+        "skills/event/engine.py extracts symbol and sector candidates from metadata and text",
+        "agents/runtime/stock_linkage/agent.py emits linked_events"
+      ]
+    },
+    {
+      "story_id": "S1-008",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T21:20:00+08:00",
+      "validation_summary": "Events are ranked for the user by freshness, catalyst strength, theme overlap, and asset linkage.",
+      "evidence": [
+        "agents/runtime/relevance_ranking/agent.py emits ranked_events",
+        "skills/event/engine.py rank_events_for_user explains ranking reasons"
+      ]
+    },
+    {
+      "story_id": "S1-009",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T21:20:00+08:00",
+      "validation_summary": "Runtime now outputs today focus cards, watchlist event cards, and a daily review report with risk notice.",
+      "evidence": [
+        "agents/runtime/daily_review/agent.py emits today_focus_page, watchlist_event_page, and daily_review_report",
+        "tests/integration/test_event_cognition_runtime.py validates end-to-end output generation"
+      ]
     }
   ]
 }

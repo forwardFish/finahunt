@@ -1,11 +1,131 @@
-standard_version: "v1"
+standard_version: "v2"
 standards_manual:
   naming: "snake_case for Python modules and payload keys"
   logging: "include trace_id, task_id, run_id, agent_name, stage, timestamp"
   contracts: "all cross-agent payloads must be structured"
+  runtime_scope: "focus on objective event cognition, catalyst mining, and user-facing research outputs"
+
+theme_rules:
+  算力:
+    - "算力"
+    - "服务器"
+    - "AIDC"
+    - "数据中心"
+    - "GPU"
+  人工智能:
+    - "AI"
+    - "大模型"
+    - "智能体"
+    - "人工智能"
+  机器人:
+    - "机器人"
+    - "人形机器人"
+    - "自动化"
+    - "伺服"
+  低空经济:
+    - "低空"
+    - "eVTOL"
+    - "无人机"
+    - "通航"
+  新能源:
+    - "光伏"
+    - "储能"
+    - "风电"
+    - "锂电"
+  半导体:
+    - "芯片"
+    - "半导体"
+    - "晶圆"
+    - "封测"
+  军工:
+    - "军工"
+    - "航空航天"
+    - "卫星"
+    - "导弹"
+    - "国防"
+  医药:
+    - "创新药"
+    - "集采"
+    - "医疗器械"
+    - "医药"
+
+catalyst_rules:
+  policy:
+    keywords:
+      - "政策"
+      - "发改委"
+      - "工信部"
+      - "国务院"
+      - "证监会"
+      - "征求意见"
+      - "印发"
+      - "终裁"
+      - "处罚"
+      - "罚款"
+    strength_keywords:
+      high: ["印发", "落地", "正式发布", "批复"]
+      medium: ["征求意见", "会议提出", "研究推进"]
+      low: ["传闻", "市场预期"]
+  earnings:
+    keywords:
+      - "业绩"
+      - "预增"
+      - "快报"
+      - "净利润"
+      - "扭亏"
+    strength_keywords:
+      high: ["大增", "超预期", "创历史新高"]
+      medium: ["增长", "改善"]
+      low: ["预期", "可能"]
+  industry:
+    keywords:
+      - "中标"
+      - "订单"
+      - "量产"
+      - "合作"
+      - "发布会"
+      - "新品"
+    strength_keywords:
+      high: ["签署大单", "量产", "订单落地"]
+      medium: ["合作", "发布", "推进"]
+      low: ["计划", "拟"]
+  capital:
+    keywords:
+      - "龙虎榜"
+      - "资金流入"
+      - "基金"
+      - "增持"
+      - "回购"
+      - "减持"
+    strength_keywords:
+      high: ["大额回购", "持续增持", "净买入居前"]
+      medium: ["增持", "回购"]
+      low: ["拟增持", "拟回购"]
+  sentiment:
+    keywords:
+      - "热议"
+      - "爆火"
+      - "刷屏"
+      - "热度"
+      - "讨论"
+    strength_keywords:
+      high: ["刷屏", "热度爆发"]
+      medium: ["热议", "热度走高"]
+      low: ["讨论", "关注"]
+
+default_user_profile:
+  watchlist_symbols: []
+  watchlist_themes:
+    - "人工智能"
+    - "机器人"
+    - "低空经济"
+
 standard_update_log:
   - version: "v1"
     note: "Initial scaffold based on design doc"
+  - version: "v2"
+    note: "Added Sprint 1 event cognition rules for theme detection and catalyst classification."
+
 standard_violation_rules:
   - "log as governance issue"
   - "block production release if compliance-critical"

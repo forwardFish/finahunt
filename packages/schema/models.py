@@ -91,6 +91,7 @@ class RawNewsItem(BaseModel):
     evidence_snippet: str
     source_type: str
     tags: list[str] = Field(default_factory=list)
+    metadata: dict[str, Any] = Field(default_factory=dict)
 
 
 class NormalizedNewsItem(BaseModel):
@@ -104,6 +105,7 @@ class NormalizedNewsItem(BaseModel):
     evidence_snippets: list[EvidenceSnippet]
     normalized_fields: dict[str, Any] = Field(default_factory=dict)
     risk_flags: list[str] = Field(default_factory=list)
+    metadata: dict[str, Any] = Field(default_factory=dict)
 
 
 class EventObject(BaseModel):
@@ -115,6 +117,16 @@ class EventObject(BaseModel):
     status: Literal["NEW", "VERIFIED", "RISING", "REIGNITED", "REALIZED"]
     compliance_notes: list[str] = Field(default_factory=list)
     risk_level: Literal["low", "medium", "high"] = "low"
+    summary: str = ""
+    event_time: str = ""
+    canonical_key: str = ""
+    theme_tags: list[str] = Field(default_factory=list)
+    catalyst_type: str = ""
+    catalyst_strength: Literal["high", "medium", "low", "unknown"] = "unknown"
+    linked_assets: list[dict[str, Any]] = Field(default_factory=list)
+    relevance_score: float = 0.0
+    relevance_reason: str = ""
+    metadata: dict[str, Any] = Field(default_factory=dict)
 
 
 class ManualCorrectionRecord(BaseModel):

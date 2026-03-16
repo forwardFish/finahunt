@@ -29,6 +29,7 @@ field_capture_policy:
     - "source_url"
     - "evidence_snippet"
     - "tags"
+    - "metadata"
   forbidden_fields:
     - "full_paid_report"
     - "private_user_data"
@@ -51,10 +52,47 @@ blocking_rules:
     - "收益承诺"
     - "内幕消息"
     - "稳赚不赔"
+    - "拉群"
+    - "荐股"
   blocked_behaviors:
     - "crawl_unlicensed_source"
     - "store_sensitive_secrets_in_logs"
     - "emit_untraceable_event"
+
+information_quality_policy:
+  minimum_title_length: 6
+  minimum_summary_length: 20
+  finance_keywords:
+    - "公司"
+    - "公告"
+    - "业绩"
+    - "订单"
+    - "中标"
+    - "涨停"
+    - "板块"
+    - "概念"
+    - "政策"
+    - "机器人"
+    - "算力"
+    - "半导体"
+    - "新能源"
+    - "低空"
+    - "AI"
+    - "并购"
+    - "减持"
+    - "增持"
+  low_signal_phrases:
+    - "晚安"
+    - "早安"
+    - "打卡"
+    - "自律"
+    - "分享一句话"
+    - "心情"
+    - "鸡汤"
+  require_any_of:
+    - "finance_keyword"
+    - "stock_code"
+    - "theme_keyword"
 
 manual_review_policy:
   trigger_if_risk_level_in:

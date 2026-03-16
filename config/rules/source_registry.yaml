@@ -1,12 +1,71 @@
-registry_version: "2026.03"
-default_schedule: "0 */1 * * *"
+registry_version: "2026.03.16"
+default_schedule: "*/30 * * * *"
 sources:
+  - source_id: "cls-telegraph"
+    source_name: "财联社电报"
+    channel_type: "public_site"
+    status: "active"
+    in_mvp_chain: true
+    description: "公开快讯流，优先用于盘中/盘后最新催化和市场异动线索。"
+    base_url: "https://www.cls.cn/telegraph"
+    refresh_strategy:
+      cron: "*/10 * * * *"
+      timezone: "Asia/Shanghai"
+      retry_policy: "exponential_backoff"
+      max_retries: 3
+    field_contract:
+      required_fields:
+        - "title"
+        - "summary"
+        - "published_at"
+        - "source_url"
+      optional_fields:
+        - "stock_list"
+        - "plate_list"
+        - "brief"
+      parser_key: "cls_telegraph_html"
+    legality_evidence: "Publicly accessible telegraph page. MVP only captures title, summary, evidence snippet, and source URL."
+    access_profile:
+      robots_respected: true
+      auth_mode: "public"
+      rate_limit: "30/hour"
+      notes: "Use conservative polling and store only traceable excerpts."
+    risk_level: "medium"
+  - source_id: "jiuyangongshe-live"
+    source_name: "韭研公社短文"
+    channel_type: "public_site"
+    status: "active"
+    in_mvp_chain: true
+    description: "公开短文/热度页，用于补充社区讨论中的题材催化线索。"
+    base_url: "https://www.jiuyangongshe.com/live"
+    refresh_strategy:
+      cron: "*/20 * * * *"
+      timezone: "Asia/Shanghai"
+      retry_policy: "exponential_backoff"
+      max_retries: 3
+    field_contract:
+      required_fields:
+        - "title"
+        - "summary"
+        - "published_at"
+        - "source_url"
+      optional_fields:
+        - "community_heat"
+        - "stock_list"
+      parser_key: "jiuyangongshe_live_html"
+    legality_evidence: "Publicly accessible live page. MVP only captures visible title, visible text excerpt, timestamp, and page URL."
+    access_profile:
+      robots_respected: true
+      auth_mode: "public"
+      rate_limit: "20/hour"
+      notes: "Only retain posts that pass finance relevance and objective-content filters."
+    risk_level: "medium"
   - source_id: "cninfo-announcement"
     source_name: "巨潮资讯公告"
     channel_type: "exchange"
-    status: "active"
-    in_mvp_chain: true
-    description: "A 股上市公司公告主入口，用于识别停复牌、增减持、重大合同、并购重组等催化。"
+    status: "paused"
+    in_mvp_chain: false
+    description: "上市公司公告来源，后续用于补充客观披露证据。"
     base_url: "https://www.cninfo.com.cn/"
     refresh_strategy:
       cron: "0 */1 * * *"
@@ -29,43 +88,14 @@ sources:
       robots_respected: true
       auth_mode: "public"
       rate_limit: "60/hour"
-      notes: "Use conservative polling; do not bypass public access controls."
-    risk_level: "low"
-  - source_id: "sse-disclosure"
-    source_name: "上交所披露"
-    channel_type: "exchange"
-    status: "active"
-    in_mvp_chain: true
-    description: "用于补充交易所层面的公司公告与监管披露。"
-    base_url: "https://www.sse.com.cn/"
-    refresh_strategy:
-      cron: "15 */1 * * *"
-      timezone: "Asia/Shanghai"
-      retry_policy: "exponential_backoff"
-      max_retries: 3
-    field_contract:
-      required_fields:
-        - "title"
-        - "summary"
-        - "published_at"
-        - "source_url"
-      optional_fields:
-        - "stock_code"
-        - "industry"
-      parser_key: "exchange_disclosure"
-    legality_evidence: "Official exchange disclosure platform."
-    access_profile:
-      robots_respected: true
-      auth_mode: "public"
-      rate_limit: "60/hour"
-      notes: "Prefer official JSON/XML endpoints where available."
+      notes: "Prefer official APIs or public interfaces when Sprint 2 extends evidence sources."
     risk_level: "low"
   - source_id: "csrc-press"
     source_name: "证监会新闻发布"
     channel_type: "regulator"
-    status: "active"
-    in_mvp_chain: true
-    description: "监管发布与政策表态来源，用于识别制度、政策类催化。"
+    status: "paused"
+    in_mvp_chain: false
+    description: "监管政策来源，后续用于补充政策催化证据。"
     base_url: "https://www.csrc.gov.cn/"
     refresh_strategy:
       cron: "30 */2 * * *"
@@ -87,34 +117,5 @@ sources:
       robots_respected: true
       auth_mode: "public"
       rate_limit: "30/hour"
-      notes: "Treat as policy evidence source, not trading advice."
+      notes: "Treat as objective policy evidence source only."
     risk_level: "low"
-  - source_id: "authorized-fastfeed"
-    source_name: "授权快讯源"
-    channel_type: "authorized_feed"
-    status: "paused"
-    in_mvp_chain: false
-    description: "保留给后续扩展的授权快讯订阅源，MVP 默认不启用。"
-    base_url: "https://example.com/feed"
-    refresh_strategy:
-      cron: "*/10 * * * *"
-      timezone: "Asia/Shanghai"
-      retry_policy: "exponential_backoff"
-      max_retries: 5
-    field_contract:
-      required_fields:
-        - "title"
-        - "summary"
-        - "published_at"
-        - "source_url"
-      optional_fields:
-        - "headline_score"
-        - "symbol_mentions"
-      parser_key: "authorized_fastfeed"
-    legality_evidence: "Contract required before enabling in production."
-    access_profile:
-      robots_respected: true
-      auth_mode: "api_key"
-      rate_limit: "120/hour"
-      notes: "Must not be activated without signed commercial contract."
-    risk_level: "medium"
