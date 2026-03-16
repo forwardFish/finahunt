@@ -13,7 +13,7 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     cls_html = """
     <html><script>
     window.__DATA__={"telegraphList":[
-      {"id":1,"title":"工信部发文支持机器人产业创新","content":"财联社3月16日电，工信部发文支持机器人产业创新发展，机器人板块关注度提升。","ctime":"2026-03-16 10:00:00","shareurl":"https://www.cls.cn/detail/1","stock_list":[{"secu_code":"300024.SZ","secu_name":"机器人"}],"plate_list":[{"plate_name":"机器人"}]},
+      {"id":1,"title":"工信部发文支持机器人产业创新","content":"财联社3月16日电，工信部发文支持机器人产业创新发展，机器人板块关注度提升。","ctime":"2026-03-16 10:00:00","shareurl":"https://www.cls.cn/detail/1","stock_list":[{"secu_code":"300024.SZ","secu_name":"机器人样本"}],"plate_list":[{"plate_name":"机器人"}]},
       {"id":2,"title":"多家公司签署算力服务器订单","content":"财联社3月16日电，多家公司披露算力服务器订单进展。","ctime":"2026-03-16 11:00:00","shareurl":"https://www.cls.cn/detail/2","stock_list":[{"secu_code":"000063.SZ","secu_name":"中兴通讯"}],"plate_list":[{"plate_name":"算力"}]}
     ]};
     </script></html>
@@ -21,7 +21,7 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     jygs_html = """
     <script>window.__NUXT__=(function(){return{data:[{list:[
       {article_id:"abc123",title:"算力链景气上修",create_time:"2026-03-16 09:00:00",content:"算力服务器需求上修，板块热度提升。",user:{},stock_list:[]},
-      {article_id:"def456",title:"晚安啦",create_time:"2026-03-16 08:00:00",content:"晚安啦大家早点休息。",user:{},stock_list:[]}
+      {article_id:"def456",title:"晚安帖",create_time:"2026-03-16 08:00:00",content:"晚安大家早点休息。",user:{},stock_list:[]}
     ],totalCount:2}]}})()</script>
     """
 
@@ -47,6 +47,11 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     theme = result["results"]["theme_detection"]["content"]
     catalyst = result["results"]["catalyst_classification"]["content"]
     linkage = result["results"]["stock_linkage"]["content"]
+    theme_candidates = result["results"]["theme_candidate_aggregation"]["content"]
+    result_cards = result["results"]["structured_result_cards"]["content"]
+    warehouse = result["results"]["result_warehouse"]["content"]
+    theme_heat = result["results"]["theme_heat_snapshot"]["content"]
+    feed = result["results"]["fermenting_theme_feed"]["content"]
     ranking = result["results"]["relevance_ranking"]["content"]
     review = result["results"]["daily_review"]["content"]
 
@@ -59,6 +64,11 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     assert any(event["theme_tags"] for event in theme["theme_enriched_events"])
     assert any(event["catalyst_type"] != "unknown" for event in catalyst["catalyst_events"])
     assert any(event["linked_assets"] for event in linkage["linked_events"])
+    assert any(item["theme_name"] for item in theme_candidates["theme_candidates"])
+    assert any(item["theme_name"] for item in result_cards["structured_result_cards"])
+    assert warehouse["artifact_batch_dir"]
+    assert any(item["theme_heat_score"] >= 0 for item in theme_heat["theme_heat_snapshots"])
+    assert any(item["theme_name"] for item in feed["fermenting_theme_feed"])
     assert ranking["ranked_events"][0]["relevance_score"] >= ranking["ranked_events"][-1]["relevance_score"]
     assert review["today_focus_page"]
     assert "风险" in review["daily_review_report"]["risk_notice"]

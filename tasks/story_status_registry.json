@@ -195,6 +195,123 @@
         "agents/runtime/daily_review/agent.py emits today_focus_page, watchlist_event_page, and daily_review_report",
         "tests/integration/test_event_cognition_runtime.py validates end-to-end output generation"
       ]
+    },
+    {
+      "story_id": "S2-001",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T23:40:00+08:00",
+      "validation_summary": "Catalyst candidate extraction is now represented by theme candidate aggregation inputs built from canonical events and linkage evidence.",
+      "evidence": [
+        "agents/runtime/theme_candidate_aggregation/agent.py aggregates supporting_signals from linked_events",
+        "tests/integration/test_event_cognition_runtime.py validates theme candidate generation from live-like inputs"
+      ]
+    },
+    {
+      "story_id": "S2-002",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T23:40:00+08:00",
+      "validation_summary": "Catalyst typing remains explicit and continues to feed the downstream theme candidate and fermentation pipeline.",
+      "evidence": [
+        "agents/runtime/catalyst_classification/agent.py emits catalyst_type and catalyst_strength",
+        "skills/event/fermentation.py consumes catalyst_type in structured result synthesis"
+      ]
+    },
+    {
+      "story_id": "S2-003",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T23:40:00+08:00",
+      "validation_summary": "Catalyst strength and timeliness are now folded into structured cards and theme heat scoring.",
+      "evidence": [
+        "skills/event/fermentation.py derives strength_level and timeliness_level",
+        "agents/runtime/theme_heat_snapshot/agent.py emits theme_heat_snapshots with score breakdown"
+      ]
+    },
+    {
+      "story_id": "S2-004",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T23:40:00+08:00",
+      "validation_summary": "Multiple event signals are now aggregated into theme candidates with supporting evidence chains.",
+      "evidence": [
+        "agents/runtime/theme_candidate_aggregation/agent.py emits theme_candidates",
+        "theme_candidates retain supporting_signals, source_refs, evidence_refs, and linked_assets"
+      ]
+    },
+    {
+      "story_id": "S2-005",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T23:40:00+08:00",
+      "validation_summary": "Theme candidates retain objective linkage to stocks, sectors, and theme assets for downstream consumption.",
+      "evidence": [
+        "agents/runtime/stock_linkage/agent.py injects theme, stock, and sector assets",
+        "skills/event/fermentation.py carries linked_assets into cards and feeds"
+      ]
+    },
+    {
+      "story_id": "S2-006",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T23:40:00+08:00",
+      "validation_summary": "Structured catalyst result cards are now generated as stable intermediate outputs with evidence and risk notice.",
+      "evidence": [
+        "agents/runtime/structured_result_cards/agent.py emits structured_result_cards",
+        "structured cards include catalyst_summary, strength_level, timeliness_level, and risk_notice"
+      ]
+    },
+    {
+      "story_id": "S2-007",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T23:40:00+08:00",
+      "validation_summary": "Structured runtime outputs are now persisted into a real result warehouse under workspace/artifacts/runtime/{run_id}.",
+      "evidence": [
+        "agents/runtime/result_warehouse/agent.py writes raw, normalized, canonical, theme_candidates, and structured_result_cards",
+        "packages/artifacts/store.py maintains per-run manifest.json"
+      ]
+    },
+    {
+      "story_id": "S2-008",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T23:40:00+08:00",
+      "validation_summary": "Theme heat snapshots and fermentation scores are now generated with score breakdown and stage classification.",
+      "evidence": [
+        "agents/runtime/theme_heat_snapshot/agent.py emits theme_heat_snapshots",
+        "skills/event/fermentation.py computes velocity_score, acceleration_score, and theme_heat_score"
+      ]
+    },
+    {
+      "story_id": "S2-009",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T23:40:00+08:00",
+      "validation_summary": "A fermenting theme candidate feed is now produced as the direct output of the fermentation engine.",
+      "evidence": [
+        "agents/runtime/fermenting_theme_feed/agent.py emits fermenting_theme_feed",
+        "tools/run_live_event_cognition.py now prints fermenting_theme_feed together with daily review and artifact batch dir"
+      ]
     }
   ]
 }
