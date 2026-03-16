@@ -1,0 +1,44 @@
+task_id: "S3-001"
+task_name: "事件与题材时间线"
+sprint: "Sprint 3 关联关系与用户排序"
+epic: "Epic 3.1 Event Theme Graph"
+story_id: "S3-001"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把事件、催化和题材候选放入统一时间线。"
+business_value: "让用户看到主题是怎么一步步形成的。"
+
+entry_criteria:
+  - "S2-006 已完成。"
+
+acceptance_criteria:
+  - "事件与题材结果可按时间串联。"
+  - "时间线条目保留证据引用。"
+  - "同一主题的关键演化节点可回看。"
+
+constraints:
+  - "不做复杂前端。"
+
+out_of_scope:
+  - "不做用户排序。"
+
+dependencies:
+  - "S2-006"
+
+related_files:
+  - "packages/schema/state.py"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "packages/schema/state.py"
+
+secondary_files:
+  - "packages/schema/models.py"
+
+test_cases:
+  normal:
+    - "同一主题可以形成完整时间线。"
+  exception:
+    - "缺少时间字段的结果不会进入时间线。"

@@ -1,0 +1,48 @@
+task_id: "S1-001"
+task_name: "合规资讯抓取运行时"
+sprint: "Sprint 1 事件认知闭环 MVP"
+epic: "Epic 1.1 Ingest and Event"
+story_id: "S1-001"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "让 runtime/source_runtime 能基于 source registry 拉取或模拟拉取合规资讯，并输出统一原始资讯对象。"
+business_value: "MVP 闭环的入口，如果资讯进不来，后续事件和复盘都无从谈起。"
+
+entry_criteria:
+  - "Sprint 0 已完成。"
+
+acceptance_criteria:
+  - "source_runtime agent 能读取 source registry。"
+  - "每次运行都输出统一结构的 raw news item 列表。"
+  - "每条原始资讯都带 source_id、published_at、title。"
+  - "抓取失败会记录日志和重试信息。"
+
+constraints:
+  - "优先复用现有 runtime/source_runtime 和 fetch skill。"
+
+out_of_scope:
+  - "不做复杂去重和事件抽取。"
+
+dependencies:
+  - "S0-001"
+  - "S0-005"
+
+related_files:
+  - "agents/runtime/source_runtime/agent.py"
+  - "skills/fetch/client.py"
+  - "config/rules/source_registry.yaml"
+
+primary_files:
+  - "agents/runtime/source_runtime/agent.py"
+  - "skills/fetch/client.py"
+
+secondary_files:
+  - "config/rules/source_registry.yaml"
+
+test_cases:
+  normal:
+    - "运行一次后产出统一原始资讯列表。"
+  exception:
+    - "某个资讯源失败时有日志且不导致全部崩溃。"

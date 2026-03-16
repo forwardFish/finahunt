@@ -1,0 +1,47 @@
+task_id: "S1-004"
+task_name: "事件归一"
+sprint: "Sprint 1 事件认知闭环 MVP"
+epic: "Epic 1.1 Ingest and Event"
+story_id: "S1-004"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把同一事件的多源报道归并成统一事件流。"
+business_value: "避免用户在今日重点里反复看到同一件事。"
+
+entry_criteria:
+  - "S1-003 已完成。"
+
+acceptance_criteria:
+  - "同一事件的多源报道被归并。"
+  - "归并后仍保留完整 source_refs。"
+  - "不同事件不会被错误合并。"
+  - "事件时间线字段能支持后续状态更新。"
+
+constraints:
+  - "归并逻辑必须可解释。"
+
+out_of_scope:
+  - "不做用户排序。"
+
+dependencies:
+  - "S1-003"
+
+related_files:
+  - "packages/schema/models.py"
+  - "packages/schema/state.py"
+  - "config/spec/traceability.yaml"
+
+primary_files:
+  - "packages/schema/models.py"
+  - "packages/schema/state.py"
+
+secondary_files:
+  - "config/spec/traceability.yaml"
+
+test_cases:
+  normal:
+    - "多源同事件被归并为单一主事件。"
+  exception:
+    - "相近但不同的事件不会被误合并。"

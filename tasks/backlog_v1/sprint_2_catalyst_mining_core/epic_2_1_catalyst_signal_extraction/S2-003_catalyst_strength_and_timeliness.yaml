@@ -1,0 +1,45 @@
+task_id: "S2-003"
+task_name: "催化强度与时效性判断"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.1 Catalyst Signal Extraction"
+story_id: "S2-003"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "对催化信号做强度和时效性判断。"
+business_value: "帮助用户优先关注更强、更近、更可能持续发酵的信号。"
+
+entry_criteria:
+  - "S2-002 已完成。"
+
+acceptance_criteria:
+  - "结果包含 strength_level 和 timeliness_level。"
+  - "评分依据可解释。"
+  - "旧闻或弱信号不会被误判成强催化。"
+  - "输出结果可供潜在题材聚合直接使用。"
+
+constraints:
+  - "只做等级判断，不做收益预测。"
+
+out_of_scope:
+  - "不做排序页面。"
+
+dependencies:
+  - "S2-002"
+
+related_files:
+  - "agents/governance/evaluation/agent.py"
+  - "config/rules/standards.yaml"
+
+primary_files:
+  - "agents/governance/evaluation/agent.py"
+
+secondary_files:
+  - "config/rules/standards.yaml"
+
+test_cases:
+  normal:
+    - "强政策催化会被识别为高强度。"
+  exception:
+    - "过期消息不会被标记为高时效。"

@@ -1,0 +1,48 @@
+task_id: "S2-006"
+task_name: "结构化催化结果卡片"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.2 Theme Candidate Structuring"
+story_id: "S2-006"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把潜在题材催化结果整理成统一的结构化结果卡片。"
+business_value: "这是 Finahunt 这一阶段最核心的产品输出。"
+
+entry_criteria:
+  - "S2-004 和 S2-005 已完成。"
+
+acceptance_criteria:
+  - "结果卡片包含主题名称、催化类型、强度、时效性、证据、关联标的。"
+  - "结果卡片可直接供后续排序和页面展示使用。"
+  - "每张卡片都有来源和风险提示。"
+  - "结构稳定，可重复生成。"
+
+constraints:
+  - "必须显示来源和风险提示。"
+
+out_of_scope:
+  - "不做最终前端页面。"
+
+dependencies:
+  - "S2-004"
+  - "S2-005"
+
+related_files:
+  - "packages/schema/models.py"
+  - "docs/02_MVP/mvp功能.md"
+  - "docs/02_MVP/mvp功能_表格版.md"
+
+primary_files:
+  - "packages/schema/models.py"
+
+secondary_files:
+  - "docs/02_MVP/mvp功能.md"
+  - "docs/02_MVP/mvp功能_表格版.md"
+
+test_cases:
+  normal:
+    - "可输出完整的结构化催化结果卡片。"
+  exception:
+    - "缺少来源时卡片被判定为不合规。"

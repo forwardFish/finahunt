@@ -1,0 +1,44 @@
+task_id: "S4-002"
+task_name: "观察池事件输出"
+sprint: "Sprint 4 输出、复盘与研究闭环"
+epic: "Epic 4.1 User Output Views"
+story_id: "S4-002"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "围绕用户观察池生成事件输出。"
+business_value: "让用户优先看到和自己观察池相关的结构化信号。"
+
+entry_criteria:
+  - "S3-004 已完成。"
+
+acceptance_criteria:
+  - "观察池输出能突出用户观察对象相关结果。"
+  - "每条结果包含关联理由。"
+  - "没有观察池时返回默认结果集。"
+
+constraints:
+  - "不做复杂前端。"
+
+out_of_scope:
+  - "不做日终复盘。"
+
+dependencies:
+  - "S3-004"
+
+related_files:
+  - "packages/schema/state.py"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "packages/schema/state.py"
+
+secondary_files:
+  - "packages/schema/models.py"
+
+test_cases:
+  normal:
+    - "观察池结果会优先展示相关主题。"
+  exception:
+    - "空观察池时系统不崩溃。"

@@ -1,0 +1,46 @@
+task_id: "S4-004"
+task_name: "研究归档与人工复核入口"
+sprint: "Sprint 4 输出、复盘与研究闭环"
+epic: "Epic 4.2 Review and Research Loop"
+story_id: "S4-004"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "让日终复盘和结构化催化结果可归档、可复核、可人工修正。"
+business_value: "提高用户长期留存和团队对输出质量的控制力。"
+
+entry_criteria:
+  - "S4-003 已完成。"
+
+acceptance_criteria:
+  - "复盘结果可归档。"
+  - "人工复核记录有结构化字段。"
+  - "人工修正不会破坏原始证据链。"
+
+constraints:
+  - "必须保留原始版本。"
+
+out_of_scope:
+  - "不做复杂协同系统。"
+
+dependencies:
+  - "S4-003"
+
+related_files:
+  - "agents/approval/checkpoint.py"
+  - "docs/04_规范/操作手册.md"
+  - "tests/e2e/test_final_gate.py"
+
+primary_files:
+  - "agents/approval/checkpoint.py"
+
+secondary_files:
+  - "docs/04_规范/操作手册.md"
+  - "tests/e2e/test_final_gate.py"
+
+test_cases:
+  normal:
+    - "复盘结果可归档并记录人工复核结论。"
+  exception:
+    - "没有原始证据链的修正不能直接覆盖原结果。"

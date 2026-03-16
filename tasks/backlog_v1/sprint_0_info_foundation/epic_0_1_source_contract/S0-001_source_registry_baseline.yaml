@@ -1,0 +1,50 @@
+task_id: "S0-001"
+task_name: "合规资讯源注册表基线"
+sprint: "Sprint 0 信息底座与治理基础"
+epic: "Epic 0.1 Source Contract"
+story_id: "S0-001"
+blast_radius: "L1"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "梳理并固化 Finahunt MVP 允许接入的合规资讯源、刷新策略和字段约束，建立统一 source registry 基线。"
+business_value: "让后续接入和 runtime 有统一来源名单、字段规则和风险等级，避免灰色数据源和歧义接入。"
+
+entry_criteria:
+  - "MVP 范围与合规边界已确认。"
+
+acceptance_criteria:
+  - "source_registry.yaml 至少覆盖 3 类 MVP 可用资讯源。"
+  - "每个资讯源都包含 source_id、source_name、channel_type、refresh_strategy、field_contract、legality_evidence。"
+  - "每个资讯源都明确标注是否进入 MVP 主链路。"
+  - "注册表内容可被 runtime/source_runtime 直接读取。"
+
+constraints:
+  - "只修改 source registry 与相关说明配置。"
+  - "不引入真实抓取逻辑。"
+
+out_of_scope:
+  - "不实现真实抓取客户端。"
+  - "不实现复杂调度策略。"
+
+dependencies:
+  - "无"
+
+related_files:
+  - "config/rules/source_registry.yaml"
+  - "docs/02_MVP/mvp功能.md"
+  - "docs/02_MVP/mvp功能_表格版.md"
+
+primary_files:
+  - "config/rules/source_registry.yaml"
+
+secondary_files:
+  - "docs/02_MVP/mvp功能.md"
+  - "docs/02_MVP/mvp功能_表格版.md"
+
+test_cases:
+  normal:
+    - "source_registry.yaml 能被正常解析。"
+    - "每个 MVP 资讯源都能通过 SourceRegistryEntry 校验。"
+  exception:
+    - "缺少 source_id 或 refresh_strategy 时校验失败。"

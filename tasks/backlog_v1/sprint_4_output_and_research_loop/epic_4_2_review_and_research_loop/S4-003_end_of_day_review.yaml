@@ -1,0 +1,47 @@
+task_id: "S4-003"
+task_name: "日终复盘生成"
+sprint: "Sprint 4 输出、复盘与研究闭环"
+epic: "Epic 4.2 Review and Research Loop"
+story_id: "S4-003"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "基于结构化结果生成当日复盘。"
+business_value: "让用户能沉淀研究结论，而不是只看即时流。"
+
+entry_criteria:
+  - "S4-001 和 S4-002 已完成。"
+
+acceptance_criteria:
+  - "复盘包含重点主题、关键催化、证据来源和风险提示。"
+  - "输出不包含荐股或预测表达。"
+  - "复盘结构稳定，可归档。"
+
+constraints:
+  - "必须通过合规规则。"
+
+out_of_scope:
+  - "不做分享社区。"
+
+dependencies:
+  - "S4-001"
+  - "S4-002"
+
+related_files:
+  - "agents/final_gate/agent.py"
+  - "config/rules/compliance_rules.yaml"
+  - "docs/04_规范/操作手册.md"
+
+primary_files:
+  - "agents/final_gate/agent.py"
+  - "config/rules/compliance_rules.yaml"
+
+secondary_files:
+  - "docs/04_规范/操作手册.md"
+
+test_cases:
+  normal:
+    - "可生成结构化日终复盘。"
+  exception:
+    - "高风险措辞会被拦截。"

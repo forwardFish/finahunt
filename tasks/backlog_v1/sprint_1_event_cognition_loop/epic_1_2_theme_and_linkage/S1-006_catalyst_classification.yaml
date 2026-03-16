@@ -1,0 +1,46 @@
+task_id: "S1-006"
+task_name: "催化识别与分级"
+sprint: "Sprint 1 事件认知闭环 MVP"
+epic: "Epic 1.2 Theme and Linkage"
+story_id: "S1-006"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "对事件催化做类型识别和强弱分级。"
+business_value: "让用户快速判断事件的强度和时效性。"
+
+entry_criteria:
+  - "S1-005 已完成。"
+
+acceptance_criteria:
+  - "至少支持政策、业绩、产业、资金、舆情五类催化。"
+  - "每条催化结果包含等级或强弱标记。"
+  - "分级依据可解释。"
+  - "不能识别时不会强行输出等级。"
+
+constraints:
+  - "不做复杂预测。"
+
+out_of_scope:
+  - "不做历史相似案例。"
+
+dependencies:
+  - "S1-005"
+
+related_files:
+  - "config/rules/standards.yaml"
+  - "agents/governance/evaluation/agent.py"
+
+primary_files:
+  - "config/rules/standards.yaml"
+  - "agents/governance/evaluation/agent.py"
+
+secondary_files:
+  - "packages/schema/models.py"
+
+test_cases:
+  normal:
+    - "典型事件可得到催化类型和强弱等级。"
+  exception:
+    - "证据不足的事件不会给出伪精确等级。"

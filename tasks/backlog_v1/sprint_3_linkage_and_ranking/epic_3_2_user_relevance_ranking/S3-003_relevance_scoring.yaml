@@ -1,0 +1,44 @@
+task_id: "S3-003"
+task_name: "用户相关度评分"
+sprint: "Sprint 3 关联关系与用户排序"
+epic: "Epic 3.2 User Relevance Ranking"
+story_id: "S3-003"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "基于观察池、题材偏好和催化强度生成相关度评分。"
+business_value: "让结果真正按用户价值排序。"
+
+entry_criteria:
+  - "S3-002 已完成。"
+
+acceptance_criteria:
+  - "每条结果都带 relevance_score。"
+  - "评分至少考虑观察池命中、催化强度、时效性。"
+  - "评分可解释。"
+
+constraints:
+  - "不做黑盒推荐。"
+
+out_of_scope:
+  - "不做页面呈现。"
+
+dependencies:
+  - "S3-002"
+
+related_files:
+  - "agents/governance/evaluation/agent.py"
+  - "packages/schema/state.py"
+
+primary_files:
+  - "agents/governance/evaluation/agent.py"
+
+secondary_files:
+  - "packages/schema/state.py"
+
+test_cases:
+  normal:
+    - "同一批结果可生成稳定的相关度评分。"
+  exception:
+    - "缺少观察池时仍可生成默认评分。"

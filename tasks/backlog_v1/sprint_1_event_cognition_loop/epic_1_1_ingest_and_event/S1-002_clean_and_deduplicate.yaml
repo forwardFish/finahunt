@@ -1,0 +1,47 @@
+task_id: "S1-002"
+task_name: "资讯清洗与去重"
+sprint: "Sprint 1 事件认知闭环 MVP"
+epic: "Epic 1.1 Ingest and Event"
+story_id: "S1-002"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把原始资讯清洗成标准化资讯，并消除明显重复内容。"
+business_value: "减少噪音，让后续事件抽取更稳定。"
+
+entry_criteria:
+  - "S1-001 已完成。"
+
+acceptance_criteria:
+  - "normalize 流程会输出 normalized news item。"
+  - "明显重复内容被折叠或标记。"
+  - "标准化输出包含 summary、url、source_id、published_at。"
+  - "被过滤和被保留的记录都有审计信息。"
+
+constraints:
+  - "不在这个 Story 里做事件抽取。"
+
+out_of_scope:
+  - "不做主题识别。"
+
+dependencies:
+  - "S1-001"
+
+related_files:
+  - "agents/runtime/normalize/agent.py"
+  - "skills/normalize/formatter.py"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "agents/runtime/normalize/agent.py"
+  - "skills/normalize/formatter.py"
+
+secondary_files:
+  - "packages/schema/models.py"
+
+test_cases:
+  normal:
+    - "重复资讯只保留一条主记录。"
+  exception:
+    - "缺失标题或来源的资讯会被过滤或标记异常。"

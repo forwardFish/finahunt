@@ -1,0 +1,48 @@
+task_id: "S1-003"
+task_name: "事件抽取"
+sprint: "Sprint 1 事件认知闭环 MVP"
+epic: "Epic 1.1 Ingest and Event"
+story_id: "S1-003"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "从标准化资讯中抽取结构化事件对象。"
+business_value: "让用户看到的是事件，不是堆砌的资讯正文。"
+
+entry_criteria:
+  - "S1-002 已完成。"
+
+acceptance_criteria:
+  - "每条事件包含 event_id、title、event_type、source_refs、evidence_refs。"
+  - "事件对象可追溯回原始资讯。"
+  - "事件抽取失败时会留下错误原因。"
+  - "事件结果能直接被后续归一逻辑消费。"
+
+constraints:
+  - "优先复用现有 schema 和 runtime graph。"
+
+out_of_scope:
+  - "不做题材识别。"
+
+dependencies:
+  - "S0-003"
+  - "S1-002"
+
+related_files:
+  - "graphs/runtime_graph.py"
+  - "packages/schema/models.py"
+  - "packages/schema/state.py"
+
+primary_files:
+  - "graphs/runtime_graph.py"
+  - "packages/schema/models.py"
+
+secondary_files:
+  - "packages/schema/state.py"
+
+test_cases:
+  normal:
+    - "输入标准化资讯后可抽取事件对象。"
+  exception:
+    - "证据片段不足的资讯不会生成不可追溯事件。"

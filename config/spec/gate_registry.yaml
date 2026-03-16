@@ -1,39 +1,65 @@
 gates:
   - gate_id: "vision_to_mvp"
-    description: "远景、MVP、设计总纲必须一致"
+    description: "愿景、MVP 和规范文档必须一致，才能启动 Sprint 级实现。"
     required_files:
       - "docs/01_战略/远景目标.md"
       - "docs/02_MVP/mvp.md"
+      - "docs/02_MVP/mvp功能.md"
       - "docs/03_架构/Agent 体系设计文档 v1.0 正式落地版.md"
-      - "docs/04_规范/Agent体系 - 完整规范手册.md"
+    input_contracts:
+      - "vision"
+      - "mvp_scope"
+    output_artifacts:
+      - "aligned_scope_report"
     blocking_conditions:
       - "canonical source missing"
       - "goal mapping missing"
-  - gate_id: "mvp_to_orchestration"
-    description: "Agent 编排前必须明确边界和契约登记"
+  - gate_id: "mvp_to_runtime"
+    description: "进入 runtime 前必须具备 source registry、schema、traceability 和 compliance rule。"
     required_files:
-      - "docs/04_规范/设计切片与边界附录.md"
-      - "config/spec/agent_contract_registry.json"
-    blocking_conditions:
-      - "agent not registered"
-      - "plane/stage mismatch"
-  - gate_id: "orchestration_to_code"
-    description: "编码前必须完成结构化契约和配置追踪"
-    required_files:
-      - "config/spec/agent_contract_registry.json"
-      - "config/rules/compliance_rules.yaml"
       - "config/rules/source_registry.yaml"
-      - "config/rules/standards.yaml"
+      - "config/rules/compliance_rules.yaml"
+      - "packages/schema/models.py"
+      - "config/spec/traceability.yaml"
+    input_contracts:
+      - "source_registry"
+      - "raw_document_schema"
+      - "compliance_policy"
+    output_artifacts:
+      - "runtime_ready_contract"
     blocking_conditions:
-      - "missing contract fields"
-      - "missing config reference"
-  - gate_id: "code_to_acceptance"
-    description: "完成前必须通过编译、测试、工作流执行"
-    required_commands:
-      - "python tools/gate_check/validate_norms.py"
-      - "python -m compileall agents packages graphs workflows tests tools"
-      - "python -m pytest"
+      - "missing registry fields"
+      - "missing schema field"
+      - "traceability missing"
+  - gate_id: "runtime_to_manual_review"
+    description: "高风险输出、被阻断文档或缺少来源证据时，必须进入人工校正。"
+    required_files:
+      - "agents/approval/checkpoint.py"
+      - "docs/04_规范/操作手册.md"
+    input_contracts:
+      - "runtime_audit_log"
+      - "blocked_documents"
+    output_artifacts:
+      - "manual_correction_record"
+      - "approval_record"
+    manual_intervention_required: true
     blocking_conditions:
-      - "gate validation failed"
-      - "compile failed"
-      - "tests failed"
+      - "high risk output without manual correction"
+      - "blocked documents unresolved"
+  - gate_id: "manual_review_to_final_acceptance"
+    description: "final gate 必须产出明确结论、证据链和人工介入记录。"
+    required_files:
+      - "agents/final_gate/agent.py"
+      - "tests/e2e/test_final_gate.py"
+      - "docs/04_规范/操作手册.md"
+    input_contracts:
+      - "evaluation_report"
+      - "runtime_audit_log"
+      - "manual_correction_record"
+    output_artifacts:
+      - "final_gate_decision"
+      - "rule_check_matrix"
+      - "final_gate_artifact"
+    blocking_conditions:
+      - "final gate decision missing"
+      - "manual correction required but absent"

@@ -1,0 +1,82 @@
+{
+  "stories": [
+    {
+      "story_id": "S0-001",
+      "status": "done",
+      "source": "finahunt_foundation_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T18:00:00+08:00",
+      "validation_summary": "Source registry baseline now uses validated source entries with compliance and refresh contracts.",
+      "evidence": [
+        "config/rules/source_registry.yaml validates with SourceRegistryEntry",
+        "runtime source agent reads registry_snapshot and enabled_sources"
+      ]
+    },
+    {
+      "story_id": "S0-002",
+      "status": "done",
+      "source": "finahunt_foundation_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T18:00:00+08:00",
+      "validation_summary": "RawNewsItem and NormalizedNewsItem schemas are defined and validated by runtime normalize flow.",
+      "evidence": [
+        "packages/schema/models.py defines RawNewsItem and NormalizedNewsItem",
+        "tests/integration/test_runtime_foundation.py validates normalize output"
+      ]
+    },
+    {
+      "story_id": "S0-003",
+      "status": "done",
+      "source": "finahunt_foundation_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T18:00:00+08:00",
+      "validation_summary": "Event/compliance contract is encoded in compliance rules and final gate artifacts.",
+      "evidence": [
+        "config/rules/compliance_rules.yaml defines event_output_policy",
+        "agents/final_gate/agent.py emits final_gate_artifact"
+      ]
+    },
+    {
+      "story_id": "S0-004",
+      "status": "done",
+      "source": "finahunt_foundation_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T18:00:00+08:00",
+      "validation_summary": "Traceability and gate registry now map Sprint 0 goals, stories, and manual review gates.",
+      "evidence": [
+        "tools/gate_check/validate_norms.py passes",
+        "config/spec/traceability.yaml and gate_registry.yaml are executable"
+      ]
+    },
+    {
+      "story_id": "S0-005",
+      "status": "done",
+      "source": "finahunt_foundation_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T18:00:00+08:00",
+      "validation_summary": "Runtime graph and runtime schedule now expose structured source/compliance/normalize/audit outputs.",
+      "evidence": [
+        "workflows/runtime_schedule.py runs source_runtime -> compliance_guard -> normalize -> source_audit",
+        "tests/integration/test_runtime_foundation.py passes"
+      ]
+    },
+    {
+      "story_id": "S0-006",
+      "status": "done",
+      "source": "finahunt_foundation_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-16T18:00:00+08:00",
+      "validation_summary": "Manual correction records and final gate artifacts are available for human intervention.",
+      "evidence": [
+        "agents/approval/checkpoint.py validates ManualCorrectionRecord",
+        "tests/e2e/test_final_gate.py covers manual review blocking"
+      ]
+    }
+  ]
+}

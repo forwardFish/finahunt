@@ -1,0 +1,48 @@
+task_id: "S1-007"
+task_name: "个股与板块客观关联"
+sprint: "Sprint 1 事件认知闭环 MVP"
+epic: "Epic 1.2 Theme and Linkage"
+story_id: "S1-007"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把事件、题材、个股和板块之间的客观关联关系组织出来。"
+business_value: "让用户知道某个题材对应哪些标的，以及关联依据是什么。"
+
+entry_criteria:
+  - "S1-005 和 S1-006 已完成。"
+
+acceptance_criteria:
+  - "事件可关联到个股或板块对象。"
+  - "每个关联都带关联理由或证据。"
+  - "区分直接关联和弱关联。"
+  - "输出结构可供排序和页面展示直接使用。"
+
+constraints:
+  - "不能给出主观推荐表达。"
+
+out_of_scope:
+  - "不做收益预测。"
+
+dependencies:
+  - "S1-005"
+  - "S1-006"
+
+related_files:
+  - "packages/schema/models.py"
+  - "agents/governance/evaluation/agent.py"
+  - "config/rules/compliance_rules.yaml"
+
+primary_files:
+  - "packages/schema/models.py"
+  - "agents/governance/evaluation/agent.py"
+
+secondary_files:
+  - "config/rules/compliance_rules.yaml"
+
+test_cases:
+  normal:
+    - "事件能关联到标的或板块并给出依据。"
+  exception:
+    - "证据不足时不会强行绑定个股。"

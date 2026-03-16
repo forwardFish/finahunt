@@ -1,0 +1,47 @@
+task_id: "S1-005"
+task_name: "题材识别"
+sprint: "Sprint 1 事件认知闭环 MVP"
+epic: "Epic 1.2 Theme and Linkage"
+story_id: "S1-005"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "根据事件内容和规则识别所属题材。"
+business_value: "帮助用户快速理解事件属于什么主线。"
+
+entry_criteria:
+  - "S1-004 已完成。"
+
+acceptance_criteria:
+  - "事件可映射到一个或多个题材标签。"
+  - "每个题材判断都带证据依据。"
+  - "题材识别规则可在配置中查看。"
+  - "无法识别时返回空标签而不是硬猜。"
+
+constraints:
+  - "优先规则驱动，不做复杂黑盒模型。"
+
+out_of_scope:
+  - "不做催化等级。"
+
+dependencies:
+  - "S1-004"
+
+related_files:
+  - "config/rules/standards.yaml"
+  - "agents/governance/standards/agent.py"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "config/rules/standards.yaml"
+  - "agents/governance/standards/agent.py"
+
+secondary_files:
+  - "packages/schema/models.py"
+
+test_cases:
+  normal:
+    - "典型事件能识别出题材标签。"
+  exception:
+    - "证据不足时不会强行绑定题材。"

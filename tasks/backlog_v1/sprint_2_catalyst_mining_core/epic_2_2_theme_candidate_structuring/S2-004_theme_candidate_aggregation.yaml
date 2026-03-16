@@ -1,0 +1,46 @@
+task_id: "S2-004"
+task_name: "潜在题材候选聚合"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.2 Theme Candidate Structuring"
+story_id: "S2-004"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把多个催化信号聚合成潜在题材候选。"
+business_value: "让用户看到的是一条主题主线，而不是很多孤立信号。"
+
+entry_criteria:
+  - "S2-003 已完成。"
+
+acceptance_criteria:
+  - "聚合结果包含 theme_candidate_id、theme_name、supporting_signals。"
+  - "多个信号能被合并到同一候选题材下。"
+  - "聚合结果保留原始证据链。"
+  - "聚合失败不会吞掉原始信号。"
+
+constraints:
+  - "必须保留 supporting_signals。"
+
+out_of_scope:
+  - "不做用户排序。"
+
+dependencies:
+  - "S2-003"
+
+related_files:
+  - "packages/schema/models.py"
+  - "packages/schema/state.py"
+
+primary_files:
+  - "packages/schema/models.py"
+  - "packages/schema/state.py"
+
+secondary_files:
+  - "config/spec/traceability.yaml"
+
+test_cases:
+  normal:
+    - "同一主题的多个催化信号会聚合到一个候选题材。"
+  exception:
+    - "缺少 supporting_signals 时聚合结果无效。"

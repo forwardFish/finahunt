@@ -1,0 +1,44 @@
+task_id: "S3-002"
+task_name: "观察池对象关联"
+sprint: "Sprint 3 关联关系与用户排序"
+epic: "Epic 3.1 Event Theme Graph"
+story_id: "S3-002"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把题材结果和用户观察池对象做关联。"
+business_value: "让结果真正和用户的观察对象有关。"
+
+entry_criteria:
+  - "S2-005 已完成。"
+
+acceptance_criteria:
+  - "题材结果可映射到用户观察池中的个股或板块。"
+  - "关联对象可解释。"
+  - "无观察池时系统保持默认行为。"
+
+constraints:
+  - "不引入复杂推荐逻辑。"
+
+out_of_scope:
+  - "不做通知。"
+
+dependencies:
+  - "S2-005"
+
+related_files:
+  - "packages/schema/state.py"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "packages/schema/state.py"
+
+secondary_files:
+  - "packages/schema/models.py"
+
+test_cases:
+  normal:
+    - "结构化结果能和观察池对象关联。"
+  exception:
+    - "用户没有观察池时不报错。"

@@ -1,0 +1,49 @@
+task_id: "S0-006"
+task_name: "人工校正与 Final Gate 交付基线"
+sprint: "Sprint 0 信息底座与治理基础"
+epic: "Epic 0.2 Runtime Governance"
+story_id: "S0-006"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "为 Finahunt 的运行链路补齐人工校正记录和 final gate 交付物，让后续业务闭环可以人工介入。"
+business_value: "Agent 不是黑盒，团队可以对高风险字段做人工校正并留下审计证据。"
+
+entry_criteria:
+  - "S0-004 和 S0-005 已完成。"
+
+acceptance_criteria:
+  - "人工校正入口字段和记录结构清晰。"
+  - "final gate 的输入、输出和审计产物清晰。"
+  - "操作手册或测试能说明何时需要人工介入。"
+  - "后续 Sprint 1 可以直接复用这些产物。"
+
+constraints:
+  - "优先复用现有 agents/final_gate 和 approval 相关模块。"
+
+out_of_scope:
+  - "不做完整运营后台。"
+
+dependencies:
+  - "S0-005"
+
+related_files:
+  - "agents/final_gate/agent.py"
+  - "agents/approval/checkpoint.py"
+  - "docs/04_规范/操作手册.md"
+  - "tests/e2e/test_final_gate.py"
+
+primary_files:
+  - "agents/final_gate/agent.py"
+  - "agents/approval/checkpoint.py"
+
+secondary_files:
+  - "docs/04_规范/操作手册.md"
+  - "tests/e2e/test_final_gate.py"
+
+test_cases:
+  normal:
+    - "final gate 产物完整可读。"
+  exception:
+    - "缺少人工校正记录时，高风险输出不能直接放行。"

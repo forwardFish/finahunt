@@ -1,0 +1,48 @@
+task_id: "S0-003"
+task_name: "事件对象与合规输出契约"
+sprint: "Sprint 0 信息底座与治理基础"
+epic: "Epic 0.1 Source Contract"
+story_id: "S0-003"
+blast_radius: "L1"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "定义事件对象、状态字段和合规输出要求，让后续催化结果有明确边界。"
+business_value: "避免事件输出变成不可追踪的自由文本，降低合规风险。"
+
+entry_criteria:
+  - "S0-002 已完成。"
+
+acceptance_criteria:
+  - "事件对象包含 event_id、title、event_type、source_refs、evidence_refs、status。"
+  - "compliance_rules.yaml 明确要求显示来源和风险提示。"
+  - "compliance_rules.yaml 中有可执行的敏感表达与禁止行为规则。"
+  - "事件状态至少覆盖 NEW、VERIFIED、RISING、REIGNITED、REALIZED。"
+
+constraints:
+  - "优先落在现有 config/rules 与 packages/schema 文件中。"
+
+out_of_scope:
+  - "不做实际事件抽取实现。"
+  - "不做页面展示实现。"
+
+dependencies:
+  - "S0-002"
+
+related_files:
+  - "config/rules/compliance_rules.yaml"
+  - "config/spec/gate_registry.yaml"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "config/rules/compliance_rules.yaml"
+  - "packages/schema/models.py"
+
+secondary_files:
+  - "config/spec/gate_registry.yaml"
+
+test_cases:
+  normal:
+    - "事件对象字段可被下游流程引用。"
+  exception:
+    - "缺少 source_refs 的事件对象会被视为不合规。"

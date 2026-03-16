@@ -1,0 +1,50 @@
+task_id: "S0-005"
+task_name: "Runtime Graph 输入输出基线"
+sprint: "Sprint 0 信息底座与治理基础"
+epic: "Epic 0.2 Runtime Governance"
+story_id: "S0-005"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "让 runtime_graph 与 runtime_schedule 使用统一输入输出结构，形成最小可运行骨架。"
+business_value: "为 Sprint 1 的资讯接入、标准化和后续催化处理提供稳定编排底座。"
+
+entry_criteria:
+  - "S0-002 和 S0-004 已完成。"
+
+acceptance_criteria:
+  - "runtime_graph 能读到统一 schema/state。"
+  - "runtime_schedule 能描述最小执行周期。"
+  - "关键节点输入输出字段在代码中清晰可见。"
+  - "至少有一条集成测试覆盖最小 runtime 执行。"
+
+constraints:
+  - "只补输入输出和最小骨架，不扩展复杂业务逻辑。"
+
+out_of_scope:
+  - "不做真实资讯抓取。"
+  - "不做主题识别和排序。"
+
+dependencies:
+  - "S0-004"
+
+related_files:
+  - "graphs/runtime_graph.py"
+  - "workflows/runtime_schedule.py"
+  - "packages/schema/state.py"
+  - "tests/integration/test_runtime_foundation.py"
+
+primary_files:
+  - "graphs/runtime_graph.py"
+  - "workflows/runtime_schedule.py"
+  - "packages/schema/state.py"
+
+secondary_files:
+  - "tests/integration/test_runtime_foundation.py"
+
+test_cases:
+  normal:
+    - "最小 runtime 流程可执行。"
+  exception:
+    - "缺少关键输入字段时执行失败并给出明确错误。"

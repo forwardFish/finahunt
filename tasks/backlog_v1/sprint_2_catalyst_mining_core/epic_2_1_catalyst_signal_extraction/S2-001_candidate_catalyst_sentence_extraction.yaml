@@ -1,0 +1,48 @@
+task_id: "S2-001"
+task_name: "候选催化句抽取"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.1 Catalyst Signal Extraction"
+story_id: "S2-001"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "从标准化资讯和事件中抽取可能代表催化的证据句。"
+business_value: "没有可信的候选催化句，就没有后续题材挖掘。"
+
+entry_criteria:
+  - "Sprint 1 的资讯标准化和事件准备已完成。"
+
+acceptance_criteria:
+  - "每条候选催化句都保留原始来源和位置。"
+  - "候选催化句输出包含 sentence_id、source_ref、evidence_text。"
+  - "明显无效的说明性句子会被过滤。"
+  - "结果可供后续催化类型分类直接消费。"
+
+constraints:
+  - "必须保留可追溯证据，不允许生成无来源句子。"
+
+out_of_scope:
+  - "不做题材聚合。"
+
+dependencies:
+  - "S1-003"
+  - "S1-004"
+
+related_files:
+  - "agents/runtime/normalize/agent.py"
+  - "packages/schema/models.py"
+  - "packages/schema/state.py"
+
+primary_files:
+  - "packages/schema/models.py"
+  - "packages/schema/state.py"
+
+secondary_files:
+  - "agents/runtime/normalize/agent.py"
+
+test_cases:
+  normal:
+    - "有效资讯可抽取出候选催化句。"
+  exception:
+    - "无证据来源的句子不会进入结果集。"

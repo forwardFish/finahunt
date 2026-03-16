@@ -1,0 +1,46 @@
+task_id: "S2-005"
+task_name: "题材到个股与板块映射"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.2 Theme Candidate Structuring"
+story_id: "S2-005"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "给潜在题材候选建立到个股、板块、产业链环节的客观映射。"
+business_value: "让题材结果真正能落到用户观察对象上。"
+
+entry_criteria:
+  - "S2-004 已完成。"
+
+acceptance_criteria:
+  - "映射结果包含 asset_ref 和 linkage_reason。"
+  - "区分直接映射和弱映射。"
+  - "映射结果能回溯到催化和证据。"
+  - "不允许无依据地绑定个股。"
+
+constraints:
+  - "必须有 linkage_reason。"
+
+out_of_scope:
+  - "不做买卖建议。"
+
+dependencies:
+  - "S2-004"
+
+related_files:
+  - "packages/schema/models.py"
+  - "agents/governance/evaluation/agent.py"
+
+primary_files:
+  - "packages/schema/models.py"
+  - "agents/governance/evaluation/agent.py"
+
+secondary_files:
+  - "config/rules/compliance_rules.yaml"
+
+test_cases:
+  normal:
+    - "题材候选可映射到相关板块和个股。"
+  exception:
+    - "证据不足时不输出个股映射。"

@@ -1,0 +1,47 @@
+task_id: "S0-004"
+task_name: "Traceability 与 Gate Registry 基线"
+sprint: "Sprint 0 信息底座与治理基础"
+epic: "Epic 0.2 Runtime Governance"
+story_id: "S0-004"
+blast_radius: "L1"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把需求、规则、运行节点和 final gate 的追踪关系定义清楚，保证后续流程可审计。"
+business_value: "当结果不对时，团队能追到是哪条规则、哪个 Agent、哪个 gate 出的问题。"
+
+entry_criteria:
+  - "S0-001 到 S0-003 已完成。"
+
+acceptance_criteria:
+  - "traceability.yaml 明确记录 Sprint 0 目标、story 与配置/测试映射。"
+  - "gate_registry.yaml 定义至少 4 个关键 gate。"
+  - "每个 gate 说明输入、输出和阻断条件。"
+  - "tools/gate_check/validate_norms.py 能验证这些 registry。"
+
+constraints:
+  - "不改 runtime 逻辑本身，只补 trace 和 gate 配置。"
+
+out_of_scope:
+  - "不新增业务 Agent。"
+
+dependencies:
+  - "S0-003"
+
+related_files:
+  - "config/spec/traceability.yaml"
+  - "config/spec/gate_registry.yaml"
+  - "tests/spec/test_traceability_registry.py"
+
+primary_files:
+  - "config/spec/traceability.yaml"
+  - "config/spec/gate_registry.yaml"
+
+secondary_files:
+  - "tests/spec/test_traceability_registry.py"
+
+test_cases:
+  normal:
+    - "traceability 和 gate registry 都能被解析。"
+  exception:
+    - "缺少 gate_id 或 blocking_conditions 时校验失败。"

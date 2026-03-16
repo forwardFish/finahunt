@@ -1,11 +1,16 @@
 compliance_policy:
   name: "compliance-first"
-  description: "All outputs must remain objective, traceable, and within approved source/field scope."
-  required_source_classes:
-    - "regulator"
-    - "exchange"
-    - "authorized_feed"
-    - "public_site"
+  description: "All outputs must remain objective, traceable, and within approved source and field scope."
+  objective_output_required: true
+  require_source_disclosure: true
+  require_risk_notice: true
+  allowed_event_statuses:
+    - "NEW"
+    - "VERIFIED"
+    - "RISING"
+    - "REIGNITED"
+    - "REALIZED"
+
 source_whitelist_policy:
   allowed_classes:
     - "regulator"
@@ -13,6 +18,8 @@ source_whitelist_policy:
     - "authorized_feed"
     - "public_site"
   require_legality_evidence: true
+  deny_if_source_unknown: true
+
 field_capture_policy:
   allowed_fields:
     - "title"
@@ -20,14 +27,42 @@ field_capture_policy:
     - "published_at"
     - "source_name"
     - "source_url"
+    - "evidence_snippet"
+    - "tags"
   forbidden_fields:
     - "full_paid_report"
     - "private_user_data"
+    - "account_credentials"
+
+event_output_policy:
+  required_fields:
+    - "event_id"
+    - "title"
+    - "event_type"
+    - "source_refs"
+    - "evidence_refs"
+    - "status"
+  require_source_refs: true
+  require_evidence_refs: true
+
 blocking_rules:
   blocked_terms:
     - "买入建议"
     - "收益承诺"
     - "内幕消息"
+    - "稳赚不赔"
   blocked_behaviors:
     - "crawl_unlicensed_source"
     - "store_sensitive_secrets_in_logs"
+    - "emit_untraceable_event"
+
+manual_review_policy:
+  trigger_if_risk_level_in:
+    - "high"
+  trigger_if_blocked_documents_gt: 0
+  required_record_fields:
+    - "correction_id"
+    - "target_stage"
+    - "target_field"
+    - "reason"
+    - "operator"

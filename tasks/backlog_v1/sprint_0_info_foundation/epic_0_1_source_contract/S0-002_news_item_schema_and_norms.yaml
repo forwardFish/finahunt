@@ -1,0 +1,48 @@
+task_id: "S0-002"
+task_name: "原始资讯与标准化资讯契约"
+sprint: "Sprint 0 信息底座与治理基础"
+epic: "Epic 0.1 Source Contract"
+story_id: "S0-002"
+blast_radius: "L1"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "定义 RawNewsItem、NormalizedNewsItem 和基础证据片段的统一结构，给后续清洗和事件抽取提供稳定输入。"
+business_value: "让资讯处理链路使用统一数据对象，而不是每个 Agent 各自理解字段。"
+
+entry_criteria:
+  - "S0-001 已完成。"
+
+acceptance_criteria:
+  - "packages/schema/models.py 中包含 raw news item 与 normalized news item 结构。"
+  - "结构中包含 title、summary、source_id、published_at、url、evidence_snippet 等核心字段。"
+  - "必填与可选边界清晰。"
+  - "至少给出一条运行时验证链路可复用这些 schema。"
+
+constraints:
+  - "只修改 schema 和 state 定义。"
+
+out_of_scope:
+  - "不实现事件抽取逻辑。"
+  - "不实现主题识别逻辑。"
+
+dependencies:
+  - "S0-001"
+
+related_files:
+  - "packages/schema/models.py"
+  - "packages/schema/state.py"
+  - "config/spec/traceability.yaml"
+
+primary_files:
+  - "packages/schema/models.py"
+  - "packages/schema/state.py"
+
+secondary_files:
+  - "config/spec/traceability.yaml"
+
+test_cases:
+  normal:
+    - "样例资讯能通过 RawNewsItem 与 NormalizedNewsItem 校验。"
+  exception:
+    - "缺少 source_id 或 published_at 时校验失败。"

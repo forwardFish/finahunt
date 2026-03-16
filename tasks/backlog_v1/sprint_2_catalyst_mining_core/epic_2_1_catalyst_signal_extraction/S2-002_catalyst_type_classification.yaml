@@ -1,0 +1,46 @@
+task_id: "S2-002"
+task_name: "催化类型分类"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.1 Catalyst Signal Extraction"
+story_id: "S2-002"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "对候选催化句做类型分类，识别政策、业绩、产业、资金、舆情等催化类型。"
+business_value: "让用户知道这个信号到底是什么性质的催化。"
+
+entry_criteria:
+  - "S2-001 已完成。"
+
+acceptance_criteria:
+  - "分类结果至少支持政策、业绩、产业、资金、舆情五类。"
+  - "每条结果都有 type 和 classification_reason。"
+  - "分类失败时返回 unknown，而不是硬猜。"
+  - "分类规则可以被人审查。"
+
+constraints:
+  - "优先规则和可解释逻辑，不做黑盒。"
+
+out_of_scope:
+  - "不做强弱评分。"
+
+dependencies:
+  - "S2-001"
+
+related_files:
+  - "config/rules/standards.yaml"
+  - "agents/governance/standards/agent.py"
+
+primary_files:
+  - "config/rules/standards.yaml"
+  - "agents/governance/standards/agent.py"
+
+secondary_files:
+  - "packages/schema/models.py"
+
+test_cases:
+  normal:
+    - "典型政策和业绩催化句能被正确分类。"
+  exception:
+    - "无法判断时返回 unknown。"

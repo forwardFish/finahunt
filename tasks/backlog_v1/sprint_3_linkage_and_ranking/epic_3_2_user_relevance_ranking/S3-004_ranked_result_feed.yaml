@@ -1,0 +1,45 @@
+task_id: "S3-004"
+task_name: "排序结果流"
+sprint: "Sprint 3 关联关系与用户排序"
+epic: "Epic 3.2 User Relevance Ranking"
+story_id: "S3-004"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "生成可直接给页面消费的排序结果流。"
+business_value: "为今日重点页和观察池页提供直接输入。"
+
+entry_criteria:
+  - "S3-003 已完成。"
+
+acceptance_criteria:
+  - "结果流按 relevance_score 排序。"
+  - "每条结果都带主题、催化、证据、关联标的摘要。"
+  - "结果流可以被三个页面直接复用。"
+
+constraints:
+  - "不做最终前端页面。"
+
+out_of_scope:
+  - "不做日终复盘。"
+
+dependencies:
+  - "S3-003"
+
+related_files:
+  - "packages/schema/state.py"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "packages/schema/state.py"
+  - "packages/schema/models.py"
+
+secondary_files:
+  - "docs/02_MVP/mvp功能.md"
+
+test_cases:
+  normal:
+    - "可输出稳定排序的结果流。"
+  exception:
+    - "缺少排序字段时结果流生成失败并提示原因。"

@@ -9,6 +9,8 @@ class GraphMetadata(TypedDict, total=False):
     updated_at: str
     last_agent: str
     last_stage: str
+    source_registry_version: str
+    final_gate_decision: str
 
 
 class GraphState(TypedDict, total=False):
@@ -27,3 +29,11 @@ class GraphState(TypedDict, total=False):
     metadata: GraphMetadata
     context: dict[str, Any]
     results: dict[str, Any]
+    source_registry_snapshot: dict[str, Any]
+    raw_documents: list[dict[str, Any]]
+    allowed_documents: list[dict[str, Any]]
+    blocked_documents: list[dict[str, Any]]
+    normalized_documents: list[dict[str, Any]]
+    runtime_trace_matrix: list[dict[str, Any]]
+    manual_corrections: list[dict[str, Any]]
+    final_gate_artifacts: list[dict[str, Any]]

@@ -1,0 +1,44 @@
+task_id: "S4-001"
+task_name: "今日重点输出"
+sprint: "Sprint 4 输出、复盘与研究闭环"
+epic: "Epic 4.1 User Output Views"
+story_id: "S4-001"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "用排序结果流生成今日重点输出。"
+business_value: "让用户 3 分钟内知道今天最值得看的主题。"
+
+entry_criteria:
+  - "S3-004 已完成。"
+
+acceptance_criteria:
+  - "今日重点输出包含主题名称、催化摘要、证据和关联标的。"
+  - "结果按用户相关度排序。"
+  - "每条输出都带来源。"
+
+constraints:
+  - "不做复杂页面实现。"
+
+out_of_scope:
+  - "不做通知。"
+
+dependencies:
+  - "S3-004"
+
+related_files:
+  - "docs/02_MVP/mvp功能.md"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "packages/schema/models.py"
+
+secondary_files:
+  - "docs/02_MVP/mvp功能.md"
+
+test_cases:
+  normal:
+    - "可输出今日重点列表。"
+  exception:
+    - "缺少来源的结果不会进入今日重点。"
