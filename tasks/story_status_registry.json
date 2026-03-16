@@ -204,6 +204,7 @@
       "repository": "finahunt",
       "verified_at": "2026-03-16T23:40:00+08:00",
       "validation_summary": "Catalyst candidate extraction is now represented by theme candidate aggregation inputs built from canonical events and linkage evidence.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-001_story_delivery_report.md",
       "evidence": [
         "agents/runtime/theme_candidate_aggregation/agent.py aggregates supporting_signals from linked_events",
         "tests/integration/test_event_cognition_runtime.py validates theme candidate generation from live-like inputs"
@@ -217,6 +218,7 @@
       "repository": "finahunt",
       "verified_at": "2026-03-16T23:40:00+08:00",
       "validation_summary": "Catalyst typing remains explicit and continues to feed the downstream theme candidate and fermentation pipeline.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-002_story_delivery_report.md",
       "evidence": [
         "agents/runtime/catalyst_classification/agent.py emits catalyst_type and catalyst_strength",
         "skills/event/fermentation.py consumes catalyst_type in structured result synthesis"
@@ -230,6 +232,7 @@
       "repository": "finahunt",
       "verified_at": "2026-03-16T23:40:00+08:00",
       "validation_summary": "Catalyst strength and timeliness are now folded into structured cards and theme heat scoring.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-003_story_delivery_report.md",
       "evidence": [
         "skills/event/fermentation.py derives strength_level and timeliness_level",
         "agents/runtime/theme_heat_snapshot/agent.py emits theme_heat_snapshots with score breakdown"
@@ -243,6 +246,7 @@
       "repository": "finahunt",
       "verified_at": "2026-03-16T23:40:00+08:00",
       "validation_summary": "Multiple event signals are now aggregated into theme candidates with supporting evidence chains.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-004_story_delivery_report.md",
       "evidence": [
         "agents/runtime/theme_candidate_aggregation/agent.py emits theme_candidates",
         "theme_candidates retain supporting_signals, source_refs, evidence_refs, and linked_assets"
@@ -256,6 +260,7 @@
       "repository": "finahunt",
       "verified_at": "2026-03-16T23:40:00+08:00",
       "validation_summary": "Theme candidates retain objective linkage to stocks, sectors, and theme assets for downstream consumption.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-005_story_delivery_report.md",
       "evidence": [
         "agents/runtime/stock_linkage/agent.py injects theme, stock, and sector assets",
         "skills/event/fermentation.py carries linked_assets into cards and feeds"
@@ -269,6 +274,7 @@
       "repository": "finahunt",
       "verified_at": "2026-03-16T23:40:00+08:00",
       "validation_summary": "Structured catalyst result cards are now generated as stable intermediate outputs with evidence and risk notice.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-006_story_delivery_report.md",
       "evidence": [
         "agents/runtime/structured_result_cards/agent.py emits structured_result_cards",
         "structured cards include catalyst_summary, strength_level, timeliness_level, and risk_notice"
@@ -282,6 +288,7 @@
       "repository": "finahunt",
       "verified_at": "2026-03-16T23:40:00+08:00",
       "validation_summary": "Structured runtime outputs are now persisted into a real result warehouse under workspace/artifacts/runtime/{run_id}.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-007_story_delivery_report.md",
       "evidence": [
         "agents/runtime/result_warehouse/agent.py writes raw, normalized, canonical, theme_candidates, and structured_result_cards",
         "packages/artifacts/store.py maintains per-run manifest.json"
@@ -295,6 +302,7 @@
       "repository": "finahunt",
       "verified_at": "2026-03-16T23:40:00+08:00",
       "validation_summary": "Theme heat snapshots and fermentation scores are now generated with score breakdown and stage classification.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-008_story_delivery_report.md",
       "evidence": [
         "agents/runtime/theme_heat_snapshot/agent.py emits theme_heat_snapshots",
         "skills/event/fermentation.py computes velocity_score, acceleration_score, and theme_heat_score"
@@ -308,6 +316,7 @@
       "repository": "finahunt",
       "verified_at": "2026-03-16T23:40:00+08:00",
       "validation_summary": "A fermenting theme candidate feed is now produced as the direct output of the fermentation engine.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-009_story_delivery_report.md",
       "evidence": [
         "agents/runtime/fermenting_theme_feed/agent.py emits fermenting_theme_feed",
         "tools/run_live_event_cognition.py now prints fermenting_theme_feed together with daily review and artifact batch dir"
