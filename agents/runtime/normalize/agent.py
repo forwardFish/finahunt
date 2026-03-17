@@ -13,7 +13,8 @@ class NormalizeAgent(BaseAgent):
     stage = "normalize"
 
     def build_content(self, state: GraphState) -> dict:
-        allowed_documents = get_result(state, "compliance_guard").get("allowed_documents", [])
+        scouted_documents = get_result(state, "source_scout").get("scouted_documents", [])
+        allowed_documents = scouted_documents or get_result(state, "compliance_guard").get("allowed_documents", [])
         quality_policy = load_yaml("config/rules/compliance_rules.yaml").get("information_quality_policy", {})
 
         normalized_documents: list[dict] = []

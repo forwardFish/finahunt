@@ -77,6 +77,7 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
 
     runtime = result["results"]["source_runtime"]["content"]
     normalize = result["results"]["normalize"]["content"]
+    scout = result["results"]["source_scout"]["content"]
     extract = result["results"]["event_extract"]["content"]
     theme = result["results"]["theme_detection"]["content"]
     catalyst = result["results"]["catalyst_classification"]["content"]
@@ -93,11 +94,16 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     assert runtime["fetch_status_report"]["live_fetch"] is True
     assert len(runtime["raw_documents"]) == 3
     assert runtime["raw_content_storage"]["manifest"]["content_count"] == 3
+    assert len(scout["scouted_documents"]) == 3
+    assert any(item["metadata"]["source_priority"] == "P0" for item in scout["scouted_documents"])
     assert len(normalize["normalized_documents"]) == 3
     assert len(extract["candidate_events"]) == 3
     assert all(event["event_id"] for event in extract["candidate_events"])
     assert any(event["event_subject"] for event in extract["candidate_events"])
     assert any(event["related_industries"] for event in extract["candidate_events"])
+    assert any(event["source_priority"] in {"P0", "P1"} for event in extract["candidate_events"])
+    assert any(event["catalyst_boundary"] in {"stock", "theme"} for event in extract["candidate_events"])
+    assert any(event["continuity_hint"] in {"developing", "reignited", "one_off"} for event in extract["candidate_events"])
     assert any(event["theme_tags"] for event in theme["theme_enriched_events"])
     assert any(event["catalyst_type"] != "unknown" for event in catalyst["catalyst_events"])
     assert any(event["linked_assets"] for event in linkage["linked_events"])

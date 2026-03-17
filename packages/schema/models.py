@@ -69,6 +69,8 @@ class SourceRegistryEntry(BaseModel):
     legality_evidence: str
     access_profile: SourceAccessProfile
     risk_level: Literal["low", "medium", "high"] = "low"
+    discovery_priority: Literal["P0", "P1", "P2"] = "P1"
+    discovery_role: str = "general_signal"
 
 
 class EvidenceSnippet(BaseModel):
@@ -133,6 +135,9 @@ class EventObject(BaseModel):
     theme_tags: list[str] = Field(default_factory=list)
     catalyst_type: str = ""
     catalyst_strength: Literal["high", "medium", "low", "unknown"] = "unknown"
+    catalyst_boundary: Literal["stock", "theme", "industry", "market", "unknown"] = "unknown"
+    continuity_hint: Literal["developing", "reignited", "one_off", "unknown"] = "unknown"
+    source_priority: Literal["P0", "P1", "P2", "unknown"] = "unknown"
     linked_assets: list[dict[str, Any]] = Field(default_factory=list)
     relevance_score: float = 0.0
     relevance_reason: str = ""

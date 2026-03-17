@@ -9,6 +9,7 @@ from agents.runtime.normalize import NormalizeAgent
 from agents.runtime.relevance_ranking import RelevanceRankingAgent
 from agents.runtime.result_warehouse import ResultWarehouseAgent
 from agents.runtime.source_audit import SourceAuditAgent
+from agents.runtime.source_scout import SourceScoutAgent
 from agents.runtime.source_runtime import SourceRuntimeAgent
 from agents.runtime.stock_linkage import StockLinkageAgent
 from agents.runtime.structured_result_cards import StructuredResultCardsAgent
@@ -28,6 +29,7 @@ __all__ = [
     "ResultWarehouseAgent",
     "SourceAuditAgent",
     "SourceComplianceGuardAgent",
+    "SourceScoutAgent",
     "SourceRuntimeAgent",
     "StockLinkageAgent",
     "StructuredResultCardsAgent",

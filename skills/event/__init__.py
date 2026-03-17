@@ -18,6 +18,11 @@ from skills.event.fermentation import (
     build_structured_result_cards,
     build_theme_heat_snapshots,
 )
+from skills.event.intake import (
+    derive_catalyst_boundary,
+    derive_continuity_hint,
+    scout_early_catalyst_inputs,
+)
 
 __all__ = [
     "aggregate_theme_candidates",
@@ -29,11 +34,14 @@ __all__ = [
     "build_structured_result_cards",
     "build_theme_heat_snapshots",
     "classify_catalyst",
+    "derive_catalyst_boundary",
+    "derive_continuity_hint",
     "detect_event_type",
     "detect_themes",
     "extract_event_profile",
     "extract_symbol_candidates",
     "most_common_terms",
     "rank_events_for_user",
+    "scout_early_catalyst_inputs",
     "unify_events",
 ]

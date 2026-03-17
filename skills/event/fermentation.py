@@ -315,6 +315,7 @@ def build_low_position_opportunities(
         score = 0.0
         reasons: list[str] = []
         heat_score = float(snapshot.get("theme_heat_score", 0.0) or 0.0)
+        catalyst_score = float(snapshot.get("catalyst_score", 0.0) or 0.0)
         source_count = int(snapshot.get("source_count", 0) or 0)
         high_strength = int(snapshot.get("high_strength_catalyst_count", 0) or 0)
         linked_asset_count = int(snapshot.get("linked_asset_count", 0) or 0)
@@ -362,6 +363,9 @@ def build_low_position_opportunities(
         if continuity_score >= 55:
             score += 10
             reasons.append("theme has follow-up catalyst continuity")
+        elif continuity_score >= 50 and source_count == 1 and high_strength == 0:
+            score += 4
+            reasons.append("single-source clue still shows early continuity")
 
         if top_candidate_score >= 70:
             score += 14
@@ -369,6 +373,10 @@ def build_low_position_opportunities(
         elif top_candidate_score >= 60:
             score += 8
             reasons.append("candidate mapping is available")
+
+        if source_count == 1 and high_strength == 0 and catalyst_score >= 25 and top_candidate_score >= 70:
+            score += 8
+            reasons.append("single-source clue is still research-worthy because catalyst and purity align")
 
         if linked_asset_count >= 2:
             score += min(10, linked_asset_count * 3)

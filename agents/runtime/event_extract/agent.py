@@ -7,7 +7,12 @@ from agents.helpers import artifact_ref, get_result
 from packages.schema.models import EventObject, NormalizedNewsItem
 from packages.schema.state import GraphState
 from packages.utils import load_yaml
-from skills.event import extract_event_profile, extract_symbol_candidates
+from skills.event import (
+    derive_catalyst_boundary,
+    derive_continuity_hint,
+    extract_event_profile,
+    extract_symbol_candidates,
+)
 
 
 class EventExtractAgent(BaseAgent):
@@ -35,6 +40,19 @@ class EventExtractAgent(BaseAgent):
                 )
                 linked_assets = extract_symbol_candidates(merged_text, document.metadata)
                 event_id = f"evt-{hashlib.sha256(document.document_id.encode('utf-8')).hexdigest()[:12]}"
+                source_priority = str(document.metadata.get("source_priority", "unknown"))
+                catalyst_boundary = derive_catalyst_boundary(
+                    event_profile["related_themes"],
+                    event_profile["related_industries"],
+                    linked_assets,
+                    event_profile["impact_scope"],
+                )
+                continuity_hint = derive_continuity_hint(merged_text, event_profile["event_type"], source_priority)
+                status = "NEW"
+                if continuity_hint == "reignited":
+                    status = "REIGNITED"
+                elif continuity_hint == "developing" and catalyst_boundary in {"theme", "industry", "market"}:
+                    status = "RISING"
 
                 event = EventObject(
                     event_id=event_id,
@@ -43,7 +61,7 @@ class EventExtractAgent(BaseAgent):
                     event_type=event_profile["event_type"],
                     source_refs=[str(document.url)],
                     evidence_refs=[snippet.evidence_id for snippet in document.evidence_snippets],
-                    status="NEW",
+                    status=status,
                     risk_level="low",
                     event_time=document.published_at,
                     event_subject=event_profile["event_subject"],
@@ -57,11 +75,18 @@ class EventExtractAgent(BaseAgent):
                     impact_direction=event_profile["impact_direction"],
                     impact_scope=event_profile["impact_scope"],
                     theme_tags=event_profile["related_themes"],
+                    catalyst_boundary=catalyst_boundary,
+                    continuity_hint=continuity_hint,
+                    source_priority=source_priority if source_priority in {"P0", "P1", "P2"} else "unknown",
                     linked_assets=linked_assets,
                     metadata={
                         "document_id": document.document_id,
                         "source_id": document.source_id,
                         "quality_score": document.normalized_fields.get("quality_score", 0.0),
+                        "source_priority": source_priority,
+                        "catalyst_clue_score": document.metadata.get("catalyst_clue_score", 0.0),
+                        "catalyst_clue_types": document.metadata.get("catalyst_clue_types", []),
+                        "scout_reason": document.metadata.get("scout_reason", []),
                         "content_text": content_text,
                         "event_profile": event_profile,
                     },
@@ -73,5 +98,5 @@ class EventExtractAgent(BaseAgent):
         return {
             "candidate_events": extracted_events,
             "event_extraction_failures": failures,
-            "artifact_refs": [artifact_ref("runtime", "candidate_events.json")],
+            "artifact_refs": [artifact_ref("runtime", state["run_id"], "candidate_events.json")],
         }

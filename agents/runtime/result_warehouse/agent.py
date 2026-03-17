@@ -13,6 +13,7 @@ class ResultWarehouseAgent(BaseAgent):
     def build_content(self, state: GraphState) -> dict:
         artifacts = {
             "raw_documents.json": get_result(state, "source_runtime").get("raw_documents", []),
+            "source_scout_candidates.json": get_result(state, "source_scout").get("scouted_documents", []),
             "normalized_documents.json": get_result(state, "normalize").get("normalized_documents", []),
             "canonical_events.json": get_result(state, "event_unify").get("canonical_events", []),
             "theme_candidates.json": get_result(state, "theme_candidate_aggregation").get("theme_candidates", []),

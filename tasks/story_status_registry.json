@@ -377,6 +377,36 @@
         "skills/event/fermentation.py composes research-card fields for low-position opportunities and daily review",
         "tests/integration/test_event_cognition_runtime.py validates daily_review low_position_candidates and research-only notice"
       ]
+    },
+    {
+      "story_id": "S2A-001",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-17T18:23:22+08:00",
+      "validation_summary": "A dedicated Source Scout stage now prioritizes early-catalyst documents, tags source priority and discovery role, and hands clean scout outputs into the runtime pipeline.",
+      "delivery_report": "docs/05_交付/sprint_2a_低位题材挖掘引擎/S2A-001_story_delivery_report.md",
+      "evidence": [
+        "agents/runtime/source_scout/agent.py emits scouted_documents, dropped_documents, and source_priority_summary",
+        "skills/event/intake.py scores early-catalyst clues and enriches documents with source_priority, discovery_role, and scout_reason",
+        "tests/unit/test_source_scout.py validates source-priority ordering and catalyst-boundary helpers"
+      ]
+    },
+    {
+      "story_id": "S2A-002",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-17T18:23:22+08:00",
+      "validation_summary": "Event extraction now preserves early-theme research fields including catalyst boundary, continuity hint, and source priority for downstream clustering and low-position scoring.",
+      "delivery_report": "docs/05_交付/sprint_2a_低位题材挖掘引擎/S2A-002_story_delivery_report.md",
+      "evidence": [
+        "agents/runtime/event_extract/agent.py writes catalyst_boundary, continuity_hint, and source_priority into candidate_events",
+        "packages/schema/models.py extends EventObject with early-theme research fields",
+        "tests/integration/test_event_cognition_runtime.py and tests/integration/test_runtime_foundation.py validate the enriched event outputs"
+      ]
     }
   ]
 }

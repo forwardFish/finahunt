@@ -12,6 +12,7 @@ from agents.runtime import (
     ResultWarehouseAgent,
     SourceAuditAgent,
     SourceComplianceGuardAgent,
+    SourceScoutAgent,
     SourceRuntimeAgent,
     StockLinkageAgent,
     StructuredResultCardsAgent,
@@ -28,6 +29,7 @@ def build_runtime_graph():
     graph = StateGraph(GraphState)
     graph.add_node("source_runtime", SourceRuntimeAgent())
     graph.add_node("compliance_guard", SourceComplianceGuardAgent())
+    graph.add_node("source_scout", SourceScoutAgent())
     graph.add_node("normalize", NormalizeAgent())
     graph.add_node("event_extract", EventExtractAgent())
     graph.add_node("event_unify", EventUnifyAgent())
@@ -46,7 +48,8 @@ def build_runtime_graph():
 
     graph.add_edge(START, "source_runtime")
     graph.add_edge("source_runtime", "compliance_guard")
-    graph.add_edge("compliance_guard", "normalize")
+    graph.add_edge("compliance_guard", "source_scout")
+    graph.add_edge("source_scout", "normalize")
     graph.add_edge("normalize", "event_extract")
     graph.add_edge("event_extract", "event_unify")
     graph.add_edge("event_unify", "theme_detection")

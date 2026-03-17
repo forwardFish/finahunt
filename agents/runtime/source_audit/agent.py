@@ -15,6 +15,7 @@ class SourceAuditAgent(BaseAgent):
         gates = load_yaml("config/spec/gate_registry.yaml")
         source_runtime = get_result(state, "source_runtime")
         compliance_guard = get_result(state, "compliance_guard")
+        source_scout = get_result(state, "source_scout")
         normalize = get_result(state, "normalize")
         event_extract = get_result(state, "event_extract")
         event_unify = get_result(state, "event_unify")
@@ -33,6 +34,7 @@ class SourceAuditAgent(BaseAgent):
             "stages": [
                 "source_runtime",
                 "compliance_guard",
+                "source_scout",
                 "normalize",
                 "event_extract",
                 "event_unify",
@@ -51,6 +53,7 @@ class SourceAuditAgent(BaseAgent):
             ],
             "documents_seen": len(source_runtime.get("raw_documents", [])),
             "documents_allowed": len(compliance_guard.get("allowed_documents", [])),
+            "documents_scouted": len(source_scout.get("scouted_documents", [])),
             "documents_normalized": len(normalize.get("normalized_documents", [])),
             "events_extracted": len(event_extract.get("candidate_events", [])),
             "events_canonical": len(event_unify.get("canonical_events", [])),
