@@ -4,6 +4,7 @@ from agents.runtime.compliance_guard import SourceComplianceGuardAgent
 from agents.runtime.daily_review import DailyReviewAgent
 from agents.runtime.event_extract import EventExtractAgent
 from agents.runtime.event_unify import EventUnifyAgent
+from agents.runtime.fermentation_monitor import FermentationMonitorAgent
 from agents.runtime.fermenting_theme_feed import FermentingThemeFeedAgent
 from agents.runtime.low_position_discovery import LowPositionDiscoveryAgent
 from agents.runtime.normalize import NormalizeAgent
@@ -26,6 +27,7 @@ __all__ = [
     "DailyReviewAgent",
     "EventExtractAgent",
     "EventUnifyAgent",
+    "FermentationMonitorAgent",
     "FermentingThemeFeedAgent",
     "LowPositionDiscoveryAgent",
     "NormalizeAgent",

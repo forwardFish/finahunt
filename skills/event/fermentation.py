@@ -4,6 +4,7 @@ import hashlib
 from collections import Counter
 from datetime import UTC, datetime
 from typing import Any
+from urllib.parse import urlparse
 
 from skills.event.engine import most_common_terms
 
@@ -201,6 +202,68 @@ def build_structured_result_cards(theme_candidates: list[dict[str, Any]]) -> lis
     return cards
 
 
+def build_fermentation_monitors(theme_candidates: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    monitors: list[dict[str, Any]] = []
+    now = datetime.now(UTC)
+
+    for candidate in theme_candidates:
+        signals = candidate.get("supporting_signals", [])
+        signal_times = [_parse_dt(signal.get("event_time", "")) for signal in signals]
+        recent_1h = sum(1 for dt in signal_times if dt and (now - dt).total_seconds() <= 1 * 3600)
+        recent_4h = sum(1 for dt in signal_times if dt and (now - dt).total_seconds() <= 4 * 3600)
+        recent_24h = sum(1 for dt in signal_times if dt and (now - dt).total_seconds() <= 24 * 3600)
+        source_count = int(candidate.get("source_count", 0) or 0)
+        high_strength = int(candidate.get("high_strength_catalyst_count", 0) or 0)
+        linked_asset_count = int(candidate.get("linked_asset_count", 0) or 0)
+        domains = _extract_source_domains(candidate, signals)
+        narrative_coherence_score = _calculate_narrative_coherence(candidate)
+        leader_trigger_score = _calculate_leader_trigger(candidate)
+        refire_intensity_score = _calculate_refire_intensity(candidate)
+        mention_heat_score = min(
+            100.0,
+            float(candidate.get("heat_score", 0.0) or 0.0) * 0.42 + recent_1h * 22 + recent_4h * 12 + recent_24h * 5,
+        )
+        platform_spread_score = min(100.0, len(domains) * 22 + source_count * 12)
+        fermentation_score = round(
+            mention_heat_score * 0.26
+            + platform_spread_score * 0.18
+            + narrative_coherence_score * 0.18
+            + leader_trigger_score * 0.18
+            + refire_intensity_score * 0.20,
+            2,
+        )
+
+        monitors.append(
+            {
+                **candidate,
+                "recent_signal_window": {
+                    "last_1h": recent_1h,
+                    "last_4h": recent_4h,
+                    "last_24h": recent_24h,
+                },
+                "mention_heat_score": round(mention_heat_score, 2),
+                "platform_spread_score": round(platform_spread_score, 2),
+                "narrative_coherence_score": round(narrative_coherence_score, 2),
+                "leader_trigger_score": round(leader_trigger_score, 2),
+                "refire_intensity_score": round(refire_intensity_score, 2),
+                "platform_domains": domains,
+                "platform_source_count": len(domains),
+                "fermentation_score": fermentation_score,
+                "fermentation_phase": _classify_fermentation_phase(
+                    mention_heat_score,
+                    platform_spread_score,
+                    fermentation_score,
+                    candidate.get("cluster_noise_level", "medium"),
+                ),
+                "reignition_detected": candidate.get("cluster_state") == "reignited_theme" or refire_intensity_score >= 65,
+                "high_strength_catalyst_count": high_strength,
+                "linked_asset_count": linked_asset_count,
+            }
+        )
+
+    return sorted(monitors, key=lambda item: item["fermentation_score"], reverse=True)
+
+
 def build_theme_heat_snapshots(theme_candidates: list[dict[str, Any]]) -> list[dict[str, Any]]:
     snapshots: list[dict[str, Any]] = []
     now = datetime.now(UTC)
@@ -208,18 +271,28 @@ def build_theme_heat_snapshots(theme_candidates: list[dict[str, Any]]) -> list[d
     for candidate in theme_candidates:
         signals = candidate.get("supporting_signals", [])
         signal_times = [_parse_dt(signal.get("event_time", "")) for signal in signals]
-        recent_6h = sum(1 for dt in signal_times if dt and (now - dt).total_seconds() <= 6 * 3600)
-        recent_24h = sum(1 for dt in signal_times if dt and (now - dt).total_seconds() <= 24 * 3600)
+        recent_6h = candidate.get("recent_signal_window", {}).get(
+            "last_4h",
+            sum(1 for dt in signal_times if dt and (now - dt).total_seconds() <= 6 * 3600),
+        )
+        recent_24h = candidate.get("recent_signal_window", {}).get(
+            "last_24h",
+            sum(1 for dt in signal_times if dt and (now - dt).total_seconds() <= 24 * 3600),
+        )
         source_count = candidate.get("source_count", 0)
         high_strength = candidate.get("high_strength_catalyst_count", 0)
         linked_asset_count = candidate.get("linked_asset_count", 0)
 
-        velocity_score = min(100.0, candidate.get("heat_score", 0.0) * 0.55 + recent_6h * 10 + recent_24h * 5)
+        velocity_score = candidate.get("mention_heat_score")
+        if velocity_score is None:
+            velocity_score = min(100.0, candidate.get("heat_score", 0.0) * 0.55 + recent_6h * 10 + recent_24h * 5)
         acceleration_raw = recent_6h - max(recent_24h - recent_6h, 0)
         acceleration_score = max(0.0, min(100.0, 35 + acceleration_raw * 18 + high_strength * 10))
-        breadth_score = min(100.0, linked_asset_count * 12 + source_count * 10)
+        breadth_score = candidate.get("platform_spread_score")
+        if breadth_score is None:
+            breadth_score = min(100.0, linked_asset_count * 12 + source_count * 10)
         theme_heat_score = round(
-            velocity_score * 0.45 + acceleration_score * 0.25 + breadth_score * 0.15 + candidate.get("fermentation_score", 0.0) * 0.15,
+            float(velocity_score) * 0.45 + acceleration_score * 0.20 + float(breadth_score) * 0.20 + candidate.get("fermentation_score", 0.0) * 0.15,
             2,
         )
 
@@ -233,8 +306,13 @@ def build_theme_heat_snapshots(theme_candidates: list[dict[str, Any]]) -> list[d
                 "source_count": source_count,
                 "high_strength_catalyst_count": high_strength,
                 "linked_asset_count": linked_asset_count,
-                "velocity_score": round(velocity_score, 2),
+                "velocity_score": round(float(velocity_score), 2),
                 "acceleration_score": round(acceleration_score, 2),
+                "mention_heat_score": round(float(candidate.get("mention_heat_score", velocity_score)), 2),
+                "platform_spread_score": round(float(candidate.get("platform_spread_score", breadth_score)), 2),
+                "narrative_coherence_score": round(float(candidate.get("narrative_coherence_score", 0.0) or 0.0), 2),
+                "leader_trigger_score": round(float(candidate.get("leader_trigger_score", 0.0) or 0.0), 2),
+                "refire_intensity_score": round(float(candidate.get("refire_intensity_score", 0.0) or 0.0), 2),
                 "theme_heat_score": theme_heat_score,
                 "heat_score": candidate.get("heat_score", 0.0),
                 "catalyst_score": candidate.get("catalyst_score", 0.0),
@@ -242,6 +320,17 @@ def build_theme_heat_snapshots(theme_candidates: list[dict[str, Any]]) -> list[d
                 "fermentation_score": candidate.get("fermentation_score", 0.0),
                 "cluster_state": candidate.get("cluster_state", "new_theme"),
                 "cluster_noise_level": candidate.get("cluster_noise_level", "medium"),
+                "fermentation_phase": candidate.get(
+                    "fermentation_phase",
+                    _classify_fermentation_phase(
+                        float(candidate.get("mention_heat_score", velocity_score)),
+                        float(candidate.get("platform_spread_score", breadth_score)),
+                        float(candidate.get("fermentation_score", 0.0) or 0.0),
+                        candidate.get("cluster_noise_level", "medium"),
+                    ),
+                ),
+                "platform_domains": candidate.get("platform_domains", []),
+                "reignition_detected": bool(candidate.get("reignition_detected", False)),
                 "fermentation_stage": _classify_fermentation_stage(
                     theme_heat_score,
                     source_count,
@@ -281,6 +370,7 @@ def build_fermenting_theme_feed(
             "theme_candidate_id": snapshot["theme_candidate_id"],
             "theme_heat_score": snapshot["theme_heat_score"],
             "fermentation_stage": snapshot["fermentation_stage"],
+            "fermentation_phase": snapshot.get("fermentation_phase", "early"),
             "watch_only": watch_only,
             "core_narrative": card.get("core_narrative", ""),
             "catalyst_summary": card["catalyst_summary"],
@@ -572,6 +662,21 @@ def _classify_fermentation_stage(
     return "watch-only"
 
 
+def _classify_fermentation_phase(
+    mention_heat_score: float,
+    platform_spread_score: float,
+    fermentation_score: float,
+    cluster_noise_level: str,
+) -> str:
+    if cluster_noise_level == "high" and fermentation_score < 55:
+        return "early"
+    if mention_heat_score >= 78 and platform_spread_score >= 58:
+        return "crowded"
+    if fermentation_score >= 58 or platform_spread_score >= 42:
+        return "spreading"
+    return "early"
+
+
 def _calculate_heat_score(
     signal_count: int,
     source_count: int,
@@ -614,6 +719,61 @@ def _calculate_continuity_score(
         else:
             span_bonus = 6.0
     return round(min(100.0, 20 + signal_count * 8 + source_count * 10 + event_type_count * 7 + span_bonus), 2)
+
+
+def _extract_source_domains(candidate: dict[str, Any], signals: list[dict[str, Any]]) -> list[str]:
+    refs = list(candidate.get("source_refs", []))
+    for signal in signals:
+        refs.extend(signal.get("source_refs", []))
+    domains: list[str] = []
+    for ref in refs:
+        parsed = urlparse(str(ref or ""))
+        domain = parsed.netloc.lower()
+        if domain:
+            domains.append(domain)
+    return list(dict.fromkeys(domains))
+
+
+def _calculate_narrative_coherence(candidate: dict[str, Any]) -> float:
+    anchor_terms = candidate.get("anchor_terms", []) or []
+    cluster_noise_level = candidate.get("cluster_noise_level", "medium")
+    base = 42.0 + min(len(anchor_terms) * 8, 26)
+    if cluster_noise_level == "low":
+        base += 16
+    elif cluster_noise_level == "medium":
+        base += 8
+    else:
+        base -= 6
+    if candidate.get("cluster_state") == "reignited_theme":
+        base += 6
+    return max(0.0, min(100.0, base))
+
+
+def _calculate_leader_trigger(candidate: dict[str, Any]) -> float:
+    top_candidate = (candidate.get("candidate_stocks") or [{}])[0]
+    if not top_candidate:
+        return 18.0
+    score = 24.0
+    score += min(float(top_candidate.get("candidate_purity_score", 0.0) or 0.0) * 0.45, 38.0)
+    if top_candidate.get("judge_status") == "accepted":
+        score += 12
+    elif top_candidate.get("judge_status") == "watch":
+        score += 6
+    if top_candidate.get("mapping_level") == "core_beneficiary":
+        score += 10
+    elif top_candidate.get("mapping_level") == "direct_link":
+        score += 6
+    return max(0.0, min(100.0, score))
+
+
+def _calculate_refire_intensity(candidate: dict[str, Any]) -> float:
+    if candidate.get("cluster_state") == "reignited_theme":
+        return 78.0
+    continuity = float(candidate.get("continuity_score", 0.0) or 0.0)
+    source_count = int(candidate.get("source_count", 0) or 0)
+    signal_count = int(candidate.get("signal_count", 0) or 0)
+    score = 18.0 + continuity * 0.42 + source_count * 4 + signal_count * 2
+    return max(0.0, min(100.0, score))
 
 
 def _strength_rank(value: str) -> int:

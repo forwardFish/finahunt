@@ -20,6 +20,7 @@ class ResultWarehouseAgent(BaseAgent):
             "theme_candidate_mappings.json": get_result(state, "candidate_mapper").get("mapped_theme_clusters", []),
             "theme_purity_candidates.json": get_result(state, "purity_judge").get("judged_theme_clusters", []),
             "theme_candidates.json": get_result(state, "theme_candidate_aggregation").get("theme_candidates", []),
+            "fermentation_monitor.json": get_result(state, "fermentation_monitor").get("monitored_themes", []),
             "structured_result_cards.json": get_result(state, "structured_result_cards").get("structured_result_cards", []),
             "theme_heat_snapshots.json": get_result(state, "theme_heat_snapshot").get("theme_heat_snapshots", []),
             "low_position_opportunities.json": get_result(state, "low_position_discovery").get("low_position_opportunities", []),

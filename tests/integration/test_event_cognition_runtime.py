@@ -86,6 +86,7 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     candidate_mapper = result["results"]["candidate_mapper"]["content"]
     purity_judge = result["results"]["purity_judge"]["content"]
     theme_candidates = result["results"]["theme_candidate_aggregation"]["content"]
+    fermentation_monitor = result["results"]["fermentation_monitor"]["content"]
     result_cards = result["results"]["structured_result_cards"]["content"]
     theme_heat = result["results"]["theme_heat_snapshot"]["content"]
     low_position = result["results"]["low_position_discovery"]["content"]
@@ -130,6 +131,7 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
         for candidate in item.get("candidate_pool", [])
     )
     assert any(item["theme_name"] for item in theme_candidates["theme_candidates"])
+    assert any(item["fermentation_phase"] in {"early", "spreading", "crowded"} for item in fermentation_monitor["monitored_themes"])
     assert any(item["cluster_id"] for item in theme_candidates["theme_candidates"])
     assert any(item["candidate_stocks"] for item in theme_candidates["theme_candidates"])
     assert any(item["theme_name"] for item in result_cards["structured_result_cards"])
@@ -139,6 +141,7 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     assert any(item["low_position_score"] >= 35 for item in low_position["low_position_opportunities"])
     assert any(item["candidate_stocks"] for item in low_position["low_position_opportunities"])
     assert any(item["theme_name"] for item in feed["fermenting_theme_feed"])
+    assert any(item["fermentation_phase"] in {"early", "spreading", "crowded"} for item in feed["fermenting_theme_feed"])
     assert ranking["ranked_events"][0]["relevance_score"] >= ranking["ranked_events"][-1]["relevance_score"]
     assert review["today_focus_page"]
     assert review["low_position_candidates"]

@@ -452,6 +452,21 @@
         "agents/runtime/purity_judge/agent.py persists theme_purity_candidates.json and exposes judged_theme_clusters",
         "tests/unit/test_purity_judge.py validates hard risk filtering and final purity-score ranking"
       ]
+    },
+    {
+      "story_id": "S2A-006",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-17T20:12:18+08:00",
+      "validation_summary": "A dedicated Fermentation Monitor stage now tracks narrative diffusion, platform spread, leader-trigger cues, and reignition intensity before theme heat and low-position ranking are produced.",
+      "delivery_report": "docs/05_交付/sprint_2a_低位题材挖掘引擎/S2A-006_story_delivery_report.md",
+      "evidence": [
+        "skills/event/fermentation.py computes mention heat, platform spread, narrative coherence, leader-trigger, refire intensity, and fermentation phase for each monitored theme",
+        "agents/runtime/fermentation_monitor/agent.py persists fermentation_monitor.json and exposes monitored_themes to downstream stages",
+        "tests/unit/test_fermentation_monitor.py and integration runtime tests validate phase classification, reignition detection, and artifact persistence"
+      ]
     }
   ]
 }

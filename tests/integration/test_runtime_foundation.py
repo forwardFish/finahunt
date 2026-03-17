@@ -15,6 +15,7 @@ def test_runtime_cycle_produces_structured_outputs():
     candidate_mapper = result["results"]["candidate_mapper"]["content"]
     purity_judge = result["results"]["purity_judge"]["content"]
     theme_candidates = result["results"]["theme_candidate_aggregation"]["content"]
+    fermentation_monitor = result["results"]["fermentation_monitor"]["content"]
     result_cards = result["results"]["structured_result_cards"]["content"]
     theme_heat = result["results"]["theme_heat_snapshot"]["content"]
     low_position = result["results"]["low_position_discovery"]["content"]
@@ -40,6 +41,8 @@ def test_runtime_cycle_produces_structured_outputs():
     assert len(purity_judge["judged_theme_clusters"]) >= 1
     assert purity_judge["judge_summary"]["accepted_candidate_count"] >= 0
     assert len(theme_candidates["theme_candidates"]) >= 1
+    assert len(fermentation_monitor["monitored_themes"]) >= 1
+    assert any(item["fermentation_phase"] in {"early", "spreading", "crowded"} for item in fermentation_monitor["monitored_themes"])
     assert any(item["cluster_id"] for item in theme_candidates["theme_candidates"])
     assert any(item["candidate_stocks"] for item in theme_candidates["theme_candidates"])
     assert len(result_cards["structured_result_cards"]) >= 1
@@ -54,6 +57,7 @@ def test_runtime_cycle_produces_structured_outputs():
     assert audit["trace_report"]["theme_clusters"] == len(theme_cluster["theme_clusters"])
     assert audit["trace_report"]["candidate_mappings"] >= 0
     assert audit["trace_report"]["purity_candidates"] >= 0
+    assert audit["trace_report"]["fermentation_monitors"] == len(fermentation_monitor["monitored_themes"])
     assert audit["trace_report"]["fermenting_theme_count"] == len(theme_feed["fermenting_theme_feed"])
     assert audit["trace_report"]["low_position_count"] == len(low_position["low_position_opportunities"])
     assert warehouse["artifact_batch_dir"]
@@ -68,6 +72,7 @@ def test_runtime_cycle_produces_structured_outputs():
     assert (batch_dir / "theme_candidate_mappings.json").exists()
     assert (batch_dir / "theme_purity_candidates.json").exists()
     assert (batch_dir / "theme_candidates.json").exists()
+    assert (batch_dir / "fermentation_monitor.json").exists()
     assert (batch_dir / "structured_result_cards.json").exists()
     assert (batch_dir / "theme_heat_snapshots.json").exists()
     assert (batch_dir / "low_position_opportunities.json").exists()

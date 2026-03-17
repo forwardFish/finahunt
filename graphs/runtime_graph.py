@@ -6,6 +6,7 @@ from agents.runtime import (
     DailyReviewAgent,
     EventExtractAgent,
     EventUnifyAgent,
+    FermentationMonitorAgent,
     FermentingThemeFeedAgent,
     LowPositionDiscoveryAgent,
     NormalizeAgent,
@@ -43,6 +44,7 @@ def build_runtime_graph():
     graph.add_node("candidate_mapper", CandidateMapperAgent())
     graph.add_node("purity_judge", PurityJudgeAgent())
     graph.add_node("theme_candidate_aggregation", ThemeCandidateAggregationAgent())
+    graph.add_node("fermentation_monitor", FermentationMonitorAgent())
     graph.add_node("structured_result_cards", StructuredResultCardsAgent())
     graph.add_node("theme_heat_snapshot", ThemeHeatSnapshotAgent())
     graph.add_node("low_position_discovery", LowPositionDiscoveryAgent())
@@ -66,7 +68,8 @@ def build_runtime_graph():
     graph.add_edge("candidate_mapper", "purity_judge")
     graph.add_edge("purity_judge", "theme_candidate_aggregation")
     graph.add_edge("theme_candidate_aggregation", "structured_result_cards")
-    graph.add_edge("structured_result_cards", "theme_heat_snapshot")
+    graph.add_edge("structured_result_cards", "fermentation_monitor")
+    graph.add_edge("fermentation_monitor", "theme_heat_snapshot")
     graph.add_edge("theme_heat_snapshot", "low_position_discovery")
     graph.add_edge("low_position_discovery", "fermenting_theme_feed")
     graph.add_edge("fermenting_theme_feed", "relevance_ranking")

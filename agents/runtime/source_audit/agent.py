@@ -23,6 +23,7 @@ class SourceAuditAgent(BaseAgent):
         candidate_mapper = get_result(state, "candidate_mapper")
         purity_judge = get_result(state, "purity_judge")
         theme_candidate_aggregation = get_result(state, "theme_candidate_aggregation")
+        fermentation_monitor = get_result(state, "fermentation_monitor")
         structured_result_cards = get_result(state, "structured_result_cards")
         result_warehouse = get_result(state, "result_warehouse")
         theme_heat_snapshot = get_result(state, "theme_heat_snapshot")
@@ -48,6 +49,7 @@ class SourceAuditAgent(BaseAgent):
                 "candidate_mapper",
                 "purity_judge",
                 "theme_candidate_aggregation",
+                "fermentation_monitor",
                 "structured_result_cards",
                 "theme_heat_snapshot",
                 "low_position_discovery",
@@ -71,6 +73,7 @@ class SourceAuditAgent(BaseAgent):
                 len(item.get("candidate_pool", [])) for item in purity_judge.get("judged_theme_clusters", [])
             ),
             "theme_candidates": len(theme_candidate_aggregation.get("theme_candidates", [])),
+            "fermentation_monitors": len(fermentation_monitor.get("monitored_themes", [])),
             "structured_cards": len(structured_result_cards.get("structured_result_cards", [])),
             "theme_heat_snapshots": len(theme_heat_snapshot.get("theme_heat_snapshots", [])),
             "low_position_count": len(low_position_discovery.get("low_position_opportunities", [])),

@@ -13,6 +13,7 @@ from skills.event.engine import (
 from skills.event.fermentation import (
     aggregate_theme_candidates,
     build_daily_review_from_theme_feed,
+    build_fermentation_monitors,
     build_fermenting_theme_feed,
     build_low_position_opportunities,
     build_structured_result_cards,
@@ -39,6 +40,7 @@ __all__ = [
     "judge_theme_candidate_pools",
     "build_daily_review",
     "build_daily_review_from_theme_feed",
+    "build_fermentation_monitors",
     "build_fermenting_theme_feed",
     "build_low_position_opportunities",
     "build_structured_result_cards",

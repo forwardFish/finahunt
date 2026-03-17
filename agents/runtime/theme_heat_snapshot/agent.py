@@ -12,8 +12,8 @@ class ThemeHeatSnapshotAgent(BaseAgent):
     stage = "theme_heat_snapshot"
 
     def build_content(self, state: GraphState) -> dict:
-        theme_candidates = get_result(state, "theme_candidate_aggregation").get("theme_candidates", [])
-        theme_heat_snapshots = build_theme_heat_snapshots(theme_candidates)
+        monitored_themes = get_result(state, "fermentation_monitor").get("monitored_themes", [])
+        theme_heat_snapshots = build_theme_heat_snapshots(monitored_themes)
         persist_runtime_json(
             state,
             stage=self.stage,
