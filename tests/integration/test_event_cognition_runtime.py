@@ -84,6 +84,7 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     linkage = result["results"]["stock_linkage"]["content"]
     theme_cluster = result["results"]["theme_cluster"]["content"]
     candidate_mapper = result["results"]["candidate_mapper"]["content"]
+    purity_judge = result["results"]["purity_judge"]["content"]
     theme_candidates = result["results"]["theme_candidate_aggregation"]["content"]
     result_cards = result["results"]["structured_result_cards"]["content"]
     theme_heat = result["results"]["theme_heat_snapshot"]["content"]
@@ -116,6 +117,16 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     assert any(
         candidate["mapping_level"] in {"core_beneficiary", "direct_link", "supply_chain_link", "peripheral_watch"}
         for item in candidate_mapper["mapped_theme_clusters"]
+        for candidate in item.get("candidate_pool", [])
+    )
+    assert any(
+        candidate["judge_status"] in {"accepted", "watch"}
+        for item in purity_judge["judged_theme_clusters"]
+        for candidate in item.get("candidate_pool", [])
+    )
+    assert any(
+        "judge_breakdown" in candidate
+        for item in purity_judge["judged_theme_clusters"]
         for candidate in item.get("candidate_pool", [])
     )
     assert any(item["theme_name"] for item in theme_candidates["theme_candidates"])

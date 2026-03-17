@@ -129,3 +129,24 @@ standard_update_log:
 standard_violation_rules:
   - "log as governance issue"
   - "block production release if compliance-critical"
+
+purity_judge_rules:
+  hard_filter_risk_flags:
+    - "*ST"
+    - "ST"
+    - "退市"
+  penalty_risk_flags:
+    减持: 12
+    审计: 12
+    问询: 10
+    诉讼: 10
+    亏损: 8
+  mapping_level_bonus:
+    core_beneficiary: 10
+    direct_link: 6
+    supply_chain_link: 2
+    peripheral_watch: -2
+  min_accept_score: 60
+  min_watch_score: 52
+  direct_signal_bonus: 4
+  multi_source_bonus: 4

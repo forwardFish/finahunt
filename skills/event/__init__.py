@@ -28,6 +28,7 @@ from skills.event.theme_cluster import (
     build_theme_clusters,
 )
 from skills.event.candidate_mapper import map_theme_clusters_to_candidates
+from skills.event.purity_judge import judge_theme_candidate_pools
 
 __all__ = [
     "aggregate_theme_candidates",
@@ -35,6 +36,7 @@ __all__ = [
     "build_theme_candidates_from_clusters",
     "build_theme_clusters",
     "map_theme_clusters_to_candidates",
+    "judge_theme_candidate_pools",
     "build_daily_review",
     "build_daily_review_from_theme_feed",
     "build_fermenting_theme_feed",

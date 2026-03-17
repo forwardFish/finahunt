@@ -21,6 +21,7 @@ class SourceAuditAgent(BaseAgent):
         event_unify = get_result(state, "event_unify")
         theme_cluster = get_result(state, "theme_cluster")
         candidate_mapper = get_result(state, "candidate_mapper")
+        purity_judge = get_result(state, "purity_judge")
         theme_candidate_aggregation = get_result(state, "theme_candidate_aggregation")
         structured_result_cards = get_result(state, "structured_result_cards")
         result_warehouse = get_result(state, "result_warehouse")
@@ -45,6 +46,7 @@ class SourceAuditAgent(BaseAgent):
                 "stock_linkage",
                 "theme_cluster",
                 "candidate_mapper",
+                "purity_judge",
                 "theme_candidate_aggregation",
                 "structured_result_cards",
                 "theme_heat_snapshot",
@@ -64,6 +66,9 @@ class SourceAuditAgent(BaseAgent):
             "theme_clusters": len(theme_cluster.get("theme_clusters", [])),
             "candidate_mappings": sum(
                 len(item.get("candidate_pool", [])) for item in candidate_mapper.get("mapped_theme_clusters", [])
+            ),
+            "purity_candidates": sum(
+                len(item.get("candidate_pool", [])) for item in purity_judge.get("judged_theme_clusters", [])
             ),
             "theme_candidates": len(theme_candidate_aggregation.get("theme_candidates", [])),
             "structured_cards": len(structured_result_cards.get("structured_result_cards", [])),

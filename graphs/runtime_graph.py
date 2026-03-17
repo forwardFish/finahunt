@@ -9,6 +9,7 @@ from agents.runtime import (
     FermentingThemeFeedAgent,
     LowPositionDiscoveryAgent,
     NormalizeAgent,
+    PurityJudgeAgent,
     RelevanceRankingAgent,
     ResultWarehouseAgent,
     SourceAuditAgent,
@@ -40,6 +41,7 @@ def build_runtime_graph():
     graph.add_node("stock_linkage", StockLinkageAgent())
     graph.add_node("theme_cluster", ThemeClusterAgent())
     graph.add_node("candidate_mapper", CandidateMapperAgent())
+    graph.add_node("purity_judge", PurityJudgeAgent())
     graph.add_node("theme_candidate_aggregation", ThemeCandidateAggregationAgent())
     graph.add_node("structured_result_cards", StructuredResultCardsAgent())
     graph.add_node("theme_heat_snapshot", ThemeHeatSnapshotAgent())
@@ -61,7 +63,8 @@ def build_runtime_graph():
     graph.add_edge("catalyst_classification", "stock_linkage")
     graph.add_edge("stock_linkage", "theme_cluster")
     graph.add_edge("theme_cluster", "candidate_mapper")
-    graph.add_edge("candidate_mapper", "theme_candidate_aggregation")
+    graph.add_edge("candidate_mapper", "purity_judge")
+    graph.add_edge("purity_judge", "theme_candidate_aggregation")
     graph.add_edge("theme_candidate_aggregation", "structured_result_cards")
     graph.add_edge("structured_result_cards", "theme_heat_snapshot")
     graph.add_edge("theme_heat_snapshot", "low_position_discovery")
