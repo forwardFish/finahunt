@@ -90,6 +90,7 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     result_cards = result["results"]["structured_result_cards"]["content"]
     theme_heat = result["results"]["theme_heat_snapshot"]["content"]
     low_position = result["results"]["low_position_discovery"]["content"]
+    similar_case = result["results"]["similar_case"]["content"]
     feed = result["results"]["fermenting_theme_feed"]["content"]
     ranking = result["results"]["relevance_ranking"]["content"]
     review = result["results"]["daily_review"]["content"]
@@ -140,9 +141,11 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     assert any(item["theme_heat_score"] >= 0 for item in theme_heat["theme_heat_snapshots"])
     assert any(item["low_position_score"] >= 35 for item in low_position["low_position_opportunities"])
     assert any(item["candidate_stocks"] for item in low_position["low_position_opportunities"])
+    assert len(similar_case["similar_theme_cases"]) == len(low_position["low_position_opportunities"])
     assert any(item["theme_name"] for item in feed["fermenting_theme_feed"])
     assert any(item["fermentation_phase"] in {"early", "spreading", "crowded"} for item in feed["fermenting_theme_feed"])
     assert ranking["ranked_events"][0]["relevance_score"] >= ranking["ranked_events"][-1]["relevance_score"]
     assert review["today_focus_page"]
     assert review["low_position_candidates"]
+    assert review["low_position_research_cards"]
     assert "research" in review["daily_review_report"]["risk_notice"].lower()

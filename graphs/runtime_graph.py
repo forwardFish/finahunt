@@ -13,6 +13,7 @@ from agents.runtime import (
     PurityJudgeAgent,
     RelevanceRankingAgent,
     ResultWarehouseAgent,
+    SimilarCaseAgent,
     SourceAuditAgent,
     SourceComplianceGuardAgent,
     SourceScoutAgent,
@@ -48,6 +49,7 @@ def build_runtime_graph():
     graph.add_node("structured_result_cards", StructuredResultCardsAgent())
     graph.add_node("theme_heat_snapshot", ThemeHeatSnapshotAgent())
     graph.add_node("low_position_discovery", LowPositionDiscoveryAgent())
+    graph.add_node("similar_case", SimilarCaseAgent())
     graph.add_node("fermenting_theme_feed", FermentingThemeFeedAgent())
     graph.add_node("relevance_ranking", RelevanceRankingAgent())
     graph.add_node("daily_review", DailyReviewAgent())
@@ -71,7 +73,8 @@ def build_runtime_graph():
     graph.add_edge("structured_result_cards", "fermentation_monitor")
     graph.add_edge("fermentation_monitor", "theme_heat_snapshot")
     graph.add_edge("theme_heat_snapshot", "low_position_discovery")
-    graph.add_edge("low_position_discovery", "fermenting_theme_feed")
+    graph.add_edge("low_position_discovery", "similar_case")
+    graph.add_edge("similar_case", "fermenting_theme_feed")
     graph.add_edge("fermenting_theme_feed", "relevance_ranking")
     graph.add_edge("relevance_ranking", "daily_review")
     graph.add_edge("daily_review", "result_warehouse")

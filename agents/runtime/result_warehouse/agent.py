@@ -24,6 +24,7 @@ class ResultWarehouseAgent(BaseAgent):
             "structured_result_cards.json": get_result(state, "structured_result_cards").get("structured_result_cards", []),
             "theme_heat_snapshots.json": get_result(state, "theme_heat_snapshot").get("theme_heat_snapshots", []),
             "low_position_opportunities.json": get_result(state, "low_position_discovery").get("low_position_opportunities", []),
+            "similar_theme_cases.json": get_result(state, "similar_case").get("similar_theme_cases", []),
             "fermenting_theme_feed.json": get_result(state, "fermenting_theme_feed").get("fermenting_theme_feed", []),
             "relevance_ranking.json": get_result(state, "relevance_ranking").get("ranked_events", []),
             "daily_review.json": get_result(state, "daily_review"),

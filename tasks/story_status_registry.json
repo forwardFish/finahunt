@@ -467,6 +467,36 @@
         "agents/runtime/fermentation_monitor/agent.py persists fermentation_monitor.json and exposes monitored_themes to downstream stages",
         "tests/unit/test_fermentation_monitor.py and integration runtime tests validate phase classification, reignition detection, and artifact persistence"
       ]
+    },
+    {
+      "story_id": "S2A-007",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-17T23:35:00+08:00",
+      "validation_summary": "A dedicated Similar Case stage now mines prior runtime artifacts into explainable historical references, separates matched versus no-match outcomes, and distinguishes reignited logic from adjacent pattern references.",
+      "delivery_report": "docs/05_交付/sprint_2a_低位题材挖掘引擎/S2A-007_story_delivery_report.md",
+      "evidence": [
+        "skills/event/similar_case.py scans historical runtime artifacts and scores explainable similar-case matches without fabricating history",
+        "agents/runtime/similar_case/agent.py persists similar_theme_cases.json and exposes matched references to downstream review output",
+        "tests/unit/test_similar_case.py and integration runtime tests validate matched and no-match cases plus reignited-logic labeling"
+      ]
+    },
+    {
+      "story_id": "S2A-008",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-17T23:35:00+08:00",
+      "validation_summary": "Daily review output now emits low-position research cards that combine catalyst and purity context, fermentation path, similar cases, future watch signals, and explicit research-only positioning.",
+      "delivery_report": "docs/05_交付/sprint_2a_低位题材挖掘引擎/S2A-008_story_delivery_report.md",
+      "evidence": [
+        "agents/runtime/daily_review/agent.py adds low_position_research_cards and research-positioning language to daily_review.json",
+        "skills/event/similar_case.py builds research cards with similar cases, future watch signals, and visible risk flags",
+        "tests/integration/test_event_cognition_runtime.py validates runtime output now includes low_position_research_cards"
+      ]
     }
   ]
 }

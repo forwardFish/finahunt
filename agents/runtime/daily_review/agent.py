@@ -4,7 +4,11 @@ from agents.base import BaseAgent
 from agents.helpers import artifact_ref, get_result
 from packages.artifacts import persist_runtime_json
 from packages.schema.state import GraphState
-from skills.event import build_daily_review, build_daily_review_from_theme_feed
+from skills.event import (
+    build_daily_review,
+    build_daily_review_from_theme_feed,
+    build_low_position_research_cards,
+)
 
 
 class DailyReviewAgent(BaseAgent):
@@ -14,12 +18,21 @@ class DailyReviewAgent(BaseAgent):
     def build_content(self, state: GraphState) -> dict:
         theme_feed = get_result(state, "fermenting_theme_feed").get("fermenting_theme_feed", [])
         low_position_opportunities = get_result(state, "low_position_discovery").get("low_position_opportunities", [])
+        similar_theme_cases = get_result(state, "similar_case").get("similar_theme_cases", [])
         if theme_feed:
             review_payload = build_daily_review_from_theme_feed(theme_feed)
         else:
             ranked_events = get_result(state, "relevance_ranking").get("ranked_events", [])
             review_payload = build_daily_review(ranked_events)
+        low_position_research_cards = build_low_position_research_cards(low_position_opportunities, similar_theme_cases)
         review_payload["low_position_candidates"] = low_position_opportunities[:5]
+        review_payload["low_position_research_cards"] = low_position_research_cards[:10]
+        review_payload["similar_case_matches"] = sum(
+            1 for item in similar_theme_cases if item.get("matching_status") == "matched"
+        )
+        review_payload["daily_review_report"]["research_positioning"] = (
+            "Low-position research cards rank observation priority only and do not provide trading instructions."
+        )
         persist_runtime_json(
             state,
             stage=self.stage,

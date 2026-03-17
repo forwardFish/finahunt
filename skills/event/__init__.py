@@ -30,6 +30,10 @@ from skills.event.theme_cluster import (
 )
 from skills.event.candidate_mapper import map_theme_clusters_to_candidates
 from skills.event.purity_judge import judge_theme_candidate_pools
+from skills.event.similar_case import (
+    build_low_position_research_cards,
+    build_similar_theme_cases,
+)
 
 __all__ = [
     "aggregate_theme_candidates",
@@ -38,11 +42,13 @@ __all__ = [
     "build_theme_clusters",
     "map_theme_clusters_to_candidates",
     "judge_theme_candidate_pools",
+    "build_low_position_research_cards",
     "build_daily_review",
     "build_daily_review_from_theme_feed",
     "build_fermentation_monitors",
     "build_fermenting_theme_feed",
     "build_low_position_opportunities",
+    "build_similar_theme_cases",
     "build_structured_result_cards",
     "build_theme_heat_snapshots",
     "classify_catalyst",
