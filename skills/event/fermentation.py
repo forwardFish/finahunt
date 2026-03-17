@@ -467,11 +467,13 @@ def _build_candidate_stocks(candidate_stocks: dict[str, dict[str, Any]]) -> list
                 "stock_code": item["stock_code"],
                 "stock_name": item["stock_name"],
                 "candidate_purity_score": round(sum(item["scores"]) / max(len(item["scores"]), 1), 2),
+                "relation": _pick_relation(item.get("relations", [])),
                 "purity_breakdown": breakdown,
                 "mention_count": len(item["scores"]),
                 "direct_signal_count": item["direct_signal_count"],
                 "evidence": list(dict.fromkeys(item["evidence"]))[:6],
                 "risk_flags": sorted(item["risk_flags"]),
+                "source_refs": sorted(item.get("source_refs", [])),
                 "evidence_event_ids": sorted(event_id for event_id in item["event_ids"] if event_id),
             }
         )
@@ -490,6 +492,16 @@ def _average_breakdowns(items: list[dict[str, Any]]) -> dict[str, float]:
             totals[key] = totals.get(key, 0.0) + float(value or 0.0)
             counts[key] = counts.get(key, 0) + 1
     return {key: round(totals[key] / counts[key], 2) for key in totals}
+
+
+def _pick_relation(relations: list[str]) -> str:
+    if "direct" in relations:
+        return "direct"
+    if "weak" in relations:
+        return "weak"
+    if relations:
+        return relations[0]
+    return "weak"
 
 
 def _build_core_narrative(theme_name: str, signals: list[dict[str, Any]], narrative_terms: list[str]) -> str:

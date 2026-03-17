@@ -83,6 +83,7 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     catalyst = result["results"]["catalyst_classification"]["content"]
     linkage = result["results"]["stock_linkage"]["content"]
     theme_cluster = result["results"]["theme_cluster"]["content"]
+    candidate_mapper = result["results"]["candidate_mapper"]["content"]
     theme_candidates = result["results"]["theme_candidate_aggregation"]["content"]
     result_cards = result["results"]["structured_result_cards"]["content"]
     theme_heat = result["results"]["theme_heat_snapshot"]["content"]
@@ -111,6 +112,12 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     assert any(event["candidate_stock_links"] for event in linkage["linked_events"])
     assert any(item["theme_name"] for item in theme_cluster["theme_clusters"])
     assert any(item["cluster_state"] in {"new_theme", "reignited_theme", "single_signal_noise"} for item in theme_cluster["theme_clusters"])
+    assert any(item["mapping_summary"]["candidate_count"] >= 1 for item in candidate_mapper["mapped_theme_clusters"])
+    assert any(
+        candidate["mapping_level"] in {"core_beneficiary", "direct_link", "supply_chain_link", "peripheral_watch"}
+        for item in candidate_mapper["mapped_theme_clusters"]
+        for candidate in item.get("candidate_pool", [])
+    )
     assert any(item["theme_name"] for item in theme_candidates["theme_candidates"])
     assert any(item["cluster_id"] for item in theme_candidates["theme_candidates"])
     assert any(item["candidate_stocks"] for item in theme_candidates["theme_candidates"])

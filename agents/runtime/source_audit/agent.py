@@ -20,6 +20,7 @@ class SourceAuditAgent(BaseAgent):
         event_extract = get_result(state, "event_extract")
         event_unify = get_result(state, "event_unify")
         theme_cluster = get_result(state, "theme_cluster")
+        candidate_mapper = get_result(state, "candidate_mapper")
         theme_candidate_aggregation = get_result(state, "theme_candidate_aggregation")
         structured_result_cards = get_result(state, "structured_result_cards")
         result_warehouse = get_result(state, "result_warehouse")
@@ -43,6 +44,7 @@ class SourceAuditAgent(BaseAgent):
                 "catalyst_classification",
                 "stock_linkage",
                 "theme_cluster",
+                "candidate_mapper",
                 "theme_candidate_aggregation",
                 "structured_result_cards",
                 "theme_heat_snapshot",
@@ -60,6 +62,9 @@ class SourceAuditAgent(BaseAgent):
             "events_extracted": len(event_extract.get("candidate_events", [])),
             "events_canonical": len(event_unify.get("canonical_events", [])),
             "theme_clusters": len(theme_cluster.get("theme_clusters", [])),
+            "candidate_mappings": sum(
+                len(item.get("candidate_pool", [])) for item in candidate_mapper.get("mapped_theme_clusters", [])
+            ),
             "theme_candidates": len(theme_candidate_aggregation.get("theme_candidates", [])),
             "structured_cards": len(structured_result_cards.get("structured_result_cards", [])),
             "theme_heat_snapshots": len(theme_heat_snapshot.get("theme_heat_snapshots", [])),

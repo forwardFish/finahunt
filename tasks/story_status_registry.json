@@ -422,6 +422,21 @@
         "agents/runtime/theme_cluster/agent.py persists theme_clusters.json and inserts the new stage into the runtime flow",
         "tests/unit/test_theme_cluster.py validates merge and noise-splitting behavior"
       ]
+    },
+    {
+      "story_id": "S2A-004",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-17T19:38:54+08:00",
+      "validation_summary": "Theme clusters now map into explicit candidate pools with mapping levels, mapping reasons, evidence references, and source references for downstream purity evaluation.",
+      "delivery_report": "docs/05_交付/sprint_2a_低位题材挖掘引擎/S2A-004_story_delivery_report.md",
+      "evidence": [
+        "skills/event/candidate_mapper.py maps candidates into core_beneficiary, direct_link, supply_chain_link, and peripheral_watch tiers",
+        "agents/runtime/candidate_mapper/agent.py persists theme_candidate_mappings.json and exposes mapped_theme_clusters",
+        "tests/unit/test_candidate_mapper.py validates mapping levels and weak-candidate filtering"
+      ]
     }
   ]
 }

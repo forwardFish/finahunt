@@ -289,6 +289,8 @@ def _merge_event_into_cluster(
                 "evidence": [],
                 "risk_flags": set(),
                 "event_ids": set(),
+                "relations": [],
+                "source_refs": set(),
                 "direct_signal_count": 0,
             },
         )
@@ -297,6 +299,8 @@ def _merge_event_into_cluster(
         entry["evidence"].extend(stock_link.get("evidence", []))
         entry["risk_flags"].update(stock_link.get("risk_flags", []))
         entry["event_ids"].add(stock_link.get("event_id", ""))
+        entry["relations"].append(stock_link.get("relation", "weak"))
+        entry["source_refs"].update(stock_link.get("source_refs", []))
         if stock_link.get("relation") == "direct":
             entry["direct_signal_count"] += 1
 

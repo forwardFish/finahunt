@@ -1,4 +1,5 @@
 from agents.runtime.catalyst_classification import CatalystClassificationAgent
+from agents.runtime.candidate_mapper import CandidateMapperAgent
 from agents.runtime.compliance_guard import SourceComplianceGuardAgent
 from agents.runtime.daily_review import DailyReviewAgent
 from agents.runtime.event_extract import EventExtractAgent
@@ -20,6 +21,7 @@ from agents.runtime.theme_heat_snapshot import ThemeHeatSnapshotAgent
 
 __all__ = [
     "CatalystClassificationAgent",
+    "CandidateMapperAgent",
     "DailyReviewAgent",
     "EventExtractAgent",
     "EventUnifyAgent",

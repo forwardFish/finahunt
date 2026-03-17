@@ -27,12 +27,14 @@ from skills.event.theme_cluster import (
     build_theme_candidates_from_clusters,
     build_theme_clusters,
 )
+from skills.event.candidate_mapper import map_theme_clusters_to_candidates
 
 __all__ = [
     "aggregate_theme_candidates",
     "build_candidate_stock_links",
     "build_theme_candidates_from_clusters",
     "build_theme_clusters",
+    "map_theme_clusters_to_candidates",
     "build_daily_review",
     "build_daily_review_from_theme_feed",
     "build_fermenting_theme_feed",
