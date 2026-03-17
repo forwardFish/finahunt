@@ -22,6 +22,7 @@ class SourceAuditAgent(BaseAgent):
         structured_result_cards = get_result(state, "structured_result_cards")
         result_warehouse = get_result(state, "result_warehouse")
         theme_heat_snapshot = get_result(state, "theme_heat_snapshot")
+        low_position_discovery = get_result(state, "low_position_discovery")
         fermenting_theme_feed = get_result(state, "fermenting_theme_feed")
         relevance_ranking = get_result(state, "relevance_ranking")
         daily_review = get_result(state, "daily_review")
@@ -40,11 +41,12 @@ class SourceAuditAgent(BaseAgent):
                 "stock_linkage",
                 "theme_candidate_aggregation",
                 "structured_result_cards",
-                "result_warehouse",
                 "theme_heat_snapshot",
+                "low_position_discovery",
                 "fermenting_theme_feed",
                 "relevance_ranking",
                 "daily_review",
+                "result_warehouse",
                 "source_audit",
             ],
             "documents_seen": len(source_runtime.get("raw_documents", [])),
@@ -55,6 +57,7 @@ class SourceAuditAgent(BaseAgent):
             "theme_candidates": len(theme_candidate_aggregation.get("theme_candidates", [])),
             "structured_cards": len(structured_result_cards.get("structured_result_cards", [])),
             "theme_heat_snapshots": len(theme_heat_snapshot.get("theme_heat_snapshots", [])),
+            "low_position_count": len(low_position_discovery.get("low_position_opportunities", [])),
             "fermenting_theme_count": len(fermenting_theme_feed.get("fermenting_theme_feed", [])),
             "events_ranked": len(relevance_ranking.get("ranked_events", [])),
             "focus_cards": len(daily_review.get("today_focus_page", [])),

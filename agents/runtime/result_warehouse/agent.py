@@ -17,6 +17,11 @@ class ResultWarehouseAgent(BaseAgent):
             "canonical_events.json": get_result(state, "event_unify").get("canonical_events", []),
             "theme_candidates.json": get_result(state, "theme_candidate_aggregation").get("theme_candidates", []),
             "structured_result_cards.json": get_result(state, "structured_result_cards").get("structured_result_cards", []),
+            "theme_heat_snapshots.json": get_result(state, "theme_heat_snapshot").get("theme_heat_snapshots", []),
+            "low_position_opportunities.json": get_result(state, "low_position_discovery").get("low_position_opportunities", []),
+            "fermenting_theme_feed.json": get_result(state, "fermenting_theme_feed").get("fermenting_theme_feed", []),
+            "relevance_ranking.json": get_result(state, "relevance_ranking").get("ranked_events", []),
+            "daily_review.json": get_result(state, "daily_review"),
         }
 
         saved_artifacts: list[dict] = []

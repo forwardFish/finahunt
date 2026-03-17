@@ -37,6 +37,25 @@ primary_files:
 secondary_files:
   - "packages/schema/state.py"
 
+story_inputs:
+  - "观察池对象、题材偏好和资产关联结果。"
+  - "催化强度、时效性和热度等上游评分信号。"
+  - "用户相关度评分公式和解释因子。"
+
+story_process:
+  - "结合观察池、题材偏好和催化强度计算相关度分值。"
+  - "为分值保留 score breakdown 或解释因子。"
+  - "让相关度结果能够支撑后续排序与展示。"
+
+story_outputs:
+  - "带 relevance score 的结果集合。"
+  - "可供排序结果流消费的相关度评分结果。"
+
+verification_basis:
+  - "检查不同关注对象会造成相关度分值差异。"
+  - "检查结果包含分值和解释因子。"
+  - "检查高相关对象整体分值高于弱相关对象。"
+
 test_cases:
   normal:
     - "同一批结果可生成稳定的相关度评分。"

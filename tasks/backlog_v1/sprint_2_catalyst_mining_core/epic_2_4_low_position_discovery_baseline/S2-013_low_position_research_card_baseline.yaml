@@ -1,0 +1,70 @@
+task_id: "S2-013"
+task_name: "低位题材研究卡基础版"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.4 Low-position Discovery Baseline"
+story_id: "S2-013"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把低位题材研究优先级结果组织成一张可观察、可复盘、可持续跟踪的基础研究卡。"
+business_value: "如果最终只有分数，没有研究卡，用户仍然无法快速理解这个题材为什么值得优先研究。"
+
+entry_criteria:
+  - "S2-010、S2-011、S2-012 已完成。"
+
+acceptance_criteria:
+  - "研究卡至少包含核心题材、核心叙事、最早源头、最近 24h 关键催化、当前阶段、候选标的、Purity Score、研究优先级分、未来观察信号、风险点。"
+  - "每张卡片都强调研究价值，不出现交易建议表达。"
+  - "卡片可被后续观察页、复盘页或增强版低位挖掘 Sprint 继续复用。"
+  - "卡片保留来源和证据引用。"
+
+constraints:
+  - "先做基础研究卡，不做复杂页面系统。"
+  - "风险点和剔除理由必须可见。"
+
+out_of_scope:
+  - "不在本 Story 中做完整深度复盘长文。"
+  - "不做自动化提醒和推送。"
+
+dependencies:
+  - "S2-010"
+  - "S2-011"
+  - "S2-012"
+
+related_files:
+  - "agents/runtime/daily_review/agent.py"
+  - "skills/event/fermentation.py"
+  - "docs/02_MVP/mvp功能.md"
+
+primary_files:
+  - "agents/runtime/daily_review/agent.py"
+  - "skills/event/fermentation.py"
+
+secondary_files:
+  - "docs/02_MVP/mvp功能.md"
+
+story_inputs:
+  - "题材叙事对象、Purity Score 和研究优先级评分结果。"
+  - "研究卡字段规范、风险提示和来源引用要求。"
+  - "后续观察与复盘页面对研究卡的复用需求。"
+
+story_process:
+  - "把评分结果和题材信息组织成基础研究卡。"
+  - "补齐未来观察信号、风险点和证据引用。"
+  - "输出适合观察和复盘使用的基础研究结果。"
+
+story_outputs:
+  - "低位题材研究卡基础版。"
+  - "一批可观察、可复盘、可持续跟踪的研究卡对象。"
+
+verification_basis:
+  - "检查研究卡字段完整。"
+  - "检查卡片强调研究优先级而非交易建议。"
+  - "检查风险点、观察信号和证据引用都可见。"
+
+test_cases:
+  normal:
+    - "可生成完整的低位题材研究卡基础版。"
+  exception:
+    - "关键评分或证据缺失时不会输出误导性的研究卡。"

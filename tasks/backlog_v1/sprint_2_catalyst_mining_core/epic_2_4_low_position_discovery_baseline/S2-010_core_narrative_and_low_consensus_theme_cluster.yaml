@@ -1,0 +1,70 @@
+task_id: "S2-010"
+task_name: "核心叙事归因与低共识题材簇"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.4 Low-position Discovery Baseline"
+story_id: "S2-010"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "在现有题材候选聚合结果上，补齐核心叙事归因、首次出现时间、最近活跃时间和低共识阶段判断。"
+business_value: "低位挖掘首先不是找价格低，而是找市场认知还不充分、但叙事已经开始形成的题材对象。"
+
+entry_criteria:
+  - "S2-004、S2-006、S2-008 已完成。"
+
+acceptance_criteria:
+  - "每个题材对象都包含 core_narrative、first_seen_time、latest_seen_time。"
+  - "系统可区分全新题材、旧题材再激活和一次性噪声。"
+  - "可对题材给出低共识、早期发酵、已扩散等阶段判断。"
+  - "题材对象仍保留来源、证据和关联标的链路。"
+
+constraints:
+  - "不能只保留关键词命中，必须明确核心叙事。"
+  - "不把价格表现当作低位定义。"
+
+out_of_scope:
+  - "不在本 Story 中评估个股正宗度。"
+  - "不在本 Story 中做历史相似案例。"
+
+dependencies:
+  - "S2-004"
+  - "S2-006"
+  - "S2-008"
+
+related_files:
+  - "agents/runtime/theme_candidate_aggregation/agent.py"
+  - "skills/event/fermentation.py"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "agents/runtime/theme_candidate_aggregation/agent.py"
+  - "skills/event/fermentation.py"
+
+secondary_files:
+  - "packages/schema/models.py"
+
+story_inputs:
+  - "Sprint 2 已有的题材候选、结构化结果卡和热度快照。"
+  - "题材对象中的时间字段、来源证据和关联标的信息。"
+  - "低共识题材识别所需的叙事归因和阶段规则。"
+
+story_process:
+  - "为题材对象补齐核心叙事归因。"
+  - "计算首次出现、最近活跃与再激活信息。"
+  - "输出适合低位研究的低共识阶段判断。"
+
+story_outputs:
+  - "带 core_narrative 和低共识阶段判断的题材簇对象。"
+  - "适合后续正宗度和研究优先级评分的题材研究基础对象。"
+
+verification_basis:
+  - "检查题材对象中包含核心叙事和时间锚点。"
+  - "检查旧题材重新激活可以被识别。"
+  - "检查证据链与关联标的未丢失。"
+
+test_cases:
+  normal:
+    - "结构化题材候选可补齐叙事和低共识阶段。"
+  exception:
+    - "证据不足的题材不会被错误标记为高价值低位对象。"

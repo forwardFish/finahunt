@@ -42,6 +42,25 @@ secondary_files:
   - "docs/04_规范/操作手册.md"
   - "tests/e2e/test_final_gate.py"
 
+story_inputs:
+  - "runtime 主链路输出的中间结果和最终产物。"
+  - "人工校正需要记录的修正原因、修正内容与责任信息。"
+  - "final gate 交付物对可追溯、可复核证据的要求。"
+
+story_process:
+  - "定义人工校正记录的最小结构与落盘方式。"
+  - "整理 final gate 需要产出的交付物清单与命名规范。"
+  - "把人工介入痕迹纳入运行链路和最终交付中。"
+
+story_outputs:
+  - "人工校正记录基线。"
+  - "可供 final gate 读取和归档的交付物基线。"
+
+verification_basis:
+  - "检查人工修正可以留下可追踪的记录。"
+  - "检查 final gate 产物包含运行结果、校验结论与交付证据。"
+  - "检查人工介入后仍能回溯原始结果与修正结果。"
+
 test_cases:
   normal:
     - "final gate 产物完整可读。"

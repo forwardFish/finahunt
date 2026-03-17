@@ -40,6 +40,25 @@ primary_files:
 secondary_files:
   - "config/spec/traceability.yaml"
 
+story_inputs:
+  - "S1-003 产出的多条结构化事件对象。"
+  - "多来源报道归并为同一事件的归一规则。"
+  - "事件追踪和证据链需要保留的 traceability 要求。"
+
+story_process:
+  - "识别描述同一事件的多源结果并执行归一。"
+  - "合并事件摘要、时间和证据链，形成统一事件流。"
+  - "保留上游来源引用，避免归一后失去可追溯信息。"
+
+story_outputs:
+  - "一批可复用的 canonical events。"
+  - "带多源证据链和统一摘要的事件结果。"
+
+verification_basis:
+  - "检查同一事件的多源报道可以归并到一个统一事件对象。"
+  - "检查归一后的事件仍保留来源和证据链。"
+  - "检查不应合并的不同事件不会被错误归并。"
+
 test_cases:
   normal:
     - "多源同事件被归并为单一主事件。"

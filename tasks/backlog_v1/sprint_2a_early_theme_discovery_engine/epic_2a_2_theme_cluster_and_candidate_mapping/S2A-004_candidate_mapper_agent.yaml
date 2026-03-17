@@ -1,0 +1,68 @@
+task_id: "S2A-004"
+task_name: "Candidate Mapper Agent"
+sprint: "Sprint 2A 低位题材挖掘引擎"
+epic: "Epic 2A.2 Theme Cluster and Candidate Mapping"
+story_id: "S2A-004"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把题材事件簇映射到候选标的池，并区分核心受益、直接关联和边缘擦边对象。"
+business_value: "系统如果只能说题材在发酵、却说不清哪些票最相关，就和普通舆情汇总没有本质区别。"
+
+entry_criteria:
+  - "S2A-003 已完成，Theme Cluster 可稳定输出。"
+
+acceptance_criteria:
+  - "每个题材都能映射出候选标的集合。"
+  - "每个候选标的至少带映射理由、关联层级和证据来源。"
+  - "系统能区分直接主营相关、供应链相关和边缘蹭题材对象。"
+  - "映射结果可直接供 Purity Judge 使用。"
+
+constraints:
+  - "不以涨跌幅表现反推标的是否相关。"
+  - "必须保留客观映射理由，不能只给结果。"
+
+out_of_scope:
+  - "不在本 Story 中做最终研究卡输出。"
+  - "不做交易建议排序。"
+
+dependencies:
+  - "S2A-003"
+
+related_files:
+  - "agents/runtime/stock_linkage/agent.py"
+  - "skills/event/engine.py"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "agents/runtime/stock_linkage/agent.py"
+  - "skills/event/engine.py"
+
+secondary_files:
+  - "packages/schema/models.py"
+
+story_inputs:
+  - "Theme Cluster 输出的题材事件簇。"
+  - "现有个股、板块、主题资产关联结果。"
+  - "候选标的映射规则和客观关联依据。"
+
+story_process:
+  - "把题材事件簇映射到候选个股、板块和产业链对象。"
+  - "为每个映射结果补齐关联层级、映射理由和证据引用。"
+  - "过滤明显擦边、弱关联和证据不足的对象。"
+
+story_outputs:
+  - "带候选标的池的题材研究对象。"
+  - "带映射理由和关联层级的候选标的结果。"
+
+verification_basis:
+  - "检查题材能映射出一组可解释的候选标的。"
+  - "检查每个映射结果都带有客观证据。"
+  - "检查弱关联和擦边对象不会与核心候选混为一类。"
+
+test_cases:
+  normal:
+    - "题材事件簇能稳定映射到候选标的池。"
+  exception:
+    - "证据不足的标的不会被错误映射为核心候选。"

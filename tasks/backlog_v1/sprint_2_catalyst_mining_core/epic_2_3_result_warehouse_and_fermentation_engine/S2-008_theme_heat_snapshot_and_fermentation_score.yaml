@@ -1,4 +1,4 @@
-task_id: "S2-008"
+﻿task_id: "S2-008"
 task_name: "题材热度快照与发酵评分"
 sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
 epic: "Epic 2.3 Result Warehouse and Fermentation Engine"
@@ -43,6 +43,24 @@ primary_files:
 secondary_files:
   - "config/rules/standards.yaml"
 
+story_inputs:
+  - "S2-007 产出的结构化结果仓库批次。"
+  - "题材热度的时间窗口规则和评分标准。"
+  - "题材证据数量、来源数量、催化强度和映射数量等指标。"
+
+story_process:
+  - "按定义好的时间窗口生成题材热度快照。"
+  - "计算 velocity_score、acceleration_score 和 theme_heat_score，并保留 score breakdown。"
+  - "压制证据过弱、过旧或过稀疏的题材，避免虚高。"
+
+story_outputs:
+  - "带评分分解和发酵阶段解释的题材热度快照。"
+  - "可进入发酵题材结果流的高热度候选。"
+
+verification_basis:
+  - "检查证据更多、催化更强的题材会得到更高的 theme_heat_score。"
+  - "检查快照中包含 score_breakdown 和发酵阶段信息。"
+  - "检查陈旧或弱题材不会进入高热度区间。"
 test_cases:
   normal:
     - "同一主题在短时间内出现更多强催化和更多来源时，theme_heat_score 会提升。"
@@ -50,3 +68,4 @@ test_cases:
   exception:
     - "过期或证据薄弱的主题不会进入高热度区间。"
     - "缺少时间字段的结果不会进入快照计算。"
+

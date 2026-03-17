@@ -4,6 +4,7 @@ from agents.runtime.daily_review import DailyReviewAgent
 from agents.runtime.event_extract import EventExtractAgent
 from agents.runtime.event_unify import EventUnifyAgent
 from agents.runtime.fermenting_theme_feed import FermentingThemeFeedAgent
+from agents.runtime.low_position_discovery import LowPositionDiscoveryAgent
 from agents.runtime.normalize import NormalizeAgent
 from agents.runtime.relevance_ranking import RelevanceRankingAgent
 from agents.runtime.result_warehouse import ResultWarehouseAgent
@@ -21,6 +22,7 @@ __all__ = [
     "EventExtractAgent",
     "EventUnifyAgent",
     "FermentingThemeFeedAgent",
+    "LowPositionDiscoveryAgent",
     "NormalizeAgent",
     "RelevanceRankingAgent",
     "ResultWarehouseAgent",

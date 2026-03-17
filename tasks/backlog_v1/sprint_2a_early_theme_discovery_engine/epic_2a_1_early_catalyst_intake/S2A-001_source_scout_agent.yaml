@@ -1,0 +1,68 @@
+task_id: "S2A-001"
+task_name: "Source Scout Agent"
+sprint: "Sprint 2A 低位题材挖掘引擎"
+epic: "Epic 2A.1 Early Catalyst Intake"
+story_id: "S2A-001"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "优先从最早催化痕迹最密集的源头中抓取并筛出适合低位题材挖掘的输入。"
+business_value: "低位挖掘最关键的是更早看到催化，而不是更晚看到情绪，因此必须先把源头层做对。"
+
+entry_criteria:
+  - "Sprint 1 和 Sprint 2 的基础抓取与标准化链路已可运行。"
+
+acceptance_criteria:
+  - "优先级更高的源头范围明确区分 P0、P1、P2。"
+  - "系统能区分早期催化痕迹源与纯讨论型源。"
+  - "每条输入都保留来源、时间、抓取批次和原始证据引用。"
+  - "无明显催化价值的内容可在这一层被降权或过滤。"
+
+constraints:
+  - "不把社区热度当作唯一优先信号。"
+  - "优先补强公告、政策、互动易、权威媒体等早期催化源。"
+
+out_of_scope:
+  - "不在本 Story 中完成题材聚合。"
+  - "不做正负面情绪打分。"
+
+dependencies:
+  - "Sprint 1 已完成的资讯源接入与标准化能力。"
+
+related_files:
+  - "skills/fetch/client.py"
+  - "agents/runtime/source_runtime/agent.py"
+  - "config/rules/source_registry.yaml"
+
+primary_files:
+  - "config/rules/source_registry.yaml"
+  - "agents/runtime/source_runtime/agent.py"
+
+secondary_files:
+  - "skills/fetch/client.py"
+
+story_inputs:
+  - "交易所公告、上市公司公告、互动易、财联社快讯、权威财经媒体、政策文件等原始资讯源。"
+  - "现有 source registry 与来源分级规则。"
+  - "低位题材挖掘对最早催化痕迹的输入要求。"
+
+story_process:
+  - "按低位挖掘需求重新定义源头优先级和抓取策略。"
+  - "识别更适合作为早期催化痕迹的源头类型。"
+  - "对噪声高、纯讨论型、缺乏事件信息的内容做降权或过滤。"
+
+story_outputs:
+  - "一批适合作为低位题材挖掘输入的高质量源头内容。"
+  - "带优先级、时间和来源证据的源头抓取结果。"
+
+verification_basis:
+  - "检查 P0 源头是否被优先纳入抓取链路。"
+  - "检查每条输入是否都保留来源、时间和证据引用。"
+  - "检查纯情绪讨论类内容不会与强催化痕迹混在同一优先级。"
+
+test_cases:
+  normal:
+    - "高价值催化源内容能进入后续低位挖掘链路。"
+  exception:
+    - "纯讨论型或无明确事件内容的输入会被降权或过滤。"

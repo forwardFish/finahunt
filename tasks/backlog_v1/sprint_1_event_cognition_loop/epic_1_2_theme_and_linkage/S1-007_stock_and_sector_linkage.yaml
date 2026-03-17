@@ -41,6 +41,25 @@ primary_files:
 secondary_files:
   - "config/rules/compliance_rules.yaml"
 
+story_inputs:
+  - "带题材和催化结果的事件对象。"
+  - "个股、板块、产业链环节之间的客观映射规则。"
+  - "合规规则中关于客观关联和禁止臆测的边界。"
+
+story_process:
+  - "根据客观证据把事件、题材与个股、板块做关联。"
+  - "区分强关联与弱关联，避免无依据绑定。"
+  - "为每条关联保留来源和 linkage reason。"
+
+story_outputs:
+  - "带个股和板块客观关联的事件/题材结果。"
+  - "可供用户排序和后续输出使用的关联资产信息。"
+
+verification_basis:
+  - "检查代表性事件可以关联到合理的个股或板块。"
+  - "检查每条关联都带有客观依据说明。"
+  - "检查证据不足时不会生成无根据的资产绑定。"
+
 test_cases:
   normal:
     - "事件能关联到标的或板块并给出依据。"

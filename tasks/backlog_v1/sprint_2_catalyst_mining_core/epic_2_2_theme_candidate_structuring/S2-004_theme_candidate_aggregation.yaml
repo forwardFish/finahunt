@@ -1,4 +1,4 @@
-task_id: "S2-004"
+﻿task_id: "S2-004"
 task_name: "潜在题材候选聚合"
 sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
 epic: "Epic 2.2 Theme Candidate Structuring"
@@ -39,8 +39,27 @@ primary_files:
 secondary_files:
   - "config/spec/traceability.yaml"
 
+story_inputs:
+  - "S2-003 产出的已评估催化信号。"
+  - "supporting_signals 和证据链的追溯要求。"
+  - "把多个信号合并为一个题材候选的分组规则。"
+
+story_process:
+  - "在证据一致时，把相关催化信号聚合成一个题材候选。"
+  - "为每个聚合结果保留 supporting_signals 和上游证据链。"
+  - "当聚合依据不足时，保留原始信号而不是强行吞并。"
+
+story_outputs:
+  - "带 theme_candidate_id、theme_name 和 supporting_signals 的题材候选对象。"
+  - "可供资产映射和结果卡构建使用的聚合证据。"
+
+verification_basis:
+  - "检查多个相关信号是否被正确归入同一题材候选。"
+  - "检查每个聚合结果都保留 supporting_signals。"
+  - "检查聚合失败时不会悄悄丢失原始信号。"
 test_cases:
   normal:
     - "同一主题的多个催化信号会聚合到一个候选题材。"
   exception:
     - "缺少 supporting_signals 时聚合结果无效。"
+

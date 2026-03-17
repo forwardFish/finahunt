@@ -1,4 +1,4 @@
-task_id: "S2-001"
+﻿task_id: "S2-001"
 task_name: "候选催化句抽取"
 sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
 epic: "Epic 2.1 Catalyst Signal Extraction"
@@ -41,8 +41,28 @@ primary_files:
 secondary_files:
   - "agents/runtime/normalize/agent.py"
 
+story_inputs:
+  - "带来源引用和句子定位信息的标准化资讯。"
+  - "Sprint 1 认知链路产出的归一事件上下文。"
+  - "区分证据句与说明性句子的过滤标准。"
+
+story_process:
+  - "从标准化内容和事件证据中抽取候选催化句。"
+  - "为每条候选句补齐 sentence_id、source_ref 和 evidence_text。"
+  - "过滤无法支撑后续催化挖掘的弱说明性句子。"
+
+story_outputs:
+  - "一组带可追溯证据的候选催化句集合。"
+  - "可直接进入催化类型分类的句级记录。"
+
+verification_basis:
+  - "对照输入资讯与抽取样本，确认候选句可以回溯到原始证据。"
+  - "检查每条输出都包含 sentence_id、source_ref 和 evidence_text。"
+  - "检查明显不构成催化的说明性句子被排除。"
 test_cases:
   normal:
     - "有效资讯可抽取出候选催化句。"
   exception:
     - "无证据来源的句子不会进入结果集。"
+
+

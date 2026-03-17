@@ -321,6 +321,62 @@
         "agents/runtime/fermenting_theme_feed/agent.py emits fermenting_theme_feed",
         "tools/run_live_event_cognition.py now prints fermenting_theme_feed together with daily review and artifact batch dir"
       ]
+    },
+    {
+      "story_id": "S2-010",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-17T16:50:00+08:00",
+      "validation_summary": "Theme candidates now carry core narrative, first/latest seen timestamps, source/evidence chain, and low-consensus cluster fields for early theme discovery.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-010_story_delivery_report.md",
+      "evidence": [
+        "skills/event/fermentation.py aggregates cluster_id, core_narrative, first_seen_time, latest_seen_time, heat_score, catalyst_score, continuity_score, and fermentation_score",
+        "tests/integration/test_event_cognition_runtime.py validates core_narrative and theme candidate cluster generation"
+      ]
+    },
+    {
+      "story_id": "S2-011",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-17T16:50:00+08:00",
+      "validation_summary": "Candidate stock mapping now exposes purity scoring, score breakdown, evidence, and risk flags for theme-stock fit evaluation.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-011_story_delivery_report.md",
+      "evidence": [
+        "skills/event/engine.py build_candidate_stock_links outputs candidate_purity_score, purity_breakdown, evidence, and risk_flags",
+        "skills/event/fermentation.py aggregates candidate_stocks for downstream ranking and research cards"
+      ]
+    },
+    {
+      "story_id": "S2-012",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-17T16:50:00+08:00",
+      "validation_summary": "Low-position research priority scoring is now generated from catalyst, continuity, purity, fermentation, timeliness, and stage signals.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-012_story_delivery_report.md",
+      "evidence": [
+        "skills/event/fermentation.py builds low_position_opportunities with low_position_score, entry_stage, timeliness_level, low_position_reason, and risk_notice",
+        "tests/integration/test_runtime_foundation.py validates low_position_opportunities artifact generation"
+      ]
+    },
+    {
+      "story_id": "S2-013",
+      "status": "done",
+      "source": "finahunt_runtime_validation",
+      "project": "finahunt",
+      "repository": "finahunt",
+      "verified_at": "2026-03-17T16:50:00+08:00",
+      "validation_summary": "Baseline low-position research cards now flow into daily review outputs with narrative, evidence, candidate stocks, and research-only risk notice.",
+      "delivery_report": "docs/05_交付/sprint_2_发酵题材引擎/S2-013_story_delivery_report.md",
+      "evidence": [
+        "skills/event/fermentation.py composes research-card fields for low-position opportunities and daily review",
+        "tests/integration/test_event_cognition_runtime.py validates daily_review low_position_candidates and research-only notice"
+      ]
     }
   ]
 }

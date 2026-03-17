@@ -40,6 +40,25 @@ primary_files:
 secondary_files:
   - "tests/spec/test_traceability_registry.py"
 
+story_inputs:
+  - "Sprint 0 已定义的来源契约、资讯契约和事件契约。"
+  - "需求、规则、运行节点与 final gate 之间需要建立的追踪关系。"
+  - "后续验收和审计需要使用的 gate 基线。"
+
+story_process:
+  - "梳理 story、规则、runtime 节点与 gate 之间的映射关系。"
+  - "建立 traceability registry 与 gate registry 的基础结构。"
+  - "确保后续每一步都能从需求追踪到规则、实现和验收。"
+
+story_outputs:
+  - "可审计的 traceability registry 基线。"
+  - "可供 final gate 读取的 gate registry 基线。"
+
+verification_basis:
+  - "检查 story、规则、runtime 节点之间存在清晰映射。"
+  - "检查 final gate 可以依据 registry 找到应校验的对象。"
+  - "检查缺失映射时能够被测试或 gate 明确发现。"
+
 test_cases:
   normal:
     - "traceability 和 gate registry 都能被解析。"

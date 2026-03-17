@@ -1,43 +1,77 @@
 from workflows.runtime_schedule import run_runtime_cycle
 
 
-class _FakeResponse:
-    def __init__(self, text: str) -> None:
-        self.text = text
-
-    def raise_for_status(self) -> None:
-        return None
-
-
 def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
-    cls_html = """
-    <html><script>
-    window.__DATA__={"telegraphList":[
-      {"id":1,"title":"工信部发文支持机器人产业创新","content":"财联社3月16日电，工信部发文支持机器人产业创新发展，机器人板块关注度提升。","ctime":"2026-03-16 10:00:00","shareurl":"https://www.cls.cn/detail/1","stock_list":[{"secu_code":"300024.SZ","secu_name":"机器人样本"}],"plate_list":[{"plate_name":"机器人"}]},
-      {"id":2,"title":"多家公司签署算力服务器订单","content":"财联社3月16日电，多家公司披露算力服务器订单进展。","ctime":"2026-03-16 11:00:00","shareurl":"https://www.cls.cn/detail/2","stock_list":[{"secu_code":"000063.SZ","secu_name":"中兴通讯"}],"plate_list":[{"plate_name":"算力"}]}
-    ]};
-    </script></html>
-    """
-    jygs_html = """
-    <script>window.__NUXT__=(function(){return{data:[{list:[
-      {article_id:"abc123",title:"算力链景气上修",create_time:"2026-03-16 09:00:00",content:"算力服务器需求上修，板块热度提升。",user:{},stock_list:[]},
-      {article_id:"def456",title:"晚安帖",create_time:"2026-03-16 08:00:00",content:"晚安大家早点休息。",user:{},stock_list:[]}
-    ],totalCount:2}]}})()</script>
-    """
+    def fake_pipeline(sources, *, max_items_per_source, timeout, run_id):
+        return {
+            "raw_contents": [
+                {
+                    "content_id": "rawc-001",
+                    "source_id": "cls-telegraph",
+                    "site_name": "财联社快讯",
+                    "list_url": "https://www.cls.cn/telegraph",
+                    "source_url": "https://www.cls.cn/detail/1",
+                    "fetched_at": "2026-03-16T10:05:00+00:00",
+                    "published_at": "2026-03-16T10:00:00+00:00",
+                    "title": "工信部发文支持机器人产业创新",
+                    "body": "工信部发文支持机器人产业创新发展，机器人板块关注度提升，300024.SZ受到关注。",
+                    "author": "财联社",
+                    "tags": ["telegraph", "fast_feed"],
+                    "metadata": {
+                        "stock_list": [{"secu_code": "300024.SZ", "secu_name": "机器人样本"}],
+                        "plate_list": [{"plate_name": "机器人"}],
+                    },
+                },
+                {
+                    "content_id": "rawc-002",
+                    "source_id": "jiuyangongshe-live",
+                    "site_name": "韭研公社",
+                    "list_url": "https://www.jiuyangongshe.com/live",
+                    "source_url": "https://www.jiuyangongshe.com/live#abc123",
+                    "fetched_at": "2026-03-16T09:10:00+00:00",
+                    "published_at": "2026-03-16T09:00:00+00:00",
+                    "title": "算力链景气上修",
+                    "body": "算力服务器需求上修，板块热度提升，000063.SZ被反复提及。",
+                    "author": "韭研公社",
+                    "tags": ["community", "live"],
+                    "metadata": {
+                        "stock_list": [{"secu_code": "000063.SZ", "secu_name": "中兴通讯"}],
+                        "plate_list": [{"plate_name": "算力"}],
+                    },
+                },
+                {
+                    "content_id": "rawc-003",
+                    "source_id": "xueqiu-hot-spot",
+                    "site_name": "雪球热点",
+                    "list_url": "https://xueqiu.com/hot/spot",
+                    "source_url": "https://xueqiu.com/hashtag/demo",
+                    "fetched_at": "2026-03-16T09:20:00+00:00",
+                    "published_at": "2026-03-16T09:18:00+00:00",
+                    "title": "低空物流试点推进",
+                    "body": "低空物流试点推进，无人机配送与eVTOL商业化叙事升温，300696.SZ进入高频讨论。",
+                    "author": "雪球编辑",
+                    "tags": ["community", "hot_spot"],
+                    "metadata": {
+                        "stocks": [{"code": "300696.SZ", "name": "爱乐达"}],
+                    },
+                },
+            ],
+            "execution_log": [
+                {"source_id": "cls-telegraph", "status": "success", "stored_count": 1},
+                {"source_id": "jiuyangongshe-live", "status": "success", "stored_count": 1},
+                {"source_id": "xueqiu-hot-spot", "status": "success", "stored_count": 1},
+            ],
+            "storage_summary": {"batch_dir": "workspace/artifacts/source_fetch/run-test", "manifest": {"content_count": 3}},
+        }
 
-    def fake_get(url, headers=None, timeout=20):
-        if "cls.cn" in url:
-            return _FakeResponse(cls_html)
-        return _FakeResponse(jygs_html)
-
-    monkeypatch.setattr("skills.fetch.client.requests.get", fake_get)
+    monkeypatch.setattr("skills.fetch.client.crawl_public_page_sources_sync", fake_pipeline)
 
     result = run_runtime_cycle(
         "event-cognition-test",
         rule_version="v2",
-        requested_sources=["cls-telegraph", "jiuyangongshe-live"],
+        requested_sources=["cls-telegraph", "jiuyangongshe-live", "xueqiu-hot-spot"],
         live_fetch=True,
-        user_profile={"watchlist_symbols": ["300024.SZ"], "watchlist_themes": ["机器人", "算力"]},
+        user_profile={"watchlist_symbols": ["300024.SZ"], "watchlist_themes": ["机器人", "算力", "低空经济"]},
         max_items_per_source=5,
     )
 
@@ -49,26 +83,36 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     linkage = result["results"]["stock_linkage"]["content"]
     theme_candidates = result["results"]["theme_candidate_aggregation"]["content"]
     result_cards = result["results"]["structured_result_cards"]["content"]
-    warehouse = result["results"]["result_warehouse"]["content"]
     theme_heat = result["results"]["theme_heat_snapshot"]["content"]
+    low_position = result["results"]["low_position_discovery"]["content"]
     feed = result["results"]["fermenting_theme_feed"]["content"]
     ranking = result["results"]["relevance_ranking"]["content"]
     review = result["results"]["daily_review"]["content"]
+    warehouse = result["results"]["result_warehouse"]["content"]
 
     assert runtime["fetch_status_report"]["live_fetch"] is True
-    assert len(runtime["raw_documents"]) >= 3
-    assert len(normalize["normalized_documents"]) >= 2
-    assert len(normalize["dropped_documents"]) >= 1
-    assert len(extract["candidate_events"]) >= 2
+    assert len(runtime["raw_documents"]) == 3
+    assert runtime["raw_content_storage"]["manifest"]["content_count"] == 3
+    assert len(normalize["normalized_documents"]) == 3
+    assert len(extract["candidate_events"]) == 3
     assert all(event["event_id"] for event in extract["candidate_events"])
+    assert any(event["event_subject"] for event in extract["candidate_events"])
+    assert any(event["related_industries"] for event in extract["candidate_events"])
     assert any(event["theme_tags"] for event in theme["theme_enriched_events"])
     assert any(event["catalyst_type"] != "unknown" for event in catalyst["catalyst_events"])
     assert any(event["linked_assets"] for event in linkage["linked_events"])
+    assert any(event["candidate_stock_links"] for event in linkage["linked_events"])
     assert any(item["theme_name"] for item in theme_candidates["theme_candidates"])
+    assert any(item["cluster_id"] for item in theme_candidates["theme_candidates"])
+    assert any(item["candidate_stocks"] for item in theme_candidates["theme_candidates"])
     assert any(item["theme_name"] for item in result_cards["structured_result_cards"])
+    assert any(item["core_narrative"] for item in result_cards["structured_result_cards"])
     assert warehouse["artifact_batch_dir"]
     assert any(item["theme_heat_score"] >= 0 for item in theme_heat["theme_heat_snapshots"])
+    assert any(item["low_position_score"] >= 35 for item in low_position["low_position_opportunities"])
+    assert any(item["candidate_stocks"] for item in low_position["low_position_opportunities"])
     assert any(item["theme_name"] for item in feed["fermenting_theme_feed"])
     assert ranking["ranked_events"][0]["relevance_score"] >= ranking["ranked_events"][-1]["relevance_score"]
     assert review["today_focus_page"]
-    assert "风险" in review["daily_review_report"]["risk_notice"]
+    assert review["low_position_candidates"]
+    assert "research" in review["daily_review_report"]["risk_notice"].lower()

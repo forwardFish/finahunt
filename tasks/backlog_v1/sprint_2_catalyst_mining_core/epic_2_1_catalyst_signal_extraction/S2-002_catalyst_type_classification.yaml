@@ -1,4 +1,4 @@
-task_id: "S2-002"
+﻿task_id: "S2-002"
 task_name: "催化类型分类"
 sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
 epic: "Epic 2.1 Catalyst Signal Extraction"
@@ -39,8 +39,27 @@ primary_files:
 secondary_files:
   - "packages/schema/models.py"
 
+story_inputs:
+  - "S2-001 产出的候选催化句。"
+  - "政策、业绩、产业、资金、舆情等催化类型规则。"
+  - "证据模糊时的回退分类策略。"
+
+story_process:
+  - "把每条候选催化句归入明确的催化类型。"
+  - "为每条分类结果补齐可读的 classification_reason。"
+  - "对于证据不足的情况返回 unknown，而不是强行分类。"
+
+story_outputs:
+  - "带催化类型与可解释分类信息的句级记录。"
+  - "可进入强度与时效性判断的上游输入。"
+
+verification_basis:
+  - "抽查五类典型催化案例，确认分类结果合理。"
+  - "检查每条记录都包含 type 和 classification_reason。"
+  - "检查模糊证据会回退到 unknown。"
 test_cases:
   normal:
     - "典型政策和业绩催化句能被正确分类。"
   exception:
     - "无法判断时返回 unknown。"
+

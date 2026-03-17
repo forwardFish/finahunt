@@ -1,0 +1,68 @@
+task_id: "S2A-002"
+task_name: "Event Extractor Agent"
+sprint: "Sprint 2A 低位题材挖掘引擎"
+epic: "Epic 2A.1 Early Catalyst Intake"
+story_id: "S2A-002"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把原始内容转成适合低位题材研究的标准事件对象，并显式抽出催化类型和影响边界。"
+business_value: "如果事件层抽不准，后面的题材归一、标的映射和发酵跟踪都会失真。"
+
+entry_criteria:
+  - "S2A-001 已完成，高价值早期源头内容可稳定进入事件层。"
+
+acceptance_criteria:
+  - "每条事件都包含事件主体、事件类型、发生时间、首次披露时间、相关题材、相关行业、影响范围。"
+  - "事件类型至少覆盖政策催化、公告催化、订单催化、产品或技术突破、国产替代、老题材重新激活等类别。"
+  - "事件对象能区分个股级催化与题材级催化。"
+  - "事件对象可直接进入 Theme Cluster 聚合。"
+
+constraints:
+  - "优先复用现有事件抽取和归一 schema，不平行造第三套事件模型。"
+  - "不能只做情绪或态度标签。"
+
+out_of_scope:
+  - "不在本 Story 中给候选标的打分。"
+  - "不在本 Story 中做历史相似案例匹配。"
+
+dependencies:
+  - "S2A-001"
+
+related_files:
+  - "agents/runtime/event_extract/agent.py"
+  - "skills/event/engine.py"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "agents/runtime/event_extract/agent.py"
+  - "packages/schema/models.py"
+
+secondary_files:
+  - "skills/event/engine.py"
+
+story_inputs:
+  - "Source Scout 输出的高价值源头内容。"
+  - "现有 EventObject schema 与事件分类规则。"
+  - "低位题材研究需要的事件字段和事件类型定义。"
+
+story_process:
+  - "从原始内容中抽出标准事件对象。"
+  - "明确事件类型、影响范围、相关题材和催化边界。"
+  - "让事件能区分一次性消息与可能持续发酵的线索。"
+
+story_outputs:
+  - "一批可直接进入题材归一层的标准事件对象。"
+  - "带催化类型、影响范围和首次披露信息的事件结果。"
+
+verification_basis:
+  - "检查每条事件对象都带关键字段，而不只是标题摘要。"
+  - "检查事件类型可以支撑后续 Catalyst Score 和 Continuity Score。"
+  - "检查题材级催化与个股级催化可以区分。"
+
+test_cases:
+  normal:
+    - "强催化原始内容可被抽成完整标准事件对象。"
+  exception:
+    - "证据不足或无法明确归类的输入不会被强行抽成高置信事件。"

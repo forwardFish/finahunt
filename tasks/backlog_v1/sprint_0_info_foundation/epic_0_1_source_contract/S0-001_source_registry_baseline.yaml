@@ -42,6 +42,25 @@ secondary_files:
   - "docs/02_MVP/mvp功能.md"
   - "docs/02_MVP/mvp功能_表格版.md"
 
+story_inputs:
+  - "Finahunt MVP 范围内允许接入的合规资讯源清单。"
+  - "每类资讯源的刷新策略、字段契约与合法性证据要求。"
+  - "runtime/source_runtime 需要直接读取的 source registry 基线。"
+
+story_process:
+  - "整理并统一 source_id、source_name、channel_type 等注册字段。"
+  - "为每个资讯源补齐 refresh_strategy、field_contract、legality_evidence。"
+  - "明确标注资讯源是否进入 MVP 主链路，形成统一 registry。"
+
+story_outputs:
+  - "可被 runtime 直接读取的 source_registry.yaml。"
+  - "一组带合规边界、字段约束和刷新策略的资讯源注册记录。"
+
+verification_basis:
+  - "检查 source_registry.yaml 可以被正常解析。"
+  - "检查每条注册记录都包含 source_id、refresh_strategy、field_contract、legality_evidence。"
+  - "检查每条资讯源都明确标注是否进入 MVP 主链路。"
+
 test_cases:
   normal:
     - "source_registry.yaml 能被正常解析。"

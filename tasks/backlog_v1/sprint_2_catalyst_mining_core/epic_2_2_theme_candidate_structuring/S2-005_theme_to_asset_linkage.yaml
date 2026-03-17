@@ -1,4 +1,4 @@
-task_id: "S2-005"
+﻿task_id: "S2-005"
 task_name: "题材到个股与板块映射"
 sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
 epic: "Epic 2.2 Theme Candidate Structuring"
@@ -39,8 +39,27 @@ primary_files:
 secondary_files:
   - "config/rules/compliance_rules.yaml"
 
+story_inputs:
+  - "S2-004 产出的题材候选聚合结果。"
+  - "个股、板块和产业链环节的客观映射规则。"
+  - "防止无依据绑定个股的合规边界。"
+
+story_process:
+  - "基于客观证据把题材候选映射到相关资产。"
+  - "区分强关联与弱关联，避免过度绑定。"
+  - "为每条映射补齐 linkage_reason 并保留证据链。"
+
+story_outputs:
+  - "带 asset_ref 和 linkage_reason 的题材候选结果。"
+  - "可供结构化结果卡继续消费的资产映射数据。"
+
+verification_basis:
+  - "抽查题材到板块或个股的代表性映射是否合理。"
+  - "检查每条映射都包含 linkage_reason。"
+  - "检查证据不足的题材不会被绑定到缺乏依据的个股。"
 test_cases:
   normal:
     - "题材候选可映射到相关板块和个股。"
   exception:
     - "证据不足时不输出个股映射。"
+

@@ -41,6 +41,25 @@ primary_files:
 secondary_files:
   - "config/rules/source_registry.yaml"
 
+story_inputs:
+  - "source registry 中声明的可用资讯源。"
+  - "抓取或模拟抓取所需的 fetch 配置与刷新策略。"
+  - "RawNewsItem 统一输出契约。"
+
+story_process:
+  - "读取 source registry 并逐个执行抓取或模拟抓取。"
+  - "把不同来源结果整理成统一的原始资讯对象。"
+  - "记录抓取失败、重试和来源级别日志。"
+
+story_outputs:
+  - "一批统一结构的 raw news item 列表。"
+  - "可供后续清洗和去重阶段消费的原始资讯输入。"
+
+verification_basis:
+  - "检查单次运行后能产出统一结构的原始资讯列表。"
+  - "检查每条原始资讯至少带有 source_id、published_at、title 等关键字段。"
+  - "检查单个资讯源失败时有日志且不会导致整批运行崩溃。"
+
 test_cases:
   normal:
     - "运行一次后产出统一原始资讯列表。"

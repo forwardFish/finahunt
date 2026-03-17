@@ -43,6 +43,25 @@ primary_files:
 secondary_files:
   - "tests/integration/test_runtime_foundation.py"
 
+story_inputs:
+  - "source runtime、标准化、事件阶段的输入输出契约。"
+  - "runtime_graph 与 runtime_schedule 需要共用的状态结构。"
+  - "最小可运行骨架需要覆盖的节点串联关系。"
+
+story_process:
+  - "统一 runtime_graph 和 runtime_schedule 的状态输入输出结构。"
+  - "定义节点之间传递的最小运行态字段。"
+  - "形成能够串起主链路的最小可运行 runtime 骨架。"
+
+story_outputs:
+  - "统一的 runtime graph 输入输出基线。"
+  - "一条可启动、可串联、可扩展的最小运行链路。"
+
+verification_basis:
+  - "检查 runtime_schedule 能够按统一状态启动 runtime_graph。"
+  - "检查节点之间传递的数据结构稳定且可被下游读取。"
+  - "检查基础运行测试可以覆盖主链路串联。"
+
 test_cases:
   normal:
     - "最小 runtime 流程可执行。"

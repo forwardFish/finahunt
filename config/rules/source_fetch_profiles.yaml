@@ -1,0 +1,72 @@
+defaults:
+  headless: true
+  wait_until: "networkidle"
+  timeout_ms: 20000
+  retry_count: 2
+  rate_limit_seconds: 1.0
+  detail_retry_count: 1
+
+sources:
+  cls-telegraph:
+    site_name: "财联社快讯"
+    list_url: "https://www.cls.cn/telegraph"
+    list_mode: "script_json_array"
+    list_json_key: "telegraphList"
+    detail_mode: "detail_page"
+    detail:
+      title_selectors:
+        - "h1"
+        - "title"
+      body_selectors:
+        - ".article-content"
+        - ".telegraph-detail__content"
+        - "article"
+        - "body"
+      published_at_selectors:
+        - "time"
+        - "meta[property='article:published_time']"
+      author_selectors:
+        - ".article-author"
+        - ".author-name"
+      tag_selectors:
+        - ".article-tag"
+  jiuyangongshe-live:
+    site_name: "韭研公社"
+    list_url: "https://www.jiuyangongshe.com/live"
+    list_mode: "regex_live_feed"
+    detail_mode: "inline_fallback"
+    detail:
+      title_selectors:
+        - "title"
+      body_selectors:
+        - ".article-content"
+        - ".live-detail"
+        - "body"
+      published_at_selectors:
+        - "time"
+      author_selectors:
+        - ".author"
+      tag_selectors:
+        - ".tag"
+  xueqiu-hot-spot:
+    site_name: "雪球热点"
+    list_url: "https://xueqiu.com/hot/spot"
+    list_mode: "script_json_object"
+    list_assignment: "window.__INITIAL_STORE__ = "
+    detail_mode: "detail_page"
+    detail:
+      title_selectors:
+        - "meta[property='og:title']"
+        - "title"
+      body_selectors:
+        - "meta[property='og:description']"
+        - "meta[name='description']"
+        - "body"
+      published_at_selectors:
+        - "meta[property='article:published_time']"
+        - "time"
+      author_selectors:
+        - "meta[name='author']"
+        - ".author"
+      tag_selectors:
+        - "meta[property='og:title']"

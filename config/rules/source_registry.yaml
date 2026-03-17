@@ -60,6 +60,36 @@ sources:
       rate_limit: "20/hour"
       notes: "Only retain posts that pass finance relevance and objective-content filters."
     risk_level: "medium"
+  - source_id: "xueqiu-hot-spot"
+    source_name: "雪球热点"
+    channel_type: "public_site"
+    status: "active"
+    in_mvp_chain: true
+    description: "公开热点页，用于补充社区讨论中已形成早期叙事的题材线索和候选标的。"
+    base_url: "https://xueqiu.com/hot/spot"
+    refresh_strategy:
+      cron: "*/20 * * * *"
+      timezone: "Asia/Shanghai"
+      retry_policy: "exponential_backoff"
+      max_retries: 3
+    field_contract:
+      required_fields:
+        - "title"
+        - "summary"
+        - "published_at"
+        - "source_url"
+      optional_fields:
+        - "stocks"
+        - "status_count"
+        - "reason"
+      parser_key: "xueqiu_hot_spot_html"
+    legality_evidence: "Publicly accessible hotspot page. MVP only captures visible topic title, visible text excerpt, related stocks, and page URL."
+    access_profile:
+      robots_respected: true
+      auth_mode: "public"
+      rate_limit: "20/hour"
+      notes: "Only retain objective hotspot text and traceable stock references; skip any content that requires login or private API."
+    risk_level: "medium"
   - source_id: "cninfo-announcement"
     source_name: "巨潮资讯公告"
     channel_type: "exchange"

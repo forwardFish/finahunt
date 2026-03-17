@@ -1,0 +1,69 @@
+task_id: "S2A-007"
+task_name: "Similar Case Agent"
+sprint: "Sprint 2A 低位题材挖掘引擎"
+epic: "Epic 2A.3 Fermentation Tracking and Research Review"
+story_id: "S2A-007"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "建立低位题材挖掘的历史模式库和相似事件参考能力。"
+business_value: "高手的核心优势之一是长期模式归纳，这一步用系统方式沉淀和逼近这种能力。"
+
+entry_criteria:
+  - "S2A-003 和 S2A-006 已完成，题材簇与发酵结果可稳定输出。"
+
+acceptance_criteria:
+  - "系统能为当前题材找到历史相似题材或相似事件路径。"
+  - "相似案例至少包含相似点说明、历史路径摘要和结果标签。"
+  - "系统可区分‘全新逻辑’与‘旧逻辑重估’。"
+  - "相似案例结果可被最终研究卡片复用。"
+
+constraints:
+  - "第一版只做模式参考，不做收益预测。"
+  - "相似案例必须有清晰的相似依据，不允许黑箱相似。"
+
+out_of_scope:
+  - "不做复杂向量检索基础设施重构。"
+  - "不做跨市场多资产相似案例。"
+
+dependencies:
+  - "S2A-003"
+  - "S2A-006"
+
+related_files:
+  - "packages/artifacts/store.py"
+  - "workspace/artifacts/runtime/"
+  - "agents/runtime/result_warehouse/agent.py"
+
+primary_files:
+  - "packages/artifacts/store.py"
+  - "agents/runtime/result_warehouse/agent.py"
+
+secondary_files:
+  - "workspace/artifacts/runtime/"
+
+story_inputs:
+  - "现有运行结果仓库中的题材对象、发酵阶段和结构化卡片。"
+  - "当前题材的核心叙事、催化类型和扩散路径。"
+  - "相似案例匹配规则和模式归纳维度。"
+
+story_process:
+  - "从已有结果仓库中抽取可复用的历史模式。"
+  - "为当前题材匹配相似题材或相似个股路径。"
+  - "输出相似点、差异点和可参考的历史演化摘要。"
+
+story_outputs:
+  - "一批可被当前题材复用的相似案例。"
+  - "带相似依据和历史路径摘要的参考结果。"
+
+verification_basis:
+  - "检查系统能输出相似案例及相似原因。"
+  - "检查旧逻辑重估型题材能被识别为再发酵，而不是误判成全新主题。"
+  - "检查相似案例结果可进入最终研究卡片。"
+
+test_cases:
+  normal:
+    - "当前题材可以匹配到至少一类可解释的历史相似案例。"
+  exception:
+    - "没有足够相似模式时不会编造历史案例。"

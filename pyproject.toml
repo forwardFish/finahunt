@@ -8,7 +8,9 @@ version = "0.1.0"
 description = "Compliance information source access agent system scaffold"
 requires-python = ">=3.11"
 dependencies = [
+  "beautifulsoup4>=4.12.3",
   "langgraph>=0.2.60",
+  "playwright>=1.51.0",
   "pydantic>=2.8.2",
   "PyYAML>=6.0.2",
   "requests>=2.32.3",

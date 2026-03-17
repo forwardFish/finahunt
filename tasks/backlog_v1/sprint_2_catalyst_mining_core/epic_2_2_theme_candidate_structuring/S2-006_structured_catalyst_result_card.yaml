@@ -1,4 +1,4 @@
-task_id: "S2-006"
+﻿task_id: "S2-006"
 task_name: "结构化催化结果卡片"
 sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
 epic: "Epic 2.2 Theme Candidate Structuring"
@@ -41,8 +41,27 @@ secondary_files:
   - "docs/02_MVP/mvp功能.md"
   - "docs/02_MVP/mvp功能_表格版.md"
 
+story_inputs:
+  - "S2-004 产出的题材候选聚合结果。"
+  - "S2-005 产出的题材到资产映射数据。"
+  - "MVP 文档中对结果卡的结构要求。"
+
+story_process:
+  - "为每个合格题材候选组装稳定的结构化结果卡。"
+  - "补齐摘要、催化类型、强度、时效、证据、关联资产和风险提示。"
+  - "保留来源追溯信息，保证结果卡可复核、可回放。"
+
+story_outputs:
+  - "可被下游排序和展示层直接消费的结构化结果卡。"
+  - "一套可稳定落盘的结果卡 schema。"
+
+verification_basis:
+  - "检查每张结果卡都包含证据、来源和风险提示。"
+  - "检查结果卡可以按同一结构重复生成。"
+  - "检查结果卡无需额外后处理即可被下游使用。"
 test_cases:
   normal:
     - "可输出完整的结构化催化结果卡片。"
   exception:
     - "缺少来源时卡片被判定为不合规。"
+

@@ -6,3 +6,6 @@ __pycache__/
 workspace/artifacts/
 workspace/logs/
 workspace/audit/
+apps/web/.next/
+apps/web/node_modules/
+apps/web/*.log

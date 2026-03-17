@@ -13,11 +13,13 @@ class DailyReviewAgent(BaseAgent):
 
     def build_content(self, state: GraphState) -> dict:
         theme_feed = get_result(state, "fermenting_theme_feed").get("fermenting_theme_feed", [])
+        low_position_opportunities = get_result(state, "low_position_discovery").get("low_position_opportunities", [])
         if theme_feed:
             review_payload = build_daily_review_from_theme_feed(theme_feed)
         else:
             ranked_events = get_result(state, "relevance_ranking").get("ranked_events", [])
             review_payload = build_daily_review(ranked_events)
+        review_payload["low_position_candidates"] = low_position_opportunities[:5]
         persist_runtime_json(
             state,
             stage=self.stage,

@@ -17,12 +17,14 @@ class ThemeDetectionAgent(BaseAgent):
         enriched_events: list[dict] = []
 
         for event in canonical_events:
-            text = f"{event.get('title', '')} {event.get('summary', '')}"
+            content_text = event.get("metadata", {}).get("content_text", "")
+            text = f"{event.get('title', '')} {event.get('summary', '')} {content_text}"
             theme_matches = detect_themes(text, theme_rules)
+            theme_tags = list(dict.fromkeys([*event.get("related_themes", []), *[match["theme"] for match in theme_matches]]))
             enriched_events.append(
                 {
                     **event,
-                    "theme_tags": [match["theme"] for match in theme_matches],
+                    "theme_tags": theme_tags,
                     "metadata": {
                         **event.get("metadata", {}),
                         "theme_evidence": theme_matches,

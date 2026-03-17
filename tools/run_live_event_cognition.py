@@ -20,6 +20,7 @@ def main() -> int:
         }
     )
     output = {
+        "low_position_opportunities": result["results"]["low_position_discovery"]["content"].get("low_position_opportunities", []),
         "fermenting_theme_feed": result["results"]["fermenting_theme_feed"]["content"].get("fermenting_theme_feed", []),
         "daily_review": result["results"]["daily_review"]["content"],
         "artifact_batch_dir": result["results"]["result_warehouse"]["content"].get("artifact_batch_dir", ""),

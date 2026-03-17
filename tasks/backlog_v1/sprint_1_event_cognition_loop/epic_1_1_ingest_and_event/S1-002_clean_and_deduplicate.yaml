@@ -40,6 +40,25 @@ primary_files:
 secondary_files:
   - "packages/schema/models.py"
 
+story_inputs:
+  - "S1-001 产出的原始资讯列表。"
+  - "标准化资讯契约和基础字段清洗规则。"
+  - "明显重复内容的判定与去重标准。"
+
+story_process:
+  - "对原始资讯做字段清洗、格式统一和内容标准化。"
+  - "识别并去除明显重复或高度重复的资讯记录。"
+  - "保留来源、时间和证据片段，避免清洗后失去可追溯性。"
+
+story_outputs:
+  - "一批去重后的标准化资讯对象。"
+  - "可供事件抽取直接消费的 normalized documents。"
+
+verification_basis:
+  - "检查输出符合 NormalizedNewsItem 结构。"
+  - "检查明显重复资讯不会重复进入下游。"
+  - "检查标准化后仍保留来源和时间等可追溯字段。"
+
 test_cases:
   normal:
     - "重复资讯只保留一条主记录。"

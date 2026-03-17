@@ -3,6 +3,7 @@ from __future__ import annotations
 from agents.base import BaseAgent
 from agents.helpers import artifact_ref, get_result
 from packages.schema.state import GraphState
+from skills.event import build_candidate_stock_links
 
 
 class StockLinkageAgent(BaseAgent):
@@ -24,10 +25,12 @@ class StockLinkageAgent(BaseAgent):
                         "relation": "direct",
                     }
                 )
+            candidate_stock_links = build_candidate_stock_links({**event, "linked_assets": linked_assets})
             linked_events.append(
                 {
                     **event,
                     "linked_assets": linked_assets,
+                    "candidate_stock_links": candidate_stock_links,
                 }
             )
 

@@ -1,0 +1,68 @@
+task_id: "S2A-003"
+task_name: "Theme Cluster Agent"
+sprint: "Sprint 2A 低位题材挖掘引擎"
+epic: "Epic 2A.2 Theme Cluster and Candidate Mapping"
+story_id: "S2A-003"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "把分散的事件、公告、快讯和互动问答归一成统一的题材事件簇。"
+business_value: "低位挖掘的关键不是多条新闻，而是把多条弱信号归成一条可研究的题材主线。"
+
+entry_criteria:
+  - "S2A-002 已完成，标准事件对象稳定可用。"
+
+acceptance_criteria:
+  - "同一高层题材的多源事件能归一到同一个 Theme Cluster。"
+  - "Theme Cluster 至少包含 cluster_id、theme_name、core_narrative、first_seen_time、latest_seen_time、source_count、related_events_count、related_stock_count。"
+  - "Theme Cluster 能区分全新题材、旧题材再激活和单次消息噪声。"
+  - "每个 Theme Cluster 都保留上游来源和证据链。"
+
+constraints:
+  - "不能把来源不同但叙事无关的事件强行聚成一个题材。"
+  - "必须保留 core_narrative，而不是只保留关键词命中。"
+
+out_of_scope:
+  - "不在本 Story 中评估标的正宗度。"
+  - "不做页面展示。"
+
+dependencies:
+  - "S2A-002"
+
+related_files:
+  - "agents/runtime/theme_candidate_aggregation/agent.py"
+  - "skills/event/fermentation.py"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "agents/runtime/theme_candidate_aggregation/agent.py"
+  - "skills/event/fermentation.py"
+
+secondary_files:
+  - "packages/schema/models.py"
+
+story_inputs:
+  - "标准事件对象及其来源证据。"
+  - "事件里的相关题材、催化、行业和时间信息。"
+  - "题材事件簇需要的核心字段定义。"
+
+story_process:
+  - "把分散事件聚成统一题材事件簇。"
+  - "为每个题材事件簇补齐核心叙事、首次出现时间和最近活跃时间。"
+  - "保留题材事件簇到上游事件和证据的可追溯关系。"
+
+story_outputs:
+  - "一批可持续跟踪的 Theme Cluster 题材事件簇。"
+  - "带 core_narrative 和证据链的题材级对象。"
+
+verification_basis:
+  - "检查相同题材的不同来源事件能正确归一。"
+  - "检查 Theme Cluster 中保留了核心叙事和证据引用。"
+  - "检查无关事件不会被错误合并。"
+
+test_cases:
+  normal:
+    - "多个相关事件可归成同一个 Theme Cluster。"
+  exception:
+    - "叙事无关的事件不会被错误归并到同一题材簇。"

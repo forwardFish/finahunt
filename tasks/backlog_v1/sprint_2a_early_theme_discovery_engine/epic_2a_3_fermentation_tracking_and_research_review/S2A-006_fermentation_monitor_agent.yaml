@@ -1,0 +1,69 @@
+task_id: "S2A-006"
+task_name: "Fermentation Monitor Agent"
+sprint: "Sprint 2A 低位题材挖掘引擎"
+epic: "Epic 2A.3 Fermentation Tracking and Research Review"
+story_id: "S2A-006"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "持续跟踪题材叙事扩散、平台传播、再发酵与龙头触发，生成 Fermentation Score。"
+business_value: "低位题材挖掘不是一次判断，而是要持续判断这个题材有没有从弱认知走向强认知。"
+
+entry_criteria:
+  - "S2A-003 和 S2A-005 已完成，题材簇和候选标的评分都已可用。"
+
+acceptance_criteria:
+  - "Fermentation Score 至少考虑提及热度、平台扩散度、叙事统一度、龙头触发度、再发酵强度。"
+  - "系统可以区分早期、扩散期、拥挤期。"
+  - "系统可识别旧消息再发酵，而不是只识别全新消息。"
+  - "Fermentation Score 可与 Catalyst Score、Continuity Score、Purity Score 合成研究优先级。"
+
+constraints:
+  - "不把简单情绪正负面当成发酵跟踪本体。"
+  - "必须保留传播路径和证据来源。"
+
+out_of_scope:
+  - "不做交易信号推送。"
+  - "不在本 Story 中生成最终研究卡片。"
+
+dependencies:
+  - "S2A-003"
+  - "S2A-005"
+
+related_files:
+  - "agents/runtime/theme_heat_snapshot/agent.py"
+  - "agents/runtime/fermenting_theme_feed/agent.py"
+  - "skills/event/fermentation.py"
+
+primary_files:
+  - "skills/event/fermentation.py"
+  - "agents/runtime/theme_heat_snapshot/agent.py"
+
+secondary_files:
+  - "agents/runtime/fermenting_theme_feed/agent.py"
+
+story_inputs:
+  - "Theme Cluster、候选标的池和 Purity Score 结果。"
+  - "不同平台、不同时间窗口的题材提及和扩散信息。"
+  - "发酵路径监控需要的热度、扩散、统一度和再发酵指标。"
+
+story_process:
+  - "按时间窗口跟踪题材热度、扩散路径和叙事演化。"
+  - "识别从小圈子到大圈子的传播变化。"
+  - "输出发酵阶段、Fermentation Score 和再发酵说明。"
+
+story_outputs:
+  - "带 Fermentation Score 的题材跟踪结果。"
+  - "可持续更新的发酵路径与阶段判断。"
+
+verification_basis:
+  - "检查多平台扩散的题材会有更高 Fermentation Score。"
+  - "检查旧题材再发酵可以被识别出来。"
+  - "检查拥挤度过高或噪声过强的题材不会被误标为低位早期。"
+
+test_cases:
+  normal:
+    - "题材可生成稳定的 Fermentation Score 和阶段判断。"
+  exception:
+    - "缺乏扩散证据的题材不会被误判为强发酵。"

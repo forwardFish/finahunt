@@ -1,0 +1,68 @@
+task_id: "S2A-005"
+task_name: "Purity Judge Agent"
+sprint: "Sprint 2A 低位题材挖掘引擎"
+epic: "Epic 2A.2 Theme Cluster and Candidate Mapping"
+story_id: "S2A-005"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "为候选标的计算 Purity Score，评估正宗度、唯一性、业务弹性、市值适配和风险过滤。"
+business_value: "这一步决定系统能不能从‘题材新闻整理’升级到‘提前识别最值得跟踪的票’。"
+
+entry_criteria:
+  - "S2A-004 已完成，候选标的池可稳定输出。"
+
+acceptance_criteria:
+  - "Purity Score 至少考虑题材正宗度、唯一性或稀缺性、业务弹性、市值适配、财务或合规风险。"
+  - "每个候选标的都带 score breakdown 和剔除理由。"
+  - "系统可显式过滤 ST、退市风险、重大减持、明显财务雷点等风险对象。"
+  - "Purity Score 可直接供最终研究优先级合成使用。"
+
+constraints:
+  - "不以短期涨跌或情绪热度代替正宗度。"
+  - "必须输出剔除理由和黑名单过滤原因。"
+
+out_of_scope:
+  - "不在本 Story 中做历史相似案例匹配。"
+  - "不做自动买卖建议。"
+
+dependencies:
+  - "S2A-004"
+
+related_files:
+  - "agents/governance/evaluation/agent.py"
+  - "packages/schema/models.py"
+  - "config/rules/standards.yaml"
+
+primary_files:
+  - "agents/governance/evaluation/agent.py"
+  - "config/rules/standards.yaml"
+
+secondary_files:
+  - "packages/schema/models.py"
+
+story_inputs:
+  - "题材对应的候选标的池。"
+  - "标的主营、稀缺性、风险过滤和市值适配规则。"
+  - "Purity Score 的评分维度与剔除规则。"
+
+story_process:
+  - "从候选标的池中计算正宗度、稀缺性、弹性和风险。"
+  - "对明显擦边或有重大风险的对象做降权或过滤。"
+  - "输出可解释的 Purity Score 及 score breakdown。"
+
+story_outputs:
+  - "带 Purity Score 的候选标的列表。"
+  - "带风险过滤和剔除理由的标的评估结果。"
+
+verification_basis:
+  - "检查最正宗的标的会得到更高 Purity Score。"
+  - "检查明显风险对象会被降权或过滤。"
+  - "检查每个评分结果都带 explanation 或 breakdown。"
+
+test_cases:
+  normal:
+    - "候选标的可生成稳定的 Purity Score。"
+  exception:
+    - "存在重大风险的标的会被明确过滤或显著降权。"

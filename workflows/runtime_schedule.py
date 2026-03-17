@@ -44,7 +44,7 @@ def run_live_event_cognition_cycle(
     return run_runtime_cycle(
         schedule_name="live-event-cognition",
         rule_version="v2",
-        requested_sources=requested_sources or ["cls-telegraph", "jiuyangongshe-live"],
+        requested_sources=requested_sources or ["cls-telegraph", "jiuyangongshe-live", "xueqiu-hot-spot"],
         live_fetch=True,
         user_profile=user_profile or {},
         max_items_per_source=max_items_per_source,

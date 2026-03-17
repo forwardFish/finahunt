@@ -1,4 +1,4 @@
-task_id: "S2-007"
+﻿task_id: "S2-007"
 task_name: "结构化结果仓库"
 sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
 epic: "Epic 2.3 Result Warehouse and Fermentation Engine"
@@ -45,6 +45,24 @@ secondary_files:
   - "tools/run_live_event_cognition.py"
   - "packages/schema/models.py"
 
+story_inputs:
+  - "runtime 链路产出的原始资讯、标准化资讯、归一事件、题材候选和结果卡。"
+  - "运行批次的 trace id、时间和产物元数据。"
+  - "结果仓库目录结构与 manifest 规范。"
+
+story_process:
+  - "把 runtime 产物落盘到稳定的结构化结果仓库中。"
+  - "写入记录 run 级计数、时间和 trace 标识的 manifest。"
+  - "当后续运行失败时，保留历史成功批次不被覆盖。"
+
+story_outputs:
+  - "包含已落盘 runtime 产物和 manifest 元数据的仓库批次。"
+  - "可供热度快照和发酵题材结果流复用的持久化输出。"
+
+verification_basis:
+  - "检查 live runtime 运行后会生成带 manifest.json 的仓库批次。"
+  - "检查下游 story 可以从仓库读取 canonical_events 和 structured_result_cards。"
+  - "检查 source_ref、created_at 和 evidence_refs 被完整保留。"
 test_cases:
   normal:
     - "完成一次 live 运行后，workspace/artifacts/runtime 下可看到带 manifest 的结构化结果批次。"
@@ -52,3 +70,4 @@ test_cases:
   exception:
     - "结果缺少 trace_id 或 source_ref 时，该批次会被判定为不完整。"
     - "本次写入失败不会污染历史批次。"
+

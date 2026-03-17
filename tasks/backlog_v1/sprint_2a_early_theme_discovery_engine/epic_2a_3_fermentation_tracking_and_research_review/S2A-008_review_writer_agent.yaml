@@ -1,0 +1,70 @@
+task_id: "S2A-008"
+task_name: "Review Writer Agent"
+sprint: "Sprint 2A 低位题材挖掘引擎"
+epic: "Epic 2A.3 Fermentation Tracking and Research Review"
+story_id: "S2A-008"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "输出低位题材研究卡片，把事件、题材、候选标的、发酵路径、相似案例和风险点组织成持续可观察的研究资产。"
+business_value: "这一步决定低位挖掘结果是否真正能被用户消费，而不只是停留在内部评分。"
+
+entry_criteria:
+  - "S2A-005、S2A-006、S2A-007 已完成。"
+
+acceptance_criteria:
+  - "研究卡片至少包含核心题材、最早源头、最近 24h 关键催化、当前阶段、候选标的、Purity Score、发酵路径、历史相似案例、未来观察信号、风险点。"
+  - "每张卡片都带 Low-position Research Priority Score，而不是买入建议。"
+  - "卡片可被观察、复盘、持续跟踪和人工修订。"
+  - "输出文案保持研究辅助定位，不出现荐股、收益承诺或交易指令表达。"
+
+constraints:
+  - "必须明确这是研究优先级，不是买卖评分。"
+  - "风险点、剔除理由和黑名单过滤结果必须可见。"
+
+out_of_scope:
+  - "不做自动交易执行。"
+  - "不做强运营通知推送。"
+
+dependencies:
+  - "S2A-005"
+  - "S2A-006"
+  - "S2A-007"
+
+related_files:
+  - "agents/runtime/daily_review/agent.py"
+  - "skills/event/fermentation.py"
+  - "docs/02_MVP/mvp功能.md"
+
+primary_files:
+  - "agents/runtime/daily_review/agent.py"
+  - "skills/event/fermentation.py"
+
+secondary_files:
+  - "docs/02_MVP/mvp功能.md"
+
+story_inputs:
+  - "Catalyst Score、Continuity Score、Purity Score、Fermentation Score 及其解释。"
+  - "题材簇、候选标的、相似案例和发酵路径结果。"
+  - "研究卡片字段规范与合规表达边界。"
+
+story_process:
+  - "把多层结果组织成一张低位题材研究卡片。"
+  - "生成研究优先级分、未来观察信号和风险点。"
+  - "让卡片可进入观察、复盘和持续跟踪链路。"
+
+story_outputs:
+  - "低位题材研究卡片。"
+  - "一批可观察、可复盘、可持续更新的深度研究结果。"
+
+verification_basis:
+  - "检查研究卡片字段完整，且能支撑长期观察。"
+  - "检查输出强调研究优先级，而不是交易建议。"
+  - "检查风险点、剔除理由和未来观察信号都可见。"
+
+test_cases:
+  normal:
+    - "可输出完整的低位题材研究卡片。"
+  exception:
+    - "关键评分或证据缺失时不会生成看似完整但不可用的研究卡片。"

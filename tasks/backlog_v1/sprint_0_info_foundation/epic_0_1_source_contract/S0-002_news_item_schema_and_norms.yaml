@@ -41,6 +41,25 @@ primary_files:
 secondary_files:
   - "config/spec/traceability.yaml"
 
+story_inputs:
+  - "source registry 中定义的资讯来源字段边界。"
+  - "RawNewsItem、NormalizedNewsItem 与证据片段的下游消费需求。"
+  - "后续清洗、事件抽取需要依赖的统一输入契约。"
+
+story_process:
+  - "定义 RawNewsItem、NormalizedNewsItem 和基础证据片段的统一结构。"
+  - "明确原始资讯到标准化资讯的字段映射与缺省规则。"
+  - "把可追溯来源、时间、标题、正文片段等基础规范写清楚。"
+
+story_outputs:
+  - "原始资讯与标准化资讯的数据模型契约。"
+  - "一套供后续清洗和事件抽取复用的字段规范。"
+
+verification_basis:
+  - "检查 schema 可以覆盖原始资讯、标准化资讯和证据片段三类对象。"
+  - "检查关键字段如 source_id、published_at、title、content/evidence 可用。"
+  - "检查标准化资讯仍能回溯到原始来源。"
+
 test_cases:
   normal:
     - "样例资讯能通过 RawNewsItem 与 NormalizedNewsItem 校验。"

@@ -1,4 +1,4 @@
-task_id: "S2-009"
+﻿task_id: "S2-009"
 task_name: "发酵题材候选结果流"
 sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
 epic: "Epic 2.3 Result Warehouse and Fermentation Engine"
@@ -45,6 +45,24 @@ secondary_files:
   - "docs/02_MVP/mvp功能.md"
   - "docs/02_MVP/mvp功能_表格版.md"
 
+story_inputs:
+  - "S2-008 产出的题材热度快照。"
+  - "仓库中保存的结构化结果卡和证据摘要。"
+  - "结果流排序规则以及 watch-only 降级规则。"
+
+story_process:
+  - "按照 theme_heat_score 对题材候选排序，生成面向检验者的结果流。"
+  - "为每条结果补齐 catalyst_summary、top_evidence、linked_assets 和 risk_notice。"
+  - "把较弱或风险较高的题材降级为 watch-only，而不是作为强候选展示。"
+
+story_outputs:
+  - "可被验收台和下游 UI 直接消费的发酵题材结果流。"
+  - "一份带证据和风险上下文、去重后的题材候选排序列表。"
+
+verification_basis:
+  - "检查结果流条目按 theme_heat_score 正确排序。"
+  - "检查每条结果都包含证据摘要、关联资产和风险提示。"
+  - "检查低证据或高风险题材会被降级或过滤。"
 test_cases:
   normal:
     - "可以稳定输出一份按发酵程度排序的题材候选结果流。"
@@ -52,3 +70,4 @@ test_cases:
   exception:
     - "缺少 theme_heat_score 的题材不会进入结果流。"
     - "证据不足的题材会被标记为 watch-only 或被过滤。"
+

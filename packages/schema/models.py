@@ -119,7 +119,17 @@ class EventObject(BaseModel):
     risk_level: Literal["low", "medium", "high"] = "low"
     summary: str = ""
     event_time: str = ""
+    event_subject: str = ""
+    occurred_at: str = ""
+    first_disclosed_at: str = ""
     canonical_key: str = ""
+    related_themes: list[str] = Field(default_factory=list)
+    related_industries: list[str] = Field(default_factory=list)
+    involved_products: list[str] = Field(default_factory=list)
+    involved_technologies: list[str] = Field(default_factory=list)
+    involved_policies: list[str] = Field(default_factory=list)
+    impact_direction: Literal["positive", "negative", "mixed", "neutral"] = "neutral"
+    impact_scope: Literal["stock", "sector", "market", "macro", "unknown"] = "unknown"
     theme_tags: list[str] = Field(default_factory=list)
     catalyst_type: str = ""
     catalyst_strength: Literal["high", "medium", "low", "unknown"] = "unknown"

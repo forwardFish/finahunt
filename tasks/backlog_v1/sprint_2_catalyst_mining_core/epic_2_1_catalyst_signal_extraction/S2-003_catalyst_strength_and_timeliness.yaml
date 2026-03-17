@@ -1,4 +1,4 @@
-task_id: "S2-003"
+﻿task_id: "S2-003"
 task_name: "催化强度与时效性判断"
 sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
 epic: "Epic 2.1 Catalyst Signal Extraction"
@@ -38,8 +38,27 @@ primary_files:
 secondary_files:
   - "config/rules/standards.yaml"
 
+story_inputs:
+  - "S2-002 产出的带类型催化记录。"
+  - "strength_level 和 timeliness_level 的评估规则。"
+  - "上游处理中保留下来的时间戳和时效信号。"
+
+story_process:
+  - "按照透明规则对每条催化信号做强度和时效性判断。"
+  - "输出可解释的评分原因，而不是只给黑盒分数。"
+  - "避免把陈旧或过弱信号错误标成强催化。"
+
+story_outputs:
+  - "带 strength_level、timeliness_level 和评分依据的催化记录。"
+  - "可进入题材候选聚合的已评估信号。"
+
+verification_basis:
+  - "检查强且新的催化信号分级高于弱或陈旧信号。"
+  - "检查输出中能看到评分依据。"
+  - "检查过期资讯不会被标成高时效。"
 test_cases:
   normal:
     - "强政策催化会被识别为高强度。"
   exception:
     - "过期消息不会被标记为高时效。"
+

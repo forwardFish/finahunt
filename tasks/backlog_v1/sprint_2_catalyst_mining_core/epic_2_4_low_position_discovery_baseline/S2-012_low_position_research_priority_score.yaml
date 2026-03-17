@@ -1,0 +1,70 @@
+task_id: "S2-012"
+task_name: "低位题材研究优先级评分"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.4 Low-position Discovery Baseline"
+story_id: "S2-012"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "基于 Catalyst Score、Continuity Score、Purity Score 和 Fermentation Score 合成 Low-position Research Priority Score。"
+business_value: "系统最终应该给用户的是研究优先级，而不是买卖建议。"
+
+entry_criteria:
+  - "S2-008、S2-010、S2-011 已完成。"
+
+acceptance_criteria:
+  - "系统至少输出 Catalyst Score、Continuity Score、Purity Score、Fermentation Score 四类分数。"
+  - "合成结果明确命名为研究优先级分，而不是买入分。"
+  - "每个题材结果都带总分和分项 breakdown。"
+  - "研究优先级分可直接供结果流和研究卡使用。"
+
+constraints:
+  - "不把这套分数包装成收益预测或交易信号。"
+  - "必须保留各分项解释和风险提示。"
+
+out_of_scope:
+  - "不在本 Story 中做深度历史相似案例匹配。"
+  - "不做自动推送策略。"
+
+dependencies:
+  - "S2-008"
+  - "S2-010"
+  - "S2-011"
+
+related_files:
+  - "skills/event/fermentation.py"
+  - "agents/runtime/theme_heat_snapshot/agent.py"
+  - "packages/schema/models.py"
+
+primary_files:
+  - "skills/event/fermentation.py"
+  - "agents/runtime/theme_heat_snapshot/agent.py"
+
+secondary_files:
+  - "packages/schema/models.py"
+
+story_inputs:
+  - "题材热度快照、题材叙事对象和 Purity Score 结果。"
+  - "Catalyst、Continuity、Purity、Fermentation 四类评分规则。"
+  - "研究优先级结果流需要的排序字段与解释要求。"
+
+story_process:
+  - "计算四类分数并生成 breakdown。"
+  - "合成 Low-position Research Priority Score。"
+  - "为结果补齐排序理由和风险说明。"
+
+story_outputs:
+  - "带研究优先级分的低位题材候选结果。"
+  - "可供研究卡与结果流直接消费的排序结果。"
+
+verification_basis:
+  - "检查分数结构完整且可解释。"
+  - "检查高催化、高持续性、高正宗度题材优先级更高。"
+  - "检查结果明确定位为研究优先级，而不是交易建议。"
+
+test_cases:
+  normal:
+    - "低位题材候选可生成稳定的研究优先级评分。"
+  exception:
+    - "缺少关键分项时不会生成伪完整的高置信评分。"

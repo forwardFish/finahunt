@@ -1,0 +1,69 @@
+task_id: "S2-011"
+task_name: "候选标的正宗度评分"
+sprint: "Sprint 2 潜在题材催化结构化挖掘核心"
+epic: "Epic 2.4 Low-position Discovery Baseline"
+story_id: "S2-011"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+
+goal: "在现有题材到标的映射基础上，为候选标的补齐 Purity Score。"
+business_value: "低位题材挖掘的关键不是只知道题材，而是提前识别最正宗、最有辨识度、最值得跟踪的候选。"
+
+entry_criteria:
+  - "S2-005 和 S2-010 已完成。"
+
+acceptance_criteria:
+  - "每个候选标的都至少带题材正宗度、唯一性或稀缺性、业务弹性、市值适配和风险过滤结果。"
+  - "每个标的都带 Purity Score 和 score breakdown。"
+  - "明显擦边、风险过高或财务雷点对象会被显式降权或过滤。"
+  - "评分结果可直接供研究优先级评分消费。"
+
+constraints:
+  - "不以短期涨跌幅替代正宗度。"
+  - "必须保留剔除理由和风险说明。"
+
+out_of_scope:
+  - "不在本 Story 中输出最终研究卡。"
+  - "不做交易建议排序。"
+
+dependencies:
+  - "S2-005"
+  - "S2-010"
+
+related_files:
+  - "agents/runtime/stock_linkage/agent.py"
+  - "agents/governance/evaluation/agent.py"
+  - "config/rules/standards.yaml"
+
+primary_files:
+  - "agents/governance/evaluation/agent.py"
+  - "config/rules/standards.yaml"
+
+secondary_files:
+  - "agents/runtime/stock_linkage/agent.py"
+
+story_inputs:
+  - "题材到标的映射结果。"
+  - "题材正宗度、稀缺性、弹性和风险过滤规则。"
+  - "低位题材候选票筛选需要的打分维度。"
+
+story_process:
+  - "对候选标的进行正宗度和稀缺性评估。"
+  - "加入风险过滤、市值适配和明显雷点过滤。"
+  - "输出 Purity Score 及 breakdown。"
+
+story_outputs:
+  - "带 Purity Score 的候选标的列表。"
+  - "带剔除理由和风险说明的候选标的评估结果。"
+
+verification_basis:
+  - "检查更正宗的标的分数更高。"
+  - "检查明显风险对象被降权或过滤。"
+  - "检查评分结果可解释。"
+
+test_cases:
+  normal:
+    - "候选标的可生成稳定的 Purity Score。"
+  exception:
+    - "高风险或明显擦边对象不会被误判成高优先候选。"

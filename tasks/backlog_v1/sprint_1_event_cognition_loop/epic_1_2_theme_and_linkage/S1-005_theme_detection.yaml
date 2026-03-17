@@ -40,6 +40,25 @@ primary_files:
 secondary_files:
   - "packages/schema/models.py"
 
+story_inputs:
+  - "S1-004 产出的 canonical events。"
+  - "题材识别规则、关键词和归类边界。"
+  - "事件内容中的行业、政策、产业链等上下文信息。"
+
+story_process:
+  - "根据事件内容和规则识别所属题材。"
+  - "为事件补齐题材标签和识别理由。"
+  - "避免把证据不足的事件强行归入题材。"
+
+story_outputs:
+  - "带题材标签的事件结果。"
+  - "可供催化识别和资产关联继续使用的题材识别信号。"
+
+verification_basis:
+  - "检查代表性事件能够识别出合理题材。"
+  - "检查题材识别结果带有可解释的依据。"
+  - "检查证据不足的事件不会被误标过多题材。"
+
 test_cases:
   normal:
     - "典型事件能识别出题材标签。"
