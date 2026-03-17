@@ -13,6 +13,7 @@ from agents.runtime.source_scout import SourceScoutAgent
 from agents.runtime.source_runtime import SourceRuntimeAgent
 from agents.runtime.stock_linkage import StockLinkageAgent
 from agents.runtime.structured_result_cards import StructuredResultCardsAgent
+from agents.runtime.theme_cluster import ThemeClusterAgent
 from agents.runtime.theme_candidate_aggregation import ThemeCandidateAggregationAgent
 from agents.runtime.theme_detection import ThemeDetectionAgent
 from agents.runtime.theme_heat_snapshot import ThemeHeatSnapshotAgent
@@ -33,6 +34,7 @@ __all__ = [
     "SourceRuntimeAgent",
     "StockLinkageAgent",
     "StructuredResultCardsAgent",
+    "ThemeClusterAgent",
     "ThemeCandidateAggregationAgent",
     "ThemeDetectionAgent",
     "ThemeHeatSnapshotAgent",

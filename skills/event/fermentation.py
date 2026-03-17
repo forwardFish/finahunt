@@ -240,6 +240,8 @@ def build_theme_heat_snapshots(theme_candidates: list[dict[str, Any]]) -> list[d
                 "catalyst_score": candidate.get("catalyst_score", 0.0),
                 "continuity_score": candidate.get("continuity_score", 0.0),
                 "fermentation_score": candidate.get("fermentation_score", 0.0),
+                "cluster_state": candidate.get("cluster_state", "new_theme"),
+                "cluster_noise_level": candidate.get("cluster_noise_level", "medium"),
                 "fermentation_stage": _classify_fermentation_stage(
                     theme_heat_score,
                     source_count,
@@ -264,31 +266,39 @@ def build_fermenting_theme_feed(
     theme_heat_snapshots: list[dict[str, Any]],
     structured_result_cards: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    card_by_theme = {card["theme_name"]: card for card in structured_result_cards}
+    card_by_candidate = {card["theme_candidate_id"]: card for card in structured_result_cards}
     feed: list[dict[str, Any]] = []
+    deferred_noise: list[dict[str, Any]] = []
 
     for snapshot in theme_heat_snapshots:
-        card = card_by_theme.get(snapshot["theme_name"])
+        card = card_by_candidate.get(snapshot["theme_candidate_id"])
         if not card:
             continue
         watch_only = snapshot["theme_heat_score"] < 55 or snapshot["source_count"] < 2
-        feed.append(
-            {
-                "theme_name": snapshot["theme_name"],
-                "cluster_id": snapshot["cluster_id"],
-                "theme_candidate_id": snapshot["theme_candidate_id"],
-                "theme_heat_score": snapshot["theme_heat_score"],
-                "fermentation_stage": snapshot["fermentation_stage"],
-                "watch_only": watch_only,
-                "core_narrative": card.get("core_narrative", ""),
-                "catalyst_summary": card["catalyst_summary"],
-                "top_evidence": card["top_evidence"],
-                "candidate_stocks": card.get("candidate_stocks", []),
-                "linked_assets": card["linked_assets"],
-                "risk_notice": card["risk_notice"] if not watch_only else f"{card['risk_notice']} Keep as watch-only for now.",
-                "source_refs": card["source_refs"],
-            }
-        )
+        item = {
+            "theme_name": snapshot["theme_name"],
+            "cluster_id": snapshot["cluster_id"],
+            "theme_candidate_id": snapshot["theme_candidate_id"],
+            "theme_heat_score": snapshot["theme_heat_score"],
+            "fermentation_stage": snapshot["fermentation_stage"],
+            "watch_only": watch_only,
+            "core_narrative": card.get("core_narrative", ""),
+            "catalyst_summary": card["catalyst_summary"],
+            "top_evidence": card["top_evidence"],
+            "candidate_stocks": card.get("candidate_stocks", []),
+            "linked_assets": card["linked_assets"],
+            "risk_notice": card["risk_notice"] if not watch_only else f"{card['risk_notice']} Keep as watch-only for now.",
+            "source_refs": card["source_refs"],
+        }
+        if snapshot.get("cluster_state") == "single_signal_noise" and snapshot.get("source_count", 0) < 2:
+            item["watch_only"] = True
+            item["risk_notice"] = f"{item['risk_notice']} Single-source noise remains possible."
+            deferred_noise.append(item)
+            continue
+        feed.append(item)
+
+    if not feed:
+        feed = sorted(deferred_noise, key=lambda entry: entry["theme_heat_score"], reverse=True)[:3]
 
     seen: set[str] = set()
     deduped: list[dict[str, Any]] = []
@@ -304,11 +314,11 @@ def build_low_position_opportunities(
     theme_heat_snapshots: list[dict[str, Any]],
     structured_result_cards: list[dict[str, Any]],
 ) -> list[dict[str, Any]]:
-    card_by_theme = {card["theme_name"]: card for card in structured_result_cards}
+    card_by_candidate = {card["theme_candidate_id"]: card for card in structured_result_cards}
     opportunities: list[dict[str, Any]] = []
 
     for snapshot in theme_heat_snapshots:
-        card = card_by_theme.get(snapshot["theme_name"])
+        card = card_by_candidate.get(snapshot["theme_candidate_id"])
         if not card:
             continue
 

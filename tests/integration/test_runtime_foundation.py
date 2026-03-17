@@ -11,6 +11,7 @@ def test_runtime_cycle_produces_structured_outputs():
     normalize = result["results"]["normalize"]["content"]
     extract = result["results"]["event_extract"]["content"]
     unify = result["results"]["event_unify"]["content"]
+    theme_cluster = result["results"]["theme_cluster"]["content"]
     theme_candidates = result["results"]["theme_candidate_aggregation"]["content"]
     result_cards = result["results"]["structured_result_cards"]["content"]
     theme_heat = result["results"]["theme_heat_snapshot"]["content"]
@@ -30,6 +31,8 @@ def test_runtime_cycle_produces_structured_outputs():
     assert any(event["event_subject"] for event in extract["candidate_events"])
     assert any(event["source_priority"] in {"P0", "P1", "P2", "unknown"} for event in extract["candidate_events"])
     assert len(unify["canonical_events"]) >= 1
+    assert len(theme_cluster["theme_clusters"]) >= 1
+    assert any(item["cluster_state"] for item in theme_cluster["theme_clusters"])
     assert len(theme_candidates["theme_candidates"]) >= 1
     assert any(item["cluster_id"] for item in theme_candidates["theme_candidates"])
     assert any(item["candidate_stocks"] for item in theme_candidates["theme_candidates"])
@@ -42,6 +45,7 @@ def test_runtime_cycle_produces_structured_outputs():
     assert "low_position_candidates" in review
     assert audit["trace_report"]["documents_normalized"] == len(normalize["normalized_documents"])
     assert audit["trace_report"]["documents_scouted"] == len(scout["scouted_documents"])
+    assert audit["trace_report"]["theme_clusters"] == len(theme_cluster["theme_clusters"])
     assert audit["trace_report"]["fermenting_theme_count"] == len(theme_feed["fermenting_theme_feed"])
     assert audit["trace_report"]["low_position_count"] == len(low_position["low_position_opportunities"])
     assert warehouse["artifact_batch_dir"]
@@ -52,6 +56,7 @@ def test_runtime_cycle_produces_structured_outputs():
     assert (batch_dir / "source_scout_candidates.json").exists()
     assert (batch_dir / "normalized_documents.json").exists()
     assert (batch_dir / "canonical_events.json").exists()
+    assert (batch_dir / "theme_clusters.json").exists()
     assert (batch_dir / "theme_candidates.json").exists()
     assert (batch_dir / "structured_result_cards.json").exists()
     assert (batch_dir / "theme_heat_snapshots.json").exists()

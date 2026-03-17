@@ -23,10 +23,16 @@ from skills.event.intake import (
     derive_continuity_hint,
     scout_early_catalyst_inputs,
 )
+from skills.event.theme_cluster import (
+    build_theme_candidates_from_clusters,
+    build_theme_clusters,
+)
 
 __all__ = [
     "aggregate_theme_candidates",
     "build_candidate_stock_links",
+    "build_theme_candidates_from_clusters",
+    "build_theme_clusters",
     "build_daily_review",
     "build_daily_review_from_theme_feed",
     "build_fermenting_theme_feed",
