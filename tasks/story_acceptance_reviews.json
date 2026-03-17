@@ -1,0 +1,88 @@
+{
+  "reviews": [
+    {
+      "project": "finahunt",
+      "backlog_id": "backlog_v1",
+      "sprint_id": "sprint_2a_early_theme_discovery_engine",
+      "story_id": "S2A-001",
+      "reviewer": "Codex Formal Acceptance",
+      "verdict": "approved",
+      "summary": "Retroactive formal acceptance passed for S2A-001 against finahunt main with dashboard evidence archived.",
+      "notes": "Validated against current finahunt head 59aa8dd and runtime sample run-e79ecebad7fa.",
+      "run_id": "task-finahunt-s2a-001-formal",
+      "checked_at": "2026-03-17T20:50:28+08:00",
+      "template_version": "v1",
+      "updated_at": "2026-03-17T20:50:28"
+    },
+    {
+      "project": "finahunt",
+      "backlog_id": "backlog_v1",
+      "sprint_id": "sprint_2a_early_theme_discovery_engine",
+      "story_id": "S2A-002",
+      "reviewer": "Codex Formal Acceptance",
+      "verdict": "approved",
+      "summary": "Retroactive formal acceptance passed for S2A-002 against finahunt main with dashboard evidence archived.",
+      "notes": "Validated against current finahunt head 59aa8dd and runtime sample run-e79ecebad7fa.",
+      "run_id": "task-finahunt-s2a-002-formal",
+      "checked_at": "2026-03-17T20:50:28+08:00",
+      "template_version": "v1",
+      "updated_at": "2026-03-17T20:50:28"
+    },
+    {
+      "project": "finahunt",
+      "backlog_id": "backlog_v1",
+      "sprint_id": "sprint_2a_early_theme_discovery_engine",
+      "story_id": "S2A-003",
+      "reviewer": "Codex Formal Acceptance",
+      "verdict": "approved",
+      "summary": "Retroactive formal acceptance passed for S2A-003 against finahunt main with dashboard evidence archived.",
+      "notes": "Validated against current finahunt head 59aa8dd and runtime sample run-e79ecebad7fa.",
+      "run_id": "task-finahunt-s2a-003-formal",
+      "checked_at": "2026-03-17T20:50:28+08:00",
+      "template_version": "v1",
+      "updated_at": "2026-03-17T20:50:28"
+    },
+    {
+      "project": "finahunt",
+      "backlog_id": "backlog_v1",
+      "sprint_id": "sprint_2a_early_theme_discovery_engine",
+      "story_id": "S2A-004",
+      "reviewer": "Codex Formal Acceptance",
+      "verdict": "approved",
+      "summary": "Retroactive formal acceptance passed for S2A-004 against finahunt main with dashboard evidence archived.",
+      "notes": "Validated against current finahunt head 59aa8dd and runtime sample run-e79ecebad7fa.",
+      "run_id": "task-finahunt-s2a-004-formal",
+      "checked_at": "2026-03-17T20:50:28+08:00",
+      "template_version": "v1",
+      "updated_at": "2026-03-17T20:50:28"
+    },
+    {
+      "project": "finahunt",
+      "backlog_id": "backlog_v1",
+      "sprint_id": "sprint_2a_early_theme_discovery_engine",
+      "story_id": "S2A-005",
+      "reviewer": "Codex Formal Acceptance",
+      "verdict": "approved",
+      "summary": "Retroactive formal acceptance passed for S2A-005 against finahunt main with dashboard evidence archived.",
+      "notes": "Validated against current finahunt head 59aa8dd and runtime sample run-e79ecebad7fa.",
+      "run_id": "task-finahunt-s2a-005-formal",
+      "checked_at": "2026-03-17T20:50:28+08:00",
+      "template_version": "v1",
+      "updated_at": "2026-03-17T20:50:28"
+    },
+    {
+      "project": "finahunt",
+      "backlog_id": "backlog_v1",
+      "sprint_id": "sprint_2a_early_theme_discovery_engine",
+      "story_id": "S2A-006",
+      "reviewer": "Codex Formal Acceptance",
+      "verdict": "approved",
+      "summary": "Retroactive formal acceptance passed for S2A-006 against finahunt main with dashboard evidence archived.",
+      "notes": "Validated against current finahunt head 59aa8dd and runtime sample run-e79ecebad7fa.",
+      "run_id": "task-finahunt-s2a-006-formal",
+      "checked_at": "2026-03-17T20:50:28+08:00",
+      "template_version": "v1",
+      "updated_at": "2026-03-17T20:50:28"
+    }
+  ]
+}
