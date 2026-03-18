@@ -39,6 +39,21 @@ export type DailyTheme = {
   riskNotice: string;
   candidateStocks: Array<{ name: string; code: string; score: number | null }>;
   topEvidence: Array<{ title: string; summary: string; eventTime: string }>;
+  firstSourceUrl: string;
+  topCandidatePurityScore: number | null;
+  researchPositioningNote: string;
+  referenceType: string;
+  futureWatchSignals: string[];
+  riskFlags: string[];
+  similarCases: Array<{
+    runId: string;
+    themeName: string;
+    referenceType: string;
+    similarityScore: number | null;
+    resultLabel: string;
+    historicalPathSummary: string;
+  }>;
+  latestCatalysts: Array<{ title: string; summary: string; eventTime: string }>;
 };
 
 export type DailySnapshot = {
@@ -98,6 +113,7 @@ export function loadDailySnapshot(date: string = latestAvailableDate()): DailySn
     const themeCandidates = readJsonArray(path.join(runDir, "theme_candidates.json"));
     const lowPosition = readJsonArray(path.join(runDir, "low_position_opportunities.json"));
     const fermenting = readJsonArray(path.join(runDir, "fermenting_theme_feed.json"));
+    const dailyReview = readJson<Record<string, unknown>>(path.join(runDir, "daily_review.json")) ?? {};
 
     includedRuns.push({
       runId: asString(manifest.run_id) || path.basename(runDir),
@@ -113,6 +129,7 @@ export function loadDailySnapshot(date: string = latestAvailableDate()): DailySn
     mergeThemes(themesByKey, themeCandidates);
     mergeLowPosition(themesByKey, lowPosition, lowPositionKeys);
     mergeFermenting(themesByKey, fermenting, fermentingKeys);
+    mergeResearchCards(themesByKey, dailyReview);
   }
 
   const themes = Array.from(themesByKey.values()).sort(compareThemes);
@@ -238,7 +255,15 @@ function mergeThemes(target: Map<string, DailyTheme>, items: JsonRecord[]): void
       fermentationStage: "watching",
       riskNotice: "",
       candidateStocks: toCandidateStocks(item.candidate_stocks),
-      topEvidence
+      topEvidence,
+      firstSourceUrl: "",
+      topCandidatePurityScore: null,
+      researchPositioningNote: "",
+      referenceType: "",
+      futureWatchSignals: [],
+      riskFlags: [],
+      similarCases: [],
+      latestCatalysts: []
     };
 
     const previous = target.get(key);
@@ -307,6 +332,38 @@ function mergeFermenting(target: Map<string, DailyTheme>, items: JsonRecord[], k
   }
 }
 
+function mergeResearchCards(target: Map<string, DailyTheme>, dailyReview: Record<string, unknown>): void {
+  const researchCards = Array.isArray(dailyReview.low_position_research_cards)
+    ? dailyReview.low_position_research_cards.filter(isRecord)
+    : [];
+
+  for (const item of researchCards) {
+    const themeName = asString(item.theme_name);
+    const key = normalizeKey(themeName || asString(item.cluster_id) || asString(item.theme_candidate_id));
+    if (!key) {
+      continue;
+    }
+    const existing = target.get(key) ?? emptyTheme(themeName, asString(item.cluster_id), key);
+    const nextTheme: DailyTheme = {
+      ...existing,
+      themeName: existing.themeName || themeName,
+      clusterId: existing.clusterId || asString(item.cluster_id),
+      coreNarrative: existing.coreNarrative || asString(item.core_narrative),
+      firstSourceUrl: asString(item.first_source_url) || existing.firstSourceUrl,
+      topCandidatePurityScore: asNullableNumber(item.top_candidate_purity_score) ?? existing.topCandidatePurityScore,
+      researchPositioningNote: asString(item.research_positioning_note) || existing.researchPositioningNote,
+      referenceType: asString(item.reference_type) || existing.referenceType,
+      futureWatchSignals: asStringArray(item.future_watch_signals),
+      riskFlags: asStringArray(item.risk_flags),
+      similarCases: toSimilarCases(item.similar_cases),
+      latestCatalysts: toEvidenceArray(item.latest_24h_key_catalysts),
+      candidateStocks: existing.candidateStocks.length ? existing.candidateStocks : toCandidateStocks(item.candidate_stocks),
+      topEvidence: existing.topEvidence.length ? existing.topEvidence : toEvidenceArray(item.latest_24h_key_catalysts)
+    };
+    target.set(key, nextTheme);
+  }
+}
+
 function emptyTheme(themeName: string, clusterId: string, key: string): DailyTheme {
   return {
     key,
@@ -326,7 +383,15 @@ function emptyTheme(themeName: string, clusterId: string, key: string): DailyThe
     fermentationStage: "watching",
     riskNotice: "",
     candidateStocks: [],
-    topEvidence: []
+    topEvidence: [],
+    firstSourceUrl: "",
+    topCandidatePurityScore: null,
+    researchPositioningNote: "",
+    referenceType: "",
+    futureWatchSignals: [],
+    riskFlags: [],
+    similarCases: [],
+    latestCatalysts: []
   };
 }
 
@@ -490,4 +555,30 @@ function toEvidenceArray(value: unknown): Array<{ title: string; summary: string
       eventTime: asString(item.event_time)
     }))
     .filter((item) => item.title);
+}
+
+function toSimilarCases(
+  value: unknown
+): Array<{
+  runId: string;
+  themeName: string;
+  referenceType: string;
+  similarityScore: number | null;
+  resultLabel: string;
+  historicalPathSummary: string;
+}> {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+  return value
+    .filter(isRecord)
+    .map((item) => ({
+      runId: asString(item.run_id),
+      themeName: asString(item.theme_name),
+      referenceType: asString(item.reference_type),
+      similarityScore: asNullableNumber(item.similarity_score),
+      resultLabel: asString(item.result_label),
+      historicalPathSummary: asString(item.historical_path_summary)
+    }))
+    .filter((item) => item.runId || item.themeName);
 }

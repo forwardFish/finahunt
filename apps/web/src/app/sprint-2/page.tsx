@@ -83,6 +83,16 @@ function buildFocusHref(date: string, focus: FocusMode): string {
   return `/sprint-2?date=${date}&focus=${focus}`;
 }
 
+function similarityLabel(value: string): string {
+  if (value === "reignited_logic") {
+    return "再发酵参考";
+  }
+  if (value === "adjacent_pattern") {
+    return "相邻模式";
+  }
+  return "暂无历史映射";
+}
+
 export default async function Sprint2Page({ searchParams }: PageProps) {
   const params = searchParams ? await searchParams : {};
   const date = resolveTargetDate(params.date);
@@ -112,7 +122,8 @@ export default async function Sprint2Page({ searchParams }: PageProps) {
         <span className="eyebrow">Sprint 2 Fermentation Board</span>
         <h1>{snapshot.date} 发酵题材总览</h1>
         <p>
-          这页专门用来观察 `Sprint 2` 的结果。你现在可以把“发酵题材”和“低位研究机会”分开看，不会再被混在一起的指标干扰判断。
+          这页专门用来观察 `Sprint 2` 的聚合结果。现在除了“发酵题材”和“低位研究机会”，
+          还会把 `S2A-007 / S2A-008` 产出的相似案例、研究卡和未来观察信号一起展开。
         </p>
 
         <div className="toolbar toolbar-split">
@@ -178,7 +189,7 @@ export default async function Sprint2Page({ searchParams }: PageProps) {
         </div>
 
         <div className="duo-grid">
-          <article className="duo-card">
+          <article className="duo-card card">
             <span className="pill accent">发酵领跑</span>
             <h3>{topFermentation?.themeName || "暂无题材"}</h3>
             <p>{topFermentation?.coreNarrative || "当前没有足够的发酵题材摘要。"}</p>
@@ -188,7 +199,7 @@ export default async function Sprint2Page({ searchParams }: PageProps) {
               <span className="pill good">{topFermentation?.fermentationStage || "-"}</span>
             </div>
           </article>
-          <article className="duo-card">
+          <article className="duo-card card">
             <span className="pill warn">研究优先</span>
             <h3>{topResearch?.themeName || "暂无机会"}</h3>
             <p>{topResearch?.lowPositionReason || "当前没有低位研究机会说明。"}</p>
@@ -263,7 +274,7 @@ export default async function Sprint2Page({ searchParams }: PageProps) {
           <div className="section-head">
             <div>
               <h2>低位研究机会</h2>
-              <p>这里不是交易建议，而是今天最值得优先研究的早期方向。</p>
+              <p>这里展示的是研究优先级，不是交易指令。相似案例、研究卡和未来观察信号会直接展开。</p>
             </div>
           </div>
           <div className="research-grid">
@@ -272,18 +283,24 @@ export default async function Sprint2Page({ searchParams }: PageProps) {
                 <div className="meta-row">
                   <span className="pill warn">研究优先级 {formatScore(theme.lowPositionScore)}</span>
                   <span className="pill good">{theme.fermentationStage || "watch-only"}</span>
+                  {theme.referenceType ? <span className="pill">{similarityLabel(theme.referenceType)}</span> : null}
                 </div>
                 <h3>{theme.themeName || theme.clusterId}</h3>
-                <p>{theme.lowPositionReason || theme.coreNarrative || "当前没有低位判断说明。"}</p>
+                <p>{theme.lowPositionReason || theme.coreNarrative || "当前还没有足够完整的低位研究说明。"}</p>
                 <div className="pill-row">
                   <span className="pill">热度 {formatScore(theme.heatScore)}</span>
                   <span className="pill">催化 {formatScore(theme.catalystScore)}</span>
                   <span className="pill">持续性 {formatScore(theme.continuityScore)}</span>
                   <span className="pill">发酵 {formatScore(theme.fermentationScore)}</span>
+                  {theme.topCandidatePurityScore !== null ? (
+                    <span className="pill accent">Purity {formatScore(theme.topCandidatePurityScore)}</span>
+                  ) : null}
                 </div>
                 <p className="muted">
                   首次出现: {formatIso(theme.firstSeenTime)} | 最近活跃: {formatIso(theme.latestSeenTime)}
                 </p>
+                {theme.researchPositioningNote ? <p className="muted">{theme.researchPositioningNote}</p> : null}
+                {theme.firstSourceUrl ? <p className="muted">最早来源: {theme.firstSourceUrl}</p> : null}
                 {theme.candidateStocks.length ? (
                   <div className="pill-row">
                     {theme.candidateStocks.slice(0, 5).map((stock) => (
@@ -296,15 +313,59 @@ export default async function Sprint2Page({ searchParams }: PageProps) {
                 ) : (
                   <p className="muted">当前还没有沉淀出足够稳定的候选标的映射。</p>
                 )}
-                {theme.topEvidence.length ? (
-                  <div className="evidence-list">
-                    {theme.topEvidence.slice(0, 2).map((evidence) => (
-                      <div className="evidence-item" key={`${theme.key}-${evidence.title}`}>
-                        <strong>{evidence.title}</strong>
-                        <div className="muted">{formatIso(evidence.eventTime)}</div>
-                        <div>{evidence.summary || "暂无摘要"}</div>
-                      </div>
-                    ))}
+                {theme.similarCases.length ? (
+                  <div className="detail-block">
+                    <strong>相似案例</strong>
+                    <div className="evidence-list">
+                      {theme.similarCases.slice(0, 2).map((item) => (
+                        <div className="evidence-item" key={`${theme.key}-${item.runId}-${item.themeName}`}>
+                          <div className="meta-row">
+                            <span className="pill accent">{item.themeName || item.runId}</span>
+                            <span className="pill">{similarityLabel(item.referenceType)}</span>
+                            {item.similarityScore !== null ? (
+                              <span className="pill">相似度 {formatScore(item.similarityScore)}</span>
+                            ) : null}
+                          </div>
+                          <div>{item.historicalPathSummary || "暂无历史路径摘要"}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <p className="muted">当前还没有足够可信的历史相似案例，可继续观察是否形成稳定模式。</p>
+                )}
+                {theme.futureWatchSignals.length ? (
+                  <div className="detail-block">
+                    <strong>未来观察信号</strong>
+                    <ul className="signal-list">
+                      {theme.futureWatchSignals.slice(0, 4).map((item) => (
+                        <li key={`${theme.key}-${item}`}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+                {(theme.latestCatalysts.length ? theme.latestCatalysts : theme.topEvidence).length ? (
+                  <div className="detail-block">
+                    <strong>近 24h 关键催化</strong>
+                    <div className="evidence-list">
+                      {(theme.latestCatalysts.length ? theme.latestCatalysts : theme.topEvidence).slice(0, 2).map((evidence) => (
+                        <div className="evidence-item" key={`${theme.key}-evidence-${evidence.title}`}>
+                          <strong>{evidence.title}</strong>
+                          <div className="muted">{formatIso(evidence.eventTime)}</div>
+                          <div>{evidence.summary || "暂无摘要"}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+                {theme.riskFlags.length ? (
+                  <div className="detail-block">
+                    <strong>风险与剔除提醒</strong>
+                    <ul className="signal-list">
+                      {theme.riskFlags.slice(0, 4).map((item) => (
+                        <li key={`${theme.key}-risk-${item}`}>{item}</li>
+                      ))}
+                    </ul>
                   </div>
                 ) : null}
                 {theme.riskNotice ? <p className="muted">风险提示: {theme.riskNotice}</p> : null}
@@ -361,7 +422,7 @@ export default async function Sprint2Page({ searchParams }: PageProps) {
             <div className="section-head">
               <div>
                 <h2>证据走廊</h2>
-                <p>把领先题材的第一条关键信号摆出来，方便你快速抽查归因是否靠谱。</p>
+                <p>把领跑题材的第一条关键线索摆出来，方便你快速抽查归因是否靠谱。</p>
               </div>
             </div>
             <div className="evidence-tape">
