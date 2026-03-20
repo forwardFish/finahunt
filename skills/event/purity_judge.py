@@ -29,7 +29,7 @@ def judge_theme_candidate_pools(
                         **candidate,
                         "judge_status": "filtered",
                         "drop_reason": "hard_risk_filter",
-                        "judge_explanation": f"Filtered by hard risk flags: {', '.join(sorted(risk_flags & hard_filters))}.",
+                        "judge_explanation": f"命中硬性风险标签，已过滤：{', '.join(sorted(risk_flags & hard_filters))}。",
                     }
                 )
                 continue
@@ -57,7 +57,7 @@ def judge_theme_candidate_pools(
                             "risk_penalty": round(risk_penalty, 2),
                             "final_purity_score": round(final_score, 2),
                         },
-                        "judge_explanation": "Filtered because final purity score stayed below the watch threshold.",
+                        "judge_explanation": "最终正宗度分低于观察阈值，已过滤。",
                     }
                 )
                 continue
@@ -116,8 +116,14 @@ def _build_judge_explanation(
     risk_flags: set[str],
 ) -> str:
     level = candidate.get("mapping_level", "peripheral_watch")
-    risk_text = f" Risks: {', '.join(sorted(risk_flags))}." if risk_flags else ""
+    level_label = {
+        "core_beneficiary": "核心受益映射",
+        "direct_link": "直接映射",
+        "supply_chain_link": "产业链映射",
+        "peripheral_watch": "边缘观察映射",
+    }.get(level, level)
+    risk_text = f" 风险标签：{', '.join(sorted(risk_flags))}。" if risk_flags else ""
     return (
-        f"{candidate.get('stock_name', candidate.get('stock_code', 'candidate'))} is kept as {judge_status} "
-        f"with final purity score {round(final_score, 2)} under {level} mapping.{risk_text}"
+        f"{candidate.get('stock_name', candidate.get('stock_code', '候选标的'))}在{level_label}下被判定为{judge_status}，"
+        f"最终正宗度分为{round(final_score, 2)}。{risk_text}"
     )

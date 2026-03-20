@@ -1,6 +1,28 @@
 from skills.event.candidate_mapper import map_theme_clusters_to_candidates
 
 
+class _FakeLLMEnhancer:
+    def enrich_cluster(self, cluster):
+        return {
+            "tracking_verdict": "keep",
+            "tracking_reason": "题材已有明确候选股，建议继续跟踪。",
+            "candidate_stocks": [
+                {
+                    "stock_name": "中源协和",
+                    "stock_code": "600645.SH",
+                    "mapping_level": "core_beneficiary",
+                    "purity_score": 82,
+                    "confidence": 0.88,
+                    "mapping_reason": "干细胞与创新药叙事直接相关。",
+                    "llm_reason": "模型判断该股与干细胞创新药主线直接相关，适合继续跟踪。",
+                    "scarcity_note": "细分方向辨识度较高。",
+                    "risk_flags": [],
+                    "should_track": True,
+                }
+            ],
+        }
+
+
 def test_candidate_mapper_assigns_mapping_levels_and_filters_weak_candidates():
     theme_clusters = [
         {
@@ -77,4 +99,54 @@ def test_candidate_mapper_assigns_mapping_levels_and_filters_weak_candidates():
     assert cluster["mapping_summary"]["dropped_count"] == 1
     assert cluster["core_candidates"][0]["mapping_level"] == "core_beneficiary"
     assert cluster["supply_chain_candidates"][0]["mapping_level"] == "supply_chain_link"
-    assert cluster["core_candidates"][0]["mapping_reason"]
+    assert "核心跟踪候选" in cluster["core_candidates"][0]["mapping_reason"]
+    assert cluster["core_candidates"][0]["source_reason"]
+
+
+def test_candidate_mapper_merges_llm_candidates_and_sets_tracking_verdict():
+    theme_clusters = [
+        {
+            "cluster_id": "cluster-med",
+            "theme_name": "医药",
+            "core_narrative": "创新药与干细胞方向升温。",
+            "first_seen_time": "2026-03-18T09:00:00+00:00",
+            "latest_seen_time": "2026-03-18T09:00:00+00:00",
+            "supporting_signals": [
+                {
+                    "title": "创新药概念活跃，中源协和涨停",
+                    "summary": "干细胞方向领涨。",
+                    "event_subject": "中源协和",
+                    "catalyst_type": "industry",
+                    "catalyst_strength": "medium",
+                    "event_time": "2026-03-18T09:00:00+00:00",
+                }
+            ],
+            "related_events_count": 1,
+            "source_count": 1,
+            "source_refs": ["https://xueqiu.com/demo"],
+            "evidence_refs": [],
+            "linked_assets": [],
+            "linked_asset_count": 0,
+            "related_stock_count": 0,
+            "catalyst_types": ["industry"],
+            "event_types": ["产品/技术突破"],
+            "high_strength_catalyst_count": 0,
+            "latest_event_time": "2026-03-18T09:00:00+00:00",
+            "earliest_event_time": "2026-03-18T09:00:00+00:00",
+            "anchor_terms": ["创新药", "干细胞"],
+            "cluster_state": "new_theme",
+            "cluster_noise_level": "medium",
+            "candidate_stocks": [],
+        }
+    ]
+
+    mapped = map_theme_clusters_to_candidates(theme_clusters, llm_enhancer=_FakeLLMEnhancer())
+    cluster = mapped[0]
+
+    assert cluster["tracking_verdict"] == "keep"
+    assert cluster["tracking_reason"]
+    assert cluster["candidate_pool"][0]["stock_name"] == "中源协和"
+    assert cluster["candidate_pool"][0]["stock_code"] == "600645.SH"
+    assert cluster["candidate_pool"][0]["mapping_level"] == "core_beneficiary"
+    assert cluster["candidate_pool"][0]["llm_reason"]
+    assert cluster["llm_mapping_used"] is True

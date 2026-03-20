@@ -148,4 +148,4 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     assert review["today_focus_page"]
     assert review["low_position_candidates"]
     assert review["low_position_research_cards"]
-    assert "research" in review["daily_review_report"]["risk_notice"].lower()
+    assert "仅供研究观察" in review["daily_review_report"]["risk_notice"]

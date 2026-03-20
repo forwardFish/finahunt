@@ -406,7 +406,7 @@ def build_daily_review(ranked_events: list[dict[str, Any]]) -> dict[str, Any]:
             "catalyst_strength": item.get("catalyst_strength", ""),
             "relevance_score": item.get("relevance_score", 0.0),
             "source_refs": item.get("source_refs", []),
-            "risk_notice": "For research only. Not investment advice.",
+            "risk_notice": "仅供研究观察，不构成投资建议。",
         }
         for item in top_events
     ]
@@ -426,7 +426,7 @@ def build_daily_review(ranked_events: list[dict[str, Any]]) -> dict[str, Any]:
             "generated_at": datetime.now(UTC).isoformat(),
             "highlight_count": len(top_events),
             "summary": [item["title"] for item in top_events],
-            "risk_notice": "Structured output is based on public information extraction and ranking for research use only.",
+            "risk_notice": "结构化输出基于公开信息提取与排序生成，仅供研究观察。",
         },
     }
 

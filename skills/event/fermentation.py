@@ -377,12 +377,12 @@ def build_fermenting_theme_feed(
             "top_evidence": card["top_evidence"],
             "candidate_stocks": card.get("candidate_stocks", []),
             "linked_assets": card["linked_assets"],
-            "risk_notice": card["risk_notice"] if not watch_only else f"{card['risk_notice']} Keep as watch-only for now.",
+            "risk_notice": card["risk_notice"] if not watch_only else f"{card['risk_notice']} 当前建议继续保持观察。",
             "source_refs": card["source_refs"],
         }
         if snapshot.get("cluster_state") == "single_signal_noise" and snapshot.get("source_count", 0) < 2:
             item["watch_only"] = True
-            item["risk_notice"] = f"{item['risk_notice']} Single-source noise remains possible."
+            item["risk_notice"] = f"{item['risk_notice']} 仍需防止单一来源噪音。"
             deferred_noise.append(item)
             continue
         feed.append(item)
@@ -426,57 +426,57 @@ def build_low_position_opportunities(
 
         if 35 <= heat_score <= 70:
             score += 22
-            reasons.append("theme still sits in early recognition zone")
+            reasons.append("题材仍处于早期认知区间")
         elif heat_score < 35:
             score += 10
-            reasons.append("theme is early but still lacks enough consensus")
+            reasons.append("题材仍偏早期，市场共识还不充分")
         elif heat_score <= 82:
             score += 6
-            reasons.append("theme has started to lift but is not fully crowded")
+            reasons.append("题材已经开始升温，但还没有完全拥挤")
         else:
             continue
 
         if stage == "emerging":
             score += 18
-            reasons.append("theme is in early fermentation stage")
+            reasons.append("题材仍处于早期发酵阶段")
         elif stage == "watch-only" and (source_count >= 2 or high_strength >= 1):
             score += 9
-            reasons.append("theme is still early but has first proofs")
+            reasons.append("题材仍偏早期，但已经出现第一批验证信号")
         elif stage == "fermenting" and heat_score <= 68:
             score += 11
-            reasons.append("theme just entered active fermentation")
+            reasons.append("题材刚进入活跃发酵阶段")
 
         if timeliness == "high":
             score += 20
-            reasons.append("fresh catalyst window")
+            reasons.append("催化仍处于新鲜窗口")
         elif timeliness == "medium":
             score += 12
-            reasons.append("catalyst is still timely")
+            reasons.append("催化仍具备时效性")
 
         if high_strength >= 1:
             score += min(18, 10 + high_strength * 4)
-            reasons.append("high-strength catalyst exists")
+            reasons.append("已经出现高强度催化")
         elif source_count >= 2:
             score += 8
-            reasons.append("cross-source discussion has started")
+            reasons.append("跨来源讨论已经开始形成")
 
         if continuity_score >= 55:
             score += 10
-            reasons.append("theme has follow-up catalyst continuity")
+            reasons.append("题材具备后续催化连续性")
         elif continuity_score >= 50 and source_count == 1 and high_strength == 0:
             score += 4
-            reasons.append("single-source clue still shows early continuity")
+            reasons.append("单一来源线索仍显示出早期连续性")
 
         if top_candidate_score >= 70:
             score += 14
-            reasons.append("candidate mapping already identifies a pure stock")
+            reasons.append("候选映射已经识别出较高正宗度标的")
         elif top_candidate_score >= 60:
             score += 8
-            reasons.append("candidate mapping is available")
+            reasons.append("候选标的映射已经可用")
 
         if source_count == 1 and high_strength == 0 and catalyst_score >= 25 and top_candidate_score >= 70:
             score += 8
-            reasons.append("single-source clue is still research-worthy because catalyst and purity align")
+            reasons.append("虽然仍是单一来源线索，但催化与正宗度已经对齐，仍值得优先研究")
 
         if linked_asset_count >= 2:
             score += min(10, linked_asset_count * 3)
@@ -543,7 +543,7 @@ def build_daily_review_from_theme_feed(theme_feed: list[dict[str, Any]]) -> dict
             "generated_at": datetime.now(UTC).isoformat(),
             "highlight_count": len(top_feed),
             "summary": [item["theme_name"] for item in top_feed],
-            "risk_notice": "Structured results are built from public information clustering and scoring for research use only.",
+            "risk_notice": "结构化结果基于公开信息聚类与评分生成，仅供研究观察。",
         },
     }
 
@@ -599,30 +599,38 @@ def _build_core_narrative(theme_name: str, signals: list[dict[str, Any]], narrat
     leading_subject = most_common_terms(subject_terms, limit=1)
     leading_terms = most_common_terms(narrative_terms, limit=3)
     if leading_subject and leading_terms:
-        return f"{theme_name} is clustering around {leading_subject[0]}, with narrative anchors in {' / '.join(leading_terms)}."
+        return f"{theme_name}当前围绕{leading_subject[0]}形成叙事聚合，关键锚点包括{' / '.join(leading_terms)}。"
     if leading_terms:
-        return f"{theme_name} is clustering around {' / '.join(leading_terms)}."
+        return f"{theme_name}当前围绕{' / '.join(leading_terms)}形成叙事聚合。"
     if signals:
-        return f"{theme_name} is clustering around {signals[0].get('title', theme_name)}."
-    return f"{theme_name} has formed an early theme cluster."
+        return f"{theme_name}当前围绕{signals[0].get('title', theme_name)}形成叙事聚合。"
+    return f"{theme_name}已形成早期题材聚合。"
 
 
 def _build_catalyst_summary(candidate: dict[str, Any]) -> str:
     catalyst_types = [item for item in candidate.get("catalyst_types", []) if item and item != "unknown"]
     if not catalyst_types:
-        return f"{candidate['theme_name']} has early clues, but catalyst type still needs follow-up."
-    return f"{candidate['theme_name']} is mainly driven by {' / '.join(catalyst_types[:3])} catalysts."
+        return f"{candidate['theme_name']}已经出现早期线索，但催化类型仍需继续确认。"
+    catalyst_labels = {
+        "policy": "政策",
+        "industry": "产业",
+        "capital": "资金",
+        "earnings": "业绩",
+        "sentiment": "情绪",
+    }
+    normalized = [catalyst_labels.get(item, item) for item in catalyst_types[:3]]
+    return f"{candidate['theme_name']}当前主要由{' / '.join(normalized)}类催化驱动。"
 
 
 def _build_risk_notice(candidate: dict[str, Any]) -> str:
     if candidate.get("source_count", 0) < 2:
-        return "Evidence still comes from limited sources. Guard against single-source noise."
+        return "证据仍然偏单一来源，需防止单源噪音。"
     if candidate.get("high_strength_catalyst_count", 0) == 0:
-        return "There is no high-strength catalyst yet. Keep the theme in observation mode."
+        return "当前还没有高强度催化，建议继续观察。"
     top_stock = (candidate.get("candidate_stocks") or [{}])[0]
     if top_stock.get("risk_flags"):
-        return "Candidate mapping is available, but risk flags exist and should be filtered manually."
-    return "This is a structured research cluster. Continue tracking follow-up proof and diffusion."
+        return "候选标的映射已形成，但存在风险标签，需人工筛除。"
+    return "当前题材已形成结构化研究对象，仍需继续跟踪后续证据与扩散。"
 
 
 def _derive_strength_level(candidate: dict[str, Any]) -> str:

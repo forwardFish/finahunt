@@ -30,9 +30,7 @@ class DailyReviewAgent(BaseAgent):
         review_payload["similar_case_matches"] = sum(
             1 for item in similar_theme_cases if item.get("matching_status") == "matched"
         )
-        review_payload["daily_review_report"]["research_positioning"] = (
-            "Low-position research cards rank observation priority only and do not provide trading instructions."
-        )
+        review_payload["daily_review_report"]["research_positioning"] = "低位研究卡只用于排序研究观察优先级，不构成交易指令。"
         persist_runtime_json(
             state,
             stage=self.stage,

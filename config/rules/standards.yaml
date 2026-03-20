@@ -150,3 +150,22 @@ purity_judge_rules:
   min_watch_score: 52
   direct_signal_bonus: 4
   multi_source_bonus: 4
+
+llm_candidate_mapper:
+  enabled: true
+  registry_path: "config/llm/model_hub.json"
+  agent_id: "theme_candidate_mapper"
+  fallback_models:
+    - "moonshot/kimi-k2.5"
+  timeout_seconds: 20
+  max_signals_per_theme: 4
+  max_candidates_per_theme: 4
+  min_confidence: 0.55
+
+llm_stock_reason_writer:
+  enabled: true
+  registry_path: "config/llm/model_hub.json"
+  agent_id: "stock_reason_writer"
+  fallback_models:
+    - "moonshot/kimi-k2.5"
+  timeout_seconds: 20

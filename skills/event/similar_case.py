@@ -81,8 +81,6 @@ def build_low_position_research_cards(
         theme_candidate_id = str(opportunity.get("theme_candidate_id", ""))
         similar_payload = similar_by_candidate.get(theme_candidate_id, {})
         candidate_stocks = list(opportunity.get("candidate_stocks", []) or [])
-        future_watch_signals = _build_future_watch_signals(opportunity, similar_payload)
-        risk_flags = _collect_risk_flags(opportunity)
         cards.append(
             {
                 "theme_name": opportunity.get("theme_name", ""),
@@ -111,11 +109,11 @@ def build_low_position_research_cards(
                 },
                 "similar_cases": similar_payload.get("similar_cases", []),
                 "reference_type": similar_payload.get("reference_type", "no_reference"),
-                "future_watch_signals": future_watch_signals,
-                "risk_flags": risk_flags,
+                "future_watch_signals": _build_future_watch_signals(opportunity, similar_payload),
+                "risk_flags": _collect_risk_flags(opportunity),
                 "risk_notice": opportunity.get("risk_notice", ""),
                 "low_position_reason": opportunity.get("low_position_reason", ""),
-                "research_positioning_note": "Research priority only. This card is for observation and review, not a trading instruction.",
+                "research_positioning_note": "仅供研究观察，用于跟踪和复盘，不构成交易指令。",
             }
         )
     return cards
@@ -173,8 +171,8 @@ def _build_history_summary(item: dict[str, Any], focus_names: set[str], run_id: 
     entry_stage = item.get("entry_stage", "watch-only")
     low_position_score = float(item.get("low_position_score", 0.0) or 0.0)
     if theme_name in focus_names:
-        return f"{theme_name} reached the focus page in {run_id} after entering {entry_stage} with a research score of {low_position_score:.1f}."
-    return f"{theme_name} remained a watchlist reference in {run_id} with {entry_stage} status and a research score of {low_position_score:.1f}."
+        return f"{theme_name}在{run_id}中以{_stage_label(entry_stage)}进入重点关注页，研究优先级为{low_position_score:.1f}。"
+    return f"{theme_name}在{run_id}中停留在{_stage_label(entry_stage)}，作为观察参考保留，研究优先级为{low_position_score:.1f}。"
 
 
 def _calculate_similarity(
@@ -191,23 +189,23 @@ def _calculate_similarity(
     heat_distance = abs(float(opportunity.get("theme_heat_score", 0.0) or 0.0) - float(case.get("theme_heat_score", 0.0) or 0.0))
     heat_score = max(0.0, 1.0 - min(heat_distance / 45.0, 1.0))
     reference_bonus = 0.12 if case.get("reference_type") == "reignited_logic" else 0.0
-    return (exact_match * 48 + token_overlap * 28 + stage_match * 12 + phase_match * 4 + heat_score * 8 + reference_bonus * 100)
+    return exact_match * 48 + token_overlap * 28 + stage_match * 12 + phase_match * 4 + heat_score * 8 + reference_bonus * 100
 
 
 def _build_similarity_reason(opportunity: dict[str, Any], case: dict[str, Any], current_tokens: set[str]) -> str:
     reasons: list[str] = []
     if opportunity.get("theme_name") == case.get("theme_name"):
-        reasons.append("same theme name has appeared before")
+        reasons.append("同名题材在历史运行中出现过")
     token_overlap = _jaccard(current_tokens, case.get("tokens", set()))
     if token_overlap >= 0.24:
-        reasons.append("core narrative shares overlapping catalyst terms")
+        reasons.append("核心叙事与历史案例存在重合催化词")
     if opportunity.get("entry_stage") == case.get("entry_stage"):
-        reasons.append("research stage matches the historical path")
+        reasons.append("当前研究阶段与历史路径接近")
     if case.get("reference_type") == "reignited_logic":
-        reasons.append("historical path looks like a reignited logic pattern")
+        reasons.append("历史路径更像旧逻辑再发酵")
     if not reasons:
-        reasons.append("historical path provides an adjacent pattern reference")
-    return "; ".join(reasons)
+        reasons.append("历史路径可作为相邻模式参考")
+    return "；".join(reasons)
 
 
 def _build_difference_note(opportunity: dict[str, Any], case: dict[str, Any], monitor: dict[str, Any]) -> str:
@@ -215,15 +213,15 @@ def _build_difference_note(opportunity: dict[str, Any], case: dict[str, Any], mo
     current_heat = float(opportunity.get("theme_heat_score", 0.0) or 0.0)
     history_heat = float(case.get("theme_heat_score", 0.0) or 0.0)
     if current_heat > history_heat + 10:
-        notes.append("current theme is heating faster than the historical case")
+        notes.append("当前题材升温速度快于历史案例")
     elif history_heat > current_heat + 10:
-        notes.append("historical case had stronger heat expansion at the same stage")
+        notes.append("历史案例在同阶段的扩散更强")
     current_phase = monitor.get("fermentation_phase")
     if current_phase and current_phase != case.get("entry_stage"):
-        notes.append(f"current phase is {current_phase}, while the historical case started from {case.get('entry_stage')}")
+        notes.append(f"当前处于{_stage_label(current_phase)}，而历史案例起点为{_stage_label(case.get('entry_stage'))}")
     if not notes:
-        notes.append("current setup is close to the historical path but still needs follow-up proof")
-    return "; ".join(notes)
+        notes.append("当前结构与历史路径接近，但仍需后续证据确认")
+    return "；".join(notes)
 
 
 def _summarize_reference_type(similar_cases: list[dict[str, Any]]) -> str:
@@ -240,17 +238,17 @@ def _build_future_watch_signals(opportunity: dict[str, Any], similar_payload: di
     high_strength = int(opportunity.get("high_strength_catalyst_count", 0) or 0)
     top_candidate_score = float((opportunity.get("candidate_stocks") or [{}])[0].get("candidate_purity_score", 0.0) or 0.0)
     if source_count < 2:
-        signals.append("Watch for a second public source to confirm the theme.")
+        signals.append("观察是否出现第二个公开来源来确认该题材。")
     if high_strength == 0:
-        signals.append("Watch for a stronger catalyst such as a policy, order, or official announcement.")
+        signals.append("观察是否出现更强催化，例如政策、订单或正式公告。")
     if top_candidate_score < 70:
-        signals.append("Watch for a clearer core beneficiary mapping and higher purity score.")
+        signals.append("观察是否出现更清晰的核心受益标的映射与更高正宗度。")
     if float(opportunity.get("fermentation_score", 0.0) or 0.0) < 60:
-        signals.append("Watch whether the narrative spreads beyond the current source set.")
+        signals.append("观察叙事是否能从当前来源继续扩散。")
     if similar_payload.get("matching_status") != "matched":
-        signals.append("Watch whether the theme starts resembling a recognizable historical pattern.")
+        signals.append("观察该题材是否开始呈现可识别的历史路径。")
     if not signals:
-        signals.append("Watch whether the current catalyst chain can keep compounding into broader market consensus.")
+        signals.append("观察当前催化链条能否继续扩展成更广泛的市场共识。")
     return signals[:4]
 
 
@@ -258,10 +256,7 @@ def _collect_risk_flags(opportunity: dict[str, Any]) -> list[str]:
     risk_flags: list[str] = []
     for candidate in opportunity.get("candidate_stocks", []) or []:
         risk_flags.extend(candidate.get("risk_flags", []) or [])
-    if opportunity.get("entry_stage") == "watch-only":
-        risk_flags.append("theme still sits in watch-only stage")
-    if opportunity.get("risk_notice"):
-        risk_flags.append(str(opportunity["risk_notice"]))
+
     deduped: list[str] = []
     seen: set[str] = set()
     for item in risk_flags:
@@ -281,6 +276,22 @@ def _infer_reference_type(item: dict[str, Any]) -> str:
     if any(token in narrative for token in ("再发酵", "重估", "旧逻辑")):
         return "reignited_logic"
     return "adjacent_pattern"
+
+
+def _stage_label(value: str | None) -> str:
+    mapping = {
+        "watch-only": "观察阶段",
+        "watching": "观察阶段",
+        "emerging": "早期成形阶段",
+        "fermenting": "持续发酵阶段",
+        "hot": "拥挤扩散阶段",
+        "early": "早期阶段",
+        "spreading": "扩散阶段",
+        "crowded": "拥挤阶段",
+    }
+    if not value:
+        return "观察阶段"
+    return mapping.get(str(value), str(value))
 
 
 def _extract_tokens(*parts: str) -> set[str]:

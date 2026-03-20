@@ -75,7 +75,7 @@ def test_similar_case_matches_history_without_fabrication(tmp_path: Path):
     research_cards = build_low_position_research_cards(current_opportunities, similar_cases)
     assert research_cards[0]["similar_cases"]
     assert research_cards[0]["future_watch_signals"]
-    assert "priority" in research_cards[0]["research_positioning_note"].lower()
+    assert "仅供研究观察" in research_cards[0]["research_positioning_note"]
 
 
 def test_similar_case_returns_no_match_when_history_is_irrelevant(tmp_path: Path):

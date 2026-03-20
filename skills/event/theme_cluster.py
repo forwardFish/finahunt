@@ -93,6 +93,8 @@ def build_theme_candidates_from_clusters(theme_clusters: list[dict[str, Any]]) -
     results: list[dict[str, Any]] = []
 
     for cluster in theme_clusters:
+        if cluster.get("tracking_verdict") == "drop" and not cluster.get("candidate_stocks"):
+            continue
         signal_count = int(cluster.get("related_events_count", 0) or 0)
         source_count = int(cluster.get("source_count", 0) or 0)
         related_stock_count = int(cluster.get("related_stock_count", 0) or 0)
@@ -146,6 +148,8 @@ def build_theme_candidates_from_clusters(theme_clusters: list[dict[str, Any]]) -
                 "cluster_state": cluster.get("cluster_state", "new_theme"),
                 "cluster_noise_level": cluster.get("cluster_noise_level", "medium"),
                 "anchor_terms": cluster.get("anchor_terms", []),
+                "tracking_verdict": cluster.get("tracking_verdict", "watch"),
+                "tracking_reason": cluster.get("tracking_reason", ""),
             }
         )
 
