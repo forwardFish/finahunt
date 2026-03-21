@@ -91,10 +91,21 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     theme_heat = result["results"]["theme_heat_snapshot"]["content"]
     low_position = result["results"]["low_position_discovery"]["content"]
     similar_case = result["results"]["similar_case"]["content"]
+    message_processing = result["results"]["message_processing"]["content"]
+    fermentation_judgement = result["results"]["fermentation_judgement"]["content"]
+    impact_analysis = result["results"]["impact_analysis"]["content"]
+    company_mining = result["results"]["company_mining"]["content"]
+    reasoning = result["results"]["reasoning"]["content"]
+    validation_calibration = result["results"]["validation_calibration"]["content"]
     feed = result["results"]["fermenting_theme_feed"]["content"]
+    orchestrator = result["results"]["low_position_orchestrator"]["content"]
     ranking = result["results"]["relevance_ranking"]["content"]
     review = result["results"]["daily_review"]["content"]
     warehouse = result["results"]["result_warehouse"]["content"]
+    timeline = ranking["event_theme_timeline"]
+    watchlist_linkage = ranking["watchlist_asset_linkage"]
+    scored_results = ranking["relevance_scored_results"]
+    ranked_feed = ranking["ranked_result_feed"]
 
     assert runtime["fetch_status_report"]["live_fetch"] is True
     assert len(runtime["raw_documents"]) == 3
@@ -142,10 +153,43 @@ def test_event_cognition_runtime_produces_ranked_outputs(monkeypatch):
     assert any(item["low_position_score"] >= 35 for item in low_position["low_position_opportunities"])
     assert any(item["candidate_stocks"] for item in low_position["low_position_opportunities"])
     assert len(similar_case["similar_theme_cases"]) == len(low_position["low_position_opportunities"])
+    assert message_processing["valuable_messages"]
+    assert fermentation_judgement["message_fermentation_judgements"]
+    assert impact_analysis["message_impact_analysis"]
+    assert company_mining["message_company_candidates"]
+    assert reasoning["message_reasoning"]
+    assert validation_calibration["message_validation_feedback"]
+    assert validation_calibration["message_scores"]
     assert any(item["theme_name"] for item in feed["fermenting_theme_feed"])
     assert any(item["fermentation_phase"] in {"early", "spreading", "crowded"} for item in feed["fermenting_theme_feed"])
+    assert orchestrator["daily_message_workbench"]["messages"]
+    assert orchestrator["daily_theme_workbench"]["themes"]
+    assert "validated_themes" in orchestrator["daily_theme_workbench"]
     assert ranking["ranked_events"][0]["relevance_score"] >= ranking["ranked_events"][-1]["relevance_score"]
+    assert timeline["timeline_entries"]
+    assert all(item["timestamp"] for item in timeline["timeline_entries"])
+    assert any(item["node_type"] == "theme_candidate" for item in timeline["timeline_entries"])
+    assert watchlist_linkage["watchlist_enabled"] is True
+    assert watchlist_linkage["linked_results"]
+    assert all("watchlist_hit_count" in item for item in scored_results)
+    assert ranked_feed[0]["relevance_score"] >= ranked_feed[-1]["relevance_score"]
+    assert all(item["theme_name"] for item in ranked_feed)
+    assert all(item["top_evidence"] for item in ranked_feed)
     assert review["today_focus_page"]
     assert review["low_position_candidates"]
     assert review["low_position_research_cards"]
     assert "仅供研究观察" in review["daily_review_report"]["risk_notice"]
+    warehouse_filenames = {item["filename"] for item in warehouse["saved_artifacts"]}
+    assert "event_theme_timeline.json" in warehouse_filenames
+    assert "valuable_messages.json" in warehouse_filenames
+    assert "message_fermentation_judgements.json" in warehouse_filenames
+    assert "message_impact_analysis.json" in warehouse_filenames
+    assert "message_company_candidates.json" in warehouse_filenames
+    assert "message_reasoning.json" in warehouse_filenames
+    assert "message_validation_feedback.json" in warehouse_filenames
+    assert "message_scores.json" in warehouse_filenames
+    assert "daily_message_workbench.json" in warehouse_filenames
+    assert "daily_theme_workbench.json" in warehouse_filenames
+    assert "watchlist_asset_linkage.json" in warehouse_filenames
+    assert "relevance_scored_results.json" in warehouse_filenames
+    assert "ranked_result_feed.json" in warehouse_filenames

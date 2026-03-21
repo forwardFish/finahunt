@@ -9,4 +9,8 @@ workspace/audit/
 apps/web/.next/
 apps/web/node_modules/
 apps/web/*.log
+apps/web/.codex/
+apps/web/tsconfig.tsbuildinfo
+.meta/
+tasks/runtime/
 config/llm/model_hub.local.json

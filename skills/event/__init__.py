@@ -34,11 +34,29 @@ from skills.event.similar_case import (
     build_low_position_research_cards,
     build_similar_theme_cases,
 )
+from skills.event.relevance import (
+    build_event_theme_timeline,
+    build_ranked_result_feed,
+    build_relevance_scored_results,
+    build_watchlist_asset_linkage,
+)
 from skills.event.stock_reasoning import (
     StockReasonLLMWriter,
     XueqiuEvidenceResolver,
     is_valid_candidate_stock_name,
     normalize_candidate_stock_name,
+)
+from skills.event.message_workbench import (
+    build_daily_message_workbench,
+    build_daily_theme_workbench,
+    build_message_company_candidates,
+    build_message_fermentation_judgements,
+    build_message_impact_analysis,
+    build_message_reasoning,
+    build_message_scores,
+    build_message_validation_feedback,
+    build_valuable_messages,
+    build_workbench_stage_statuses,
 )
 
 __all__ = [
@@ -56,12 +74,26 @@ __all__ = [
     "build_low_position_research_cards",
     "build_daily_review",
     "build_daily_review_from_theme_feed",
+    "build_daily_message_workbench",
+    "build_daily_theme_workbench",
+    "build_event_theme_timeline",
     "build_fermentation_monitors",
     "build_fermenting_theme_feed",
     "build_low_position_opportunities",
+    "build_message_company_candidates",
+    "build_message_fermentation_judgements",
+    "build_message_impact_analysis",
+    "build_message_reasoning",
+    "build_message_scores",
+    "build_message_validation_feedback",
+    "build_ranked_result_feed",
+    "build_relevance_scored_results",
     "build_similar_theme_cases",
     "build_structured_result_cards",
     "build_theme_heat_snapshots",
+    "build_valuable_messages",
+    "build_workbench_stage_statuses",
+    "build_watchlist_asset_linkage",
     "classify_catalyst",
     "derive_catalyst_boundary",
     "derive_continuity_hint",

@@ -49,3 +49,23 @@ def run_live_event_cognition_cycle(
         user_profile=user_profile or {},
         max_items_per_source=max_items_per_source,
     )
+
+
+def run_low_position_workbench_cycle(
+    requested_sources: list[str] | None = None,
+    *,
+    user_profile: dict | None = None,
+    max_items_per_source: int = 8,
+) -> dict:
+    return run_runtime_cycle(
+        schedule_name="low-position-workbench",
+        rule_version="v3",
+        requested_sources=requested_sources or ["cls-telegraph", "jiuyangongshe-live", "xueqiu-hot-spot"],
+        live_fetch=True,
+        user_profile=user_profile
+        or {
+            "watchlist_symbols": [],
+            "watchlist_themes": ["人工智能", "机器人", "算力", "低空经济", "新能源", "医药"],
+        },
+        max_items_per_source=max_items_per_source,
+    )

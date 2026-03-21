@@ -24,9 +24,13 @@ class DailyReviewAgent(BaseAgent):
         else:
             ranked_events = get_result(state, "relevance_ranking").get("ranked_events", [])
             review_payload = build_daily_review(ranked_events)
+        message_workbench = get_result(state, "low_position_orchestrator").get("daily_message_workbench", {})
+        theme_workbench = get_result(state, "low_position_orchestrator").get("daily_theme_workbench", {})
         low_position_research_cards = build_low_position_research_cards(low_position_opportunities, similar_theme_cases)
         review_payload["low_position_candidates"] = low_position_opportunities[:5]
         review_payload["low_position_research_cards"] = low_position_research_cards[:10]
+        review_payload["message_workbench"] = message_workbench
+        review_payload["theme_workbench"] = theme_workbench
         review_payload["similar_case_matches"] = sum(
             1 for item in similar_theme_cases if item.get("matching_status") == "matched"
         )

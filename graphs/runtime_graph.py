@@ -3,15 +3,21 @@ from __future__ import annotations
 from agents.runtime import (
     CatalystClassificationAgent,
     CandidateMapperAgent,
+    CompanyMiningAgent,
     DailyReviewAgent,
     EventExtractAgent,
     EventUnifyAgent,
     FermentationMonitorAgent,
+    FermentationJudgementAgent,
     FermentingThemeFeedAgent,
+    ImpactAnalysisAgent,
     LowPositionDiscoveryAgent,
+    LowPositionOrchestratorAgent,
+    MessageProcessingAgent,
     NormalizeAgent,
     PurityJudgeAgent,
     RelevanceRankingAgent,
+    ReasoningAgent,
     ResultWarehouseAgent,
     SimilarCaseAgent,
     SourceAuditAgent,
@@ -24,6 +30,7 @@ from agents.runtime import (
     ThemeCandidateAggregationAgent,
     ThemeDetectionAgent,
     ThemeHeatSnapshotAgent,
+    ValidationCalibrationAgent,
 )
 from graphs._compat import END, START, StateGraph, ensure_langgraph
 from packages.schema.state import GraphState
@@ -51,6 +58,13 @@ def build_runtime_graph():
     graph.add_node("low_position_discovery", LowPositionDiscoveryAgent())
     graph.add_node("similar_case", SimilarCaseAgent())
     graph.add_node("fermenting_theme_feed", FermentingThemeFeedAgent())
+    graph.add_node("message_processing", MessageProcessingAgent())
+    graph.add_node("fermentation_judgement", FermentationJudgementAgent())
+    graph.add_node("impact_analysis", ImpactAnalysisAgent())
+    graph.add_node("company_mining", CompanyMiningAgent())
+    graph.add_node("reasoning", ReasoningAgent())
+    graph.add_node("validation_calibration", ValidationCalibrationAgent())
+    graph.add_node("low_position_orchestrator", LowPositionOrchestratorAgent())
     graph.add_node("relevance_ranking", RelevanceRankingAgent())
     graph.add_node("daily_review", DailyReviewAgent())
     graph.add_node("result_warehouse", ResultWarehouseAgent())
@@ -74,8 +88,15 @@ def build_runtime_graph():
     graph.add_edge("fermentation_monitor", "theme_heat_snapshot")
     graph.add_edge("theme_heat_snapshot", "low_position_discovery")
     graph.add_edge("low_position_discovery", "similar_case")
-    graph.add_edge("similar_case", "fermenting_theme_feed")
-    graph.add_edge("fermenting_theme_feed", "relevance_ranking")
+    graph.add_edge("similar_case", "message_processing")
+    graph.add_edge("message_processing", "fermentation_judgement")
+    graph.add_edge("fermentation_judgement", "impact_analysis")
+    graph.add_edge("impact_analysis", "company_mining")
+    graph.add_edge("company_mining", "reasoning")
+    graph.add_edge("reasoning", "validation_calibration")
+    graph.add_edge("validation_calibration", "fermenting_theme_feed")
+    graph.add_edge("fermenting_theme_feed", "low_position_orchestrator")
+    graph.add_edge("low_position_orchestrator", "relevance_ranking")
     graph.add_edge("relevance_ranking", "daily_review")
     graph.add_edge("daily_review", "result_warehouse")
     graph.add_edge("result_warehouse", "source_audit")

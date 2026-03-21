@@ -144,6 +144,179 @@ class EventObject(BaseModel):
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 
+class TimelineNode(BaseModel):
+    timeline_id: str
+    node_type: Literal["event", "catalyst", "theme_candidate"]
+    stage: str
+    timestamp: str
+    theme_name: str = ""
+    theme_names: list[str] = Field(default_factory=list)
+    event_id: str = ""
+    cluster_id: str = ""
+    node_title: str = ""
+    node_summary: str = ""
+    catalyst_type: str = ""
+    catalyst_strength: str = "unknown"
+    source_refs: list[str] = Field(default_factory=list)
+    evidence_refs: list[str] = Field(default_factory=list)
+    linked_assets: list[dict[str, Any]] = Field(default_factory=list)
+
+
+class WatchlistLinkageRecord(BaseModel):
+    linkage_id: str
+    theme_candidate_id: str = ""
+    theme_name: str = ""
+    cluster_id: str = ""
+    watchlist_hits: list[dict[str, Any]] = Field(default_factory=list)
+    watchlist_hit_count: int = 0
+    watchlist_match_summary: str = ""
+    source_refs: list[str] = Field(default_factory=list)
+    top_evidence: list[dict[str, Any]] = Field(default_factory=list)
+    candidate_stocks: list[dict[str, Any]] = Field(default_factory=list)
+    linked_assets: list[dict[str, Any]] = Field(default_factory=list)
+
+
+class RankedResultFeedItem(BaseModel):
+    rank_position: int
+    theme_candidate_id: str = ""
+    cluster_id: str = ""
+    theme_name: str
+    relevance_score: float
+    relevance_reason: str = ""
+    score_breakdown: dict[str, float] = Field(default_factory=dict)
+    core_narrative: str = ""
+    catalyst_summary: str = ""
+    fermentation_stage: str = ""
+    fermentation_phase: str = ""
+    theme_heat_score: float = 0.0
+    timeliness_level: str = "unknown"
+    watchlist_hit_count: int = 0
+    watchlist_hits: list[dict[str, Any]] = Field(default_factory=list)
+    top_evidence: list[dict[str, Any]] = Field(default_factory=list)
+    candidate_stocks: list[dict[str, Any]] = Field(default_factory=list)
+    linked_assets: list[dict[str, Any]] = Field(default_factory=list)
+    source_refs: list[str] = Field(default_factory=list)
+    risk_notice: str = ""
+
+
+class ValuableMessage(BaseModel):
+    message_id: str
+    message_key: str = ""
+    title: str
+    summary: str = ""
+    event_subject: str = ""
+    event_type: str = ""
+    event_time: str = ""
+    source_name: str = ""
+    source_url: str = ""
+    source_priority: str = "unknown"
+    catalyst_type: str = ""
+    catalyst_strength: str = "unknown"
+    impact_direction: str = "neutral"
+    impact_scope: str = "unknown"
+    continuity_hint: str = "unknown"
+    related_themes: list[str] = Field(default_factory=list)
+    related_industries: list[str] = Field(default_factory=list)
+    linked_assets: list[dict[str, Any]] = Field(default_factory=list)
+    source_refs: list[str] = Field(default_factory=list)
+    evidence_refs: list[str] = Field(default_factory=list)
+    value_score: float = 0.0
+    value_label: str = ""
+    discard_reasons: list[str] = Field(default_factory=list)
+
+
+class MessageFermentationJudgement(BaseModel):
+    message_id: str
+    message_title: str = ""
+    fermentation_verdict: str = "reject"
+    fermentation_score: float = 0.0
+    why_it_may_ferment: list[str] = Field(default_factory=list)
+    why_it_may_not_ferment: list[str] = Field(default_factory=list)
+    freshness_signal: str = ""
+    continuity_signal: str = ""
+    novelty_signal: str = ""
+    consensus_stage: str = ""
+    rejection_reason: str = ""
+
+
+class MessageImpactAnalysis(BaseModel):
+    message_id: str
+    message_title: str = ""
+    impact_themes: list[str] = Field(default_factory=list)
+    primary_theme: str = ""
+    impact_direction: str = ""
+    impact_scope: str = ""
+    impact_horizon: str = ""
+    impact_path: str = ""
+    impact_summary: str = ""
+    theme_confidence: float = 0.0
+    counter_themes: list[str] = Field(default_factory=list)
+    theme_cluster_ref: str = ""
+    theme_heat_score: float = 0.0
+
+
+class MessageCompanyCandidate(BaseModel):
+    message_id: str
+    message_title: str = ""
+    primary_theme: str = ""
+    companies: list[dict[str, Any]] = Field(default_factory=list)
+    candidate_count: int = 0
+
+
+class MessageReasoning(BaseModel):
+    message_id: str
+    message_title: str = ""
+    primary_theme: str = ""
+    companies: list[dict[str, Any]] = Field(default_factory=list)
+
+
+class MessageValidationFeedback(BaseModel):
+    message_id: str
+    predicted_direction: str = ""
+    predicted_strength: str = ""
+    validation_window: str = ""
+    observed_company_moves: list[dict[str, Any]] = Field(default_factory=list)
+    observed_basket_move: dict[str, Any] = Field(default_factory=dict)
+    observed_benchmark_move: dict[str, Any] = Field(default_factory=dict)
+    excess_return: float | None = None
+    validation_status: str = "unverifiable"
+    prediction_gap: str = ""
+    lagging_signal: bool = False
+    calibration_action: str = "keep"
+    calibration_reason: str = ""
+    validation_summary: str = ""
+    market_validation_score: float | None = None
+
+
+class MessageScore(BaseModel):
+    message_id: str
+    message_title: str = ""
+    importance_score: float = 0.0
+    fermentation_score: float = 0.0
+    impact_quality_score: float = 0.0
+    company_discovery_score: float = 0.0
+    reason_quality_score: float = 0.0
+    market_validation_score: float | None = None
+    initial_actionability_score: float = 0.0
+    recalibrated_actionability_score: float = 0.0
+    final_verdict: str = "unverifiable"
+    score_summary: str = ""
+
+
+class DailyMessageWorkbench(BaseModel):
+    run_id: str
+    status: str = "empty"
+    message_count: int = 0
+    messages: list[dict[str, Any]] = Field(default_factory=list)
+
+
+class DailyThemeWorkbench(BaseModel):
+    run_id: str
+    status: str = "empty"
+    theme_count: int = 0
+    themes: list[dict[str, Any]] = Field(default_factory=list)
+
+
 class ManualCorrectionRecord(BaseModel):
     correction_id: str
     target_stage: str

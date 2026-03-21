@@ -29,7 +29,14 @@ class SourceAuditAgent(BaseAgent):
         theme_heat_snapshot = get_result(state, "theme_heat_snapshot")
         low_position_discovery = get_result(state, "low_position_discovery")
         similar_case = get_result(state, "similar_case")
+        message_processing = get_result(state, "message_processing")
+        fermentation_judgement = get_result(state, "fermentation_judgement")
+        impact_analysis = get_result(state, "impact_analysis")
+        company_mining = get_result(state, "company_mining")
+        reasoning = get_result(state, "reasoning")
+        validation_calibration = get_result(state, "validation_calibration")
         fermenting_theme_feed = get_result(state, "fermenting_theme_feed")
+        low_position_orchestrator = get_result(state, "low_position_orchestrator")
         relevance_ranking = get_result(state, "relevance_ranking")
         daily_review = get_result(state, "daily_review")
 
@@ -55,7 +62,14 @@ class SourceAuditAgent(BaseAgent):
                 "theme_heat_snapshot",
                 "low_position_discovery",
                 "similar_case",
+                "message_processing",
+                "fermentation_judgement",
+                "impact_analysis",
+                "company_mining",
+                "reasoning",
+                "validation_calibration",
                 "fermenting_theme_feed",
+                "low_position_orchestrator",
                 "relevance_ranking",
                 "daily_review",
                 "result_warehouse",
@@ -80,8 +94,21 @@ class SourceAuditAgent(BaseAgent):
             "theme_heat_snapshots": len(theme_heat_snapshot.get("theme_heat_snapshots", [])),
             "low_position_count": len(low_position_discovery.get("low_position_opportunities", [])),
             "similar_case_count": len(similar_case.get("similar_theme_cases", [])),
+            "valuable_message_count": len(message_processing.get("valuable_messages", [])),
+            "message_fermentation_count": len(fermentation_judgement.get("message_fermentation_judgements", [])),
+            "message_impact_count": len(impact_analysis.get("message_impact_analysis", [])),
+            "message_company_count": sum(
+                len(item.get("companies", [])) for item in company_mining.get("message_company_candidates", [])
+            ),
+            "message_reasoning_count": len(reasoning.get("message_reasoning", [])),
+            "message_validation_count": len(validation_calibration.get("message_validation_feedback", [])),
+            "message_score_count": len(validation_calibration.get("message_scores", [])),
             "fermenting_theme_count": len(fermenting_theme_feed.get("fermenting_theme_feed", [])),
+            "message_workbench_count": len(low_position_orchestrator.get("daily_message_workbench", {}).get("messages", [])),
             "events_ranked": len(relevance_ranking.get("ranked_events", [])),
+            "timeline_entries": len(relevance_ranking.get("event_theme_timeline", {}).get("timeline_entries", [])),
+            "watchlist_hits": len(relevance_ranking.get("watchlist_asset_linkage", {}).get("linked_results", [])),
+            "ranked_feed_count": len(relevance_ranking.get("ranked_result_feed", [])),
             "focus_cards": len(daily_review.get("today_focus_page", [])),
             "artifact_batch_dir": result_warehouse.get("artifact_batch_dir", ""),
         }
