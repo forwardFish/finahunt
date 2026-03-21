@@ -1,0 +1,12 @@
+task_id: "S6B-002"
+task_name: "Navigation and Editorial Contract"
+story_id: "S6B-002"
+sprint: "Sprint 6B 编辑型情报台重做与完整 UI/browser 验收"
+epic: "Epic 6B.1 Design Chain"
+dependencies:
+  - "S6B-001"
+goal: "收口唯一导航层级、首页角色和四页气质边界。"
+acceptance_criteria:
+  - "顶层只保留一层导航"
+  - "首页不再保留第二套导航式 CTA"
+  - "四页职责有明确边界"

@@ -1,0 +1,52 @@
+task_id: "S6-003"
+task_name: "Fermentation Page"
+sprint: "Sprint 6 页面分类重构与完整 UI/browser 验收"
+epic: "Epic 6.2 Separated Research Pages"
+story_id: "S6-003"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+dependencies:
+  - "S6-001"
+  - "S6-002"
+
+related_files:
+  - "apps/web/src/app/fermentation/page.tsx"
+  - "apps/web/src/lib/dailySnapshot.ts"
+  - "apps/web/src/lib/webView.ts"
+primary_files:
+  - "apps/web/src/app/fermentation/page.tsx"
+secondary_files:
+  - "apps/web/src/lib/webView.ts"
+preview_urls:
+  - "http://127.0.0.1:3021/fermentation"
+browser_urls:
+  - "http://127.0.0.1:3021/fermentation"
+qa_urls:
+  - "http://127.0.0.1:3021/fermentation"
+requires_auth: false
+
+goal: "提供主线发酵独立页面。"
+business_value: "用户能单独分析主线阶段、热度与催化，不再被低位研究内容打断。"
+
+entry_criteria:
+  - "页面地图和导航 contract 已确认。"
+
+acceptance_criteria:
+  - "页面展示阶段分布、主题卡和矩阵。"
+  - "页面只聚焦主线发酵，不出现低位研究长列表。"
+  - "页面可跳转到工作台总览。"
+
+story_inputs:
+  - "daily snapshot 数据"
+
+story_process:
+  - "创建 `/fermentation` 独立页面。"
+  - "复用 daily snapshot 数据输出主题卡与矩阵。"
+
+story_outputs:
+  - "主线发酵页面"
+
+verification_basis:
+  - "点击导航能进入 `/fermentation`。"
+  - "页面只承载主线发酵职责。"

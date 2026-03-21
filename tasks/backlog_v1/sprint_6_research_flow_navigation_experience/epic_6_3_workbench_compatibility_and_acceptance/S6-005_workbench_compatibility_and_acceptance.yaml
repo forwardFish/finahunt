@@ -1,0 +1,69 @@
+task_id: "S6-005"
+task_name: "Workbench Compatibility and Acceptance"
+sprint: "Sprint 6 页面分类重构与完整 UI/browser 验收"
+epic: "Epic 6.3 Workbench Compatibility and Acceptance"
+story_id: "S6-005"
+blast_radius: "L3"
+execution_mode: "Safe"
+mode: "Safe"
+dependencies:
+  - "S6-002"
+  - "S6-003"
+  - "S6-004"
+
+related_files:
+  - "apps/web/src/app/workbench/page.tsx"
+  - "apps/web/src/app/sprint-2/page.tsx"
+  - "apps/web/src/app/low-position/page.tsx"
+  - "apps/web/src/app/layout.tsx"
+primary_files:
+  - "apps/web/src/app/workbench/page.tsx"
+  - "apps/web/src/app/sprint-2/page.tsx"
+  - "apps/web/src/app/low-position/page.tsx"
+secondary_files:
+  - "apps/web/src/app/layout.tsx"
+preview_urls:
+  - "http://127.0.0.1:3021/workbench"
+  - "http://127.0.0.1:3021/sprint-2"
+  - "http://127.0.0.1:3021/low-position"
+browser_urls:
+  - "http://127.0.0.1:3021/"
+  - "http://127.0.0.1:3021/fermentation"
+  - "http://127.0.0.1:3021/research"
+  - "http://127.0.0.1:3021/workbench"
+qa_urls:
+  - "http://127.0.0.1:3021/"
+  - "http://127.0.0.1:3021/sprint-2"
+  - "http://127.0.0.1:3021/low-position"
+requires_auth: false
+
+goal: "补齐工作台总览、兼容迁移和完整 UI/browser 验收。"
+business_value: "既保留旧链接兼容，也建立新的正式导航结构和完整前端验收入口。"
+
+entry_criteria:
+  - "三个独立页面已实现。"
+
+acceptance_criteria:
+  - "存在 `/workbench` 独立页面。"
+  - "`/sprint-2` 跳转到 `/workbench` 或对应焦点页。"
+  - "`/low-position` 跳转到 `/research`。"
+  - "完成 4 个新路由和 2 个兼容路由的浏览验收。"
+
+story_inputs:
+  - "daily snapshot 数据"
+  - "low-position workbench 数据"
+  - "Sprint 6 路由 contract"
+
+story_process:
+  - "创建工作台总览页。"
+  - "接入兼容跳转。"
+  - "执行 build、smoke test 和 browser 验收。"
+
+story_outputs:
+  - "工作台总览页"
+  - "兼容路由"
+  - "UI/browser 验收记录"
+
+verification_basis:
+  - "所有新旧路由可访问。"
+  - "浏览器点击导航后进入独立 URL。"

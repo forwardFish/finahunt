@@ -1,0 +1,15 @@
+task_id: "S6B-001"
+task_name: "Browse Baseline and Problem Ledger"
+story_id: "S6B-001"
+sprint: "Sprint 6B 编辑型情报台重做与完整 UI/browser 验收"
+epic: "Epic 6B.1 Design Chain"
+dependencies: []
+browser_urls:
+  - "http://127.0.0.1:3021/"
+  - "http://127.0.0.1:3021/fermentation"
+  - "http://127.0.0.1:3021/research"
+  - "http://127.0.0.1:3021/workbench"
+goal: "记录当前重复入口、视觉同质化和跳转体验问题。"
+acceptance_criteria:
+  - "有重复入口问题清单"
+  - "有四页 browse 基线"

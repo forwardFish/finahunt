@@ -1,0 +1,54 @@
+task_id: "S6-004"
+task_name: "Research Page"
+sprint: "Sprint 6 页面分类重构与完整 UI/browser 验收"
+epic: "Epic 6.2 Separated Research Pages"
+story_id: "S6-004"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+dependencies:
+  - "S6-001"
+  - "S6-002"
+
+related_files:
+  - "apps/web/src/app/research/page.tsx"
+  - "apps/web/src/lib/lowPositionWorkbench.ts"
+  - "apps/web/src/lib/webView.ts"
+  - "apps/web/src/components/RunLowPositionButton.tsx"
+primary_files:
+  - "apps/web/src/app/research/page.tsx"
+secondary_files:
+  - "apps/web/src/lib/webView.ts"
+  - "apps/web/src/components/RunLowPositionButton.tsx"
+preview_urls:
+  - "http://127.0.0.1:3021/research"
+browser_urls:
+  - "http://127.0.0.1:3021/research"
+qa_urls:
+  - "http://127.0.0.1:3021/research"
+requires_auth: false
+
+goal: "提供低位研究独立页面。"
+business_value: "用户能围绕低位机会和候选公司进行连续研究，不再和主线页混淆。"
+
+entry_criteria:
+  - "页面地图和导航 contract 已确认。"
+
+acceptance_criteria:
+  - "页面展示题材验证分组、低位机会卡和代表性消息链路。"
+  - "页面只聚焦低位研究，不承载完整主线矩阵。"
+  - "页面保留一键运行入口。"
+
+story_inputs:
+  - "low-position workbench 数据"
+
+story_process:
+  - "创建 `/research` 独立页面。"
+  - "复用 low-position workbench 输出题材和消息卡。"
+
+story_outputs:
+  - "低位研究页面"
+
+verification_basis:
+  - "点击导航能进入 `/research`。"
+  - "页面只承载低位研究职责。"

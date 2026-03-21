@@ -57,7 +57,7 @@ export function RefreshLatestButton({
       setMessage(
         `抓取完成：${payload.run_id || "-"}，低位机会 ${payload.low_position_count ?? 0}，发酵主题 ${
           payload.fermenting_theme_count ?? 0
-        }`,
+        }。`,
       );
 
       startTransition(() => {
@@ -76,7 +76,7 @@ export function RefreshLatestButton({
   return (
     <div className="refresh-box" data-refresh-state={status}>
       <button type="button" className="secondary-button" onClick={handleRefresh} disabled={isRunning}>
-        {isRunning ? "抓取中..." : "立即抓最新"}
+        {isRunning ? "抓取中..." : "刷新最新快照"}
       </button>
       <span aria-live="polite" className="refresh-text">
         {message}

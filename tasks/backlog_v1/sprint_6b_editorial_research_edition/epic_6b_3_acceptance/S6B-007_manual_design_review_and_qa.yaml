@@ -1,0 +1,12 @@
+task_id: "S6B-007"
+task_name: "Manual Design Review and QA"
+story_id: "S6B-007"
+sprint: "Sprint 6B 编辑型情报台重做与完整 UI/browser 验收"
+epic: "Epic 6B.3 Acceptance"
+dependencies:
+  - "S6B-006"
+goal: "补齐 design-review、qa 和人工验收记录。"
+acceptance_criteria:
+  - "存在 browse 基线"
+  - "存在设计审查记录"
+  - "存在本地 QA 结果"

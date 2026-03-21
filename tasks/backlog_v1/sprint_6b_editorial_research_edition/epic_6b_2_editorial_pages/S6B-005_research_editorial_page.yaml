@@ -1,0 +1,13 @@
+task_id: "S6B-005"
+task_name: "Research Editorial Page"
+story_id: "S6B-005"
+sprint: "Sprint 6B 编辑型情报台重做与完整 UI/browser 验收"
+epic: "Epic 6B.2 Editorial Pages"
+dependencies:
+  - "S6B-002"
+preview_urls:
+  - "http://127.0.0.1:3021/research"
+goal: "把低位研究页重做成研究 dossier。"
+acceptance_criteria:
+  - "页面突出题材、候选公司和风险"
+  - "页面不承担全景总览职责"

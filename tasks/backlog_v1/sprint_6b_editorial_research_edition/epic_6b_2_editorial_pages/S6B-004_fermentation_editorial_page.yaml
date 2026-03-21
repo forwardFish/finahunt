@@ -1,0 +1,13 @@
+task_id: "S6B-004"
+task_name: "Fermentation Editorial Page"
+story_id: "S6B-004"
+sprint: "Sprint 6B 编辑型情报台重做与完整 UI/browser 验收"
+epic: "Epic 6B.2 Editorial Pages"
+dependencies:
+  - "S6B-002"
+preview_urls:
+  - "http://127.0.0.1:3021/fermentation"
+goal: "把主线发酵页重做成专题栏目。"
+acceptance_criteria:
+  - "页面突出阶段和主题故事"
+  - "页面不混入低位研究长列表"

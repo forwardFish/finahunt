@@ -1,0 +1,56 @@
+task_id: "S6-001"
+task_name: "Information Architecture and Wireframe Confirmation"
+sprint: "Sprint 6 页面分类重构与完整 UI/browser 验收"
+epic: "Epic 6.1 Information Architecture"
+story_id: "S6-001"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+dependencies: []
+
+related_files:
+  - "apps/web/src/app/layout.tsx"
+  - "apps/web/src/app/page.tsx"
+  - "docs/requirements/20260321_203500_sprint_6_research_flow_navigation_experience.md"
+primary_files:
+  - "docs/requirements/20260321_203500_sprint_6_research_flow_navigation_experience.md"
+  - "tasks/backlog_v1/sprint_6_research_flow_navigation_experience/sprint_plan.md"
+secondary_files:
+  - "apps/web/src/app/page.tsx"
+preview_urls:
+  - "http://127.0.0.1:3021/"
+browser_urls:
+  - "http://127.0.0.1:3021/"
+qa_urls:
+  - "http://127.0.0.1:3021/"
+requires_auth: false
+
+goal: "确认四页页面地图、导航 contract、页面边界和兼容路由策略。"
+business_value: "避免继续把研究流程堆在一个页面里，形成可浏览、可验收的独立页面结构。"
+
+entry_criteria:
+  - "当前首页存在单页堆叠问题，需先保留 browse 基线证据。"
+
+acceptance_criteria:
+  - "产出四页页面地图与模块清单。"
+  - "明确 `/` `/fermentation` `/research` `/workbench` 的职责边界。"
+  - "明确 `/sprint-2` `/low-position` 的兼容跳转目标。"
+  - "保留 browse evidence 证明现状问题。"
+
+story_inputs:
+  - "当前首页与历史页面结构。"
+  - "现有 daily snapshot 与 low-position workbench 数据。"
+
+story_process:
+  - "浏览现状页面并记录问题。"
+  - "输出线框和页面分类依据。"
+  - "与实现 story 对齐导航 contract。"
+
+story_outputs:
+  - "页面地图"
+  - "导航 contract"
+  - "兼容路由策略"
+
+verification_basis:
+  - "能说明为什么要拆成四页。"
+  - "browse evidence 可证明旧体验问题。"

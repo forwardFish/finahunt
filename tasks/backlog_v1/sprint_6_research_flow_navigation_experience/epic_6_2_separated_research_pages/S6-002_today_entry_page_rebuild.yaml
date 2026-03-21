@@ -1,0 +1,55 @@
+task_id: "S6-002"
+task_name: "Today Entry Page Rebuild"
+sprint: "Sprint 6 页面分类重构与完整 UI/browser 验收"
+epic: "Epic 6.2 Separated Research Pages"
+story_id: "S6-002"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+dependencies:
+  - "S6-001"
+
+related_files:
+  - "apps/web/src/app/page.tsx"
+  - "apps/web/src/app/layout.tsx"
+  - "apps/web/src/lib/dailySnapshot.ts"
+  - "apps/web/src/lib/webView.ts"
+primary_files:
+  - "apps/web/src/app/page.tsx"
+secondary_files:
+  - "apps/web/src/app/layout.tsx"
+  - "apps/web/src/lib/webView.ts"
+preview_urls:
+  - "http://127.0.0.1:3021/"
+browser_urls:
+  - "http://127.0.0.1:3021/"
+qa_urls:
+  - "http://127.0.0.1:3021/"
+requires_auth: false
+
+goal: "把首页收缩为今日入口页，不再承载完整工作台堆叠内容。"
+business_value: "用户能更快判断今天先看主线、低位还是工作台。"
+
+entry_criteria:
+  - "页面地图和导航 contract 已确认。"
+
+acceptance_criteria:
+  - "首页只保留今日概览、主线摘要、低位摘要、关键事件和 CTA。"
+  - "首页不再包含完整工作台主体。"
+  - "点击 CTA 后进入独立 URL。"
+
+story_inputs:
+  - "daily snapshot 数据"
+  - "S6-001 导航 contract"
+
+story_process:
+  - "重写首页模块结构。"
+  - "接入独立 CTA 路由。"
+  - "保留刷新与日期切换能力。"
+
+story_outputs:
+  - "新的今日入口页"
+
+verification_basis:
+  - "首页不再是长页面堆叠。"
+  - "点击分类能进入独立 URL。"

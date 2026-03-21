@@ -1,0 +1,17 @@
+task_id: "S6B-006"
+task_name: "Workbench Editorial Overview"
+story_id: "S6B-006"
+sprint: "Sprint 6B 编辑型情报台重做与完整 UI/browser 验收"
+epic: "Epic 6B.2 Editorial Pages"
+dependencies:
+  - "S6B-003"
+  - "S6B-004"
+  - "S6B-005"
+preview_urls:
+  - "http://127.0.0.1:3021/workbench"
+  - "http://127.0.0.1:3021/sprint-2"
+  - "http://127.0.0.1:3021/low-position"
+goal: "把工作台总览重做成分析总编台，并保留兼容路由。"
+acceptance_criteria:
+  - "工作台承接完整聚合视图"
+  - "兼容路由跳转正常"
