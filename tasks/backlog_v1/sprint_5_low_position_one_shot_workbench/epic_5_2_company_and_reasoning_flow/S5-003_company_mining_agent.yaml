@@ -1,0 +1,48 @@
+task_id: "S5-003"
+task_name: "Company Mining Agent"
+sprint: "Sprint 5 低位挖掘一键工作台"
+epic: "Epic 5.2 Company and Reasoning Flow"
+story_id: "S5-003"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+dependencies:
+  - "S5-002"
+
+related_files:
+  - "agents/runtime/company_mining/agent.py"
+  - "skills/event/stock_reasoning.py"
+  - "tools/run_low_position_workbench.py"
+primary_files:
+  - "agents/runtime/company_mining/agent.py"
+secondary_files:
+  - "skills/event/stock_reasoning.py"
+  - "tools/run_low_position_workbench.py"
+
+goal: "为每条消息找出最相关的公司池，并做分层。"
+business_value: "低位挖掘最关键的不是只说题材，而是说清楚谁最值得跟踪。"
+
+entry_criteria:
+  - "S5-002 已完成。"
+
+acceptance_criteria:
+  - "系统能输出 message_company_candidates。"
+  - "每条消息都能关联一组公司。"
+  - "公司至少区分核心受益、直接关联、产业链关联和观察项。"
+
+story_inputs:
+  - "message_expectations 输出。"
+  - "候选标的映射和正宗度结果。"
+
+story_process:
+  - "将消息映射到最相关的公司池。"
+  - "为每家公司打角色层级和相关度分。"
+  - "保留公司与消息之间的证据链。"
+
+story_outputs:
+  - "message_company_candidates.json"
+  - "消息级相关公司池。"
+
+verification_basis:
+  - "检查每条消息都能产出 companies 字段。"
+  - "检查公司角色层级至少落在预设分类中。"

@@ -1,0 +1,48 @@
+task_id: "S5-002"
+task_name: "Expectation Analysis Agent"
+sprint: "Sprint 5 低位挖掘一键工作台"
+epic: "Epic 5.1 Message and Expectation Flow"
+story_id: "S5-002"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+dependencies:
+  - "S5-001"
+
+related_files:
+  - "agents/runtime/expectation_analysis/agent.py"
+  - "skills/event/message_workbench.py"
+  - "tools/run_low_position_workbench.py"
+primary_files:
+  - "agents/runtime/expectation_analysis/agent.py"
+secondary_files:
+  - "skills/event/message_workbench.py"
+  - "tools/run_low_position_workbench.py"
+
+goal: "为每条标准消息生成结构化预期判断。"
+business_value: "让系统不只会看消息，还会回答这条消息接下来可能怎么扩散。"
+
+entry_criteria:
+  - "S5-001 已完成。"
+
+acceptance_criteria:
+  - "系统能输出 message_expectations。"
+  - "每条消息都带主影响题材、预期方向、预期时长和扩散路径。"
+  - "消息级初始判断分可见。"
+
+story_inputs:
+  - "valuable_messages 输出。"
+  - "题材簇、热度快照和低位机会结果。"
+
+story_process:
+  - "为每条消息推导主影响题材。"
+  - "判断预期方向、时长和扩散路径。"
+  - "输出消息级预期分和反向信号。"
+
+story_outputs:
+  - "message_expectations.json"
+  - "消息级预期判断对象。"
+
+verification_basis:
+  - "检查每条消息都带 expectation_summary。"
+  - "检查主影响题材和预期时长可见。"

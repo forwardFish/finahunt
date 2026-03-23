@@ -1,66 +1,82 @@
-# Story Agent 交付标准
+# Finahunt Story Agent 流程接入说明
 
-## 目标
+最后更新：2026-03-20
 
-从 Finahunt 当前阶段开始，每个 Story 不只要求“代码实现完成”，还要求有一套完整的 Agent 一条龙交付包，确保：
+## 1. 唯一标准来源
 
-- 需求清楚
-- 实现范围清楚
-- 测试与审查有证据
-- 最终验收可以回放
+`finahunt` 不再单独维护一套 Story / Sprint Agent 正式流程标准。
 
-## 一条龙交付链
+唯一正式标准以 `agentsystem` 为准：
 
-每个 Story 完成时，至少要补齐以下 8 个环节：
+- `D:/lyh/agent/agent-frame/agentsystem/docs/standards/gstack_platform_migration_spec.md`
+- `D:/lyh/agent/agent-frame/agentsystem/docs/standards/story_sprint_agent_workflow_standard.md`
 
-1. `Requirement Agent`
-   - 说明这个 Story 到底要解决什么问题
-   - 说明边界、依赖和禁止事项
+本文件只负责说明 `finahunt` 的接入方式、默认映射和 repo-specific 例外。
 
-2. `Builder Agent`
-   - 说明实际改了哪些代码/配置/规则
-   - 说明核心交付文件
+## 2. 默认接入规则
 
-3. `Code Style Reviewer`
-   - 检查风格、一致性、命名和格式
-   - 说明是否有 blocking 风格问题
+`finahunt` 后续 Story 默认按 `agentsystem` 强制矩阵执行：
 
-4. `Tester Agent`
-   - 说明跑了哪些测试
-   - 说明核心验证结果
+- 新需求 / 新 Epic / 新 Sprint：
+  - `office-hours -> plan-ceo-review -> plan-eng-review`
+- 普通后端 / runtime Story：
+  - `Requirement -> plan-eng-review -> Builder -> Code Style Reviewer -> Reviewer -> qa 或 qa-only -> Code Acceptance -> Acceptance Gate -> Doc Writer`
+- 前端 / 页面 Story：
+  - `Requirement -> browse -> design-consultation -> plan-design-review -> Builder -> Reviewer -> browse(local evidence via qa chain) -> design-review -> qa -> Acceptance -> Doc Writer`
+- Bug / 回归修复：
+  - `investigate -> Builder/Fixer -> Reviewer -> qa -> Acceptance -> Doc Writer`
+- Sprint 收尾：
+  - `ship -> document-release -> retro`
 
-5. `Reviewer Agent`
-   - 检查业务符合度、结构合理性和风险
-   - 说明是否存在重要设计问题
+## 3. Finahunt Repo-Specific 例外
 
-6. `Code Acceptance Agent`
-   - 检查文件 hygiene、交付物完整性、输出结构稳定性
+- `finahunt` 以 runtime / data / ranking / artifact warehouse 为主，默认多数 Story 归类为后端或 runtime Story。
+- 只有当 Story 明确涉及可视页面、浏览器交互、登录态验证时，才强制进入前端专项链。
+- `workspace/artifacts/runtime/` 属于运行结果仓，不得因流程迁移被批量删除或重写。
+- `tasks/story_status_registry.json` 仍视为人工验证证据的一部分，流程接入不得覆盖已有手工证据。
 
-7. `Acceptance Gate`
-   - 对照 Story 的 acceptance criteria 做最终放行
-   - 给出 PASS / BLOCKED 结论
+## 4. 任务字段映射建议
 
-8. `Doc Writer`
-   - 产出最终交付报告
-   - 记录证据、结论、回放入口
+在 `finahunt` 接入 `agentsystem` 时，任务载荷至少补齐这些字段：
 
-## 最低交付物要求
+- `story_kind`
+- `risk_level`
+- `has_browser_surface`
+- `bug_scope`
+- `investigation_context`
+- `release_scope`
+- `doc_targets`
+- `workflow_enforcement_policy`
 
-每个 Story 至少要有：
+推荐默认值：
 
-- 一份 `story_delivery_report.md`
-- 对应代码/规则/配置的实际落地文件
-- 对应测试或 live 验证证据
-- 最终验收结论
+- 数据链路 / 图谱 / 排名类 Story：
+  - `story_kind=backend`
+  - `has_browser_surface=false`
+- 回归修复：
+  - `bug_scope=regression`
+  - `workflow_enforcement_policy=gstack_strict`
+- Sprint close：
+  - `doc_targets=["docs", "tasks", "workspace/artifacts/runtime"]`
 
-## 当前执行口径
+## 5. 完成记账口径
 
-对于已经完成但尚未走完整 `agentsystem run-task` 链路的 Finahunt Story：
+`finahunt` 后续必须把“结果完成”和“流程完成”分开记账：
 
-- 允许先补“回填式交付报告”
-- 但报告里必须明确说明：
-  - 哪些结论来自自动化测试
-  - 哪些结论来自 live 验证
-  - 哪些结论来自人工补充说明
+- `implemented`
+- `verified`
+- `agentized`
+- `accepted`
 
-后续新 Story 优先按实时交付包生成，不再只做事后回填。
+如果只有代码落地但没有跑完要求的 Agent 链，状态只能算：
+
+- 已实现
+- 但未完全 Agent 化
+
+## 6. 迁移要求
+
+后续如果 `finahunt` 要新增自己的流程说明：
+
+- 只能写 repo-specific exception
+- 不能重新定义一套独立标准
+- 必须显式回链到 `agentsystem` 正式标准

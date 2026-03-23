@@ -1,0 +1,48 @@
+task_id: "S5-004"
+task_name: "Reasoning and Scoring Agent"
+sprint: "Sprint 5 低位挖掘一键工作台"
+epic: "Epic 5.2 Company and Reasoning Flow"
+story_id: "S5-004"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+dependencies:
+  - "S5-003"
+
+related_files:
+  - "agents/runtime/reasoning_scoring/agent.py"
+  - "skills/event/stock_reasoning.py"
+  - "tools/run_low_position_workbench.py"
+primary_files:
+  - "agents/runtime/reasoning_scoring/agent.py"
+  - "skills/event/stock_reasoning.py"
+secondary_files:
+  - "tools/run_low_position_workbench.py"
+
+goal: "给每家公司生成理由，并对整条消息输出综合评分。"
+business_value: "系统必须把“为什么是它”讲清楚，同时给出当天消息的综合研究优先级。"
+
+entry_criteria:
+  - "S5-003 已完成。"
+
+acceptance_criteria:
+  - "系统能输出 message_reasoning 和 message_impact_scores。"
+  - "每家公司都有 source_reason、llm_reason 或 pending_source_evidence。"
+  - "消息级评分至少拆成 5 个维度。"
+
+story_inputs:
+  - "message_company_candidates 输出。"
+  - "已有公开证据和 LLM 映射结果。"
+
+story_process:
+  - "为每家公司汇总 source_reason 和 llm_reason。"
+  - "生成 crosscheck_status。"
+  - "对整条消息输出综合评分和评分总结。"
+
+story_outputs:
+  - "message_reasoning.json"
+  - "message_impact_scores.json"
+
+verification_basis:
+  - "检查每家公司都带理由状态。"
+  - "检查消息级评分含 5 个以上维度字段。"

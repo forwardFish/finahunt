@@ -1,0 +1,63 @@
+task_id: "S5-005"
+task_name: "Low-position Orchestrator + Workbench UI"
+sprint: "Sprint 5 低位挖掘一键工作台"
+epic: "Epic 5.3 One-shot Delivery Workbench"
+story_id: "S5-005"
+blast_radius: "L3"
+execution_mode: "Safe"
+mode: "Safe"
+dependencies:
+  - "S5-004"
+
+related_files:
+  - "agents/runtime/low_position_orchestrator/agent.py"
+  - "apps/web/src/app/low-position/page.tsx"
+  - "apps/web/src/app/api/run-low-position/route.ts"
+  - "apps/web/src/lib/lowPositionWorkbench.ts"
+  - "apps/web/src/components/RunLowPositionButton.tsx"
+  - "tools/run_low_position_workbench.py"
+primary_files:
+  - "apps/web/src/app/low-position/page.tsx"
+  - "apps/web/src/app/api/run-low-position/route.ts"
+  - "apps/web/src/lib/lowPositionWorkbench.ts"
+  - "apps/web/src/components/RunLowPositionButton.tsx"
+secondary_files:
+  - "agents/runtime/low_position_orchestrator/agent.py"
+  - "tools/run_low_position_workbench.py"
+preview_urls:
+  - "http://127.0.0.1:3021/low-position"
+browser_urls:
+  - "http://127.0.0.1:3021/low-position"
+qa_urls:
+  - "http://127.0.0.1:3021/low-position"
+requires_auth: false
+
+goal: "把前面 4 个业务 Agent 压缩成一次性可执行的工作台输出。"
+business_value: "用户只触发一次，就能看到完整链路和页面效果。"
+
+entry_criteria:
+  - "S5-001 ~ S5-004 已完成。"
+
+acceptance_criteria:
+  - "存在一键运行入口。"
+  - "系统能输出 daily_message_workbench 和 daily_theme_workbench。"
+  - "页面支持消息视图和题材视图。"
+  - "页面能显示 loading、empty、partial、success。"
+
+story_inputs:
+  - "前 4 个业务 Agent 的结构化输出。"
+  - "现有 runtime 图、artifact 仓库和前端页面。"
+
+story_process:
+  - "按固定顺序串联消息处理、预期、公司和评分。"
+  - "汇总阶段状态并生成工作台产物。"
+  - "提供一键脚本、API route 和页面入口。"
+
+story_outputs:
+  - "daily_message_workbench.json"
+  - "daily_theme_workbench.json"
+  - "低位挖掘一键工作台页面"
+
+verification_basis:
+  - "检查一键脚本可返回 run_id。"
+  - "检查页面可显示消息视图和题材视图。"

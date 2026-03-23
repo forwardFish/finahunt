@@ -1,0 +1,47 @@
+task_id: "S5-001"
+task_name: "Message Processing Agent"
+sprint: "Sprint 5 低位挖掘一键工作台"
+epic: "Epic 5.1 Message and Expectation Flow"
+story_id: "S5-001"
+blast_radius: "L2"
+execution_mode: "Safe"
+mode: "Safe"
+dependencies: []
+
+related_files:
+  - "agents/runtime/message_processing/agent.py"
+  - "skills/event/message_workbench.py"
+  - "tools/run_low_position_workbench.py"
+primary_files:
+  - "agents/runtime/message_processing/agent.py"
+  - "skills/event/message_workbench.py"
+secondary_files:
+  - "tools/run_low_position_workbench.py"
+
+goal: "把当天公开信息压缩成可研究的标准消息对象。"
+business_value: "先把真正值得研究的消息筛出来，后面的预期、公司和评分才有意义。"
+
+entry_criteria:
+  - "S1 事件抽取与归一链路已可运行。"
+
+acceptance_criteria:
+  - "系统能输出 valuable_messages。"
+  - "每条消息都有来源、时间、主题和价值分。"
+  - "重复或弱价值消息不会全部进入下游。"
+
+story_inputs:
+  - "规范化后的公开消息列表。"
+  - "归一后的事件对象和来源链。"
+
+story_process:
+  - "识别当天更值得研究的消息。"
+  - "把重复消息合并成标准消息对象。"
+  - "输出消息级价值分和基础标签。"
+
+story_outputs:
+  - "valuable_messages.json"
+  - "可复用的消息级研究对象。"
+
+verification_basis:
+  - "检查 valuable_messages 非空且字段完整。"
+  - "检查同源重复消息不会全部重复入链。"
