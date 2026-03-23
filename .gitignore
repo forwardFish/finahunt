@@ -8,6 +8,7 @@ workspace/logs/
 workspace/audit/
 apps/web/.next/
 apps/web/node_modules/
+apps/web/.runtime-logs/
 apps/web/*.log
 apps/web/.codex/
 apps/web/tsconfig.tsbuildinfo
