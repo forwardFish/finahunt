@@ -13,3 +13,21 @@ goal: "记录当前重复入口、视觉同质化和跳转体验问题。"
 acceptance_criteria:
   - "有重复入口问题清单"
   - "有四页 browse 基线"
+
+story_inputs:
+  - "Existing browser baseline URLs for /, /fermentation, /research, and /workbench"
+  - "Current UI reference set under docs/UI"
+  - "Known duplicated entry and visual consistency problem ledger"
+
+story_process:
+  - "Open each baseline URL in browser or route smoke"
+  - "Record duplicate entry, visual homogeneity, and navigation jump issues"
+  - "Create a browse baseline artifact for downstream editorial fixes"
+
+story_outputs:
+  - "Browse baseline notes for Sprint 6B"
+  - "Problem ledger covering routes and UI acceptance risks"
+
+verification_basis:
+  - "docs/sprint6b/S6B-001_browse_baseline.md"
+  - "Browser or smoke evidence showing inspected routes are reachable"

@@ -34,5 +34,5 @@ export function LinkButton({ href, children, variant = "primary" }: { href: Rout
 }
 
 export function PageControls({ totalLabel = "共 218 条" }: { totalLabel?: string }) {
-  return <div className="fi-pager"><div className="fi-page-nos"><button type="button">‹</button><button className="active" type="button">1</button><button type="button">2</button><button type="button">3</button><span>...</span><button type="button">22</button><button type="button">›</button></div><span>{totalLabel}</span></div>;
+  return <div className="fi-pager"><div className="fi-page-nos"><button type="button">上一页</button><button className="active" type="button">1</button><button type="button">2</button><button type="button">3</button><span>...</span><button type="button">22</button><button type="button">下一页</button></div><span>{totalLabel}</span></div>;
 }

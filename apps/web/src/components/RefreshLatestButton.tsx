@@ -15,21 +15,25 @@ function buildSuccessHref(latestDate: string | undefined, successPath: string, s
 export function RefreshLatestButton({ latestRunId, successPath = "/", successParams = {} }: RefreshLatestButtonProps) {
   const [isRunning, setIsRunning] = useState(false);
   const [status, setStatus] = useState<"idle" | "running" | "success" | "error">("idle");
-  const [message, setMessage] = useState(latestRunId ? `当前最新 run：${latestRunId}` : "当前还没有可展示的运行批次。");
+  const [message, setMessage] = useState(latestRunId ? `当前最新 run: ${latestRunId}` : "当前还没有可展示的运行批次。");
 
   async function handleRefresh(): Promise<void> {
-    setIsRunning(true); setStatus("running"); setMessage("正在抓取最新公开资讯，通常需要 60-120 秒。");
+    setIsRunning(true);
+    setStatus("running");
+    setMessage("正在抓取最新公开资讯，通常需要 60-120 秒。");
     try {
       const response = await fetch("/api/refresh-latest", { method: "POST" });
       const payload = (await response.json()) as RefreshResponse;
       if (!response.ok || payload.ok === false) throw new Error(payload.error || "refresh_failed");
       setStatus("success");
-      setMessage(`抓取完成：${payload.run_id || "-"}，低位机会 ${payload.low_position_count ?? 0}，发酵主题 ${payload.fermenting_theme_count ?? 0}。`);
+      setMessage(`抓取完成: ${payload.run_id || "-"}, 低位机会 ${payload.low_position_count ?? 0}, 发酵主题 ${payload.fermenting_theme_count ?? 0}.`);
       startTransition(() => window.location.assign(buildSuccessHref(payload.latestDate, successPath, successParams)));
     } catch (error) {
       setStatus("error");
-      setMessage(`抓取失败：${error instanceof Error ? error.message : "unknown_error"}。请稍后重试，或检查本地运行脚本与公开源连接状态。`);
-    } finally { setIsRunning(false); }
+      setMessage(`抓取失败: ${error instanceof Error ? error.message : "unknown_error"}. 请稍后重试，或检查本地运行脚本与公开源连接状态。`);
+    } finally {
+      setIsRunning(false);
+    }
   }
 
   return <div className="refresh-box" data-refresh-state={status}><button type="button" className="secondary-button" onClick={handleRefresh} disabled={isRunning}>{isRunning ? "抓取中..." : "刷新最新快照"}</button><span aria-live="polite" className="refresh-text">{message}</span></div>;

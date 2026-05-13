@@ -11,3 +11,21 @@ goal: "把主线发酵页重做成专题栏目。"
 acceptance_criteria:
   - "页面突出阶段和主题故事"
   - "页面不混入低位研究长列表"
+
+story_inputs:
+  - "S6B-002 navigation contract"
+  - "Fermentation route source"
+  - "Topic category/detail UI references"
+
+story_process:
+  - "Shape fermentation page around theme heat and catalyst evidence"
+  - "Preserve snapshot data source and date query"
+  - "Validate cards, matrix, and empty states"
+
+story_outputs:
+  - "Editorial fermentation page"
+  - "Fermentation route acceptance evidence"
+
+verification_basis:
+  - "Route /fermentation loads successfully"
+  - "Screenshot and DOM checks show topic/catalyst sections"

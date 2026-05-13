@@ -10,3 +10,21 @@ acceptance_criteria:
   - "存在 browse 基线"
   - "存在设计审查记录"
   - "存在本地 QA 结果"
+
+story_inputs:
+  - "Completed Sprint 6B pages"
+  - "docs/UI reference pack"
+  - "Browser screenshots and smoke results"
+
+story_process:
+  - "Run manual-style design review and QA checks"
+  - "Compare route screenshots with UI references"
+  - "Record residual differences and acceptance result"
+
+story_outputs:
+  - "Design review and QA report"
+  - "Screenshot evidence set"
+
+verification_basis:
+  - "docs/sprint6b/S6B-007_design_review_and_qa.md"
+  - "Route smoke and screenshot artifacts"

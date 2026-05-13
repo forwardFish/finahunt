@@ -11,3 +11,21 @@ goal: "把低位研究页重做成研究 dossier。"
 acceptance_criteria:
   - "页面突出题材、候选公司和风险"
   - "页面不承担全景总览职责"
+
+story_inputs:
+  - "S6B-002 navigation contract"
+  - "Research route source"
+  - "Samples/search UI references"
+
+story_process:
+  - "Shape research page around research samples and evidence"
+  - "Preserve low-position derived data and safe fallbacks"
+  - "Validate sample/list layout and empty states"
+
+story_outputs:
+  - "Editorial research page"
+  - "Research route acceptance evidence"
+
+verification_basis:
+  - "Route /research loads successfully"
+  - "Screenshot and DOM checks show research samples and evidence sections"

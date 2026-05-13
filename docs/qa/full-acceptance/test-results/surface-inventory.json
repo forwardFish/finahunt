@@ -1,0 +1,53 @@
+{
+  "page_routes": [
+    "/",
+    "/fermentation",
+    "/low-position",
+    "/research",
+    "/sprint-2",
+    "/workbench"
+  ],
+  "api_routes": [
+    {
+      "path": "/api/daily-snapshot",
+      "methods": [
+        "GET"
+      ],
+      "file": "apps\\web\\src\\app\\api\\daily-snapshot\\route.ts"
+    },
+    {
+      "path": "/api/refresh-latest",
+      "methods": [
+        "POST"
+      ],
+      "file": "apps\\web\\src\\app\\api\\refresh-latest\\route.ts"
+    },
+    {
+      "path": "/api/run-low-position",
+      "methods": [
+        "POST"
+      ],
+      "file": "apps\\web\\src\\app\\api\\run-low-position\\route.ts"
+    }
+  ],
+  "client_fetch_targets": [
+    "/api/refresh-latest",
+    "/api/run-low-position"
+  ],
+  "static_href_targets": [
+    "/",
+    "/sprint-2"
+  ],
+  "form_targets": [
+    "/",
+    "/fermentation",
+    "/low-position",
+    "/research",
+    "/workbench"
+  ],
+  "python_commands": [
+    "C:\\Python313\\python.exe tools/run_latest_snapshot.py",
+    "C:\\Python313\\python.exe tools/run_low_position_workbench.py",
+    "C:\\Python313\\python.exe tools/run_live_event_cognition.py"
+  ]
+}

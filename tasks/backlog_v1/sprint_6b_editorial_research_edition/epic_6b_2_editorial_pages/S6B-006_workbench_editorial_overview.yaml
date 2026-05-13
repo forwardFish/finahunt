@@ -15,3 +15,21 @@ goal: "把工作台总览重做成分析总编台，并保留兼容路由。"
 acceptance_criteria:
   - "工作台承接完整聚合视图"
   - "兼容路由跳转正常"
+
+story_inputs:
+  - "S6B-002 navigation contract"
+  - "Workbench route source"
+  - "Daily snapshot events, themes, and sources"
+
+story_process:
+  - "Shape workbench as operational overview with tables and source/evidence panels"
+  - "Preserve data reading and query behavior"
+  - "Validate dense table readability"
+
+story_outputs:
+  - "Editorial workbench overview page"
+  - "Workbench route acceptance evidence"
+
+verification_basis:
+  - "Route /workbench loads successfully"
+  - "Screenshot and DOM checks show tables, events, and source/evidence sections"

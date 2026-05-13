@@ -10,3 +10,21 @@ acceptance_criteria:
   - "顶层只保留一层导航"
   - "首页不再保留第二套导航式 CTA"
   - "四页职责有明确边界"
+
+story_inputs:
+  - "S6B-001 browse baseline"
+  - "Current navigation and editorial page contract"
+  - "docs/UI financial UI references"
+
+story_process:
+  - "Normalize navigation layers and route responsibilities"
+  - "Confirm the home page is the editorial entry and four core routes have distinct roles"
+  - "Record route contract boundaries for implementation"
+
+story_outputs:
+  - "Navigation and editorial contract for Sprint 6B"
+  - "Route responsibility map for home, fermentation, research, and workbench"
+
+verification_basis:
+  - "Navigation contains a single primary layer"
+  - "Each core route has a clear purpose and does not duplicate another route"

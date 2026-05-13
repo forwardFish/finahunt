@@ -1,0 +1,291 @@
+[
+  {
+    "name": "GET /api/daily-snapshot (daily-snapshot-default)",
+    "path": "/api/daily-snapshot",
+    "status": "200",
+    "ok": true,
+    "duration_ms": 525,
+    "details": {
+      "api_route": "/api/daily-snapshot",
+      "case": "daily-snapshot-default",
+      "expected_statuses": [
+        200
+      ],
+      "shape": {
+        "json": true,
+        "type": "object",
+        "keys": [
+          "commonRiskNotices",
+          "date",
+          "events",
+          "runs",
+          "sources",
+          "stats",
+          "storageTimezone",
+          "themes"
+        ],
+        "ok": null,
+        "date": "2026-05-13",
+        "stats_keys": [
+          "canonicalEventCount",
+          "fermentingThemeCount",
+          "lowPositionCount",
+          "rawDocumentCount",
+          "runCount",
+          "sourceCount",
+          "themeCount"
+        ],
+        "error": null
+      },
+      "missing_required_keys": [],
+      "required_keys_any_met": true,
+      "content_type": ""
+    }
+  },
+  {
+    "name": "GET /api/daily-snapshot?date=2026-05-13 (daily-snapshot-valid-date)",
+    "path": "/api/daily-snapshot?date=2026-05-13",
+    "status": "200",
+    "ok": true,
+    "duration_ms": 334,
+    "details": {
+      "api_route": "/api/daily-snapshot",
+      "case": "daily-snapshot-valid-date",
+      "expected_statuses": [
+        200
+      ],
+      "shape": {
+        "json": true,
+        "type": "object",
+        "keys": [
+          "commonRiskNotices",
+          "date",
+          "events",
+          "runs",
+          "sources",
+          "stats",
+          "storageTimezone",
+          "themes"
+        ],
+        "ok": null,
+        "date": "2026-05-13",
+        "stats_keys": [
+          "canonicalEventCount",
+          "fermentingThemeCount",
+          "lowPositionCount",
+          "rawDocumentCount",
+          "runCount",
+          "sourceCount",
+          "themeCount"
+        ],
+        "error": null
+      },
+      "missing_required_keys": [],
+      "required_keys_any_met": true,
+      "content_type": ""
+    }
+  },
+  {
+    "name": "GET /api/daily-snapshot?date=1900-01-01 (daily-snapshot-empty-date)",
+    "path": "/api/daily-snapshot?date=1900-01-01",
+    "status": "200",
+    "ok": true,
+    "duration_ms": 44,
+    "details": {
+      "api_route": "/api/daily-snapshot",
+      "case": "daily-snapshot-empty-date",
+      "expected_statuses": [
+        200
+      ],
+      "shape": {
+        "json": true,
+        "type": "object",
+        "keys": [
+          "commonRiskNotices",
+          "date",
+          "events",
+          "runs",
+          "sources",
+          "stats",
+          "storageTimezone",
+          "themes"
+        ],
+        "ok": null,
+        "date": "1900-01-01",
+        "stats_keys": [
+          "canonicalEventCount",
+          "fermentingThemeCount",
+          "lowPositionCount",
+          "rawDocumentCount",
+          "runCount",
+          "sourceCount",
+          "themeCount"
+        ],
+        "error": null
+      },
+      "missing_required_keys": [],
+      "required_keys_any_met": true,
+      "content_type": ""
+    }
+  },
+  {
+    "name": "GET /api/daily-snapshot?date=bad-date (daily-snapshot-invalid-date-fallback)",
+    "path": "/api/daily-snapshot?date=bad-date",
+    "status": "200",
+    "ok": true,
+    "duration_ms": 431,
+    "details": {
+      "api_route": "/api/daily-snapshot",
+      "case": "daily-snapshot-invalid-date-fallback",
+      "expected_statuses": [
+        200
+      ],
+      "shape": {
+        "json": true,
+        "type": "object",
+        "keys": [
+          "commonRiskNotices",
+          "date",
+          "events",
+          "runs",
+          "sources",
+          "stats",
+          "storageTimezone",
+          "themes"
+        ],
+        "ok": null,
+        "date": "2026-05-13",
+        "stats_keys": [
+          "canonicalEventCount",
+          "fermentingThemeCount",
+          "lowPositionCount",
+          "rawDocumentCount",
+          "runCount",
+          "sourceCount",
+          "themeCount"
+        ],
+        "error": null
+      },
+      "missing_required_keys": [],
+      "required_keys_any_met": true,
+      "content_type": ""
+    }
+  },
+  {
+    "name": "POST /api/refresh-latest (refresh-latest-post)",
+    "path": "/api/refresh-latest",
+    "status": "200",
+    "ok": true,
+    "duration_ms": 40765,
+    "details": {
+      "api_route": "/api/refresh-latest",
+      "case": "refresh-latest-post",
+      "expected_statuses": [
+        200,
+        500
+      ],
+      "shape": {
+        "json": true,
+        "type": "object",
+        "keys": [
+          "artifact_batch_dir",
+          "fermenting_theme_count",
+          "frontend_url",
+          "latestDate",
+          "low_position_count",
+          "ok",
+          "run_id"
+        ],
+        "ok": true,
+        "date": "2026-05-13",
+        "stats_keys": [],
+        "error": null
+      },
+      "missing_required_keys": [],
+      "required_keys_any_met": true,
+      "content_type": ""
+    }
+  },
+  {
+    "name": "GET /api/refresh-latest (refresh-latest-method-guard)",
+    "path": "/api/refresh-latest",
+    "status": "405",
+    "ok": true,
+    "duration_ms": 7,
+    "details": {
+      "api_route": "/api/refresh-latest",
+      "case": "refresh-latest-method-guard",
+      "expected_statuses": [
+        404,
+        405
+      ],
+      "shape": {
+        "json": false,
+        "error": "Expecting value: line 1 column 1 (char 0)",
+        "preview": ""
+      },
+      "missing_required_keys": [],
+      "required_keys_any_met": true,
+      "content_type": ""
+    }
+  },
+  {
+    "name": "POST /api/run-low-position (run-low-position-post)",
+    "path": "/api/run-low-position",
+    "status": "200",
+    "ok": true,
+    "duration_ms": 47313,
+    "details": {
+      "api_route": "/api/run-low-position",
+      "case": "run-low-position-post",
+      "expected_statuses": [
+        200,
+        500
+      ],
+      "shape": {
+        "json": true,
+        "type": "object",
+        "keys": [
+          "artifact_batch_dir",
+          "frontend_url",
+          "latestDate",
+          "message_count",
+          "ok",
+          "run_id",
+          "status",
+          "theme_count"
+        ],
+        "ok": true,
+        "date": "2026-05-13",
+        "stats_keys": [],
+        "error": null
+      },
+      "missing_required_keys": [],
+      "required_keys_any_met": true,
+      "content_type": ""
+    }
+  },
+  {
+    "name": "GET /api/run-low-position (run-low-position-method-guard)",
+    "path": "/api/run-low-position",
+    "status": "405",
+    "ok": true,
+    "duration_ms": 6,
+    "details": {
+      "api_route": "/api/run-low-position",
+      "case": "run-low-position-method-guard",
+      "expected_statuses": [
+        404,
+        405
+      ],
+      "shape": {
+        "json": false,
+        "error": "Expecting value: line 1 column 1 (char 0)",
+        "preview": ""
+      },
+      "missing_required_keys": [],
+      "required_keys_any_met": true,
+      "content_type": ""
+    }
+  }
+]

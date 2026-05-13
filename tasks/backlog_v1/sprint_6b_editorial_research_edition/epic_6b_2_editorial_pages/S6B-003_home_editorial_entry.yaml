@@ -11,3 +11,21 @@ goal: "把首页改成强入口式导读页。"
 acceptance_criteria:
   - "首页不再堆完整工作台"
   - "内容推荐卡不伪装成第二套导航"
+
+story_inputs:
+  - "S6B-002 navigation contract"
+  - "Home route source"
+  - "docs/UI home and contact-sheet references"
+
+story_process:
+  - "Rebuild home as editorial information entry"
+  - "Preserve daily snapshot data loading and refresh action"
+  - "Validate home route against visual hierarchy"
+
+story_outputs:
+  - "Editorial home entry page"
+  - "Home route acceptance evidence"
+
+verification_basis:
+  - "Route / loads successfully"
+  - "Home screenshot and DOM checks show feed, topics, and next actions"

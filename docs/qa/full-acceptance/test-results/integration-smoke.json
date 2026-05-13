@@ -1,0 +1,96 @@
+[
+  {
+    "name": "client-fetch-target /api/refresh-latest",
+    "path": "/api/refresh-latest",
+    "status": "matched",
+    "ok": true,
+    "duration_ms": 0,
+    "details": {
+      "known_api_routes": [
+        "/api/daily-snapshot",
+        "/api/refresh-latest",
+        "/api/run-low-position"
+      ]
+    }
+  },
+  {
+    "name": "client-fetch-target /api/run-low-position",
+    "path": "/api/run-low-position",
+    "status": "matched",
+    "ok": true,
+    "duration_ms": 0,
+    "details": {
+      "known_api_routes": [
+        "/api/daily-snapshot",
+        "/api/refresh-latest",
+        "/api/run-low-position"
+      ]
+    }
+  },
+  {
+    "name": "internal-navigation-target /",
+    "path": "/",
+    "status": "200",
+    "ok": true,
+    "duration_ms": 399,
+    "details": {
+      "mojibake_markers": [],
+      "next_error_markers": []
+    }
+  },
+  {
+    "name": "internal-navigation-target /fermentation",
+    "path": "/fermentation",
+    "status": "200",
+    "ok": true,
+    "duration_ms": 354,
+    "details": {
+      "mojibake_markers": [],
+      "next_error_markers": []
+    }
+  },
+  {
+    "name": "internal-navigation-target /low-position",
+    "path": "/low-position",
+    "status": "200",
+    "ok": true,
+    "duration_ms": 221,
+    "details": {
+      "mojibake_markers": [],
+      "next_error_markers": []
+    }
+  },
+  {
+    "name": "internal-navigation-target /research",
+    "path": "/research",
+    "status": "200",
+    "ok": true,
+    "duration_ms": 221,
+    "details": {
+      "mojibake_markers": [],
+      "next_error_markers": []
+    }
+  },
+  {
+    "name": "internal-navigation-target /sprint-2",
+    "path": "/sprint-2",
+    "status": "200",
+    "ok": true,
+    "duration_ms": 590,
+    "details": {
+      "mojibake_markers": [],
+      "next_error_markers": []
+    }
+  },
+  {
+    "name": "internal-navigation-target /workbench",
+    "path": "/workbench",
+    "status": "200",
+    "ok": true,
+    "duration_ms": 599,
+    "details": {
+      "mojibake_markers": [],
+      "next_error_markers": []
+    }
+  }
+]

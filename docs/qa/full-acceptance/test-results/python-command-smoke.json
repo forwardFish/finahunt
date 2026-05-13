@@ -1,0 +1,95 @@
+[
+  {
+    "name": "latest-snapshot-command",
+    "path": "C:\\Python313\\python.exe tools/run_latest_snapshot.py",
+    "status": "0",
+    "ok": true,
+    "duration_ms": 38175,
+    "details": {
+      "command": [
+        "C:\\Python313\\python.exe",
+        "tools/run_latest_snapshot.py"
+      ],
+      "returncode": 0,
+      "stdout_shape": {
+        "json": true,
+        "type": "object",
+        "keys": [
+          "artifact_batch_dir",
+          "fermenting_theme_count",
+          "frontend_url",
+          "low_position_count",
+          "run_id"
+        ],
+        "ok": null,
+        "date": null,
+        "stats_keys": [],
+        "error": null
+      },
+      "stdout_preview": "{\n  \"run_id\": \"run-3f5cc1428403\",\n  \"artifact_batch_dir\": \"workspace/artifacts/runtime/run-3f5cc1428403\",\n  \"frontend_url\": \"http://127.0.0.1:3021/\",\n  \"low_position_count\": 4,\n  \"fermenting_theme_count\": 4\n}",
+      "stderr_preview": ""
+    }
+  },
+  {
+    "name": "low-position-command",
+    "path": "C:\\Python313\\python.exe tools/run_low_position_workbench.py",
+    "status": "0",
+    "ok": true,
+    "duration_ms": 38207,
+    "details": {
+      "command": [
+        "C:\\Python313\\python.exe",
+        "tools/run_low_position_workbench.py"
+      ],
+      "returncode": 0,
+      "stdout_shape": {
+        "json": true,
+        "type": "object",
+        "keys": [
+          "artifact_batch_dir",
+          "frontend_url",
+          "message_count",
+          "run_id",
+          "status",
+          "theme_count"
+        ],
+        "ok": null,
+        "date": null,
+        "stats_keys": [],
+        "error": null
+      },
+      "stdout_preview": "{\n  \"run_id\": \"run-f2528a79c60c\",\n  \"artifact_batch_dir\": \"workspace/artifacts/runtime/run-f2528a79c60c\",\n  \"frontend_url\": \"http://127.0.0.1:3021/low-position\",\n  \"message_count\": 8,\n  \"theme_count\": 4,\n  \"status\": \"partial\"\n}",
+      "stderr_preview": ""
+    }
+  },
+  {
+    "name": "live-event-cognition-command-help",
+    "path": "C:\\Python313\\python.exe tools/run_live_event_cognition.py",
+    "status": "0",
+    "ok": true,
+    "duration_ms": 36251,
+    "details": {
+      "command": [
+        "C:\\Python313\\python.exe",
+        "tools/run_live_event_cognition.py"
+      ],
+      "returncode": 0,
+      "stdout_shape": {
+        "json": true,
+        "type": "object",
+        "keys": [
+          "artifact_batch_dir",
+          "daily_review",
+          "fermenting_theme_feed",
+          "low_position_opportunities"
+        ],
+        "ok": null,
+        "date": null,
+        "stats_keys": [],
+        "error": null
+      },
+      "stdout_preview": "{\n  \"low_position_opportunities\": [\n    {\n      \"theme_name\": \"人工智能\",\n      \"cluster_id\": \"cluster-166d951b65\",\n      \"theme_candidate_id\": \"theme-166d951b65\",\n      \"low_position_score\": 81.0,\n      \"entry_stage\": \"emerging\",\n      \"theme_heat_score\": 49.47,\n      \"heat_score\": 36.0,\n      \"catalyst_score\": 22,\n      \"continuity_score\": 51.0,\n      \"fermentation_score\": 51.47,\n      \"timeliness_level\": \"high\",\n      \"source_count\": 1,\n      \"high_strength_catalyst_count\": 0,\n      \"linked_asset_count\": 1,\n      \"low_position_reason\": \"题材仍处于早期认知区间; 题材仍处于早期发酵阶段; 催化仍处于新鲜窗口; 单一来源线索仍显示出早期连续性; 候选映射已经识别出较高正宗度标的\",\n      \"core_narrative\": \"人工智能当前围绕智谱形成叙事聚合，关键锚点包括智谱 / 人工智能。\",\n      \"catalyst_summary\": \"人工智能已经出现早期线索，但催化类型仍需继续确认。\",\n      \"top_evidence\": [\n        {\n          \"event_id\": \"evt-0eee3d2ff4f7\",\n          \"title\": \"#港股AI概念股普涨，智谱大涨27%# - 热门话题 - 雪球\",\n          \"summary\": \"港股AI应用股表现强势，智谱涨幅超过15%，MINIMAX-W和迅策也分别上涨11%和8%。\",\n          \"event_subject\": \"智谱\",\n          \"event_time\": \"2026-05-13",
+      "stderr_preview": ""
+    }
+  }
+]
