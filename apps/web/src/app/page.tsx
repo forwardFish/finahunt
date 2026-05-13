@@ -1,276 +1,36 @@
 import Link from "next/link";
 
 import { RefreshLatestButton } from "@/components/RefreshLatestButton";
+import { Badge, DateSwitch, EmptyState, LinkButton, MetricCard, PageControls, PageHero, ScoreMeter, SectionCard } from "@/components/FinancialUI";
 import { loadDailySnapshot, resolveTargetDate } from "@/lib/dailySnapshot";
-import {
-  buildHref,
-  featuredEvents,
-  formatIso,
-  formatScore,
-  lowPositionThemes,
-  safeText,
-  sourceLabel,
-  summarizeSnapshotState,
-  themeName,
-  topThemes,
-} from "@/lib/webView";
+import { buildHref, featuredEvents, formatIso, formatScore, lowPositionThemes, safeText, sourceLabel, summarizeSnapshotState, themeName, topThemes } from "@/lib/webView";
 
-type PageProps = {
-  searchParams?: Promise<Record<string, string | string[] | undefined>>;
-};
+type PageProps = { searchParams?: Promise<Record<string, string | string[] | undefined>> };
+const tabs = ["全部", "宏观", "产业", "公司", "政策", "全球"];
 
 export default async function TodayEntryPage({ searchParams }: PageProps) {
   const params = searchParams ? await searchParams : {};
   const date = resolveTargetDate(params.date);
   const snapshot = loadDailySnapshot(date);
-  const state = summarizeSnapshotState(
-    snapshot.stats.runCount,
-    snapshot.themes.length,
-    snapshot.events.length,
-    snapshot.sources.length,
-  );
-  const mainThemes = topThemes(snapshot.themes, 3);
-  const researchThemes = lowPositionThemes(snapshot.themes, 3);
-  const leadTheme = mainThemes[0];
-  const leadResearch = researchThemes[0];
-  const events = featuredEvents(snapshot.events, 4);
+  const state = summarizeSnapshotState(snapshot.stats.runCount, snapshot.themes.length, snapshot.events.length, snapshot.sources.length);
+  const themes = topThemes(snapshot.themes, 10);
+  const cards = topThemes(snapshot.themes, 6);
+  const lowThemes = lowPositionThemes(snapshot.themes, 3);
+  const events = featuredEvents(snapshot.events, 7);
   const latestRun = snapshot.runs[0];
 
   return (
-    <main className="edition edition-home">
-      <section className="edition-hero">
-        <div className="hero-grid">
-          <div className="hero-copy">
-            <span className="eyebrow">Today Entry</span>
-            <h1>先判断今天该从哪条研究路径开始。</h1>
-            <p className="hero-copy-text">
-              首页现在只做研究入口，不再承载完整工作台。你会先看到今天的主线判断、低位研究优先级和少量关键事件，然后再进入对应栏目继续阅读。
-            </p>
+    <main className="fi-page">
+      <PageHero eyebrow="今日总览" title="把公开资讯、题材热度和研究入口放回同一张金融信息首页。" description="参考 docs/UI 的金融资讯认知系统原型，首页回到资讯流、热门题材与题材机会结构，同时保留 daily snapshot 的真实数据读取与刷新动作。" side={<><h2>今日运行摘要</h2><div className="fi-stat-grid"><MetricCard label="页面状态" value={state.label} note={state.description} tone={state.tone === "ready" ? "green" : state.tone === "partial" ? "orange" : "slate"} /><MetricCard label="运行批次" value={snapshot.stats.runCount} /><MetricCard label="主题" value={snapshot.stats.themeCount} /><MetricCard label="事件" value={snapshot.stats.canonicalEventCount} /></div><RefreshLatestButton latestRunId={latestRun?.runId ?? ""} successPath="/" /></>}><DateSwitch action="/" date={snapshot.date} /></PageHero>
 
-            <div className="toolbar toolbar-split">
-              <form action="/" className="toolbar" method="get">
-                <input aria-label="切换快照日期" defaultValue={snapshot.date} name="date" type="date" />
-                <button type="submit">切换日期</button>
-              </form>
-              <div className="pill-row">
-                <span className="pill is-navy">快照日期 {snapshot.date}</span>
-                <span className="pill">时区 {snapshot.storageTimezone}</span>
-              </div>
-            </div>
+      <div className="fi-main-grid">
+        <section className="fi-card"><div className="fi-section-head"><div><span className="fi-kicker">News Feed</span><h2>今日资讯</h2></div><Link className="fi-section-action" href={buildHref("/workbench", { date: snapshot.date })}>更多资讯 ›</Link></div><div className="fi-tabs">{tabs.map((tab, index) => <span key={tab} className={index === 0 ? "active" : ""}>{tab}</span>)}</div><div className="fi-news-list">{events.length ? events.map((event, index) => <article className="fi-news-item" key={event.key}><div className="fi-news-time">{formatIso(event.eventTime).slice(11, 16) || "--:--"}</div><div><div className="fi-news-title"><Badge tone={index % 5 === 0 ? "red" : index % 5 === 1 ? "orange" : index % 5 === 2 ? "blue" : index % 5 === 3 ? "green" : "purple"}>{safeText(event.eventType, "资讯")}</Badge><strong>{safeText(event.title, "未命名事件")}</strong></div><p>{safeText(event.summary, "暂无事件摘要。")}</p><div className="fi-tags"><span className="fi-tag">{sourceLabel(event.sourceId || event.sourceName)}</span>{(event.themes || []).slice(0, 3).map((tag) => <span className="fi-tag" key={`${event.key}-${tag}`}>{safeText(tag, "主题")}</span>)}</div></div></article>) : <EmptyState title="暂无资讯">当前日期没有可展示事件，可刷新最新快照或切换日期。</EmptyState>}</div><PageControls totalLabel={`共 ${snapshot.events.length} 条`} /></section>
+        <aside className="fi-side"><SectionCard title="热门题材" eyebrow="Hot Topics" action="更多 ›"><div className="fi-rank-list"><div className="fi-rank-head"><span>排名</span><span>题材</span><span className="fi-right">热度</span><span className="fi-right">发酵</span></div>{themes.map((theme, index) => <div className="fi-rank-row" key={theme.key}><span className="fi-rank-num">{index + 1}</span><b>{themeName(theme)}</b><span className="fi-right">{formatScore(theme.heatScore)}</span><span className="fi-right fi-red">{formatScore(theme.fermentationScore)}</span></div>)}</div><p className="fi-rank-note">更新时间：{formatIso(latestRun?.createdAt)}</p></SectionCard><SectionCard title="题材分类" eyebrow="Categories"><div className="fi-tags">{["AI", "机器人", "低空经济", "半导体", "新能源", "金融科技", "军工", "消费电子", "新基建"].map((tag) => <span className="fi-tag" key={tag}>{tag}</span>)}</div></SectionCard></aside>
+      </div>
 
-            <div className="summary-grid">
-              <article className="mini-card">
-                <span>页面状态</span>
-                <strong>{state.label}</strong>
-                <p>{state.description}</p>
-              </article>
-              <article className="mini-card">
-                <span>今日主线</span>
-                <strong>{themeName(leadTheme)}</strong>
-                <p>{safeText(leadTheme?.coreNarrative, "今天还没有形成非常明确的主线主题。")}</p>
-              </article>
-              <article className="mini-card">
-                <span>研究优先级</span>
-                <strong>{themeName(leadResearch)}</strong>
-                <p>{safeText(leadResearch?.lowPositionReason, "当前还没有显著的低位机会，可以先观察主线发酵。")}</p>
-              </article>
-            </div>
-          </div>
-
-          <aside className="edition-panel">
-            <div className="pill-row">
-              <span className="pill is-gold">本期导读</span>
-              <span className="pill">{formatIso(latestRun?.createdAt)}</span>
-            </div>
-            <h2>今天先看哪里</h2>
-            <p>
-              这里像一张研究刊物的封面页。它不负责塞满全部内容，只负责告诉你今天该先看哪一页、哪条主题最值得继续读，以及什么时候应该进入完整工作台。
-            </p>
-
-            <div className="summary-grid">
-              <div className="mini-card">
-                <span>运行批次</span>
-                <strong>{snapshot.stats.runCount}</strong>
-              </div>
-              <div className="mini-card">
-                <span>主题总量</span>
-                <strong>{snapshot.stats.themeCount}</strong>
-              </div>
-              <div className="mini-card">
-                <span>事件总量</span>
-                <strong>{snapshot.stats.canonicalEventCount}</strong>
-              </div>
-              <div className="mini-card">
-                <span>来源覆盖</span>
-                <strong>{snapshot.stats.sourceCount}</strong>
-              </div>
-            </div>
-
-            <RefreshLatestButton latestRunId={latestRun?.runId ?? ""} successPath="/" />
-          </aside>
-        </div>
-      </section>
-
-      <section className="section-card">
-        <div className="section-title">
-          <div>
-            <span className="section-kicker">Reading Paths</span>
-            <h2>今日推荐阅读</h2>
-            <p>下面不是第二套导航，而是三条今天最值得继续阅读的内容路径。</p>
-          </div>
-        </div>
-
-        <div className="route-grid">
-          <article className="route-card is-accent">
-            <span className="section-kicker">推荐一</span>
-            <h3>先看主线发酵</h3>
-            <p>如果今天已有较明确的市场主线，优先去看发酵阶段、热度和催化延续，而不是直接钻到个股层面。</p>
-            <div className="pill-row">
-              <span className="pill is-accent">Top {themeName(leadTheme)}</span>
-              <span className="pill">发酵 {formatScore(leadTheme?.fermentationScore)}</span>
-            </div>
-            <Link className="text-link" href={buildHref("/fermentation", { date: snapshot.date })}>
-              继续阅读主线发酵
-            </Link>
-          </article>
-
-          <article className="route-card is-sage">
-            <span className="section-kicker">推荐二</span>
-            <h3>继续低位研究</h3>
-            <p>如果今天更适合找尚未充分拥挤的机会，就进入低位研究页，看题材、候选公司和验证状态。</p>
-            <div className="pill-row">
-              <span className="pill is-sage">Top {themeName(leadResearch)}</span>
-              <span className="pill">低位 {formatScore(leadResearch?.lowPositionScore)}</span>
-            </div>
-            <Link className="text-link" href={buildHref("/research", { date: snapshot.date })}>
-              继续阅读低位研究
-            </Link>
-          </article>
-
-          <article className="route-card is-gold">
-            <span className="section-kicker">推荐三</span>
-            <h3>打开完整工作台</h3>
-            <p>如果你已经准备做横向比较和深挖，就去总览页看矩阵、证据带和消息链路，而不是在首页继续下滑。</p>
-            <div className="pill-row">
-              <span className="pill is-gold">主题 {snapshot.stats.themeCount}</span>
-              <span className="pill">事件 {snapshot.stats.canonicalEventCount}</span>
-            </div>
-            <Link className="text-link" href={buildHref("/workbench", { date: snapshot.date })}>
-              打开工作台总览
-            </Link>
-          </article>
-        </div>
-      </section>
-
-      <section className="two-column">
-        <article className="section-card">
-          <div className="section-title">
-            <div>
-              <span className="section-kicker">Mainline Brief</span>
-              <h2>今日主线摘要</h2>
-            </div>
-          </div>
-          <div className="mini-stack">
-            {mainThemes.length ? (
-              mainThemes.map((theme) => (
-                <article key={theme.key} className="issue-card">
-                  <h3>{themeName(theme)}</h3>
-                  <p>{safeText(theme.coreNarrative, "暂无主线叙事摘要。")}</p>
-                  <div className="pill-row">
-                    <span className="pill">发酵 {formatScore(theme.fermentationScore)}</span>
-                    <span className="pill">热度 {formatScore(theme.heatScore)}</span>
-                  </div>
-                </article>
-              ))
-            ) : (
-              <article className="empty-card">
-                <h3>今天还没有主线摘要</h3>
-                <p>可以先刷新最新快照，或者直接进入工作台看完整运行结果。</p>
-              </article>
-            )}
-          </div>
-        </article>
-
-        <article className="section-card">
-          <div className="section-title">
-            <div>
-              <span className="section-kicker">Research Brief</span>
-              <h2>低位研究摘要</h2>
-            </div>
-          </div>
-          <div className="mini-stack">
-            {researchThemes.length ? (
-              researchThemes.map((theme) => (
-                <article key={theme.key} className="issue-card">
-                  <h3>{themeName(theme)}</h3>
-                  <p>{safeText(theme.lowPositionReason || theme.researchPositioningNote, "暂无低位研究备注。")}</p>
-                  <div className="pill-row">
-                    <span className="pill is-sage">低位 {formatScore(theme.lowPositionScore)}</span>
-                    <span className="pill">{theme.candidateStocks.length} 个候选</span>
-                  </div>
-                </article>
-              ))
-            ) : (
-              <article className="empty-card">
-                <h3>今天还没有低位研究摘要</h3>
-                <p>如果需要，可以去低位研究页执行一次工作台刷新，或切换到有结果的日期。</p>
-              </article>
-            )}
-          </div>
-        </article>
-      </section>
-
-      <section className="section-card">
-        <div className="section-title">
-          <div>
-            <span className="section-kicker">Key Events</span>
-            <h2>关键事件入口</h2>
-            <p>首页只保留少量关键事件，帮助你决定是否需要继续进入专题页或工作台。</p>
-          </div>
-        </div>
-
-        <div className="issue-grid">
-          {events.length ? (
-            events.map((event) => (
-              <article key={event.key} className="issue-card">
-                <span className="section-kicker">{sourceLabel(event.sourceId || event.sourceName)}</span>
-                <h3>{safeText(event.title, "未命名事件")}</h3>
-                <p>{safeText(event.summary, "暂无事件摘要。")}</p>
-                <div className="pill-row">
-                  <span className="pill">{formatIso(event.eventTime)}</span>
-                  <span className="pill">{safeText(event.eventType, "事件")}</span>
-                </div>
-              </article>
-            ))
-          ) : (
-            <article className="empty-card">
-              <h3>当前日期没有关键事件</h3>
-              <p>这通常意味着当天还没有有效运行，或者公开数据还没进入当前快照。</p>
-            </article>
-          )}
-        </div>
-      </section>
-
-      <section className="cta-panel">
-        <div>
-          <span className="section-kicker">Method & Risk</span>
-          <h2>这是一页导读，不是一页交易指令。</h2>
-          <p>
-            {safeText(
-              snapshot.commonRiskNotices[0],
-              "页面负责帮助你缩小研究范围、组织证据和安排阅读顺序，不直接替代交易决策。",
-            )}
-          </p>
-        </div>
-        <div className="link-row">
-          <Link className="link-button is-secondary" href={buildHref("/fermentation", { date: snapshot.date })}>
-            先看主线
-          </Link>
-          <Link className="link-button is-primary" href={buildHref("/workbench", { date: snapshot.date })}>
-            进入完整总览
-          </Link>
-        </div>
-      </section>
+      <SectionCard title="题材机会" eyebrow="Opportunity Board" action={<Link href={buildHref("/fermentation", { date: snapshot.date })}>更多机会 ›</Link>}><div className="fi-card-grid">{cards.map((theme) => <article className="fi-topic-card" key={theme.key}><div className="fi-topic-head"><div className="fi-topic-title"><span className="fi-topic-icon">◆</span><h3>{themeName(theme)}</h3></div><span className="fi-red">{formatScore(theme.fermentationScore)}</span></div><p>{safeText(theme.coreNarrative, "暂无核心叙事。")}</p><ScoreMeter value={theme.fermentationScore} label="发酵分" /><div className="fi-tags">{theme.latestCatalysts.slice(0, 2).map((item) => <span className="fi-tag" key={item.title}>{safeText(item.title, "催化")}</span>)}</div></article>)}</div></SectionCard>
+      <SectionCard title="样例预览" eyebrow="Research Samples" action={<Link href={buildHref("/research", { date: snapshot.date })}>更多样例 ›</Link>}><div className="fi-sample-grid">{(lowThemes.length ? lowThemes : cards.slice(0, 3)).map((theme) => <article className="fi-sample-card" key={`sample-${theme.key}`}><Badge tone="blue">复盘</Badge><h3>{themeName(theme)} 产业链复盘</h3><p>{safeText(theme.lowPositionReason || theme.researchPositioningNote || theme.coreNarrative, "登录后查看完整研究样例与候选公司映射。")}</p><div className="fi-blur-strip" /><span className="fi-lock-art">🔒</span></article>)}</div></SectionCard>
+      <section className="fi-card fi-section-head"><div><span className="fi-kicker">Next Step</span><h2>从首页继续进入研究链路</h2></div><div className="fi-link-row"><LinkButton href={buildHref("/fermentation", { date: snapshot.date })} variant="secondary">查看题材发酵</LinkButton><LinkButton href={buildHref("/workbench", { date: snapshot.date })}>进入工作台</LinkButton></div></section>
     </main>
   );
 }

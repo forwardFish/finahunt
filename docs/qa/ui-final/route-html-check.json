@@ -1,0 +1,50 @@
+﻿[
+    {
+        "Route":  "/",
+        "Status":  200,
+        "HtmlLength":  115937,
+        "MojibakeHits":  0,
+        "NextOverlay":  false,
+        "DataHints":  true
+    },
+    {
+        "Route":  "/fermentation",
+        "Status":  200,
+        "HtmlLength":  122411,
+        "MojibakeHits":  0,
+        "NextOverlay":  false,
+        "DataHints":  true
+    },
+    {
+        "Route":  "/research",
+        "Status":  200,
+        "HtmlLength":  104062,
+        "MojibakeHits":  0,
+        "NextOverlay":  false,
+        "DataHints":  true
+    },
+    {
+        "Route":  "/workbench",
+        "Status":  200,
+        "HtmlLength":  104594,
+        "MojibakeHits":  0,
+        "NextOverlay":  false,
+        "DataHints":  true
+    },
+    {
+        "Route":  "/low-position",
+        "Status":  200,
+        "HtmlLength":  70321,
+        "MojibakeHits":  0,
+        "NextOverlay":  false,
+        "DataHints":  true
+    },
+    {
+        "Route":  "/sprint-2",
+        "Status":  200,
+        "HtmlLength":  33278,
+        "MojibakeHits":  0,
+        "NextOverlay":  false,
+        "DataHints":  true
+    }
+]

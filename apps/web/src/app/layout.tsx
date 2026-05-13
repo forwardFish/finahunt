@@ -1,64 +1,53 @@
 import "./globals.css";
 
 import Link from "next/link";
-import { Cormorant_Garamond, IBM_Plex_Mono, Manrope } from "next/font/google";
-import type { Metadata } from "next";
+import type { Metadata, Route } from "next";
 import type { ReactNode } from "react";
 
-const headingFont = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  weight: ["500", "600", "700"],
-});
-
-const bodyFont = Manrope({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
-});
-
-const monoFont = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "500", "600"],
-});
-
 export const metadata: Metadata = {
-  title: "Finahunt 研究工作台",
-  description: "按研究流程拆分的今日入口、主线发酵、低位研究与工作台总览。",
+  title: "Finahunt 金融资讯认知系统",
+  description: "公开市场资讯、题材发酵、低位研究与工作台总览。",
 };
+
+const navItems = [
+  { href: "/", label: "首页" },
+  { href: "/fermentation", label: "题材" },
+  { href: "/research", label: "样例" },
+  { href: "/workbench", label: "工作台" },
+  { href: "/low-position", label: "低位研究" },
+];
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable}`} lang="zh-CN">
+    <html lang="zh-CN">
       <body>
-        <div className="site-shell">
-          <header className="masthead">
-            <div className="masthead-note">
-              <span>Finahunt Research Edition</span>
-              <span>公开市场信号研究版 · 按研究流程而不是按功能堆叠页面</span>
+        <header className="fi-top">
+          <div className="fi-top-line" />
+          <div className="fi-top-main fi-wrap">
+            <Link className="fi-logo" href="/" aria-label="Finahunt 首页">
+              <span className="fi-logo-mark">FH</span>
+              <span className="fi-logo-text">金融资讯认知系统</span>
+            </Link>
+            <form className="fi-search" action="/workbench" method="get">
+              <span aria-hidden="true">⌕</span>
+              <input name="q" placeholder="搜索资讯、题材、公司、事件" />
+              <button type="submit">搜索</button>
+            </form>
+            <Link className="fi-login" href="/sprint-2">验收</Link>
+          </div>
+          <nav className="fi-nav" aria-label="主导航">
+            <div className="fi-wrap fi-nav-inner">
+              {navItems.map((item) => <Link key={item.href} href={item.href as Route}>{item.label}</Link>)}
             </div>
-
-            <div className="masthead-bar">
-              <Link className="brand-lockup" href="/">
-                <span className="brand-mark">FH</span>
-                <span className="brand-copy">
-                  <strong>Finahunt</strong>
-                  <small>研究工作台 · Editorial Research Edition</small>
-                </span>
-              </Link>
-
-              <nav className="main-nav" aria-label="主导航">
-                <Link href="/">今日入口</Link>
-                <Link href="/fermentation">主线发酵</Link>
-                <Link href="/research">低位研究</Link>
-                <Link href="/workbench">工作台总览</Link>
-              </nav>
-            </div>
-          </header>
-
-          {children}
-        </div>
+          </nav>
+        </header>
+        {children}
+        <footer className="fi-footer">
+          <div className="fi-wrap">
+            <span>关于我们</span><span>免责声明</span><span>隐私政策</span><span>联系方式</span>
+            <span className="fi-footer-copy">© 2026 Finahunt，仅供研究观察，不构成投资建议</span>
+          </div>
+        </footer>
       </body>
     </html>
   );

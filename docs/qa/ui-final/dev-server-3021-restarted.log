@@ -1,0 +1,48 @@
+
+> finahunt-web@0.1.0 dev
+> next dev -p 3021
+
+   ▲ Next.js 15.5.13
+   - Local:        http://localhost:3021
+   - Network:      http://192.168.3.33:3021
+
+ ✓ Starting...
+ ✓ Ready in 8.4s
+ ○ Compiling / ...
+ ✓ Compiled / in 1991ms (594 modules)
+ GET / 200 in 4047ms
+ GET / 200 in 1542ms
+ ⚠ Cross origin request detected from 127.0.0.1 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ○ Compiling /fermentation ...
+ ✓ Compiled /fermentation in 746ms (596 modules)
+ GET /fermentation 200 in 1740ms
+ ○ Compiling /research ...
+ ✓ Compiled /research in 510ms (605 modules)
+ GET /research 200 in 1570ms
+ ✓ Compiled /workbench in 449ms (610 modules)
+ GET /workbench 200 in 1937ms
+ ○ Compiling /low-position ...
+ ✓ Compiled /low-position in 625ms (612 modules)
+ GET /low-position 200 in 1866ms
+ ✓ Compiled /sprint-2 in 479ms (615 modules)
+ GET /sprint-2 200 in 1453ms
+ ○ Compiling /api/daily-snapshot ...
+ ✓ Compiled /api/daily-snapshot in 1229ms (334 modules)
+ GET /api/daily-snapshot 200 in 1767ms
+ ✓ Compiled /api/refresh-latest in 248ms (338 modules)
+ POST /api/refresh-latest 200 in 45036ms
+ ✓ Compiled /api/run-low-position in 270ms (341 modules)
+ POST /api/run-low-position 200 in 40583ms
+ ✓ Compiled / in 364ms (370 modules)
+ GET / 200 in 898ms
+ ✓ Compiled /fermentation in 228ms (372 modules)
+ GET /fermentation 200 in 655ms
+ ✓ Compiled /research in 150ms (379 modules)
+ GET /research 200 in 726ms
+ ✓ Compiled /workbench in 192ms (383 modules)
+ GET /workbench 200 in 837ms
+ ✓ Compiled /low-position in 174ms (385 modules)
+ GET /low-position 200 in 879ms
+ ✓ Compiled /sprint-2 in 247ms (389 modules)
+ GET /sprint-2 200 in 818ms

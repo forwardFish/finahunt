@@ -1,0 +1,23 @@
+﻿[
+    {
+        "Route":  "/api/daily-snapshot",
+        "Method":  "GET",
+        "Status":  200,
+        "Length":  64362,
+        "Note":  "ok"
+    },
+    {
+        "Route":  "/api/refresh-latest",
+        "Method":  "POST",
+        "Status":  200,
+        "Length":  "client-timeout-at-45s",
+        "Note":  "server log observed POST /api/refresh-latest 200 in 45036ms; client timeout boundary was too tight"
+    },
+    {
+        "Route":  "/api/run-low-position",
+        "Method":  "POST",
+        "Status":  200,
+        "Length":  238,
+        "Note":  "ok; returned run_id run-4ee4b0e3de33 and frontend_url /low-position"
+    }
+]

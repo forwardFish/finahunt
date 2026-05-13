@@ -1,0 +1,38 @@
+import Link from "next/link";
+import type { Route } from "next";
+import type { ReactNode } from "react";
+
+export type Tone = "blue" | "red" | "orange" | "green" | "purple" | "slate";
+
+export function Badge({ children, tone = "blue" }: { children: ReactNode; tone?: Tone }) { return <span className={`fi-badge fi-badge-${tone}`}>{children}</span>; }
+
+export function SectionCard({ eyebrow, title, action, children, className = "" }: { eyebrow?: string; title: string; action?: ReactNode; children: ReactNode; className?: string }) {
+  return <section className={`fi-card ${className}`.trim()}><div className="fi-section-head"><div>{eyebrow ? <span className="fi-kicker">{eyebrow}</span> : null}<h2>{title}</h2></div>{action ? <div className="fi-section-action">{action}</div> : null}</div>{children}</section>;
+}
+
+export function MetricCard({ label, value, note, tone = "blue" }: { label: string; value: ReactNode; note?: string; tone?: Tone }) {
+  return <article className={`fi-metric fi-metric-${tone}`}><span>{label}</span><strong>{value}</strong>{note ? <p>{note}</p> : null}</article>;
+}
+
+export function ScoreMeter({ value, label }: { value: number | null | undefined; label?: string }) {
+  const safe = typeof value === "number" && Number.isFinite(value) ? Math.max(0, Math.min(100, value)) : 0;
+  return <div className="fi-meter" aria-label={label}><span style={{ width: `${safe}%` }} /></div>;
+}
+
+export function DateSwitch({ action, date, label = "切换日期" }: { action: string; date: string; label?: string }) {
+  return <form className="fi-date-form" action={action} method="get"><input aria-label={label} defaultValue={date} name="date" type="date" /><button type="submit">{label}</button></form>;
+}
+
+export function EmptyState({ title, children }: { title: string; children: ReactNode }) { return <article className="fi-empty"><strong>{title}</strong><p>{children}</p></article>; }
+
+export function PageHero({ eyebrow, title, description, children, side }: { eyebrow: string; title: string; description: string; children?: ReactNode; side?: ReactNode }) {
+  return <section className="fi-hero"><div className="fi-hero-copy"><span className="fi-kicker">{eyebrow}</span><h1>{title}</h1><p>{description}</p>{children}</div>{side ? <aside className="fi-hero-side">{side}</aside> : null}</section>;
+}
+
+export function LinkButton({ href, children, variant = "primary" }: { href: Route | string; children: ReactNode; variant?: "primary" | "secondary" }) {
+  return <Link className={`fi-button fi-button-${variant}`} href={href as Route}>{children}</Link>;
+}
+
+export function PageControls({ totalLabel = "共 218 条" }: { totalLabel?: string }) {
+  return <div className="fi-pager"><div className="fi-page-nos"><button type="button">‹</button><button className="active" type="button">1</button><button type="button">2</button><button type="button">3</button><span>...</span><button type="button">22</button><button type="button">›</button></div><span>{totalLabel}</span></div>;
+}
