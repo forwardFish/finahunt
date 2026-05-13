@@ -1,11 +1,19 @@
-# 01 Requirement Traceability Matrix - expanded acceptance pass
+# Requirement Traceability Matrix
 
-| Req ID | Requirement | Source | Priority | Target | Acceptance method | Automated test | Current status | Evidence | Notes |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| R-AF-001 | Preserve and verify all actual Next page routes | user prompt + app router | P0 | `/`, `/fermentation`, `/research`, `/workbench`, `/low-position`, `/sprint-2` | HTTP route smoke + screenshot | `tools/full_acceptance_smoke.py --routes --screenshots` | implemented | `route-smoke.json`, screenshots | 13 route cases: default + date query for each route, plus workbench search query. |
-| R-AF-002 | Preserve and verify declared API routes | user prompt + app router | P0 | `/api/daily-snapshot`, `/api/refresh-latest`, `/api/run-low-position` | API contract smoke | `tools/full_acceptance_smoke.py --api` | implemented | `api-smoke.json` | 3 actual route files, 8 API contract cases. |
-| R-AF-003 | Prove frontend/backend wiring, not just isolated routes | user feedback | P0 | client fetch targets, form targets, internal nav targets, Python command surfaces | integration smoke + command smoke | `tools/full_acceptance_smoke.py --integration --python-commands` | implemented | `integration-smoke.json`, `python-command-smoke.json` | Covers client fetch target existence and Python workflow commands. |
-| R-AF-004 | Remove visible mojibake / broken Chinese in interactive UI | DESIGN + user prompt | P0 | FinancialUI, RefreshLatestButton, RunLowPositionButton, webView labels | route smoke + screenshot body text scan | expanded smoke marker list | implemented | route/screenshot smoke PASS | Fixed hardcoded mojibake missed by first pass. |
-| R-AF-005 | Preserve S6B story contract fix | previous acceptance evidence | P0 | S6B YAML + pytest | pytest | `python -m pytest -q` | implemented | 33 passed | Existing task YAML changes preserved. |
-| R-AF-006 | Keep UI references and docs intact | user prompt | P0 | `docs/UI`, `docs`, `tasks`, `.omx`, `workspace` | code review + git status | manual review | implemented | code review doc | No destructive cleanup performed. |
-| R-AF-007 | Clarify next unfinished work | user prompt | P1 | delivery report + gaps doc | scan + report | marker scan and surface inventory | implemented | final report | Remaining items are abstract adapter methods and future product/API expansion. |
+Generated: 2026-05-13 19:31:42 +0800
+
+| ID | Requirement | Source document | Page / API / component | UI reference | Automatic check | Manual check | Current status | Evidence path |
+|---|---|---|---|---|---|---|---|---|
+| S6-001 | ?????? `/` `/fermentation` `/research` `/workbench` | Sprint 6 | routes + layout | home/topic/sample/search refs | route + internal-nav smoke | ???????? | PASS | route-smoke.json; integration-smoke.json |
+| S6-002 | ?????????????/????/????/????/???????????/??/??? | Sprint 6 | page.tsx | home.html/news.html/contact-sheet | required + forbidden text, screenshots | ???????? | PASS | desktop-home.png; mobile-home.png |
+| S6-003 | `/fermentation` ????????????????? | Sprint 6 | fermentation/page.tsx | topics/topic-category/topic-detail | route identity + screenshots | ???????? | PASS | desktop-fermentation.png; mobile-fermentation.png |
+| S6-004 | `/research` ???????????????????dossier ?? | Sprint 6/6B | research/page.tsx | samples/search/sample-detail | route identity + screenshots | ?? dossier ???? | PASS | desktop-research.png; mobile-research.png |
+| S6-005 | `/workbench` ????????????????????? | Sprint 6 | workbench/page.tsx | search/home refs | must_contain + screenshots | ????????? | PASS | desktop-workbench.png; mobile-workbench.png |
+| S6-006 | ??????????????? URL | Sprint 6/6B | layout.tsx | HTML header/nav | integration smoke | ???????? | PASS | surface-inventory.json |
+| S6-007 | ???? `/sprint-2 -> /workbench`?????????? | Sprint 6/6B | sprint-2/page.tsx | reference-only | ????/?? URL?????H1 | ?????????? redirect-only | PRODUCT_DECISION_REQUIRED | redirect-final-url.json; screenshots |
+| S6-008 | ???? `/low-position -> /research`?????????? | Sprint 6/6B | low-position/page.tsx | samples/search refs | ????/?? URL?????H1 | ?????????? redirect-only | PRODUCT_DECISION_REQUIRED | redirect-final-url.json; screenshots |
+| S6B-001 | ?????????????????? | Sprint 6B | all pages + CSS | docs/UI/contact-sheet + HTML prototypes | screenshots/H1/no overflow/no error | ?????????? | MANUAL_REVIEW_REQUIRED | screenshot-capture.json; visual-smoke.md |
+| S6B-002 | ??????? | Sprint 6B | rendered routes | all refs | mojibake marker scan | ?????? | PASS | route-smoke.json; screenshot-capture.json |
+| S6B-003 | ?? runtime artifact contract??? dailySnapshot/lowPositionWorkbench | Sprint 6/6B | apps/web/src/lib | N/A | build/API/page data smoke | ???? | PASS | frontend-build.log; api-smoke.json |
+| AE-001 | ?? scripts/acceptance ? docs/auto-execute??? harness ????? | Auto Execute | scripts/docs | N/A | init + fast/gate/full | N/A | PASS | verification-results.md |
+| AE-002 | `/workbench?q=????` ??????????? | User rule | workbench + layout search | search.html | search smoke asserts q text | ?????? | PASS | workbench-search-smoke.json |

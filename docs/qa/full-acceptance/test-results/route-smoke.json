@@ -4,7 +4,7 @@
     "path": "/",
     "status": "200",
     "ok": true,
-    "duration_ms": 433,
+    "duration_ms": 361,
     "details": {
       "initial_url": "http://127.0.0.1:3021/",
       "final_url": "http://127.0.0.1:3021/",
@@ -14,12 +14,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-home.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-home.png",
       "route": "/",
+      "responsibility": "今日导读入口，不承载完整工作台矩阵、完整候选公司列表或完整证据带。",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 49441
+      "html_bytes": 51894
     }
   },
   {
@@ -27,7 +29,7 @@
     "path": "/?date=2026-05-13",
     "status": "200",
     "ok": true,
-    "duration_ms": 289,
+    "duration_ms": 309,
     "details": {
       "initial_url": "http://127.0.0.1:3021/?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/?date=2026-05-13",
@@ -37,12 +39,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-home.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-home.png",
       "route": "/",
+      "responsibility": "今日导读入口，不承载完整工作台矩阵、完整候选公司列表或完整证据带。",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 49491
+      "html_bytes": 51944
     }
   },
   {
@@ -50,7 +54,7 @@
     "path": "/fermentation",
     "status": "200",
     "ok": true,
-    "duration_ms": 409,
+    "duration_ms": 388,
     "details": {
       "initial_url": "http://127.0.0.1:3021/fermentation",
       "final_url": "http://127.0.0.1:3021/fermentation",
@@ -60,12 +64,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-fermentation.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-fermentation.png",
       "route": "/fermentation",
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 43385
+      "html_bytes": 47409
     }
   },
   {
@@ -73,7 +79,7 @@
     "path": "/fermentation?date=2026-05-13",
     "status": "200",
     "ok": true,
-    "duration_ms": 408,
+    "duration_ms": 295,
     "details": {
       "initial_url": "http://127.0.0.1:3021/fermentation?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/fermentation?date=2026-05-13",
@@ -83,12 +89,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-fermentation.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-fermentation.png",
       "route": "/fermentation",
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 43435
+      "html_bytes": 47459
     }
   },
   {
@@ -96,7 +104,7 @@
     "path": "/research",
     "status": "200",
     "ok": true,
-    "duration_ms": 506,
+    "duration_ms": 253,
     "details": {
       "initial_url": "http://127.0.0.1:3021/research",
       "final_url": "http://127.0.0.1:3021/research",
@@ -106,12 +114,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-research.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-research.png",
       "route": "/research",
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 39110
+      "html_bytes": 32282
     }
   },
   {
@@ -119,7 +129,7 @@
     "path": "/research?date=2026-05-13",
     "status": "200",
     "ok": true,
-    "duration_ms": 376,
+    "duration_ms": 189,
     "details": {
       "initial_url": "http://127.0.0.1:3021/research?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/research?date=2026-05-13",
@@ -129,12 +139,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-research.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-research.png",
       "route": "/research",
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 39160
+      "html_bytes": 32332
     }
   },
   {
@@ -142,7 +154,7 @@
     "path": "/workbench",
     "status": "200",
     "ok": true,
-    "duration_ms": 1085,
+    "duration_ms": 534,
     "details": {
       "initial_url": "http://127.0.0.1:3021/workbench",
       "final_url": "http://127.0.0.1:3021/workbench",
@@ -152,12 +164,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-workbench.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-workbench.png",
       "route": "/workbench",
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 35937
+      "html_bytes": 37306
     }
   },
   {
@@ -165,7 +179,7 @@
     "path": "/workbench?date=2026-05-13",
     "status": "200",
     "ok": true,
-    "duration_ms": 916,
+    "duration_ms": 447,
     "details": {
       "initial_url": "http://127.0.0.1:3021/workbench?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/workbench?date=2026-05-13",
@@ -175,12 +189,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-workbench.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-workbench.png",
       "route": "/workbench",
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 35987
+      "html_bytes": 37356
     }
   },
   {
@@ -188,7 +204,7 @@
     "path": "/low-position",
     "status": "200",
     "ok": true,
-    "duration_ms": 506,
+    "duration_ms": 247,
     "details": {
       "initial_url": "http://127.0.0.1:3021/low-position",
       "final_url": "http://127.0.0.1:3021/low-position",
@@ -198,12 +214,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-low-position.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-low-position.png",
       "route": "/low-position",
+      "responsibility": "",
+      "product_decision": "PRODUCT_DECISION_REQUIRED: Sprint 6/6B documents requested /low-position -> /research, current implementation keeps an independent compatibility page.",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 22900
+      "html_bytes": 22947
     }
   },
   {
@@ -211,7 +229,7 @@
     "path": "/low-position?date=2026-05-13",
     "status": "200",
     "ok": true,
-    "duration_ms": 320,
+    "duration_ms": 198,
     "details": {
       "initial_url": "http://127.0.0.1:3021/low-position?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/low-position?date=2026-05-13",
@@ -221,12 +239,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-low-position.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-low-position.png",
       "route": "/low-position",
+      "responsibility": "",
+      "product_decision": "PRODUCT_DECISION_REQUIRED: Sprint 6/6B documents requested /low-position -> /research, current implementation keeps an independent compatibility page.",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 22950
+      "html_bytes": 22997
     }
   },
   {
@@ -234,7 +254,7 @@
     "path": "/sprint-2",
     "status": "200",
     "ok": true,
-    "duration_ms": 660,
+    "duration_ms": 506,
     "details": {
       "initial_url": "http://127.0.0.1:3021/sprint-2",
       "final_url": "http://127.0.0.1:3021/sprint-2",
@@ -244,12 +264,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-sprint-2.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-sprint-2.png",
       "route": "/sprint-2",
+      "responsibility": "",
+      "product_decision": "PRODUCT_DECISION_REQUIRED: Sprint 6/6B documents requested /sprint-2 -> /workbench, current implementation keeps an independent compatibility page.",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 13890
+      "html_bytes": 13757
     }
   },
   {
@@ -257,7 +279,7 @@
     "path": "/sprint-2?date=2026-05-13",
     "status": "200",
     "ok": true,
-    "duration_ms": 532,
+    "duration_ms": 438,
     "details": {
       "initial_url": "http://127.0.0.1:3021/sprint-2?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/sprint-2?date=2026-05-13",
@@ -267,12 +289,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-sprint-2.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-sprint-2.png",
       "route": "/sprint-2",
+      "responsibility": "",
+      "product_decision": "PRODUCT_DECISION_REQUIRED: Sprint 6/6B documents requested /sprint-2 -> /workbench, current implementation keeps an independent compatibility page.",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 13940
+      "html_bytes": 13807
     }
   },
   {
@@ -280,7 +304,7 @@
     "path": "/workbench?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD",
     "status": "200",
     "ok": true,
-    "duration_ms": 640,
+    "duration_ms": 513,
     "details": {
       "initial_url": "http://127.0.0.1:3021/workbench?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD",
       "final_url": "http://127.0.0.1:3021/workbench?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD",
@@ -290,12 +314,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-workbench-search-q.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-workbench-search-q.png",
       "route": "/workbench?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD",
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 30368
+      "html_bytes": 34459
     }
   }
 ]

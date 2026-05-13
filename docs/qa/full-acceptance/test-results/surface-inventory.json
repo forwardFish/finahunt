@@ -46,8 +46,8 @@
     "/workbench"
   ],
   "python_commands": [
-    "C:\\Python313\\python.exe tools/run_latest_snapshot.py",
-    "C:\\Python313\\python.exe tools/run_low_position_workbench.py",
-    "C:\\Python313\\python.exe tools/run_live_event_cognition.py"
+    "C:\\Python313\\python.exe tools/run_latest_snapshot.py --acceptance-smoke",
+    "C:\\Python313\\python.exe tools/run_low_position_workbench.py --acceptance-smoke",
+    "C:\\Python313\\python.exe tools/run_live_event_cognition.py --acceptance-smoke"
   ]
 }

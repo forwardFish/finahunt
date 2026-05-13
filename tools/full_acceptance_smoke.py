@@ -23,15 +23,40 @@ SCREENSHOTS = EVIDENCE_ROOT / "screenshots"
 BROKEN_VISIBLE_TEXT = "?" * 4
 
 ROUTES = [
-    {"path": "/", "name": "home", "must_contain": ["今日总览", "今日资讯", "热门题材"], "forbidden_text": [BROKEN_VISIBLE_TEXT, "\u951f"], "query": True},
+    {
+        "path": "/",
+        "name": "home",
+        "must_contain": ["今日总览", "今日资讯", "热门题材", "风险边界"],
+        "forbidden_text": [BROKEN_VISIBLE_TEXT, "\u951f", "低位题材矩阵", "事件与证据带", "代表性消息与候选公司"],
+        "responsibility": "今日导读入口，不承载完整工作台矩阵、完整候选公司列表或完整证据带。",
+        "query": True,
+    },
     {"path": "/fermentation", "name": "fermentation", "must_contain": ["题材发现", "阶段分布", "主线发酵矩阵"], "query": True},
     {"path": "/research", "name": "research", "must_contain": ["样例列表", "验证分组", "代表性消息"], "query": True},
     {"path": "/workbench", "name": "workbench", "must_contain": ["主线总览", "事件与证据带", "低位题材矩阵"], "query": True},
-    {"path": "/low-position", "name": "low-position", "must_contain": ["低位题材看板", "验证桶", "运行信息"], "query": True},
-    {"path": "/sprint-2", "name": "sprint-2", "must_contain": ["Sprint 2 旧入口", "推荐验收路线"], "query": True},
+    {
+        "path": "/low-position",
+        "name": "low-position",
+        "must_contain": ["低位题材看板", "验证桶", "运行信息"],
+        "product_decision": "PRODUCT_DECISION_REQUIRED: Sprint 6/6B documents requested /low-position -> /research, current implementation keeps an independent compatibility page.",
+        "query": True,
+    },
+    {
+        "path": "/sprint-2",
+        "name": "sprint-2",
+        "must_contain": ["Sprint 2 旧入口", "推荐验收路线"],
+        "product_decision": "PRODUCT_DECISION_REQUIRED: Sprint 6/6B documents requested /sprint-2 -> /workbench, current implementation keeps an independent compatibility page.",
+        "query": True,
+    },
 ]
 
-SEARCH_CASE = {"path": "/workbench?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD", "name": "workbench-search-q", "must_contain": ["搜索命中"], "expected_final_path": "/workbench", "query": False}
+SEARCH_CASE = {
+    "path": "/workbench?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD",
+    "name": "workbench-search-q",
+    "must_contain": ["搜索命中", "人工智能"],
+    "expected_final_path": "/workbench",
+    "query": False,
+}
 VISUAL_MAIN_ROUTES = {"/", "/fermentation", "/research", "/workbench"}
 
 API_CASES = [
@@ -46,9 +71,9 @@ API_CASES = [
 ]
 
 PYTHON_COMMANDS = [
-    {"name": "latest-snapshot-command", "command": [sys.executable, "tools/run_latest_snapshot.py"], "expect_json": True, "timeout": 180},
-    {"name": "low-position-command", "command": [sys.executable, "tools/run_low_position_workbench.py"], "expect_json": True, "timeout": 240},
-    {"name": "live-event-cognition-command-help", "command": [sys.executable, "tools/run_live_event_cognition.py"], "expect_json": True, "timeout": 180},
+    {"name": "latest-snapshot-command", "command": [sys.executable, "tools/run_latest_snapshot.py", "--acceptance-smoke"], "expect_json": True, "timeout": 90},
+    {"name": "low-position-command", "command": [sys.executable, "tools/run_low_position_workbench.py", "--acceptance-smoke"], "expect_json": True, "timeout": 90},
+    {"name": "live-event-cognition-command", "command": [sys.executable, "tools/run_live_event_cognition.py", "--acceptance-smoke"], "expect_json": True, "timeout": 90},
 ]
 
 MOJIBAKE_MARKERS = ["\u951f", "\ufffd", "\u9225", "\u95bf", "\u942e", "\u9359", "\u68f0", "\u6d63", "\u93c3", "\u8930", "\u7a0c", "\u93b6", "\u93b5", "\u93c8", "\u6d93", "\u695d", "\u7f01", "\u5bf0"]
@@ -166,6 +191,8 @@ def run_route_smoke(base_url: str, latest_date: str) -> list[CheckResult]:
             "screenshot_path_desktop": str((SCREENSHOTS / f"desktop-{route['name']}.png").relative_to(ROOT)),
             "screenshot_path_mobile": str((SCREENSHOTS / f"mobile-{route['name']}.png").relative_to(ROOT)),
             "route": route.get("path"),
+            "responsibility": route.get("responsibility", ""),
+            "product_decision": route.get("product_decision", ""),
             "missing_text": missing,
             "forbidden_text_present": forbidden,
             "mojibake_markers": mojibake,
@@ -182,7 +209,7 @@ def run_route_smoke(base_url: str, latest_date: str) -> list[CheckResult]:
             details=details,
         )
         results.append(result)
-        if route.get("expected_final_path"):
+        if route.get("expected_final_path") or route.get("product_decision"):
             redirect_results.append(asdict(result))
         if route["case_name"] == SEARCH_CASE["name"]:
             search_results.append(asdict(result))
@@ -375,6 +402,8 @@ def capture_screenshots(base_url: str, latest_date: str) -> list[CheckResult]:
                         "screenshot": str(file_path.relative_to(ROOT)),
                         "h1": title.strip(),
                         "h1_present": bool(title.strip()),
+                        "responsibility": route.get("responsibility", ""),
+                        "product_decision": route.get("product_decision", ""),
                         "missing_text": missing,
                         "forbidden_text_present": forbidden,
                         "mojibake_markers": mojibake,
@@ -422,9 +451,20 @@ def main() -> int:
     TEST_RESULTS.mkdir(parents=True, exist_ok=True)
     SCREENSHOTS.mkdir(parents=True, exist_ok=True)
 
-    exit_ok = True
     latest_date = discover_latest_date(args.base_url)
-    summary: dict[str, Any] = {"base_url": args.base_url, "latest_date": latest_date, "generated_at": time.strftime("%Y-%m-%dT%H:%M:%S%z")}
+    exit_ok = True
+    summary_path = TEST_RESULTS / "full-acceptance-smoke-summary.json"
+    try:
+        previous_summary = json.loads(summary_path.read_text(encoding="utf-8")) if summary_path.exists() else {}
+    except Exception:
+        previous_summary = {}
+    summary: dict[str, Any] = previous_summary if isinstance(previous_summary, dict) else {}
+    summary.update({
+        "base_url": args.base_url,
+        "latest_date": latest_date,
+        "generated_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        "last_args": sys.argv[1:],
+    })
 
     if args.routes:
         routes = run_route_smoke(args.base_url, latest_date)
@@ -456,7 +496,7 @@ def main() -> int:
         summary["screenshots"] = {"ok": all(item.ok for item in screenshots), "count": len(screenshots)}
         exit_ok = exit_ok and all(item.ok for item in screenshots)
 
-    write_json(TEST_RESULTS / "full-acceptance-smoke-summary.json", summary)
+    write_json(summary_path, summary)
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0 if exit_ok else 1
 

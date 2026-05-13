@@ -1,20 +1,22 @@
 [
   {
     "name": "latest-snapshot-command",
-    "path": "C:\\Python313\\python.exe tools/run_latest_snapshot.py",
+    "path": "C:\\Python313\\python.exe tools/run_latest_snapshot.py --acceptance-smoke",
     "status": "0",
     "ok": true,
-    "duration_ms": 38175,
+    "duration_ms": 2489,
     "details": {
       "command": [
         "C:\\Python313\\python.exe",
-        "tools/run_latest_snapshot.py"
+        "tools/run_latest_snapshot.py",
+        "--acceptance-smoke"
       ],
       "returncode": 0,
       "stdout_shape": {
         "json": true,
         "type": "object",
         "keys": [
+          "acceptance_smoke",
           "artifact_batch_dir",
           "fermenting_theme_count",
           "frontend_url",
@@ -26,26 +28,28 @@
         "stats_keys": [],
         "error": null
       },
-      "stdout_preview": "{\n  \"run_id\": \"run-3f5cc1428403\",\n  \"artifact_batch_dir\": \"workspace/artifacts/runtime/run-3f5cc1428403\",\n  \"frontend_url\": \"http://127.0.0.1:3021/\",\n  \"low_position_count\": 4,\n  \"fermenting_theme_count\": 4\n}",
+      "stdout_preview": "{\n  \"run_id\": \"run-f9856fce83f6\",\n  \"artifact_batch_dir\": \"workspace/artifacts/runtime/run-f9856fce83f6\",\n  \"frontend_url\": \"http://127.0.0.1:3021/\",\n  \"low_position_count\": 4,\n  \"fermenting_theme_count\": 3,\n  \"acceptance_smoke\": true\n}",
       "stderr_preview": ""
     }
   },
   {
     "name": "low-position-command",
-    "path": "C:\\Python313\\python.exe tools/run_low_position_workbench.py",
+    "path": "C:\\Python313\\python.exe tools/run_low_position_workbench.py --acceptance-smoke",
     "status": "0",
     "ok": true,
-    "duration_ms": 38207,
+    "duration_ms": 2455,
     "details": {
       "command": [
         "C:\\Python313\\python.exe",
-        "tools/run_low_position_workbench.py"
+        "tools/run_low_position_workbench.py",
+        "--acceptance-smoke"
       ],
       "returncode": 0,
       "stdout_shape": {
         "json": true,
         "type": "object",
         "keys": [
+          "acceptance_smoke",
           "artifact_batch_dir",
           "frontend_url",
           "message_count",
@@ -58,26 +62,28 @@
         "stats_keys": [],
         "error": null
       },
-      "stdout_preview": "{\n  \"run_id\": \"run-f2528a79c60c\",\n  \"artifact_batch_dir\": \"workspace/artifacts/runtime/run-f2528a79c60c\",\n  \"frontend_url\": \"http://127.0.0.1:3021/low-position\",\n  \"message_count\": 8,\n  \"theme_count\": 4,\n  \"status\": \"partial\"\n}",
+      "stdout_preview": "{\n  \"run_id\": \"run-9cd66e53e00d\",\n  \"artifact_batch_dir\": \"workspace/artifacts/runtime/run-9cd66e53e00d\",\n  \"frontend_url\": \"http://127.0.0.1:3021/low-position\",\n  \"message_count\": 3,\n  \"theme_count\": 4,\n  \"status\": \"partial\",\n  \"acceptance_smoke\": true\n}",
       "stderr_preview": ""
     }
   },
   {
-    "name": "live-event-cognition-command-help",
-    "path": "C:\\Python313\\python.exe tools/run_live_event_cognition.py",
+    "name": "live-event-cognition-command",
+    "path": "C:\\Python313\\python.exe tools/run_live_event_cognition.py --acceptance-smoke",
     "status": "0",
     "ok": true,
-    "duration_ms": 36251,
+    "duration_ms": 2450,
     "details": {
       "command": [
         "C:\\Python313\\python.exe",
-        "tools/run_live_event_cognition.py"
+        "tools/run_live_event_cognition.py",
+        "--acceptance-smoke"
       ],
       "returncode": 0,
       "stdout_shape": {
         "json": true,
         "type": "object",
         "keys": [
+          "acceptance_smoke",
           "artifact_batch_dir",
           "daily_review",
           "fermenting_theme_feed",
@@ -88,7 +94,7 @@
         "stats_keys": [],
         "error": null
       },
-      "stdout_preview": "{\n  \"low_position_opportunities\": [\n    {\n      \"theme_name\": \"人工智能\",\n      \"cluster_id\": \"cluster-166d951b65\",\n      \"theme_candidate_id\": \"theme-166d951b65\",\n      \"low_position_score\": 81.0,\n      \"entry_stage\": \"emerging\",\n      \"theme_heat_score\": 49.47,\n      \"heat_score\": 36.0,\n      \"catalyst_score\": 22,\n      \"continuity_score\": 51.0,\n      \"fermentation_score\": 51.47,\n      \"timeliness_level\": \"high\",\n      \"source_count\": 1,\n      \"high_strength_catalyst_count\": 0,\n      \"linked_asset_count\": 1,\n      \"low_position_reason\": \"题材仍处于早期认知区间; 题材仍处于早期发酵阶段; 催化仍处于新鲜窗口; 单一来源线索仍显示出早期连续性; 候选映射已经识别出较高正宗度标的\",\n      \"core_narrative\": \"人工智能当前围绕智谱形成叙事聚合，关键锚点包括智谱 / 人工智能。\",\n      \"catalyst_summary\": \"人工智能已经出现早期线索，但催化类型仍需继续确认。\",\n      \"top_evidence\": [\n        {\n          \"event_id\": \"evt-0eee3d2ff4f7\",\n          \"title\": \"#港股AI概念股普涨，智谱大涨27%# - 热门话题 - 雪球\",\n          \"summary\": \"港股AI应用股表现强势，智谱涨幅超过15%，MINIMAX-W和迅策也分别上涨11%和8%。\",\n          \"event_subject\": \"智谱\",\n          \"event_time\": \"2026-05-13",
+      "stdout_preview": "{\n  \"low_position_opportunities\": [\n    {\n      \"theme_name\": \"算力\",\n      \"cluster_id\": \"cluster-daabfbd624\",\n      \"theme_candidate_id\": \"theme-daabfbd624\",\n      \"low_position_score\": 96.0,\n      \"entry_stage\": \"emerging\",\n      \"theme_heat_score\": 53.34,\n      \"heat_score\": 50.0,\n      \"catalyst_score\": 28,\n      \"continuity_score\": 51.0,\n      \"fermentation_score\": 59.6,\n      \"timeliness_level\": \"high\",\n      \"source_count\": 1,\n      \"high_strength_catalyst_count\": 0,\n      \"linked_asset_count\": 4,\n      \"low_position_reason\": \"题材仍处于早期认知区间; 题材仍处于早期发酵阶段; 催化仍处于新鲜窗口; 单一来源线索仍显示出早期连续性; 候选映射已经识别出较高正宗度标的; 虽然仍是单一来源线索，但催化与正宗度已经对齐，仍值得优先研究\",\n      \"core_narrative\": \"算力当前围绕示例标的形成叙事聚合，关键锚点包括人工智能 / 算力基础设施 / 服务器。\",\n      \"catalyst_summary\": \"算力当前主要由产业类催化驱动。\",\n      \"top_evidence\": [\n        {\n          \"event_id\": \"evt-a149c92026ff\",\n          \"title\": \"韭研公社追踪算力服务器订单进展\",\n          \"summary\": \"多家公司披露算力服务器订单进展，AIDC 与算力主题热度上升，相关标的000063.SZ被提及。\",\n          \"event_subject\": \"示例标的\",\n          \"event_t",
       "stderr_preview": ""
     }
   }

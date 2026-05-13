@@ -1,16 +1,17 @@
-# 03 Visual Acceptance Checklist - expanded acceptance pass
+# Visual Acceptance Checklist
 
-| Area | Result | Evidence |
-| --- | --- | --- |
-| Page structure | PASS | 6 screenshots captured under `docs/qa/full-acceptance/screenshots/` |
-| Navigation | PASS | internal navigation target smoke PASS |
-| Header/title area | PASS | h1 exists in HTTP HTML; screenshot smoke captured each route |
-| Cards/panels | PASS | visual QA screenshot pass, no overlap observed in smoke viewport |
-| Tables/lists | PASS | workbench and fermentation matrix screenshots captured |
-| Buttons/actions | PASS | visible button text now uses valid Chinese; fetch targets matched API routes |
-| Typography hierarchy | PASS with manual taste review | compared against `docs/UI/contact-sheet.png` style direction |
-| Spacing/colors | PASS with manual taste review | no obvious overflow/overlap in screenshots |
-| Responsive | PARTIAL | desktop viewport automated; mobile remains manual next-step candidate |
-| Empty/loading/error states | PASS for safe fallback paths; deeper state forcing remains manual | route/API/date fallback cases |
-| Mojibake | PASS | expanded route + screenshot body scan PASS after repairs |
-| Human visual review | still recommended | final polish/taste review only, not a blocking failure |
+Generated: 2026-05-13 19:31:42 +0800
+
+| Check | Route / Surface | Automatic status | Manual status | Evidence |
+|---|---|---|---|---|
+| Desktop screenshots | four main pages plus compatibility routes | PASS | N/A | `screenshots/desktop-*.png` |
+| Mobile screenshots | four main pages plus compatibility routes | PASS | N/A | `screenshots/mobile-*.png` |
+| Stable H1/page identity | 6 routes | PASS | N/A | `screenshot-capture.json` |
+| No mojibake / no Next error | 6 routes | PASS | manual copy sample recommended | `route-smoke.json`, `screenshot-capture.json` |
+| No horizontal overflow | desktop/mobile | PASS | N/A | `screenshot-capture.json` |
+| ????????? | `/` | PASS via forbidden text | MANUAL_REVIEW_REQUIRED for density/taste | screenshots |
+| `/fermentation` ?????? | `/fermentation` | PASS objective | MANUAL_REVIEW_REQUIRED | screenshots vs topic refs |
+| `/research` dossier ?? | `/research` | PASS objective | MANUAL_REVIEW_REQUIRED | screenshots vs sample refs |
+| `/workbench` ??????? | `/workbench` | PASS objective | MANUAL_REVIEW_REQUIRED | screenshots vs search/home refs |
+
+Manual review remains required for exact financial-publication feel, spacing, hierarchy, and pixel-level match to `docs/UI/contact-sheet.png`; these are not honestly automatable.

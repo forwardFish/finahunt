@@ -4,7 +4,7 @@
     "path": "/workbench?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD",
     "status": "200",
     "ok": true,
-    "duration_ms": 640,
+    "duration_ms": 513,
     "details": {
       "initial_url": "http://127.0.0.1:3021/workbench?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD",
       "final_url": "http://127.0.0.1:3021/workbench?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD",
@@ -14,12 +14,14 @@
       "screenshot_path_desktop": "docs\\qa\\full-acceptance\\screenshots\\desktop-workbench-search-q.png",
       "screenshot_path_mobile": "docs\\qa\\full-acceptance\\screenshots\\mobile-workbench-search-q.png",
       "route": "/workbench?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD",
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
       "next_error_markers": [],
       "content_type": "",
-      "html_bytes": 30368
+      "html_bytes": 34459
     }
   }
 ]

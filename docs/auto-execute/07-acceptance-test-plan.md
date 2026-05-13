@@ -1,33 +1,18 @@
-# 06 Acceptance Test Plan - expanded acceptance pass
+# Acceptance Test Plan
 
-## Reused and extended tests
-
-- Keep `python -m pytest -q` as the Python contract gate.
-- Keep `npm run build` as the Next.js build/type gate.
-- Use `tools/full_acceptance_smoke.py` as the broadened acceptance gate.
-
-## Full local acceptance command sequence
+Generated: 2026-05-13 19:31:02 +0800
 
 ```powershell
+cd D:\lyh\agent\agent-frame\finahunt
+powershell -ExecutionPolicy Bypass -File .\scripts\acceptance\init-harness.ps1
 cd D:\lyh\agent\agent-frame\finahunt\apps\web
 npm run build
 cd D:\lyh\agent\agent-frame\finahunt
 python -m compileall -q agents packages graphs workflows tools skills tests
 python -m pytest -q
-python tools/full_acceptance_smoke.py --base-url http://127.0.0.1:3021
+powershell -ExecutionPolicy Bypass -File .\scripts\acceptance\run-all.ps1 -Mode fast
+powershell -ExecutionPolicy Bypass -File .\scripts\acceptance\run-all.ps1 -Mode gate
+powershell -ExecutionPolicy Bypass -File .\scripts\acceptance\run-all.ps1 -Mode full
 ```
 
-## Evidence outputs
-
-- `docs/qa/full-acceptance/test-results/route-smoke.json`
-- `docs/qa/full-acceptance/test-results/api-smoke.json`
-- `docs/qa/full-acceptance/test-results/integration-smoke.json`
-- `docs/qa/full-acceptance/test-results/python-command-smoke.json`
-- `docs/qa/full-acceptance/test-results/screenshot-capture.json`
-- `docs/qa/full-acceptance/test-results/surface-inventory.json`
-- `docs/qa/full-acceptance/screenshots/*.png`
-
-## Manual review still useful
-
-- Visual taste polish against all UI reference images.
-- Decide whether to add new domain-specific API routes beyond the current 3 actual Next API routes.
+Fast includes build, compileall, pytest, route/API/integration smoke. Gate includes fast plus explicit API and desktop/mobile screenshots. Full includes gate plus Python command smoke and final evidence/report updates. The harness only uses `http://127.0.0.1:3021`, records its PID, and stops only harness-owned processes. Acceptance API/Python smoke uses seed documents via `--acceptance-smoke` / `FINAHUNT_ACCEPTANCE_SMOKE=1` to avoid production/live dependency.

@@ -4,7 +4,7 @@
     "path": "/",
     "status": "200",
     "ok": true,
-    "duration_ms": 1982,
+    "duration_ms": 1505,
     "details": {
       "initial_url": "http://127.0.0.1:3021/?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/?date=2026-05-13",
@@ -14,6 +14,8 @@
       "screenshot": "docs\\qa\\full-acceptance\\screenshots\\desktop-home.png",
       "h1": "把公开资讯、题材热度和研究入口放回同一张金融信息首页。",
       "h1_present": true,
+      "responsibility": "今日导读入口，不承载完整工作台矩阵、完整候选公司列表或完整证据带。",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
@@ -34,7 +36,6 @@
         "/",
         "/fermentation",
         "/fermentation?date=2026-05-13",
-        "/low-position",
         "/research",
         "/research?date=2026-05-13",
         "/sprint-2",
@@ -42,7 +43,7 @@
         "/workbench?date=2026-05-13"
       ],
       "console_errors": [],
-      "bytes": 578810,
+      "bytes": 619307,
       "classification": "PASS"
     }
   },
@@ -51,7 +52,7 @@
     "path": "/fermentation",
     "status": "200",
     "ok": true,
-    "duration_ms": 1435,
+    "duration_ms": 1206,
     "details": {
       "initial_url": "http://127.0.0.1:3021/fermentation?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/fermentation?date=2026-05-13",
@@ -61,6 +62,8 @@
       "screenshot": "docs\\qa\\full-acceptance\\screenshots\\desktop-fermentation.png",
       "h1": "像题材栏目页一样追踪主线热度、阶段和证据。",
       "h1_present": true,
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
@@ -74,7 +77,6 @@
       "internal_links": [
         "/",
         "/fermentation",
-        "/low-position",
         "/research",
         "/research?date=2026-05-13",
         "/sprint-2",
@@ -82,7 +84,7 @@
         "/workbench?date=2026-05-13"
       ],
       "console_errors": [],
-      "bytes": 541692,
+      "bytes": 586681,
       "classification": "PASS"
     }
   },
@@ -91,7 +93,7 @@
     "path": "/research",
     "status": "200",
     "ok": true,
-    "duration_ms": 1319,
+    "duration_ms": 981,
     "details": {
       "initial_url": "http://127.0.0.1:3021/research?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/research?date=2026-05-13",
@@ -101,6 +103,8 @@
       "screenshot": "docs\\qa\\full-acceptance\\screenshots\\desktop-research.png",
       "h1": "把低位机会做成可浏览的研究样例库。",
       "h1_present": true,
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
@@ -120,7 +124,6 @@
       "internal_links": [
         "/",
         "/fermentation",
-        "/low-position",
         "/low-position?date=2026-05-13",
         "/research",
         "/sprint-2",
@@ -128,7 +131,7 @@
         "/workbench?date=2026-05-13"
       ],
       "console_errors": [],
-      "bytes": 532000,
+      "bytes": 414933,
       "classification": "PASS"
     }
   },
@@ -137,7 +140,7 @@
     "path": "/workbench",
     "status": "200",
     "ok": true,
-    "duration_ms": 1438,
+    "duration_ms": 1276,
     "details": {
       "initial_url": "http://127.0.0.1:3021/workbench?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/workbench?date=2026-05-13",
@@ -147,6 +150,8 @@
       "screenshot": "docs\\qa\\full-acceptance\\screenshots\\desktop-workbench.png",
       "h1": "总编辑台：主线、低位、消息、证据放在一个可检索页面。",
       "h1_present": true,
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
@@ -162,7 +167,6 @@
         "/",
         "/fermentation",
         "/fermentation?date=2026-05-13",
-        "/low-position",
         "/low-position?date=2026-05-13",
         "/research",
         "/research?date=2026-05-13",
@@ -171,7 +175,7 @@
         "/workbench"
       ],
       "console_errors": [],
-      "bytes": 422235,
+      "bytes": 464542,
       "classification": "PASS"
     }
   },
@@ -180,7 +184,7 @@
     "path": "/low-position",
     "status": "200",
     "ok": true,
-    "duration_ms": 1104,
+    "duration_ms": 919,
     "details": {
       "initial_url": "http://127.0.0.1:3021/low-position?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/low-position?date=2026-05-13",
@@ -190,6 +194,8 @@
       "screenshot": "docs\\qa\\full-acceptance\\screenshots\\desktop-low-position.png",
       "h1": "低位研究兼容入口已从重定向改为可验收页面。",
       "h1_present": true,
+      "responsibility": "",
+      "product_decision": "PRODUCT_DECISION_REQUIRED: Sprint 6/6B documents requested /low-position -> /research, current implementation keeps an independent compatibility page.",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
@@ -203,14 +209,13 @@
       "internal_links": [
         "/",
         "/fermentation",
-        "/low-position",
         "/research",
         "/research?date=2026-05-13",
         "/sprint-2",
         "/workbench"
       ],
       "console_errors": [],
-      "bytes": 287254,
+      "bytes": 320039,
       "classification": "PASS"
     }
   },
@@ -219,7 +224,7 @@
     "path": "/sprint-2",
     "status": "200",
     "ok": true,
-    "duration_ms": 1259,
+    "duration_ms": 1203,
     "details": {
       "initial_url": "http://127.0.0.1:3021/sprint-2?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/sprint-2?date=2026-05-13",
@@ -229,6 +234,8 @@
       "screenshot": "docs\\qa\\full-acceptance\\screenshots\\desktop-sprint-2.png",
       "h1": "Sprint 2 旧入口继续可访问，并汇总新 UI 的验收路径。",
       "h1_present": true,
+      "responsibility": "",
+      "product_decision": "PRODUCT_DECISION_REQUIRED: Sprint 6/6B documents requested /sprint-2 -> /workbench, current implementation keeps an independent compatibility page.",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
@@ -242,7 +249,6 @@
         "/?date=2026-05-13",
         "/fermentation",
         "/fermentation?date=2026-05-13",
-        "/low-position",
         "/research",
         "/research?date=2026-05-13",
         "/sprint-2",
@@ -250,7 +256,7 @@
         "/workbench?date=2026-05-13"
       ],
       "console_errors": [],
-      "bytes": 213825,
+      "bytes": 212944,
       "classification": "PASS"
     }
   },
@@ -259,7 +265,7 @@
     "path": "/",
     "status": "200",
     "ok": true,
-    "duration_ms": 1524,
+    "duration_ms": 1290,
     "details": {
       "initial_url": "http://127.0.0.1:3021/?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/?date=2026-05-13",
@@ -269,6 +275,8 @@
       "screenshot": "docs\\qa\\full-acceptance\\screenshots\\mobile-home.png",
       "h1": "把公开资讯、题材热度和研究入口放回同一张金融信息首页。",
       "h1_present": true,
+      "responsibility": "今日导读入口，不承载完整工作台矩阵、完整候选公司列表或完整证据带。",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
@@ -289,7 +297,6 @@
         "/",
         "/fermentation",
         "/fermentation?date=2026-05-13",
-        "/low-position",
         "/research",
         "/research?date=2026-05-13",
         "/sprint-2",
@@ -297,7 +304,7 @@
         "/workbench?date=2026-05-13"
       ],
       "console_errors": [],
-      "bytes": 508973,
+      "bytes": 544943,
       "classification": "PASS"
     }
   },
@@ -306,7 +313,7 @@
     "path": "/fermentation",
     "status": "200",
     "ok": true,
-    "duration_ms": 1222,
+    "duration_ms": 1108,
     "details": {
       "initial_url": "http://127.0.0.1:3021/fermentation?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/fermentation?date=2026-05-13",
@@ -316,6 +323,8 @@
       "screenshot": "docs\\qa\\full-acceptance\\screenshots\\mobile-fermentation.png",
       "h1": "像题材栏目页一样追踪主线热度、阶段和证据。",
       "h1_present": true,
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
@@ -329,7 +338,6 @@
       "internal_links": [
         "/",
         "/fermentation",
-        "/low-position",
         "/research",
         "/research?date=2026-05-13",
         "/sprint-2",
@@ -337,7 +345,7 @@
         "/workbench?date=2026-05-13"
       ],
       "console_errors": [],
-      "bytes": 383572,
+      "bytes": 425018,
       "classification": "PASS"
     }
   },
@@ -346,7 +354,7 @@
     "path": "/research",
     "status": "200",
     "ok": true,
-    "duration_ms": 1131,
+    "duration_ms": 917,
     "details": {
       "initial_url": "http://127.0.0.1:3021/research?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/research?date=2026-05-13",
@@ -356,6 +364,8 @@
       "screenshot": "docs\\qa\\full-acceptance\\screenshots\\mobile-research.png",
       "h1": "把低位机会做成可浏览的研究样例库。",
       "h1_present": true,
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
@@ -375,7 +385,6 @@
       "internal_links": [
         "/",
         "/fermentation",
-        "/low-position",
         "/low-position?date=2026-05-13",
         "/research",
         "/sprint-2",
@@ -383,7 +392,7 @@
         "/workbench?date=2026-05-13"
       ],
       "console_errors": [],
-      "bytes": 432070,
+      "bytes": 331146,
       "classification": "PASS"
     }
   },
@@ -392,7 +401,7 @@
     "path": "/workbench",
     "status": "200",
     "ok": true,
-    "duration_ms": 1309,
+    "duration_ms": 1293,
     "details": {
       "initial_url": "http://127.0.0.1:3021/workbench?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/workbench?date=2026-05-13",
@@ -402,6 +411,8 @@
       "screenshot": "docs\\qa\\full-acceptance\\screenshots\\mobile-workbench.png",
       "h1": "总编辑台：主线、低位、消息、证据放在一个可检索页面。",
       "h1_present": true,
+      "responsibility": "",
+      "product_decision": "",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
@@ -417,7 +428,6 @@
         "/",
         "/fermentation",
         "/fermentation?date=2026-05-13",
-        "/low-position",
         "/low-position?date=2026-05-13",
         "/research",
         "/research?date=2026-05-13",
@@ -426,7 +436,7 @@
         "/workbench"
       ],
       "console_errors": [],
-      "bytes": 307637,
+      "bytes": 345127,
       "classification": "PASS"
     }
   },
@@ -435,7 +445,7 @@
     "path": "/low-position",
     "status": "200",
     "ok": true,
-    "duration_ms": 983,
+    "duration_ms": 858,
     "details": {
       "initial_url": "http://127.0.0.1:3021/low-position?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/low-position?date=2026-05-13",
@@ -445,6 +455,8 @@
       "screenshot": "docs\\qa\\full-acceptance\\screenshots\\mobile-low-position.png",
       "h1": "低位研究兼容入口已从重定向改为可验收页面。",
       "h1_present": true,
+      "responsibility": "",
+      "product_decision": "PRODUCT_DECISION_REQUIRED: Sprint 6/6B documents requested /low-position -> /research, current implementation keeps an independent compatibility page.",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
@@ -458,14 +470,13 @@
       "internal_links": [
         "/",
         "/fermentation",
-        "/low-position",
         "/research",
         "/research?date=2026-05-13",
         "/sprint-2",
         "/workbench"
       ],
       "console_errors": [],
-      "bytes": 200558,
+      "bytes": 226803,
       "classification": "PASS"
     }
   },
@@ -474,7 +485,7 @@
     "path": "/sprint-2",
     "status": "200",
     "ok": true,
-    "duration_ms": 1237,
+    "duration_ms": 1132,
     "details": {
       "initial_url": "http://127.0.0.1:3021/sprint-2?date=2026-05-13",
       "final_url": "http://127.0.0.1:3021/sprint-2?date=2026-05-13",
@@ -484,6 +495,8 @@
       "screenshot": "docs\\qa\\full-acceptance\\screenshots\\mobile-sprint-2.png",
       "h1": "Sprint 2 旧入口继续可访问，并汇总新 UI 的验收路径。",
       "h1_present": true,
+      "responsibility": "",
+      "product_decision": "PRODUCT_DECISION_REQUIRED: Sprint 6/6B documents requested /sprint-2 -> /workbench, current implementation keeps an independent compatibility page.",
       "missing_text": [],
       "forbidden_text_present": [],
       "mojibake_markers": [],
@@ -497,7 +510,6 @@
         "/?date=2026-05-13",
         "/fermentation",
         "/fermentation?date=2026-05-13",
-        "/low-position",
         "/research",
         "/research?date=2026-05-13",
         "/sprint-2",
@@ -505,7 +517,7 @@
         "/workbench?date=2026-05-13"
       ],
       "console_errors": [],
-      "bytes": 134775,
+      "bytes": 133636,
       "classification": "PASS"
     }
   }

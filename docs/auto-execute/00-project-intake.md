@@ -1,48 +1,16 @@
-# 00 Project Intake - expanded acceptance pass
+# Project Intake
 
-Generated: 2026-05-13 11:18:56
+Generated: 2026-05-13 19:31:02 +0800
 
-## Safety baseline
+Target: make finahunt Sprint 6 / Sprint 6B implementation consistent with requirement docs, `docs/UI`, and current code surface through a reusable local Auto Execute Acceptance First loop.
 
-- `git status` was captured before this pass; existing previous-round task YAML and untracked acceptance/UI/workspace material were preserved.
-- No `git reset`, `git clean`, force push, deployment, production config change, or reference material deletion was performed.
-- The second pass was opened because the previous 6 route / 3 API wording under-described actual integration coverage.
+Sources read:
+- `docs/requirements/20260321_203500_sprint_6_research_flow_navigation_experience.md`
+- `docs/requirements/20260321_220500_sprint_6b_editorial_research_edition.md`
+- `docs/UI/` image and HTML prototype inventory
+- `apps/web/src/app/*` route surface
+- `tools/full_acceptance_smoke.py`
 
-## Detected web routes
+Scope boundaries: no production DB, no real secrets, no payment systems, no force push, no `git reset`, no `git clean`, no broad MVP expansion, and no runtime artifact contract rewrite. Base URL is `http://127.0.0.1:3021`.
 
-- `/`
-- `/fermentation`
-- `/low-position`
-- `/research`
-- `/sprint-2`
-- `/workbench`
-
-## Detected Next API route files
-
-- `/api/daily-snapshot` methods=['GET'] file=`apps\web\src\app\api\daily-snapshot\route.ts`
-- `/api/refresh-latest` methods=['POST'] file=`apps\web\src\app\api\refresh-latest\route.ts`
-- `/api/run-low-position` methods=['POST'] file=`apps\web\src\app\api\run-low-position\route.ts`
-
-Important finding: the codebase currently has exactly 3 Next API route files. The acceptance suite now tests 8 API contract cases against those 3 route files instead of reporting only a raw route count.
-
-## Frontend/backend integration surfaces
-
-Client fetch targets:
-- `/api/refresh-latest`
-- `/api/run-low-position`
-
-GET form targets:
-- `/`
-- `/fermentation`
-- `/low-position`
-- `/research`
-- `/workbench`
-
-Python workflow command surfaces:
-- `C:\Python313\python.exe tools/run_latest_snapshot.py`
-- `C:\Python313\python.exe tools/run_low_position_workbench.py`
-- `C:\Python313\python.exe tools/run_live_event_cognition.py`
-
-## Newly found unfinished item fixed in this pass
-
-Hard-coded mojibake survived in UI helper/component text. It affected status labels, source labels, date controls, pager labels, and action-button state messages. This pass fixed those strings and expanded smoke detection to catch them.
+Allowed statuses: PASS / HARD_FAIL / DOCUMENTED_BLOCKER / DEFERRED / MANUAL_REVIEW_REQUIRED / PRODUCT_DECISION_REQUIRED.

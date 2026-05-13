@@ -14,7 +14,6 @@ const navItems = [
   { href: "/fermentation", label: "题材" },
   { href: "/research", label: "样例" },
   { href: "/workbench", label: "工作台" },
-  { href: "/low-position", label: "低位研究" },
 ];
 
 export default function RootLayout({ children }: { children: ReactNode }) {

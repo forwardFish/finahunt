@@ -10,13 +10,14 @@ const execFileAsync = promisify(execFile);
 const PYTHON_BIN = process.env.PYTHON_BIN || "python";
 const FINAHUNT_ROOT = path.resolve(process.cwd(), "../..");
 const RUN_SCRIPT = path.resolve(FINAHUNT_ROOT, "tools/run_low_position_workbench.py");
+const RUN_ARGS = process.env.FINAHUNT_ACCEPTANCE_SMOKE === "1" ? [RUN_SCRIPT, "--acceptance-smoke"] : [RUN_SCRIPT];
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function POST(): Promise<NextResponse> {
   try {
-    const { stdout } = await execFileAsync(PYTHON_BIN, [RUN_SCRIPT], {
+    const { stdout } = await execFileAsync(PYTHON_BIN, RUN_ARGS, {
       cwd: FINAHUNT_ROOT,
       timeout: 10 * 60 * 1000,
       maxBuffer: 10 * 1024 * 1024,
