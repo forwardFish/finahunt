@@ -1,0 +1,9 @@
+﻿{
+    "status":  "PENDING",
+    "schemaVersion":  "1.9.1",
+    "generatedAt":  "2026-05-14T10:59:52",
+    "note":  "P0/P1 stories need acceptanceCriteria, testPoints, and existing evidence before final PASS.",
+    "stories":  [
+
+                ]
+}

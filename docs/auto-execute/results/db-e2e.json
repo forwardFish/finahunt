@@ -1,0 +1,30 @@
+﻿{
+    "blockers":  [
+                     "Docker Postgres service failed to start; see docs/auto-execute/logs/db-postgres-up.log.",
+                     "Docker Postgres service is not running; see docs/auto-execute/logs/db-postgres-ps.log."
+                 ],
+    "commands":  [
+                     {
+                         "status":  "HARD_FAIL",
+                         "command":  "docker compose -f docker/docker-compose.yml up -d postgres",
+                         "log":  "docs/auto-execute/logs/db-postgres-up.log"
+                     },
+                     {
+                         "status":  "HARD_FAIL",
+                         "command":  "docker compose -f docker/docker-compose.yml ps postgres",
+                         "log":  "docs/auto-execute/logs/db-postgres-ps.log"
+                     }
+                 ],
+    "lane":  "db-e2e",
+    "status":  "BLOCKED_BY_ENVIRONMENT",
+    "evidence":  [
+                     "docs/auto-execute/logs/db-schema-bootstrap.log",
+                     "docs/auto-execute/logs/db-runtime-write-snapshot.log",
+                     "docs/auto-execute/logs/db-repository-read-snapshot.log"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+                        "Bring up local Docker Postgres, keep DATABASE_BACKEND=postgres, rerun schema bootstrap, runtime write, and repository/API read checks."
+                    ],
+    "updatedAt":  "2026-05-14T18:11:56"
+}

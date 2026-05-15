@@ -1,17 +1,9 @@
-import Link from "next/link";
-
-import { RunLowPositionButton } from "@/components/RunLowPositionButton";
-import { Badge, DateSwitch, EmptyState, LinkButton, MetricCard, PageHero, SectionCard } from "@/components/FinancialUI";
-import { loadLowPositionWorkbench, resolveWorkbenchDate } from "@/lib/lowPositionWorkbench";
-import { buildHref, candidateNames, formatIso, formatScore, lowPositionThemeName, safeText, summarizeResearchState, validationLabel } from "@/lib/webView";
+import { redirect } from "next/navigation";
 
 type PageProps = { searchParams?: Promise<Record<string, string | string[] | undefined>> };
 
-export default async function LowPositionPage({ searchParams }: PageProps) {
+export default async function LowPositionCompatibilityPage({ searchParams }: PageProps) {
   const params = searchParams ? await searchParams : {};
-  const date = resolveWorkbenchDate(params.date);
-  const workbench = loadLowPositionWorkbench(date);
-  const state = summarizeResearchState(workbench.state);
-  const focusThemes = [...workbench.validatedThemes, ...workbench.watchThemes, ...workbench.downgradedThemes].slice(0, 8);
-  return <main className="fi-page"><PageHero eyebrow="Low Position Board" title="低位研究兼容入口已从重定向改为可验收页面。" description="该页保留 /low-position 路由，聚焦低位题材、验证桶和候选公司映射；真实数据仍来自 apps/web/src/lib/lowPositionWorkbench.ts。" side={<><h2>{state.label}</h2><p>{state.description}</p><div className="fi-stat-grid"><MetricCard label="消息" value={workbench.messageCount} /><MetricCard label="题材" value={workbench.themeCount} /><MetricCard label="最近可用" value={workbench.latestAvailableDate} tone="green" /></div><RunLowPositionButton latestRunId={workbench.runId} /></>}><DateSwitch action="/low-position" date={workbench.date} /></PageHero><div className="fi-main-grid"><SectionCard title="低位题材看板" eyebrow="Opportunity Queue" action={<Link href={buildHref("/research", { date: workbench.date })}>完整样例库 ›</Link>}><div className="fi-topic-grid">{focusThemes.length ? focusThemes.map((theme) => <article className="fi-topic-card" key={theme.theme_name}><div className="fi-topic-head"><h3>{lowPositionThemeName(theme)}</h3><Badge tone="green">{validationLabel(theme.validation_bucket)}</Badge></div><p>{safeText(theme.low_position_reason, "暂无低位研究理由。")}</p><div className="fi-tags">{candidateNames(theme, 5).map((name) => <span className="fi-tag" key={`${theme.theme_name}-${name}`}>{name}</span>)}</div><div className="fi-stat-grid"><MetricCard label="低位分" value={formatScore(theme.low_position_score)} tone="green" /><MetricCard label="消息" value={theme.messages.length} /></div></article>) : <EmptyState title="暂无低位机会">当前日期没有可展示的低位题材。</EmptyState>}</div></SectionCard><aside className="fi-side"><SectionCard title="验证桶" eyebrow="Buckets"><div className="fi-stat-grid"><MetricCard label="验证通过" value={workbench.validatedThemes.length} tone="green" /><MetricCard label="观察" value={workbench.watchThemes.length} tone="blue" /><MetricCard label="降级" value={workbench.downgradedThemes.length} tone="orange" /></div></SectionCard><SectionCard title="运行信息" eyebrow="Runtime"><p className="fi-muted">Run：{workbench.runId || "-"}</p><p className="fi-muted">Created：{formatIso(workbench.createdAt)}</p><p className="fi-muted">Latest：{workbench.latestAvailableDate}</p></SectionCard></aside></div><section className="fi-card fi-section-head"><div><span className="fi-kicker">Route preserved</span><h2>/low-position 保留为独立页面，同时可回到研究样例。</h2></div><LinkButton href={buildHref("/research", { date: workbench.date })}>查看 /research</LinkButton></section></main>;
+  const date = Array.isArray(params.date) ? params.date[0] : params.date;
+  redirect(date ? `/research?date=${encodeURIComponent(date)}` : "/research");
 }

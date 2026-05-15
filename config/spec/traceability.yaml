@@ -1,16 +1,15 @@
 canonical_sources:
-  vision: "docs/01_战略/远景目标.md"
-  mvp: "docs/02_MVP/mvp.md"
-  mvp_features: "docs/02_MVP/mvp功能.md"
-  mvp_features_table: "docs/02_MVP/mvp功能_表格版.md"
-  system_design: "docs/03_架构/Agent 体系设计文档 v1.0 正式落地版.md"
-  traceability_matrix: "docs/04_规范/Agent体系 - 需求追踪矩阵&落地规范.md"
-  complete_manual: "docs/04_规范/Agent体系 - 完整规范手册.md"
-  operation_manual: "docs/04_规范/操作手册.md"
+  final_product_spec: "docs/FINAL_PRODUCT_SPEC.md"
+  docs_readme: "docs/README.md"
+  source_registry: "config/rules/source_registry.yaml"
+  compliance_rules: "config/rules/compliance_rules.yaml"
+  schema_models: "packages/schema/models.py"
+  runtime_workflow: "workflows/runtime_schedule.py"
+  web_app: "apps/web/package.json"
 
 goals:
   sprint0_foundation:
-    description: "建立合规资讯源注册表、统一 schema、runtime trace 和 final gate 交付基线。"
+    description: "Information foundation, schema, runtime trace, and final gate baseline."
     config_refs:
       - "config/rules/source_registry.yaml"
       - "config/rules/compliance_rules.yaml"
@@ -22,7 +21,7 @@ goals:
       - "tests/integration/test_runtime_foundation.py"
       - "tests/e2e/test_final_gate.py"
   runtime_plane:
-    description: "让 source runtime -> compliance guard -> normalize -> source audit 形成统一输入输出。"
+    description: "source runtime -> compliance guard -> normalize -> source audit traceable chain."
     config_refs:
       - "graphs/runtime_graph.py"
       - "workflows/runtime_schedule.py"
@@ -31,74 +30,46 @@ goals:
     test_refs:
       - "tests/integration/test_runtime_foundation.py"
   manual_governance:
-    description: "为人工纠偏、审批和 final gate 保留明确介入点与审计证据。"
+    description: "manual correction, approval records, and final gate boundaries."
     config_refs:
       - "agents/approval/checkpoint.py"
       - "agents/final_gate/agent.py"
-      - "docs/04_规范/操作手册.md"
     test_refs:
       - "tests/e2e/test_final_gate.py"
 
 stories:
   S0-001:
-    description: "合规资讯源注册表基线"
-    owned_files:
-      - "config/rules/source_registry.yaml"
-    downstream_reuse:
-      - "agents/runtime/source_runtime/agent.py"
+    description: "compliant source registry"
+    owned_files: ["config/rules/source_registry.yaml"]
+    downstream_reuse: ["agents/runtime/source_runtime/agent.py"]
   S0-002:
-    description: "原始资讯与标准化资讯契约"
-    owned_files:
-      - "packages/schema/models.py"
-      - "packages/schema/state.py"
-    downstream_reuse:
-      - "agents/runtime/normalize/agent.py"
+    description: "unified data contracts"
+    owned_files: ["packages/schema/models.py", "packages/schema/state.py"]
+    downstream_reuse: ["agents/runtime/normalize/agent.py"]
   S0-003:
-    description: "事件对象与合规输出契约"
-    owned_files:
-      - "packages/schema/models.py"
-      - "config/rules/compliance_rules.yaml"
-    downstream_reuse:
-      - "agents/runtime/compliance_guard/agent.py"
-      - "agents/final_gate/agent.py"
+    description: "compliance output and final gate"
+    owned_files: ["packages/schema/models.py", "config/rules/compliance_rules.yaml"]
+    downstream_reuse: ["agents/runtime/compliance_guard/agent.py", "agents/final_gate/agent.py"]
   S0-004:
-    description: "traceability 与 gate registry 基线"
-    owned_files:
-      - "config/spec/traceability.yaml"
-      - "config/spec/gate_registry.yaml"
-    downstream_reuse:
-      - "tools/gate_check/validate_norms.py"
+    description: "traceability and gate registry baseline"
+    owned_files: ["config/spec/traceability.yaml", "config/spec/gate_registry.yaml"]
+    downstream_reuse: ["tools/gate_check/validate_norms.py"]
   S0-005:
-    description: "runtime graph 输入输出基线"
-    owned_files:
-      - "graphs/runtime_graph.py"
-      - "workflows/runtime_schedule.py"
-    downstream_reuse:
-      - "tests/integration/test_runtime_foundation.py"
+    description: "runtime graph scheduling baseline"
+    owned_files: ["graphs/runtime_graph.py", "workflows/runtime_schedule.py"]
+    downstream_reuse: ["tests/integration/test_runtime_foundation.py"]
   S0-006:
-    description: "人工校正与 final gate 交付产物"
-    owned_files:
-      - "agents/approval/checkpoint.py"
-      - "agents/final_gate/agent.py"
-      - "docs/04_规范/操作手册.md"
-    downstream_reuse:
-      - "tests/e2e/test_final_gate.py"
+    description: "manual checkpoint and final gate acceptance"
+    owned_files: ["agents/approval/checkpoint.py", "agents/final_gate/agent.py"]
+    downstream_reuse: ["tests/e2e/test_final_gate.py"]
 
 boundaries:
   human_roles:
-    description: "人负责纠偏、审批和最终签收，不直接改写 runtime 自动产物。"
-    enforced_by:
-      - "agents/approval/checkpoint.py"
-      - "agents/final_gate/agent.py"
-      - "docs/04_规范/操作手册.md"
+    description: "high-risk output requires manual correction and final gate review"
+    enforced_by: ["agents/approval/checkpoint.py", "agents/final_gate/agent.py"]
   agent_roles:
-    description: "runtime agent 只产出结构化对象，不做投资建议。"
-    enforced_by:
-      - "config/rules/compliance_rules.yaml"
-      - "packages/schema/models.py"
+    description: "runtime agents output compliant, traceable, evidence-bound results"
+    enforced_by: ["config/rules/compliance_rules.yaml", "packages/schema/models.py"]
   three_plane:
-    description: "build、runtime、governance 三平面继续解耦。"
-    enforced_by:
-      - "graphs/build_graph.py"
-      - "graphs/runtime_graph.py"
-      - "graphs/governance_graph.py"
+    description: "build, runtime, and governance planes remain separated"
+    enforced_by: ["graphs/build_graph.py", "graphs/runtime_graph.py", "graphs/governance_graph.py"]

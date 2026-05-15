@@ -1,0 +1,5 @@
+{
+  "requirements": ["REQ-UPLOAD", "REQ-REPORT", "REQ-7DAY-PLAN"],
+  "stories": ["STORY-UPLOAD-REPORT"],
+  "testPoints": ["route", "api", "visual"]
+}

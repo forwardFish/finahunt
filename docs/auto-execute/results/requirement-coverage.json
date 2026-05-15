@@ -1,0 +1,1111 @@
+﻿{
+    "gaps":  [
+
+             ],
+    "nextActions":  [
+                        "Map uncovered P0/P1 PRD sections into requirement-target.json with evidence."
+                    ],
+    "documents":  [
+                      "docs\\FINAL_PRODUCT_SPEC.md"
+                  ],
+    "sections":  [
+                     {
+                         "id":  "SEC-001",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  1,
+                         "title":  "Finahunt 鏈€缁堜骇鍝侀渶姹傝鏄?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-002",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  7,
+                         "title":  "0. 浣跨敤绾﹀畾",
+                         "priority":  "P1",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-003",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  21,
+                         "title":  "1. 涓€椤电粨璁?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-004",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  30,
+                         "title":  "2. 浜у搧瀹氫綅",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-005",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  32,
+                         "title":  "2.1 椤跺眰瀹氫綅",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-006",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  36,
+                         "title":  "2.2 闀挎湡浣垮懡",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-007",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  40,
+                         "title":  "2.3 闀挎湡鎰挎櫙",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-008",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  44,
+                         "title":  "3. 鏍稿績鐢ㄦ埛",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-009",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  46,
+                         "title":  "3.1 绉嶅瓙鐢ㄦ埛",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-010",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  51,
+                         "title":  "3.2 鐢ㄦ埛鍒嗗眰",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-011",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  60,
+                         "title":  "3.3 绗竴闃舵涓嶆湇鍔＄殑浜?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-012",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  62,
+                         "title":  "4. 鏍稿績闂",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-013",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  65,
+                         "title":  "淇℃伅杩囪浇锛氬叕鍛娿€佸揩璁€佹斂绛栥€佹柊闂汇€佺ぞ濯掋€佺爺鎶ユ憳瑕佸お澶氾紝鐢ㄦ埛鏃犳硶蹇€熺瓫鍑洪噸鐐广€?2. 淇℃伅閲嶅锛氬悓涓€浜嬩欢琚婧愩€佸鏍囬銆佸瑙掑害鍙嶅浼犳挱锛屽鍔犳棤鏁堥槄璇绘垚鏈€?3. 浜嬩欢闈欐€佸寲锛氫紶缁熻祫璁骇鍝佸睍绀烘柊闂绘祦锛屼笉灞曠ず浜嬩欢濡備綍婕斿寲銆佹墿鏁ｃ€佸啀鍙戦叺銆?4. 棰樻潗鍙戠幇浣庢晥锛氭綔鍦ㄥ偓鍖栥€佷骇涓氶摼褰卞搷銆佺浉鍏充釜鑲″叧绯讳緷璧栦汉宸ョ瓫閫夈€?5. 澶嶇洏涓嶅娣卞叆锛氱敤鎴风煡閬撯€滃彂鐢熶簡浠€涔堚€濓紝浣嗛毦浠ュ揩閫熺悊瑙ｂ€滀负浠€涔堥噸瑕併€佸悗缁瀵熶粈涔堛€佷笌鍘嗗彶鍝釜閫昏緫鐩镐技鈥濄€?6. 璁ょ煡鏃犳硶娌夋穩锛氱敤鎴锋瘡澶╃殑鍒ゆ柇銆佺瑪璁般€侀敊鍒ゃ€佸鐩樻病鏈夌粨鏋勫寲璁板綍锛屾棤娉曢暱鏈熷鐢ㄣ€?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-014",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  66,
+                         "title":  "5. 涓嶅彲閫捐秺鐨勫悎瑙勮竟鐣?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-015",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  68,
+                         "title":  "5.1 浜у搧鍏佽杈撳嚭",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-016",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  71,
+                         "title":  "5.2 浜у搧缁濆涓嶈緭鍑?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-017",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  73,
+                         "title":  "5.3 鏍囧噯鍚堣澹版槑",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-018",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  77,
+                         "title":  "5.4 绯荤粺鍙俊搴︿笁鍘熷垯",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-019",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  81,
+                         "title":  "鏈夋潵婧愶細姣忎釜浜嬩欢銆佹暟鎹€佷簨瀹炲繀椤绘爣娉ㄥ彲杩芥函鏉ユ簮銆?2. 鏈夎瘉鎹細姣忎釜鍏抽敭缁撹蹇呴』瀵瑰簲鍘熸枃鐗囨銆佸叕鍛娿€佹柊闂汇€佹暟鎹垨瑙勫垯渚濇嵁銆?3. 鏈夋椂闂寸嚎锛氭瘡涓簨浠跺繀椤昏兘杩樺師婕斿寲杩囩▼锛屼究浜庤拷韪拰澶嶇洏銆?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-020",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  82,
+                         "title":  "6. 绗竴闃舵涓氬姟闂幆",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-021",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  84,
+                         "title":  "6.1 鏈€灏忛棴鐜?",
+                         "priority":  "P1",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-022",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  86,
+                         "title":  "鐢ㄦ埛璁剧疆瑙傚療姹?/ 鍏虫敞棰樻潗 / 鍏虫敞鏍囩殑銆?2. 绯荤粺鎸夊悎瑙勬簮娉ㄥ唽琛ㄦ姄鍙栧叕寮€璧勮銆?3. 绯荤粺瀹屾垚娓呮礂銆佸幓閲嶃€佹爣鍑嗗寲鍜屾潵婧愭爣璁般€?4. 绯荤粺浠庤祫璁祦涓娊鍙栦簨浠讹紝骞跺悎骞跺婧愰噸澶嶄簨浠躲€?5. 绯荤粺璇嗗埆鍊欓€夊偓鍖栧彞銆佸偓鍖栫被鍨嬨€佸己搴﹀拰鏃舵晥銆?6. 绯荤粺灏嗕簨浠惰仛鍚堜负娼滃湪棰樻潗锛屽苟鏄犲皠浜т笟閾俱€佹澘鍧楀拰鐩稿叧涓偂銆?7. 绯荤粺鍩轰簬鐢ㄦ埛瑙傚療姹犲拰瑙勫垯璁＄畻鐩稿叧鎬с€侀噸瑕佹€у拰鐮旂┒浼樺厛绾с€?8. 绯荤粺鐢熸垚浠婃棩閲嶇偣銆侀鏉愬彂閰点€佷綆浣嶇爺绌躲€佸鐩樻姤鍛娿€?9. 鐢ㄦ埛璁板綍鍒ゆ柇銆佹敹钘忎簨浠躲€佸綊妗ｅ鐩樸€?10. 绯荤粺灏嗗巻鍙插垽鏂笌鍚庣画婕斿寲缁戝畾锛屽舰鎴愪釜浜鸿鐭ヨ祫浜с€?",
+                         "priority":  "P1",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-023",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  87,
+                         "title":  "6.2 鎴愬姛鐘舵€?",
+                         "priority":  "P1",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-024",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  91,
+                         "title":  "7. MVP 鑼冨洿",
+                         "priority":  "P0",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-025",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  93,
+                         "title":  "7.1 MVP 涓€鍙ヨ瘽",
+                         "priority":  "P0",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-026",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  97,
+                         "title":  "7.2 P0 蹇呭仛",
+                         "priority":  "P0",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-027",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  101,
+                         "title":  "鍚堣璧勮婧愭敞鍐岃〃涓庢帴鍏ヨ鑼冦€?2. 鍘熷璧勮銆佹爣鍑嗗寲璧勮銆佷簨浠跺璞°€佽瘉鎹墖娈电殑缁熶竴鏁版嵁濂戠害銆?3. 璧勮娓呮礂銆佸幓閲嶃€佹爣鍑嗗寲銆佹棤鏁堝唴瀹硅繃婊ゃ€?4. 浜嬩欢鎶藉彇銆佷簨浠跺綊涓€銆佷簨浠剁被鍨嬭瘑鍒€?5. 鍊欓€夊偓鍖栧彞鎶藉彇銆?6. 鍌寲绫诲瀷璇嗗埆銆?7. 鍌寲寮哄害涓庢椂鏁堟€у垽鏂€?8. 娼滃湪棰樻潗鑱氬悎銆?9. 棰樻潗鍒版澘鍧椼€佷骇涓氶摼銆佷釜鑲＄殑瀹㈣鏄犲皠銆?10. 涓偂 / 鍏徃鍖归厤渚濇嵁涓庨闄╂彁绀恒€?11. 鐢ㄦ埛瑙傚療姹犵浉鍏虫€ф帓搴忋€?12. 浠婃棩閲嶇偣浜嬩欢銆佽瀵熸睜浜嬩欢銆佹棩缁堝鐩樿緭鍑恒€?13. 浣庝綅棰樻潗鐮旂┒鍗″熀纭€鐗堛€?14. 缁撴瀯鍖栫粨鏋滀粨搴撱€?15. 杩愯 trace銆乬ate registry銆佷汉宸ユ牎姝ｈ褰曞拰 final gate銆?16. 鍏ㄩ摼璺悎瑙勬不鐞嗕笌杈撳嚭妯℃澘閿佸畾銆?",
+                         "priority":  "P0",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-028",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  102,
+                         "title":  "7.3 P1 搴斿仛",
+                         "priority":  "P0",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-029",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  106,
+                         "title":  "寮傚姩棰勮涓績銆?2. 鍘嗗彶鐩镐技妗堜緥鍩虹鐗堛€?3. 鐮旂┒褰掓。涓庢绱€?4. 涓偂璇︽儏椤点€侀鏉愯鎯呴〉澧炲己銆?5. 杞婚噺閫氱煡銆?6. 鏃ф秷鎭啀鍙戦叺璇嗗埆銆?7. 澶氳瑙掔爺绌跺伐浣滃彴銆?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-030",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  107,
+                         "title":  "7.4 P2 鏆傜紦",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-031",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  110,
+                         "title":  "澶嶆潅浜т笟閾剧煡璇嗗浘璋便€?2. 鐢ㄦ埛鑷畾涔夋寲鎺樿鍒欏紩鎿庛€?3. 鍏ㄩ噺鍘嗗彶棰樻潗搴撴繁搴﹀缓璁俱€?4. 绀惧尯銆佸垎浜€乁GC銆佹ā鏉垮競鍦恒€?5. 澶嶆潅鑸嗘儏鎯呯华鍒嗘瀽銆?6. 澶氱 App / 灏忕▼搴忛摵寮€銆?7. 鍟嗕笟鍖栫郴缁熺殑瀹屾暣璁㈤槄銆佹敮浠樺拰鏉冪泭闂幆銆?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-032",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  111,
+                         "title":  "7.5 姘镐箙涓嶅仛",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-033",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  115,
+                         "title":  "鑽愯偂鍜屼拱鍗栧缓璁€?2. 鑷姩浜ゆ槗銆?3. 浠撲綅寤鸿銆?4. 鏀剁泭鎵胯銆?5. 闈炴巿鏉冭祫璁埇鍙栨垨鐗堟潈椋庨櫓鍐呭鍟嗙敤銆?6. 鏈烘瀯瀹氬埗鍖栧鍖呭紡绯荤粺銆?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-034",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  116,
+                         "title":  "8. 鏁版嵁婧愪笌鏁版嵁娌荤悊",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-035",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  118,
+                         "title":  "8.1 鏁版嵁婧愬師鍒?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-036",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  133,
+                         "title":  "8.2 P0 鏁版嵁婧愮被鍨?",
+                         "priority":  "P0",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-037",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  135,
+                         "title":  "8.3 P1 / P2 鏁版嵁婧愮被鍨?",
+                         "priority":  "P1",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-038",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  141,
+                         "title":  "8.4 绂佹鏁版嵁婧?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-039",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  143,
+                         "title":  "9. 鏁版嵁瀵硅薄",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-040",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  145,
+                         "title":  "9.1 RawContent",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-041",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  162,
+                         "title":  "9.2 NormalizedContent",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-042",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  176,
+                         "title":  "9.3 Event",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-043",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  194,
+                         "title":  "9.4 Catalyst",
+                         "priority":  "P0",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-044",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  208,
+                         "title":  "9.5 Theme",
+                         "priority":  "P0",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-045",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  224,
+                         "title":  "9.6 StockThemeMatch",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-046",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  240,
+                         "title":  "9.7 HistoricalThemeCase",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-047",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  254,
+                         "title":  "9.8 UserReviewNote",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-048",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  268,
+                         "title":  "9.9 RuntimeArtifact",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-049",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  283,
+                         "title":  "10. 瑙勫垯寮曟搸",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-050",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  285,
+                         "title":  "10.1 鍌寲鍒嗙骇",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-051",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  296,
+                         "title":  "10.2 鍌寲绫诲瀷",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-052",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  300,
+                         "title":  "10.3 涓偂鍖归厤瑙勫垯",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-053",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  306,
+                         "title":  "10.4 姝ｅ畻搴?/ 绾害璇勫垎",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-054",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  312,
+                         "title":  "10.5 浣庝綅鐮旂┒浼樺厛绾?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-055",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  317,
+                         "title":  "10.6 鐢ㄦ埛鐩稿叧鎬ф帓搴?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-056",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  320,
+                         "title":  "11. 鐘舵€佹満",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-057",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  322,
+                         "title":  "11.1 鍗曚簨浠剁姸鎬佹満",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-058",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  327,
+                         "title":  "11.2 棰樻潗鐢熷懡鍛ㄦ湡",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-059",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  333,
+                         "title":  "12. Agent 浣撶郴",
+                         "priority":  "P1",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-060",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  335,
+                         "title":  "12.1 浜у搧杩愯 Agent",
+                         "priority":  "P1",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-061",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  366,
+                         "title":  "12.2 宸ョ▼娌荤悊涓夊钩闈?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-062",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  376,
+                         "title":  "12.3 Agent 杈撳嚭瑙勮寖",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-063",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  394,
+                         "title":  "13. 鎶€鏈灦鏋勫師鍒?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-064",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  395,
+                         "title":  "13.1 鎬讳綋鍘熷垯",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-065",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  398,
+                         "title":  "13.2 鎺ㄨ崘瀹炵幇",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-066",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  407,
+                         "title":  "13.3 鏁版嵁缁存姢鏋舵瀯",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-067",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  417,
+                         "title":  "14. 浜у搧椤甸潰涓庤矾鐢?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-068",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  419,
+                         "title":  "14.1 `/` 浠婃棩鍏ュ彛",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-069",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  426,
+                         "title":  "14.2 `/fermentation` 涓荤嚎鍙戦叺",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-070",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  431,
+                         "title":  "14.3 `/research` 浣庝綅鐮旂┒",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-071",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  436,
+                         "title":  "14.4 `/workbench` 宸ヤ綔鍙版€昏",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-072",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  441,
+                         "title":  "14.5 鍏煎鍏ュ彛",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-073",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  447,
+                         "title":  "14.6 褰撳墠 API 鍏ュ彛",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-074",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  455,
+                         "title":  "15. UI 涓庝氦浜掕姹?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-075",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  456,
+                         "title":  "15.1 鎬讳綋椋庢牸",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-076",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  461,
+                         "title":  "15.2 瀵艰埅瑕佹眰",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-077",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  464,
+                         "title":  "15.3 鏂囨湰瑕佹眰",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-078",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  467,
+                         "title":  "15.4 UI 鍙傝€冩潵婧?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-079",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  469,
+                         "title":  "16. 杈撳嚭妯℃澘",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-080",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  471,
+                         "title":  "16.1 浠婃棩閲嶇偣浜嬩欢鍗?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-081",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  474,
+                         "title":  "16.2 棰樻潗鐮旂┒鍗?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-082",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  477,
+                         "title":  "16.3 浣庝綅鐮旂┒鍗?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-083",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  480,
+                         "title":  "16.4 鏃ョ粓澶嶇洏",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-084",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  484,
+                         "title":  "17. Sprint 璺嚎鍥?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-085",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  485,
+                         "title":  "Sprint 0锛氫俊鎭簳搴т笌娌荤悊鍩虹",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-086",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  490,
+                         "title":  "Sprint 1锛氳祫璁帴鍏ヤ笌淇″彿鍑嗗",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-087",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  495,
+                         "title":  "Sprint 2锛氭綔鍦ㄩ鏉愬偓鍖栫粨鏋勫寲鎸栨帢",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-088",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  500,
+                         "title":  "Sprint 2A锛氫綆浣嶉鏉愭寲鎺樺紩鎿?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-089",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  504,
+                         "title":  "Sprint 3锛氬叧鑱斿叧绯讳笌鐢ㄦ埛鎺掑簭",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-090",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  509,
+                         "title":  "Sprint 4锛氳緭鍑恒€佸鐩樹笌鐮旂┒闂幆",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-091",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  514,
+                         "title":  "Sprint 5锛氫綆浣嶆寲鎺樹竴閿伐浣滃彴",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-092",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  521,
+                         "title":  "Sprint 6锛氱爺绌舵祦椤甸潰鎷嗗垎",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-093",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  526,
+                         "title":  "Sprint 6B锛氱紪杈戝瀷鎯呮姤鍙伴噸鍋?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-094",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  530,
+                         "title":  "18. 楠屾敹鏍囧噯",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-095",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  532,
+                         "title":  "18.1 浜у搧浣撻獙楠屾敹",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-096",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  535,
+                         "title":  "18.2 绯荤粺璐ㄩ噺楠屾敹",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-097",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  538,
+                         "title":  "18.3 UI / 璺敱楠屾敹",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-098",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  541,
+                         "title":  "18.4 API 楠屾敹",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-099",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  544,
+                         "title":  "18.5 鑷姩鍖栭獙璇佸懡浠?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-100",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  558,
+                         "title":  "18.6 Final Gate",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-101",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  562,
+                         "title":  "19. 鍟嗕笟鍖栨柟鍚?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-102",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  576,
+                         "title":  "20. 椋庨櫓涓庡簲瀵?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-103",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  577,
+                         "title":  "20.1 鍚堣椋庨櫓",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-104",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  583,
+                         "title":  "20.2 浜у搧椋庨櫓",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-105",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  589,
+                         "title":  "20.3 鎶€鏈闄?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-106",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  596,
+                         "title":  "20.4 UI 椋庨櫓",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-107",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  602,
+                         "title":  "21. 褰撳墠鐮斿彂浼樺厛绾у垽鏂?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-108",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  605,
+                         "title":  "鏄惁鏈嶅姟鈥滆瀵熸睜 / 鍏虫敞棰樻潗 -\u003e 浜嬩欢杩囨护 -\u003e 澶嶇洏褰掓。鈥濇渶灏忛棴鐜€?2. 鏄惁寮哄寲鈥滄綔鍦ㄩ鏉愬偓鍖栫粨鏋勫寲鎸栨帢缁撴灉鈥濄€?3. 鏄惁淇濇寔鍚堣銆佹潵婧愩€佽瘉鎹€佹椂闂寸嚎瀹屾暣銆?4. 鏄惁鍑忓皯鐢ㄦ埛鎵嬪姩绛涢€夊拰澶嶇洏鎴愭湰銆?5. 鏄惁閬垮厤鎻愬墠鎵╁紶鍒颁氦鏄撱€佺ぞ鍖恒€佸紑鏀剧敓鎬佸拰澶嶆潅棰勬祴銆?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     },
+                     {
+                         "id":  "SEC-109",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "line":  607,
+                         "title":  "22. 褰撳墠鏈€缁堝畾涔?",
+                         "priority":  "P2",
+                         "coveredByCandidate":  true,
+                         "coveredByTarget":  true,
+                         "status":  "PASS"
+                     }
+                 ],
+    "generatedAt":  "2026-05-14T15:31:21",
+    "limitations":  [
+
+                    ],
+    "status":  "PASS",
+    "schemaVersion":  "2.0",
+    "lane":  "requirement-coverage",
+    "summary":  "docs\\auto-execute\\summaries\\requirement-coverage.md"
+}

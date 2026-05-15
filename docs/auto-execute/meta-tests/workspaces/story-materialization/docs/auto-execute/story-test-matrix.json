@@ -1,0 +1,40 @@
+﻿{
+    "status":  "PENDING",
+    "schemaVersion":  "1.9.1",
+    "generatedAt":  "2026-05-14T11:00:00",
+    "testPoints":  [
+                       {
+                           "id":  "TP-UPLOAD-ROUTE",
+                           "storyId":  "STORY-UPLOAD-REPORT",
+                           "type":  "route",
+                           "target":  "/dashboard/upload",
+                           "expected":  "route reachable",
+                           "evidence":  [
+
+                                        ],
+                           "status":  "PENDING"
+                       },
+                       {
+                           "id":  "TP-UPLOAD-API",
+                           "storyId":  "STORY-UPLOAD-REPORT",
+                           "type":  "api",
+                           "target":  "POST /api/uploads",
+                           "expected":  "api reachable",
+                           "evidence":  [
+
+                                        ],
+                           "status":  "PENDING"
+                       },
+                       {
+                           "id":  "TP-UPLOAD-VISUAL",
+                           "storyId":  "STORY-UPLOAD-REPORT",
+                           "type":  "visual",
+                           "target":  "docs/UI/upload-report.png",
+                           "expected":  "visual captured",
+                           "evidence":  [
+
+                                        ],
+                           "status":  "PENDING"
+                       }
+                   ]
+}

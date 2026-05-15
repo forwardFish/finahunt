@@ -3,7 +3,9 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +17,7 @@ from workflows.runtime_schedule import run_low_position_workbench_cycle, run_run
 
 WATCHLIST = {
     "watchlist_symbols": [],
-    "watchlist_themes": ["????", "???", "??", "????", "???", "??"],
+    "watchlist_themes": ["人工智能", "机器人", "算力", "低空经济", "新能源", "医药"],
 }
 
 
@@ -39,17 +41,20 @@ def main() -> int:
 
     warehouse = result["results"]["result_warehouse"]["content"]
     orchestrator = result["results"]["low_position_orchestrator"]["content"]
+    db_write_status = warehouse.get("db_write_status", {"backend": "unknown", "status": "DOCUMENTED_BLOCKER"})
     output = {
         "run_id": result["run_id"],
         "artifact_batch_dir": warehouse.get("artifact_batch_dir", ""),
         "frontend_url": "http://127.0.0.1:3021/low-position",
+        "latestDate": datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat(),
         "message_count": orchestrator.get("daily_message_workbench", {}).get("message_count", 0),
         "theme_count": orchestrator.get("daily_theme_workbench", {}).get("theme_count", 0),
         "status": orchestrator.get("daily_message_workbench", {}).get("status", "empty"),
+        "db_write_status": db_write_status,
         "acceptance_smoke": bool(args.acceptance_smoke),
     }
     print(json.dumps(output, ensure_ascii=False, indent=2))
-    return 0
+    return 0 if db_write_status.get("status") == "PASS" else 1
 
 
 if __name__ == "__main__":

@@ -1,12 +1,209 @@
-# Repair Log
+﻿# Repair Log
 
-Generated: 2026-05-13 19:32:18 +0800
 
-| Repair | Files | Reason | Verification |
-|---|---|---|---|
-| Project-local acceptance harness | `scripts/acceptance/*.ps1`, `docs/auto-execute/*` | Required fast/gate/full Auto Execute loop | final fast/gate/full PASS |
-| Full acceptance smoke coverage | `tools/full_acceptance_smoke.py` | Route/date/search/API/integration/screenshot/python evidence and aggregate summary | smoke JSON PASS |
-| Compatibility route evidence | `tools/full_acceptance_smoke.py`, docs | Avoid silently passing redirect-vs-independent-page conflict | `redirect-final-url.json` |
-| Bounded acceptance command/API runtime | Python tools, API routes, `lib.ps1` | Full mode must be local/repeatable and avoid live/production dependencies | `python-command-smoke.json`, `api-smoke.json` PASS |
-| Architecture guard false positive | `run-architecture-guard.ps1` | Safety docs mentioning forbidden commands are not executable destructive commands | architecture guard PASS |
-| run-all evidence readability | `run-all.ps1` | Correct gate name interpolation and smoke summary path | final fast/gate/full PASS |
+## Gap repair planning 2026-05-13 21:51:11
+
+- GAP-REQ-001: Normalize docs/auto-execute/requirement-candidates.json into requirement-target.json with P0/P1/P2 acceptance criteria, surfaces, and evidence expectations.
+- GAP-UI-001: Map UI references to routes/screens in ui-target.json.
+
+## Gap repair planning 2026-05-14 12:38:33
+
+- GAP-SEC-339-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-568-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-570-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-576-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-598-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-654-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-664-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-669-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-674-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-679-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-699-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-704-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-709-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-735-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-740-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-REQ-COVERAGE-002: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-021: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-022: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-023: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-024: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-025: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-026: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-027: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-028: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-036: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-037: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-043: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-044: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-059: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-060: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-CANDIDATES-NOT-NORMALIZED: Normalize requirement-candidates.json into requirement-target.json before implementation or final PASS.
+- GAP-SEC-339-REQ-STORY-COVERAGE: Map section '4.1 Build Plane Agent 璇︾粏瑙勬牸琛?' into requirement-target.json and story-target.json.
+- GAP-SEC-568-REQ-STORY-COVERAGE: Map section '3.1 Build Plane Agents' into requirement-target.json and story-target.json.
+- GAP-SEC-570-REQ-STORY-COVERAGE: Map section '3.3 Governance Plane Agents' into requirement-target.json and story-target.json.
+- GAP-SEC-576-REQ-STORY-COVERAGE: Map section '涓冦€佸奖鍝嶅垎鏋愭ā鏉匡紙鏂板鍔熻兘蹇呯敤锛?' into requirement-target.json and story-target.json.
+- GAP-SEC-598-REQ-STORY-COVERAGE: Map section '1. 鎵ц `python -c "from workflows.runtime_schedule import run_runtime_cycle; print(run_runtime_cycle())"`銆?2. 妫€鏌?`results.source_runtime` 鏄惁鍖呭惈 `raw_documents` 鍜?`registry_snapshot`銆?3. 妫€鏌?`results.compliance_guard` 鏄惁鍖呭惈 `allowed_documents`銆乣blocked_documents` 鍜?`manual_review_required`銆?4. 妫€鏌?`results.normalize` 鏄惁鍖呭惈 `normalized_documents` 鍜?`format_validation_report`銆?5. 妫€鏌?`results.source_audit` 鏄惁鍖呭惈 `trace_report` 鍜?`runtime_audit_log`銆?' into requirement-target.json and story-target.json.
+- GAP-SEC-654-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-664-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-669-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-674-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-679-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-699-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-704-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-709-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-735-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-740-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-CONTRACT-NOT-RECONCILED: Record frontend caller, backend endpoint, method, request body, response shape, auth/session, error/loading/empty states, and evidence in contract-map.json.
+- GAP-CONTRACT-API-MISSING: Implement or map the backend API endpoints expected by the frontend.
+- GAP-UI-001: Map UI references to routes/screens in ui-target.json.
+- GAP-SEC-339-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-568-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-570-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-576-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-598-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-654-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-664-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-669-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-674-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-679-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-699-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-704-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-735-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-740-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-REQ-COVERAGE-002: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-021: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-022: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-023: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-024: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-025: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-026: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-027: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-028: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-036: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-037: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-043: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-044: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-059: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-060: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-CANDIDATES-NOT-NORMALIZED: Normalize requirement-candidates.json into requirement-target.json before implementation or final PASS.
+- GAP-SEC-339-REQ-STORY-COVERAGE: Map section '4.1 Build Plane Agent 璇︾粏瑙勬牸琛?' into requirement-target.json and story-target.json.
+- GAP-SEC-568-REQ-STORY-COVERAGE: Map section '3.1 Build Plane Agents' into requirement-target.json and story-target.json.
+- GAP-SEC-570-REQ-STORY-COVERAGE: Map section '3.3 Governance Plane Agents' into requirement-target.json and story-target.json.
+- GAP-SEC-576-REQ-STORY-COVERAGE: Map section '涓冦€佸奖鍝嶅垎鏋愭ā鏉匡紙鏂板鍔熻兘蹇呯敤锛?' into requirement-target.json and story-target.json.
+- GAP-SEC-598-REQ-STORY-COVERAGE: Map section '1. 鎵ц `python -c "from workflows.runtime_schedule import run_runtime_cycle; print(run_runtime_cycle())"`銆?2. 妫€鏌?`results.source_runtime` 鏄惁鍖呭惈 `raw_documents` 鍜?`registry_snapshot`銆?3. 妫€鏌?`results.compliance_guard` 鏄惁鍖呭惈 `allowed_documents`銆乣blocked_documents` 鍜?`manual_review_required`銆?4. 妫€鏌?`results.normalize` 鏄惁鍖呭惈 `normalized_documents` 鍜?`format_validation_report`銆?5. 妫€鏌?`results.source_audit` 鏄惁鍖呭惈 `trace_report` 鍜?`runtime_audit_log`銆?' into requirement-target.json and story-target.json.
+- GAP-SEC-654-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-664-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-669-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-674-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-679-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-699-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-704-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-735-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-740-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-UI-001: Map UI references to routes/screens in ui-target.json.
+- GAP-CONTRACT-NOT-RECONCILED: Record frontend caller, backend endpoint, method, request body, response shape, auth/session, error/loading/empty states, and evidence in contract-map.json.
+- GAP-CONTRACT-API-MISSING: Implement or map the backend API endpoints expected by the frontend.
+- GAP-REQ-001: Normalize docs/auto-execute/requirement-candidates.json into requirement-target.json with P0/P1/P2 acceptance criteria, surfaces, and evidence expectations.
+- GAP-UI-001: Map UI references to routes/screens in ui-target.json.
+
+## Gap repair planning 2026-05-14 13:43:17
+
+- GAP-SEC-339-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-568-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-570-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-576-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-598-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-654-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-664-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-669-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-674-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-679-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-699-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-704-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-709-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-735-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-740-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-REQ-COVERAGE-002: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-021: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-022: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-023: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-024: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-025: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-026: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-027: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-028: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-036: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-037: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-043: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-044: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-059: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-060: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-CANDIDATES-NOT-NORMALIZED: Normalize requirement-candidates.json into requirement-target.json before implementation or final PASS.
+- GAP-SEC-339-REQ-STORY-COVERAGE: Map section '4.1 Build Plane Agent 璇︾粏瑙勬牸琛?' into requirement-target.json and story-target.json.
+- GAP-SEC-568-REQ-STORY-COVERAGE: Map section '3.1 Build Plane Agents' into requirement-target.json and story-target.json.
+- GAP-SEC-570-REQ-STORY-COVERAGE: Map section '3.3 Governance Plane Agents' into requirement-target.json and story-target.json.
+- GAP-SEC-576-REQ-STORY-COVERAGE: Map section '涓冦€佸奖鍝嶅垎鏋愭ā鏉匡紙鏂板鍔熻兘蹇呯敤锛?' into requirement-target.json and story-target.json.
+- GAP-SEC-598-REQ-STORY-COVERAGE: Map section '1. 鎵ц `python -c "from workflows.runtime_schedule import run_runtime_cycle; print(run_runtime_cycle())"`銆?2. 妫€鏌?`results.source_runtime` 鏄惁鍖呭惈 `raw_documents` 鍜?`registry_snapshot`銆?3. 妫€鏌?`results.compliance_guard` 鏄惁鍖呭惈 `allowed_documents`銆乣blocked_documents` 鍜?`manual_review_required`銆?4. 妫€鏌?`results.normalize` 鏄惁鍖呭惈 `normalized_documents` 鍜?`format_validation_report`銆?5. 妫€鏌?`results.source_audit` 鏄惁鍖呭惈 `trace_report` 鍜?`runtime_audit_log`銆?' into requirement-target.json and story-target.json.
+- GAP-SEC-664-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-669-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-674-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-679-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-699-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-704-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-709-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-735-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-740-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-CONTRACT-NOT-RECONCILED: Record frontend caller, backend endpoint, method, request body, response shape, auth/session, error/loading/empty states, and evidence in contract-map.json.
+- GAP-CONTRACT-API-MISSING: Implement or map the backend API endpoints expected by the frontend.
+- GAP-UI-001: Map UI references to routes/screens in ui-target.json.
+- GAP-SEC-339-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-568-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-570-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-576-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-598-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-654-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-664-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-669-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-674-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-679-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-699-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-704-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-709-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-735-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-SEC-740-COVERAGE: Map this section into requirement-target.json and story-target.json.
+- GAP-REQ-COVERAGE-002: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-021: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-022: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-023: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-024: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-025: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-026: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-027: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-028: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-036: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-037: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-043: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-044: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-059: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-COVERAGE-060: Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.
+- GAP-REQ-CANDIDATES-NOT-NORMALIZED: Normalize requirement-candidates.json into requirement-target.json before implementation or final PASS.
+- GAP-SEC-339-REQ-STORY-COVERAGE: Map section '4.1 Build Plane Agent 璇︾粏瑙勬牸琛?' into requirement-target.json and story-target.json.
+- GAP-SEC-568-REQ-STORY-COVERAGE: Map section '3.1 Build Plane Agents' into requirement-target.json and story-target.json.
+- GAP-SEC-570-REQ-STORY-COVERAGE: Map section '3.3 Governance Plane Agents' into requirement-target.json and story-target.json.
+- GAP-SEC-598-REQ-STORY-COVERAGE: Map section '1. 鎵ц `python -c "from workflows.runtime_schedule import run_runtime_cycle; print(run_runtime_cycle())"`銆?2. 妫€鏌?`results.source_runtime` 鏄惁鍖呭惈 `raw_documents` 鍜?`registry_snapshot`銆?3. 妫€鏌?`results.compliance_guard` 鏄惁鍖呭惈 `allowed_documents`銆乣blocked_documents` 鍜?`manual_review_required`銆?4. 妫€鏌?`results.normalize` 鏄惁鍖呭惈 `normalized_documents` 鍜?`format_validation_report`銆?5. 妫€鏌?`results.source_audit` 鏄惁鍖呭惈 `trace_report` 鍜?`runtime_audit_log`銆?' into requirement-target.json and story-target.json.
+- GAP-SEC-654-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-664-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-669-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-674-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-679-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-699-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-704-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-709-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-735-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-SEC-740-REQ-STORY-COVERAGE: Map section 'Agent Chain' into requirement-target.json and story-target.json.
+- GAP-UI-001: Map UI references to routes/screens in ui-target.json.
+- GAP-CONTRACT-NOT-RECONCILED: Record frontend caller, backend endpoint, method, request body, response shape, auth/session, error/loading/empty states, and evidence in contract-map.json.
+- GAP-CONTRACT-API-MISSING: Implement or map the backend API endpoints expected by the frontend.
+- GAP-REQ-001: Normalize docs/auto-execute/requirement-candidates.json into requirement-target.json with P0/P1/P2 acceptance criteria, surfaces, and evidence expectations.
+- GAP-UI-001: Map UI references to routes/screens in ui-target.json.

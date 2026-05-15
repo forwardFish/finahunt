@@ -12,8 +12,10 @@ dependencies = [
   "langgraph>=0.2.60",
   "playwright>=1.51.0",
   "pydantic>=2.8.2",
+  "psycopg[binary]>=3.2.3",
   "PyYAML>=6.0.2",
   "requests>=2.32.3",
+  "SQLAlchemy>=2.0.36",
 ]
 
 [project.optional-dependencies]

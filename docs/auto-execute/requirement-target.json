@@ -1,0 +1,223 @@
+{
+  "schemaVersion": "2.0",
+  "status": "PASS_WITH_LIMITATION",
+  "generatedAt": "2026-05-14T13:48:04",
+  "sourceOfTruth": "docs/FINAL_PRODUCT_SPEC.md",
+  "requirements": [
+    {
+      "id": "REQ-P0-001",
+      "priority": "P0",
+      "title": "????????????",
+      "source": "docs\\FINAL_PRODUCT_SPEC.md",
+      "sourceSection": "0. ???? / 5. ?????????",
+      "description": "? FINAL_PRODUCT_SPEC ???????????????????????????????????????????????????????",
+      "acceptanceCriteria": [
+        "?????????????????????",
+        "?? harness ????????????????",
+        "??????????????? commit/push"
+      ],
+      "surfaces": [
+        "/",
+        "/fermentation",
+        "/research",
+        "/workbench"
+      ],
+      "apis": [
+        "GET /api/daily-snapshot"
+      ],
+      "tests": [
+        "secret guard",
+        "report integrity",
+        "frontend build",
+        "backend pytest"
+      ],
+      "evidence": [
+        "docs/auto-execute/logs/frontend-build.log",
+        "docs/auto-execute/logs/backend-pytest.log",
+        "docs/auto-execute/results/generated-story-tests.json",
+        "docs/auto-execute/results/secret-guard.json"
+      ],
+      "status": "PASS",
+      "normalized": true
+    },
+    {
+      "id": "REQ-P0-002",
+      "priority": "P0",
+      "title": "???????????????",
+      "source": "docs\\FINAL_PRODUCT_SPEC.md",
+      "sourceSection": "6.1 ???? / 6.2 ???? / 7. MVP ??",
+      "description": "????????/?????????????????????????????????????????????",
+      "acceptanceCriteria": [
+        "???????????????????????",
+        "????????????",
+        "??? smoke ????? daily-snapshot API"
+      ],
+      "surfaces": [
+        "/",
+        "/fermentation",
+        "/research",
+        "/workbench"
+      ],
+      "apis": [
+        "GET /api/daily-snapshot",
+        "POST /api/refresh-latest",
+        "POST /api/run-low-position"
+      ],
+      "flows": [
+        "route smoke",
+        "finahunt full-flow"
+      ],
+      "tests": [
+        "frontend build",
+        "backend pytest",
+        "generated route smoke",
+        "e2e flow"
+      ],
+      "evidence": [
+        "docs/auto-execute/logs/frontend-build.log",
+        "docs/auto-execute/logs/backend-pytest.log",
+        "docs/auto-execute/results/generated-story-tests.json",
+        "docs/auto-execute/screenshots/home.png"
+      ],
+      "status": "PASS",
+      "normalized": true
+    },
+    {
+      "id": "REQ-P0-003",
+      "priority": "P0",
+      "title": "P0 ??????????",
+      "source": "docs\\FINAL_PRODUCT_SPEC.md",
+      "sourceSection": "7.2 P0 ?? / 8.2 P0 ????? / 9.4 Catalyst / 9.5 Theme",
+      "description": "??????????????/?????????????????????????????????????????",
+      "acceptanceCriteria": [
+        "daily-snapshot ?? themeCount ? canonicalEventCount",
+        "???????????????????",
+        "??/????????????????"
+      ],
+      "surfaces": [
+        "/fermentation",
+        "/research",
+        "/low-position",
+        "/workbench"
+      ],
+      "apis": [
+        "GET /api/daily-snapshot",
+        "POST /api/run-low-position"
+      ],
+      "tests": [
+        "backend pytest",
+        "full-flow API smoke",
+        "contract verifier"
+      ],
+      "evidence": [
+        "docs/auto-execute/logs/frontend-build.log",
+        "docs/auto-execute/logs/backend-pytest.log",
+        "docs/auto-execute/results/generated-story-tests.json",
+        "docs/auto-execute/screenshots/fermentation.png",
+        "docs/auto-execute/results/contract-verifier.json"
+      ],
+      "status": "PASS",
+      "normalized": true
+    },
+    {
+      "id": "REQ-P0-004",
+      "priority": "P0",
+      "title": "??? API contract ??",
+      "source": "docs\\FINAL_PRODUCT_SPEC.md",
+      "sourceSection": "18.4 API ?? / 12. Agent ??",
+      "description": "??????? Next.js API route ????method????????????????????????? contract?",
+      "acceptanceCriteria": [
+        "/api/daily-snapshot GET ??????????",
+        "/api/refresh-latest POST ????? ok/latestDate ??? JSON",
+        "/api/run-low-position POST ????? ok/latestDate ??? JSON"
+      ],
+      "surfaces": [
+        "/",
+        "/research",
+        "/workbench"
+      ],
+      "apis": [
+        "GET /api/daily-snapshot",
+        "POST /api/refresh-latest",
+        "POST /api/run-low-position"
+      ],
+      "tests": [
+        "contract-map",
+        "contract-verifier",
+        "e2e flow"
+      ],
+      "evidence": [
+        "docs/auto-execute/contract-map.json",
+        "docs/auto-execute/results/contract-verifier.json",
+        "docs/auto-execute/results/finahunt-full-flow.json"
+      ],
+      "status": "PASS",
+      "normalized": true
+    },
+    {
+      "id": "REQ-P1-001",
+      "priority": "P1",
+      "title": "UI ?????????",
+      "source": "docs\\FINAL_PRODUCT_SPEC.md",
+      "sourceSection": "15. UI ????? / 18.3 UI ????",
+      "description": "docs/UI ??????? Next.js ?????????????? pixel diff ????? pixel-perfect?",
+      "acceptanceCriteria": [
+        "harness.yml uiMapping ??????????????",
+        "?? required UI mapping ?? actual screenshot",
+        "? pixel diff ?????? UI ??? limitation"
+      ],
+      "surfaces": [
+        "/",
+        "/fermentation",
+        "/research",
+        "/workbench"
+      ],
+      "tests": [
+        "ui-capture",
+        "ui-compare",
+        "visual review"
+      ],
+      "evidence": [
+        "docs/auto-execute/screenshots/home.png",
+        "docs/auto-execute/screenshots/fermentation.png",
+        "docs/auto-execute/screenshots/research.png",
+        "docs/auto-execute/screenshots/workbench.png"
+      ],
+      "status": "PASS_WITH_LIMITATION",
+      "limitation": "Pixel-perfect diff depends on available pixelmatch/pngjs and HTML-to-route equivalence; current acceptance keeps screenshot evidence and manual visual review where diff is unavailable.",
+      "normalized": true
+    },
+    {
+      "id": "REQ-P1-002",
+      "priority": "P1",
+      "title": "Agent/??????????",
+      "source": "docs\\FINAL_PRODUCT_SPEC.md",
+      "sourceSection": "12. Agent ?? / 18. ???? / 18.5 ??????? / 18.6 Final Gate",
+      "description": "?? build?pytest?story/generated tests?contract?visual?E2E?secret/report guard ??????????",
+      "acceptanceCriteria": [
+        "Next.js build ??",
+        "Python pytest ??",
+        "final gate ?? verifier JSON ????????"
+      ],
+      "surfaces": [
+        "docs/auto-execute",
+        "scripts/acceptance"
+      ],
+      "tests": [
+        "test-harness",
+        "run-convergence",
+        "run-final-gate"
+      ],
+      "evidence": [
+        "docs/auto-execute/logs/frontend-build.log",
+        "docs/auto-execute/logs/backend-pytest.log",
+        "docs/auto-execute/results/generated-story-tests.json",
+        "docs/auto-execute/results/report-integrity.json",
+        "docs/auto-execute/machine-summary.json"
+      ],
+      "status": "PASS",
+      "normalized": true
+    }
+  ],
+  "note": "Normalized by auto-execute repair loop from FINAL_PRODUCT_SPEC. No CANDIDATE items remain; P0/P1 evidence paths are local verifier artifacts."
+}

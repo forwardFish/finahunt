@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.8",
+  "stories": [
+    {
+      "storyId": "STORY-BAD-NO-TESTPOINTS",
+      "epicId": "EPIC-BAD",
+      "sprintId": "SPRINT-P0",
+      "priority": "P0",
+      "title": "Bad story",
+      "actor": "user",
+      "goal": "prove bad story fails",
+      "sourceRequirements": ["REQ-BAD"],
+      "surfaces": ["/bad"],
+      "apis": [],
+      "acceptanceCriteria": ["must fail without test points"],
+      "testPoints": [],
+      "evidenceRequired": ["route smoke"],
+      "status": "PASS",
+      "normalized": true
+    }
+  ]
+}

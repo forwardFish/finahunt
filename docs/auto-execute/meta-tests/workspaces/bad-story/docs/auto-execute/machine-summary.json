@@ -1,0 +1,18 @@
+﻿{
+    "manualReviewRequired":  [
+
+                             ],
+    "finalVerdict":  "PENDING",
+    "deferred":  [
+
+                 ],
+    "hardFails":  [
+
+                  ],
+    "schemaVersion":  "1.9.1",
+    "nextRecommendedAction":  "",
+    "updatedAt":  "2026-05-14T11:00:11",
+    "documentedBlockers":  [
+
+                           ]
+}

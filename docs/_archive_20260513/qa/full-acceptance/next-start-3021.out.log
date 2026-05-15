@@ -1,0 +1,10 @@
+
+> finahunt-web@0.1.0 start
+> next start -p 3021
+
+   ▲ Next.js 15.5.13
+   - Local:        http://localhost:3021
+   - Network:      http://192.168.3.33:3021
+
+ ✓ Starting...
+ ✓ Ready in 612ms

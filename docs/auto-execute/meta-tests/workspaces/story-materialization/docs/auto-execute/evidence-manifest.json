@@ -1,0 +1,58 @@
+﻿{
+    "screenshots":  [
+
+                    ],
+    "finalReports":  [
+
+                     ],
+    "testReports":  [
+
+                    ],
+    "visualResults":  [
+
+                      ],
+    "schemaVersion":  "1.9.1",
+    "apiResults":  [
+
+                   ],
+    "other":  [
+                  {
+                      "path":  "docs\\auto-execute\\results\\story-test-generate.json",
+                      "label":  "story-test-generate result",
+                      "addedAt":  "2026-05-14T11:00:00",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\story-test-materialize.json",
+                      "label":  "story-test-materialize result",
+                      "addedAt":  "2026-05-14T11:00:02",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\story-quality-gate.json",
+                      "label":  "story-quality-gate result",
+                      "addedAt":  "2026-05-14T11:00:03",
+                      "exists":  true
+                  }
+              ],
+    "logs":  [
+                 {
+                     "path":  "docs\\auto-execute\\story-test-matrix.json",
+                     "label":  "story-test-generate",
+                     "addedAt":  "2026-05-14T11:00:00",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\story-materialized-tests.json",
+                     "label":  "story-test-materialize",
+                     "addedAt":  "2026-05-14T11:00:02",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\story-quality-gate.json",
+                     "label":  "story-quality-gate",
+                     "addedAt":  "2026-05-14T11:00:03",
+                     "exists":  true
+                 }
+             ]
+}

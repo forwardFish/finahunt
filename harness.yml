@@ -1,0 +1,99 @@
+﻿project:
+  name: finahunt
+  root: D:\lyh\agent\agent-frame\finahunt
+
+docs:
+  requirements:
+    - "D:\lyh\agent\agent-frame\finahunt\docs\FINAL_PRODUCT_SPEC.md"
+  ui:
+    - "D:\lyh\agent\agent-frame\finahunt\docs\UI"
+maxRepairRounds: 5
+allowCommit: false
+allowPush: false
+
+lanes:
+  intake:
+    enabled: true
+  requirements:
+    enabled: true
+  stories:
+    enabled: true
+  frontend:
+    enabled: true
+  backend:
+    enabled: true
+  contract:
+    enabled: true
+  visual:
+    enabled: true
+  integration:
+    enabled: true
+  reportIntegrity:
+    enabled: true
+  secretGuard:
+    enabled: true
+
+commands:
+  install: ""
+  lint: ""
+  typecheck: ""
+  test: "python -m pytest -q"
+  build: "cd apps/web; npm run build"
+  smoke: "powershell -ExecutionPolicy Bypass -File .\\scripts\\acceptance\\run-finahunt-full-flow.ps1 -ProjectRoot \"D:\\lyh\\agent\\agent-frame\\finahunt\" -Port 3101"
+  acceptance: "powershell -ExecutionPolicy Bypass -File .\\scripts\\acceptance\\run-convergence.ps1 -ProjectRoot \"D:\\lyh\\agent\\agent-frame\\finahunt\" -Mode full -MaxRounds 5"
+  uiBaseUrl: "http://127.0.0.1:3101"
+  uiStart: "cd apps/web && npm run start -- -p 3101"
+  uiCapture: "powershell -ExecutionPolicy Bypass -File .\\scripts\\acceptance\\run-finahunt-ui-capture.ps1 -ProjectRoot \"D:\\lyh\\agent\\agent-frame\\finahunt\" -Port 3101"
+  e2e: "powershell -ExecutionPolicy Bypass -File .\\scripts\\acceptance\\run-finahunt-full-flow.ps1 -ProjectRoot \"D:\\lyh\\agent\\agent-frame\\finahunt\" -Port 3101"
+
+verifierDependencies:
+  allowInstallDevDependencies: false
+  allowEphemeralNpx: true
+  installPlaywrightBrowsers: false
+  packages:
+    - playwright
+    - pixelmatch
+    - pngjs
+
+safety:
+  allowCommit: false
+  allowPush: false
+  allowDeploy: false
+  allowProductionDb: false
+  allowPayment: false
+  allowDestructiveDb: false
+
+verifierDependencyPolicy:
+  mutationDefault: false
+  noPackageJsonOrLockfileMutationByDefault: true
+  screenshotEvidenceRequired: true
+  contractVerificationRequired: true
+  e2eEvidenceRequired: true
+
+uiMapping:
+  - id: UI-HOME
+    reference: docs/UI/financial_ui_html_pages/home.html
+    route: /
+    viewport: 1536x900
+    required: true
+  - id: UI-FERMENTATION
+    reference: docs/UI/financial_ui_html_pages/topics.html
+    route: /fermentation
+    viewport: 1536x900
+    required: true
+  - id: UI-RESEARCH
+    reference: docs/UI/financial_ui_html_pages/samples.html
+    route: /research
+    viewport: 1536x900
+    required: true
+  - id: UI-WORKBENCH
+    reference: docs/UI/financial_ui_html_pages/search.html
+    route: /workbench
+    viewport: 1536x900
+    required: true
+
+visual:
+  diffThreshold: 0.02
+  requireScreenshotEvidence: true
+  requirePixelDiffForPixelPerfect: true
+  allowManualReviewWhenDiffUnavailable: true

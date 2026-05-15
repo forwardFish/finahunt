@@ -1,0 +1,7 @@
+﻿{
+    "lastRunAt":  "2026-05-14T15:03:15",
+    "status":  "HARD_FAIL",
+    "phase":  "run-all",
+    "projectRoot":  "D:\\lyh\\agent\\agent-frame\\finahunt",
+    "nextAction":  "Review docs/AUTO_EXECUTE_DELIVERY_REPORT.md and docs/auto-execute/machine-summary.json"
+}

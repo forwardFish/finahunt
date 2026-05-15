@@ -4,8 +4,6 @@ import { promisify } from "node:util";
 
 import { NextResponse } from "next/server";
 
-import { resolveTargetDate } from "@/lib/dailySnapshot";
-
 const execFileAsync = promisify(execFile);
 const PYTHON_BIN = process.env.PYTHON_BIN || "python";
 const FINAHUNT_ROOT = path.resolve(process.cwd(), "../..");
@@ -26,7 +24,7 @@ export async function POST(): Promise<NextResponse> {
     return NextResponse.json({
       ok: true,
       ...payload,
-      latestDate: resolveTargetDate(undefined),
+      latestDate: typeof payload.latestDate === "string" ? payload.latestDate : undefined,
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : "refresh_failed";

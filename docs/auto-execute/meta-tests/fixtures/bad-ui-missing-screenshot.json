@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.8",
+  "screens": [
+    {
+      "id": "BAD-UI",
+      "route": "/dashboard",
+      "reference": "docs/UI/reference.png",
+      "status": "PASS",
+      "structureStatus": "PASS",
+      "visualStatus": "PASS",
+      "required": true
+    }
+  ],
+  "pixelPerfectRequired": false
+}

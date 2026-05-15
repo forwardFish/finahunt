@@ -1,0 +1,34 @@
+﻿{
+    "screenshots":  [
+
+                    ],
+    "finalReports":  [
+
+                     ],
+    "testReports":  [
+
+                    ],
+    "visualResults":  [
+
+                      ],
+    "schemaVersion":  "1.9.1",
+    "apiResults":  [
+
+                   ],
+    "other":  [
+                  {
+                      "path":  "docs\\auto-execute\\results\\final-gate.json",
+                      "label":  "final-gate result",
+                      "addedAt":  "2026-05-14T11:00:07",
+                      "exists":  true
+                  }
+              ],
+    "logs":  [
+                 {
+                     "path":  "docs\\auto-execute\\final-convergence-report.md",
+                     "label":  "final-gate",
+                     "addedAt":  "2026-05-14T11:00:07",
+                     "exists":  true
+                 }
+             ]
+}

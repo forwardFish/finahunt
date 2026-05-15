@@ -16,19 +16,19 @@ def _default_seed_documents(enabled_sources: list[dict]) -> list[dict]:
     template_by_source = {
         "cls-telegraph": {
             "title": "财联社快讯披露机器人产业政策支持",
-            "content_text": "工信部发布机器人产业支持政策，板块关注度提升，相关公司300024.SZ受到关注。",
+            "content_text": "工信部发布机器人产业支持政策，板块关注度提升，相关公司 300024.SZ 受到关注。",
             "stock_code": "300024.SZ",
             "plate_name": "机器人",
         },
         "jiuyangongshe-live": {
             "title": "韭研公社追踪算力服务器订单进展",
-            "content_text": "多家公司披露算力服务器订单进展，AIDC 与算力主题热度上升，相关标的000063.SZ被提及。",
+            "content_text": "多家公司披露算力服务器订单进展，AIDC 与算力主题热度上升，相关标的 000063.SZ 被提及。",
             "stock_code": "000063.SZ",
             "plate_name": "算力",
         },
         "xueqiu-hot-spot": {
             "title": "雪球热点讨论低空物流试点催化",
-            "content_text": "低空物流试点推进，无人机配送与 eVTOL 商业化叙事升温，相关标的300696.SZ进入讨论名单。",
+            "content_text": "低空物流试点推进，无人机配送与 eVTOL 商业化叙事升温，相关标的 300696.SZ 进入讨论名单。",
             "stock_code": "300696.SZ",
             "plate_name": "低空经济",
         },

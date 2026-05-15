@@ -1,0 +1,53 @@
+﻿{
+    "candidates":  [
+                       {
+                           "source":  "docs\\simple-prd.md",
+                           "normalized":  false,
+                           "id":  "REQ-001",
+                           "evidence":  [
+
+                                        ],
+                           "description":  "User can upload homework",
+                           "surface":  "",
+                           "acceptance":  [
+
+                                          ],
+                           "status":  "CANDIDATE",
+                           "priority":  "P1"
+                       },
+                       {
+                           "source":  "docs\\simple-prd.md",
+                           "normalized":  false,
+                           "id":  "REQ-002",
+                           "evidence":  [
+
+                                        ],
+                           "description":  "the system generates a diagnostic report",
+                           "surface":  "",
+                           "acceptance":  [
+
+                                          ],
+                           "status":  "CANDIDATE",
+                           "priority":  "P1"
+                       },
+                       {
+                           "source":  "docs\\simple-prd.md",
+                           "normalized":  false,
+                           "id":  "REQ-003",
+                           "evidence":  [
+
+                                        ],
+                           "description":  "the system provides a 7-day improvement plan.",
+                           "surface":  "",
+                           "acceptance":  [
+
+                                          ],
+                           "status":  "CANDIDATE",
+                           "priority":  "P1"
+                       }
+                   ],
+    "status":  "CANDIDATE",
+    "schemaVersion":  "1.9.1",
+    "generatedAt":  "2026-05-14T10:59:55",
+    "note":  "Auto-extracted requirements are candidates only. Agent must normalize them into P0/P1/P2 acceptance criteria with surface/test/evidence before implementation or final PASS."
+}

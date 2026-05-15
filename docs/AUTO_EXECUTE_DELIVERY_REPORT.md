@@ -1,85 +1,89 @@
-# AUTO EXECUTE DELIVERY REPORT
+﻿# AUTO EXECUTE DELIVERY REPORT
 
-Generated: 2026-05-13 19:32:58 +0800
+Generated: 05/14/2026 15:03:10
 
-## 1. Requirement/UI consistency conclusion
+## Summary
 
-Executable Sprint 6 / Sprint 6B gates are PASS. The four main pages match the required responsibilities: `/` is the today guide, `/fermentation` is topic fermentation, `/research` is low-position dossier/research samples, and `/workbench` is the full aggregate workbench. Objective `docs/UI` checks pass through screenshots/H1/no-mojibake/no-Next-error/no-overflow evidence.
+- Project root: D:\lyh\agent\agent-frame\finahunt
+- Mode: full
+- Verification results: docs/auto-execute/verification-results.md
+- Blockers: docs/auto-execute/blockers.md
+- Machine summary: docs/auto-execute/machine-summary.json
+- Evidence manifest: docs/auto-execute/evidence-manifest.json
+- Lane results: docs/auto-execute/results
+- Logs: docs/auto-execute/logs
+- Screenshots: docs/auto-execute/screenshots
+- Commit/push: not performed by default
 
-Not auto-passed: `/low-position` and `/sprint-2` are PRODUCT_DECISION_REQUIRED because current implementation keeps independent compatibility pages instead of redirect-only behavior; exact editorial/pixel visual taste is MANUAL_REVIEW_REQUIRED; production/live-source E2E is DEFERRED by scope and safety.
+## Next command
 
-## 2. Fixed / delivered content
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\acceptance\select-next-feature.ps1
+```
 
-- Added/normalized project-local Auto Execute Acceptance First harness under `scripts/acceptance/` and `docs/auto-execute/`.
-- Enhanced `tools/full_acceptance_smoke.py` for routes, date query, `/workbench?q=????`, API contracts, integration targets, desktop/mobile screenshots, no mojibake/Next error/overflow checks, compatibility route evidence, Python command smoke, and aggregate summary preservation.
-- Added bounded `--acceptance-smoke` mode for Python/API smoke so full mode is repeatable and does not depend on live/production services.
-- Fixed architecture guard false positive and run-all report naming/path details.
-- Updated traceability matrix, surface map, UI inventory, visual checklist, test matrix, acceptance plan, repair log, code review, verification results, blockers, visual summary, and final report.
+## Story Acceptance Summary
 
-## 3. Passed gates
+- Story total: 3
+- P0 stories: 0
+- P1 stories: 0
+- PASS stories: 0
+- PASS_WITH_LIMITATION stories: 0
+- HARD_FAIL stories: 0
+- MANUAL_REVIEW_REQUIRED stories: 0
+- DEFERRED stories: 3
+- P0/P1 story pass rate: 0%
 
-| Gate | Result | Evidence |
-|---|---|---|
-| `npm run build` | PASS | `docs/auto-execute/logs/frontend-build.log` |
-| `python -m compileall -q agents packages graphs workflows tools skills tests` | PASS | `docs/auto-execute/logs/backend-compileall.log` |
-| `python -m pytest -q` | PASS, 33 passed | `docs/auto-execute/logs/backend-pytest.log` |
-| `run-all.ps1 -Mode fast` | PASS | `docs/auto-execute/logs/smoke-full-flow-fast.log` |
-| `run-all.ps1 -Mode gate` | PASS | `docs/auto-execute/logs/smoke-full-flow-gate.log` |
-| `run-all.ps1 -Mode full` | PASS | `docs/auto-execute/logs/smoke-full-flow-full.log`, `smoke-python-commands.log` |
-| Routes | 13/13 PASS | `route-smoke.json` |
-| APIs | 8/8 PASS | `api-smoke.json` |
-| Integration | 8/8 PASS | `integration-smoke.json` |
-| Screenshots | 12/12 PASS | `screenshot-capture.json` |
-| Python commands | 3/3 PASS | `python-command-smoke.json` |
+Status meaning: PASS means automated story evidence passed; PASS_NEEDS_MANUAL_UI_REVIEW means story flow is functionally accepted but visual review remains; PASS_WITH_LIMITATION means documented limitations remain; HARD_FAIL means a required story gate or evidence path is missing.
 
-## 4. Failed gates
+| Story ID | Priority | Title | Status | Test Points | Evidence | Gaps |
+|---|---|---|---|---:|---|---|
+| STORY-PAYMENT-007 | P2 | Stop only for hard blockers such as credentials, production data/deploy, payment, destructive operations, or repeated unrecoverable failures. | DEFERRED | 1/2 | docs/auto-execute/results/route-smoke.generated.json<br>docs/auto-execute/results/route-smoke.generated.jsondocs/auto-execute/results/route-smoke.generated.json | None |
+| STORY-GENERAL-010 | P2 | contract verification fails when a frontend `/api/...` call has no matching backend route or method; | DEFERRED | 0/ | None | None |
+| STORY-GENERAL-016 | P2 | generated story route/API/E2E tests are executed by `run-generated-story-tests.ps1` and cannot count as coverage until they run; | DEFERRED | 0/ | None | None |
+## Final Verdict Classification
 
-Final HARD_FAIL: none. DOCUMENTED_BLOCKER: none.
+Final verdict: HARD_FAIL
 
-## 5. DEFERRED / MANUAL_REVIEW_REQUIRED / PRODUCT_DECISION_REQUIRED
+Reason:
+- Requirement verifier: PASS_WITH_LIMITATION
+- Story verifier: PASS
+- Contract verifier: PASS
+- E2E verifier: PASS
+- DB E2E: BLOCKED_BY_ENVIRONMENT
+- UI verifier: HARD_FAIL
+- Pixel-perfect visual diff: PASS_WITH_LIMITATION
+- Acceptance confidence: 0.96
+- Secret guard: PASS
+- Report integrity: PASS
+- UI structure layer: PASS
+- UI screenshot layer: PASS
+- UI visual layer: PASS
+- UI pixel-perfect layer: MANUAL_REVIEW_REQUIRED
 
-| Item | Classification | Evidence |
-|---|---|---|
-| Production/live-source/DB-style E2E | DEFERRED | `python-command-smoke.json` |
-| Exact editorial/pixel visual taste vs `docs/UI` | MANUAL_REVIEW_REQUIRED | `summaries/visual-smoke.md`, screenshots |
-| `/low-position` redirect-only conflict | PRODUCT_DECISION_REQUIRED | `redirect-final-url.json`, `desktop-low-position.png`, `mobile-low-position.png` |
-| `/sprint-2` redirect-only conflict | PRODUCT_DECISION_REQUIRED | `redirect-final-url.json`, `desktop-sprint-2.png`, `mobile-sprint-2.png` |
+This means:
+A HARD_FAIL, FAIL, or IN_SCOPE_GAP remains and prevents final acceptance.
 
-## 6. Required evidence highlights
+- Verdict class: failed-hard-gate-or-in-scope-gap
+- Acceptance confidence: 0.96
+- Can ship locally: False
+- Can claim pixel-perfect: False
+- Requires human review: False
 
-- `/workbench?q=????`: PASS; final URL `http://127.0.0.1:3021/workbench?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD`; evidence `docs/qa/full-acceptance/test-results/workbench-search-smoke.json`.
-- `/low-position`: current final URL remains `/low-position`; evidence in `redirect-final-url.json`; classification PRODUCT_DECISION_REQUIRED.
-- `/sprint-2`: current final URL remains `/sprint-2`; evidence in `redirect-final-url.json`; classification PRODUCT_DECISION_REQUIRED.
-- Main desktop/mobile screenshots:
-  - `docs/qa/full-acceptance/screenshots/desktop-home.png`
-  - `docs/qa/full-acceptance/screenshots/mobile-home.png`
-  - `docs/qa/full-acceptance/screenshots/desktop-fermentation.png`
-  - `docs/qa/full-acceptance/screenshots/mobile-fermentation.png`
-  - `docs/qa/full-acceptance/screenshots/desktop-research.png`
-  - `docs/qa/full-acceptance/screenshots/mobile-research.png`
-  - `docs/qa/full-acceptance/screenshots/desktop-workbench.png`
-  - `docs/qa/full-acceptance/screenshots/mobile-workbench.png`
+## Why Not Pure PASS?
 
-## 7. JSON evidence paths
+Final verdict: HARD_FAIL
 
-- `docs/qa/full-acceptance/test-results/full-acceptance-smoke-summary.json`
-- `docs/qa/full-acceptance/test-results/route-smoke.json`
-- `docs/qa/full-acceptance/test-results/api-smoke.json`
-- `docs/qa/full-acceptance/test-results/integration-smoke.json`
-- `docs/qa/full-acceptance/test-results/workbench-search-smoke.json`
-- `docs/qa/full-acceptance/test-results/redirect-final-url.json`
-- `docs/qa/full-acceptance/test-results/screenshot-capture.json`
-- `docs/qa/full-acceptance/test-results/python-command-smoke.json`
-- `docs/qa/full-acceptance/test-results/surface-inventory.json`
+- Requirement verifier: PASS_WITH_LIMITATION
+- Story verifier: PASS
+- Contract verifier: PASS
+- E2E verifier: PASS
+- DB E2E: BLOCKED_BY_ENVIRONMENT
+- UI verifier: HARD_FAIL
+- Pixel-perfect evidence: PASS_WITH_LIMITATION
+- Secret guard: PASS
+- Report integrity: PASS
 
-## 8. Untested / not auto-passed
+Reason:
+A HARD_FAIL, FAIL, or IN_SCOPE_GAP remains and prevents final acceptance.
 
-- Pixel-perfect and editorial taste match to `docs/UI`: MANUAL_REVIEW_REQUIRED.
-- Product confirmation on independent compatibility pages vs redirect-only requirement: PRODUCT_DECISION_REQUIRED.
-- Production/live external source or DB-backed E2E: DEFERRED and intentionally not accessed.
-
-## 9. Next recommendations
-
-1. Product owner decides whether `/low-position` and `/sprint-2` should remain independent pages or become redirects.
-2. Human reviewer compares final screenshots to `docs/UI/contact-sheet.png` and HTML prototypes.
-3. Keep seed-based acceptance-smoke in local/CI gates; run live-source workflows only in an authorized non-production environment.
+Pure PASS is not allowed because: Requirement verifier is PASS_WITH_LIMITATION; DB E2E is BLOCKED_BY_ENVIRONMENT; UI verifier is HARD_FAIL; Pixel-perfect visual diff is PASS_WITH_LIMITATION; 8 unresolved hard/in-scope gap(s); machine summary contains hard failures; requirement-verifier is PASS_WITH_LIMITATION; ui-verifier is HARD_FAIL; db-e2e is blocked by environment; required UI screen UI-HOME finalUiStatus is HARD_FAIL; required UI screen UI-FERMENTATION finalUiStatus is HARD_FAIL; required UI screen UI-RESEARCH finalUiStatus is HARD_FAIL; acceptance confidence reduced by: requirementsCovered=0.75

@@ -1,0 +1,19 @@
+﻿{
+    "blockers":  [
+
+                 ],
+    "commands":  [
+
+                 ],
+    "lane":  "run-all",
+    "status":  "HARD_FAIL",
+    "evidence":  [
+                     "docs\\AUTO_EXECUTE_DELIVERY_REPORT.md",
+                     "docs\\auto-execute\\machine-summary.json"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+
+                    ],
+    "updatedAt":  "2026-05-14T15:03:15"
+}

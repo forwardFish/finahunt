@@ -1,0 +1,109 @@
+﻿{
+    "stories":  [
+                    {
+                        "storyId":  "STORY-PAYMENT-007",
+                        "priority":  "P2",
+                        "title":  "Stop only for hard blockers such as credentials, production data/deploy, payment, destructive operations, or repeated unrecoverable failures.",
+                        "status":  "DEFERRED",
+                        "testPointsPassed":  1,
+                        "testPointsTotal":  2,
+                        "evidence":  [
+                                         "docs/auto-execute/results/route-smoke.generated.json",
+                                         "docs/auto-execute/results/route-smoke.generated.jsondocs/auto-execute/results/route-smoke.generated.json"
+                                     ],
+                        "gaps":  [
+
+                                 ],
+                        "materializedTestPoints":  [
+                                                       {
+                                                           "testPointId":  "TP-STORY-PAYMENT-007-001",
+                                                           "type":  "route",
+                                                           "target":  "/deploy",
+                                                           "materializationStatus":  "BOUND",
+                                                           "generatedTest":  "scripts\\acceptance\\generated\\route-smoke.generated.mjs",
+                                                           "command":  "node scripts/acceptance/generated/route-smoke.generated.mjs --project-root .",
+                                                           "evidenceOutput":  "docs/auto-execute/results/route-smoke.generated.json",
+                                                           "reason":  ""
+                                                       },
+                                                       {
+                                                           "testPointId":  "TP-STORY-PAYMENT-007-002",
+                                                           "type":  "content",
+                                                           "target":  "Stop only for hard blockers such as credentials, production data/deploy, payment, destructive operations, or repeated unrecoverable failures.",
+                                                           "materializationStatus":  "MANUAL_REVIEW_REQUIRED",
+                                                           "generatedTest":  "",
+                                                           "command":  "",
+                                                           "evidenceOutput":  "",
+                                                           "reason":  "Content test point has no route/API target to bind automatically."
+                                                       }
+                                                   ]
+                    },
+                    {
+                        "storyId":  "STORY-GENERAL-010",
+                        "priority":  "P2",
+                        "title":  "contract verification fails when a frontend `/api/...` call has no matching backend route or method;",
+                        "status":  "DEFERRED",
+                        "testPointsPassed":  0,
+                        "testPointsTotal":  null,
+                        "evidence":  [
+
+                                     ],
+                        "gaps":  [
+
+                                 ],
+                        "materializedTestPoints":  {
+                                                       "testPointId":  "TP-STORY-GENERAL-010-001",
+                                                       "type":  "content",
+                                                       "target":  "contract verification fails when a frontend `/api/...` call has no matching backend route or method;",
+                                                       "materializationStatus":  "MANUAL_REVIEW_REQUIRED",
+                                                       "generatedTest":  "",
+                                                       "command":  "",
+                                                       "evidenceOutput":  "",
+                                                       "reason":  "Content test point has no route/API target to bind automatically."
+                                                   }
+                    },
+                    {
+                        "storyId":  "STORY-GENERAL-016",
+                        "priority":  "P2",
+                        "title":  "generated story route/API/E2E tests are executed by `run-generated-story-tests.ps1` and cannot count as coverage until they run;",
+                        "status":  "DEFERRED",
+                        "testPointsPassed":  0,
+                        "testPointsTotal":  null,
+                        "evidence":  [
+
+                                     ],
+                        "gaps":  [
+
+                                 ],
+                        "materializedTestPoints":  {
+                                                       "testPointId":  "TP-STORY-GENERAL-016-001",
+                                                       "type":  "content",
+                                                       "target":  "generated story route/API/E2E tests are executed by `run-generated-story-tests.ps1` and cannot count as coverage until they run;",
+                                                       "materializationStatus":  "MANUAL_REVIEW_REQUIRED",
+                                                       "generatedTest":  "",
+                                                       "command":  "",
+                                                       "evidenceOutput":  "",
+                                                       "reason":  "Content test point has no route/API target to bind automatically."
+                                                   }
+                    }
+                ],
+    "sources":  {
+                    "storyMaterializedTests":  "docs\\auto-execute\\story-materialized-tests.json",
+                    "storyTarget":  "docs\\auto-execute\\story-target.json",
+                    "storyQualityGate":  "docs\\auto-execute\\story-quality-gate.json",
+                    "storyStatus":  "docs\\auto-execute\\story-status.json"
+                },
+    "generatedAt":  "2026-05-14T15:33:19",
+    "summary":  {
+                    "hardFailStories":  0,
+                    "totalStories":  3,
+                    "passStories":  0,
+                    "p1Stories":  0,
+                    "p0Stories":  0,
+                    "p0p1PassRate":  0,
+                    "manualReviewRequiredStories":  0,
+                    "deferredStories":  3,
+                    "passWithLimitationStories":  0
+                },
+    "schemaVersion":  "2.0",
+    "status":  "PASS"
+}

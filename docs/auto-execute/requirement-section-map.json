@@ -1,0 +1,2519 @@
+﻿{
+    "summary":  {
+                    "limitations":  1,
+                    "p0":  7,
+                    "gaps":  0,
+                    "requiresImplementation":  18,
+                    "total":  109,
+                    "manualReviewRequired":  82,
+                    "p1":  1
+                },
+    "status":  "PASS",
+    "schemaVersion":  "2.0",
+    "generatedAt":  "2026-05-14T15:31:18",
+    "sections":  [
+                     {
+                         "sectionId":  "SEC-001",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "Finahunt 鏈€缁堜骇鍝侀渶姹傝鏄?",
+                         "headingLevel":  1,
+                         "lineStart":  1,
+                         "lineEnd":  6,
+                         "textDigest":  "鏂囨。鐘舵€侊細鏈€缁堟暣鍚堢増 鏁寸悊鏃ユ湡锛?026-05-13 褰撳墠鍞竴闇€姹傚叆鍙ｏ細鏈枃浠? 閫傜敤瀵硅薄锛氫骇鍝併€佺爺鍙戙€佽璁°€佹祴璇曘€丄gent 鎵ц銆侀獙鏀朵氦浠?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-002",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "0. 浣跨敤绾﹀畾",
+                         "headingLevel":  2,
+                         "lineStart":  7,
+                         "lineEnd":  20,
+                         "textDigest":  "鏈枃浠舵槸 `docs` 鐩綍涓嬪敮涓€鏈夋晥鐨勫綋鍓嶉渶姹傛潵婧愩€傚綊妗ｇ洰褰?`_archive_20260513` 涓殑鍘嗗彶鏂囨。銆佷氦浠樻姤鍛娿€丵A 璁板綍銆乁I 鍙傝€冨拰鑷姩鎵ц鏃ュ織宸茬粡琚惛鏀躲€佸綊绾虫垨闄嶇骇涓鸿瘉鎹潗鏂欙紝涓嶅啀浣滀负鏂扮殑闇€姹傚叆鍙ｃ€? 鍚庣画浠讳綍浜у搧銆佺爺鍙戙€侀獙鏀躲€丄gent 鑷姩",
+                         "sectionType":  "ui",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-003",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "1. 涓€椤电粨璁?",
+                         "headingLevel":  2,
+                         "lineStart":  21,
+                         "lineEnd":  29,
+                         "textDigest":  "Finahunt 鏄竴涓潰鍚?A 鑲′釜浜烘姇璧勮€呯殑鍚堣鍨嬮噾铻嶈祫璁鐭ョ郴缁熴€? 瀹冧笉鍋氳崘鑲°€佷笉鍋氫拱鍗栫偣銆佷笉鍋氭定璺岄娴嬨€佷笉鍋氫釜鎬у寲鎶曡祫寤鸿锛岃€屾槸鐢?Agent銆佽鍒欏紩鎿庡拰鍙璁℃暟鎹摼璺紝鎶婂垎鏁ｃ€侀噸澶嶃€佸櫔澹伴珮鐨勫叕寮€甯傚満淇℃伅杞寲涓哄彲杩芥函銆佸彲澶嶇洏銆佸彲娌夋穩鐨勪簨浠惰",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-004",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "2. 浜у搧瀹氫綅",
+                         "headingLevel":  2,
+                         "lineStart":  30,
+                         "lineEnd":  31,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-005",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "2.1 椤跺眰瀹氫綅",
+                         "headingLevel":  3,
+                         "lineStart":  32,
+                         "lineEnd":  35,
+                         "textDigest":  "Finahunt 鏄浗鍐呴潰鍚?A 鑲′釜浜烘姇璧勮€呯殑鈥滃悎瑙勯┍鍔ㄣ€丄gent 鍘熺敓銆佷笓灞炴姇鐮斾俊鎭鐞嗕笌澶嶇洏鑷姩鍖栧伐鍏封€濄€? 瀹冪殑鏈川涓嶆槸璧勮鑱氬悎锛屼笉鏄鎯呰蒋浠讹紝涓嶆槸浜ゆ槗绯荤粺锛屼篃涓嶆槸 AI 鑽愯偂宸ュ叿銆傚畠鐨勬湰璐ㄦ槸涓€涓潰鍚戜釜浜烘姇鐮斿満鏅殑浜嬩欢璁ょ煡鎿嶄綔绯荤粺銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-006",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "2.2 闀挎湡浣垮懡",
+                         "headingLevel":  3,
+                         "lineStart":  36,
+                         "lineEnd":  39,
+                         "textDigest":  "鐢?AI Agent 閲嶆瀯涓汉鎶曡祫鑰呯殑鎶曠爺淇℃伅澶勭悊娴佺▼锛岃姣忎竴浣?A 鑲′釜浜烘姇璧勮€呴兘鑳芥嫢鏈変笓灞炪€佸悎瑙勩€侀珮鏁堢殑鑷姩鍖栨姇鐮斿姪鎵嬨€? 鏍稿績鐩爣涓嶆槸鏇跨敤鎴峰喅绛栵紝鑰屾槸鏇跨敤鎴峰畬鎴愰珮閲嶅銆佷綆鏁堢巼銆佹槗閬楁紡鐨勪俊鎭瓫閫夈€佷簨浠跺綊涓€銆侀€昏緫姊崇悊銆侀闄╂彁绀哄拰澶嶇洏褰掓。宸ヤ綔銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-007",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "2.3 闀挎湡鎰挎櫙",
+                         "headingLevel":  3,
+                         "lineStart":  40,
+                         "lineEnd":  43,
+                         "textDigest":  "3-5 骞寸洰鏍囨槸鎴愪负鍥藉唴涓汉鎶曡祫鑰?AI Agent 鎶曠爺璧涢亾鐨勫熀纭€璁炬柦骞冲彴銆? 闀挎湡褰㈡€佷粠涓汉涓撳睘鎶曠爺绯荤粺锛岄€愭婕旇繘涓烘姇鐮?Skill銆丄gent銆乄orkflow 鐨勫紑鏀剧敓鎬侊紝閲嶆瀯涓汉鎶曡祫鑰呰幏鍙栥€佺悊瑙ｃ€佹矇娣€鍜屽鐢ㄥ競鍦轰俊鎭殑鏂瑰紡銆?",
+                         "sectionType":  "functional",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-008",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "3. 鏍稿績鐢ㄦ埛",
+                         "headingLevel":  2,
+                         "lineStart":  44,
+                         "lineEnd":  45,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-009",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "3.1 绉嶅瓙鐢ㄦ埛",
+                         "headingLevel":  3,
+                         "lineStart":  46,
+                         "lineEnd":  50,
+                         "textDigest":  "绗竴闃舵鍙湇鍔′竴绫婚珮浠峰€肩瀛愮敤鎴凤細 \u003e 鏈?1 骞翠互涓?A 鑲＄煭绾?/ 棰樻潗浜ゆ槗鎴栫爺绌剁粡楠岋紝鏃ュ潎鎵嬪姩鍒疯祫璁椂闂翠笉浣庝簬 2 灏忔椂锛屾瘡澶╁仛鐩樺墠 / 鐩樺悗澶嶇洏锛屽浜嬩欢鏃舵晥鎬с€佸叧鑱旀€с€佽瘉鎹摼瑕佹眰楂橈紝鎰挎剰涓衡€滅渷鏃堕棿銆佷笉閬楁紡鍏抽敭浜嬩欢銆佸鐩樻洿绯荤粺鈥濈殑宸ュ叿浠樿垂銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-010",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "3.2 鐢ㄦ埛鍒嗗眰",
+                         "headingLevel":  3,
+                         "lineStart":  51,
+                         "lineEnd":  59,
+                         "textDigest":  "楂橀澶嶇洏鐢ㄦ埛锛? - 姣忓ぉ鐩樺悗澶嶇洏銆?- 鍏虫敞娑ㄥ仠銆佸紓鍔ㄣ€侀鏉愭墿鏁ｅ拰鏍稿績浜嬩欢銆?- 鐥涚偣鏄祫璁お澶氥€侀噸澶嶅お澶氥€佸叧閿簨浠跺鏄撻仐婕忋€? 棰樻潗鐮旂┒鐢ㄦ埛锛? - 鍏虫敞鏀跨瓥銆佷骇涓氶摼銆侀鏉愯疆鍔ㄥ拰娼滃湪鍌寲銆?- 鐥涚偣鏄棫閫昏緫浣曟椂鍐嶅彂閰甸毦浠ヨ瘑鍒紝棰樻潗涓庝釜鑲″叧绯婚渶瑕佸ぇ閲忎汉",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-011",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "3.3 绗竴闃舵涓嶆湇鍔＄殑浜?",
+                         "headingLevel":  3,
+                         "lineStart":  60,
+                         "lineEnd":  61,
+                         "textDigest":  "- 鍙兂鐪嬪疄鏃惰鎯呭拰浜ゆ槗淇″彿鐨勪汉銆?- 闇€瑕佹槑纭崘鑲°€佷拱鍗栫偣鎴栦粨浣嶅缓璁殑浜恒€?- 娌℃湁澶嶇洏涔犳儻銆佸彧鎯宠鍔ㄦ帴鏀剁儹鐐规帹閫佺殑浜恒€?- 鏈烘瀯瀹氬埗鍖栧鎴枫€?- 闇€瑕佸叏甯傚満鏃犲樊鍒祫璁祦鐨勪汉銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-012",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "4. 鏍稿績闂",
+                         "headingLevel":  2,
+                         "lineStart":  62,
+                         "lineEnd":  64,
+                         "textDigest":  "Finahunt 瑙ｅ喅鍏被闂锛?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-013",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "1. 淇℃伅杩囪浇锛氬叕鍛娿€佸揩璁€佹斂绛栥€佹柊闂汇€佺ぞ濯掋€佺爺鎶ユ憳瑕佸お澶氾紝鐢ㄦ埛鏃犳硶蹇€熺瓫鍑洪噸鐐广€?2. 淇℃伅閲嶅锛氬悓涓€浜嬩欢琚婧愩€佸鏍囬銆佸瑙掑害鍙嶅浼犳挱锛屽鍔犳棤鏁堥槄璇绘垚鏈€?3. 浜嬩欢闈欐€佸寲锛氫紶缁熻祫璁骇鍝佸睍绀烘柊闂绘祦锛屼笉灞曠ず浜嬩欢濡備綍婕斿寲銆佹墿鏁ｃ€佸啀鍙戦叺銆?4. 棰樻潗鍙戠幇浣庢晥锛氭綔鍦ㄥ偓鍖栥€佷骇涓氶摼褰卞搷銆佺浉鍏充釜鑲″叧绯讳緷璧栦汉宸ョ瓫閫夈€?5. 澶嶇洏涓嶅娣卞叆锛氱敤鎴风煡閬撯€滃彂鐢熶簡浠€涔堚€濓紝浣嗛毦浠ュ揩閫熺悊瑙ｂ€滀负浠€涔堥噸瑕併€佸悗缁瀵熶粈涔堛€佷笌鍘嗗彶鍝釜閫昏緫鐩镐技鈥濄€?6. 璁ょ煡鏃犳硶娌夋穩锛氱敤鎴锋瘡澶╃殑鍒ゆ柇銆佺瑪璁般€侀敊鍒ゃ€佸鐩樻病鏈夌粨鏋勫寲璁板綍锛屾棤娉曢暱鏈熷鐢ㄣ€?",
+                         "headingLevel":  2,
+                         "lineStart":  65,
+                         "lineEnd":  65,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-014",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "5. 涓嶅彲閫捐秺鐨勫悎瑙勮竟鐣?",
+                         "headingLevel":  2,
+                         "lineStart":  66,
+                         "lineEnd":  67,
+                         "textDigest":  "鍚堣鏄骇鍝佸簳灞傝兘鍔涳紝涓嶆槸椤甸潰搴曢儴鐨勫厤璐ｅ０鏄庛€?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-015",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "5.1 浜у搧鍏佽杈撳嚭",
+                         "headingLevel":  3,
+                         "lineStart":  68,
+                         "lineEnd":  70,
+                         "textDigest":  "- 鍏紑甯傚満淇℃伅鐨勫瑙傛眹鎬讳笌鏁寸悊銆?- 璧勮娓呮礂銆佸幓閲嶃€佸綊涓€銆佺粨鏋勫寲銆?- 浜嬩欢銆侀鏉愩€佹澘鍧椼€佷釜鑲′箣闂寸殑瀹㈣鍏崇郴銆?- 浜嬩欢鏃堕棿绾裤€侀鏉愮敓鍛藉懆鏈熴€佸巻鍙茬浉浼兼渚嬬殑瀹㈣鍛堢幇銆?- 椋庨櫓淇℃伅鎻愮ず銆佹潵婧愬紩鐢ㄣ€佽瘉鎹摼灞曠ず銆?- 鐢ㄦ埛澶嶇洏绗旇銆佽瀵熸睜銆佺爺绌跺綊妗ｅ拰",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-016",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "5.2 浜у搧缁濆涓嶈緭鍑?",
+                         "headingLevel":  3,
+                         "lineStart":  71,
+                         "lineEnd":  72,
+                         "textDigest":  "- 鑽愯偂銆?- 涔板崠鐐规彁绀恒€?- 涓€у寲鎶曡祫寤鸿銆?- 浠撲綅寤鸿銆?- 鏀剁泭鎵胯銆佽儨鐜囧浼犮€佺泩浜忔殫绀恒€?- 鏄庣‘娑ㄨ穼棰勬祴銆?- 鑷姩浜ゆ槗鎴栦氦鏄撴帴鍙ｆ帴鍏ャ€?- 甯﹀崟銆佽窡鍗曘€佺ぞ缇ゅ枈鍗曘€?- 鈥滈緳澶寸‘璁も€濃€滃繀娑ㄢ€濃€滀富绾跨‘璁も€濃€滀綆鍚告満浼氣€濃€滀拱鍏ヨ瀵熲€濈瓑寮曞浜ゆ槗",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-017",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "5.3 鏍囧噯鍚堣澹版槑",
+                         "headingLevel":  3,
+                         "lineStart":  73,
+                         "lineEnd":  76,
+                         "textDigest":  "鎵€鏈夌敤鎴峰彲瑙佺殑鐮旂┒杈撳嚭蹇呴』闄勫甫鎴栧彲灞曞紑鏌ョ湅锛? \u003e 鏈唴瀹逛粎涓哄叕寮€甯傚満淇℃伅鐨勫瑙傛眹鎬讳笌鏁寸悊锛屼笉鏋勬垚浠讳綍鎶曡祫寤鸿锛屼笉浠ｈ〃瀵逛换浣曚釜鑲°€侀鏉愭垨甯傚満璧板娍鐨勪环鍊煎垽鏂€傝偂甯傛湁椋庨櫓锛屾姇璧勯渶璋ㄦ厧銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-018",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "5.4 绯荤粺鍙俊搴︿笁鍘熷垯",
+                         "headingLevel":  3,
+                         "lineStart":  77,
+                         "lineEnd":  80,
+                         "textDigest":  "鎵€鏈夋牳蹇冭緭鍑哄繀椤绘弧瓒筹細",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-019",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "1. 鏈夋潵婧愶細姣忎釜浜嬩欢銆佹暟鎹€佷簨瀹炲繀椤绘爣娉ㄥ彲杩芥函鏉ユ簮銆?2. 鏈夎瘉鎹細姣忎釜鍏抽敭缁撹蹇呴』瀵瑰簲鍘熸枃鐗囨銆佸叕鍛娿€佹柊闂汇€佹暟鎹垨瑙勫垯渚濇嵁銆?3. 鏈夋椂闂寸嚎锛氭瘡涓簨浠跺繀椤昏兘杩樺師婕斿寲杩囩▼锛屼究浜庤拷韪拰澶嶇洏銆?",
+                         "headingLevel":  2,
+                         "lineStart":  81,
+                         "lineEnd":  81,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-020",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "6. 绗竴闃舵涓氬姟闂幆",
+                         "headingLevel":  2,
+                         "lineStart":  82,
+                         "lineEnd":  83,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-021",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "6.1 鏈€灏忛棴鐜?",
+                         "headingLevel":  3,
+                         "lineStart":  84,
+                         "lineEnd":  85,
+                         "textDigest":  "绗竴闃舵鐨勪笟鍔￠棴鐜槸锛?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-022",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "1. 鐢ㄦ埛璁剧疆瑙傚療姹?/ 鍏虫敞棰樻潗 / 鍏虫敞鏍囩殑銆?2. 绯荤粺鎸夊悎瑙勬簮娉ㄥ唽琛ㄦ姄鍙栧叕寮€璧勮銆?3. 绯荤粺瀹屾垚娓呮礂銆佸幓閲嶃€佹爣鍑嗗寲鍜屾潵婧愭爣璁般€?4. 绯荤粺浠庤祫璁祦涓娊鍙栦簨浠讹紝骞跺悎骞跺婧愰噸澶嶄簨浠躲€?5. 绯荤粺璇嗗埆鍊欓€夊偓鍖栧彞銆佸偓鍖栫被鍨嬨€佸己搴﹀拰鏃舵晥銆?6. 绯荤粺灏嗕簨浠惰仛鍚堜负娼滃湪棰樻潗锛屽苟鏄犲皠浜т笟閾俱€佹澘鍧楀拰鐩稿叧涓偂銆?7. 绯荤粺鍩轰簬鐢ㄦ埛瑙傚療姹犲拰瑙勫垯璁＄畻鐩稿叧鎬с€侀噸瑕佹€у拰鐮旂┒浼樺厛绾с€?8. 绯荤粺鐢熸垚浠婃棩閲嶇偣銆侀鏉愬彂閰点€佷綆浣嶇爺绌躲€佸鐩樻姤鍛娿€?9. 鐢ㄦ埛璁板綍鍒ゆ柇銆佹敹钘忎簨浠躲€佸綊妗ｅ鐩樸€?10. 绯荤粺灏嗗巻鍙插垽鏂笌鍚庣画婕斿寲缁戝畾锛屽舰鎴愪釜浜鸿鐭ヨ祫浜с€?",
+                         "headingLevel":  2,
+                         "lineStart":  86,
+                         "lineEnd":  86,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-023",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "6.2 鎴愬姛鐘舵€?",
+                         "headingLevel":  3,
+                         "lineStart":  87,
+                         "lineEnd":  90,
+                         "textDigest":  "鐢ㄦ埛鎵撳紑浜у搧鍚庯紝涓嶉渶瑕佽嚜宸卞埛澶氫釜璧勮婧愶紝鑰屾槸鑳藉湪 3 鍒嗛挓鍐呯煡閬擄細 - 浠婂ぉ鏈夊摢浜涘€煎緱鐮旂┒鐨勬牳蹇冧簨浠躲€?- 鍝簺浜嬩欢姝ｅ湪褰㈡垚娼滃湪棰樻潗鍌寲銆?- 鍌寲灞炰簬浠€涔堢被鍨嬨€佸己搴﹀浣曘€佹椂鏁堝浣曘€?- 瀵瑰簲鍝簺棰樻潗銆佹澘鍧椼€佷骇涓氶摼鐜妭鍜岀浉鍏冲叕鍙搞€?- 杩欎簺鍏宠仈鐨勮瘉鎹",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-024",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "7. MVP 鑼冨洿",
+                         "headingLevel":  2,
+                         "lineStart":  91,
+                         "lineEnd":  92,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-025",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "7.1 MVP 涓€鍙ヨ瘽",
+                         "headingLevel":  3,
+                         "lineStart":  93,
+                         "lineEnd":  96,
+                         "textDigest":  "Finahunt MVP 瑕侀獙璇佷竴浠朵簨锛? \u003e 鑳藉惁鎶婂悎瑙勫叕寮€閲戣瀺璧勮鍘嬬缉鎴愮敤鎴峰彲娑堣垂鐨勪簨浠舵祦銆侀鏉愮嚎绱€佷綆浣嶇爺绌跺崱鍜屾棩缁堝鐩橈紝璁╃敤鎴蜂笉鍐嶆墜宸ュ埛澶ч噺淇℃伅婧愩€?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-026",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "7.2 P0 蹇呭仛",
+                         "headingLevel":  3,
+                         "lineStart":  97,
+                         "lineEnd":  100,
+                         "textDigest":  "P0 鏄涓€闃舵蹇呴』闂悎鐨勪富绾匡細",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P0",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-027",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "1. 鍚堣璧勮婧愭敞鍐岃〃涓庢帴鍏ヨ鑼冦€?2. 鍘熷璧勮銆佹爣鍑嗗寲璧勮銆佷簨浠跺璞°€佽瘉鎹墖娈电殑缁熶竴鏁版嵁濂戠害銆?3. 璧勮娓呮礂銆佸幓閲嶃€佹爣鍑嗗寲銆佹棤鏁堝唴瀹硅繃婊ゃ€?4. 浜嬩欢鎶藉彇銆佷簨浠跺綊涓€銆佷簨浠剁被鍨嬭瘑鍒€?5. 鍊欓€夊偓鍖栧彞鎶藉彇銆?6. 鍌寲绫诲瀷璇嗗埆銆?7. 鍌寲寮哄害涓庢椂鏁堟€у垽鏂€?8. 娼滃湪棰樻潗鑱氬悎銆?9. 棰樻潗鍒版澘鍧椼€佷骇涓氶摼銆佷釜鑲＄殑瀹㈣鏄犲皠銆?10. 涓偂 / 鍏徃鍖归厤渚濇嵁涓庨闄╂彁绀恒€?11. 鐢ㄦ埛瑙傚療姹犵浉鍏虫€ф帓搴忋€?12. 浠婃棩閲嶇偣浜嬩欢銆佽瀵熸睜浜嬩欢銆佹棩缁堝鐩樿緭鍑恒€?13. 浣庝綅棰樻潗鐮旂┒鍗″熀纭€鐗堛€?14. 缁撴瀯鍖栫粨鏋滀粨搴撱€?15. 杩愯 trace銆乬ate registry銆佷汉宸ユ牎姝ｈ褰曞拰 final gate銆?16. 鍏ㄩ摼璺悎瑙勬不鐞嗕笌杈撳嚭妯℃澘閿佸畾銆?",
+                         "headingLevel":  2,
+                         "lineStart":  101,
+                         "lineEnd":  101,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-028",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "7.3 P1 搴斿仛",
+                         "headingLevel":  3,
+                         "lineStart":  102,
+                         "lineEnd":  105,
+                         "textDigest":  "P1 鍦?P0 绋冲畾鍚庢帹杩涳細",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P0",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-029",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "1. 寮傚姩棰勮涓績銆?2. 鍘嗗彶鐩镐技妗堜緥鍩虹鐗堛€?3. 鐮旂┒褰掓。涓庢绱€?4. 涓偂璇︽儏椤点€侀鏉愯鎯呴〉澧炲己銆?5. 杞婚噺閫氱煡銆?6. 鏃ф秷鎭啀鍙戦叺璇嗗埆銆?7. 澶氳瑙掔爺绌跺伐浣滃彴銆?",
+                         "headingLevel":  2,
+                         "lineStart":  106,
+                         "lineEnd":  106,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-030",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "7.4 P2 鏆傜紦",
+                         "headingLevel":  3,
+                         "lineStart":  107,
+                         "lineEnd":  109,
+                         "textDigest":  "浠ヤ笅鑳藉姏鏆傜紦锛?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-031",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "1. 澶嶆潅浜т笟閾剧煡璇嗗浘璋便€?2. 鐢ㄦ埛鑷畾涔夋寲鎺樿鍒欏紩鎿庛€?3. 鍏ㄩ噺鍘嗗彶棰樻潗搴撴繁搴﹀缓璁俱€?4. 绀惧尯銆佸垎浜€乁GC銆佹ā鏉垮競鍦恒€?5. 澶嶆潅鑸嗘儏鎯呯华鍒嗘瀽銆?6. 澶氱 App / 灏忕▼搴忛摵寮€銆?7. 鍟嗕笟鍖栫郴缁熺殑瀹屾暣璁㈤槄銆佹敮浠樺拰鏉冪泭闂幆銆?",
+                         "headingLevel":  2,
+                         "lineStart":  110,
+                         "lineEnd":  110,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-032",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "7.5 姘镐箙涓嶅仛",
+                         "headingLevel":  3,
+                         "lineStart":  111,
+                         "lineEnd":  114,
+                         "textDigest":  "浠ヤ笅鑳藉姏涓嶈繘鍏ヤ换浣曢樁娈碉細",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-033",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "1. 鑽愯偂鍜屼拱鍗栧缓璁€?2. 鑷姩浜ゆ槗銆?3. 浠撲綅寤鸿銆?4. 鏀剁泭鎵胯銆?5. 闈炴巿鏉冭祫璁埇鍙栨垨鐗堟潈椋庨櫓鍐呭鍟嗙敤銆?6. 鏈烘瀯瀹氬埗鍖栧鍖呭紡绯荤粺銆?",
+                         "headingLevel":  2,
+                         "lineStart":  115,
+                         "lineEnd":  115,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-034",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "8. 鏁版嵁婧愪笌鏁版嵁娌荤悊",
+                         "headingLevel":  2,
+                         "lineStart":  116,
+                         "lineEnd":  117,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-035",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "8.1 鏁版嵁婧愬師鍒?",
+                         "headingLevel":  3,
+                         "lineStart":  118,
+                         "lineEnd":  132,
+                         "textDigest":  "鍙帴鍏ュ悎瑙勩€佸叕寮€銆佸彲杩芥函銆佸彲瀹¤鐨勬暟鎹簮銆傛瘡涓簮蹇呴』鍦?Source Registry 涓櫥璁般€? Source Registry 鑷冲皯鍖呭惈锛? - source_id - source_name - source_type - authority_level - access_method - license_or_us",
+                         "sectionType":  "functional",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-036",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "8.2 P0 鏁版嵁婧愮被鍨?",
+                         "headingLevel":  3,
+                         "lineStart":  133,
+                         "lineEnd":  134,
+                         "textDigest":  "- 璐㈢粡蹇 / 鐢垫姤绫诲叕寮€璧勮銆?- 娌繁浜ゆ槗鎵€鍏憡銆?- 涓婂競鍏徃鍏憡涓庡畾鏈熸姤鍛娿€?- 瀹樻柟浜掑姩骞冲彴鍏紑闂瓟銆?- 鏀跨瓥涓庣洃绠￠儴闂ㄥ叕寮€鏂囦欢銆?- 涓绘祦鏉冨▉璐㈢粡濯掍綋銆?- 琛屼笟鍗忎細鍏憡銆?- 鍦版柟鏀垮簻浜т笟鏀跨瓥銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P0",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-037",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "8.3 P1 / P2 鏁版嵁婧愮被鍨?",
+                         "headingLevel":  3,
+                         "lineStart":  135,
+                         "lineEnd":  140,
+                         "textDigest":  "P1 鍙ˉ鍏咃細 - 浜т笟閾炬暟鎹钩鍙般€?- 鎷涙姇鏍囧叕寮€淇℃伅銆?- 涓撳埄鍏憡銆?- 鏇村鍨傜洿琛屼笟濯掍綋銆? P2 鎵嶈€冭檻锛? - 娴峰琛屼笟濯掍綋銆?- 璺ㄥ鏀跨瓥淇℃伅銆?- 渚涘簲閾惧叕寮€淇℃伅銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P1",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-038",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "8.4 绂佹鏁版嵁婧?",
+                         "headingLevel":  3,
+                         "lineStart":  141,
+                         "lineEnd":  142,
+                         "textDigest":  "- 鏈巿鏉冧粯璐圭爺鎶ュ叏鏂囥€?- 绉佸煙绀剧兢鑱婂ぉ璁板綍銆?- 鏄庣‘绂佹鎶撳彇鎴栧晢鐢ㄧ殑缃戠珯鍐呭銆?- 闈炲叕寮€鏁版嵁銆?- 鐢ㄦ埛鏈巿鏉冪殑涓汉浜ゆ槗鏁版嵁銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-039",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "9. 鏁版嵁瀵硅薄",
+                         "headingLevel":  2,
+                         "lineStart":  143,
+                         "lineEnd":  144,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-040",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "9.1 RawContent",
+                         "headingLevel":  3,
+                         "lineStart":  145,
+                         "lineEnd":  161,
+                         "textDigest":  "鍘熷璧勮瀵硅薄銆? 鍏抽敭瀛楁锛? - id - source_id - source_type - source_name - source_url - title - content - publish_time - crawled_at - raw_tags - license_status - source_hash",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  "REQ-P1-001",
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-041",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "9.2 NormalizedContent",
+                         "headingLevel":  3,
+                         "lineStart":  162,
+                         "lineEnd":  175,
+                         "textDigest":  "娓呮礂鍚庣殑鏍囧噯鍖栬祫璁€? 鍏抽敭瀛楁锛? - id - raw_content_id - normalized_title - cleaned_text - dedupe_hash - entities - extracted_keywords - evidence_spans - compliance_flags",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  "REQ-P1-001",
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-042",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "9.3 Event",
+                         "headingLevel":  3,
+                         "lineStart":  176,
+                         "lineEnd":  193,
+                         "textDigest":  "浜嬩欢瀵硅薄銆? 鍏抽敭瀛楁锛? - id - event_title - event_type - summary - first_seen_at - latest_seen_at - source_ids - evidence_spans - importance_score - relevance_score - catalyst_level - c",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P0",
+                         "coveredByRequirementIds":  [
+                                                         "REQ-P0-003",
+                                                         "REQ-P0-004",
+                                                         "REQ-P1-001"
+                                                     ],
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-043",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "9.4 Catalyst",
+                         "headingLevel":  3,
+                         "lineStart":  194,
+                         "lineEnd":  207,
+                         "textDigest":  "鍌寲鍥犵礌瀵硅薄銆? 鍏抽敭瀛楁锛? - id - event_id - catalyst_type - catalyst_level - timeliness_score - continuity_flag - impact_scope - extracted_basis - risk_flags",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P0",
+                         "coveredByRequirementIds":  "REQ-P1-001",
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-044",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "9.5 Theme",
+                         "headingLevel":  3,
+                         "lineStart":  208,
+                         "lineEnd":  223,
+                         "textDigest":  "棰樻潗瀵硅薄銆? 鍏抽敭瀛楁锛? - id - theme_name - core_narrative - first_seen_at - latest_seen_at - lifecycle_state - heat_score - source_count - related_event_count - related_stock_count - ev",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P0",
+                         "coveredByRequirementIds":  [
+                                                         "REQ-P0-004",
+                                                         "REQ-P1-001"
+                                                     ],
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-045",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "9.6 StockThemeMatch",
+                         "headingLevel":  3,
+                         "lineStart":  224,
+                         "lineEnd":  239,
+                         "textDigest":  "涓偂 / 鍏徃涓庨鏉愮殑瀹㈣鍖归厤瀵硅薄銆? 鍏抽敭瀛楁锛? - id - theme_id - stock_code - stock_name - company_name - match_score - match_basis - official_evidence - risk_flags - purity_score - reason_su",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P0",
+                         "coveredByRequirementIds":  "REQ-P1-001",
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-046",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "9.7 HistoricalThemeCase",
+                         "headingLevel":  3,
+                         "lineStart":  240,
+                         "lineEnd":  253,
+                         "textDigest":  "鍘嗗彶鐩镐技妗堜緥瀵硅薄銆? 鍏抽敭瀛楁锛? - id - theme_type - trigger_logic - cycle_summary - expansion_path - market_behavior_summary - similarities - differences - disclaimer",
+                         "sectionType":  "background",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "PASS_WITH_LIMITATION",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-047",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "9.8 UserReviewNote",
+                         "headingLevel":  3,
+                         "lineStart":  254,
+                         "lineEnd":  267,
+                         "textDigest":  "鐢ㄦ埛澶嶇洏绗旇瀵硅薄銆? 鍏抽敭瀛楁锛? - id - user_id - event_id - theme_id - note_text - personal_judgment - follow_up_nodes - created_at - linked_future_events",
+                         "sectionType":  "out_of_scope",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  [
+                                                         "REQ-P0-003",
+                                                         "REQ-P1-001"
+                                                     ],
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-048",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "9.9 RuntimeArtifact",
+                         "headingLevel":  3,
+                         "lineStart":  268,
+                         "lineEnd":  282,
+                         "textDigest":  "杩愯浜х墿瀵硅薄銆? 鍏抽敭瀛楁锛? - run_id - trace_id - artifact_type - artifact_uri - rule_version - agent_version - input_refs - output_refs - generated_at - final_gate_status",
+                         "sectionType":  "functional",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  "REQ-P1-001",
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-049",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "10. 瑙勫垯寮曟搸",
+                         "headingLevel":  2,
+                         "lineStart":  283,
+                         "lineEnd":  284,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-050",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "10.1 鍌寲鍒嗙骇",
+                         "headingLevel":  3,
+                         "lineStart":  285,
+                         "lineEnd":  295,
+                         "textDigest":  "L1 閲嶅ぇ鍌寲锛? - 鍥藉绾ф斂绛栥€?- 琛屼笟閲嶅ぇ鏂拌銆?- 鏀瑰彉琛屼笟鏍煎眬鐨勬妧鏈獊鐮淬€?- 褰卞搷鍏ㄥ眬渚涢渶鍏崇郴鐨勯噸澶т簨浠躲€?- 鍏ㄧ悆渚涘簲閾鹃噸澶у彉鍖栥€? L2 閲嶈鍌寲锛? - 鍦版柟閲嶅ぇ浜т笟鏀跨瓥銆?- 缁嗗垎琛屼笟閲嶅ぇ鍙樺寲銆?- 涓婂競鍏徃鏍稿績涓氬姟绐佺牬銆?- 浜у搧钀藉湴鎴栬鍗曡惤鍦般",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-051",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "10.2 鍌寲绫诲瀷",
+                         "headingLevel":  3,
+                         "lineStart":  296,
+                         "lineEnd":  299,
+                         "textDigest":  "鑷冲皯鏀寔锛? - 鏀跨瓥鍌寲銆?- 浜т笟鍌寲銆?- 鎶€鏈偓鍖栥€?- 鍏徃缁忚惀鍌寲銆?- 渚涢渶鍌寲銆?- 浠锋牸鍌寲銆?- 浜嬩欢椹卞姩鍌寲銆?- 鐩戠 / 椋庨櫓鍌寲銆?- 鑸嗚鐑害鍌寲銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-052",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "10.3 涓偂鍖归厤瑙勫垯",
+                         "headingLevel":  3,
+                         "lineStart":  300,
+                         "lineEnd":  305,
+                         "textDigest":  "涓偂鍖归厤鍙兘鏉ヨ嚜瀹㈣渚濇嵁锛? - 涓昏惀涓氬姟涓庡偓鍖栧彈鐩婄幆鑺傜殑鐩存帴鍏宠仈銆?- 鍏憡銆佷簰鍔ㄦ槗銆佸畼缃戙€佸畾鏈熸姤鍛婄瓑瀹樻柟鏉愭枡浣愯瘉銆?- 鍘嗗彶涓婂鍚岀被鍌寲鐨勫瑙傚弽搴斻€?- 浜т笟閾剧幆鑺傚拰涓氬姟鏀跺叆鍗犳瘮銆?- 甯傚€笺€丼T銆佽储鍔°€佺洃绠￠棶璇㈢瓑椋庨櫓淇℃伅銆? 鍖归厤杈撳嚭蹇呴』灞曠ず锛? - ",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-053",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "10.4 姝ｅ畻搴?/ 绾害璇勫垎",
+                         "headingLevel":  3,
+                         "lineStart":  306,
+                         "lineEnd":  311,
+                         "textDigest":  "鍊欓€夊叕鍙搁渶瑕佸尯鍒嗏€滅湡瀹炵浉鍏斥€濆拰鈥滄蹇佃弓杈光€濄€? 璇勫垎缁村害锛? - 涓昏惀涓氬姟鐩存帴鎬с€?- 瀹樻柟璇佹嵁寮哄害銆?- 鏀跺叆鎴栦骇鍝佽惤鍦扮▼搴︺€?- 浜т笟閾句綅缃€?- 涓庡偓鍖栦簨浠剁殑鏃堕棿鐩稿叧鎬с€?- 椋庨櫓涓庝笉纭畾鎬с€? 绂佹杈撳嚭鈥滄瀹楅緳澶粹€濃€滄渶鍙楃泭鈥濃€滅‘瀹氭€ф渶楂樷€濈瓑浜ゆ",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-054",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "10.5 浣庝綅鐮旂┒浼樺厛绾?",
+                         "headingLevel":  3,
+                         "lineStart":  312,
+                         "lineEnd":  316,
+                         "textDigest":  "浣庝綅棰樻潗鐮旂┒浼樺厛绾т笉绛変簬涔板叆寤鸿锛屽彧浠ｈ〃鈥滅爺绌朵环鍊兼帓搴忊€濄€? 璇勫垎缁村害锛? - 鍌寲寮哄害銆?- 棰樻潗鐑害澶勪簬鏃╂湡杩樻槸鍚庢湡銆?- 鍏辫瘑绋嬪害鏄惁灏氫綆銆?- 鐩稿叧鍏徃璇佹嵁鏄惁鍏呭垎銆?- 椋庨櫓鏄惁鍙瘑鍒€?- 鐢ㄦ埛瑙傚療姹犵浉鍏虫€с€? 杈撳嚭蹇呴』鍛藉悕涓衡€滅爺绌朵紭鍏堢骇鈥濇垨鈥滆",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-055",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "10.6 鐢ㄦ埛鐩稿叧鎬ф帓搴?",
+                         "headingLevel":  3,
+                         "lineStart":  317,
+                         "lineEnd":  319,
+                         "textDigest":  "鎺掑簭渚濇嵁锛? - 鐢ㄦ埛瑙傚療姹犲璞°€?- 鐢ㄦ埛鍏虫敞棰樻潗銆?- 鐢ㄦ埛鍘嗗彶澶嶇洏璁板綍銆?- 浜嬩欢鏂伴矞搴︺€?- 鏉ユ簮鏉冨▉绛夌骇銆?- 鍌寲绛夌骇銆?- 璇佹嵁瀹屾暣搴︺€?- 椋庨櫓绛夌骇銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-056",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "11. 鐘舵€佹満",
+                         "headingLevel":  2,
+                         "lineStart":  320,
+                         "lineEnd":  321,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-057",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "11.1 鍗曚簨浠剁姸鎬佹満",
+                         "headingLevel":  3,
+                         "lineStart":  322,
+                         "lineEnd":  326,
+                         "textDigest":  "浜嬩欢鐘舵€侊細 - NEW锛氭柊杩涘叆绯荤粺銆?- DISCOVERED锛氬凡璇嗗埆涓烘湁鏁堜簨浠躲€?- WATCHED锛氫笌鐢ㄦ埛瑙傚療姹犵浉鍏炽€?- HOT锛氱儹搴︽樉钁椾笂鍗囥€?- SPREADING锛氬婧愭墿鏁ｃ€?- TRIGGERED锛氳Е鍙戦鏉?/ 鏉垮潡 / 涓偂鍏宠仈銆?- REACTIVATED锛氭棫娑堟伅鍐嶅彂閰点€?- ",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-058",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "11.2 棰樻潗鐢熷懡鍛ㄦ湡",
+                         "headingLevel":  3,
+                         "lineStart":  327,
+                         "lineEnd":  332,
+                         "textDigest":  "棰樻潗鐘舵€侊細 - 钀岃娊鏈燂細棣栨鍑虹幇 L1 / L2 鍌寲锛岃祫璁噺浣庯紝鐩稿叧瀵硅薄灏戙€?- 鍙戦叺鏈燂細鍚屼富棰樿祫璁柊澧烇紝璁ㄨ閲忔垨鍏宠仈瀵硅薄涓婂崌銆?- 鎵╂暎鏈燂細涓绘祦濯掍綋骞挎硾鎶ラ亾锛屼骇涓氶摼鎴栨澘鍧楁墿鏁ｆ槑鏄俱€?- 楂樻疆鏈燂細鍏ㄥ钩鍙板埛灞忥紝鐩稿叧瀵硅薄鎵╂暎杩囧害锛岄潪鏍稿績瀵硅薄涔熷紑濮嬭鎻愬強銆?-",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-059",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "12. Agent 浣撶郴",
+                         "headingLevel":  2,
+                         "lineStart":  333,
+                         "lineEnd":  334,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-060",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "12.1 浜у搧杩愯 Agent",
+                         "headingLevel":  3,
+                         "lineStart":  335,
+                         "lineEnd":  365,
+                         "textDigest":  "MVP 杩愯閾捐矾閲囩敤锛? `Source -\u003e Clean -\u003e Event -\u003e Catalyst -\u003e Theme -\u003e Candidate -\u003e Relevance -\u003e Timeline -\u003e Summary -\u003e Archive -\u003e Compliance Guard` Source Agent锛? - 閲囬泦鍚堣鍏紑鏁版嵁婧愩€?- 涓",
+                         "sectionType":  "functional",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  "REQ-P0-003",
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-061",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "12.2 宸ョ▼娌荤悊涓夊钩闈?",
+                         "headingLevel":  3,
+                         "lineStart":  366,
+                         "lineEnd":  375,
+                         "textDigest":  "褰掓。涓殑 Agent 鏋舵瀯鏂囨。鎻愪緵涓夊钩闈㈠伐绋嬫不鐞嗘ā鍨嬶紝搴斾綔涓哄悗缁嚜鍔ㄦ墽琛屼笌骞冲彴鍖栧缓璁剧殑鏍囧噯銆? Build Plane锛? - 璐熻矗浠庨渶姹傚埌浜や粯鐨勫紑鍙戝缓璁俱€?- 鍖呭惈 Requirement Parsing銆丆ompliance Rules銆丼ource Registry銆丄rchitecture銆丆on",
+                         "sectionType":  "functional",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-062",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "12.3 Agent 杈撳嚭瑙勮寖",
+                         "headingLevel":  3,
+                         "lineStart":  376,
+                         "lineEnd":  393,
+                         "textDigest":  "鎵€鏈?Agent 杈撳嚭蹇呴』缁撴瀯鍖栵紝绂佹鍙緭鍑鸿嚜鐒惰瑷€闀挎枃銆? 缁熶竴杈撳嚭鑷冲皯鍖呭惈锛? - agent_name - agent_version - run_id - trace_id - status - input_refs - output_refs - rule_version - content - evidence - ",
+                         "sectionType":  "functional",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  [
+                                                         "REQ-P1-001",
+                                                         "REQ-P1-002"
+                                                     ],
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-063",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "13. 鎶€鏈灦鏋勫師鍒?",
+                         "headingLevel":  2,
+                         "lineStart":  394,
+                         "lineEnd":  394,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-064",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "13.1 鎬讳綋鍘熷垯",
+                         "headingLevel":  3,
+                         "lineStart":  395,
+                         "lineEnd":  397,
+                         "textDigest":  "- 瑙勫垯鍏堣锛屾ā鍨嬭緟鍔┿€?- 缁撴瀯鍖栧璞′紭鍏堬紝鏂囨湰鍙槸灞曠ず灞傘€?- 鍚堣鍓嶇疆锛岃緭鍑哄悗缃€?- 姣忎竴姝ュ彲杩芥函銆佸彲閲嶈瘯銆佸彲鍥炴粴銆?- 鎵€鏈夐暱閾捐矾浠诲姟蹇呴』鏈?checkpoint銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-065",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "13.2 鎺ㄨ崘瀹炵幇",
+                         "headingLevel":  3,
+                         "lineStart":  398,
+                         "lineEnd":  406,
+                         "textDigest":  "鍔熻兘鍨?Agent锛? - 浣跨敤 LangGraph 缁勭粐 Source銆丆lean銆丒vent銆丷elevance銆乀imeline銆丼ummary 绛夎妭鐐广€?- 姣忎釜鑺傜偣鍙仛涓€浠朵簨銆?- 浣跨敤鍏ㄥ眬 State 浼犻€掔粨鏋勫寲瀵硅薄銆?- 鍦?Event銆丷elevance銆丼ummary 璁剧疆浜哄伐鏍℃鐐广€? 闀块摼璺紪",
+                         "sectionType":  "api",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-066",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "13.3 鏁版嵁缁存姢鏋舵瀯",
+                         "headingLevel":  3,
+                         "lineStart":  407,
+                         "lineEnd":  416,
+                         "textDigest":  "杩愯鏁版嵁鍒嗕笁灞傦細 Immutable Raw Layer锛? - 淇濆瓨鍘熷璧勮銆佹潵婧愩€佹姄鍙栨椂闂淬€佸師濮嬪搱甯屻€?- 涓嶇洿鎺ヤ慨鏀癸紝鍙拷鍔犮€? Index and Association Layer锛? - 淇濆瓨浜嬩欢銆侀鏉愩€佸叕鍙搞€佽瘉鎹€佺浉浼兼渚嬨€佺敤鎴疯瀵熸睜鐨勫叧鑱斿叧绯汇€?- 鏀寔閲嶇畻鍜岀増鏈",
+                         "sectionType":  "api",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-067",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "14. 浜у搧椤甸潰涓庤矾鐢?",
+                         "headingLevel":  2,
+                         "lineStart":  417,
+                         "lineEnd":  418,
+                         "textDigest":  "褰撳墠鍓嶇鐮旂┒娴佸簲淇濈暀 4 涓嫭绔嬮〉闈㈠拰 2 涓吋瀹瑰叆鍙ｃ€?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-068",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "14.1 `/` 浠婃棩鍏ュ彛",
+                         "headingLevel":  3,
+                         "lineStart":  419,
+                         "lineEnd":  425,
+                         "textDigest":  "鑱岃矗锛? - 鍛婅瘔鐢ㄦ埛浠婂ぉ鍏堢湅浠€涔堛€?- 鎻愪緵浠婃棩姒傝銆佷富绾挎憳瑕併€佷綆浣嶇爺绌舵憳瑕併€佸叧閿簨浠跺叆鍙ｅ拰椋庨櫓杈圭晫銆?- 鎻愪緵鍒颁笅娓搁〉闈㈢殑娓呮櫚鍏ュ彛銆? 涓嶆壙杞斤細 - 鍏ㄩ噺鐭╅樀銆?- 鍏ㄩ噺鍊欓€夊叕鍙稿垪琛ㄣ€?- 瀹屾暣璇佹嵁甯︺€?- 绗簩濂楀鑸紡 CTA銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-069",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "14.2 `/fermentation` 涓荤嚎鍙戦叺",
+                         "headingLevel":  3,
+                         "lineStart":  426,
+                         "lineEnd":  430,
+                         "textDigest":  "鑱岃矗锛? - 鍛婅瘔鐢ㄦ埛浠€涔堥鏉愬湪鍙戦叺銆?- 灞曠ず鍙戦叺闃舵鍒嗗竷銆佷富棰樺崱銆佺儹搴︺€佸偓鍖栥€佹寔缁€с€佸叧閿瘉鎹€?- 鎻愪緵鍘诲伐浣滃彴娣辨寲鐨勫叆鍙ｃ€? 椤甸潰姘旇川锛氫笓棰樻爮鐩€?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-070",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "14.3 `/research` 浣庝綅鐮旂┒",
+                         "headingLevel":  3,
+                         "lineStart":  431,
+                         "lineEnd":  435,
+                         "textDigest":  "鑱岃矗锛? - 鍛婅瘔鐢ㄦ埛鍝簺浣庝綅棰樻潗鍊煎緱鐮旂┒銆?- 灞曠ず浣庝綅棰樻潗鍗°€佸€欓€夊叕鍙搞€佺爺绌剁悊鐢便€侀獙璇佺姸鎬併€侀闄╂彁绀恒€? 椤甸潰姘旇川锛氱爺绌?dossier銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-071",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "14.4 `/workbench` 宸ヤ綔鍙版€昏",
+                         "headingLevel":  3,
+                         "lineStart":  436,
+                         "lineEnd":  440,
+                         "textDigest":  "鑱岃矗锛? - 鎵挎帴瀹屾暣鑱氬悎瑙嗗浘銆?- 灞曠ず涓荤嚎涓庝綆浣嶅弻鏍忔€昏銆佸叏鏅煩闃点€佽瘉鎹甫銆佷唬琛ㄦ€ф秷鎭崱銆? 椤甸潰姘旇川锛氬垎鏋愭€荤紪鍙般€?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-072",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "14.5 鍏煎鍏ュ彛",
+                         "headingLevel":  3,
+                         "lineStart":  441,
+                         "lineEnd":  446,
+                         "textDigest":  "- `/sprint-2 -\u003e /workbench` - `/low-position -\u003e /research` 鍏煎鍏ュ彛蹇呴』鍙闂紝骞惰烦杞埌鏂伴〉闈€?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  "REQ-P0-004",
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-073",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "14.6 褰撳墠 API 鍏ュ彛",
+                         "headingLevel":  3,
+                         "lineStart":  447,
+                         "lineEnd":  454,
+                         "textDigest":  "鑷冲皯淇濈暀锛? - `GET /api/daily-snapshot` - `POST /api/refresh-latest` - `POST /api/run-low-position` 椤甸潰浼樺厛澶嶇敤 `dailySnapshot` 涓?`lowPositionWorkbench` 鐨勮繍琛屼骇鐗╋紝涓嶅緱闅忔剰鏀瑰彉 runtime artif",
+                         "sectionType":  "api",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  [
+                                                         "REQ-P0-002",
+                                                         "REQ-P0-003",
+                                                         "REQ-P0-004"
+                                                     ],
+                         "coveredByStoryIds":  [
+                                                   "STORY-GENERAL-010",
+                                                   "STORY-GENERAL-016"
+                                               ],
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-074",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "15. UI 涓庝氦浜掕姹?",
+                         "headingLevel":  2,
+                         "lineStart":  455,
+                         "lineEnd":  455,
+                         "textDigest":  "",
+                         "sectionType":  "ui",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-075",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "15.1 鎬讳綋椋庢牸",
+                         "headingLevel":  3,
+                         "lineStart":  456,
+                         "lineEnd":  460,
+                         "textDigest":  "Finahunt 鍓嶇搴旀槸缂栬緫鍨嬬爺绌跺垔鐗╅鏍硷紝鑰屼笉鏄櫘閫氱幓鐠冨崱鐗囧爢鍙犱华琛ㄧ洏銆? 瑕佹眰锛? - 棣栭〉鏄璇婚〉銆?- 涓荤嚎鍙戦叺椤垫槸涓撻鏍忕洰銆?- 浣庝綅鐮旂┒椤垫槸鐮旂┒ dossier銆?- 宸ヤ綔鍙版槸鍒嗘瀽鎬荤紪鍙般€?- 涓嶅悓椤甸潰蹇呴』鏈変笉鍚屼俊鎭皵璐紝鑰屼笉鏄悓涓€缁勪欢鎹㈡爣棰樸€?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-076",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "15.2 瀵艰埅瑕佹眰",
+                         "headingLevel":  3,
+                         "lineStart":  461,
+                         "lineEnd":  463,
+                         "textDigest":  "- 椤跺眰鍙湁涓€灞傛寮忓鑸€?- 椤跺眰瀵艰埅蹇呴』杩涘叆鐙珛 URL銆?- 涓嶅厑璁哥敤椤靛唴 tab 浼鎴愭媶椤点€?- 棣栭〉涓嶅啀鍫嗗彔瀹屾暣宸ヤ綔鍙般€?- 棣栭〉涓嶅啀鍑虹幇绗簩濂楀鑸紡 CTA銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-077",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "15.3 鏂囨湰瑕佹眰",
+                         "headingLevel":  3,
+                         "lineStart":  464,
+                         "lineEnd":  466,
+                         "textDigest":  "- 椤甸潰蹇呴』鏃犳槑鏄句腑鏂囦贡鐮併€?- 涓撲笟鏈蹇呴』绋冲畾銆?- 椋庨櫓杈圭晫蹇呴』娓呮櫚銆?- 绂佹鍑虹幇鑽愯偂銆佷氦鏄撱€佹定璺岄娴嬪鍚戞枃妗堛€?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-078",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "15.4 UI 鍙傝€冩潵婧?",
+                         "headingLevel":  3,
+                         "lineStart":  467,
+                         "lineEnd":  468,
+                         "textDigest":  "褰掓。涓殑 `UI/` 鍖呭惈闈欐€?HTML 鍘熷瀷銆乧ontact-sheet 鍜屽寮犺瑙夊弬鑰冨浘銆傚悗缁噸鏋勫簲浼樺厛鍙傝€冨叾椤甸潰鍒嗗伐銆佷俊鎭瘑搴﹀拰閲戣瀺鐮旂┒鍒婄墿姘旇川锛岃€屼笉鏄€愬儚绱犲鍒躲€?",
+                         "sectionType":  "ui",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-079",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "16. 杈撳嚭妯℃澘",
+                         "headingLevel":  2,
+                         "lineStart":  469,
+                         "lineEnd":  470,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-080",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "16.1 浠婃棩閲嶇偣浜嬩欢鍗?",
+                         "headingLevel":  3,
+                         "lineStart":  471,
+                         "lineEnd":  473,
+                         "textDigest":  "蹇呴』鍖呭惈锛? - 浜嬩欢鏍囬銆?- 浜嬩欢鎽樿銆?- 棣栨鍙戠幇鏃堕棿銆?- 鏈€鏂版洿鏂版椂闂淬€?- 鏉ユ簮鍒楄〃銆?- 璇佹嵁鐗囨銆?- 鍌寲绫诲瀷銆?- 鍌寲绛夌骇銆?- 鐩稿叧棰樻潗銆?- 鐩稿叧鍏徃 / 鏉垮潡銆?- 鐢ㄦ埛鐩稿叧鎬с€?- 椋庨櫓鎻愮ず銆?- 鍚庣画瑙傚療鑺傜偣銆?- 鍚堣澹版槑銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-081",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "16.2 棰樻潗鐮旂┒鍗?",
+                         "headingLevel":  3,
+                         "lineStart":  474,
+                         "lineEnd":  476,
+                         "textDigest":  "蹇呴』鍖呭惈锛? - 棰樻潗鍚嶇О銆?- 褰撳墠鐢熷懡鍛ㄦ湡闃舵銆?- 鏍稿績鍌寲銆?- 浜嬩欢鏃堕棿绾裤€?- 鍏宠仈浜т笟閾剧幆鑺傘€?- 鍊欓€夊叕鍙稿垪琛ㄣ€?- 姝ｅ畻搴﹁瘎鍒嗐€?- 鐑害鍙樺寲銆?- 鍘嗗彶鐩镐技妗堜緥銆?- 鐩镐技鐐逛笌宸紓鐐广€?- 椋庨櫓鎻愮ず銆?- 鍚庣画瑙傚療鑺傜偣銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-082",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "16.3 浣庝綅鐮旂┒鍗?",
+                         "headingLevel":  3,
+                         "lineStart":  477,
+                         "lineEnd":  479,
+                         "textDigest":  "蹇呴』鍖呭惈锛? - 浣庝綅棰樻潗鍚嶇О銆?- 涓轰粈涔堜粛澶勪簬浣庡叡璇?/ 鏃╂湡鐮旂┒鐘舵€併€?- 娑堟伅棰勬湡銆?- 鐩稿叧鍏徃銆?- 鍏徃鐞嗙敱銆?- 缁煎悎鐮旂┒璇勫垎銆?- 璇佹嵁寮哄害銆?- 涓嶇‘瀹氭€т笌椋庨櫓銆?- 鏄庣‘澹版槑涓嶆槸涔板崠寤鸿銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-083",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "16.4 鏃ョ粓澶嶇洏",
+                         "headingLevel":  3,
+                         "lineStart":  480,
+                         "lineEnd":  483,
+                         "textDigest":  "蹇呴』鍖呭惈锛? - 浠婃棩鏍稿績浜嬩欢鎬昏銆?- 鐢ㄦ埛瑙傚療姹犵浉鍏充簨浠躲€?- 涓荤嚎鍙戦叺鍙樺寲銆?- 浣庝綅鐮旂┒鍙樺寲銆?- 鏃ф秷鎭啀鍙戦叺銆?- 鐢ㄦ埛绗旇鍥為【銆?- 鏄庢棩瀹㈣瑙傚療鐐广€?- 椋庨櫓涓庡悎瑙勫０鏄庛€?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-084",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "17. Sprint 璺嚎鍥?",
+                         "headingLevel":  2,
+                         "lineStart":  484,
+                         "lineEnd":  484,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-085",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "Sprint 0锛氫俊鎭簳搴т笌娌荤悊鍩虹",
+                         "headingLevel":  3,
+                         "lineStart":  485,
+                         "lineEnd":  489,
+                         "textDigest":  "鐩爣锛氭墦绋宠祫璁帴鍏ヨ鍒欍€佺粺涓€鏁版嵁濂戠害銆佸悎瑙勬不鐞嗗拰杩愯杩借釜搴曞骇銆? 蹇呴』瀹屾垚锛? - Source Registry銆?- RawNewsItem / NormalizedNewsItem / EvidenceSpan銆?- Event 瀵硅薄銆佺姸鎬佸瓧娈靛拰鍚堣杈撳嚭瑕佹眰銆?- Traceability 涓?gate",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-086",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "Sprint 1锛氳祫璁帴鍏ヤ笌淇″彿鍑嗗",
+                         "headingLevel":  3,
+                         "lineStart":  490,
+                         "lineEnd":  494,
+                         "textDigest":  "鐩爣锛氬舰鎴愬彲杩芥函銆佸彲娓呮礂銆佸彲杩涘叆浜嬩欢鎶藉彇閾捐矾鐨勮祫璁緭鍏ャ€? 蹇呴』瀹屾垚锛? - 鍚堣婧愭帴鍏ャ€?- 娓呮礂鍘婚噸銆?- 鏍囧噯鍖栧叆搴撱€?- 璇佹嵁鐗囨鎶藉彇銆?- 婧愬璁°€?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-087",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "Sprint 2锛氭綔鍦ㄩ鏉愬偓鍖栫粨鏋勫寲鎸栨帢",
+                         "headingLevel":  3,
+                         "lineStart":  495,
+                         "lineEnd":  499,
+                         "textDigest":  "鐩爣锛氫骇鍑虹粨鏋勫寲娼滃湪棰樻潗鍌寲缁撴灉銆? 宸插湪褰掓。浜や粯鎶ュ憡涓舰鎴愮殑鏁呬簨鑳藉姏鍖呮嫭锛? - S2-001 鍊欓€夊偓鍖栧彞鎶藉彇銆?- S2-002 鍌寲绫诲瀷鍒嗙被銆?- S2-003 鍌寲寮哄害涓庢椂鏁堟€у垽鏂€?- S2-004 棰樻潗鍊欓€夎仛鍚堛€?- S2-005 棰樻潗鍒颁釜鑲′笌鏉垮潡鏄犲皠銆?- S2-00",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-088",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "Sprint 2A锛氫綆浣嶉鏉愭寲鎺樺紩鎿?",
+                         "headingLevel":  3,
+                         "lineStart":  500,
+                         "lineEnd":  503,
+                         "textDigest":  "鐩爣锛氬舰鎴愪粠婧愬彂鐜板埌澶嶇洏杈撳嚭鐨勪綆浣嶉鏉愮爺绌堕摼璺€? 鏁呬簨鑳藉姏锛? - S2A-001 Source Scout Agent銆?- S2A-002 Event Extractor Agent銆?- S2A-003 Theme Cluster Agent銆?- S2A-004 Candidate Mapper Agent銆?- S2A",
+                         "sectionType":  "functional",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-089",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "Sprint 3锛氬叧鑱斿叧绯讳笌鐢ㄦ埛鎺掑簭",
+                         "headingLevel":  3,
+                         "lineStart":  504,
+                         "lineEnd":  508,
+                         "textDigest":  "鐩爣锛氭妸浜嬩欢銆侀鏉愩€佺敤鎴疯瀵熸睜銆佹帓搴忕粨鏋滄墦閫氥€? 鏁呬簨鑳藉姏锛? - S3-001 浜嬩欢涓庨鏉愭椂闂寸嚎銆?- S3-002 瑙傚療姹犲璞″叧鑱斻€?- S3-003 鐢ㄦ埛鐩稿叧搴﹁瘎鍒嗐€?- S3-004 鎺掑簭缁撴灉娴併€?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-090",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "Sprint 4锛氳緭鍑恒€佸鐩樹笌鐮旂┒闂幆",
+                         "headingLevel":  3,
+                         "lineStart":  509,
+                         "lineEnd":  513,
+                         "textDigest":  "鐩爣锛氭妸鍓嶉潰浜у嚭鐨勭粨鏋勫寲浜嬩欢銆侀鏉愩€佸€欓€夊叕鍙搞€佹帓搴忕粨鏋滆浆鍖栦负鐢ㄦ埛鍙秷璐圭殑澶嶇洏鍜屽綊妗ｃ€? 蹇呴』瀹屾垚锛? - 鏃ョ粓澶嶇洏銆?- 棰樻潗澶嶇洏銆?- 浜嬩欢澶嶇洏銆?- 鐢ㄦ埛绗旇褰掓。銆?- 澶嶇洏涓庡悗缁紨鍖栫粦瀹氥€?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-091",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "Sprint 5锛氫綆浣嶆寲鎺樹竴閿伐浣滃彴",
+                         "headingLevel":  3,
+                         "lineStart":  514,
+                         "lineEnd":  520,
+                         "textDigest":  "鐩爣锛氭妸浣庝綅鎸栨帢搴曞骇鍘嬬缉鎴愪竴鏉″彲涓€娆℃€ф墽琛屽畬鐨勬秷鎭骇鐮旂┒閾捐矾锛? `娑堟伅 -\u003e 娑堟伅棰勬湡 -\u003e 鐩稿叧鍏徃 -\u003e 鍏徃鐞嗙敱 -\u003e 缁煎悎璇勫垎 -\u003e 宸ヤ綔鍙拌鍥綻 蹇呴』瀹屾垚锛? - 鏍囧噯娑堟伅瀵硅薄銆?- 缁撴瀯鍖栭鏈熷垽鏂€?- 鐩稿叧鍏徃姹犱笌鍒嗗眰銆?- 鍏徃鐞嗙敱涓庤瘉鎹€?- 缁煎悎璇",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-092",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "Sprint 6锛氱爺绌舵祦椤甸潰鎷嗗垎",
+                         "headingLevel":  3,
+                         "lineStart":  521,
+                         "lineEnd":  525,
+                         "textDigest":  "鐩爣锛氭妸鍓嶇鎸夌爺绌舵祦绋嬫媶鎴愮嫭绔嬮〉闈細 - `/` 浠婃棩鍏ュ彛銆?- `/fermentation` 涓荤嚎鍙戦叺銆?- `/research` 浣庝綅鐮旂┒銆?- `/workbench` 宸ヤ綔鍙版€昏銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-093",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "Sprint 6B锛氱紪杈戝瀷鎯呮姤鍙伴噸鍋?",
+                         "headingLevel":  3,
+                         "lineStart":  526,
+                         "lineEnd":  529,
+                         "textDigest":  "鐩爣锛氳鍓嶇鐪熸褰㈡垚缂栬緫鍨嬬爺绌跺垔鐗╅鏍硷紝骞跺畬鎴?browser 绾ч獙鏀躲€? 蹇呴』婊¤冻锛? - 椤甸潰涓嶆槸鍙媶 URL锛岃€屾槸瑙嗚涓庝俊鎭皵璐ㄩ噸鍋氥€?- 棣栭〉鏀剁缉鎴愬叆鍙ｉ〉銆?- 涓変釜涓撻椤靛拰鎬昏椤垫皵璐ㄦ槑鏄句笉鍚屻€?- 鏃犳槑鏄句腑鏂囦贡鐮併€?- 璺敱銆佽烦杞€佺┖鐘舵€併€侀儴鍒嗙姸鎬佸拰",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-094",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "18. 楠屾敹鏍囧噯",
+                         "headingLevel":  2,
+                         "lineStart":  530,
+                         "lineEnd":  531,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-095",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "18.1 浜у搧浣撻獙楠屾敹",
+                         "headingLevel":  3,
+                         "lineStart":  532,
+                         "lineEnd":  534,
+                         "textDigest":  "- 鐢ㄦ埛瀹屾垚瑙傚療姹?/ 鍏虫敞棰樻潗璁剧疆鏃堕棿灏忎簬 5 鍒嗛挓銆?- 鐢ㄦ埛鎵撳紑浜у搧鍚?3 鍒嗛挓鍐呮壘鍒颁粖鏃ユ牳蹇冧簨浠躲€?- 鐢ㄦ埛鑳戒粠浜嬩欢鐪嬪埌鏉ユ簮銆佽瘉鎹€侀鏉愩€佺浉鍏冲叕鍙搞€侀闄╁拰鍚庣画瑙傚療鐐广€?- 鐢ㄦ埛鑳藉畬鎴愯嚦灏戜竴娆″畬鏁翠簨浠惰拷韪笌澶嶇洏銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-096",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "18.2 绯荤粺璐ㄩ噺楠屾敹",
+                         "headingLevel":  3,
+                         "lineStart":  535,
+                         "lineEnd":  537,
+                         "textDigest":  "- 浜嬩欢褰掍竴銆佸幓閲嶅噯纭巼涓嶄綆浜?95%銆?- 鏃犳晥鍣０杩囨护鐜囦笉浣庝簬 90%銆?- 浜嬩欢-棰樻潗-涓偂鍖归厤鍑嗙‘鐜囦笉浣庝簬 90%銆?- 棰樻潗鐘舵€佸垽瀹氬噯纭巼涓嶄綆浜?95%銆?- 鐢ㄦ埛鍙杈撳嚭 100% 绗﹀悎鍚堣杈圭晫銆?- 鏍稿績閾捐矾鑷姩鍖栨墽琛屾垚鍔熺巼涓嶄綆浜?99%銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-097",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "18.3 UI / 璺敱楠屾敹",
+                         "headingLevel":  3,
+                         "lineStart":  538,
+                         "lineEnd":  540,
+                         "textDigest":  "- `/`銆乣/fermentation`銆乣/research`銆乣/workbench` 杩斿洖 200銆?- `/sprint-2` 璺宠浆鍒?`/workbench`銆?- `/low-position` 璺宠浆鍒?`/research`銆?- 椤跺眰瀵艰埅鐐瑰嚮鍚庤繘鍏ョ嫭绔?URL銆?- 棣栭〉涓嶅啀鍫嗗彔瀹屾暣宸ヤ綔鍙般€?- 涓荤嚎鍙戦叺椤靛",
+                         "sectionType":  "ui",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-098",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "18.4 API 楠屾敹",
+                         "headingLevel":  3,
+                         "lineStart":  541,
+                         "lineEnd":  543,
+                         "textDigest":  "- `GET /api/daily-snapshot` 鍙繑鍥為〉闈㈡墍闇€蹇収銆?- `POST /api/refresh-latest` 鍙Е鍙戞湰鍦板埛鏂版垨 seed smoke銆?- `POST /api/run-low-position` 鍙Е鍙戜綆浣嶇爺绌堕摼璺垨 seed smoke銆?- API 杈撳嚭涓嶇牬鍧忔棦鏈?runtim",
+                         "sectionType":  "api",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  [
+                                                         "REQ-P0-002",
+                                                         "REQ-P0-004"
+                                                     ],
+                         "coveredByStoryIds":  [
+                                                   "STORY-GENERAL-010",
+                                                   "STORY-GENERAL-016"
+                                               ],
+                         "coverageStatus":  "PASS",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-099",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "18.5 鑷姩鍖栭獙璇佸懡浠?",
+                         "headingLevel":  3,
+                         "lineStart":  544,
+                         "lineEnd":  557,
+                         "textDigest":  "鍚庣画浜や粯鑷冲皯杩愯锛? ```powershell python -m compileall -q agents packages graphs workflows tools skills tests python -m pytest -q ``` 鍓嶇淇敼鑷冲皯杩愯锛? ```powershell cd apps/web npm run bu",
+                         "sectionType":  "ui",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-100",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "18.6 Final Gate",
+                         "headingLevel":  3,
+                         "lineStart":  558,
+                         "lineEnd":  561,
+                         "textDigest":  "鏈€缁堟斁琛屽墠蹇呴』鍥炵瓟锛? - 闇€姹傛槸鍚﹀彲杩芥函鍒版湰鏂囦欢銆?- 鍚堣杈圭晫鏄惁琚攣姝汇€?- 鏁版嵁鏉ユ簮鏄惁鍙拷婧€?- 鏍稿績杈撳嚭鏄惁鏈夎瘉鎹€?- 椤甸潰鏄惁鏃犳槑鏄句贡鐮佸拰閿欎綅銆?- 娴嬭瘯鏄惁閫氳繃銆?- 宸茬煡椋庨櫓鏄惁鍐欐竻銆?- 鏄惁瀛樺湪闇€瑕佷汉宸ュ鎵圭殑鐢熶骇鍙戝竷鍔ㄤ綔銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-101",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "19. 鍟嗕笟鍖栨柟鍚?",
+                         "headingLevel":  2,
+                         "lineStart":  562,
+                         "lineEnd":  575,
+                         "textDigest":  "鍩虹鐗堬細 - 鍔ㄦ€佷簨浠舵祦銆?- 娼滃湪鍌寲鐪嬫澘銆?- 鍩虹澶嶇洏銆?- 瑙傚療姹犮€? 楂樼骇鐗堬細 - 楂樼骇棰樻潗鍔ㄦ€侀〉銆?- 鍘嗗彶鐩镐技妗堜緥銆?- 鏃ф秷鎭啀鍙戦叺璇嗗埆銆?- 娣卞害澶嶇洏鎶ュ憡銆?- 寮傚姩鎻愰啋銆? 鍥㈤槦鐗堬細 - 鍥㈤槦瑙傚療姹犮€?- 鍥㈤槦鍗忎綔澶嶇洏銆?- 鐮旂┒褰掓。銆?- 宸ヤ綔娴侀厤缃€",
+                         "sectionType":  "functional",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-102",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "20. 椋庨櫓涓庡簲瀵?",
+                         "headingLevel":  2,
+                         "lineStart":  576,
+                         "lineEnd":  576,
+                         "textDigest":  "",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-103",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "20.1 鍚堣椋庨櫓",
+                         "headingLevel":  3,
+                         "lineStart":  577,
+                         "lineEnd":  582,
+                         "textDigest":  "椋庨櫓锛氳緭鍑鸿鐞嗚В涓鸿崘鑲℃垨浜ゆ槗寤鸿銆? 搴斿锛氭ā鏉块攣瀹氥€佹晱鎰熻〃杈炬嫤鎴€佹爣鍑嗗０鏄庛€佷汉宸ユ娊妫€銆佸璁℃棩蹇椼€? 椋庨櫓锛氭暟鎹簮鐗堟潈鎴栨巿鏉冧笉娓呫€? 搴斿锛歋ource Registry 鍑嗗叆銆佹巿鏉冪姸鎬佽褰曘€侀潪鐧藉悕鍗曟簮闃绘柇銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-104",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "20.2 浜у搧椋庨櫓",
+                         "headingLevel":  3,
+                         "lineStart":  583,
+                         "lineEnd":  588,
+                         "textDigest":  "椋庨櫓锛氱敤鎴疯瑙ｄ负鏅€氳祫璁仛鍚堛€? 搴斿锛氭墍鏈夐〉闈㈠洿缁曚簨浠躲€侀鏉愩€佽瘉鎹€佸鐩樼粍缁囷紝涓嶅仛鏃犲樊鍒祫璁祦銆? 椋庨櫓锛氳寖鍥磋啫鑳€銆? 搴斿锛氫互鈥滆瀵熸睜 / 鍏虫敞棰樻潗 -\u003e 浜嬩欢杩囨护 -\u003e 澶嶇洏褰掓。鈥濋棴鐜綔涓轰紭鍏堢骇鍒ゆ柇銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-105",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "20.3 鎶€鏈闄?",
+                         "headingLevel":  3,
+                         "lineStart":  589,
+                         "lineEnd":  595,
+                         "textDigest":  "椋庨櫓锛氶暱閾捐矾浠诲姟澶辫触鐜囬珮銆? 搴斿锛歝heckpoint銆侀噸璇曘€佸彲鎭㈠銆侀敊璇垎灞傘€佷笂娓稿洖閫€銆? 椋庨櫓锛氫簨浠跺綊涓€鍜岄鏉愯仛鍚堣鍒ゃ€? 搴斿锛氳瘉鎹墖娈点€佽鍒欎紭鍏堛€佷汉宸ユ牎姝ｇ偣銆佸巻鍙插洖娴嬨€? 椋庨櫓锛氭暟鎹?contract 婕傜Щ銆? 搴斿锛欳ontract Agent銆佺増鏈寲銆佸吋瀹",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-106",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "20.4 UI 椋庨櫓",
+                         "headingLevel":  3,
+                         "lineStart":  596,
+                         "lineEnd":  601,
+                         "textDigest":  "椋庨櫓锛氶〉闈㈠彉鎴愪俊鎭爢鍙犮€? 搴斿锛氬洓涓〉闈㈣亴璐ｅ垎绂伙紝棣栭〉鍙仛鍏ュ彛锛屽伐浣滃彴鎵挎帴鍏ㄩ噺瑙嗗浘銆? 椋庨櫓锛氫腑鏂囦贡鐮佸奖鍝嶅彲淇″害銆? 搴斿锛氭枃鏈紪鐮佹鏌ャ€佽矾鐢?HTML 妫€鏌ャ€佹埅鍥句汉宸ュ鏍搞€?",
+                         "sectionType":  "ui",
+                         "requiresImplementation":  true,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "DEFERRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-107",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "21. 褰撳墠鐮斿彂浼樺厛绾у垽鏂?",
+                         "headingLevel":  2,
+                         "lineStart":  602,
+                         "lineEnd":  604,
+                         "textDigest":  "浠讳綍鏂伴渶姹傝繘鍏ュ墠锛屽厛闂簲涓棶棰橈細",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-108",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "1. 鏄惁鏈嶅姟鈥滆瀵熸睜 / 鍏虫敞棰樻潗 -\u003e 浜嬩欢杩囨护 -\u003e 澶嶇洏褰掓。鈥濇渶灏忛棴鐜€?2. 鏄惁寮哄寲鈥滄綔鍦ㄩ鏉愬偓鍖栫粨鏋勫寲鎸栨帢缁撴灉鈥濄€?3. 鏄惁淇濇寔鍚堣銆佹潵婧愩€佽瘉鎹€佹椂闂寸嚎瀹屾暣銆?4. 鏄惁鍑忓皯鐢ㄦ埛鎵嬪姩绛涢€夊拰澶嶇洏鎴愭湰銆?5. 鏄惁閬垮厤鎻愬墠鎵╁紶鍒颁氦鏄撱€佺ぞ鍖恒€佸紑鏀剧敓鎬佸拰澶嶆潅棰勬祴銆?",
+                         "headingLevel":  2,
+                         "lineStart":  605,
+                         "lineEnd":  606,
+                         "textDigest":  "涓嶆弧瓒冲墠鍥涢」銆佷笖鎻愬墠瑙︾绗簲椤圭殑鍔熻兘锛岄粯璁や笉杩涘叆褰撳墠闃舵銆?",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     },
+                     {
+                         "sectionId":  "SEC-109",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "title":  "22. 褰撳墠鏈€缁堝畾涔?",
+                         "headingLevel":  2,
+                         "lineStart":  607,
+                         "lineEnd":  613,
+                         "textDigest":  "Finahunt 鐨勬牳蹇冧笉鏄€滆祫璁€濓紝鑰屾槸鈥滆鐭モ€濄€? 瀹冧笉鏄彂鐜版定璺岋紝鑰屾槸鍙戠幇缁撴瀯銆? 瀹冧笉鏄浛鐢ㄦ埛浜ゆ槗锛岃€屾槸鏇跨敤鎴峰帇缂╀俊鎭鐞嗘垚鏈€佹彁楂樺鐩樿川閲忋€佹矇娣€闀挎湡鐮旂┒璧勪骇銆? 瀹冧笉鏄拰浼犵粺璧勮骞冲彴姣旇皝鏇村揩锛岃€屾槸姣旇皝鏇磋兘锛? - 杩囨护鍣０銆?- 鎶婅祫璁綊鎴愪簨",
+                         "sectionType":  "unknown",
+                         "requiresImplementation":  false,
+                         "priority":  "P2",
+                         "coveredByRequirementIds":  {
+
+                                                     },
+                         "coveredByStoryIds":  {
+
+                                               },
+                         "coverageStatus":  "MANUAL_REVIEW_REQUIRED",
+                         "evidence":  [
+                                          "docs/auto-execute/requirement-target.json",
+                                          "docs/auto-execute/story-target.json"
+                                      ]
+                     }
+                 ]
+}

@@ -1,0 +1,7 @@
+﻿{
+    "lastRunAt":  "2026-05-14T10:59:52",
+    "status":  "initialized",
+    "phase":  "init",
+    "projectRoot":  "C:\\Users\\linyanhui\\.codex\\skills\\auto-execute\\docs\\auto-execute\\meta-tests\\workspaces\\simple-prd",
+    "nextAction":  "Run scripts/acceptance/run-all.ps1 -Mode fast"
+}

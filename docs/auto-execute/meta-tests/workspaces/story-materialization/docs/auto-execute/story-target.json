@@ -1,0 +1,84 @@
+﻿{
+    "status":  "PENDING",
+    "schemaVersion":  "1.9.1",
+    "note":  "P0/P1 stories are accepted only when every required test point has evidence.",
+    "stories":  [
+                    {
+                        "status":  "PASS_WITH_LIMITATION",
+                        "goal":  "upload homework and receive a diagnostic report",
+                        "title":  "Upload homework and generate report",
+                        "surfaces":  [
+                                         "/dashboard/upload"
+                                     ],
+                        "sprintId":  "SPRINT-P0",
+                        "normalized":  true,
+                        "evidenceRequired":  [
+                                                 "route smoke",
+                                                 "API smoke",
+                                                 "UI verifier"
+                                             ],
+                        "priority":  "P0",
+                        "storyId":  "STORY-UPLOAD-REPORT",
+                        "sourceRequirements":  [
+                                                   "REQ-UPLOAD",
+                                                   "REQ-REPORT",
+                                                   "REQ-7DAY-PLAN"
+                                               ],
+                        "acceptanceCriteria":  [
+                                                   "Upload page is reachable",
+                                                   "Upload API exists",
+                                                   "Report visual evidence is captured"
+                                               ],
+                        "apis":  [
+                                     "POST /api/uploads"
+                                 ],
+                        "epicId":  "EPIC-LEARNING",
+                        "actor":  "student",
+                        "testPoints":  [
+                                           {
+                                               "id":  "TP-UPLOAD-ROUTE",
+                                               "storyId":  "STORY-UPLOAD-REPORT",
+                                               "type":  "route",
+                                               "target":  "/dashboard/upload",
+                                               "expected":  "route reachable",
+                                               "evidence":  [
+
+                                                            ],
+                                               "status":  "PENDING",
+                                               "materializationStatus":  "GENERATED",
+                                               "command":  "node scripts/acceptance/generated/route-smoke.generated.mjs --project-root .",
+                                               "evidenceOutput":  "docs/auto-execute/results/route-smoke.generated.json"
+                                           },
+                                           {
+                                               "id":  "TP-UPLOAD-API",
+                                               "storyId":  "STORY-UPLOAD-REPORT",
+                                               "type":  "api",
+                                               "target":  "POST /api/uploads",
+                                               "expected":  "api reachable",
+                                               "evidence":  [
+
+                                                            ],
+                                               "status":  "PENDING",
+                                               "materializationStatus":  "GENERATED",
+                                               "command":  "node scripts/acceptance/generated/api-smoke.generated.mjs --project-root .",
+                                               "evidenceOutput":  "docs/auto-execute/results/api-smoke.generated.json"
+                                           },
+                                           {
+                                               "id":  "TP-UPLOAD-VISUAL",
+                                               "storyId":  "STORY-UPLOAD-REPORT",
+                                               "type":  "visual",
+                                               "target":  "docs/UI/upload-report.png",
+                                               "expected":  "visual captured",
+                                               "evidence":  [
+
+                                                            ],
+                                               "status":  "PENDING",
+                                               "materializationStatus":  "BOUND_TO_UI_VERIFIER",
+                                               "command":  "powershell -ExecutionPolicy Bypass -File scripts/acceptance/run-ui-capture.ps1; powershell -ExecutionPolicy Bypass -File scripts/acceptance/run-ui-compare.ps1",
+                                               "evidenceOutput":  "docs/auto-execute/results/ui-verifier.json"
+                                           }
+                                       ]
+                    }
+                ],
+    "generatedAt":  "2026-05-14T11:00:02"
+}

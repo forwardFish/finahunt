@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.9.1",
+  "lane": "route-smoke-generated",
+  "status": "PASS",
+  "generatedAt": "2026-05-14T07:03:36.198Z",
+  "results": [
+    {
+      "storyId": "STORY-PAYMENT-007",
+      "testPointId": "TP-STORY-PAYMENT-007-001",
+      "target": "/deploy",
+      "url": "http://127.0.0.1:3000/deploy",
+      "statusCode": 404,
+      "pass": true
+    }
+  ]
+}

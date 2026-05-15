@@ -1,0 +1,9 @@
+﻿{
+    "candidates":  [
+
+                   ],
+    "status":  "EMPTY",
+    "schemaVersion":  "1.9.1",
+    "generatedAt":  "2026-05-14T11:00:08",
+    "note":  "Story candidates are not accepted stories. Normalize into story-target.json before final PASS."
+}

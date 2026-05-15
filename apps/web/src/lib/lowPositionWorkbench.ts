@@ -1,13 +1,10 @@
-import fs from "node:fs";
 import path from "node:path";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
 
-type JsonRecord = Record<string, unknown>;
+import { createSeedWorkbench, SEED_DATE } from "@/lib/uiSeedData";
 
-export type WorkbenchStageStatus = {
-  stage: string;
-  label: string;
-  status: string;
-};
+export type WorkbenchStageStatus = { stage: string; label: string; status: string };
 
 export type MessageRow = {
   message: {
@@ -46,13 +43,6 @@ export type MessageRow = {
     source_reason: string;
     source_reason_title: string;
     source_reason_url: string;
-    source_evidence_items?: Array<{
-      source_site: string;
-      source_url: string;
-      source_title: string;
-      source_excerpt: string;
-      reason: string;
-    }>;
     llm_reason: string;
     crosscheck_status: string;
     reason_summary: string;
@@ -60,11 +50,7 @@ export type MessageRow = {
   validation: {
     validation_status: string;
     validation_window: string;
-    observed_company_moves: Array<{
-      company_code: string;
-      windows: Record<string, number>;
-      latest_return: number | null;
-    }>;
+    observed_company_moves: Array<{ company_code: string; windows: Record<string, number>; latest_return: number | null }>;
     observed_basket_move: Record<string, number>;
     observed_benchmark_move: Record<string, number>;
     excess_return: number | null;
@@ -96,14 +82,7 @@ export type ThemeRow = {
   risk_notice: string;
   candidate_stocks: Array<Record<string, unknown>>;
   validation_bucket: string;
-  messages: Array<{
-    message_id: string;
-    title: string;
-    summary: string;
-    event_time: string;
-    score: number | null;
-    validation_status: string;
-  }>;
+  messages: Array<{ message_id: string; title: string; summary: string; event_time: string; score: number | null; validation_status: string }>;
 };
 
 export type LowPositionWorkbench = {
@@ -111,6 +90,7 @@ export type LowPositionWorkbench = {
   runId: string;
   createdAt: string;
   latestAvailableDate: string;
+  dataMode?: "postgres" | "json" | "seed";
   state: "success" | "partial" | "empty";
   messageCount: number;
   themeCount: number;
@@ -122,129 +102,68 @@ export type LowPositionWorkbench = {
   downgradedThemes: ThemeRow[];
 };
 
-const RUNTIME_ROOT = path.resolve(process.cwd(), "../../workspace/artifacts/runtime");
+const execFileAsync = promisify(execFile);
+const PYTHON_BIN = process.env.PYTHON_BIN || "python";
+const FINAHUNT_ROOT = process.env.FINAHUNT_ROOT || path.resolve(process.cwd(), "../..");
+const QUERY_SCRIPT = path.resolve(FINAHUNT_ROOT, "tools/query_web_data.py");
 
-export function resolveWorkbenchDate(value: string | string[] | undefined): string {
-  if (typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
-    return value;
-  }
-  return latestWorkbenchDate();
+export function resolveWorkbenchDate(value: string | string[] | undefined | null): string {
+  const text = Array.isArray(value) ? value[0] : value;
+  return typeof text === "string" && /^\d{4}-\d{2}-\d{2}$/.test(text) ? text : SEED_DATE;
 }
 
-export function latestWorkbenchDate(): string {
-  for (const runDir of listRunDirectories()) {
-    const manifest = readJson<JsonRecord>(path.join(runDir, "manifest.json"));
-    if (!manifest) {
-      continue;
-    }
-    const createdAt = asString(manifest.created_at);
-    if (!createdAt) {
-      continue;
-    }
-    if (fs.existsSync(path.join(runDir, "daily_message_workbench.json"))) {
-      return createdAt.slice(0, 10);
-    }
-  }
-  return new Date().toISOString().slice(0, 10);
+export function optionalWorkbenchDate(value: string | string[] | undefined | null): string | undefined {
+  const text = Array.isArray(value) ? value[0] : value;
+  return typeof text === "string" && /^\d{4}-\d{2}-\d{2}$/.test(text) ? text : undefined;
 }
 
-export function loadLowPositionWorkbench(date: string): LowPositionWorkbench {
-  const match = findLatestWorkbenchRun(date);
-  if (!match) {
-    return {
-      date,
-      runId: "",
-      createdAt: "",
-      latestAvailableDate: latestWorkbenchDate(),
-      state: "empty",
-      messageCount: 0,
-      themeCount: 0,
-      stages: [],
-      messages: [],
-      themes: [],
-      validatedThemes: [],
-      watchThemes: [],
-      downgradedThemes: [],
-    };
+export function normalizeLowPositionWorkbench(payload: unknown, date = SEED_DATE): LowPositionWorkbench {
+  const seed = createSeedWorkbench(date);
+  if (!payload || typeof payload !== "object") {
+    return seed;
   }
 
-  const messageWorkbench = readJson<JsonRecord>(path.join(match.runDir, "daily_message_workbench.json")) ?? {};
-  const themeWorkbench = readJson<JsonRecord>(path.join(match.runDir, "daily_theme_workbench.json")) ?? {};
-  const orchestrator = readStageContent(match.runDir, "low_position_orchestrator");
-  const statusRows = Array.isArray(orchestrator.workbench_stage_statuses)
-    ? (orchestrator.workbench_stage_statuses as WorkbenchStageStatus[])
-    : [];
-  const messages = Array.isArray(messageWorkbench.messages) ? (messageWorkbench.messages as MessageRow[]) : [];
-  const themes = Array.isArray(themeWorkbench.themes) ? (themeWorkbench.themes as ThemeRow[]) : [];
-  const validatedThemes = Array.isArray(themeWorkbench.validated_themes) ? (themeWorkbench.validated_themes as ThemeRow[]) : [];
-  const watchThemes = Array.isArray(themeWorkbench.watch_themes) ? (themeWorkbench.watch_themes as ThemeRow[]) : [];
-  const downgradedThemes = Array.isArray(themeWorkbench.downgraded_themes) ? (themeWorkbench.downgraded_themes as ThemeRow[]) : [];
-  const failedStages = statusRows.filter((item) => item.status === "fail").length;
-  const hasUnverifiable = messages.some((item) => item.validation?.validation_status === "unverifiable");
-
+  const candidate = payload as Partial<LowPositionWorkbench>;
+  const themes = Array.isArray(candidate.themes) && candidate.themes.length ? candidate.themes : seed.themes;
   return {
-    date,
-    runId: match.runId,
-    createdAt: match.createdAt,
-    latestAvailableDate: latestWorkbenchDate(),
-    state: failedStages > 0 || hasUnverifiable ? "partial" : messages.length > 0 ? "success" : "empty",
-    messageCount: Number(messageWorkbench.message_count ?? messages.length ?? 0),
-    themeCount: Number(themeWorkbench.theme_count ?? themes.length ?? 0),
-    stages: statusRows,
-    messages,
+    ...seed,
+    ...candidate,
+    date: candidate.date || date,
+    stages: Array.isArray(candidate.stages) && candidate.stages.length ? candidate.stages : seed.stages,
+    messages: Array.isArray(candidate.messages) && candidate.messages.length ? candidate.messages : seed.messages,
     themes,
-    validatedThemes,
-    watchThemes,
-    downgradedThemes,
+    validatedThemes: Array.isArray(candidate.validatedThemes) && candidate.validatedThemes.length ? candidate.validatedThemes : themes.filter((item) => item.validation_bucket === "validated"),
+    watchThemes: Array.isArray(candidate.watchThemes) && candidate.watchThemes.length ? candidate.watchThemes : themes.filter((item) => item.validation_bucket !== "validated"),
+    downgradedThemes: Array.isArray(candidate.downgradedThemes) ? candidate.downgradedThemes : [],
+    messageCount: candidate.messageCount ?? seed.messageCount,
+    themeCount: candidate.themeCount ?? themes.length,
   };
 }
 
-function findLatestWorkbenchRun(date: string): { runId: string; runDir: string; createdAt: string } | null {
-  for (const runDir of listRunDirectories()) {
-    const manifest = readJson<JsonRecord>(path.join(runDir, "manifest.json"));
-    if (!manifest) {
-      continue;
-    }
-    const createdAt = asString(manifest.created_at);
-    if (!createdAt || !createdAt.startsWith(date)) {
-      continue;
-    }
-    if (!fs.existsSync(path.join(runDir, "daily_message_workbench.json"))) {
-      continue;
-    }
-    return {
-      runId: asString(manifest.run_id) || path.basename(runDir),
-      runDir,
-      createdAt,
-    };
+function shouldUseSeedFallback(payload: LowPositionWorkbench): boolean {
+  if (process.env.SEED_UI_FALLBACK === "false") {
+    return false;
   }
-  return null;
+  return payload.dataMode === "seed" || payload.themes.length === 0 || payload.messages.length === 0;
 }
 
-function readStageContent(runDir: string, stage: string): JsonRecord {
-  const fallback = readJson<JsonRecord>(path.join(runDir, `${stage}.json`));
-  return fallback ?? {};
+async function queryLowPositionWorkbench(date?: string): Promise<unknown> {
+  const args = date ? [QUERY_SCRIPT, "low-position-workbench", "--date", date] : [QUERY_SCRIPT, "low-position-workbench"];
+  const { stdout } = await execFileAsync(PYTHON_BIN, args, {
+    cwd: FINAHUNT_ROOT,
+    env: process.env,
+    timeout: 20_000,
+    maxBuffer: 10 * 1024 * 1024,
+  });
+  return JSON.parse(stdout) as unknown;
 }
 
-function listRunDirectories(): string[] {
-  if (!fs.existsSync(RUNTIME_ROOT)) {
-    return [];
-  }
-  return fs
-    .readdirSync(RUNTIME_ROOT, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => path.join(RUNTIME_ROOT, entry.name))
-    .sort((left, right) => fs.statSync(right).mtimeMs - fs.statSync(left).mtimeMs);
-}
-
-function readJson<T>(filePath: string): T | null {
+export async function loadLowPositionWorkbench(date?: string): Promise<LowPositionWorkbench> {
+  const fallbackDate = date || SEED_DATE;
   try {
-    return JSON.parse(fs.readFileSync(filePath, "utf-8")) as T;
+    const payload = normalizeLowPositionWorkbench(await queryLowPositionWorkbench(date), fallbackDate);
+    return shouldUseSeedFallback(payload) ? createSeedWorkbench(payload.date || fallbackDate) : payload;
   } catch {
-    return null;
+    return createSeedWorkbench(fallbackDate);
   }
-}
-
-function asString(value: unknown): string {
-  return typeof value === "string" ? value : "";
 }

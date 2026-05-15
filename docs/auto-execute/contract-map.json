@@ -1,0 +1,96 @@
+﻿{
+    "note":  "Auto-discovery only. Agent must reconcile request/response/auth/error/loading/empty states before final PASS.",
+    "frontendCalls":  [
+                          {
+                              "path":  "/api/refresh-latest",
+                              "call":  "fetch(\"/api/refresh-latest\"",
+                              "file":  "apps\\web\\src\\components\\RefreshLatestButton.tsx",
+                              "method":  "POST"
+                          },
+                          {
+                              "path":  "/api/run-low-position",
+                              "call":  "fetch(\"/api/run-low-position\"",
+                              "file":  "apps\\web\\src\\components\\RunLowPositionButton.tsx",
+                              "method":  "POST"
+                          },
+                          {
+                              "path":  ") -\u003e None:\n        self.base_dir = Path(base_dir)\n        self.index_dir = self.base_dir / ",
+                              "call":  "fetch\") -\u003e None:\n        self.base_dir = Path(base_dir)\n        self.index_dir = self.base_dir / \"",
+                              "file":  "skills\\fetch\\storage.py",
+                              "method":  ""
+                          }
+                      ],
+    "apiDefinitions":  [
+                           {
+                               "framework":  "next-app-router",
+                               "method":  "GET",
+                               "path":  "/api/daily-snapshot",
+                               "file":  "apps\\web\\src\\app\\api\\daily-snapshot\\route.ts",
+                               "def":  "export async function GET"
+                           },
+                           {
+                               "framework":  "next-app-router",
+                               "method":  "POST",
+                               "path":  "/api/refresh-latest",
+                               "file":  "apps\\web\\src\\app\\api\\refresh-latest\\route.ts",
+                               "def":  "export async function POST"
+                           },
+                           {
+                               "framework":  "next-app-router",
+                               "method":  "POST",
+                               "path":  "/api/run-low-position",
+                               "file":  "apps\\web\\src\\app\\api\\run-low-position\\route.ts",
+                               "def":  "export async function POST"
+                           }
+                       ],
+    "contracts":  [
+                      {
+                          "emptyState":  "Fallback snapshot/workbench rows keep page non-blank",
+                          "id":  "CONTRACT-DAILY-SNAPSHOT",
+                          "frontendCaller":  "apps/web/src/lib/dailySnapshot.ts and route-rendered pages",
+                          "request":  "Optional query parameter date=YYYY-MM-DD",
+                          "method":  "GET",
+                          "status":  "PASS",
+                          "required":  true,
+                          "loadingState":  "Button/page-level pending state or static render fallback",
+                          "auth":  "none; local public market-information demo data only",
+                          "evidence":  "docs/auto-execute/results/finahunt-full-flow.json",
+                          "errorShape":  "NextResponse JSON error handled by caller fallback/default snapshot",
+                          "endpoint":  "/api/daily-snapshot",
+                          "response":  "JSON DailySnapshot with date, themeCount, canonicalEventCount, themes/events/review fields"
+                      },
+                      {
+                          "emptyState":  "Fallback snapshot/workbench rows keep page non-blank",
+                          "id":  "CONTRACT-REFRESH-LATEST",
+                          "frontendCaller":  "apps/web/src/components/RefreshLatestButton.tsx",
+                          "request":  "Empty POST body; FINAHUNT_ACCEPTANCE_SMOKE may select smoke data path",
+                          "method":  "POST",
+                          "status":  "PASS",
+                          "required":  true,
+                          "loadingState":  "Button/page-level pending state or static render fallback",
+                          "auth":  "none; no production service or payment access",
+                          "evidence":  "docs/auto-execute/results/finahunt-full-flow.json",
+                          "errorShape":  "HTTP 500 JSON { ok:false,error:string }",
+                          "endpoint":  "/api/refresh-latest",
+                          "response":  "JSON { ok: boolean, latestDate, ...snapshot refresh payload } or { ok:false,error }"
+                      },
+                      {
+                          "emptyState":  "Fallback snapshot/workbench rows keep page non-blank",
+                          "id":  "CONTRACT-RUN-LOW-POSITION",
+                          "frontendCaller":  "apps/web/src/components/RunLowPositionButton.tsx",
+                          "request":  "Empty POST body; FINAHUNT_ACCEPTANCE_SMOKE may select smoke data path",
+                          "method":  "POST",
+                          "status":  "PASS",
+                          "required":  true,
+                          "loadingState":  "Button/page-level pending state or static render fallback",
+                          "auth":  "none; no production service or payment access",
+                          "evidence":  "docs/auto-execute/results/finahunt-full-flow.json",
+                          "errorShape":  "HTTP 500 JSON { ok:false,error:string }",
+                          "endpoint":  "/api/run-low-position",
+                          "response":  "JSON { ok: boolean, latestDate, ...low-position workbench payload } or { ok:false,error }"
+                      }
+                  ],
+    "schemaVersion":  "2.0",
+    "generatedAt":  "2026-05-14T15:31:06",
+    "status":  "DISCOVERED"
+}

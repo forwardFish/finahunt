@@ -4,6 +4,7 @@ from agents.base import BaseAgent
 from agents.helpers import artifact_ref, get_result
 from packages.artifacts import persist_runtime_json, runtime_run_dir
 from packages.schema.state import GraphState
+from packages.storage import get_runtime_repository
 
 
 class ResultWarehouseAgent(BaseAgent):
@@ -68,6 +69,20 @@ class ResultWarehouseAgent(BaseAgent):
             "artifact_batch_dir": runtime_run_dir(state["run_id"]).as_posix(),
             "saved_artifacts": saved_artifacts,
         }
+        try:
+            db_write_status = get_runtime_repository().save_runtime_projection(
+                run_id=state["run_id"],
+                trace_id=state["metadata"]["trace_id"],
+                artifact_batch_dir=summary_payload["artifact_batch_dir"],
+                artifacts=artifacts,
+            ).to_dict()
+        except Exception as exc:
+            db_write_status = {
+                "backend": "postgres",
+                "status": "DOCUMENTED_BLOCKER",
+                "message": f"Postgres projection failed: {exc}",
+            }
+        summary_payload["db_write_status"] = db_write_status
         persist_runtime_json(
             state,
             stage=self.stage,

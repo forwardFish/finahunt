@@ -1,0 +1,28 @@
+﻿{
+    "blockers":  [
+                     "8 unresolved hard/in-scope gap(s)",
+                     "machine summary contains hard failures",
+                     "requirement-verifier is PASS_WITH_LIMITATION",
+                     "ui-verifier is HARD_FAIL",
+                     "db-e2e is blocked by environment",
+                     "required UI screen UI-HOME finalUiStatus is HARD_FAIL",
+                     "required UI screen UI-FERMENTATION finalUiStatus is HARD_FAIL",
+                     "required UI screen UI-RESEARCH finalUiStatus is HARD_FAIL",
+                     "required UI screen UI-WORKBENCH finalUiStatus is HARD_FAIL"
+                 ],
+    "commands":  [
+
+                 ],
+    "lane":  "final-gate",
+    "status":  "HARD_FAIL",
+    "evidence":  [
+                     "docs\\auto-execute\\final-convergence-report.md",
+                     "docs\\auto-execute\\gap-list.json",
+                     "docs\\auto-execute\\machine-summary.json"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+
+                    ],
+    "updatedAt":  "2026-05-15T12:23:24"
+}

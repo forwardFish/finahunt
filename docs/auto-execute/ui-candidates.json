@@ -1,0 +1,196 @@
+﻿{
+    "note":  "UI mapping priority is harness.yml uiMapping, UIReferences auto discovery, filename route guess, then manual review. Actual screenshots must be captured and mapped in ui-target.json before final PASS; auto-guessed mapping cannot claim pure PASS without screenshot and diff evidence.",
+    "generatedAt":  "2026-05-14T15:31:42",
+    "mappingPriority":  [
+                            "harness.yml uiMapping",
+                            "UIReferences auto discovery",
+                            "filename route guess",
+                            "manual review"
+                        ],
+    "schemaVersion":  "2.0",
+    "candidates":  [
+                       {
+                           "id":  "UI-001",
+                           "reference":  "docs\\UI\\ChatGPT Image 2026年5月5日 10_46_18 (1).png",
+                           "kind":  "png",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-002",
+                           "reference":  "docs\\UI\\ChatGPT Image 2026年5月5日 10_46_18 (2).png",
+                           "kind":  "png",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-003",
+                           "reference":  "docs\\UI\\ChatGPT Image 2026年5月5日 10_46_18 (3).png",
+                           "kind":  "png",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-004",
+                           "reference":  "docs\\UI\\ChatGPT Image 2026年5月5日 10_46_19 (4).png",
+                           "kind":  "png",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-005",
+                           "reference":  "docs\\UI\\ChatGPT Image 2026年5月5日 10_46_22 (5).png",
+                           "kind":  "png",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-006",
+                           "reference":  "docs\\UI\\ChatGPT Image 2026年5月5日 10_46_22 (6).png",
+                           "kind":  "png",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-007",
+                           "reference":  "docs\\UI\\ChatGPT Image 2026年5月5日 10_46_22 (7).png",
+                           "kind":  "png",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-008",
+                           "reference":  "docs\\UI\\ChatGPT Image 2026年5月5日 10_46_23 (10).png",
+                           "kind":  "png",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-009",
+                           "reference":  "docs\\UI\\ChatGPT Image 2026年5月5日 10_46_23 (8).png",
+                           "kind":  "png",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-010",
+                           "reference":  "docs\\UI\\ChatGPT Image 2026年5月5日 10_46_23 (9).png",
+                           "kind":  "png",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-011",
+                           "reference":  "docs\\UI\\ChatGPT Image 2026年5月5日 10_50_37.png",
+                           "kind":  "png",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-012",
+                           "reference":  "docs\\UI\\contact-sheet.png",
+                           "kind":  "png",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-013",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\home.html",
+                           "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-014",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\index.html",
+                           "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-015",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\login.html",
+                           "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-016",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\news.html",
+                           "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-017",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\news-detail.html",
+                           "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-018",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\README.md",
+                           "kind":  "md",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-019",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\sample-detail-locked.html",
+                           "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-020",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\samples.html",
+                           "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-021",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\search.html",
+                           "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-022",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\styles.css",
+                           "kind":  "css",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-023",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\topic-category.html",
+                           "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-024",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\topic-detail.html",
+                           "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-025",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\topics.html",
+                           "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-026",
+                           "reference":  "docs\\UI\\financial_ui_html_pages\\unlock.html",
+                           "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       }
+                   ],
+    "status":  "CANDIDATE"
+}

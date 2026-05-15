@@ -1,0 +1,16 @@
+﻿{
+    "status":  "PASS_WITH_LIMITATION",
+    "schemaVersion":  "2.0",
+    "generatedAt":  "2026-05-14T15:03:30",
+    "sprints":  [
+                    {
+                        "sprintId":  "SPRINT-LATER",
+                        "stories":  [
+                                        "STORY-PAYMENT-007",
+                                        "STORY-GENERAL-010",
+                                        "STORY-GENERAL-016"
+                                    ],
+                        "priority":  "P2"
+                    }
+                ]
+}

@@ -1,0 +1,913 @@
+﻿{
+    "summary":  {
+                    "VALID_STORY":  16,
+                    "SUPPORTING_REQUIREMENT":  6,
+                    "ARCHITECTURE_NOTE":  0,
+                    "OUT_OF_SCOPE":  0,
+                    "DUPLICATE":  0,
+                    "ambiguous":  0,
+                    "validStories":  16,
+                    "supportingRequirements":  6,
+                    "architectureNotes":  0,
+                    "outOfScope":  0,
+                    "duplicates":  0
+                },
+    "status":  "PASS",
+    "schemaVersion":  "2.0",
+    "items":  [
+                  {
+                      "candidateId":  "STORY-REQ-001",
+                      "rawText":  "? FINAL_PRODUCT_SPEC ???????????????????????????????????????????????????????",
+                      "classification":  "SUPPORTING_REQUIREMENT",
+                      "reason":  "Candidate is a normalized requirement-backed acceptance item with surfaces/APIs/criteria; it supports story coverage but is not itself a product-decision ambiguity.",
+                      "suggestedStoryId":  null,
+                      "priority":  "P0",
+                      "source":  "docs\\auto-execute\\requirement-target.json",
+                      "sourceLine":  0,
+                      "candidate":  {
+                                        "storyId":  "STORY-REQ-001",
+                                        "id":  "STORY-REQ-001",
+                                        "title":  "? FINAL_PRODUCT_SPEC ???????????????????????????????????????????????????????",
+                                        "description":  "? FINAL_PRODUCT_SPEC ???????????????????????????????????????????????????????",
+                                        "source":  "docs\\auto-execute\\requirement-target.json",
+                                        "sourceLine":  0,
+                                        "sourceRequirements":  [
+                                                                   "REQ-P0-001"
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "? FINAL_PRODUCT_SPEC ???????????????????????????????????????????????????????",
+                                        "priority":  "P0",
+                                        "surfaces":  [
+                                                         "/",
+                                                         "/fermentation",
+                                                         "/research",
+                                                         "/workbench"
+                                                     ],
+                                        "apis":  [
+                                                     "GET /api/daily-snapshot"
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "? FINAL_PRODUCT_SPEC ???????????????????????????????????????????????????????",
+                                                                   "?? harness ????????????????",
+                                                                   "??????????????? commit/push",
+                                                                   "?????????????????????"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-REQ-002",
+                      "rawText":  "????????/?????????????????????????????????????????????",
+                      "classification":  "SUPPORTING_REQUIREMENT",
+                      "reason":  "Candidate is a normalized requirement-backed acceptance item with surfaces/APIs/criteria; it supports story coverage but is not itself a product-decision ambiguity.",
+                      "suggestedStoryId":  null,
+                      "priority":  "P0",
+                      "source":  "docs\\auto-execute\\requirement-target.json",
+                      "sourceLine":  0,
+                      "candidate":  {
+                                        "storyId":  "STORY-REQ-002",
+                                        "id":  "STORY-REQ-002",
+                                        "title":  "????????/?????????????????????????????????????????????",
+                                        "description":  "????????/?????????????????????????????????????????????",
+                                        "source":  "docs\\auto-execute\\requirement-target.json",
+                                        "sourceLine":  0,
+                                        "sourceRequirements":  [
+                                                                   "REQ-P0-002"
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "????????/?????????????????????????????????????????????",
+                                        "priority":  "P0",
+                                        "surfaces":  [
+                                                         "/",
+                                                         "/fermentation",
+                                                         "/research",
+                                                         "/workbench"
+                                                     ],
+                                        "apis":  [
+                                                     "GET /api/daily-snapshot",
+                                                     "POST /api/refresh-latest",
+                                                     "POST /api/run-low-position"
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "??? smoke ????? daily-snapshot API",
+                                                                   "????????/?????????????????????????????????????????????",
+                                                                   "????????????",
+                                                                   "???????????????????????"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-REQ-003",
+                      "rawText":  "??????????????/?????????????????????????????????????????",
+                      "classification":  "SUPPORTING_REQUIREMENT",
+                      "reason":  "Candidate is a normalized requirement-backed acceptance item with surfaces/APIs/criteria; it supports story coverage but is not itself a product-decision ambiguity.",
+                      "suggestedStoryId":  null,
+                      "priority":  "P0",
+                      "source":  "docs\\auto-execute\\requirement-target.json",
+                      "sourceLine":  0,
+                      "candidate":  {
+                                        "storyId":  "STORY-REQ-003",
+                                        "id":  "STORY-REQ-003",
+                                        "title":  "??????????????/?????????????????????????????????????????",
+                                        "description":  "??????????????/?????????????????????????????????????????",
+                                        "source":  "docs\\auto-execute\\requirement-target.json",
+                                        "sourceLine":  0,
+                                        "sourceRequirements":  [
+                                                                   "REQ-P0-003"
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "??????????????/?????????????????????????????????????????",
+                                        "priority":  "P0",
+                                        "surfaces":  [
+                                                         "/fermentation",
+                                                         "/low-position",
+                                                         "/research",
+                                                         "/workbench"
+                                                     ],
+                                        "apis":  [
+                                                     "GET /api/daily-snapshot",
+                                                     "POST /api/run-low-position"
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "??/????????????????",
+                                                                   "??????????????/?????????????????????????????????????????",
+                                                                   "???????????????????",
+                                                                   "daily-snapshot ?? themeCount ? canonicalEventCount"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-REQ-004",
+                      "rawText":  "??????? Next.js API route ????method????????????????????????? contract?",
+                      "classification":  "SUPPORTING_REQUIREMENT",
+                      "reason":  "Candidate is a normalized requirement-backed acceptance item with surfaces/APIs/criteria; it supports story coverage but is not itself a product-decision ambiguity.",
+                      "suggestedStoryId":  null,
+                      "priority":  "P0",
+                      "source":  "docs\\auto-execute\\requirement-target.json",
+                      "sourceLine":  0,
+                      "candidate":  {
+                                        "storyId":  "STORY-REQ-004",
+                                        "id":  "STORY-REQ-004",
+                                        "title":  "??????? Next.js API route ????method????????????????????????? contract?",
+                                        "description":  "??????? Next.js API route ????method????????????????????????? contract?",
+                                        "source":  "docs\\auto-execute\\requirement-target.json",
+                                        "sourceLine":  0,
+                                        "sourceRequirements":  [
+                                                                   "REQ-P0-004"
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "??????? Next.js API route ????method????????????????????????? contract?",
+                                        "priority":  "P0",
+                                        "surfaces":  [
+                                                         "/",
+                                                         "/research",
+                                                         "/workbench"
+                                                     ],
+                                        "apis":  [
+                                                     "GET /api/daily-snapshot",
+                                                     "POST /api/refresh-latest",
+                                                     "POST /api/run-low-position"
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "/api/daily-snapshot GET ??????????",
+                                                                   "/api/refresh-latest POST ????? ok/latestDate ??? JSON",
+                                                                   "/api/run-low-position POST ????? ok/latestDate ??? JSON",
+                                                                   "??????? Next.js API route ????method????????????????????????? contract?"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-REQ-005",
+                      "rawText":  "docs/UI ??????? Next.js ?????????????? pixel diff ????? pixel-perfect?",
+                      "classification":  "SUPPORTING_REQUIREMENT",
+                      "reason":  "Candidate is a normalized requirement-backed acceptance item with surfaces/APIs/criteria; it supports story coverage but is not itself a product-decision ambiguity.",
+                      "suggestedStoryId":  null,
+                      "priority":  "P1",
+                      "source":  "docs\\auto-execute\\requirement-target.json",
+                      "sourceLine":  0,
+                      "candidate":  {
+                                        "storyId":  "STORY-REQ-005",
+                                        "id":  "STORY-REQ-005",
+                                        "title":  "docs/UI ??????? Next.js ?????????????? pixel diff ????? pixel-perfect?",
+                                        "description":  "docs/UI ??????? Next.js ?????????????? pixel diff ????? pixel-perfect?",
+                                        "source":  "docs\\auto-execute\\requirement-target.json",
+                                        "sourceLine":  0,
+                                        "sourceRequirements":  [
+                                                                   "REQ-P1-001"
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "docs/UI ??????? Next.js ?????????????? pixel diff ????? pixel-perfect?",
+                                        "priority":  "P1",
+                                        "surfaces":  [
+                                                         "/",
+                                                         "/fermentation",
+                                                         "/research",
+                                                         "/UI",
+                                                         "/workbench"
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "? pixel diff ?????? UI ??? limitation",
+                                                                   "?? required UI mapping ?? actual screenshot",
+                                                                   "docs/UI ??????? Next.js ?????????????? pixel diff ????? pixel-perfect?",
+                                                                   "harness.yml uiMapping ??????????????"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-REQ-006",
+                      "rawText":  "?? build?pytest?story/generated tests?contract?visual?E2E?secret/report guard ??????????",
+                      "classification":  "SUPPORTING_REQUIREMENT",
+                      "reason":  "Candidate is a normalized requirement-backed acceptance item with surfaces/APIs/criteria; it supports story coverage but is not itself a product-decision ambiguity.",
+                      "suggestedStoryId":  null,
+                      "priority":  "P1",
+                      "source":  "docs\\auto-execute\\requirement-target.json",
+                      "sourceLine":  0,
+                      "candidate":  {
+                                        "storyId":  "STORY-REQ-006",
+                                        "id":  "STORY-REQ-006",
+                                        "title":  "?? build?pytest?story/generated tests?contract?visual?E2E?secret/report guard ??",
+                                        "description":  "?? build?pytest?story/generated tests?contract?visual?E2E?secret/report guard ??????????",
+                                        "source":  "docs\\auto-execute\\requirement-target.json",
+                                        "sourceLine":  0,
+                                        "sourceRequirements":  [
+                                                                   "REQ-P1-002"
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "?? build?pytest?story/generated tests?contract?visual?E2E?secret/report guard ??????????",
+                                        "priority":  "P1",
+                                        "surfaces":  [
+                                                         "/generated",
+                                                         "/report",
+                                                         "docs/auto-execute",
+                                                         "scripts/acceptance"
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "?? build?pytest?story/generated tests?contract?visual?E2E?secret/report guard ??????????",
+                                                                   "final gate ?? verifier JSON ????????",
+                                                                   "Next.js build ??",
+                                                                   "Python pytest ??"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-007",
+                      "rawText":  "鍘嗗彶鏂规涓?LangGraph Agent 瑙勫垝锛歚99_褰掓。/backup/*`",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-007",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  16,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-007",
+                                        "id":  "STORY-DOC-007",
+                                        "title":  "鍘嗗彶鏂规涓?LangGraph Agent 瑙勫垝锛歚99_褰掓。/backup/*`",
+                                        "description":  "鍘嗗彶鏂规涓?LangGraph Agent 瑙勫垝锛歚99_褰掓。/backup/*`",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  16,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "鍘嗗彶鏂规涓?LangGraph Agent 瑙勫垝锛歚99_褰掓。/backup/*`",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+                                                         "/backup/"
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "鍘嗗彶鏂规涓?LangGraph Agent 瑙勫垝锛歚99_褰掓。/backup/*`"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-008",
+                      "rawText":  "created_at",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-008",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  265,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-008",
+                                        "id":  "STORY-DOC-008",
+                                        "title":  "created_at",
+                                        "description":  "created_at",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  265,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "created_at",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "created_at"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-009",
+                      "rawText":  "generated_at",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-009",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  280,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-009",
+                                        "id":  "STORY-DOC-009",
+                                        "title":  "generated_at",
+                                        "description":  "generated_at",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  280,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "generated_at",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "generated_at"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-010",
+                      "rawText":  "### 14.2 `/fermentation` 涓荤嚎鍙戦叺",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-010",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  426,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-010",
+                                        "id":  "STORY-DOC-010",
+                                        "title":  "### 14.2 `/fermentation` 涓荤嚎鍙戦叺",
+                                        "description":  "### 14.2 `/fermentation` 涓荤嚎鍙戦叺",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  426,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "### 14.2 `/fermentation` 涓荤嚎鍙戦叺",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+                                                         "/fermentation"
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "### 14.2 `/fermentation` 涓荤嚎鍙戦叺"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-011",
+                      "rawText":  "### 14.3 `/research` 浣庝綅鐮旂┒",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-011",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  431,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-011",
+                                        "id":  "STORY-DOC-011",
+                                        "title":  "### 14.3 `/research` 浣庝綅鐮旂┒",
+                                        "description":  "### 14.3 `/research` 浣庝綅鐮旂┒",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  431,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "### 14.3 `/research` 浣庝綅鐮旂┒",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+                                                         "/research"
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "### 14.3 `/research` 浣庝綅鐮旂┒"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-012",
+                      "rawText":  "### 14.4 `/workbench` 宸ヤ綔鍙版€昏",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-012",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  436,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-012",
+                                        "id":  "STORY-DOC-012",
+                                        "title":  "### 14.4 `/workbench` 宸ヤ綔鍙版€昏",
+                                        "description":  "### 14.4 `/workbench` 宸ヤ綔鍙版€昏",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  436,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "### 14.4 `/workbench` 宸ヤ綔鍙版€昏",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+                                                         "/workbench"
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "### 14.4 `/workbench` 宸ヤ綔鍙版€昏"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-013",
+                      "rawText":  "`/sprint-2 -\u003e /workbench`",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-013",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  443,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-013",
+                                        "id":  "STORY-DOC-013",
+                                        "title":  "`/sprint-2 -\u003e /workbench`",
+                                        "description":  "`/sprint-2 -\u003e /workbench`",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  443,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "`/sprint-2 -\u003e /workbench`",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+                                                         "/sprint-2",
+                                                         "/workbench"
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "`/sprint-2 -\u003e /workbench`"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-014",
+                      "rawText":  "`/low-position -\u003e /research`",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-014",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  444,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-014",
+                                        "id":  "STORY-DOC-014",
+                                        "title":  "`/low-position -\u003e /research`",
+                                        "description":  "`/low-position -\u003e /research`",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  444,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "`/low-position -\u003e /research`",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+                                                         "/low-position",
+                                                         "/research"
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "`/low-position -\u003e /research`"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-015",
+                      "rawText":  "`GET /api/daily-snapshot`",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-015",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  450,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-015",
+                                        "id":  "STORY-DOC-015",
+                                        "title":  "`GET /api/daily-snapshot`",
+                                        "description":  "`GET /api/daily-snapshot`",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  450,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "`GET /api/daily-snapshot`",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+
+                                                     ],
+                                        "apis":  [
+                                                     "/api/daily-snapshot",
+                                                     "GET /api/daily-snapshot"
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "`GET /api/daily-snapshot`"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-016",
+                      "rawText":  "`POST /api/refresh-latest`",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-016",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  451,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-016",
+                                        "id":  "STORY-DOC-016",
+                                        "title":  "`POST /api/refresh-latest`",
+                                        "description":  "`POST /api/refresh-latest`",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  451,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "`POST /api/refresh-latest`",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+
+                                                     ],
+                                        "apis":  [
+                                                     "/api/refresh-latest",
+                                                     "POST /api/refresh-latest"
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "`POST /api/refresh-latest`"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-017",
+                      "rawText":  "`POST /api/run-low-position`",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-017",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  452,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-017",
+                                        "id":  "STORY-DOC-017",
+                                        "title":  "`POST /api/run-low-position`",
+                                        "description":  "`POST /api/run-low-position`",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  452,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "`POST /api/run-low-position`",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+
+                                                     ],
+                                        "apis":  [
+                                                     "/api/run-low-position",
+                                                     "POST /api/run-low-position"
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "`POST /api/run-low-position`"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-018",
+                      "rawText":  "`/` 浠婃棩鍏ュ彛銆?- `/fermentation` 涓荤嚎鍙戦叺銆?- `/research` 浣庝綅鐮旂┒銆?- `/workbench` 宸ヤ綔鍙版€昏銆?",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-018",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  525,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-018",
+                                        "id":  "STORY-DOC-018",
+                                        "title":  "`/` 浠婃棩鍏ュ彛銆?- `/fermentation` 涓荤嚎鍙戦叺銆?- `/research` 浣庝綅鐮旂┒銆?- `/workbench` 宸ヤ綔鍙版",
+                                        "description":  "`/` 浠婃棩鍏ュ彛銆?- `/fermentation` 涓荤嚎鍙戦叺銆?- `/research` 浣庝綅鐮旂┒銆?- `/workbench` 宸ヤ綔鍙版€昏銆?",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  525,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "`/` 浠婃棩鍏ュ彛銆?- `/fermentation` 涓荤嚎鍙戦叺銆?- `/research` 浣庝綅鐮旂┒銆?- `/workbench` 宸ヤ綔鍙版€昏銆?",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+                                                         "/fermentation",
+                                                         "/research",
+                                                         "/workbench"
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "`/` 浠婃棩鍏ュ彛銆?- `/fermentation` 涓荤嚎鍙戦叺銆?- `/research` 浣庝綅鐮旂┒銆?- `/workbench` 宸ヤ綔鍙版€昏銆?"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-019",
+                      "rawText":  "`/`銆乣/fermentation`銆乣/research`銆乣/workbench` 杩斿洖 200銆?- `/sprint-2` 璺宠浆鍒?`/workbench`銆?- `/low-position` 璺宠浆鍒?`/research`銆?- 椤跺眰瀵艰埅鐐瑰嚮鍚庤繘鍏ョ嫭绔?URL銆?- 棣栭〉涓嶅啀鍫嗗彔瀹屾暣宸ヤ綔鍙般€?- 涓荤嚎鍙戦叺椤靛彧鑱氱劍涓荤嚎銆?- 浣庝綅鐮旂┒椤靛彧鑱氱劍浣庝綅鐮旂┒銆?- 宸ヤ綔鍙版€昏椤垫壙鎺ュ畬鏁磋仛鍚堣鍥俱€?- 妗岄潰鍜岀Щ鍔ㄧ鏃犳槑鏄鹃噸鍙犮€佹孩鍑恒€佷贡鐮併€?",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-019",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  540,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-019",
+                                        "id":  "STORY-DOC-019",
+                                        "title":  "`/`銆乣/fermentation`銆乣/research`銆乣/workbench` 杩斿洖 200銆?- `/sprint-2` 璺宠浆鍒?`/workb",
+                                        "description":  "`/`銆乣/fermentation`銆乣/research`銆乣/workbench` 杩斿洖 200銆?- `/sprint-2` 璺宠浆鍒?`/workbench`銆?- `/low-position` 璺宠浆鍒?`/research`銆?- 椤跺眰瀵艰埅鐐瑰嚮鍚庤繘鍏ョ嫭绔?URL銆?- 棣栭〉涓嶅啀鍫嗗彔瀹屾暣宸ヤ綔鍙般€?- 涓荤嚎鍙戦叺椤靛彧鑱氱劍涓荤嚎銆?- 浣庝綅鐮旂┒椤靛彧鑱氱劍浣庝綅鐮旂┒銆?- 宸ヤ綔鍙版€昏椤垫壙鎺ュ畬鏁磋仛鍚堣鍥俱€?- 妗岄潰鍜岀Щ鍔ㄧ鏃犳槑鏄鹃噸鍙犮€佹孩鍑恒€佷贡鐮併€?",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  540,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "`/`銆乣/fermentation`銆乣/research`銆乣/workbench` 杩斿洖 200銆?- `/sprint-2` 璺宠浆鍒?`/workbench`銆?- `/low-position` 璺宠浆鍒?`/research`銆?- 椤跺眰瀵艰埅鐐瑰嚮鍚庤繘鍏ョ嫭绔?URL銆?- 棣栭〉涓嶅啀鍫嗗彔瀹屾暣宸ヤ綔鍙般€?- 涓荤嚎鍙戦叺椤靛彧鑱氱劍涓荤嚎銆?- 浣庝綅鐮旂┒椤靛彧鑱氱劍浣庝綅鐮旂┒銆?- 宸ヤ綔鍙版€昏椤垫壙鎺ュ畬鏁磋仛鍚堣鍥俱€?- 妗岄潰鍜岀Щ鍔ㄧ鏃犳槑鏄鹃噸鍙犮€佹孩鍑恒€佷贡鐮併€?",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+                                                         "/fermentation",
+                                                         "/low-position",
+                                                         "/research",
+                                                         "/sprint-2",
+                                                         "/workbench"
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "`/`銆乣/fermentation`銆乣/research`銆乣/workbench` 杩斿洖 200銆?- `/sprint-2` 璺宠浆鍒?`/workbench`銆?- `/low-position` 璺宠浆鍒?`/research`銆?- 椤跺眰瀵艰埅鐐瑰嚮鍚庤繘鍏ョ嫭绔?URL銆?- 棣栭〉涓嶅啀鍫嗗彔瀹屾暣宸ヤ綔鍙般€?- 涓荤嚎鍙戦叺椤靛彧鑱氱劍涓荤嚎銆?- 浣庝綅鐮旂┒椤靛彧鑱氱劍浣庝綅鐮旂┒銆?- 宸ヤ綔鍙版€昏椤垫壙鎺ュ畬鏁磋仛鍚堣鍥俱€?- 妗岄潰鍜岀Щ鍔ㄧ鏃犳槑鏄鹃噸鍙犮€佹孩鍑恒€佷贡鐮併€?"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-020",
+                      "rawText":  "`GET /api/daily-snapshot` 鍙繑鍥為〉闈㈡墍闇€蹇収銆?- `POST /api/refresh-latest` 鍙Е鍙戞湰鍦板埛鏂版垨 seed smoke銆?- `POST /api/run-low-position` 鍙Е鍙戜綆浣嶇爺绌堕摼璺垨 seed smoke銆?- API 杈撳嚭涓嶇牬鍧忔棦鏈?runtime artifact contract銆?",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-020",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  543,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-020",
+                                        "id":  "STORY-DOC-020",
+                                        "title":  "`GET /api/daily-snapshot` 鍙繑鍥為〉闈㈡墍闇€蹇収銆?- `POST /api/refresh-latest` 鍙Е鍙戞湰鍦板埛",
+                                        "description":  "`GET /api/daily-snapshot` 鍙繑鍥為〉闈㈡墍闇€蹇収銆?- `POST /api/refresh-latest` 鍙Е鍙戞湰鍦板埛鏂版垨 seed smoke銆?- `POST /api/run-low-position` 鍙Е鍙戜綆浣嶇爺绌堕摼璺垨 seed smoke銆?- API 杈撳嚭涓嶇牬鍧忔棦鏈?runtime artifact contract銆?",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  543,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "`GET /api/daily-snapshot` 鍙繑鍥為〉闈㈡墍闇€蹇収銆?- `POST /api/refresh-latest` 鍙Е鍙戞湰鍦板埛鏂版垨 seed smoke銆?- `POST /api/run-low-position` 鍙Е鍙戜綆浣嶇爺绌堕摼璺垨 seed smoke銆?- API 杈撳嚭涓嶇牬鍧忔棦鏈?runtime artifact contract銆?",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+
+                                                     ],
+                                        "apis":  [
+                                                     "/api/daily-snapshot",
+                                                     "/api/refresh-latest",
+                                                     "/api/run-low-position",
+                                                     "GET /api/daily-snapshot",
+                                                     "POST /api/refresh-latest",
+                                                     "POST /api/run-low-position"
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "`GET /api/daily-snapshot` 鍙繑鍥為〉闈㈡墍闇€蹇収銆?- `POST /api/refresh-latest` 鍙Е鍙戞湰鍦板埛鏂版垨 seed smoke銆?- `POST /api/run-low-position` 鍙Е鍙戜綆浣嶇爺绌堕摼璺垨 seed smoke銆?- API 杈撳嚭涓嶇牬鍧忔棦鏈?runtime artifact contract銆?"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-021",
+                      "rawText":  "cd apps/web",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-021",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  553,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-021",
+                                        "id":  "STORY-DOC-021",
+                                        "title":  "cd apps/web",
+                                        "description":  "cd apps/web",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  553,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "cd apps/web",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+                                                         "/web"
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "cd apps/web"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  },
+                  {
+                      "candidateId":  "STORY-DOC-022",
+                      "rawText":  "鏈?UI / 璺敱 / API 鏀瑰姩鏃讹紝杩樺簲杩愯瀵瑰簲 smoke / browser 鎴浘楠屾敹锛屽苟淇濆瓨璇佹嵁鍒?`docs/qa/` 鎴栨柊鐨勯獙鏀剁洰褰曘€?",
+                      "classification":  "VALID_STORY",
+                      "reason":  "Contains product behavior with a verifiable target or user-facing outcome.",
+                      "suggestedStoryId":  "STORY-GENERAL-022",
+                      "priority":  "P2",
+                      "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                      "sourceLine":  557,
+                      "candidate":  {
+                                        "storyId":  "STORY-DOC-022",
+                                        "id":  "STORY-DOC-022",
+                                        "title":  "鏈?UI / 璺敱 / API 鏀瑰姩鏃讹紝杩樺簲杩愯瀵瑰簲 smoke / browser 鎴浘楠屾敹锛屽苟淇濆瓨璇佹嵁鍒?`docs/qa/` 鎴栨柊",
+                                        "description":  "鏈?UI / 璺敱 / API 鏀瑰姩鏃讹紝杩樺簲杩愯瀵瑰簲 smoke / browser 鎴浘楠屾敹锛屽苟淇濆瓨璇佹嵁鍒?`docs/qa/` 鎴栨柊鐨勯獙鏀剁洰褰曘€?",
+                                        "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                                        "sourceLine":  557,
+                                        "sourceRequirements":  [
+
+                                                               ],
+                                        "actor":  "user",
+                                        "goal":  "鏈?UI / 璺敱 / API 鏀瑰姩鏃讹紝杩樺簲杩愯瀵瑰簲 smoke / browser 鎴浘楠屾敹锛屽苟淇濆瓨璇佹嵁鍒?`docs/qa/` 鎴栨柊鐨勯獙鏀剁洰褰曘€?",
+                                        "priority":  "P2",
+                                        "surfaces":  [
+                                                         "/qa/"
+                                                     ],
+                                        "apis":  [
+
+                                                 ],
+                                        "acceptanceCriteria":  [
+                                                                   "鏈?UI / 璺敱 / API 鏀瑰姩鏃讹紝杩樺簲杩愯瀵瑰簲 smoke / browser 鎴浘楠屾敹锛屽苟淇濆瓨璇佹嵁鍒?`docs/qa/` 鎴栨柊鐨勯獙鏀剁洰褰曘€?"
+                                                               ],
+                                        "status":  "CANDIDATE",
+                                        "normalized":  false,
+                                        "evidence":  [
+
+                                                     ]
+                                    }
+                  }
+              ],
+    "curatedAt":  "2026-05-14T15:31:25"
+}

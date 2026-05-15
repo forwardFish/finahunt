@@ -1,0 +1,77 @@
+﻿{
+    "sourceMaps":  {
+                       "uiTarget":  "docs\\auto-execute\\ui-target.json",
+                       "contractMap":  "docs\\auto-execute\\contract-map.json",
+                       "storyTarget":  "docs\\auto-execute\\story-target.json",
+                       "storyTestMatrix":  "docs\\auto-execute\\story-test-matrix.json"
+                   },
+    "generatedAt":  "2026-05-14T15:31:27",
+    "stories":  [
+                    {
+                        "storyId":  "STORY-PAYMENT-007",
+                        "priority":  "P2",
+                        "testPoints":  [
+                                           {
+                                               "testPointId":  "TP-STORY-PAYMENT-007-001",
+                                               "type":  "route",
+                                               "target":  "/deploy",
+                                               "materializationStatus":  "BOUND",
+                                               "generatedTest":  "scripts\\acceptance\\generated\\route-smoke.generated.mjs",
+                                               "command":  "node scripts/acceptance/generated/route-smoke.generated.mjs --project-root .",
+                                               "evidenceOutput":  "docs/auto-execute/results/route-smoke.generated.json",
+                                               "reason":  ""
+                                           },
+                                           {
+                                               "testPointId":  "TP-STORY-PAYMENT-007-002",
+                                               "type":  "content",
+                                               "target":  "Stop only for hard blockers such as credentials, production data/deploy, payment, destructive operations, or repeated unrecoverable failures.",
+                                               "materializationStatus":  "MANUAL_REVIEW_REQUIRED",
+                                               "generatedTest":  "",
+                                               "command":  "",
+                                               "evidenceOutput":  "",
+                                               "reason":  "Content test point has no route/API target to bind automatically."
+                                           }
+                                       ]
+                    },
+                    {
+                        "storyId":  "STORY-GENERAL-010",
+                        "priority":  "P2",
+                        "testPoints":  [
+                                           {
+                                               "testPointId":  "TP-STORY-GENERAL-010-001",
+                                               "type":  "content",
+                                               "target":  "contract verification fails when a frontend `/api/...` call has no matching backend route or method;",
+                                               "materializationStatus":  "MANUAL_REVIEW_REQUIRED",
+                                               "generatedTest":  "",
+                                               "command":  "",
+                                               "evidenceOutput":  "",
+                                               "reason":  "Content test point has no route/API target to bind automatically."
+                                           }
+                                       ]
+                    },
+                    {
+                        "storyId":  "STORY-GENERAL-016",
+                        "priority":  "P2",
+                        "testPoints":  [
+                                           {
+                                               "testPointId":  "TP-STORY-GENERAL-016-001",
+                                               "type":  "content",
+                                               "target":  "generated story route/API/E2E tests are executed by `run-generated-story-tests.ps1` and cannot count as coverage until they run;",
+                                               "materializationStatus":  "MANUAL_REVIEW_REQUIRED",
+                                               "generatedTest":  "",
+                                               "command":  "",
+                                               "evidenceOutput":  "",
+                                               "reason":  "Content test point has no route/API target to bind automatically."
+                                           }
+                                       ]
+                    }
+                ],
+    "schemaVersion":  "2.0",
+    "status":  "PASS",
+    "generated":  {
+                      "visualTargets":  "scripts\\acceptance\\generated\\visual-targets.generated.json",
+                      "routeSmoke":  "scripts\\acceptance\\generated\\route-smoke.generated.mjs",
+                      "apiSmoke":  "scripts\\acceptance\\generated\\api-smoke.generated.mjs",
+                      "e2eFlow":  "scripts\\acceptance\\generated\\e2e-flow.generated.spec.ts"
+                  }
+}

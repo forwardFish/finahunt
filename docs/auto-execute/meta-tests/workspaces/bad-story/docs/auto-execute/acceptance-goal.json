@@ -1,0 +1,17 @@
+﻿{
+    "uiPixelPerfectRule":  "No screenshot diff evidence means no UI_PIXEL_PERFECT_PASS claim.",
+    "generatedAt":  "2026-05-14T11:00:12",
+    "projectRoot":  "C:\\Users\\linyanhui\\.codex\\skills\\auto-execute\\docs\\auto-execute\\meta-tests\\workspaces\\bad-story",
+    "completionStandard":  [
+                               "all in-scope PRD requirements PASS",
+                               "all required surfaces have evidence",
+                               "hard test gates pass or are documented blockers",
+                               "UI comparison PASS or accepted PASS_WITH_LIMITATION",
+                               "no HARD_FAIL",
+                               "no unresolved in-scope GAP",
+                               "report integrity and secret guard pass",
+                               "final report lists evidence paths"
+                           ],
+    "schemaVersion":  "1.9.1",
+    "status":  "PENDING"
+}

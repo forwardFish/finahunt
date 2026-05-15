@@ -1,0 +1,9 @@
+﻿{
+    "status":  "PASS_WITH_LIMITATION",
+    "schemaVersion":  "1.9.1",
+    "generatedAt":  "2026-05-14T11:00:02",
+    "gaps":  [
+
+             ],
+    "lane":  "story-test-materialize"
+}

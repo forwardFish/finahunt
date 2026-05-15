@@ -1,0 +1,21 @@
+﻿{
+    "schemaVersion":  "2.0",
+    "lane":  "visual",
+    "status":  "PASS_WITH_LIMITATION",
+    "commands":  [
+
+                 ],
+    "evidence":  [
+                     "docs/auto-execute/results/ui-verifier.json",
+                     "docs/auto-execute/results/ui-pixel-diff.json",
+                     "docs/auto-execute/screenshots/diffs"
+                 ],
+    "blockers":  [
+
+                 ],
+    "nextActions":  [
+
+                    ],
+    "details":  "Visual lane has screenshot and diff evidence, but pixel-perfect parity is not claimed.",
+    "updatedAt":  "2026-05-14T15:34:21"
+}

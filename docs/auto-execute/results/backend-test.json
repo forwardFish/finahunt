@@ -1,0 +1,28 @@
+﻿{
+    "blockers":  [
+                     null
+                 ],
+    "commands":  [
+                     {
+                         "status":  "PASS",
+                         "command":  "python -m compileall -q agents packages graphs workflows tools skills tests",
+                         "log":  "docs\\auto-execute\\logs\\backend-python-compileall.log"
+                     },
+                     {
+                         "status":  "PASS",
+                         "command":  "python -m pytest -q",
+                         "log":  "docs\\auto-execute\\logs\\backend-pytest.log"
+                     }
+                 ],
+    "lane":  "backend-test",
+    "status":  "PASS",
+    "evidence":  [
+                     "docs\\auto-execute\\logs\\backend-python-compileall.log",
+                     "docs\\auto-execute\\logs\\backend-pytest.log"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+                        "Repair Python backend tests and rerun run-backend-test.ps1."
+                    ],
+    "updatedAt":  "2026-05-14T15:02:06"
+}

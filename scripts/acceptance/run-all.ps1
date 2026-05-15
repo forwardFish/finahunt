@@ -1,76 +1,150 @@
-param([string]$ProjectRoot = (Get-Location).Path, [ValidateSet('fast','gate','full')] [string]$Mode = 'fast')
+param(
+  [string]$ProjectRoot = (Get-Location).Path,
+  [ValidateSet("fast","gate","full")] [string]$Mode = "fast",
+  [switch]$AllowCommit,
+  [switch]$AllowPush,
+  [switch]$SkipCompare,
+  [switch]$SkipFinalGate
+)
 . "$PSScriptRoot\lib.ps1"
 $ProjectRoot = Get-ProjectRoot $ProjectRoot
 Initialize-Layout $ProjectRoot
+Initialize-MachineFiles $ProjectRoot
+Update-State $ProjectRoot "run-all" "running" "Mode=$Mode"
+Write-Host "auto-execute run-all | Mode=$Mode | ProjectRoot=$ProjectRoot"
+
+$configAllowCommit = (Get-HarnessConfigValue $ProjectRoot "safety" "allowCommit" "false") -eq "true"
+$configAllowPush = (Get-HarnessConfigValue $ProjectRoot "safety" "allowPush" "false") -eq "true"
+if ($AllowPush -and -not $AllowCommit) { throw "AllowPush requires AllowCommit." }
+if ($AllowCommit -and -not $configAllowCommit) { throw "AllowCommit requested but harness.yml safety.allowCommit is false." }
+if ($AllowPush -and -not $configAllowPush) { throw "AllowPush requested but harness.yml safety.allowPush is false." }
+
+$laneStages = @(
+  "run-secret-guard.ps1",
+  "collect-env.ps1",
+  "run-verifier-dependencies.ps1",
+  "collect-git-status.ps1",
+  "run-adapter-detect.ps1",
+  "run-requirement-extract.ps1",
+  "run-story-extract.ps1",
+  "plan-fullstack-delivery.ps1",
+  "run-requirement-section-map.ps1",
+  "run-requirement-coverage.ps1",
+  "run-requirement-verify.ps1",
+  "run-story-curate.ps1",
+  "run-story-normalize.ps1",
+  "run-story-test-generate.ps1",
+  "run-story-test-materialize.ps1",
+  "run-generated-story-tests.ps1",
+  "run-story-quality-gate.ps1",
+  "run-story-verify.ps1",
+  "run-scope-classification.ps1",
+  "run-architecture-guard.ps1",
+  "run-contract-map.ps1",
+  "run-frontend-test.ps1",
+  "run-backend-test.ps1",
+  "run-contract-verify.ps1",
+  "run-api-smoke.ps1",
+  "run-ui-capture.ps1",
+  "run-ui-compare.ps1",
+  "run-e2e-flow.ps1",
+  "run-db-e2e.ps1",
+  "summarize-errors.ps1"
+)
+$compareStages = @(
+  "run-compare-requirements.ps1",
+  "run-compare-ui.ps1",
+  "run-acceptance-compare.ps1"
+)
+$reviewStages = @(
+  "run-code-review.ps1"
+)
+$stages = @()
+$stages += $laneStages
+if (-not $SkipCompare) { $stages += $compareStages }
+$stages += $reviewStages
+
+foreach ($s in $stages) {
+  $path = Join-Path $PSScriptRoot $s
+  if (Test-Path $path) {
+    try { & powershell -ExecutionPolicy Bypass -File $path -ProjectRoot $ProjectRoot -Mode $Mode }
+    catch { Add-VerificationResult $ProjectRoot $s "HARD_FAIL" $_.Exception.Message ""; Write-Host "ERROR: $s failed" }
+  } else { Add-Blocker $ProjectRoot $s "HARD_FAIL" "Missing stage script" }
+}
+
 $p = Get-AEPaths $ProjectRoot
-Update-State $ProjectRoot 'run-all' 'running' "Mode=$Mode"
-Add-VerificationResult $ProjectRoot "run-all:${Mode}:start" 'PASS' "Started Auto Execute Acceptance First mode $Mode" ''
-Write-Host "auto-execute-acceptance-first run-all | Mode=$Mode | ProjectRoot=$ProjectRoot"
-$failures = 0
+$report = $p.FinalReport
+Ensure-Dir (Split-Path $report)
+@(
+  "# AUTO EXECUTE DELIVERY REPORT",
+  "",
+  "Generated: $(Get-Date)",
+  "",
+  "## Summary",
+  "",
+  "- Project root: $ProjectRoot",
+  "- Mode: $Mode",
+  "- Verification results: docs/auto-execute/verification-results.md",
+  "- Blockers: docs/auto-execute/blockers.md",
+  "- Machine summary: docs/auto-execute/machine-summary.json",
+  "- Evidence manifest: docs/auto-execute/evidence-manifest.json",
+  "- Lane results: docs/auto-execute/results",
+  "- Logs: docs/auto-execute/logs",
+  "- Screenshots: docs/auto-execute/screenshots",
+  "- Commit/push: not performed by default",
+  "",
+  "## Next command",
+  "",
+  '```powershell',
+  'powershell -ExecutionPolicy Bypass -File .\scripts\acceptance\select-next-feature.ps1',
+  '```'
+) | Set-Content -Encoding UTF8 $report
 
-function Run-Stage($Name, [scriptblock]$Block) {
-  Write-Host "`n---- stage: $Name ----"
-  & $Block
-  $code = $LASTEXITCODE
-  if ($null -eq $code) { $code = 0 }
-  if ($code -ne 0) { $script:failures++ }
+Add-EvidenceItem $ProjectRoot "final" $report "final delivery report"
+try {
+  & powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot "run-story-final-report.ps1") -ProjectRoot $ProjectRoot -Mode $Mode
+} catch {
+  Add-VerificationResult $ProjectRoot "run-story-final-report.ps1" "HARD_FAIL" $_.Exception.Message ""
+  Write-Host "ERROR: run-story-final-report.ps1 failed"
 }
-
-Run-Stage 'collect-env' { powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'collect-env.ps1') -ProjectRoot $ProjectRoot -Mode $Mode }
-Run-Stage 'collect-git-status' { powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'collect-git-status.ps1') -ProjectRoot $ProjectRoot -Mode $Mode }
-Run-Stage 'architecture-guard' { powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'run-architecture-guard.ps1') -ProjectRoot $ProjectRoot -Mode $Mode }
-Run-Stage 'frontend-build' { powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'run-frontend.ps1') -ProjectRoot $ProjectRoot -Mode $Mode }
-Run-Stage 'backend-tests' { powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'run-backend.ps1') -ProjectRoot $ProjectRoot -Mode $Mode }
-Run-Stage 'db-e2e' { powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'run-db-e2e.ps1') -ProjectRoot $ProjectRoot -Mode $Mode }
-Run-Stage 'full-flow-smoke' { powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'run-full-flow-smoke.ps1') -ProjectRoot $ProjectRoot -Mode $Mode -BaseUrl 'http://127.0.0.1:3021' }
-
-if ($Mode -eq 'gate' -or $Mode -eq 'full') {
-  Run-Stage 'api-smoke-wrapper' { powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'run-api-smoke.ps1') -ProjectRoot $ProjectRoot -Mode $Mode -BaseUrl 'http://127.0.0.1:3021' }
-  Run-Stage 'visual-smoke-wrapper' { powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'run-visual-smoke.ps1') -ProjectRoot $ProjectRoot -Mode $Mode -BaseUrl 'http://127.0.0.1:3021' }
+try {
+  & powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot "run-report-integrity.ps1") -ProjectRoot $ProjectRoot -Mode $Mode
+} catch {
+  Add-VerificationResult $ProjectRoot "run-report-integrity.ps1" "HARD_FAIL" $_.Exception.Message ""
+  Write-Host "ERROR: run-report-integrity.ps1 failed"
 }
-
-Run-Stage 'summarize-errors' { powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'summarize-errors.ps1') -ProjectRoot $ProjectRoot -Mode $Mode }
-
-$summaryPath = Join-Path $p.QaResults 'full-acceptance-smoke-summary.json'
-$reportStatus = if ($failures -eq 0) { 'PASS' } else { 'HARD_FAIL' }
-$report = @"
-# AUTO EXECUTE DELIVERY REPORT
-
-Generated: $(Get-Date)
-
-## Run summary
-
-- Project root: $ProjectRoot
-- Mode: $Mode
-- Status: $reportStatus
-- Failures: $failures
-- Base URL: http://127.0.0.1:3021
-
-## Evidence
-
-- Verification results: `docs/auto-execute/verification-results.md`
-- Blockers: `docs/auto-execute/blockers.md`
-- Logs: `docs/auto-execute/logs/`
-- Smoke JSON: `docs/qa/full-acceptance/test-results/`
-- Screenshots: `docs/qa/full-acceptance/screenshots/`
-- Smoke summary: $summaryPath
-
-## Classification reminders
-
-- UI editorial taste remains `MANUAL_REVIEW_REQUIRED` where noted in traceability.
-- `/low-position` and `/sprint-2` remain independent compatibility pages and are classified as `PRODUCT_DECISION_REQUIRED` against the original redirect-only Sprint 6/6B wording.
-- DB E2E is `DEFERRED` because Sprint 6/6B acceptance is local web/UI/API-surface oriented and production DB access is forbidden.
-"@
-$report | Set-Content -Encoding UTF8 $p.FinalReport
-
-if ($failures -eq 0) {
-  Add-VerificationResult $ProjectRoot "run-all:$Mode" 'PASS' 'All required stages for this mode passed or were explicitly classified' $p.FinalReport
-  Update-State $ProjectRoot 'run-all' 'complete' "Mode=$Mode PASS"
-  Write-Host "[PASS] run-all $Mode. Report: $($p.FinalReport)"
-  exit 0
+$finalVerdict = "PASS_WITH_LIMITATION"
+$exitCode = 3
+if (-not $SkipFinalGate) {
+  try {
+    & powershell -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot "run-final-gate.ps1") -ProjectRoot $ProjectRoot -Mode $Mode
+    $exitCode = $LASTEXITCODE
+  } catch {
+    Add-VerificationResult $ProjectRoot "run-final-gate.ps1" "HARD_FAIL" $_.Exception.Message ""
+    Write-Host "ERROR: run-final-gate.ps1 failed"
+    $exitCode = 1
+  }
+  try {
+    $summary = Get-Content -LiteralPath $p.MachineSummary -Raw | ConvertFrom-Json
+    $finalVerdict = Normalize-AEVerdict $summary.finalVerdict
+    $exitCode = Get-AEExitCode $finalVerdict
+  } catch {
+    $finalVerdict = "HARD_FAIL"
+    $exitCode = 1
+  }
+} else {
+  Update-MachineSummary $ProjectRoot
+  try {
+    $summary = Get-Content -LiteralPath $p.MachineSummary -Raw | ConvertFrom-Json
+    $finalVerdict = Normalize-AEVerdict $summary.finalVerdict
+    if ($finalVerdict -eq "HARD_FAIL") { $exitCode = 1 } else { $exitCode = 0 }
+  } catch {
+    $finalVerdict = "HARD_FAIL"
+    $exitCode = 1
+  }
 }
-Add-VerificationResult $ProjectRoot "run-all:$Mode" 'HARD_FAIL' "$failures stage failure(s)" $p.FinalReport
-Add-Blocker $ProjectRoot "run-all:$Mode" 'HARD_FAIL' "$failures stage failure(s)" $p.FinalReport
-Update-State $ProjectRoot 'run-all' 'failed' "Mode=$Mode HARD_FAIL"
-Write-Host "[HARD_FAIL] run-all $Mode. Report: $($p.FinalReport)"
-exit 1
+Update-State $ProjectRoot "run-all" $finalVerdict "Review docs/AUTO_EXECUTE_DELIVERY_REPORT.md and docs/auto-execute/machine-summary.json"
+Add-VerificationResult $ProjectRoot "run-all" $finalVerdict "All available stages attempted; final verdict: $finalVerdict" $report
+Write-LaneResult $ProjectRoot "run-all" $finalVerdict @() @((Get-RelativeEvidencePath $ProjectRoot $report),(Get-RelativeEvidencePath $ProjectRoot (Get-AEPaths $ProjectRoot).MachineSummary)) @() @()
+Write-Host "[$finalVerdict] run-all. Report: $report"
+exit $exitCode

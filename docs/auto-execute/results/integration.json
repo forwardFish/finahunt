@@ -1,0 +1,21 @@
+﻿{
+    "schemaVersion":  "2.0",
+    "lane":  "integration",
+    "status":  "PASS",
+    "commands":  [
+
+                 ],
+    "evidence":  [
+                     "docs/auto-execute/results/e2e-flow.json",
+                     "docs/auto-execute/results/finahunt-full-flow.json",
+                     "docs/auto-execute/FULL_FLOW_ACCEPTANCE.md"
+                 ],
+    "blockers":  [
+
+                 ],
+    "nextActions":  [
+
+                    ],
+    "details":  "Integration lane is covered by configured full-flow/E2E verifier.",
+    "updatedAt":  "2026-05-14T15:34:21"
+}

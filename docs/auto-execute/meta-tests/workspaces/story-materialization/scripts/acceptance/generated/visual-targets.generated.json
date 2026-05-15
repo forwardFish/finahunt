@@ -1,0 +1,13 @@
+﻿{
+    "visualTargets":  [
+                          {
+                              "storyId":  "STORY-UPLOAD-REPORT",
+                              "testPointId":  "TP-UPLOAD-VISUAL",
+                              "target":  "docs/UI/upload-report.png",
+                              "expected":  "visual captured"
+                          }
+                      ],
+    "uiTarget":  "docs\\auto-execute\\ui-target.json",
+    "schemaVersion":  "1.9.1",
+    "generatedAt":  "2026-05-14T11:00:02"
+}

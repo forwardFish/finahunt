@@ -1,0 +1,24 @@
+﻿{
+    "blockers":  [
+
+                 ],
+    "commands":  [
+                     {
+                         "status":  "PASS",
+                         "command":  "run-finahunt-full-flow.ps1 API checks",
+                         "log":  "docs\\auto-execute\\results\\finahunt-full-flow.json"
+                     }
+                 ],
+    "lane":  "api-smoke",
+    "status":  "PASS",
+    "evidence":  [
+                     "docs\\auto-execute\\summaries\\api-smoke.md",
+                     "docs\\auto-execute\\results\\finahunt-full-flow.json",
+                     "docs\\auto-execute\\contract-map.json"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+
+                    ],
+    "updatedAt":  "2026-05-14T15:31:13"
+}

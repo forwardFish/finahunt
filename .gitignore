@@ -3,6 +3,8 @@ __pycache__/
 *.pyc
 .venv/
 *.egg-info/
+.omx/
+workspace/
 workspace/artifacts/
 workspace/logs/
 workspace/audit/

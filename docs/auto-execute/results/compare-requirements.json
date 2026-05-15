@@ -1,0 +1,19 @@
+﻿{
+    "blockers":  [
+                     null
+                 ],
+    "commands":  [
+
+                 ],
+    "lane":  "compare-requirements",
+    "status":  "PASS_WITH_LIMITATION",
+    "evidence":  [
+                     "docs\\auto-execute\\requirement-target.json",
+                     "docs\\auto-execute\\gap-list.json"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+                        "Repair requirement gaps, then rerun comparison."
+                    ],
+    "updatedAt":  "2026-05-14T15:04:24"
+}

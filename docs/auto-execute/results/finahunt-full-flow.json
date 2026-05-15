@@ -1,0 +1,39 @@
+﻿{
+    "lane":  "e2e-flow",
+    "status":  "PASS",
+    "baseUrl":  "http://127.0.0.1:3100",
+    "checks":  [
+                   {
+                       "route":  "/",
+                       "statusCode":  200,
+                       "bytes":  24601,
+                       "pass":  true
+                   },
+                   {
+                       "route":  "/fermentation",
+                       "statusCode":  200,
+                       "bytes":  18336,
+                       "pass":  true
+                   },
+                   {
+                       "route":  "/research",
+                       "statusCode":  200,
+                       "bytes":  19136,
+                       "pass":  true
+                   },
+                   {
+                       "route":  "/workbench",
+                       "statusCode":  200,
+                       "bytes":  22372,
+                       "pass":  true
+                   },
+                   {
+                       "route":  "/api/daily-snapshot",
+                       "statusCode":  200,
+                       "bytes":  6755,
+                       "pass":  true
+                   }
+               ],
+    "serverLog":  "docs/auto-execute/logs/full-flow-next-start.log",
+    "updatedAt":  "2026-05-14T15:04:21"
+}

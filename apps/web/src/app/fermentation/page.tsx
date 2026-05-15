@@ -1,23 +1,69 @@
 import Link from "next/link";
 
-import { RefreshLatestButton } from "@/components/RefreshLatestButton";
-import { Badge, DateSwitch, EmptyState, LinkButton, MetricCard, PageHero, ScoreMeter, SectionCard } from "@/components/FinancialUI";
-import { loadDailySnapshot, resolveTargetDate } from "@/lib/dailySnapshot";
-import { buildHref, featuredEvents, formatIso, formatScore, safeText, sourceLabel, stageLabel, summarizeSnapshotState, themeName, topThemes } from "@/lib/webView";
+import { Icon, RankPanel, TopicOpportunityCard, TrendPanel } from "@/components/PrototypeUI";
+import { loadDailySnapshot, optionalTargetDate } from "@/lib/dailySnapshot";
+import { topicCards } from "@/lib/uiSeedData";
+import { buildHref, formatScore, safeText, themeName, topThemes } from "@/lib/webView";
 
 type PageProps = { searchParams?: Promise<Record<string, string | string[] | undefined>> };
-function stageSummary(themes: ReturnType<typeof loadDailySnapshot>["themes"]) { const counts = new Map<string, number>(); themes.forEach((theme) => counts.set(theme.fermentationStage || "watch-only", (counts.get(theme.fermentationStage || "watch-only") ?? 0) + 1)); return Array.from(counts.entries()).map(([key, count]) => ({ key, count, label: stageLabel(key) })).sort((a, b) => b.count - a.count); }
+
+const topicTabs = ["全部", "AI应用", "低空经济", "智能制造", "新能源", "半导体", "消费电子", "更多⌄"];
 
 export default async function FermentationPage({ searchParams }: PageProps) {
   const params = searchParams ? await searchParams : {};
-  const date = resolveTargetDate(params.date);
-  const snapshot = loadDailySnapshot(date);
-  const state = summarizeSnapshotState(snapshot.stats.runCount, snapshot.themes.length, snapshot.events.length, snapshot.sources.length);
-  const themes = topThemes(snapshot.themes, 8);
-  const stages = stageSummary(snapshot.themes);
-  const events = featuredEvents(snapshot.events, 5);
-  const latestRun = snapshot.runs[0];
-  const leadTheme = themes[0];
+  const date = optionalTargetDate(params.date);
+  const query = typeof params.q === "string" ? params.q : "";
+  const snapshot = await loadDailySnapshot(date);
+  const activeDate = snapshot.date;
+  const themes = topThemes(snapshot.themes, 10);
+  const filteredCards = query ? topicCards.filter((topic) => topic.name.includes(query) || topic.tags.some((tag) => tag.includes(query))) : topicCards;
 
-  return <main className="fi-page"><PageHero eyebrow="Topic Fermentation" title="像题材栏目页一样追踪主线热度、阶段和证据。" description="参考 topics / topic-category / topic-detail 原型，把发酵页重构成题材发现与题材详情之间的中间层：先看排名，再看阶段，最后看证据。" side={<><h2>{themeName(leadTheme)}</h2><p>{safeText(leadTheme?.coreNarrative, "当前还没有形成明确领衔题材。")}</p><div className="fi-stat-grid"><MetricCard label="页面状态" value={state.label} note={state.description} tone={state.tone === "ready" ? "green" : "orange"} /><MetricCard label="发酵主题" value={snapshot.stats.fermentingThemeCount} tone="red" /><MetricCard label="主题总量" value={snapshot.stats.themeCount} /></div><RefreshLatestButton latestRunId={latestRun?.runId ?? ""} successPath="/fermentation" /></>}><DateSwitch action="/fermentation" date={snapshot.date} /></PageHero><div className="fi-main-grid"><SectionCard title="题材发现" eyebrow="Discovery"><div className="fi-topic-grid">{themes.length ? themes.map((theme) => <article className="fi-topic-card" key={theme.key}><div className="fi-topic-head"><div className="fi-topic-title"><span className="fi-topic-icon">⌁</span><h3>{themeName(theme)}</h3></div><Badge tone="red">{stageLabel(theme.fermentationStage)}</Badge></div><p>{safeText(theme.coreNarrative, "暂无核心叙事。")}</p><div className="fi-stat-grid"><MetricCard label="发酵" value={formatScore(theme.fermentationScore)} tone="red" /><MetricCard label="热度" value={formatScore(theme.heatScore)} /><MetricCard label="持续" value={formatScore(theme.continuityScore)} tone="green" /></div><ScoreMeter value={theme.fermentationScore} /><div className="fi-tags">{theme.topEvidence.slice(0, 3).map((item) => <span className="fi-tag" key={item.title}>{safeText(item.title, "证据")}</span>)}</div></article>) : <EmptyState title="暂无题材">当前日期没有可展示的发酵题材。</EmptyState>}</div></SectionCard><aside className="fi-side"><SectionCard title="阶段分布" eyebrow="Stages"><div className="fi-stat-grid">{stages.map((stage) => <MetricCard key={stage.key} label={stage.label} value={stage.count} tone="blue" />)}</div></SectionCard><SectionCard title="最新证据" eyebrow="Evidence"><div className="fi-news-list">{events.map((event) => <article className="fi-news-item" key={event.key}><span className="fi-news-time">{formatIso(event.eventTime).slice(11,16)}</span><div><strong>{safeText(event.title, "未命名事件")}</strong><p>{sourceLabel(event.sourceId || event.sourceName)}</p></div></article>)}</div></SectionCard></aside></div><SectionCard title="主线发酵矩阵" eyebrow="Matrix" action={<Link href={buildHref("/workbench", { date: snapshot.date })}>去工作台看完整对照 ›</Link>}><div className="fi-table-wrap"><table className="fi-table"><thead><tr><th>主题</th><th>阶段</th><th>发酵分</th><th>热度</th><th>催化</th><th>持续性</th><th>事件数</th></tr></thead><tbody>{themes.map((theme) => <tr key={`matrix-${theme.key}`}><td>{themeName(theme)}</td><td>{stageLabel(theme.fermentationStage)}</td><td>{formatScore(theme.fermentationScore)}</td><td>{formatScore(theme.heatScore)}</td><td>{formatScore(theme.catalystScore)}</td><td>{formatScore(theme.continuityScore)}</td><td>{theme.relatedEventsCount}</td></tr>)}</tbody></table></div></SectionCard><section className="fi-card fi-section-head"><div><span className="fi-kicker">Action</span><h2>需要候选公司时再进入低位研究。</h2></div><LinkButton href={buildHref("/research", { date: snapshot.date })}>继续低位研究</LinkButton></section></main>;
+  return (
+    <>
+      <div className="breadcrumb">首页 / 题材</div>
+      <main className="topic-page">
+        <section className="card topic-main">
+          <div className="section-title">
+            <div>
+              <h2 className="page-title">题材发现</h2>
+              <p className="page-subtitle">聚焦产业与市场热点，洞察资金关注方向，发现具有研究价值的题材主题</p>
+            </div>
+            <Link className="page-no page-size" href={buildHref("/workbench", { date: activeDate })}>默认排序⌄</Link>
+          </div>
+          <div className="tabs topic-tabs">{topicTabs.map((tab, index) => <span key={tab} className={index === 0 ? "active" : ""}>{tab}</span>)}</div>
+          <div className="topic-list-grid">
+            {filteredCards.map((topic) => <TopicOpportunityCard key={topic.name} topic={topic} />)}
+            {themes.slice(0, 2).map((theme) => (
+              <Link className="topic-card" href={buildHref("/workbench", { q: themeName(theme), date: activeDate })} key={`db-${theme.key}`}>
+                <div className="topic-icon"><Icon name="shield" /></div>
+                <div>
+                  <h3 style={{ margin: 0, fontSize: 21 }}>{themeName(theme)}<span className="red topic-heat">热度 {formatScore(theme.heatScore)} ↑</span></h3>
+                  <p>{safeText(theme.coreNarrative, "来自数据库的题材聚合结果，仍需继续核验证据链。")}</p>
+                  <div className="topic-count">关联事件 {theme.relatedEventsCount} 条</div>
+                  <div className="tags"><span className="tag">{safeText(theme.fermentationStage, "观察")}</span><span className="tag">来源 {theme.sourceCount}</span></div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="loadmore">加载更多题材⌄</div>
+        </section>
+
+        <aside className="side">
+          <RankPanel themes={themes} date={activeDate} />
+          <section className="card new-topic-card">
+            <div className="section-title">
+              <div className="left"><Icon name="news" /><h2>今日新增题材</h2></div>
+              <Link className="more" href={buildHref("/workbench", { date: activeDate })}>更多 ›</Link>
+            </div>
+            <div className="new-topic-list">
+              <div>脑机接口 <span className="green">NEW 36.8 ↑2.4</span></div>
+              <div>机器人灵巧手 <span className="green">NEW 28.1 ↑2.1</span></div>
+              <div>AI PC <span className="green">NEW 27.3 ↑1.9</span></div>
+            </div>
+          </section>
+          <TrendPanel />
+        </aside>
+      </main>
+    </>
+  );
 }

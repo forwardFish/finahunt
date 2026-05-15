@@ -1,0 +1,920 @@
+﻿{
+    "blockers":  [
+                     {
+                         "id":  "GAP-SEC-339-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\03_架构\\Agent 体系设计文档 v1.0 正式落地版.md",
+                         "description":  "P0/P1 PRD section \u00274.1 Build Plane Agent 璇︾粏瑙勬牸琛?\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-568-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\Agent体系 - 需求追踪矩阵\u0026落地规范.md",
+                         "description":  "P0/P1 PRD section \u00273.1 Build Plane Agents\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-570-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\Agent体系 - 需求追踪矩阵\u0026落地规范.md",
+                         "description":  "P0/P1 PRD section \u00273.3 Governance Plane Agents\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-576-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\Agent体系 - 需求追踪矩阵\u0026落地规范.md",
+                         "description":  "P0/P1 PRD section \u0027涓冦€佸奖鍝嶅垎鏋愭ā鏉匡紙鏂板鍔熻兘蹇呯敤锛?\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-598-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\操作手册.md",
+                         "description":  "P0/P1 PRD section \u00271. 鎵ц `python -c \"from workflows.runtime_schedule import run_runtime_cycle; print(run_runtime_cycle())\"`銆?2. 妫€鏌?`results.source_runtime` 鏄惁鍖呭惈 `raw_documents` 鍜?`registry_snapshot`銆?3. 妫€鏌?`results.compliance_guard` 鏄惁鍖呭惈 `allowed_documents`銆乣blocked_documents` 鍜?`manual_review_required`銆?4. 妫€鏌?`results.normalize` 鏄惁鍖呭惈 `normalized_documents` 鍜?`format_validation_report`銆?5. 妫€鏌?`results.source_audit` 鏄惁鍖呭惈 `trace_report` 鍜?`runtime_audit_log`銆?\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-654-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-008_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-664-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-010_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-669-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-011_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-674-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-012_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-679-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-013_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-699-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2a_低位题材挖掘引擎\\S2A-004_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-704-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2a_低位题材挖掘引擎\\S2A-005_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-709-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2a_低位题材挖掘引擎\\S2A-006_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-735-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_3_关联关系与用户排序\\S3-003_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-740-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_3_关联关系与用户排序\\S3-004_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-002",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00270. 浣跨敤绾﹀畾\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-021",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00276.1 鏈€灏忛棴鐜?\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-022",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u0027鐢ㄦ埛璁剧疆瑙傚療姹?/ 鍏虫敞棰樻潗 / 鍏虫敞鏍囩殑銆?2. 绯荤粺鎸夊悎瑙勬簮娉ㄥ唽琛ㄦ姄鍙栧叕寮€璧勮銆?3. 绯荤粺瀹屾垚娓呮礂銆佸幓閲嶃€佹爣鍑嗗寲鍜屾潵婧愭爣璁般€?4. 绯荤粺浠庤祫璁祦涓娊鍙栦簨浠讹紝骞跺悎骞跺婧愰噸澶嶄簨浠躲€?5. 绯荤粺璇嗗埆鍊欓€夊偓鍖栧彞銆佸偓鍖栫被鍨嬨€佸己搴﹀拰鏃舵晥銆?6. 绯荤粺灏嗕簨浠惰仛鍚堜负娼滃湪棰樻潗锛屽苟鏄犲皠浜т笟閾俱€佹澘鍧楀拰鐩稿叧涓偂銆?7. 绯荤粺鍩轰簬鐢ㄦ埛瑙傚療姹犲拰瑙勫垯璁＄畻鐩稿叧鎬с€侀噸瑕佹€у拰鐮旂┒浼樺厛绾с€?8. 绯荤粺鐢熸垚浠婃棩閲嶇偣銆侀鏉愬彂閰点€佷綆浣嶇爺绌躲€佸鐩樻姤鍛娿€?9. 鐢ㄦ埛璁板綍鍒ゆ柇銆佹敹钘忎簨浠躲€佸綊妗ｅ鐩樸€?10. 绯荤粺灏嗗巻鍙插垽鏂笌鍚庣画婕斿寲缁戝畾锛屽舰鎴愪釜浜鸿鐭ヨ祫浜с€?\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-023",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00276.2 鎴愬姛鐘舵€?\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-024",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00277. MVP 鑼冨洿\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-025",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00277.1 MVP 涓€鍙ヨ瘽\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-026",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00277.2 P0 蹇呭仛\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-027",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u0027鍚堣璧勮婧愭敞鍐岃〃涓庢帴鍏ヨ鑼冦€?2. 鍘熷璧勮銆佹爣鍑嗗寲璧勮銆佷簨浠跺璞°€佽瘉鎹墖娈电殑缁熶竴鏁版嵁濂戠害銆?3. 璧勮娓呮礂銆佸幓閲嶃€佹爣鍑嗗寲銆佹棤鏁堝唴瀹硅繃婊ゃ€?4. 浜嬩欢鎶藉彇銆佷簨浠跺綊涓€銆佷簨浠剁被鍨嬭瘑鍒€?5. 鍊欓€夊偓鍖栧彞鎶藉彇銆?6. 鍌寲绫诲瀷璇嗗埆銆?7. 鍌寲寮哄害涓庢椂鏁堟€у垽鏂€?8. 娼滃湪棰樻潗鑱氬悎銆?9. 棰樻潗鍒版澘鍧椼€佷骇涓氶摼銆佷釜鑲＄殑瀹㈣鏄犲皠銆?10. 涓偂 / 鍏徃鍖归厤渚濇嵁涓庨闄╂彁绀恒€?11. 鐢ㄦ埛瑙傚療姹犵浉鍏虫€ф帓搴忋€?12. 浠婃棩閲嶇偣浜嬩欢銆佽瀵熸睜浜嬩欢銆佹棩缁堝鐩樿緭鍑恒€?13. 浣庝綅棰樻潗鐮旂┒鍗″熀纭€鐗堛€?14. 缁撴瀯鍖栫粨鏋滀粨搴撱€?15. 杩愯 trace銆乬ate registry銆佷汉宸ユ牎姝ｈ褰曞拰 final gate銆?16. 鍏ㄩ摼璺悎瑙勬不鐞嗕笌杈撳嚭妯℃澘閿佸畾銆?\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-028",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00277.3 P1 搴斿仛\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-036",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00278.2 P0 鏁版嵁婧愮被鍨?\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-037",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00278.3 P1 / P2 鏁版嵁婧愮被鍨?\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-043",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00279.4 Catalyst\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-044",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00279.5 Theme\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-059",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u002712. Agent 浣撶郴\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-060",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u002712.1 浜у搧杩愯 Agent\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-CANDIDATES-NOT-NORMALIZED",
+                         "type":  "requirement",
+                         "severity":  "HARD_FAIL",
+                         "source":  "docs\\auto-execute\\requirement-candidates.json",
+                         "description":  "Requirement candidates exist but requirement-target.json has no normalized requirements.",
+                         "repairTarget":  "Normalize requirement-candidates.json into requirement-target.json before implementation or final PASS.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-339-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\03_架构\\Agent 体系设计文档 v1.0 正式落地版.md",
+                         "description":  "P0/P1 PRD section SEC-339 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u00274.1 Build Plane Agent 璇︾粏瑙勬牸琛?\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-568-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\Agent体系 - 需求追踪矩阵\u0026落地规范.md",
+                         "description":  "P0/P1 PRD section SEC-568 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u00273.1 Build Plane Agents\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-570-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\Agent体系 - 需求追踪矩阵\u0026落地规范.md",
+                         "description":  "P0/P1 PRD section SEC-570 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u00273.3 Governance Plane Agents\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-576-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\Agent体系 - 需求追踪矩阵\u0026落地规范.md",
+                         "description":  "P0/P1 PRD section SEC-576 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027涓冦€佸奖鍝嶅垎鏋愭ā鏉匡紙鏂板鍔熻兘蹇呯敤锛?\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-598-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\操作手册.md",
+                         "description":  "P0/P1 PRD section SEC-598 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u00271. 鎵ц `python -c \"from workflows.runtime_schedule import run_runtime_cycle; print(run_runtime_cycle())\"`銆?2. 妫€鏌?`results.source_runtime` 鏄惁鍖呭惈 `raw_documents` 鍜?`registry_snapshot`銆?3. 妫€鏌?`results.compliance_guard` 鏄惁鍖呭惈 `allowed_documents`銆乣blocked_documents` 鍜?`manual_review_required`銆?4. 妫€鏌?`results.normalize` 鏄惁鍖呭惈 `normalized_documents` 鍜?`format_validation_report`銆?5. 妫€鏌?`results.source_audit` 鏄惁鍖呭惈 `trace_report` 鍜?`runtime_audit_log`銆?\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-654-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-008_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-654 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-664-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-010_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-664 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-669-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-011_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-669 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-674-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-012_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-674 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-679-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-013_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-679 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-699-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2a_低位题材挖掘引擎\\S2A-004_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-699 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-704-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2a_低位题材挖掘引擎\\S2A-005_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-704 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-709-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2a_低位题材挖掘引擎\\S2A-006_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-709 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-735-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_3_关联关系与用户排序\\S3-003_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-735 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-740-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_3_关联关系与用户排序\\S3-004_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-740 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-CONTRACT-NOT-RECONCILED",
+                         "type":  "contract",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\auto-execute\\contract-map.json",
+                         "description":  "Frontend API/data calls were discovered but no reconciled contracts are recorded.",
+                         "repairTarget":  "Record frontend caller, backend endpoint, method, request body, response shape, auth/session, error/loading/empty states, and evidence in contract-map.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-CONTRACT-API-MISSING",
+                         "type":  "contract",
+                         "severity":  "HARD_FAIL",
+                         "source":  "docs\\auto-execute\\contract-map.json",
+                         "description":  "Frontend calls exist but no backend API definitions were auto-detected and no contract evidence was provided.",
+                         "repairTarget":  "Implement or map the backend API endpoints expected by the frontend.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-UI-001",
+                         "type":  "ui",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\auto-execute\\ui-target.json",
+                         "description":  "UI references exist but ui-target.json has no screens.",
+                         "repairTarget":  "Map UI references to routes/screens in ui-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-339-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\03_架构\\Agent 体系设计文档 v1.0 正式落地版.md",
+                         "description":  "P0/P1 PRD section \u00274.1 Build Plane Agent 璇︾粏瑙勬牸琛?\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-568-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\Agent体系 - 需求追踪矩阵\u0026落地规范.md",
+                         "description":  "P0/P1 PRD section \u00273.1 Build Plane Agents\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-570-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\Agent体系 - 需求追踪矩阵\u0026落地规范.md",
+                         "description":  "P0/P1 PRD section \u00273.3 Governance Plane Agents\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-576-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\Agent体系 - 需求追踪矩阵\u0026落地规范.md",
+                         "description":  "P0/P1 PRD section \u0027涓冦€佸奖鍝嶅垎鏋愭ā鏉匡紙鏂板鍔熻兘蹇呯敤锛?\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-598-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\操作手册.md",
+                         "description":  "P0/P1 PRD section \u00271. 鎵ц `python -c \"from workflows.runtime_schedule import run_runtime_cycle; print(run_runtime_cycle())\"`銆?2. 妫€鏌?`results.source_runtime` 鏄惁鍖呭惈 `raw_documents` 鍜?`registry_snapshot`銆?3. 妫€鏌?`results.compliance_guard` 鏄惁鍖呭惈 `allowed_documents`銆乣blocked_documents` 鍜?`manual_review_required`銆?4. 妫€鏌?`results.normalize` 鏄惁鍖呭惈 `normalized_documents` 鍜?`format_validation_report`銆?5. 妫€鏌?`results.source_audit` 鏄惁鍖呭惈 `trace_report` 鍜?`runtime_audit_log`銆?\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-654-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-008_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-664-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-010_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-669-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-011_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-674-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-012_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-679-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-013_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-699-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2a_低位题材挖掘引擎\\S2A-004_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-704-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2a_低位题材挖掘引擎\\S2A-005_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-709-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2a_低位题材挖掘引擎\\S2A-006_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-735-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_3_关联关系与用户排序\\S3-003_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-740-COVERAGE",
+                         "type":  "requirement-section",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_3_关联关系与用户排序\\S3-004_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section \u0027Agent Chain\u0027 has no requirement/story coverage.",
+                         "repairTarget":  "Map this section into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-002",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00270. 浣跨敤绾﹀畾\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-021",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00276.1 鏈€灏忛棴鐜?\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-022",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u0027鐢ㄦ埛璁剧疆瑙傚療姹?/ 鍏虫敞棰樻潗 / 鍏虫敞鏍囩殑銆?2. 绯荤粺鎸夊悎瑙勬簮娉ㄥ唽琛ㄦ姄鍙栧叕寮€璧勮銆?3. 绯荤粺瀹屾垚娓呮礂銆佸幓閲嶃€佹爣鍑嗗寲鍜屾潵婧愭爣璁般€?4. 绯荤粺浠庤祫璁祦涓娊鍙栦簨浠讹紝骞跺悎骞跺婧愰噸澶嶄簨浠躲€?5. 绯荤粺璇嗗埆鍊欓€夊偓鍖栧彞銆佸偓鍖栫被鍨嬨€佸己搴﹀拰鏃舵晥銆?6. 绯荤粺灏嗕簨浠惰仛鍚堜负娼滃湪棰樻潗锛屽苟鏄犲皠浜т笟閾俱€佹澘鍧楀拰鐩稿叧涓偂銆?7. 绯荤粺鍩轰簬鐢ㄦ埛瑙傚療姹犲拰瑙勫垯璁＄畻鐩稿叧鎬с€侀噸瑕佹€у拰鐮旂┒浼樺厛绾с€?8. 绯荤粺鐢熸垚浠婃棩閲嶇偣銆侀鏉愬彂閰点€佷綆浣嶇爺绌躲€佸鐩樻姤鍛娿€?9. 鐢ㄦ埛璁板綍鍒ゆ柇銆佹敹钘忎簨浠躲€佸綊妗ｅ鐩樸€?10. 绯荤粺灏嗗巻鍙插垽鏂笌鍚庣画婕斿寲缁戝畾锛屽舰鎴愪釜浜鸿鐭ヨ祫浜с€?\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-023",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00276.2 鎴愬姛鐘舵€?\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-024",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00277. MVP 鑼冨洿\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-025",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00277.1 MVP 涓€鍙ヨ瘽\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-026",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00277.2 P0 蹇呭仛\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-027",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u0027鍚堣璧勮婧愭敞鍐岃〃涓庢帴鍏ヨ鑼冦€?2. 鍘熷璧勮銆佹爣鍑嗗寲璧勮銆佷簨浠跺璞°€佽瘉鎹墖娈电殑缁熶竴鏁版嵁濂戠害銆?3. 璧勮娓呮礂銆佸幓閲嶃€佹爣鍑嗗寲銆佹棤鏁堝唴瀹硅繃婊ゃ€?4. 浜嬩欢鎶藉彇銆佷簨浠跺綊涓€銆佷簨浠剁被鍨嬭瘑鍒€?5. 鍊欓€夊偓鍖栧彞鎶藉彇銆?6. 鍌寲绫诲瀷璇嗗埆銆?7. 鍌寲寮哄害涓庢椂鏁堟€у垽鏂€?8. 娼滃湪棰樻潗鑱氬悎銆?9. 棰樻潗鍒版澘鍧椼€佷骇涓氶摼銆佷釜鑲＄殑瀹㈣鏄犲皠銆?10. 涓偂 / 鍏徃鍖归厤渚濇嵁涓庨闄╂彁绀恒€?11. 鐢ㄦ埛瑙傚療姹犵浉鍏虫€ф帓搴忋€?12. 浠婃棩閲嶇偣浜嬩欢銆佽瀵熸睜浜嬩欢銆佹棩缁堝鐩樿緭鍑恒€?13. 浣庝綅棰樻潗鐮旂┒鍗″熀纭€鐗堛€?14. 缁撴瀯鍖栫粨鏋滀粨搴撱€?15. 杩愯 trace銆乬ate registry銆佷汉宸ユ牎姝ｈ褰曞拰 final gate銆?16. 鍏ㄩ摼璺悎瑙勬不鐞嗕笌杈撳嚭妯℃澘閿佸畾銆?\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-028",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00277.3 P1 搴斿仛\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-036",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00278.2 P0 鏁版嵁婧愮被鍨?\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-037",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00278.3 P1 / P2 鏁版嵁婧愮被鍨?\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-043",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00279.4 Catalyst\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-044",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u00279.5 Theme\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-059",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u002712. Agent 浣撶郴\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-COVERAGE-060",
+                         "type":  "requirement-coverage",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\FINAL_PRODUCT_SPEC.md",
+                         "description":  "PRD section \u002712.1 浜у搧杩愯 Agent\u0027 in docs\\FINAL_PRODUCT_SPEC.md is not mapped into requirement-target.json.",
+                         "repairTarget":  "Add a normalized requirement for this section to requirement-target.json, then map implementation and evidence.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-CANDIDATES-NOT-NORMALIZED",
+                         "type":  "requirement",
+                         "severity":  "HARD_FAIL",
+                         "source":  "docs\\auto-execute\\requirement-candidates.json",
+                         "description":  "Requirement candidates exist but requirement-target.json has no normalized requirements.",
+                         "repairTarget":  "Normalize requirement-candidates.json into requirement-target.json before implementation or final PASS.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-339-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\03_架构\\Agent 体系设计文档 v1.0 正式落地版.md",
+                         "description":  "P0/P1 PRD section SEC-339 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u00274.1 Build Plane Agent 璇︾粏瑙勬牸琛?\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-568-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\Agent体系 - 需求追踪矩阵\u0026落地规范.md",
+                         "description":  "P0/P1 PRD section SEC-568 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u00273.1 Build Plane Agents\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-570-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\Agent体系 - 需求追踪矩阵\u0026落地规范.md",
+                         "description":  "P0/P1 PRD section SEC-570 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u00273.3 Governance Plane Agents\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-576-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\Agent体系 - 需求追踪矩阵\u0026落地规范.md",
+                         "description":  "P0/P1 PRD section SEC-576 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027涓冦€佸奖鍝嶅垎鏋愭ā鏉匡紙鏂板鍔熻兘蹇呯敤锛?\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-598-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\04_规范\\操作手册.md",
+                         "description":  "P0/P1 PRD section SEC-598 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u00271. 鎵ц `python -c \"from workflows.runtime_schedule import run_runtime_cycle; print(run_runtime_cycle())\"`銆?2. 妫€鏌?`results.source_runtime` 鏄惁鍖呭惈 `raw_documents` 鍜?`registry_snapshot`銆?3. 妫€鏌?`results.compliance_guard` 鏄惁鍖呭惈 `allowed_documents`銆乣blocked_documents` 鍜?`manual_review_required`銆?4. 妫€鏌?`results.normalize` 鏄惁鍖呭惈 `normalized_documents` 鍜?`format_validation_report`銆?5. 妫€鏌?`results.source_audit` 鏄惁鍖呭惈 `trace_report` 鍜?`runtime_audit_log`銆?\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-654-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-008_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-654 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-664-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-010_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-664 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-669-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-011_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-669 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-674-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-012_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-674 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-679-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2_发酵题材引擎\\S2-013_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-679 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-699-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2a_低位题材挖掘引擎\\S2A-004_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-699 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-704-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2a_低位题材挖掘引擎\\S2A-005_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-704 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-709-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_2a_低位题材挖掘引擎\\S2A-006_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-709 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-735-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_3_关联关系与用户排序\\S3-003_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-735 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-SEC-740-REQ-STORY-COVERAGE",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\_archive_20260513\\05_交付\\sprint_3_关联关系与用户排序\\S3-004_story_delivery_report.md",
+                         "description":  "P0/P1 PRD section SEC-740 has no requirement/story coverage.",
+                         "repairTarget":  "Map section \u0027Agent Chain\u0027 into requirement-target.json and story-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-UI-001",
+                         "type":  "ui",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\auto-execute\\ui-target.json",
+                         "description":  "UI references exist but ui-target.json has no screens.",
+                         "repairTarget":  "Map UI references to routes/screens in ui-target.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-CONTRACT-NOT-RECONCILED",
+                         "type":  "contract",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\auto-execute\\contract-map.json",
+                         "description":  "Frontend API/data calls were discovered but no reconciled contracts are recorded.",
+                         "repairTarget":  "Record frontend caller, backend endpoint, method, request body, response shape, auth/session, error/loading/empty states, and evidence in contract-map.json.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-CONTRACT-API-MISSING",
+                         "type":  "contract",
+                         "severity":  "HARD_FAIL",
+                         "source":  "docs\\auto-execute\\contract-map.json",
+                         "description":  "Frontend calls exist but no backend API definitions were auto-detected and no contract evidence was provided.",
+                         "repairTarget":  "Implement or map the backend API endpoints expected by the frontend.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-REQ-001",
+                         "type":  "requirement",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\auto-execute\\requirement-candidates.json",
+                         "description":  "No normalized requirements are listed in requirement-target.json",
+                         "repairTarget":  "Normalize docs/auto-execute/requirement-candidates.json into requirement-target.json with P0/P1/P2 acceptance criteria, surfaces, and evidence expectations.",
+                         "status":  "OPEN"
+                     },
+                     {
+                         "id":  "GAP-UI-001",
+                         "type":  "ui",
+                         "severity":  "IN_SCOPE_GAP",
+                         "source":  "docs\\auto-execute\\ui-target.json",
+                         "description":  "UI references exist but ui-target.json has no screens.",
+                         "repairTarget":  "Map UI references to routes/screens in ui-target.json.",
+                         "status":  "OPEN"
+                     }
+                 ],
+    "commands":  [
+
+                 ],
+    "lane":  "gap-repair",
+    "status":  "IN_SCOPE_GAP",
+    "evidence":  [
+                     "docs\\auto-execute\\08-repair-log.md",
+                     "docs\\auto-execute\\repair-plan.md",
+                     "docs\\auto-execute\\next-agent-action.md",
+                     "docs\\auto-execute\\gap-list.json"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+                        "Agent must read next-agent-action.md, edit implementation/evidence for the listed gaps, then rerun convergence."
+                    ],
+    "updatedAt":  "2026-05-14T13:43:18"
+}

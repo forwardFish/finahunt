@@ -1,0 +1,37 @@
+﻿{
+    "blockers":  [
+
+                 ],
+    "commands":  [
+                     {
+                         "status":  "PASS",
+                         "command":  "powershell -ExecutionPolicy Bypass -File .\\\\scripts\\\\acceptance\\\\run-finahunt-full-flow.ps1 -ProjectRoot \"D:\\\\lyh\\\\agent\\\\agent-frame\\\\finahunt\" -Port 3100",
+                         "log":  "docs/auto-execute/logs/e2e-flow.log",
+                         "failureClass":  "none"
+                     }
+                 ],
+    "lane":  "e2e-flow",
+    "status":  "PASS",
+    "evidence":  [
+                     "docs\\auto-execute\\FULL_FLOW_ACCEPTANCE.md",
+                     "docs/auto-execute/logs",
+                     "docs/auto-execute/results/generated-story-tests.json"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+                        "Implement or configure a full-flow/E2E verifier for P0/P1 requirements."
+                    ],
+    "updatedAt":  "2026-05-14T15:04:22",
+    "failureClass":  "none",
+    "e2eEnvironment":  {
+                           "playwrightPackageAvailable":  false,
+                           "npxAvailable":  true,
+                           "browserAvailable":  false,
+                           "baseUrlConfigured":  true,
+                           "serverReachable":  true
+                       },
+    "e2eClassification":  "PASS",
+    "diagnosis":  "No E2E/full-flow failure detected.",
+    "evidenceKind":  "configured-command",
+    "p0p1E2EStoryCount":  0
+}

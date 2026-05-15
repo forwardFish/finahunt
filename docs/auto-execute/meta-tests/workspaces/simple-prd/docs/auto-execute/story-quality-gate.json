@@ -1,0 +1,9 @@
+﻿{
+    "generatedAt":  "2026-05-14T10:59:52",
+    "status":  "PENDING",
+    "schemaVersion":  "1.9.1",
+    "failedStories":  [
+
+                      ],
+    "lane":  "story-quality-gate"
+}

@@ -1,0 +1,12 @@
+﻿{
+    "generatedAt":  "2026-05-14T15:33:08",
+    "lane":  "story-quality-gate",
+    "failedStories":  [
+
+                      ],
+    "warnings":  [
+
+                 ],
+    "schemaVersion":  "2.0",
+    "status":  "PASS"
+}

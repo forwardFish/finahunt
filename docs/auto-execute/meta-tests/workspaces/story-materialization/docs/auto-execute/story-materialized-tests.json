@@ -1,0 +1,55 @@
+﻿{
+    "sourceMaps":  {
+                       "uiTarget":  "docs\\auto-execute\\ui-target.json",
+                       "contractMap":  "docs\\auto-execute\\contract-map.json",
+                       "storyTarget":  "docs\\auto-execute\\story-target.json",
+                       "storyTestMatrix":  "docs\\auto-execute\\story-test-matrix.json"
+                   },
+    "generatedAt":  "2026-05-14T11:00:02",
+    "stories":  [
+                    {
+                        "storyId":  "STORY-UPLOAD-REPORT",
+                        "priority":  "P0",
+                        "testPoints":  [
+                                           {
+                                               "testPointId":  "TP-UPLOAD-ROUTE",
+                                               "type":  "route",
+                                               "target":  "/dashboard/upload",
+                                               "materializationStatus":  "GENERATED",
+                                               "generatedTest":  "scripts\\acceptance\\generated\\route-smoke.generated.mjs",
+                                               "command":  "node scripts/acceptance/generated/route-smoke.generated.mjs --project-root .",
+                                               "evidenceOutput":  "docs/auto-execute/results/route-smoke.generated.json",
+                                               "reason":  ""
+                                           },
+                                           {
+                                               "testPointId":  "TP-UPLOAD-API",
+                                               "type":  "api",
+                                               "target":  "POST /api/uploads",
+                                               "materializationStatus":  "GENERATED",
+                                               "generatedTest":  "scripts\\acceptance\\generated\\api-smoke.generated.mjs",
+                                               "command":  "node scripts/acceptance/generated/api-smoke.generated.mjs --project-root .",
+                                               "evidenceOutput":  "docs/auto-execute/results/api-smoke.generated.json",
+                                               "reason":  ""
+                                           },
+                                           {
+                                               "testPointId":  "TP-UPLOAD-VISUAL",
+                                               "type":  "visual",
+                                               "target":  "docs/UI/upload-report.png",
+                                               "materializationStatus":  "BOUND_TO_UI_VERIFIER",
+                                               "generatedTest":  "scripts/acceptance/run-ui-capture.ps1 + scripts/acceptance/run-ui-compare.ps1",
+                                               "command":  "powershell -ExecutionPolicy Bypass -File scripts/acceptance/run-ui-capture.ps1; powershell -ExecutionPolicy Bypass -File scripts/acceptance/run-ui-compare.ps1",
+                                               "evidenceOutput":  "docs/auto-execute/results/ui-verifier.json",
+                                               "reason":  ""
+                                           }
+                                       ]
+                    }
+                ],
+    "schemaVersion":  "1.9.1",
+    "status":  "PASS_WITH_LIMITATION",
+    "generated":  {
+                      "visualTargets":  "scripts\\acceptance\\generated\\visual-targets.generated.json",
+                      "routeSmoke":  "scripts\\acceptance\\generated\\route-smoke.generated.mjs",
+                      "apiSmoke":  "scripts\\acceptance\\generated\\api-smoke.generated.mjs",
+                      "e2eFlow":  "scripts\\acceptance\\generated\\e2e-flow.generated.spec.ts"
+                  }
+}

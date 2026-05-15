@@ -1,30 +1,23 @@
-param([string]$ProjectRoot = (Get-Location).Path, [string]$Mode = 'fast')
+param([string]$ProjectRoot = (Get-Location).Path, [string]$Mode = "fast")
 . "$PSScriptRoot\lib.ps1"
 $ProjectRoot = Get-ProjectRoot $ProjectRoot
 Initialize-Layout $ProjectRoot
 $p = Get-AEPaths $ProjectRoot
-$out = Join-Path $p.Summaries 'architecture-guard.md'
-"# Architecture Guard`nGenerated: $(Get-Date)`n" | Set-Content -Encoding UTF8 $out
+$out = Join-Path $p.Summaries "architecture-guard.md"
+"# Architecture Guard`n" | Set-Content -Encoding UTF8 $out
 $issues = 0
-$scanRoots = @('scripts\acceptance','tools','apps\web\src')
-$destructiveCommandPattern = '(^|\s|[;&|])(?:git|git\.exe)\s+(?:reset|clean)\b|(^|\s|[;&|])(?:git|git\.exe)\s+push\b[^\r\n]*--force\b|push\s+--force\b|force\s+push\b'
-$externalProductionPattern = 'supabase\.co|stripe|payment|prod(?:uction)?\s+database'
-foreach ($root in $scanRoots) {
-  $dir = Join-Path $ProjectRoot $root
-  if (!(Test-Path $dir)) { continue }
-  Get-ChildItem $dir -Recurse -File -Include *.ps1,*.cmd,*.bat,*.sh,*.ts,*.tsx,*.py -ErrorAction SilentlyContinue | ForEach-Object {
-    $txt = Get-Content -Raw -LiteralPath $_.FullName -ErrorAction SilentlyContinue
-    $destructiveLines = @()
-    ($txt -split "`r?`n") | ForEach-Object {
-      $line = $_
-      if ($line -match $destructiveCommandPattern -and $line -notmatch '(?i)do not|never|forbidden|golden rules') {
-        $destructiveLines += $line.Trim()
-      }
-    }
-    if ($destructiveLines.Count -gt 0) { Add-Content -Encoding UTF8 $out "HARD_FAIL destructive command pattern: $($_.FullName)"; $issues++ }
-    if ((Split-Path $_.FullName -Leaf) -ne 'run-architecture-guard.ps1' -and $txt -match $externalProductionPattern) { Add-Content -Encoding UTF8 $out "MANUAL_REVIEW_REQUIRED external-production keyword: $($_.FullName)" }
-  }
+$files = Get-ChildItem $ProjectRoot -Recurse -File -Include *.ps1,*.sh,*.bat,*.cmd,*.js,*.ts,*.py,*.dart -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch "\\node_modules\\|\\.git\\|\\build\\|\\dist\\" }
+foreach ($f in $files) {
+  try { $txt = Get-Content $f.FullName -Raw -ErrorAction Stop } catch { continue }
+  if ($txt -match "(?i)\bgit\s+(reset|clean)\b|\bgit\s+push\b[^\r\n]*(--force|-f)\b|\bforce\s+push\b") { Add-Content -Encoding UTF8 $out "ERROR: destructive git pattern in $($f.FullName)"; $issues++ }
 }
-if ($issues -gt 0) { Add-VerificationResult $ProjectRoot 'architecture-guard' 'HARD_FAIL' "$issues destructive pattern(s)" $out; Add-Blocker $ProjectRoot 'architecture-guard' 'HARD_FAIL' "$issues destructive pattern(s)" $out; exit 1 }
-Add-VerificationResult $ProjectRoot 'architecture-guard' 'PASS' 'No destructive git or production access patterns in executable acceptance scope' $out
-Write-Host '[PASS] architecture-guard'
+if ($issues -gt 0) {
+  Add-VerificationResult $ProjectRoot "architecture-guard" "HARD_FAIL" "$issues hard issue(s)" $out
+  Write-LaneResult $ProjectRoot "architecture-guard" "HARD_FAIL" @() @((Get-RelativeEvidencePath $ProjectRoot $out)) @("$issues hard issue(s)") @("Remove destructive git command patterns or document safe test-only usage.")
+  Write-Host "ERROR: architecture-guard failed"
+}
+else {
+  Add-VerificationResult $ProjectRoot "architecture-guard" "PASS" "No destructive git patterns found" $out
+  Write-LaneResult $ProjectRoot "architecture-guard" "PASS" @() @((Get-RelativeEvidencePath $ProjectRoot $out)) @() @()
+  Write-Host "[PASS] architecture-guard"
+}

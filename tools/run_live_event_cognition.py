@@ -15,7 +15,7 @@ from workflows.runtime_schedule import run_live_event_cognition_cycle, run_runti
 
 WATCHLIST = {
     "watchlist_symbols": [],
-    "watchlist_themes": ["????", "???", "??", "????"],
+    "watchlist_themes": ["人工智能", "机器人", "算力", "低空经济"],
 }
 
 

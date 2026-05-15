@@ -1,0 +1,33 @@
+﻿{
+    "nextActions":  [
+                        "Use this comparison round as the next repair input, update implementation/evidence, then run another comparison round."
+                    ],
+    "round":  4,
+    "gaps":  [
+                 {
+                     "detail":  "Hard pattern found: - \\[ \\]",
+                     "path":  "docs\\auto-execute\\17-final-acceptance-checklist.md",
+                     "severity":  "IN_SCOPE_GAP",
+                     "kind":  "finalChecklist"
+                 }
+             ],
+    "compared":  [
+                     "docs\\auto-execute\\02-requirement-traceability-matrix.md",
+                     "docs\\auto-execute\\03-story-map.md",
+                     "docs\\auto-execute\\04-story-test-matrix.md",
+                     "docs\\auto-execute\\04-visual-acceptance-checklist.md",
+                     "docs\\auto-execute\\03-surface-map.md",
+                     "docs\\auto-execute\\04-contract-map.md",
+                     "docs\\auto-execute\\14-frontend-implementation-plan.md",
+                     "docs\\auto-execute\\15-backend-implementation-plan.md",
+                     "docs\\auto-execute\\16-integrated-verification-plan.md",
+                     "docs\\auto-execute\\17-final-acceptance-checklist.md"
+                 ],
+    "generatedAt":  "2026-05-14T13:57:17",
+    "limitations":  [
+
+                    ],
+    "status":  "HARD_FAIL",
+    "schemaVersion":  "2.0",
+    "lane":  "acceptance-compare"
+}

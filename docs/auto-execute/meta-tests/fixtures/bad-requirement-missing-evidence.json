@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.8",
+  "requirements": [
+    {
+      "id": "REQ-BAD-EVIDENCE",
+      "priority": "P0",
+      "description": "Must have evidence before PASS.",
+      "acceptance": ["Evidence exists"],
+      "surfaces": ["/dashboard"],
+      "tests": ["route"],
+      "status": "PASS",
+      "normalized": true,
+      "evidence": []
+    }
+  ]
+}

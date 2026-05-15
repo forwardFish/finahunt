@@ -1,0 +1,19 @@
+﻿{
+    "blockers":  [
+
+                 ],
+    "commands":  [
+
+                 ],
+    "lane":  "contract-verifier",
+    "status":  "PASS",
+    "evidence":  [
+                     "docs\\auto-execute\\contract-map.json",
+                     "docs\\auto-execute\\gap-list.json"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+                        "Repair contract gaps and rerun run-contract-verify.ps1."
+                    ],
+    "updatedAt":  "2026-05-14T15:31:10"
+}

@@ -1,0 +1,19 @@
+﻿{
+    "blockers":  [
+                     null
+                 ],
+    "commands":  [
+
+                 ],
+    "lane":  "contract-map",
+    "status":  "PASS",
+    "evidence":  [
+                     "docs\\auto-execute\\contract-map.json",
+                     "docs\\auto-execute\\04-contract-map.md"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+                        "Complete docs/auto-execute/contract-map.json or 04-contract-map.md, then run run-contract-verify.ps1."
+                    ],
+    "updatedAt":  "2026-05-14T15:31:07"
+}

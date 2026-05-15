@@ -1,0 +1,25 @@
+﻿{
+    "schemaVersion":  "1.9.1",
+    "round":  1,
+    "gaps":  [
+                 {
+                     "id":  "GAP-BAD-UI-REFERENCE-MISSING",
+                     "type":  "ui",
+                     "severity":  "HARD_FAIL",
+                     "source":  "docs/UI/reference.png",
+                     "description":  "UI target BAD-UI references a missing UI artifact: docs/UI/reference.png.",
+                     "repairTarget":  "Fix the reference path or restore the UI reference artifact.",
+                     "status":  "OPEN"
+                 },
+                 {
+                     "id":  "GAP-BAD-UI-VISUAL-EVIDENCE",
+                     "type":  "ui",
+                     "severity":  "HARD_FAIL",
+                     "source":  "docs/UI/reference.png",
+                     "description":  "UI target BAD-UI is PASS without an actual screenshot or visual evidence path.",
+                     "repairTarget":  "Attach an actual screenshot path. Without it, use MANUAL_REVIEW_REQUIRED.",
+                     "status":  "OPEN"
+                 }
+             ],
+    "generatedAt":  "2026-05-14T11:00:10"
+}

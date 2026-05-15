@@ -4,7 +4,7 @@ import { promisify } from "node:util";
 
 import { NextResponse } from "next/server";
 
-import { latestWorkbenchDate } from "@/lib/lowPositionWorkbench";
+import { loadLowPositionWorkbench, optionalWorkbenchDate } from "@/lib/lowPositionWorkbench";
 
 const execFileAsync = promisify(execFile);
 const PYTHON_BIN = process.env.PYTHON_BIN || "python";
@@ -14,6 +14,12 @@ const RUN_ARGS = process.env.FINAHUNT_ACCEPTANCE_SMOKE === "1" ? [RUN_SCRIPT, "-
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+
+export async function GET(request: Request): Promise<NextResponse> {
+  const { searchParams } = new URL(request.url);
+  const date = optionalWorkbenchDate(searchParams.get("date") ?? undefined);
+  return NextResponse.json(await loadLowPositionWorkbench(date));
+}
 
 export async function POST(): Promise<NextResponse> {
   try {
@@ -26,7 +32,7 @@ export async function POST(): Promise<NextResponse> {
     return NextResponse.json({
       ok: true,
       ...payload,
-      latestDate: latestWorkbenchDate(),
+      latestDate: typeof payload.latestDate === "string" ? payload.latestDate : undefined,
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : "run_low_position_failed";

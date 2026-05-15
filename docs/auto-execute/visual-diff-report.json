@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "2.0",
+  "lane": "ui-pixel-diff",
+  "status": "MANUAL_REVIEW_REQUIRED",
+  "mappingPriority": [
+    "harness.yml uiMapping",
+    "UIReferences auto discovery",
+    "filename route guess",
+    "manual review"
+  ],
+  "threshold": 0.02,
+  "strict": false,
+  "comparisons": [],
+  "blockers": [
+    "pixelmatch/pngjs are not installed. Automated visual diff cannot run."
+  ],
+  "updatedAt": "2026-05-14T09:01:39.133Z",
+  "nextActions": [
+    "Allow dev dependency installation or keep pixelPerfectStatus as MANUAL_REVIEW_REQUIRED."
+  ]
+}

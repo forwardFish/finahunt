@@ -1,0 +1,20 @@
+﻿{
+    "blockers":  [
+
+                 ],
+    "commands":  [
+
+                 ],
+    "lane":  "story-quality-gate",
+    "status":  "PASS",
+    "evidence":  [
+                     "docs\\auto-execute\\story-quality-gate.json",
+                     "docs/auto-execute/results/story-quality-gate.json",
+                     "docs\\auto-execute\\gap-list.json"
+                 ],
+    "schemaVersion":  "1.9.1",
+    "nextActions":  [
+                        "Fix story normalization quality issues before final PASS."
+                    ],
+    "updatedAt":  "2026-05-14T11:00:03"
+}

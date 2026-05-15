@@ -1,0 +1,51 @@
+﻿{
+    "status":  "PENDING",
+    "schemaVersion":  "2.0",
+    "generatedAt":  "2026-05-14T15:03:32",
+    "testPoints":  [
+                       {
+                           "id":  "TP-STORY-PAYMENT-007-001",
+                           "storyId":  "STORY-PAYMENT-007",
+                           "type":  "route",
+                           "target":  "/deploy",
+                           "expected":  "route is reachable and supports the story goal",
+                           "evidence":  [
+                                            "docs/auto-execute/results/route-smoke.generated.json"
+                                        ],
+                           "status":  "PASS"
+                       },
+                       {
+                           "id":  "TP-STORY-PAYMENT-007-002",
+                           "storyId":  "STORY-PAYMENT-007",
+                           "type":  "functional",
+                           "target":  "Stop only for hard blockers such as credentials, production data/deploy, payment, destructive operations, or repeated unrecoverable failures.",
+                           "expected":  "acceptance criterion is proven by test/log/screenshot/API evidence",
+                           "evidence":  [
+
+                                        ],
+                           "status":  "PENDING"
+                       },
+                       {
+                           "id":  "TP-STORY-GENERAL-010-001",
+                           "storyId":  "STORY-GENERAL-010",
+                           "type":  "functional",
+                           "target":  "contract verification fails when a frontend `/api/...` call has no matching backend route or method;",
+                           "expected":  "acceptance criterion is proven by test/log/screenshot/API evidence",
+                           "evidence":  [
+
+                                        ],
+                           "status":  "PENDING"
+                       },
+                       {
+                           "id":  "TP-STORY-GENERAL-016-001",
+                           "storyId":  "STORY-GENERAL-016",
+                           "type":  "functional",
+                           "target":  "generated story route/API/E2E tests are executed by `run-generated-story-tests.ps1` and cannot count as coverage until they run;",
+                           "expected":  "acceptance criterion is proven by test/log/screenshot/API evidence",
+                           "evidence":  [
+
+                                        ],
+                           "status":  "PENDING"
+                       }
+                   ]
+}

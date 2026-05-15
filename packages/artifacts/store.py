@@ -6,9 +6,11 @@ from pathlib import Path
 from typing import Any
 
 from packages.schema.state import GraphState
+from packages.storage import get_runtime_repository
 
 
 RUNTIME_ROOT = Path("workspace/artifacts/runtime")
+_DB_ARTIFACT_WRITE_DISABLED = False
 
 
 def runtime_run_dir(run_id: str) -> Path:
@@ -63,4 +65,22 @@ def persist_runtime_json(
         stage_entry["artifacts"].append(artifact_record)
 
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    global _DB_ARTIFACT_WRITE_DISABLED
+    if _DB_ARTIFACT_WRITE_DISABLED:
+        return artifact_path
+    try:
+        get_runtime_repository().save_runtime_artifact(
+            run_id=run_id,
+            trace_id=trace_id,
+            stage=stage,
+            filename=filename,
+            path=artifact_path.as_posix(),
+            payload=payload,
+            record_count=record_count,
+            summary=summary or {},
+        )
+    except Exception:
+        # JSON artifact is the transition fallback; database lane reports hard status separately.
+        _DB_ARTIFACT_WRITE_DISABLED = True
+        pass
     return artifact_path

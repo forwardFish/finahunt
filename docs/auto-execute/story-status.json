@@ -1,0 +1,47 @@
+﻿{
+    "gaps":  [
+
+             ],
+    "generatedAt":  "2026-05-14T15:33:14",
+    "limitations":  [
+
+                    ],
+    "lane":  "story-verifier",
+    "stories":  [
+                    {
+                        "storyId":  "STORY-PAYMENT-007",
+                        "priority":  "P2",
+                        "status":  "PENDING",
+                        "acceptanceCriteria":  1,
+                        "testPoints":  2,
+                        "evidence":  0,
+                        "openGaps":  [
+
+                                     ]
+                    },
+                    {
+                        "storyId":  "STORY-GENERAL-010",
+                        "priority":  "P2",
+                        "status":  "PENDING",
+                        "acceptanceCriteria":  1,
+                        "testPoints":  null,
+                        "evidence":  0,
+                        "openGaps":  [
+
+                                     ]
+                    },
+                    {
+                        "storyId":  "STORY-GENERAL-016",
+                        "priority":  "P2",
+                        "status":  "PENDING",
+                        "acceptanceCriteria":  1,
+                        "testPoints":  null,
+                        "evidence":  0,
+                        "openGaps":  [
+
+                                     ]
+                    }
+                ],
+    "schemaVersion":  "2.0",
+    "status":  "PASS"
+}

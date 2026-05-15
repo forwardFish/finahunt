@@ -1,0 +1,81 @@
+﻿project:
+  name: story-materialization
+  root: C:\Users\linyanhui\.codex\skills\auto-execute\docs\auto-execute\meta-tests\workspaces\story-materialization
+
+docs:
+  requirements: []
+  ui: []
+
+lanes:
+  intake:
+    enabled: true
+  requirements:
+    enabled: true
+  stories:
+    enabled: true
+  frontend:
+    enabled: true
+  backend:
+    enabled: true
+  contract:
+    enabled: true
+  visual:
+    enabled: true
+  integration:
+    enabled: true
+  reportIntegrity:
+    enabled: true
+  secretGuard:
+    enabled: true
+
+commands:
+  install: ""
+  lint: ""
+  typecheck: ""
+  test: ""
+  build: ""
+  smoke: ""
+  acceptance: ""
+  uiStart: ""
+  uiBaseUrl: "http://127.0.0.1:3000"
+  frontendTest: ""
+  backendTest: ""
+  e2e: ""
+  apiSmoke: ""
+  uiCapture: ""
+  uiCompare: ""
+
+verifierDependencies:
+  allowInstallDevDependencies: false
+  allowEphemeralNpx: true
+  installPlaywrightBrowsers: false
+  packages:
+    - "playwright"
+    - "pixelmatch"
+    - "pngjs"
+
+visual:
+  diffThreshold: 0.03
+  allowPassWithLimitation: true
+  requireScreenshotForP0: true
+  requireDesktopScreenshot: true
+  requireMobileScreenshot: true
+  allowManualReviewWhenNoBrowser: true
+
+uiMapping: []
+
+safety:
+  allowCommit: false
+  allowPush: false
+  allowDeploy: false
+  allowProductionDb: false
+  allowPayment: false
+
+convergence:
+  maxRepairRounds: 5
+  requireFinalGate: true
+  requireEvidenceForPass: true
+  requirePrdSectionCoverage: true
+  requireStoryVerification: true
+  requireUiScreenshots: true
+  requireContractVerification: true

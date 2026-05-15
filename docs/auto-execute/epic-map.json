@@ -1,0 +1,16 @@
+﻿{
+    "generatedAt":  "2026-05-14T15:03:30",
+    "schemaVersion":  "2.0",
+    "epics":  [
+                  {
+                      "epicId":  "EPIC-CORE",
+                      "stories":  [
+                                      "STORY-PAYMENT-007",
+                                      "STORY-GENERAL-010",
+                                      "STORY-GENERAL-016"
+                                  ],
+                      "priority":  "P2"
+                  }
+              ],
+    "status":  "PASS_WITH_LIMITATION"
+}

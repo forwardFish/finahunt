@@ -1,0 +1,21 @@
+﻿{
+    "blockers":  [
+
+                 ],
+    "commands":  [
+
+                 ],
+    "lane":  "story-verifier",
+    "status":  "PASS",
+    "evidence":  [
+                     "docs\\auto-execute\\story-target.json",
+                     "docs\\auto-execute\\story-test-matrix.json",
+                     "docs\\auto-execute\\story-status.json",
+                     "docs\\auto-execute\\gap-list.json"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+                        "Close story gaps, attach test-point evidence, then rerun run-story-verify.ps1 and final gate."
+                    ],
+    "updatedAt":  "2026-05-14T15:33:15"
+}

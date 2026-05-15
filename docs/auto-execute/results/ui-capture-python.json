@@ -1,0 +1,71 @@
+{
+  "lane": "ui-capture-python",
+  "status": "PASS",
+  "baseUrl": "http://127.0.0.1:3101",
+  "screenshots": [
+    {
+      "id": "UI-HOME",
+      "route": "/",
+      "viewport": "desktop",
+      "screenshot": "docs/auto-execute/screenshots/UI-HOME-desktop.png",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "id": "UI-HOME",
+      "route": "/",
+      "viewport": "mobile",
+      "screenshot": "docs/auto-execute/screenshots/UI-HOME-mobile.png",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "id": "UI-FERMENTATION",
+      "route": "/fermentation",
+      "viewport": "desktop",
+      "screenshot": "docs/auto-execute/screenshots/UI-FERMENTATION-desktop.png",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "id": "UI-FERMENTATION",
+      "route": "/fermentation",
+      "viewport": "mobile",
+      "screenshot": "docs/auto-execute/screenshots/UI-FERMENTATION-mobile.png",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "id": "UI-RESEARCH",
+      "route": "/research",
+      "viewport": "desktop",
+      "screenshot": "docs/auto-execute/screenshots/UI-RESEARCH-desktop.png",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "id": "UI-RESEARCH",
+      "route": "/research",
+      "viewport": "mobile",
+      "screenshot": "docs/auto-execute/screenshots/UI-RESEARCH-mobile.png",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "id": "UI-WORKBENCH",
+      "route": "/workbench",
+      "viewport": "desktop",
+      "screenshot": "docs/auto-execute/screenshots/UI-WORKBENCH-desktop.png",
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "id": "UI-WORKBENCH",
+      "route": "/workbench",
+      "viewport": "mobile",
+      "screenshot": "docs/auto-execute/screenshots/UI-WORKBENCH-mobile.png",
+      "status": "PASS",
+      "errors": []
+    }
+  ]
+}

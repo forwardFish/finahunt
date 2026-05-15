@@ -1,0 +1,64 @@
+﻿{
+    "verdict":  "READY_FOR_FORMAL_PROJECTS",
+    "generatedAt":  "2026-05-14T11:00:15",
+    "scoreMeaning":  {
+                         "80-89":  "usable on real projects, but gaps need attention",
+                         "60-69":  "detection only, not suitable for auto-repair",
+                         "70-79":  "trial runs only, not recommended for delivery",
+                         "90-100":  "can be used as a formal project harness",
+                         "\u003c60":  "harness itself is unreliable"
+                     },
+    "totalScore":  99,
+    "schemaVersion":  "1.9.1",
+    "categories":  {
+                       "requirementExtraction":  {
+                                                     "score":  15,
+                                                     "max":  15,
+                                                     "issues":  [
+
+                                                                ]
+                                                 },
+                       "storyNormalization":  {
+                                                  "score":  15,
+                                                  "max":  15,
+                                                  "issues":  [
+
+                                                             ]
+                                              },
+                       "storyTestMaterialization":  {
+                                                        "score":  20,
+                                                        "max":  20,
+                                                        "issues":  [
+
+                                                                   ]
+                                                    },
+                       "evidenceExecution":  {
+                                                 "score":  19,
+                                                 "max":  20,
+                                                 "issues":  [
+
+                                                            ]
+                                             },
+                       "uiVerification":  {
+                                              "score":  15,
+                                              "max":  15,
+                                              "issues":  [
+
+                                                         ]
+                                          },
+                       "finalGateConsistency":  {
+                                                    "score":  10,
+                                                    "max":  10,
+                                                    "issues":  [
+
+                                                               ]
+                                                },
+                       "safetyAndReportIntegrity":  {
+                                                        "score":  5,
+                                                        "max":  5,
+                                                        "issues":  [
+
+                                                                   ]
+                                                    }
+                   }
+}

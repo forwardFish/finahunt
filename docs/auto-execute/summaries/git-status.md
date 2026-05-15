@@ -1,0 +1,341 @@
+﻿# Git Status
+
+Generated: 05/14/2026 15:00:26
+
+
+## Branch
+```text
+agent/parallel-dev-20260318-102914
+```
+
+## Status
+```text
+ M apps/web/src/app/fermentation/page.tsx
+ M apps/web/src/app/layout.tsx
+ M apps/web/src/app/low-position/page.tsx
+ M apps/web/src/app/page.tsx
+ M apps/web/src/app/research/page.tsx
+ M apps/web/src/app/sprint-2/page.tsx
+ M apps/web/src/app/workbench/page.tsx
+ M apps/web/src/components/FinancialUI.tsx
+ M apps/web/src/components/RefreshLatestButton.tsx
+ M apps/web/src/components/RunLowPositionButton.tsx
+ M apps/web/src/lib/dailySnapshot.ts
+ M apps/web/src/lib/lowPositionWorkbench.ts
+ M apps/web/src/lib/webView.ts
+ M config/spec/agent_contract_registry.json
+ M config/spec/gate_registry.yaml
+ M config/spec/traceability.yaml
+ D "docs/01_\346\210\230\347\225\245/\350\277\234\346\231\257\347\233\256\346\240\207.md"
+ D docs/02_MVP/mvp.md
+ D "docs/02_MVP/mvp\345\212\237\350\203\275.md"
+ D "docs/02_MVP/mvp\345\212\237\350\203\275_\350\241\250\346\240\274\347\211\210.md"
+ D "docs/02_MVP/\351\207\221\350\236\215\350\265\204\350\256\257\350\256\244\347\237\245\347\263\273\347\273\237_prd_v_1.md"
+ D "docs/03_\346\236\266\346\236\204/Agent \344\275\223\347\263\273\350\256\276\350\256\241\346\226\207\346\241\243 v1.0 \346\255\243\345\274\217\350\220\275\345\234\260\347\211\210.md"
+ D "docs/04_\350\247\204\350\214\203/Agent\344\275\223\347\263\273 - \345\256\214\346\225\264\350\247\204\350\214\203\346\211\213\345\206\214.md"
+ D "docs/04_\350\247\204\350\214\203/Agent\344\275\223\347\263\273 - \351\234\200\346\261\202\350\277\275\350\270\252\347\237\251\351\230\265&\350\220\275\345\234\260\350\247\204\350\214\203.md"
+ D "docs/04_\350\247\204\350\214\203/Story_Agent_\344\272\244\344\273\230\346\240\207\345\207\206.md"
+ D "docs/04_\350\247\204\350\214\203/\346\223\215\344\275\234\346\211\213\345\206\214.md"
+ D "docs/04_\350\247\204\350\214\203/\350\247\204\345\210\231\345\217\230\346\233\264\350\256\260\345\275\225.md"
+ D "docs/04_\350\247\204\350\214\203/\350\256\276\350\256\241\345\210\207\347\211\207\344\270\216\350\276\271\347\225\214\351\231\204\345\275\225.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/README.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-001_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-002_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-003_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-004_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-005_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-006_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-007_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-008_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-009_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-010_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-011_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-012_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2_\345\217\221\351\205\265\351\242\230\346\235\220\345\274\225\346\223\216/S2-013_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2a_\344\275\216\344\275\215\351\242\230\346\235\220\346\214\226\346\216\230\345\274\225\346\223\216/S2A-001_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2a_\344\275\216\344\275\215\351\242\230\346\235\220\346\214\226\346\216\230\345\274\225\346\223\216/S2A-002_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2a_\344\275\216\344\275\215\351\242\230\346\235\220\346\214\226\346\216\230\345\274\225\346\223\216/S2A-003_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2a_\344\275\216\344\275\215\351\242\230\346\235\220\346\214\226\346\216\230\345\274\225\346\223\216/S2A-004_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2a_\344\275\216\344\275\215\351\242\230\346\235\220\346\214\226\346\216\230\345\274\225\346\223\216/S2A-005_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2a_\344\275\216\344\275\215\351\242\230\346\235\220\346\214\226\346\216\230\345\274\225\346\223\216/S2A-006_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2a_\344\275\216\344\275\215\351\242\230\346\235\220\346\214\226\346\216\230\345\274\225\346\223\216/S2A-007_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_2a_\344\275\216\344\275\215\351\242\230\346\235\220\346\214\226\346\216\230\345\274\225\346\223\216/S2A-008_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_3_\345\205\263\350\201\224\345\205\263\347\263\273\344\270\216\347\224\250\346\210\267\346\216\222\345\272\217/README.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_3_\345\205\263\350\201\224\345\205\263\347\263\273\344\270\216\347\224\250\346\210\267\346\216\222\345\272\217/S3-001_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_3_\345\205\263\350\201\224\345\205\263\347\263\273\344\270\216\347\224\250\346\210\267\346\216\222\345\272\217/S3-002_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_3_\345\205\263\350\201\224\345\205\263\347\263\273\344\270\216\347\224\250\346\210\267\346\216\222\345\272\217/S3-003_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_3_\345\205\263\350\201\224\345\205\263\347\263\273\344\270\216\347\224\250\346\210\267\346\216\222\345\272\217/S3-004_story_delivery_report.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_6b_\347\274\226\350\276\221\345\236\213\346\203\205\346\212\245\345\217\260\351\207\215\346\236\204/README.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_6b_\347\274\226\350\276\221\345\236\213\346\203\205\346\212\245\345\217\260\351\207\215\346\236\204/S6B-001_browse_baseline.md"
+ D "docs/05_\344\272\244\344\273\230/sprint_6b_\347\274\226\350\276\221\345\236\213\346\203\205\346\212\245\345\217\260\351\207\215\346\236\204/S6B-007_design_review_and_qa.md"
+ D "docs/99_\345\275\222\346\241\243/backup/Agent\350\256\241\345\210\222.md"
+ D "docs/99_\345\275\222\346\241\243/backup/agent-report.md"
+ D "docs/99_\345\275\222\346\241\243/backup/\343\200\214\345\220\210\350\247\204\350\265\204\350\256\257\346\272\220\346\216\245\345\205\245\343\200\215\345\237\272\344\272\216LangGraph\347\232\204Agent\344\275\223\347\263\273\350\247\204\345\210\222.md"
+ M docs/AUTO_EXECUTE_DELIVERY_REPORT.md
+ D docs/FULL_ACCEPTANCE_DELIVERY_REPORT.md
+ M docs/README.md
+ D docs/acceptance/00-project-intake.md
+ D docs/acceptance/01-requirement-traceability-matrix.md
+ D docs/acceptance/02-surface-map.md
+ D docs/acceptance/03-visual-acceptance-checklist.md
+ D docs/acceptance/04-test-matrix.md
+ D docs/acceptance/05-known-gaps-and-assumptions.md
+ D docs/acceptance/06-acceptance-test-plan.md
+ M docs/auto-execute/00-environment-snapshot.md
+ M docs/auto-execute/00-project-intake.md
+ M docs/auto-execute/01-task-decomposition.md
+ M docs/auto-execute/02-requirement-traceability-matrix.md
+ M docs/auto-execute/03-surface-map.md
+ M docs/auto-execute/04-visual-acceptance-checklist.md
+ M docs/auto-execute/05-known-gaps-and-assumptions.md
+ M docs/auto-execute/06-test-matrix.md
+ M docs/auto-execute/07-acceptance-test-plan.md
+ M docs/auto-execute/08-repair-log.md
+ M docs/auto-execute/09-code-review.md
+ D docs/auto-execute/GOAL.md
+ M docs/auto-execute/UI_REFERENCE_INVENTORY.md
+ M docs/auto-execute/blockers.md
+ M docs/auto-execute/features/current_feature.json
+ M docs/auto-execute/features/feature_list.json
+ M docs/auto-execute/features/feature_status.json
+ M docs/auto-execute/logs/backend-pytest.log
+ M docs/auto-execute/logs/frontend-build.log
+ D docs/auto-execute/logs/smoke-api.log
+ D docs/auto-execute/logs/smoke-full-flow-fast.log
+ D docs/auto-execute/logs/smoke-full-flow-full.log
+ D docs/auto-execute/logs/smoke-full-flow-gate.log
+ D docs/auto-execute/logs/smoke-python-commands.log
+ D docs/auto-execute/logs/smoke-visual-screenshots.log
+ D docs/auto-execute/summaries/visual-smoke.md
+ M docs/auto-execute/verification-results.md
+ D docs/finahunt-ui-rebuild-delivery-report.md
+ D docs/handoff/20260319_finahunt_research_cockpit_summary.md
+ D docs/handoff/20260320_finahunt_sprint3_linkage_summary.md
+ D docs/handoff/current_handoff.md
+ D docs/qa/full-acceptance/screenshots/desktop-fermentation.png
+ D docs/qa/full-acceptance/screenshots/desktop-home.png
+ D docs/qa/full-acceptance/screenshots/desktop-low-position.png
+ D docs/qa/full-acceptance/screenshots/desktop-research.png
+ D docs/qa/full-acceptance/screenshots/desktop-sprint-2.png
+ D docs/qa/full-acceptance/screenshots/desktop-workbench.png
+ D docs/qa/full-acceptance/screenshots/fermentation.png
+ D docs/qa/full-acceptance/screenshots/home.png
+ D docs/qa/full-acceptance/screenshots/low-position.png
+ D docs/qa/full-acceptance/screenshots/mobile-fermentation.png
+ D docs/qa/full-acceptance/screenshots/mobile-home.png
+ D docs/qa/full-acceptance/screenshots/mobile-low-position.png
+ D docs/qa/full-acceptance/screenshots/mobile-research.png
+ D docs/qa/full-acceptance/screenshots/mobile-sprint-2.png
+ D docs/qa/full-acceptance/screenshots/mobile-workbench.png
+ D docs/qa/full-acceptance/screenshots/research.png
+ D docs/qa/full-acceptance/screenshots/sprint-2.png
+ D docs/qa/full-acceptance/screenshots/workbench.png
+ D docs/qa/full-acceptance/test-results/api-smoke.json
+ D docs/qa/full-acceptance/test-results/full-acceptance-smoke-summary.json
+ D docs/qa/full-acceptance/test-results/integration-smoke.json
+ D docs/qa/full-acceptance/test-results/mojibake-debug.json
+ D docs/qa/full-acceptance/test-results/python-command-smoke.json
+ D docs/qa/full-acceptance/test-results/redirect-final-url.json
+ D docs/qa/full-acceptance/test-results/route-smoke.json
+ D docs/qa/full-acceptance/test-results/screenshot-capture.json
+ D docs/qa/full-acceptance/test-results/surface-inventory.json
+ D docs/qa/full-acceptance/test-results/workbench-search-smoke.json
+ D docs/qa/full-acceptance/verification-results.md
+ D docs/qa/full-acceptance/visual-qa-result.md
+ D docs/qa/ui-final/_screenshots-contact-sheet.png
+ D docs/qa/ui-final/api-smoke.json
+ D docs/qa/ui-final/dev-server-3021-restarted.log
+ D docs/qa/ui-final/dev-server.json
+ D docs/qa/ui-final/fermentation.png
+ D docs/qa/ui-final/final-qa-report.md
+ D docs/qa/ui-final/home.png
+ D docs/qa/ui-final/low-position.png
+ D docs/qa/ui-final/research.png
+ D docs/qa/ui-final/route-html-check.json
+ D docs/qa/ui-final/sprint-2.png
+ D docs/qa/ui-final/workbench.png
+ D docs/requirements/20260321_154755_sprint_5_low_position_one_shot_workbench.md
+ D docs/requirements/20260321_183528_sprint_0_info_foundation.md
+ D docs/requirements/20260321_184216_sprint_5_low_position_one_shot_workbench.md
+ D docs/requirements/20260321_203500_sprint_6_research_flow_navigation_experience.md
+ D docs/requirements/20260321_220500_sprint_6b_editorial_research_edition.md
+ D docs/runtime_data_maintenance_plan.md
+ M scripts/acceptance/collect-env.ps1
+ M scripts/acceptance/collect-git-status.ps1
+ M scripts/acceptance/init-harness.ps1
+ M scripts/acceptance/lib.ps1
+ M scripts/acceptance/run-all.ps1
+ M scripts/acceptance/run-api-smoke.ps1
+ M scripts/acceptance/run-architecture-guard.ps1
+ M scripts/acceptance/run-backend.ps1
+ M scripts/acceptance/run-db-e2e.ps1
+ M scripts/acceptance/run-frontend.ps1
+ M scripts/acceptance/run-full-flow-smoke.ps1
+ M scripts/acceptance/run-visual-smoke.ps1
+ M scripts/acceptance/summarize-errors.ps1
+?? .omx/
+?? AGENTS.md
+?? agents/AGENTS.md
+?? apps/AGENTS.md
+?? config/AGENTS.md
+?? docker/AGENTS.md
+?? docs/AGENTS.md
+?? docs/FINAL_PRODUCT_SPEC.md
+?? docs/UI/
+?? docs/_archive_20260513/
+?? docs/auto-execute/01-prd-index.md
+?? docs/auto-execute/01-requirement-coverage.md
+?? docs/auto-execute/01-requirement-matrix.md
+?? docs/auto-execute/02-ui-acceptance-matrix.md
+?? docs/auto-execute/03-story-map.md
+?? docs/auto-execute/04-contract-map.md
+?? docs/auto-execute/04-story-test-matrix.md
+?? docs/auto-execute/05-test-matrix.md
+?? docs/auto-execute/06-scope-classification.md
+?? docs/auto-execute/07-decision-log.md
+?? docs/auto-execute/10-agent-mistake-log.md
+?? docs/auto-execute/11-harness-improvement-log.md
+?? docs/auto-execute/12-fullstack-delivery-plan.md
+?? docs/auto-execute/13-frontend-backend-contract-map.md
+?? docs/auto-execute/14-frontend-implementation-plan.md
+?? docs/auto-execute/15-backend-implementation-plan.md
+?? docs/auto-execute/16-integrated-verification-plan.md
+?? docs/auto-execute/17-final-acceptance-checklist.md
+?? docs/auto-execute/18-acceptance-comparison-loop.md
+?? docs/auto-execute/AGENT_READABILITY.md
+?? docs/auto-execute/FULL_FLOW_ACCEPTANCE.md
+?? docs/auto-execute/GOLDEN_RULES.md
+?? docs/auto-execute/QUALITY_GATES.md
+?? docs/auto-execute/STATUS_SEMANTICS.md
+?? docs/auto-execute/acceptance-goal.json
+?? docs/auto-execute/comparison/
+?? docs/auto-execute/contract-map.json
+?? docs/auto-execute/convergence-rounds/
+?? docs/auto-execute/convergence-state.json
+?? docs/auto-execute/epic-map.json
+?? docs/auto-execute/evidence-manifest.json
+?? docs/auto-execute/final-convergence-report.md
+?? docs/auto-execute/gap-closure-log.md
+?? docs/auto-execute/gap-list.json
+?? docs/auto-execute/gap-list.md
+?? docs/auto-execute/harness-gap-list.json
+?? docs/auto-execute/harness-repair-plan.md
+?? docs/auto-execute/harness-scorecard.json
+?? docs/auto-execute/harness-self-eval-report.md
+?? docs/auto-execute/latest/
+?? docs/auto-execute/logs/e2e-flow.log
+?? docs/auto-execute/logs/full-flow-next-start.err.log
+?? docs/auto-execute/logs/full-flow-next-start.log
+?? docs/auto-execute/logs/generated-route-smoke.log
+?? docs/auto-execute/logs/next-start-3000.err.log
+?? docs/auto-execute/logs/next-start-3000.out.log
+?? docs/auto-execute/logs/ui-capture-next-start.err.log
+?? docs/auto-execute/logs/ui-capture-next-start.log
+?? docs/auto-execute/logs/ui-capture.log
+?? docs/auto-execute/logs/ui-pixel-diff.log
+?? docs/auto-execute/machine-summary.json
+?? docs/auto-execute/meta-tests/
+?? docs/auto-execute/next-agent-action.md
+?? docs/auto-execute/progress.md
+?? docs/auto-execute/repair-attempts.json
+?? docs/auto-execute/repair-plan.md
+?? docs/auto-execute/requirement-candidates.json
+?? docs/auto-execute/requirement-section-map.json
+?? docs/auto-execute/requirement-target.json
+?? docs/auto-execute/results/
+?? docs/auto-execute/screenshots/UI-FERMENTATION-desktop.png
+?? docs/auto-execute/screenshots/UI-FERMENTATION-mobile.png
+?? docs/auto-execute/screenshots/UI-HOME-desktop.png
+?? docs/auto-execute/screenshots/UI-HOME-mobile.png
+?? docs/auto-execute/screenshots/UI-RESEARCH-desktop.png
+?? docs/auto-execute/screenshots/UI-RESEARCH-mobile.png
+?? docs/auto-execute/screenshots/UI-WORKBENCH-desktop.png
+?? docs/auto-execute/screenshots/UI-WORKBENCH-mobile.png
+?? docs/auto-execute/screenshots/diffs/
+?? docs/auto-execute/screenshots/fermentation.png
+?? docs/auto-execute/screenshots/home.png
+?? docs/auto-execute/screenshots/references/
+?? docs/auto-execute/screenshots/research.png
+?? docs/auto-execute/screenshots/workbench.png
+?? docs/auto-execute/sprint-plan.json
+?? docs/auto-execute/state.json
+?? docs/auto-execute/story-acceptance-summary.json
+?? docs/auto-execute/story-candidates-curated.json
+?? docs/auto-execute/story-candidates.json
+?? docs/auto-execute/story-gap-list.json
+?? docs/auto-execute/story-materialized-tests.json
+?? docs/auto-execute/story-quality-gate.json
+?? docs/auto-execute/story-status.json
+?? docs/auto-execute/story-target.json
+?? docs/auto-execute/story-test-matrix.json
+?? docs/auto-execute/summaries/api-smoke.md
+?? docs/auto-execute/summaries/architecture-guard.md
+?? docs/auto-execute/summaries/error-summary.md
+?? docs/auto-execute/summaries/git-status.md
+?? docs/auto-execute/summaries/report-integrity.md
+?? docs/auto-execute/summaries/requirement-coverage.md
+?? docs/auto-execute/summaries/secret-guard.md
+?? docs/auto-execute/surface-target.json
+?? docs/auto-execute/test-matrix.json
+?? docs/auto-execute/ui-candidates.json
+?? docs/auto-execute/ui-target.json
+?? docs/auto-execute/visual-diff-report.json
+?? docs/auto-execute/visual-diff-report.md
+?? graphs/AGENTS.md
+?? harness.yml
+?? packages/AGENTS.md
+?? scripts/acceptance/adapters/
+?? scripts/acceptance/capture-ui.mjs
+?? scripts/acceptance/compare-ui.mjs
+?? scripts/acceptance/compare-ui.py
+?? scripts/acceptance/generated/
+?? scripts/acceptance/plan-fullstack-delivery.ps1
+?? scripts/acceptance/run-acceptance-compare.ps1
+?? scripts/acceptance/run-adapter-detect.ps1
+?? scripts/acceptance/run-backend-test.ps1
+?? scripts/acceptance/run-code-review.ps1
+?? scripts/acceptance/run-compare-requirements.ps1
+?? scripts/acceptance/run-compare-ui.ps1
+?? scripts/acceptance/run-contract-map.ps1
+?? scripts/acceptance/run-contract-verify.ps1
+?? scripts/acceptance/run-contract.ps1
+?? scripts/acceptance/run-convergence.ps1
+?? scripts/acceptance/run-e2e-flow.ps1
+?? scripts/acceptance/run-finahunt-full-flow.ps1
+?? scripts/acceptance/run-finahunt-ui-capture.ps1
+?? scripts/acceptance/run-final-gate.ps1
+?? scripts/acceptance/run-frontend-test.ps1
+?? scripts/acceptance/run-gap-repair.ps1
+?? scripts/acceptance/run-generated-story-tests.ps1
+?? scripts/acceptance/run-harness-gap-repair.ps1
+?? scripts/acceptance/run-harness-score.ps1
+?? scripts/acceptance/run-harness-self-eval.ps1
+?? scripts/acceptance/run-report-integrity.ps1
+?? scripts/acceptance/run-requirement-coverage.ps1
+?? scripts/acceptance/run-requirement-extract.ps1
+?? scripts/acceptance/run-requirement-section-map.ps1
+?? scripts/acceptance/run-requirement-verify.ps1
+?? scripts/acceptance/run-requirements.ps1
+?? scripts/acceptance/run-scope-classification.ps1
+?? scripts/acceptance/run-secret-guard.ps1
+?? scripts/acceptance/run-status.ps1
+?? scripts/acceptance/run-story-curate.ps1
+?? scripts/acceptance/run-story-extract.ps1
+?? scripts/acceptance/run-story-final-report.ps1
+?? scripts/acceptance/run-story-normalize.ps1
+?? scripts/acceptance/run-story-quality-gate.ps1
+?? scripts/acceptance/run-story-test-generate.ps1
+?? scripts/acceptance/run-story-test-materialize.ps1
+?? scripts/acceptance/run-story-verify.ps1
+?? scripts/acceptance/run-ui-capture.ps1
+?? scripts/acceptance/run-ui-compare.ps1
+?? scripts/acceptance/run-verifier-dependencies.ps1
+?? scripts/acceptance/test-harness.ps1
+?? scripts/package-release.ps1
+?? skills/AGENTS.md
+?? tasks/AGENTS.md
+?? tests/AGENTS.md
+?? tools/AGENTS.md
+?? workflows/AGENTS.md
+?? workspace/
+```

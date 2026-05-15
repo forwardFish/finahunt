@@ -1,0 +1,173 @@
+﻿{
+    "blockers":  [
+
+                 ],
+    "commands":  [
+
+                 ],
+    "lane":  "ui-verifier",
+    "status":  "HARD_FAIL",
+    "evidence":  [
+                     "docs\\auto-execute\\ui-target.json",
+                     "docs\\auto-execute\\visual-diff-report.md",
+                     "docs\\auto-execute\\gap-list.json"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+                        "Capture missing screenshots or visual diffs, repair UI gaps, then rerun run-ui-compare.ps1.",
+                        "UI mapping priority: harness.yml uiMapping, UIReferences auto discovery, filename guess, manual review."
+                    ],
+    "updatedAt":  "2026-05-14T17:02:05",
+    "pixelDiff":  {
+                      "schemaVersion":  "2.0",
+                      "lane":  "ui-pixel-diff",
+                      "status":  "PASS_WITH_LIMITATION",
+                      "engine":  "python-pillow-playwright",
+                      "threshold":  0.02,
+                      "strict":  false,
+                      "comparisons":  [
+                                          {
+                                              "id":  "UI-HOME",
+                                              "status":  "PASS_WITH_LIMITATION",
+                                              "ratio":  0.08810073561307113,
+                                              "diff":  "docs/auto-execute/screenshots/diffs/UI-HOME-diff.png",
+                                              "referenceScreenshot":  "docs/auto-execute/screenshots/references/UI-HOME-reference.png",
+                                              "actualScreenshot":  "docs/auto-execute/screenshots/UI-HOME-desktop.png",
+                                              "comparedSize":  "1536x1729",
+                                              "sizeMismatch":  true,
+                                              "referenceSize":  "1536x1729",
+                                              "actualSize":  "1536x1826"
+                                          },
+                                          {
+                                              "id":  "UI-FERMENTATION",
+                                              "status":  "PASS_WITH_LIMITATION",
+                                              "ratio":  0.07635129593175853,
+                                              "diff":  "docs/auto-execute/screenshots/diffs/UI-FERMENTATION-diff.png",
+                                              "referenceScreenshot":  "docs/auto-execute/screenshots/references/UI-FERMENTATION-reference.png",
+                                              "actualScreenshot":  "docs/auto-execute/screenshots/UI-FERMENTATION-desktop.png",
+                                              "comparedSize":  "1536x1143",
+                                              "sizeMismatch":  true,
+                                              "referenceSize":  "1536x1143",
+                                              "actualSize":  "1536x1280"
+                                          },
+                                          {
+                                              "id":  "UI-RESEARCH",
+                                              "status":  "PASS_WITH_LIMITATION",
+                                              "ratio":  0.06737224002849003,
+                                              "diff":  "docs/auto-execute/screenshots/diffs/UI-RESEARCH-diff.png",
+                                              "referenceScreenshot":  "docs/auto-execute/screenshots/references/UI-RESEARCH-reference.png",
+                                              "actualScreenshot":  "docs/auto-execute/screenshots/UI-RESEARCH-desktop.png",
+                                              "comparedSize":  "1536x1170",
+                                              "sizeMismatch":  true,
+                                              "referenceSize":  "1536x1170",
+                                              "actualSize":  "1536x1233"
+                                          },
+                                          {
+                                              "id":  "UI-WORKBENCH",
+                                              "status":  "PASS_WITH_LIMITATION",
+                                              "ratio":  0.0816350586756077,
+                                              "diff":  "docs/auto-execute/screenshots/diffs/UI-WORKBENCH-diff.png",
+                                              "referenceScreenshot":  "docs/auto-execute/screenshots/references/UI-WORKBENCH-reference.png",
+                                              "actualScreenshot":  "docs/auto-execute/screenshots/UI-WORKBENCH-desktop.png",
+                                              "comparedSize":  "1536x1193",
+                                              "sizeMismatch":  true,
+                                              "referenceSize":  "1536x1193",
+                                              "actualSize":  "1536x1284"
+                                          }
+                                      ],
+                      "blockers":  [
+
+                                   ],
+                      "updatedAt":  "2026-05-14T09:01:40.013711+00:00"
+                  },
+    "uiLayerSummary":  {
+                           "requiredScreens":  4,
+                           "structureStatus":  "PASS",
+                           "screenshotStatus":  "PASS",
+                           "visualStatus":  "PASS",
+                           "pixelPerfectStatus":  "MANUAL_REVIEW_REQUIRED",
+                           "pixelPerfectClaimAllowed":  false,
+                           "statusMeaning":  "UI verifier has hard gaps or missing required evidence."
+                       },
+    "screens":  [
+                    {
+                        "id":  "UI-HOME",
+                        "route":  "/",
+                        "reference":  "docs/UI/financial_ui_html_pages/home.html",
+                        "actualScreenshot":  "docs/auto-execute/screenshots/UI-HOME-desktop.png",
+                        "viewport":  "1440x900",
+                        "structureStatus":  "PASS",
+                        "screenshotStatus":  "PASS",
+                        "pixelDiffStatus":  "HARD_FAIL",
+                        "finalUiStatus":  "HARD_FAIL",
+                        "canClaimPixelPerfect":  false,
+                        "ratio":  0.088100735613071135,
+                        "sizeMismatch":  true,
+                        "mappingSource":  "harness.yml:uiMapping",
+                        "knownDifferences":  [
+                                                 "Pixel diff ratio 0.0881007356130711 exceeds threshold 0.02.",
+                                                 "Reference and actual screenshot dimensions differ."
+                                             ]
+                    },
+                    {
+                        "id":  "UI-FERMENTATION",
+                        "route":  "/fermentation",
+                        "reference":  "docs/UI/financial_ui_html_pages/topics.html",
+                        "actualScreenshot":  "docs/auto-execute/screenshots/UI-FERMENTATION-desktop.png",
+                        "viewport":  "1440x900",
+                        "structureStatus":  "PASS",
+                        "screenshotStatus":  "PASS",
+                        "pixelDiffStatus":  "HARD_FAIL",
+                        "finalUiStatus":  "HARD_FAIL",
+                        "canClaimPixelPerfect":  false,
+                        "ratio":  0.076351295931758531,
+                        "sizeMismatch":  true,
+                        "mappingSource":  "harness.yml:uiMapping",
+                        "knownDifferences":  [
+                                                 "Pixel diff ratio 0.0763512959317585 exceeds threshold 0.02.",
+                                                 "Reference and actual screenshot dimensions differ."
+                                             ]
+                    },
+                    {
+                        "id":  "UI-RESEARCH",
+                        "route":  "/research",
+                        "reference":  "docs/UI/financial_ui_html_pages/samples.html",
+                        "actualScreenshot":  "docs/auto-execute/screenshots/UI-RESEARCH-desktop.png",
+                        "viewport":  "1440x900",
+                        "structureStatus":  "PASS",
+                        "screenshotStatus":  "PASS",
+                        "pixelDiffStatus":  "HARD_FAIL",
+                        "finalUiStatus":  "HARD_FAIL",
+                        "canClaimPixelPerfect":  false,
+                        "ratio":  0.06737224002849003,
+                        "sizeMismatch":  true,
+                        "mappingSource":  "harness.yml:uiMapping",
+                        "knownDifferences":  [
+                                                 "Pixel diff ratio 0.06737224002849 exceeds threshold 0.02.",
+                                                 "Reference and actual screenshot dimensions differ."
+                                             ]
+                    },
+                    {
+                        "id":  "UI-WORKBENCH",
+                        "route":  "/workbench",
+                        "reference":  "docs/UI/financial_ui_html_pages/search.html",
+                        "actualScreenshot":  "docs/auto-execute/screenshots/UI-WORKBENCH-desktop.png",
+                        "viewport":  "1440x900",
+                        "structureStatus":  "PASS",
+                        "screenshotStatus":  "PASS",
+                        "pixelDiffStatus":  "HARD_FAIL",
+                        "finalUiStatus":  "HARD_FAIL",
+                        "canClaimPixelPerfect":  false,
+                        "ratio":  0.0816350586756077,
+                        "sizeMismatch":  true,
+                        "mappingSource":  "harness.yml:uiMapping",
+                        "knownDifferences":  [
+                                                 "Pixel diff ratio 0.0816350586756077 exceeds threshold 0.02.",
+                                                 "Reference and actual screenshot dimensions differ."
+                                             ]
+                    }
+                ],
+    "canClaimPixelPerfect":  false,
+    "diffThreshold":  "0.02",
+    "strict":  false
+}

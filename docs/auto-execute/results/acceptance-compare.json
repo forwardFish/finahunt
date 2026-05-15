@@ -1,0 +1,90 @@
+﻿{
+    "blockers":  [
+                     {
+                         "detail":  "Required UI screen UI-HOME does not meet fidelity threshold. ratio=0.089112881362059 threshold=0.02 sizeMismatch=True.",
+                         "path":  "docs\\auto-execute\\gap-list.json",
+                         "severity":  "IN_SCOPE_GAP",
+                         "kind":  "ui-fidelity"
+                     },
+                     {
+                         "detail":  "Required UI screen UI-FERMENTATION does not meet fidelity threshold. ratio=0.0812332540463692 threshold=0.02 sizeMismatch=True.",
+                         "path":  "docs\\auto-execute\\gap-list.json",
+                         "severity":  "IN_SCOPE_GAP",
+                         "kind":  "ui-fidelity"
+                     },
+                     {
+                         "detail":  "Required UI screen UI-RESEARCH does not meet fidelity threshold. ratio=0.0760088363603989 threshold=0.02 sizeMismatch=True.",
+                         "path":  "docs\\auto-execute\\gap-list.json",
+                         "severity":  "IN_SCOPE_GAP",
+                         "kind":  "ui-fidelity"
+                     },
+                     {
+                         "detail":  "Required UI screen UI-WORKBENCH does not meet fidelity threshold. ratio=0.0882158729742945 threshold=0.02 sizeMismatch=True.",
+                         "path":  "docs\\auto-execute\\gap-list.json",
+                         "severity":  "IN_SCOPE_GAP",
+                         "kind":  "ui-fidelity"
+                     },
+                     {
+                         "detail":  "UI screen UI-HOME exceeds fidelity gate: ratio=0.089112881362059 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
+                         "path":  "docs/auto-execute/results/ui-pixel-diff.json",
+                         "severity":  "IN_SCOPE_GAP",
+                         "kind":  "ui-pixel-diff"
+                     },
+                     {
+                         "detail":  "UI screen UI-FERMENTATION exceeds fidelity gate: ratio=0.0812332540463692 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
+                         "path":  "docs/auto-execute/results/ui-pixel-diff.json",
+                         "severity":  "IN_SCOPE_GAP",
+                         "kind":  "ui-pixel-diff"
+                     },
+                     {
+                         "detail":  "UI screen UI-RESEARCH exceeds fidelity gate: ratio=0.0760088363603989 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
+                         "path":  "docs/auto-execute/results/ui-pixel-diff.json",
+                         "severity":  "IN_SCOPE_GAP",
+                         "kind":  "ui-pixel-diff"
+                     },
+                     {
+                         "detail":  "UI screen UI-WORKBENCH exceeds fidelity gate: ratio=0.0882158729742945 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
+                         "path":  "docs/auto-execute/results/ui-pixel-diff.json",
+                         "severity":  "IN_SCOPE_GAP",
+                         "kind":  "ui-pixel-diff"
+                     },
+                     {
+                         "detail":  "Required UI screen UI-HOME finalUiStatus=HARD_FAIL",
+                         "path":  "docs/auto-execute/results/ui-verifier.json",
+                         "severity":  "HARD_FAIL",
+                         "kind":  "ui-verifier"
+                     },
+                     {
+                         "detail":  "Required UI screen UI-FERMENTATION finalUiStatus=HARD_FAIL",
+                         "path":  "docs/auto-execute/results/ui-verifier.json",
+                         "severity":  "HARD_FAIL",
+                         "kind":  "ui-verifier"
+                     },
+                     {
+                         "detail":  "Required UI screen UI-RESEARCH finalUiStatus=HARD_FAIL",
+                         "path":  "docs/auto-execute/results/ui-verifier.json",
+                         "severity":  "HARD_FAIL",
+                         "kind":  "ui-verifier"
+                     },
+                     {
+                         "detail":  "Required UI screen UI-WORKBENCH finalUiStatus=HARD_FAIL",
+                         "path":  "docs/auto-execute/results/ui-verifier.json",
+                         "severity":  "HARD_FAIL",
+                         "kind":  "ui-verifier"
+                     }
+                 ],
+    "commands":  [
+
+                 ],
+    "lane":  "acceptance-compare",
+    "status":  "HARD_FAIL",
+    "evidence":  [
+                     "docs\\auto-execute\\comparison\\round-008.json",
+                     "docs\\auto-execute\\comparison\\round-008.md"
+                 ],
+    "schemaVersion":  "2.0",
+    "nextActions":  [
+                        "Use this comparison round as the next repair input, update implementation/evidence, then run another comparison round."
+                    ],
+    "updatedAt":  "2026-05-14T17:01:13"
+}

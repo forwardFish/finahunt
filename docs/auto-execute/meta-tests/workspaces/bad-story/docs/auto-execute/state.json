@@ -1,0 +1,7 @@
+﻿{
+    "lastRunAt":  "2026-05-14T11:00:12",
+    "status":  "initialized",
+    "phase":  "init",
+    "projectRoot":  "C:\\Users\\linyanhui\\.codex\\skills\\auto-execute\\docs\\auto-execute\\meta-tests\\workspaces\\bad-story",
+    "nextAction":  "Run scripts/acceptance/run-all.ps1 -Mode fast"
+}

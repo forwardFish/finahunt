@@ -1,0 +1,80 @@
+﻿{
+    "schemaVersion":  "2.0",
+    "round":  5,
+    "testHarnessProbeAt":  "2026-05-14T16:54:33",
+    "gaps":  [
+                 {
+                     "id":  "ui-fidelity-UI-HOME",
+                     "type":  "ui-fidelity",
+                     "severity":  "IN_SCOPE_GAP",
+                     "source":  "docs\\auto-execute\\results\\ui-pixel-diff.json",
+                     "description":  "Required UI screen UI-HOME does not meet fidelity threshold. ratio=0.089112881362059 threshold=0.02 sizeMismatch=True.",
+                     "repairTarget":  "Repair the implemented UI for /, recapture screenshots, and rerun run-ui-compare.ps1.",
+                     "status":  "OPEN"
+                 },
+                 {
+                     "id":  "ui-fidelity-UI-FERMENTATION",
+                     "type":  "ui-fidelity",
+                     "severity":  "IN_SCOPE_GAP",
+                     "source":  "docs\\auto-execute\\results\\ui-pixel-diff.json",
+                     "description":  "Required UI screen UI-FERMENTATION does not meet fidelity threshold. ratio=0.0812332540463692 threshold=0.02 sizeMismatch=True.",
+                     "repairTarget":  "Repair the implemented UI for /fermentation, recapture screenshots, and rerun run-ui-compare.ps1.",
+                     "status":  "OPEN"
+                 },
+                 {
+                     "id":  "ui-fidelity-UI-RESEARCH",
+                     "type":  "ui-fidelity",
+                     "severity":  "IN_SCOPE_GAP",
+                     "source":  "docs\\auto-execute\\results\\ui-pixel-diff.json",
+                     "description":  "Required UI screen UI-RESEARCH does not meet fidelity threshold. ratio=0.0760088363603989 threshold=0.02 sizeMismatch=True.",
+                     "repairTarget":  "Repair the implemented UI for /research, recapture screenshots, and rerun run-ui-compare.ps1.",
+                     "status":  "OPEN"
+                 },
+                 {
+                     "id":  "ui-fidelity-UI-WORKBENCH",
+                     "type":  "ui-fidelity",
+                     "severity":  "IN_SCOPE_GAP",
+                     "source":  "docs\\auto-execute\\results\\ui-pixel-diff.json",
+                     "description":  "Required UI screen UI-WORKBENCH does not meet fidelity threshold. ratio=0.0882158729742945 threshold=0.02 sizeMismatch=True.",
+                     "repairTarget":  "Repair the implemented UI for /workbench, recapture screenshots, and rerun run-ui-compare.ps1.",
+                     "status":  "OPEN"
+                 },
+                 {
+                     "id":  "ui-fidelity-UI-HOME",
+                     "type":  "ui-fidelity",
+                     "severity":  "IN_SCOPE_GAP",
+                     "source":  "docs\\auto-execute\\results\\ui-pixel-diff.json",
+                     "description":  "Required UI screen UI-HOME does not meet fidelity threshold. ratio=0.0881007356130711 threshold=0.02 sizeMismatch=True.",
+                     "repairTarget":  "Repair the implemented UI for /, recapture screenshots, and rerun run-ui-compare.ps1.",
+                     "status":  "OPEN"
+                 },
+                 {
+                     "id":  "ui-fidelity-UI-FERMENTATION",
+                     "type":  "ui-fidelity",
+                     "severity":  "IN_SCOPE_GAP",
+                     "source":  "docs\\auto-execute\\results\\ui-pixel-diff.json",
+                     "description":  "Required UI screen UI-FERMENTATION does not meet fidelity threshold. ratio=0.0763512959317585 threshold=0.02 sizeMismatch=True.",
+                     "repairTarget":  "Repair the implemented UI for /fermentation, recapture screenshots, and rerun run-ui-compare.ps1.",
+                     "status":  "OPEN"
+                 },
+                 {
+                     "id":  "ui-fidelity-UI-RESEARCH",
+                     "type":  "ui-fidelity",
+                     "severity":  "IN_SCOPE_GAP",
+                     "source":  "docs\\auto-execute\\results\\ui-pixel-diff.json",
+                     "description":  "Required UI screen UI-RESEARCH does not meet fidelity threshold. ratio=0.06737224002849 threshold=0.02 sizeMismatch=True.",
+                     "repairTarget":  "Repair the implemented UI for /research, recapture screenshots, and rerun run-ui-compare.ps1.",
+                     "status":  "OPEN"
+                 },
+                 {
+                     "id":  "ui-fidelity-UI-WORKBENCH",
+                     "type":  "ui-fidelity",
+                     "severity":  "IN_SCOPE_GAP",
+                     "source":  "docs\\auto-execute\\results\\ui-pixel-diff.json",
+                     "description":  "Required UI screen UI-WORKBENCH does not meet fidelity threshold. ratio=0.0816350586756077 threshold=0.02 sizeMismatch=True.",
+                     "repairTarget":  "Repair the implemented UI for /workbench, recapture screenshots, and rerun run-ui-compare.ps1.",
+                     "status":  "OPEN"
+                 }
+             ],
+    "generatedAt":  "2026-05-14T17:02:05"
+}

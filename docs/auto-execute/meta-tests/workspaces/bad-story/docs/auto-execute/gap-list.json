@@ -1,0 +1,43 @@
+﻿{
+    "schemaVersion":  "1.9.1",
+    "round":  1,
+    "gaps":  [
+                 {
+                     "id":  "GAP-STORY-BAD-NO-TESTPOINTS-STORY-QUALITY-1",
+                     "type":  "story-quality",
+                     "severity":  "HARD_FAIL",
+                     "source":  "docs\\auto-execute\\story-target.json",
+                     "description":  "P0/P1 story STORY-BAD-NO-TESTPOINTS is missing required field testPoints.",
+                     "repairTarget":  "Populate testPoints in story-target.json.",
+                     "status":  "OPEN"
+                 },
+                 {
+                     "id":  "GAP-STORY-BAD-NO-TESTPOINTS-STORY-QUALITY-2",
+                     "type":  "story-quality",
+                     "severity":  "HARD_FAIL",
+                     "source":  "docs\\auto-execute\\story-target.json",
+                     "description":  "P0/P1 story STORY-BAD-NO-TESTPOINTS testPoints is empty.",
+                     "repairTarget":  "Generate route/API/E2E/visual test points.",
+                     "status":  "OPEN"
+                 },
+                 {
+                     "id":  "GAP-STORY-BAD-NO-TESTPOINTS-STORY-QUALITY-3",
+                     "type":  "story-quality",
+                     "severity":  "HARD_FAIL",
+                     "source":  "docs\\auto-execute\\story-target.json",
+                     "description":  "P0/P1 story STORY-BAD-NO-TESTPOINTS has no route/api/e2e/visual test point.",
+                     "repairTarget":  "Add at least one executable route, api, e2e, or visual test point.",
+                     "status":  "OPEN"
+                 },
+                 {
+                     "id":  "GAP-STORY-BAD-NO-TESTPOINTS-STORY-QUALITY-4",
+                     "type":  "story-quality",
+                     "severity":  "HARD_FAIL",
+                     "source":  "docs\\auto-execute\\story-target.json",
+                     "description":  "Materialized test point  has invalid status .",
+                     "repairTarget":  "Regenerate or bind this test point.",
+                     "status":  "OPEN"
+                 }
+             ],
+    "generatedAt":  "2026-05-14T11:00:13"
+}

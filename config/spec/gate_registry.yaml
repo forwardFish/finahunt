@@ -1,65 +1,39 @@
 gates:
   - gate_id: "vision_to_mvp"
-    description: "愿景、MVP 和规范文档必须一致，才能启动 Sprint 级实现。"
+    description: "Final product spec is the current source of truth before implementation acceptance."
     required_files:
-      - "docs/01_战略/远景目标.md"
-      - "docs/02_MVP/mvp.md"
-      - "docs/02_MVP/mvp功能.md"
-      - "docs/03_架构/Agent 体系设计文档 v1.0 正式落地版.md"
-    input_contracts:
-      - "vision"
-      - "mvp_scope"
-    output_artifacts:
-      - "aligned_scope_report"
-    blocking_conditions:
-      - "canonical source missing"
-      - "goal mapping missing"
+      - "docs/FINAL_PRODUCT_SPEC.md"
+      - "docs/README.md"
+      - "apps/web/package.json"
+      - "pyproject.toml"
+    input_contracts: ["vision", "mvp_scope"]
+    output_artifacts: ["aligned_scope_report"]
+    blocking_conditions: ["canonical source missing", "goal mapping missing"]
   - gate_id: "mvp_to_runtime"
-    description: "进入 runtime 前必须具备 source registry、schema、traceability 和 compliance rule。"
+    description: "Runtime requires source registry, schema, traceability, and compliance rules."
     required_files:
       - "config/rules/source_registry.yaml"
       - "config/rules/compliance_rules.yaml"
       - "packages/schema/models.py"
       - "config/spec/traceability.yaml"
-    input_contracts:
-      - "source_registry"
-      - "raw_document_schema"
-      - "compliance_policy"
-    output_artifacts:
-      - "runtime_ready_contract"
-    blocking_conditions:
-      - "missing registry fields"
-      - "missing schema field"
-      - "traceability missing"
+    input_contracts: ["source_registry", "raw_document_schema", "compliance_policy"]
+    output_artifacts: ["runtime_ready_contract"]
+    blocking_conditions: ["missing registry fields", "missing schema field", "traceability missing"]
   - gate_id: "runtime_to_manual_review"
-    description: "高风险输出、被阻断文档或缺少来源证据时，必须进入人工校正。"
+    description: "Runtime audit and high-risk output require manual correction records."
     required_files:
       - "agents/approval/checkpoint.py"
-      - "docs/04_规范/操作手册.md"
-    input_contracts:
-      - "runtime_audit_log"
-      - "blocked_documents"
-    output_artifacts:
-      - "manual_correction_record"
-      - "approval_record"
+      - "agents/runtime/source_audit/agent.py"
+    input_contracts: ["runtime_audit_log", "blocked_documents"]
+    output_artifacts: ["manual_correction_record", "approval_record"]
     manual_intervention_required: true
-    blocking_conditions:
-      - "high risk output without manual correction"
-      - "blocked documents unresolved"
+    blocking_conditions: ["high risk output without manual correction", "blocked documents unresolved"]
   - gate_id: "manual_review_to_final_acceptance"
-    description: "final gate 必须产出明确结论、证据链和人工介入记录。"
+    description: "Final gate decides PASS or BLOCKED from evaluation, audit, and correction state."
     required_files:
       - "agents/final_gate/agent.py"
       - "tests/e2e/test_final_gate.py"
-      - "docs/04_规范/操作手册.md"
-    input_contracts:
-      - "evaluation_report"
-      - "runtime_audit_log"
-      - "manual_correction_record"
-    output_artifacts:
-      - "final_gate_decision"
-      - "rule_check_matrix"
-      - "final_gate_artifact"
-    blocking_conditions:
-      - "final gate decision missing"
-      - "manual correction required but absent"
+      - "tests/integration/test_build_workflow.py"
+    input_contracts: ["evaluation_report", "runtime_audit_log", "manual_correction_record"]
+    output_artifacts: ["final_gate_decision", "rule_check_matrix", "final_gate_artifact"]
+    blocking_conditions: ["final gate decision missing", "manual correction required but absent"]

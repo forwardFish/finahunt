@@ -1,0 +1,1066 @@
+﻿{
+    "checks":  [
+                   {
+                       "name":  "script exists: init-harness.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-all.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-convergence.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-final-gate.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-verifier-dependencies.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-requirement-extract.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-requirement-section-map.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-requirement-coverage.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-requirement-verify.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-story-extract.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-story-curate.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-story-normalize.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-story-test-generate.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-story-test-materialize.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-generated-story-tests.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-story-quality-gate.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-story-verify.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-story-final-report.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-harness-self-eval.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-harness-score.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-harness-gap-repair.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-ui-capture.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-ui-compare.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-contract-map.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-contract-verify.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-frontend-test.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-backend-test.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-e2e-flow.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-acceptance-compare.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-compare-requirements.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-compare-ui.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-gap-repair.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-report-integrity.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-secret-guard.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: run-status.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "script exists: test-harness.ps1",
+                       "passed":  true,
+                       "details":  "missing script"
+                   },
+                   {
+                       "name":  "node verifier exists: capture-ui.mjs",
+                       "passed":  true,
+                       "details":  "missing node verifier"
+                   },
+                   {
+                       "name":  "node verifier exists: compare-ui.mjs",
+                       "passed":  true,
+                       "details":  "missing node verifier"
+                   },
+                   {
+                       "name":  "release package script exists",
+                       "passed":  true,
+                       "details":  "scripts/package-release.ps1 missing"
+                   },
+                   {
+                       "name":  "parse: claim-task.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: collect-env.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: collect-git-status.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: init-harness.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: lib.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: list-available-tasks.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: mark-feature-status.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: plan-fullstack-delivery.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: release-task.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-acceptance-compare.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-adapter-detect.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-all.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-api-smoke.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-architecture-guard.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-backend-test.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-backend.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-code-review.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-compare-requirements.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-compare-ui.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-contract-map.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-contract-verify.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-contract.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-convergence.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-db-e2e.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-e2e-flow.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-finahunt-full-flow.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-finahunt-ui-capture.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-final-gate.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-frontend-test.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-frontend.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-full-flow-smoke.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-gap-repair.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-generated-story-tests.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-harness-gap-repair.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-harness-score.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-harness-self-eval.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-report-integrity.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-requirement-coverage.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-requirement-extract.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-requirement-section-map.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-requirement-verify.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-requirements.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-scope-classification.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-secret-guard.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-status.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-story-curate.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-story-extract.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-story-final-report.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-story-normalize.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-story-quality-gate.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-story-test-generate.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-story-test-materialize.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-story-verify.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-ui-capture.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-ui-compare.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-verifier-dependencies.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: run-visual-smoke.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: select-next-feature.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: summarize-errors.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: test-harness.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: flutter.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: generic.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: nest-prisma.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: next.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: node-api.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: python.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: react-vite.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: flutter-contract.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: flutter.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: generic.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: nest-contract.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: nest-prisma.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: next-contract.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: next.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: node-api.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: python.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: react-vite.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "parse: package-release.ps1",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "node syntax: capture-ui.mjs",
+                       "passed":  true,
+                       "details":  "node --check failed"
+                   },
+                   {
+                       "name":  "node syntax: compare-ui.mjs",
+                       "passed":  true,
+                       "details":  "node --check failed"
+                   },
+                   {
+                       "name":  "run-convergence supports MaxRounds default 5",
+                       "passed":  true,
+                       "details":  "MaxRounds default is not 5"
+                   },
+                   {
+                       "name":  "run-convergence supports ResetConvergence",
+                       "passed":  true,
+                       "details":  "ResetConvergence parameter missing"
+                   },
+                   {
+                       "name":  "run-convergence supports Strict",
+                       "passed":  true,
+                       "details":  "Strict parameter missing"
+                   },
+                   {
+                       "name":  "run-convergence runs v1.9 verifier stages",
+                       "passed":  true,
+                       "details":  "v1.9 stages missing from convergence loop"
+                   },
+                   {
+                       "name":  "run-ui-capture invokes default capture-ui.mjs",
+                       "passed":  true,
+                       "details":  "default capture-ui.mjs call missing"
+                   },
+                   {
+                       "name":  "run-ui-capture checks verifier dependencies",
+                       "passed":  true,
+                       "details":  "verifier dependency check missing"
+                   },
+                   {
+                       "name":  "run-ui-capture treats ui-target screens as capture targets",
+                       "passed":  true,
+                       "details":  "ui-target screens are not counted as capture targets"
+                   },
+                   {
+                       "name":  "run-ui-capture supports uiMapping",
+                       "passed":  true,
+                       "details":  "uiMapping support missing from UI capture"
+                   },
+                   {
+                       "name":  "run-ui-compare invokes default compare-ui.mjs",
+                       "passed":  true,
+                       "details":  "default compare-ui.mjs call missing"
+                   },
+                   {
+                       "name":  "run-ui-compare checks verifier dependencies",
+                       "passed":  true,
+                       "details":  "verifier dependency check missing"
+                   },
+                   {
+                       "name":  "run-ui-compare enforces required uiMapping screenshots",
+                       "passed":  true,
+                       "details":  "required uiMapping screenshot gate missing"
+                   },
+                   {
+                       "name":  "compare-ui handles different image dimensions",
+                       "passed":  true,
+                       "details":  "dimension mismatch handling missing"
+                   },
+                   {
+                       "name":  "run-final-gate supports Strict",
+                       "passed":  true,
+                       "details":  "Strict parameter missing"
+                   },
+                   {
+                       "name":  "run-final-gate reads requirement-coverage.json",
+                       "passed":  true,
+                       "details":  "requirement-coverage.json missing from final gate required results"
+                   },
+                   {
+                       "name":  "run-final-gate reads requirement-verifier.json",
+                       "passed":  true,
+                       "details":  "requirement-verifier.json missing from final gate required results"
+                   },
+                   {
+                       "name":  "run-final-gate reads ui-capture.json",
+                       "passed":  true,
+                       "details":  "ui-capture.json missing from final gate required results"
+                   },
+                   {
+                       "name":  "run-final-gate reads ui-verifier.json",
+                       "passed":  true,
+                       "details":  "ui-verifier.json missing from final gate required results"
+                   },
+                   {
+                       "name":  "run-final-gate reads contract-verifier.json",
+                       "passed":  true,
+                       "details":  "contract-verifier.json missing from final gate required results"
+                   },
+                   {
+                       "name":  "run-final-gate reads frontend-test.json",
+                       "passed":  true,
+                       "details":  "frontend-test.json missing from final gate required results"
+                   },
+                   {
+                       "name":  "run-final-gate reads backend-test.json",
+                       "passed":  true,
+                       "details":  "backend-test.json missing from final gate required results"
+                   },
+                   {
+                       "name":  "run-final-gate reads e2e-flow.json",
+                       "passed":  true,
+                       "details":  "e2e-flow.json missing from final gate required results"
+                   },
+                   {
+                       "name":  "run-final-gate reads report-integrity.json",
+                       "passed":  true,
+                       "details":  "report-integrity.json missing from final gate required results"
+                   },
+                   {
+                       "name":  "run-final-gate reads secret-guard.json",
+                       "passed":  true,
+                       "details":  "secret-guard.json missing from final gate required results"
+                   },
+                   {
+                       "name":  "run-final-gate reads story-verifier.json",
+                       "passed":  true,
+                       "details":  "story-verifier.json missing from final gate required results"
+                   },
+                   {
+                       "name":  "run-final-gate reads story-quality-gate.json",
+                       "passed":  true,
+                       "details":  "story-quality-gate.json missing from final gate"
+                   },
+                   {
+                       "name":  "run-final-gate reads generated-story-tests.json",
+                       "passed":  true,
+                       "details":  "generated-story-tests.json missing from final gate"
+                   },
+                   {
+                       "name":  "run-final-gate reads requirement-section-map.json",
+                       "passed":  true,
+                       "details":  "requirement-section-map final gate missing"
+                   },
+                   {
+                       "name":  "run-final-gate reads story materialization and acceptance summary",
+                       "passed":  true,
+                       "details":  "story materialized tests or acceptance summary missing from final gate"
+                   },
+                   {
+                       "name":  "run-final-gate classifies final verdicts",
+                       "passed":  true,
+                       "details":  "final verdict classification missing"
+                   },
+                   {
+                       "name":  "run-final-gate enforces P0/P1 story test point evidence",
+                       "passed":  true,
+                       "details":  "P0/P1 story evidence hard gate missing"
+                   },
+                   {
+                       "name":  "run-final-gate enforces generated story test execution",
+                       "passed":  true,
+                       "details":  "generated story execution hard gate missing"
+                   },
+                   {
+                       "name":  "run-final-gate reads harness lane enablement",
+                       "passed":  true,
+                       "details":  "dynamic final gate lane enablement missing"
+                   },
+                   {
+                       "name":  "run-final-gate emits disabled lane suggestions",
+                       "passed":  true,
+                       "details":  "disabled/auto-detected lane suggestions missing"
+                   },
+                   {
+                       "name":  "run-final-gate writes acceptance confidence",
+                       "passed":  true,
+                       "details":  "acceptance confidence fields missing"
+                   },
+                   {
+                       "name":  "run-contract records frontend call methods",
+                       "passed":  true,
+                       "details":  "frontend call method discovery missing"
+                   },
+                   {
+                       "name":  "run-contract records backend API paths",
+                       "passed":  true,
+                       "details":  "backend path discovery missing"
+                   },
+                   {
+                       "name":  "run-contract-verify checks frontend calls against backend routes",
+                       "passed":  true,
+                       "details":  "frontend/backend route matching missing"
+                   },
+                   {
+                       "name":  "run-all supports fast/gate/full",
+                       "passed":  true,
+                       "details":  "Mode ValidateSet missing"
+                   },
+                   {
+                       "name":  "run-all supports SkipCompare",
+                       "passed":  true,
+                       "details":  "SkipCompare parameter missing"
+                   },
+                   {
+                       "name":  "run-all supports SkipFinalGate",
+                       "passed":  true,
+                       "details":  "SkipFinalGate parameter missing"
+                   },
+                   {
+                       "name":  "run-all runs v1.9 stages",
+                       "passed":  true,
+                       "details":  "v1.9 stages missing from run-all"
+                   },
+                   {
+                       "name":  "run-all does not write COMPLETED verdict",
+                       "passed":  true,
+                       "details":  "COMPLETED still appears as a status"
+                   },
+                   {
+                       "name":  "lib exposes RequirementSectionMap",
+                       "passed":  true,
+                       "details":  "RequirementSectionMap path missing from lib.ps1"
+                   },
+                   {
+                       "name":  "lib exposes StoryCandidates",
+                       "passed":  true,
+                       "details":  "StoryCandidates path missing from lib.ps1"
+                   },
+                   {
+                       "name":  "lib exposes StoryCandidatesCurated",
+                       "passed":  true,
+                       "details":  "StoryCandidatesCurated path missing from lib.ps1"
+                   },
+                   {
+                       "name":  "lib exposes StoryTarget",
+                       "passed":  true,
+                       "details":  "StoryTarget path missing from lib.ps1"
+                   },
+                   {
+                       "name":  "lib exposes StoryTestMatrix",
+                       "passed":  true,
+                       "details":  "StoryTestMatrix path missing from lib.ps1"
+                   },
+                   {
+                       "name":  "lib exposes StoryStatus",
+                       "passed":  true,
+                       "details":  "StoryStatus path missing from lib.ps1"
+                   },
+                   {
+                       "name":  "lib exposes StoryMaterializedTests",
+                       "passed":  true,
+                       "details":  "StoryMaterializedTests path missing from lib.ps1"
+                   },
+                   {
+                       "name":  "lib exposes StoryQualityGate",
+                       "passed":  true,
+                       "details":  "StoryQualityGate path missing from lib.ps1"
+                   },
+                   {
+                       "name":  "lib exposes StoryAcceptanceSummary",
+                       "passed":  true,
+                       "details":  "StoryAcceptanceSummary path missing from lib.ps1"
+                   },
+                   {
+                       "name":  "lib exposes HarnessScorecard",
+                       "passed":  true,
+                       "details":  "HarnessScorecard path missing from lib.ps1"
+                   },
+                   {
+                       "name":  "lib parses uiMapping object arrays",
+                       "passed":  true,
+                       "details":  "Get-HarnessObjectListValue missing"
+                   },
+                   {
+                       "name":  "Invoke-Gate returns clean boolean",
+                       "passed":  true,
+                       "details":  "Invoke-Gate must not emit command output into boolean callers"
+                   },
+                   {
+                       "name":  "exit code PASS",
+                       "passed":  true,
+                       "details":  "PASS exit code must be 0"
+                   },
+                   {
+                       "name":  "exit code PASS_WITH_LIMITATION",
+                       "passed":  true,
+                       "details":  "PASS_WITH_LIMITATION exit code must be 3"
+                   },
+                   {
+                       "name":  "exit code REPAIR_REQUIRED",
+                       "passed":  true,
+                       "details":  "REPAIR_REQUIRED exit code must be 2"
+                   },
+                   {
+                       "name":  "exit code HARD_FAIL",
+                       "passed":  true,
+                       "details":  "HARD_FAIL exit code must be 1"
+                   },
+                   {
+                       "name":  "exit code BLOCKED",
+                       "passed":  true,
+                       "details":  "BLOCKED exit code must be 4"
+                   },
+                   {
+                       "name":  "Normalize-AEVerdict COMPLETE is not PASS",
+                       "passed":  true,
+                       "details":  "COMPLETE must not normalize to PASS"
+                   },
+                   {
+                       "name":  "Normalize-AEVerdict COMPLETED is not PASS",
+                       "passed":  true,
+                       "details":  "COMPLETED must not normalize to PASS"
+                   },
+                   {
+                       "name":  "doc exists: STATUS_SEMANTICS.md",
+                       "passed":  true,
+                       "details":  "missing docs/auto-execute/STATUS_SEMANTICS.md"
+                   },
+                   {
+                       "name":  "doc exists: QUALITY_GATES.md",
+                       "passed":  true,
+                       "details":  "missing docs/auto-execute/QUALITY_GATES.md"
+                   },
+                   {
+                       "name":  "doc exists: GOLDEN_RULES.md",
+                       "passed":  true,
+                       "details":  "missing docs/auto-execute/GOLDEN_RULES.md"
+                   },
+                   {
+                       "name":  "doc exists: 03-story-map.md",
+                       "passed":  true,
+                       "details":  "missing docs/auto-execute/03-story-map.md"
+                   },
+                   {
+                       "name":  "doc exists: 04-story-test-matrix.md",
+                       "passed":  true,
+                       "details":  "missing docs/auto-execute/04-story-test-matrix.md"
+                   },
+                   {
+                       "name":  "doc exists: harness-self-eval-report.md",
+                       "passed":  true,
+                       "details":  "missing docs/auto-execute/harness-self-eval-report.md"
+                   },
+                   {
+                       "name":  "doc exists: harness-repair-plan.md",
+                       "passed":  true,
+                       "details":  "missing docs/auto-execute/harness-repair-plan.md"
+                   },
+                   {
+                       "name":  "harness.yml supports verifierDependencies",
+                       "passed":  true,
+                       "details":  "verifierDependencies section missing"
+                   },
+                   {
+                       "name":  "harness.yml defaults no dependency mutation",
+                       "passed":  true,
+                       "details":  "safe verifier dependency defaults missing"
+                   },
+                   {
+                       "name":  "harness.yml supports visual config",
+                       "passed":  true,
+                       "details":  "visual diff config missing"
+                   },
+                   {
+                       "name":  "harness.yml supports uiMapping",
+                       "passed":  true,
+                       "details":  "uiMapping section missing"
+                   },
+                   {
+                       "name":  "harness.yml supports lanes.enabled",
+                       "passed":  true,
+                       "details":  "lanes.enabled entries missing"
+                   },
+                   {
+                       "name":  "machine-summary writable",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "gap-list writable",
+                       "passed":  true,
+                       "details":  ""
+                   },
+                   {
+                       "name":  "report-integrity runnable",
+                       "passed":  true,
+                       "details":  "exit 0"
+                   },
+                   {
+                       "name":  "secret-guard runnable",
+                       "passed":  true,
+                       "details":  "exit 0"
+                   },
+                   {
+                       "name":  "run-harness-self-eval.ps1 uses v1.9 score/self-loop files",
+                       "passed":  true,
+                       "details":  "missing harness self-evaluation artifacts"
+                   },
+                   {
+                       "name":  "run-harness-score.ps1 uses v1.9 score/self-loop files",
+                       "passed":  true,
+                       "details":  "missing harness self-evaluation artifacts"
+                   },
+                   {
+                       "name":  "run-harness-gap-repair.ps1 uses v1.9 score/self-loop files",
+                       "passed":  true,
+                       "details":  "missing harness self-evaluation artifacts"
+                   },
+                   {
+                       "name":  "verifier dependencies prefer ephemeral npx",
+                       "passed":  true,
+                       "details":  "ephemeral dependency policy missing"
+                   },
+                   {
+                       "name":  "lib schema version is v2.0",
+                       "passed":  true,
+                       "details":  "schema version must be 2.0"
+                   },
+                   {
+                       "name":  "Chinese PRD extraction requires intent signals",
+                       "passed":  true,
+                       "details":  "Chinese PRD extraction still accepts broad CJK-only lines"
+                   },
+                   {
+                       "name":  "verifier dependency diagnostics explain resolution",
+                       "passed":  true,
+                       "details":  "dependency diagnostics fields missing"
+                   },
+                   {
+                       "name":  "E2E distinguishes environment from code failure",
+                       "passed":  true,
+                       "details":  "E2E failure classification missing"
+                   },
+                   {
+                       "name":  "generated story tests emit E2E environment classification",
+                       "passed":  true,
+                       "details":  "generated-story-tests E2E diagnostics missing"
+                   },
+                   {
+                       "name":  "E2E flow emits E2E environment classification",
+                       "passed":  true,
+                       "details":  "e2e-flow diagnostics missing"
+                   },
+                   {
+                       "name":  "UI verifier emits layered per-screen status",
+                       "passed":  true,
+                       "details":  "UI layered per-screen status missing"
+                   },
+                   {
+                       "name":  "UI mapping priority documented in UI scripts",
+                       "passed":  true,
+                       "details":  "UI mapping priority or auto-guess rule missing"
+                   },
+                   {
+                       "name":  "final gate explains non-pure PASS with fixed headings",
+                       "passed":  true,
+                       "details":  "non-pure PASS explanation missing"
+                   },
+                   {
+                       "name":  "package-release uses clean allowlist",
+                       "passed":  true,
+                       "details":  "release allowlist missing"
+                   },
+                   {
+                       "name":  "package-release rejects old run artifacts",
+                       "passed":  true,
+                       "details":  "release forbidden-artifact checks missing"
+                   }
+               ],
+    "lane":  "test-harness",
+    "failures":  [
+
+                 ],
+    "schemaVersion":  "2.0",
+    "status":  "PASS",
+    "updatedAt":  "2026-05-14T16:55:22"
+}

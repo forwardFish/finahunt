@@ -1,18 +1,65 @@
 import Link from "next/link";
 
+import { Icon, RankPanel, SamplePreviewCard } from "@/components/PrototypeUI";
 import { RunLowPositionButton } from "@/components/RunLowPositionButton";
-import { Badge, DateSwitch, EmptyState, LinkButton, MetricCard, PageControls, PageHero, ScoreMeter, SectionCard } from "@/components/FinancialUI";
-import { loadLowPositionWorkbench, resolveWorkbenchDate } from "@/lib/lowPositionWorkbench";
-import { buildHref, candidateNames, fermentationVerdictLabel, formatIso, lowPositionThemeName, messageCompanyNames, safeText, summarizeResearchState, validationLabel } from "@/lib/webView";
+import { loadDailySnapshot, optionalTargetDate } from "@/lib/dailySnapshot";
+import { loadLowPositionWorkbench, optionalWorkbenchDate } from "@/lib/lowPositionWorkbench";
+import { sampleSeeds } from "@/lib/uiSeedData";
+import { buildHref, formatIso, formatScore, lowPositionThemeName, safeText, validationLabel } from "@/lib/webView";
 
 type PageProps = { searchParams?: Promise<Record<string, string | string[] | undefined>> };
 
+const sampleTabs = ["全部", "行业研究", "产业链", "政策分析", "公司研究", "市场策略", "专题报告"];
+
 export default async function ResearchPage({ searchParams }: PageProps) {
   const params = searchParams ? await searchParams : {};
-  const date = resolveWorkbenchDate(params.date);
-  const workbench = loadLowPositionWorkbench(date);
-  const state = summarizeResearchState(workbench.state);
-  const themes = workbench.themes.slice(0, 9);
-  const messages = workbench.messages.slice(0, 6);
-  return <main className="fi-page"><PageHero eyebrow="Low Position Research" title="把低位机会做成可浏览的研究样例库。" description="参考 samples / search / sample-detail-locked 原型，低位研究页突出题材卡、锁定式研究预览、候选公司与验证状态，而不是堆叠流水线日志。" side={<><h2>研究链路状态</h2><p>{state.description}</p><div className="fi-stat-grid"><MetricCard label="状态" value={state.label} tone={state.tone === "ready" ? "green" : state.tone === "partial" ? "orange" : "slate"} /><MetricCard label="消息" value={workbench.messageCount} /><MetricCard label="题材" value={workbench.themeCount} /><MetricCard label="验证通过" value={workbench.validatedThemes.length} tone="green" /></div><RunLowPositionButton latestRunId={workbench.runId} /></>}><DateSwitch action="/research" date={workbench.date} /></PageHero><div className="fi-main-grid"><SectionCard title="样例列表" eyebrow="Samples" action={<Link href={buildHref("/low-position", { date: workbench.date })}>低位专题 ›</Link>}><div className="fi-tabs"><span className="active">全部</span><span>已验证</span><span>观察中</span><span>降级</span><span>候选公司</span></div><div className="fi-sample-grid">{themes.length ? themes.map((theme) => <article className="fi-sample-card" key={theme.theme_name}><Badge tone={theme.validation_bucket === "validated" ? "green" : theme.validation_bucket === "downgraded" ? "orange" : "blue"}>{validationLabel(theme.validation_bucket)}</Badge><h3>{lowPositionThemeName(theme)}</h3><p>{safeText(theme.low_position_reason, "暂无低位研究理由。")}</p><div className="fi-tags">{candidateNames(theme, 4).map((name) => <span className="fi-tag" key={`${theme.theme_name}-${name}`}>{name}</span>)}</div><div className="fi-blur-strip" /><span className="fi-lock-art">↗</span></article>) : <EmptyState title="暂无样例">当前日期没有低位研究样例，可运行低位挖掘或切换日期。</EmptyState>}</div><PageControls totalLabel={`共 ${workbench.themeCount} 个题材`} /></SectionCard><aside className="fi-side"><SectionCard title="验证分组" eyebrow="Buckets"><div className="fi-stat-grid"><MetricCard label="验证通过" value={workbench.validatedThemes.length} tone="green" /><MetricCard label="继续观察" value={workbench.watchThemes.length} tone="blue" /><MetricCard label="降级处理" value={workbench.downgradedThemes.length} tone="orange" /></div></SectionCard><SectionCard title="链路阶段" eyebrow="Workflow"><div className="fi-news-list">{workbench.stages.length ? workbench.stages.map((stage) => <article className="fi-news-item" key={stage.stage}><span className="fi-news-time">{safeText(stage.status, "-")}</span><div><strong>{safeText(stage.label, stage.stage)}</strong><p>用于说明低位研究链路当前跑到哪一步。</p></div></article>) : <EmptyState title="暂无阶段记录">当前日期没有工作台阶段状态。</EmptyState>}</div></SectionCard></aside></div><SectionCard title="代表性消息与候选公司" eyebrow="Messages"><div className="fi-card-grid">{messages.map((row) => <article className="fi-topic-card" key={row.message.message_id}><div className="fi-topic-head"><h3>{safeText(row.message.title, "未命名消息")}</h3><Badge tone="purple">{fermentationVerdictLabel(row.fermentation.fermentation_verdict)}</Badge></div><p>{safeText(row.message.summary, "暂无消息摘要。")}</p><ScoreMeter value={row.score.recalibrated_actionability_score ?? row.score.initial_actionability_score} /><div className="fi-tags">{messageCompanyNames(row, 5).map((name) => <span className="fi-tag" key={`${row.message.message_id}-${name}`}>{name}</span>)}</div><p className="fi-muted">验证：{validationLabel(row.validation.validation_status)} · {formatIso(row.message.event_time)}</p></article>)}</div></SectionCard><section className="fi-card fi-section-head"><div><span className="fi-kicker">Action</span><h2>回到工作台做横向对照。</h2></div><LinkButton href={buildHref("/workbench", { date: workbench.date })}>进入工作台</LinkButton></section></main>;
+  const date = optionalWorkbenchDate(params.date);
+  const snapshot = await loadDailySnapshot(optionalTargetDate(params.date));
+  const workbench = await loadLowPositionWorkbench(date);
+  const activeDate = workbench.date || snapshot.date;
+  const runtimeSamples = workbench.themes.slice(0, 3).map((theme) => ({
+    kind: validationLabel(theme.validation_bucket),
+    title: `${lowPositionThemeName(theme)}低位研究卡`,
+    description: safeText(theme.low_position_reason, "基于公开事件、题材发酵与候选标的映射生成的研究观察卡。"),
+    locked: true,
+  }));
+  const samples = [...runtimeSamples, ...sampleSeeds].slice(0, 9);
+
+  return (
+    <>
+      <div className="breadcrumb">首页 / 样例</div>
+      <main className="sample-list">
+        <section className="card sample-main">
+          <h1 className="page-title">样例列表</h1>
+          <p className="page-subtitle">精选高质量研究样例，覆盖行业研究、产业链梳理、政策分析、公司深度等多种类型</p>
+          <div className="tabs sample-tabs">{sampleTabs.map((tab, index) => <span className={index === 0 ? "active" : ""} key={tab}>{tab}</span>)}</div>
+          <div className="sample-grid research-sample-grid">
+            {samples.map((sample) => <SamplePreviewCard key={sample.title} sample={sample} />)}
+          </div>
+        </section>
+
+        <aside className="side">
+          <RankPanel themes={snapshot.themes} date={activeDate} title="热门样例" />
+          <section className="card side-card">
+            <h3 className="side-title">最近更新</h3>
+            <div className="recent-list">
+              {samples.slice(0, 5).map((sample, index) => (
+                <div key={`recent-${sample.title}`}>{sample.title}<span>{formatIso(workbench.createdAt).slice(5, 10) || `05-${19 - index}`}</span></div>
+              ))}
+            </div>
+          </section>
+          <section className="card side-card">
+            <h3 className="side-title">研究链运行</h3>
+            <div className="index-grid">
+              <div className="index-box"><div className="idx-name">消息</div><div className="idx-val">{workbench.messageCount}</div><div className="idx-chg">可复核</div></div>
+              <div className="index-box"><div className="idx-name">研究卡</div><div className="idx-val">{workbench.themeCount}</div><div className="idx-chg">+{workbench.themes.length}</div></div>
+              <div className="index-box"><div className="idx-name">已验证</div><div className="idx-val">{workbench.validatedThemes.length}</div><div className="idx-chg">{formatScore(workbench.validatedThemes.length)}</div></div>
+            </div>
+            <div style={{ marginTop: 14 }}><RunLowPositionButton latestRunId={workbench.runId} /></div>
+            <Link className="more block-more" href={buildHref("/workbench", { date: activeDate })}><Icon name="news" size={16} /> 打开研究工作台</Link>
+          </section>
+        </aside>
+      </main>
+    </>
+  );
 }

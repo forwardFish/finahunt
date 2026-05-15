@@ -1,0 +1,10 @@
+{
+  "screens": [
+    {
+      "id": "UPLOAD_REPORT",
+      "route": "/dashboard/upload",
+      "reference": "docs/UI/upload-report.png",
+      "required": true
+    }
+  ]
+}

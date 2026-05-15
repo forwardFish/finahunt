@@ -3,7 +3,9 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +17,7 @@ from workflows.runtime_schedule import run_live_event_cognition_cycle, run_runti
 
 WATCHLIST = {
     "watchlist_symbols": [],
-    "watchlist_themes": ["????", "???", "??", "????"],
+    "watchlist_themes": ["人工智能", "机器人", "算力", "低空经济"],
 }
 
 
@@ -42,20 +44,23 @@ def main() -> int:
 
     warehouse = result["results"]["result_warehouse"]["content"]
     run_id = result["run_id"]
+    db_write_status = warehouse.get("db_write_status", {"backend": "unknown", "status": "DOCUMENTED_BLOCKER"})
     output = {
         "run_id": run_id,
         "artifact_batch_dir": warehouse.get("artifact_batch_dir", ""),
         "frontend_url": "http://127.0.0.1:3021/",
+        "latestDate": datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat(),
         "low_position_count": len(
             result["results"]["low_position_discovery"]["content"].get("low_position_opportunities", [])
         ),
         "fermenting_theme_count": len(
             result["results"]["fermenting_theme_feed"]["content"].get("fermenting_theme_feed", [])
         ),
+        "db_write_status": db_write_status,
         "acceptance_smoke": bool(args.acceptance_smoke),
     }
     print(json.dumps(output, ensure_ascii=False, indent=2))
-    return 0
+    return 0 if db_write_status.get("status") == "PASS" else 1
 
 
 if __name__ == "__main__":

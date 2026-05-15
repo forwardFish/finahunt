@@ -1,0 +1,167 @@
+﻿{
+    "status":  "PENDING",
+    "schemaVersion":  "2.0",
+    "note":  "P0/P1 stories are accepted only when every required test point has evidence.",
+    "stories":  [
+                    {
+                        "storyId":  "STORY-PAYMENT-007",
+                        "epicId":  "EPIC-CORE",
+                        "sprintId":  "SPRINT-LATER",
+                        "priority":  "P2",
+                        "title":  "Stop only for hard blockers such as credentials, production data/deploy, payment, destructive operations, or repeated unrecoverable failures.",
+                        "sourceRequirements":  [
+
+                                               ],
+                        "actor":  "user",
+                        "goal":  "Stop only for hard blockers such as credentials, production data/deploy, payment, destructive operations, or repeated unrecoverable failures.",
+                        "surfaces":  [
+                                         "/deploy"
+                                     ],
+                        "apis":  [
+
+                                 ],
+                        "dataModels":  [
+
+                                       ],
+                        "acceptanceCriteria":  [
+                                                   "Stop only for hard blockers such as credentials, production data/deploy, payment, destructive operations, or repeated unrecoverable failures."
+                                               ],
+                        "evidenceRequired":  [
+                                                 "route smoke",
+                                                 "screenshot",
+                                                 "story verifier"
+                                             ],
+                        "evidence":  [
+
+                                     ],
+                        "source":  "docs\\auto-execute\\story-candidates-curated.json",
+                        "normalized":  true,
+                        "status":  "PENDING",
+                        "testPoints":  [
+                                           {
+                                               "id":  "TP-STORY-PAYMENT-007-001",
+                                               "storyId":  "STORY-PAYMENT-007",
+                                               "type":  "route",
+                                               "target":  "/deploy",
+                                               "expected":  "route is reachable and supports the story goal",
+                                               "evidence":  [
+                                                                "docs/auto-execute/results/route-smoke.generated.json"
+                                                            ],
+                                               "status":  "PASS",
+                                               "materializationStatus":  "BOUND",
+                                               "command":  "node scripts/acceptance/generated/route-smoke.generated.mjs --project-root .",
+                                               "evidenceOutput":  "docs/auto-execute/results/route-smoke.generated.json"
+                                           },
+                                           {
+                                               "id":  "TP-STORY-PAYMENT-007-002",
+                                               "storyId":  "STORY-PAYMENT-007",
+                                               "type":  "functional",
+                                               "target":  "Stop only for hard blockers such as credentials, production data/deploy, payment, destructive operations, or repeated unrecoverable failures.",
+                                               "expected":  "acceptance criterion is proven by test/log/screenshot/API evidence",
+                                               "evidence":  [
+
+                                                            ],
+                                               "status":  "PENDING",
+                                               "materializationStatus":  "MANUAL_REVIEW_REQUIRED",
+                                               "command":  "",
+                                               "evidenceOutput":  ""
+                                           }
+                                       ]
+                    },
+                    {
+                        "storyId":  "STORY-GENERAL-010",
+                        "epicId":  "EPIC-CORE",
+                        "sprintId":  "SPRINT-LATER",
+                        "priority":  "P2",
+                        "title":  "contract verification fails when a frontend `/api/...` call has no matching backend route or method;",
+                        "sourceRequirements":  [
+
+                                               ],
+                        "actor":  "user",
+                        "goal":  "contract verification fails when a frontend `/api/...` call has no matching backend route or method;",
+                        "surfaces":  [
+
+                                     ],
+                        "apis":  [
+
+                                 ],
+                        "dataModels":  [
+
+                                       ],
+                        "acceptanceCriteria":  [
+                                                   "contract verification fails when a frontend `/api/...` call has no matching backend route or method;"
+                                               ],
+                        "evidenceRequired":  [
+                                                 "story verifier"
+                                             ],
+                        "evidence":  [
+
+                                     ],
+                        "source":  "docs\\auto-execute\\story-candidates-curated.json",
+                        "normalized":  true,
+                        "status":  "PENDING",
+                        "testPoints":  {
+                                           "id":  "TP-STORY-GENERAL-010-001",
+                                           "storyId":  "STORY-GENERAL-010",
+                                           "type":  "functional",
+                                           "target":  "contract verification fails when a frontend `/api/...` call has no matching backend route or method;",
+                                           "expected":  "acceptance criterion is proven by test/log/screenshot/API evidence",
+                                           "evidence":  [
+
+                                                        ],
+                                           "status":  "PENDING",
+                                           "materializationStatus":  "MANUAL_REVIEW_REQUIRED",
+                                           "command":  "",
+                                           "evidenceOutput":  ""
+                                       }
+                    },
+                    {
+                        "storyId":  "STORY-GENERAL-016",
+                        "epicId":  "EPIC-CORE",
+                        "sprintId":  "SPRINT-LATER",
+                        "priority":  "P2",
+                        "title":  "generated story route/API/E2E tests are executed by `run-generated-story-tests.ps1` and cannot count as coverage until they run;",
+                        "sourceRequirements":  [
+
+                                               ],
+                        "actor":  "user",
+                        "goal":  "generated story route/API/E2E tests are executed by `run-generated-story-tests.ps1` and cannot count as coverage until they run;",
+                        "surfaces":  [
+
+                                     ],
+                        "apis":  [
+
+                                 ],
+                        "dataModels":  [
+
+                                       ],
+                        "acceptanceCriteria":  [
+                                                   "generated story route/API/E2E tests are executed by `run-generated-story-tests.ps1` and cannot count as coverage until they run;"
+                                               ],
+                        "evidenceRequired":  [
+                                                 "story verifier"
+                                             ],
+                        "evidence":  [
+
+                                     ],
+                        "source":  "docs\\auto-execute\\story-candidates-curated.json",
+                        "normalized":  true,
+                        "status":  "PENDING",
+                        "testPoints":  {
+                                           "id":  "TP-STORY-GENERAL-016-001",
+                                           "storyId":  "STORY-GENERAL-016",
+                                           "type":  "functional",
+                                           "target":  "generated story route/API/E2E tests are executed by `run-generated-story-tests.ps1` and cannot count as coverage until they run;",
+                                           "expected":  "acceptance criterion is proven by test/log/screenshot/API evidence",
+                                           "evidence":  [
+
+                                                        ],
+                                           "status":  "PENDING",
+                                           "materializationStatus":  "MANUAL_REVIEW_REQUIRED",
+                                           "command":  "",
+                                           "evidenceOutput":  ""
+                                       }
+                    }
+                ],
+    "generatedAt":  "2026-05-14T15:31:27"
+}

@@ -1,0 +1,76 @@
+﻿{
+    "screenshots":  [
+
+                    ],
+    "finalReports":  [
+
+                     ],
+    "testReports":  [
+
+                    ],
+    "visualResults":  [
+
+                      ],
+    "schemaVersion":  "1.9.1",
+    "apiResults":  [
+
+                   ],
+    "other":  [
+                  {
+                      "path":  "docs\\auto-execute\\requirement-candidates.json",
+                      "label":  "requirement candidates",
+                      "addedAt":  "2026-05-14T10:59:55",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\requirement-target.json",
+                      "label":  "requirement target",
+                      "addedAt":  "2026-05-14T10:59:55",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\requirements-candidates.json",
+                      "label":  "requirements-candidates result",
+                      "addedAt":  "2026-05-14T10:59:55",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\requirement-extract.json",
+                      "label":  "requirement-extract result",
+                      "addedAt":  "2026-05-14T10:59:55",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\story-candidates.json",
+                      "label":  "story candidates",
+                      "addedAt":  "2026-05-14T10:59:57",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\story-extract.json",
+                      "label":  "story-extract result",
+                      "addedAt":  "2026-05-14T10:59:57",
+                      "exists":  true
+                  }
+              ],
+    "logs":  [
+                 {
+                     "path":  "docs\\auto-execute\\requirement-candidates.json",
+                     "label":  "requirements-candidates",
+                     "addedAt":  "2026-05-14T10:59:55",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\requirement-candidates.json",
+                     "label":  "requirement-extract",
+                     "addedAt":  "2026-05-14T10:59:55",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\story-candidates.json",
+                     "label":  "story-extract",
+                     "addedAt":  "2026-05-14T10:59:57",
+                     "exists":  true
+                 }
+             ]
+}

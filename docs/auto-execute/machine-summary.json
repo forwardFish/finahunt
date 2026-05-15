@@ -1,0 +1,253 @@
+﻿{
+    "manualReviewRequired":  [
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+                                                      null
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\compare-requirements.json",
+                                     "lane":  "compare-requirements"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+                                                      null
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\compare-ui.json",
+                                     "lane":  "compare-ui"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+                                                      "Requirement extraction creates candidates only; normalize requirement-target.json before final PASS."
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\requirement-extract.json",
+                                     "lane":  "requirement-extract"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\requirement-verifier.json",
+                                     "lane":  "requirement-verifier"
+                                 },
+                                 {
+                                     "status":  "MANUAL_REVIEW_REQUIRED",
+                                     "blockers":  [
+                                                      "Auto-extracted requirements are candidates and must be normalized into requirement-target.json"
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\requirements-candidates.json",
+                                     "lane":  "requirements-candidates"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+                                                      "Story extraction creates candidates only; story-target.json must be normalized."
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\story-extract.json",
+                                     "lane":  "story-extract"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+                                                      "Stories are normalized but not accepted until test points have evidence."
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\story-normalize.json",
+                                     "lane":  "story-normalize"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+                                                      "Story test points are generated but still require executable evidence."
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\story-test-generate.json",
+                                     "lane":  "story-test-generate"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\ui-pixel-diff.json",
+                                     "lane":  "ui-pixel-diff"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\verifier-dependencies.json",
+                                     "lane":  "verifier-dependencies"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\visual.json",
+                                     "lane":  "visual"
+                                 }
+                             ],
+    "deferred":  [
+
+                 ],
+    "hardFails":  [
+                      {
+                          "status":  "HARD_FAIL",
+                          "blockers":  [
+                                           {
+                                               "detail":  "Required UI screen UI-HOME does not meet fidelity threshold. ratio=0.089112881362059 threshold=0.02 sizeMismatch=True.",
+                                               "path":  "docs\\auto-execute\\gap-list.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-fidelity"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-FERMENTATION does not meet fidelity threshold. ratio=0.0812332540463692 threshold=0.02 sizeMismatch=True.",
+                                               "path":  "docs\\auto-execute\\gap-list.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-fidelity"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-RESEARCH does not meet fidelity threshold. ratio=0.0760088363603989 threshold=0.02 sizeMismatch=True.",
+                                               "path":  "docs\\auto-execute\\gap-list.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-fidelity"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-WORKBENCH does not meet fidelity threshold. ratio=0.0882158729742945 threshold=0.02 sizeMismatch=True.",
+                                               "path":  "docs\\auto-execute\\gap-list.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-fidelity"
+                                           },
+                                           {
+                                               "detail":  "UI screen UI-HOME exceeds fidelity gate: ratio=0.089112881362059 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
+                                               "path":  "docs/auto-execute/results/ui-pixel-diff.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-pixel-diff"
+                                           },
+                                           {
+                                               "detail":  "UI screen UI-FERMENTATION exceeds fidelity gate: ratio=0.0812332540463692 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
+                                               "path":  "docs/auto-execute/results/ui-pixel-diff.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-pixel-diff"
+                                           },
+                                           {
+                                               "detail":  "UI screen UI-RESEARCH exceeds fidelity gate: ratio=0.0760088363603989 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
+                                               "path":  "docs/auto-execute/results/ui-pixel-diff.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-pixel-diff"
+                                           },
+                                           {
+                                               "detail":  "UI screen UI-WORKBENCH exceeds fidelity gate: ratio=0.0882158729742945 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
+                                               "path":  "docs/auto-execute/results/ui-pixel-diff.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-pixel-diff"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-HOME finalUiStatus=HARD_FAIL",
+                                               "path":  "docs/auto-execute/results/ui-verifier.json",
+                                               "severity":  "HARD_FAIL",
+                                               "kind":  "ui-verifier"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-FERMENTATION finalUiStatus=HARD_FAIL",
+                                               "path":  "docs/auto-execute/results/ui-verifier.json",
+                                               "severity":  "HARD_FAIL",
+                                               "kind":  "ui-verifier"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-RESEARCH finalUiStatus=HARD_FAIL",
+                                               "path":  "docs/auto-execute/results/ui-verifier.json",
+                                               "severity":  "HARD_FAIL",
+                                               "kind":  "ui-verifier"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-WORKBENCH finalUiStatus=HARD_FAIL",
+                                               "path":  "docs/auto-execute/results/ui-verifier.json",
+                                               "severity":  "HARD_FAIL",
+                                               "kind":  "ui-verifier"
+                                           }
+                                       ],
+                          "file":  "docs\\auto-execute\\results\\acceptance-compare.json",
+                          "lane":  "acceptance-compare"
+                      },
+                      {
+                          "status":  "HARD_FAIL",
+                          "blockers":  [
+
+                                       ],
+                          "file":  "docs\\auto-execute\\results\\ui-verifier.json",
+                          "lane":  "ui-verifier"
+                      }
+                  ],
+    "documentedBlockers":  [
+                               {
+                                   "status":  "BLOCKED_BY_ENVIRONMENT",
+                                   "blockers":  [
+                                                    "Docker Postgres service failed to start; see docs/auto-execute/logs/db-postgres-up.log.",
+                                                    "Docker Postgres service is not running; see docs/auto-execute/logs/db-postgres-ps.log."
+                                                ],
+                                   "file":  "docs\\auto-execute\\results\\db-e2e.json",
+                                   "lane":  "db-e2e"
+                               }
+                           ],
+    "finalVerdict":  "HARD_FAIL",
+    "verdictClass":  "failed-hard-gate-or-in-scope-gap",
+    "requirementStatus":  "PASS_WITH_LIMITATION",
+    "storyStatus":  "PASS",
+    "contractStatus":  "PASS",
+    "e2eStatus":  "PASS",
+    "uiStatus":  "HARD_FAIL",
+    "secretStatus":  "PASS",
+    "reportStatus":  "PASS",
+    "uiLayerSummary":  {
+                           "requiredScreens":  4,
+                           "structureStatus":  "PASS",
+                           "screenshotStatus":  "PASS",
+                           "visualStatus":  "PASS",
+                           "pixelPerfectStatus":  "MANUAL_REVIEW_REQUIRED",
+                           "pixelPerfectClaimAllowed":  false,
+                           "statusMeaning":  "UI verifier has hard gaps or missing required evidence."
+                       },
+    "pixelPerfectStatus":  "PASS_WITH_LIMITATION",
+    "canShipLocally":  false,
+    "canClaimPixelPerfect":  false,
+    "requiresHumanReview":  false,
+    "acceptanceConfidence":  0.96,
+    "confidenceFactors":  {
+                              "requirementsCovered":  0.75,
+                              "storiesCovered":  1,
+                              "uiScreenshotsCovered":  1,
+                              "contractVerified":  1,
+                              "e2eVerified":  1,
+                              "manualReviewRemaining":  1
+                          },
+    "confidenceDrag":  [
+                           "requirementsCovered=0.75"
+                       ],
+    "finalGateSuggestions":  [
+
+                             ],
+    "verdictClassificationReason":  "A HARD_FAIL, FAIL, or IN_SCOPE_GAP remains and prevents final acceptance.",
+    "purePassBlockedBy":  [
+                              "Requirement verifier is PASS_WITH_LIMITATION",
+                              "DB E2E is BLOCKED_BY_ENVIRONMENT",
+                              "UI verifier is HARD_FAIL",
+                              "Pixel-perfect visual diff is PASS_WITH_LIMITATION",
+                              "8 unresolved hard/in-scope gap(s)",
+                              "machine summary contains hard failures",
+                              "requirement-verifier is PASS_WITH_LIMITATION",
+                              "ui-verifier is HARD_FAIL",
+                              "db-e2e is blocked by environment",
+                              "required UI screen UI-HOME finalUiStatus is HARD_FAIL",
+                              "required UI screen UI-FERMENTATION finalUiStatus is HARD_FAIL",
+                              "required UI screen UI-RESEARCH finalUiStatus is HARD_FAIL",
+                              "acceptance confidence reduced by: requirementsCovered=0.75"
+                          ],
+    "nonPurePassExplanation":  "Pure PASS is not allowed because: Requirement verifier is PASS_WITH_LIMITATION; DB E2E is BLOCKED_BY_ENVIRONMENT; UI verifier is HARD_FAIL; Pixel-perfect visual diff is PASS_WITH_LIMITATION; 8 unresolved hard/in-scope gap(s); machine summary contains hard failures; requirement-verifier is PASS_WITH_LIMITATION; ui-verifier is HARD_FAIL; db-e2e is blocked by environment; required UI screen UI-HOME finalUiStatus is HARD_FAIL; required UI screen UI-FERMENTATION finalUiStatus is HARD_FAIL; required UI screen UI-RESEARCH finalUiStatus is HARD_FAIL; acceptance confidence reduced by: requirementsCovered=0.75",
+    "schemaVersion":  "2.0",
+    "finalReport":  "docs\\auto-execute\\final-convergence-report.md",
+    "nextRecommendedAction":  "Read final-convergence-report.md, gap-list.json, and next-agent-action.md; repair failed hard gates before final acceptance.",
+    "updatedAt":  "2026-05-15T12:23:24"
+}

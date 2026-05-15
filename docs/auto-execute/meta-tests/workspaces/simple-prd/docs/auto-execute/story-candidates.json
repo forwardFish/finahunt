@@ -1,0 +1,36 @@
+﻿{
+    "candidates":  [
+                       {
+                           "storyId":  "STORY-DOC-001",
+                           "id":  "STORY-DOC-001",
+                           "title":  "User can upload homework, the system generates a diagnostic report, and the syst",
+                           "description":  "User can upload homework, the system generates a diagnostic report, and the system provides a 7-day improvement plan.",
+                           "source":  "docs\\simple-prd.md",
+                           "sourceLine":  1,
+                           "sourceRequirements":  [
+
+                                                  ],
+                           "actor":  "system",
+                           "goal":  "User can upload homework, the system generates a diagnostic report, and the system provides a 7-day improvement plan.",
+                           "priority":  "P2",
+                           "surfaces":  [
+
+                                        ],
+                           "apis":  [
+
+                                    ],
+                           "acceptanceCriteria":  [
+                                                      "User can upload homework, the system generates a diagnostic report, and the system provides a 7-day improvement plan."
+                                                  ],
+                           "status":  "CANDIDATE",
+                           "normalized":  false,
+                           "evidence":  [
+
+                                        ]
+                       }
+                   ],
+    "status":  "CANDIDATE",
+    "schemaVersion":  "1.9.1",
+    "generatedAt":  "2026-05-14T10:59:57",
+    "note":  "Auto-extracted stories are candidates only. Normalize into story-target.json and attach test-point evidence before final PASS."
+}

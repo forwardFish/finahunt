@@ -1,0 +1,166 @@
+﻿{
+    "manualReviewRequired":  [
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+                                                      null
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\compare-requirements.json",
+                                     "lane":  "compare-requirements"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+                                                      null
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\compare-ui.json",
+                                     "lane":  "compare-ui"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+                                                      "Requirement extraction creates candidates only; normalize requirement-target.json before final PASS."
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\requirement-extract.json",
+                                     "lane":  "requirement-extract"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\requirement-verifier.json",
+                                     "lane":  "requirement-verifier"
+                                 },
+                                 {
+                                     "status":  "MANUAL_REVIEW_REQUIRED",
+                                     "blockers":  [
+                                                      "Auto-extracted requirements are candidates and must be normalized into requirement-target.json"
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\requirements-candidates.json",
+                                     "lane":  "requirements-candidates"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+                                                      "Story extraction creates candidates only; story-target.json must be normalized."
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\story-extract.json",
+                                     "lane":  "story-extract"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+                                                      "Stories are normalized but not accepted until test points have evidence."
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\story-normalize.json",
+                                     "lane":  "story-normalize"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+                                                      "Story test points are generated but still require executable evidence."
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\story-test-generate.json",
+                                     "lane":  "story-test-generate"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\ui-pixel-diff.json",
+                                     "lane":  "ui-pixel-diff"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\ui-verifier.json",
+                                     "lane":  "ui-verifier"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\verifier-dependencies.json",
+                                     "lane":  "verifier-dependencies"
+                                 },
+                                 {
+                                     "status":  "PASS_WITH_LIMITATION",
+                                     "blockers":  [
+
+                                                  ],
+                                     "file":  "docs\\auto-execute\\results\\visual.json",
+                                     "lane":  "visual"
+                                 }
+                             ],
+    "deferred":  [
+
+                 ],
+    "hardFails":  [
+
+                  ],
+    "documentedBlockers":  [
+
+                           ],
+    "finalVerdict":  "PASS_WITH_LIMITATION",
+    "verdictClass":  "functional-pass-with-documented-limitations",
+    "requirementStatus":  "PASS_WITH_LIMITATION",
+    "storyStatus":  "PASS",
+    "contractStatus":  "PASS",
+    "e2eStatus":  "PASS",
+    "uiStatus":  "PASS_WITH_LIMITATION",
+    "secretStatus":  "PASS",
+    "reportStatus":  "PASS",
+    "uiLayerSummary":  {
+                           "requiredScreens":  4,
+                           "structureStatus":  "PASS",
+                           "screenshotStatus":  "PASS",
+                           "visualStatus":  "PASS_WITH_LIMITATION",
+                           "pixelPerfectStatus":  "PASS_WITH_LIMITATION",
+                           "pixelPerfectClaimAllowed":  false,
+                           "statusMeaning":  "UI evidence exists with documented visual limitations."
+                       },
+    "pixelPerfectStatus":  "PASS_WITH_LIMITATION",
+    "canShipLocally":  true,
+    "canClaimPixelPerfect":  false,
+    "requiresHumanReview":  true,
+    "acceptanceConfidence":  0.79,
+    "confidenceFactors":  {
+                              "requirementsCovered":  0.75,
+                              "storiesCovered":  1,
+                              "uiScreenshotsCovered":  1,
+                              "contractVerified":  1,
+                              "e2eVerified":  1,
+                              "manualReviewRemaining":  0
+                          },
+    "confidenceDrag":  [
+                           "requirementsCovered=0.75",
+                           "manualReviewRemaining=0"
+                       ],
+    "finalGateSuggestions":  [
+
+                             ],
+    "verdictClassificationReason":  "Core acceptance has evidence, but documented limitations remain and prevent a pure automated PASS.",
+    "purePassBlockedBy":  [
+                              "Requirement verifier is PASS_WITH_LIMITATION",
+                              "UI verifier is PASS_WITH_LIMITATION",
+                              "Pixel-perfect visual diff is PASS_WITH_LIMITATION",
+                              "manual/deferred/documented blocker lanes remain",
+                              "requirement-verifier is PASS_WITH_LIMITATION",
+                              "ui-verifier is PASS_WITH_LIMITATION",
+                              "required UI screen UI-HOME finalUiStatus is PASS_WITH_LIMITATION",
+                              "required UI screen UI-FERMENTATION finalUiStatus is PASS_WITH_LIMITATION",
+                              "required UI screen UI-RESEARCH finalUiStatus is PASS_WITH_LIMITATION",
+                              "required UI screen UI-WORKBENCH finalUiStatus is PASS_WITH_LIMITATION",
+                              "acceptance confidence reduced by: requirementsCovered=0.75, manualReviewRemaining=0"
+                          ],
+    "nonPurePassExplanation":  "Pure PASS is not allowed because: Requirement verifier is PASS_WITH_LIMITATION; UI verifier is PASS_WITH_LIMITATION; Pixel-perfect visual diff is PASS_WITH_LIMITATION; manual/deferred/documented blocker lanes remain; requirement-verifier is PASS_WITH_LIMITATION; ui-verifier is PASS_WITH_LIMITATION; required UI screen UI-HOME finalUiStatus is PASS_WITH_LIMITATION; required UI screen UI-FERMENTATION finalUiStatus is PASS_WITH_LIMITATION; required UI screen UI-RESEARCH finalUiStatus is PASS_WITH_LIMITATION; required UI screen UI-WORKBENCH finalUiStatus is PASS_WITH_LIMITATION; acceptance confidence reduced by: requirementsCovered=0.75, manualReviewRemaining=0",
+    "schemaVersion":  "2.0",
+    "finalReport":  "docs\\auto-execute\\final-convergence-report.md",
+    "nextRecommendedAction":  "Review limitations before final acceptance.",
+    "updatedAt":  "2026-05-14T15:34:27"
+}

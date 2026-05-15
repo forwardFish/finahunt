@@ -1,0 +1,19 @@
+﻿{
+    "blockers":  [
+                     "2 UI gap(s)"
+                 ],
+    "commands":  [
+
+                 ],
+    "lane":  "compare-ui",
+    "status":  "HARD_FAIL",
+    "evidence":  [
+                     "docs\\auto-execute\\ui-target.json",
+                     "docs\\auto-execute\\gap-list.json"
+                 ],
+    "schemaVersion":  "1.9.1",
+    "nextActions":  [
+                        "Repair UI gaps, then rerun visual/UI comparison."
+                    ],
+    "updatedAt":  "2026-05-14T11:00:10"
+}

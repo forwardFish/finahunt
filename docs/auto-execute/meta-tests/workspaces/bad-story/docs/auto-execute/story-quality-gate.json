@@ -1,0 +1,39 @@
+﻿{
+    "generatedAt":  "2026-05-14T11:00:13",
+    "lane":  "story-quality-gate",
+    "failedStories":  [
+                          {
+                              "storyId":  "STORY-BAD-NO-TESTPOINTS",
+                              "issue":  "P0/P1 story STORY-BAD-NO-TESTPOINTS is missing required field testPoints.",
+                              "requiredFix":  "Populate testPoints in story-target.json.",
+                              "severity":  "HARD_FAIL",
+                              "source":  "docs\\auto-execute\\story-target.json"
+                          },
+                          {
+                              "storyId":  "STORY-BAD-NO-TESTPOINTS",
+                              "issue":  "P0/P1 story STORY-BAD-NO-TESTPOINTS testPoints is empty.",
+                              "requiredFix":  "Generate route/API/E2E/visual test points.",
+                              "severity":  "HARD_FAIL",
+                              "source":  "docs\\auto-execute\\story-target.json"
+                          },
+                          {
+                              "storyId":  "STORY-BAD-NO-TESTPOINTS",
+                              "issue":  "P0/P1 story STORY-BAD-NO-TESTPOINTS has no route/api/e2e/visual test point.",
+                              "requiredFix":  "Add at least one executable route, api, e2e, or visual test point.",
+                              "severity":  "HARD_FAIL",
+                              "source":  "docs\\auto-execute\\story-target.json"
+                          },
+                          {
+                              "storyId":  "STORY-BAD-NO-TESTPOINTS",
+                              "issue":  "Materialized test point  has invalid status .",
+                              "requiredFix":  "Regenerate or bind this test point.",
+                              "severity":  "HARD_FAIL",
+                              "source":  "docs\\auto-execute\\story-target.json"
+                          }
+                      ],
+    "warnings":  [
+
+                 ],
+    "schemaVersion":  "1.9.1",
+    "status":  "HARD_FAIL"
+}
