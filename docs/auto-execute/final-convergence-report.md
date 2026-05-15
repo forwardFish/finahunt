@@ -1,21 +1,21 @@
 ﻿# Final Convergence Report
 
-Generated: 05/15/2026 12:23:24
+Generated: 05/15/2026 18:41:54
 
-- Verdict: HARD_FAIL
+- Verdict: FAIL
 - Gap list: docs\auto-execute\gap-list.json
 - Machine summary: docs\auto-execute\machine-summary.json
 
 ## Final Verdict Classification
 
-- Final verdict: HARD_FAIL
+- Final verdict: FAIL
 - Verdict class: failed-hard-gate-or-in-scope-gap
 - Acceptance confidence: 0.96
 - Requirement verifier: PASS_WITH_LIMITATION
 - Story verifier: PASS
 - Contract verifier: PASS
 - E2E verifier: PASS
-- DB E2E: BLOCKED_BY_ENVIRONMENT
+- DB E2E: PASS
 - UI verifier: HARD_FAIL
 - Pixel-perfect visual diff: PASS_WITH_LIMITATION
 - UI structure layer: PASS
@@ -31,13 +31,13 @@ Meaning: A HARD_FAIL, FAIL, or IN_SCOPE_GAP remains and prevents final acceptanc
 
 ## Why Not Pure PASS?
 
-Final verdict: HARD_FAIL
+Final verdict: FAIL
 
 - Requirement verifier: PASS_WITH_LIMITATION
 - Story verifier: PASS
 - Contract verifier: PASS
 - E2E verifier: PASS
-- DB E2E: BLOCKED_BY_ENVIRONMENT
+- DB E2E: PASS
 - UI verifier: HARD_FAIL
 - Pixel-perfect evidence: PASS_WITH_LIMITATION
 - Secret guard: PASS
@@ -46,31 +46,32 @@ Final verdict: HARD_FAIL
 Reason:
 A HARD_FAIL, FAIL, or IN_SCOPE_GAP remains and prevents final acceptance.
 
-Pure PASS is not allowed because: Requirement verifier is PASS_WITH_LIMITATION; DB E2E is BLOCKED_BY_ENVIRONMENT; UI verifier is HARD_FAIL; Pixel-perfect visual diff is PASS_WITH_LIMITATION; 8 unresolved hard/in-scope gap(s); machine summary contains hard failures; requirement-verifier is PASS_WITH_LIMITATION; ui-verifier is HARD_FAIL; db-e2e is blocked by environment; required UI screen UI-HOME finalUiStatus is HARD_FAIL; required UI screen UI-FERMENTATION finalUiStatus is HARD_FAIL; required UI screen UI-RESEARCH finalUiStatus is HARD_FAIL; acceptance confidence reduced by: requirementsCovered=0.75
+Pure PASS is not allowed because: Requirement verifier is PASS_WITH_LIMITATION; UI verifier is HARD_FAIL; Pixel-perfect visual diff is PASS_WITH_LIMITATION; 12 unresolved hard/in-scope gap(s); machine summary contains hard failures; requirement-verifier is PASS_WITH_LIMITATION; Strict mode does not allow PASS_WITH_LIMITATION for requirement-verifier; ui-verifier is HARD_FAIL; Strict mode requires P0/P1 requirement REQ-P1-001 to be PASS; Strict mode does not allow story limitations/manual/deferred outcomes; required UI screen UI-HOME finalUiStatus is HARD_FAIL; acceptance confidence reduced by: requirementsCovered=0.75
 
 - Requirement verifier is PASS_WITH_LIMITATION
-- DB E2E is BLOCKED_BY_ENVIRONMENT
 - UI verifier is HARD_FAIL
 - Pixel-perfect visual diff is PASS_WITH_LIMITATION
-- 8 unresolved hard/in-scope gap(s)
+- 12 unresolved hard/in-scope gap(s)
 - machine summary contains hard failures
 - requirement-verifier is PASS_WITH_LIMITATION
+- Strict mode does not allow PASS_WITH_LIMITATION for requirement-verifier
 - ui-verifier is HARD_FAIL
-- db-e2e is blocked by environment
+- Strict mode requires P0/P1 requirement REQ-P1-001 to be PASS
+- Strict mode does not allow story limitations/manual/deferred outcomes
 - required UI screen UI-HOME finalUiStatus is HARD_FAIL
-- required UI screen UI-FERMENTATION finalUiStatus is HARD_FAIL
-- required UI screen UI-RESEARCH finalUiStatus is HARD_FAIL
 - acceptance confidence reduced by: requirementsCovered=0.75
 
 ## Dynamic Final Gate Suggestions
 - No disabled-lane result suggestions.
 
 ## Reasons
-- 8 unresolved hard/in-scope gap(s)
+- 12 unresolved hard/in-scope gap(s)
 - machine summary contains hard failures
 - requirement-verifier is PASS_WITH_LIMITATION
+- Strict mode does not allow PASS_WITH_LIMITATION for requirement-verifier
 - ui-verifier is HARD_FAIL
-- db-e2e is blocked by environment
+- Strict mode requires P0/P1 requirement REQ-P1-001 to be PASS
+- Strict mode does not allow story limitations/manual/deferred outcomes
 - required UI screen UI-HOME finalUiStatus is HARD_FAIL
 - required UI screen UI-FERMENTATION finalUiStatus is HARD_FAIL
 - required UI screen UI-RESEARCH finalUiStatus is HARD_FAIL

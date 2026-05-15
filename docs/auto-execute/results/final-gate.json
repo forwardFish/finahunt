@@ -1,10 +1,12 @@
 ﻿{
     "blockers":  [
-                     "8 unresolved hard/in-scope gap(s)",
+                     "12 unresolved hard/in-scope gap(s)",
                      "machine summary contains hard failures",
                      "requirement-verifier is PASS_WITH_LIMITATION",
+                     "Strict mode does not allow PASS_WITH_LIMITATION for requirement-verifier",
                      "ui-verifier is HARD_FAIL",
-                     "db-e2e is blocked by environment",
+                     "Strict mode requires P0/P1 requirement REQ-P1-001 to be PASS",
+                     "Strict mode does not allow story limitations/manual/deferred outcomes",
                      "required UI screen UI-HOME finalUiStatus is HARD_FAIL",
                      "required UI screen UI-FERMENTATION finalUiStatus is HARD_FAIL",
                      "required UI screen UI-RESEARCH finalUiStatus is HARD_FAIL",
@@ -24,5 +26,5 @@
     "nextActions":  [
 
                     ],
-    "updatedAt":  "2026-05-15T12:23:24"
+    "updatedAt":  "2026-05-15T18:41:54"
 }

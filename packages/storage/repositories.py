@@ -8,12 +8,16 @@ from pathlib import Path
 from typing import Any, Protocol
 from zoneinfo import ZoneInfo
 
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine, inspect, select, text
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session, sessionmaker
 
+from packages.storage.admin_audit import authenticity_status_for_score, calculate_truth_score, create_source_hash
 from packages.storage.models import (
+    AdminCrawlerSetting,
+    AdminReviewLog,
     Base,
+    CrawlRun,
     DailySnapshot,
     Event,
     LowPositionWorkbench,
@@ -40,6 +44,14 @@ class StorageWriteStatus:
 
     def to_dict(self) -> dict[str, str]:
         return {"backend": self.backend, "status": self.status, "message": self.message}
+
+
+@dataclass(slots=True)
+class RawContentMergeStats:
+    fetched_count: int = 0
+    inserted_count: int = 0
+    duplicate_count: int = 0
+    failed_count: int = 0
 
 
 class RuntimeRepository(Protocol):
@@ -72,6 +84,35 @@ class RuntimeRepository(Protocol):
     def load_daily_snapshot(self, date: str | None = None) -> dict[str, Any] | None: ...
 
     def load_low_position_workbench(self, date: str | None = None) -> dict[str, Any] | None: ...
+
+    def list_admin_raw_contents(self, limit: int = 50) -> list[dict[str, Any]]: ...
+
+    def get_admin_raw_content(self, document_id: str) -> dict[str, Any] | None: ...
+
+    def list_admin_crawl_runs(self, limit: int = 10) -> list[dict[str, Any]]: ...
+
+    def get_admin_crawler_status(self) -> dict[str, Any]: ...
+
+    def get_admin_crawler_setting(self) -> dict[str, Any]: ...
+
+    def save_admin_crawler_setting(self, enabled: bool, schedule_time: str, source_id: str) -> dict[str, Any]: ...
+
+    def review_admin_raw_content(self, document_id: str, action: str, reviewer_note: str) -> dict[str, Any] | None: ...
+
+    def create_crawl_run(self, run_id: str, source_id: str) -> dict[str, Any]: ...
+
+    def finish_crawl_run(
+        self,
+        run_id: str,
+        status: str,
+        fetched_count: int,
+        inserted_count: int,
+        duplicate_count: int,
+        failed_count: int,
+        error_message: str,
+    ) -> dict[str, Any] | None: ...
+
+    def save_admin_raw_contents(self, run_id: str, rows: list[dict[str, Any]]) -> RawContentMergeStats: ...
 
 
 def get_runtime_repository() -> RuntimeRepository:
@@ -122,6 +163,60 @@ class JsonLegacyRepository:
         artifacts = _load_runtime_artifacts(run_dir)
         return _build_low_position_workbench(run_dir.name, run_dir.as_posix(), artifacts, date or _today())
 
+    def list_admin_raw_contents(self, limit: int = 50) -> list[dict[str, Any]]:
+        return []
+
+    def get_admin_raw_content(self, document_id: str) -> dict[str, Any] | None:
+        return None
+
+    def list_admin_crawl_runs(self, limit: int = 10) -> list[dict[str, Any]]:
+        return []
+
+    def get_admin_crawler_status(self) -> dict[str, Any]:
+        return {
+            "postgresConnected": False,
+            "lastRunAt": "",
+            "todayFetched": 0,
+            "todayInserted": 0,
+            "todayDuplicated": 0,
+            "todayFailed": 0,
+        }
+
+    def get_admin_crawler_setting(self) -> dict[str, Any]:
+        return {"enabled": False, "scheduleTime": "09:00", "sourceId": "all", "updatedAt": ""}
+
+    def save_admin_crawler_setting(self, enabled: bool, schedule_time: str, source_id: str) -> dict[str, Any]:
+        return {"enabled": enabled, "scheduleTime": schedule_time, "sourceId": source_id, "updatedAt": ""}
+
+    def review_admin_raw_content(self, document_id: str, action: str, reviewer_note: str) -> dict[str, Any] | None:
+        return None
+
+    def create_crawl_run(self, run_id: str, source_id: str) -> dict[str, Any]:
+        return {"runId": run_id, "sourceId": source_id, "status": "running"}
+
+    def finish_crawl_run(
+        self,
+        run_id: str,
+        status: str,
+        fetched_count: int,
+        inserted_count: int,
+        duplicate_count: int,
+        failed_count: int,
+        error_message: str,
+    ) -> dict[str, Any] | None:
+        return {
+            "runId": run_id,
+            "status": status,
+            "fetchedCount": fetched_count,
+            "insertedCount": inserted_count,
+            "duplicateCount": duplicate_count,
+            "failedCount": failed_count,
+            "errorMessage": error_message,
+        }
+
+    def save_admin_raw_contents(self, run_id: str, rows: list[dict[str, Any]]) -> RawContentMergeStats:
+        return RawContentMergeStats(fetched_count=len(rows))
+
 
 class PostgresRepository:
     backend = "postgres"
@@ -136,6 +231,7 @@ class PostgresRepository:
 
     def bootstrap(self) -> StorageWriteStatus:
         Base.metadata.create_all(self.engine)
+        _ensure_raw_content_columns(self.engine)
         return StorageWriteStatus(self.backend, "PASS", "Postgres schema ready.")
 
     def save_runtime_artifact(
@@ -218,6 +314,142 @@ class PostgresRepository:
             row = session.execute(query.order_by(LowPositionWorkbench.created_at.desc())).scalars().first()
             return dict(row.payload) if row is not None else None
 
+    def list_admin_raw_contents(self, limit: int = 50) -> list[dict[str, Any]]:
+        self.bootstrap()
+        with self.session_factory() as session:
+            rows = session.execute(
+                select(RawContent).order_by(RawContent.created_at.desc()).limit(max(1, min(limit, 200)))
+            ).scalars().all()
+            return [_raw_content_row(row, include_content=False) for row in rows]
+
+    def get_admin_raw_content(self, document_id: str) -> dict[str, Any] | None:
+        self.bootstrap()
+        with self.session_factory() as session:
+            row = session.get(RawContent, document_id)
+            return _raw_content_row(row, include_content=True) if row is not None else None
+
+    def list_admin_crawl_runs(self, limit: int = 10) -> list[dict[str, Any]]:
+        self.bootstrap()
+        with self.session_factory() as session:
+            rows = session.execute(
+                select(CrawlRun).order_by(CrawlRun.started_at.desc()).limit(max(1, min(limit, 100)))
+            ).scalars().all()
+            return [_crawl_run_row(row) for row in rows]
+
+    def get_admin_crawler_status(self) -> dict[str, Any]:
+        self.bootstrap()
+        today = _today()
+        with self.session_factory() as session:
+            rows = session.execute(select(CrawlRun).order_by(CrawlRun.started_at.desc()).limit(200)).scalars().all()
+            today_rows = [row for row in rows if _iso(row.started_at).startswith(today)]
+            last_run = rows[0] if rows else None
+            return {
+                "postgresConnected": True,
+                "lastRunAt": _iso(last_run.finished_at or last_run.started_at) if last_run else "",
+                "lastStatus": last_run.status if last_run else "",
+                "todayFetched": sum(row.fetched_count or 0 for row in today_rows),
+                "todayInserted": sum(row.inserted_count or 0 for row in today_rows),
+                "todayDuplicated": sum(row.duplicate_count or 0 for row in today_rows),
+                "todayFailed": sum(row.failed_count or 0 for row in today_rows),
+            }
+
+    def get_admin_crawler_setting(self) -> dict[str, Any]:
+        self.bootstrap()
+        with self.session_factory.begin() as session:
+            row = _get_or_create_setting(session)
+            return _setting_row(row)
+
+    def save_admin_crawler_setting(self, enabled: bool, schedule_time: str, source_id: str) -> dict[str, Any]:
+        self.bootstrap()
+        normalized_time = schedule_time if _is_schedule_time(schedule_time) else "09:00"
+        normalized_source = source_id.strip() or "all"
+        with self.session_factory.begin() as session:
+            row = _get_or_create_setting(session)
+            row.enabled = bool(enabled)
+            row.schedule_time = normalized_time
+            row.source_id = normalized_source
+            session.flush()
+            return _setting_row(row)
+
+    def review_admin_raw_content(self, document_id: str, action: str, reviewer_note: str) -> dict[str, Any] | None:
+        self.bootstrap()
+        status_map = {
+            "trusted": ("trusted", "trusted"),
+            "untrusted": ("untrusted", "blocked"),
+            "garbled": ("garbled", "blocked"),
+            "recrawl": ("recrawl", "needs_review"),
+        }
+        if action not in status_map:
+            raise ValueError(f"Unsupported review action: {action}")
+        review_status, authenticity_status = status_map[action]
+        with self.session_factory.begin() as session:
+            row = session.get(RawContent, document_id)
+            if row is None:
+                return None
+            row.review_status = review_status
+            row.authenticity_status = authenticity_status
+            row.reviewer_note = reviewer_note
+            session.add(
+                AdminReviewLog(
+                    target_type="raw_content",
+                    target_id=document_id,
+                    action=action,
+                    reviewer_note=reviewer_note,
+                    payload={"document_id": document_id, "authenticity_status": authenticity_status},
+                )
+            )
+            return _raw_content_row(row, include_content=True)
+
+    def create_crawl_run(self, run_id: str, source_id: str) -> dict[str, Any]:
+        self.bootstrap()
+        with self.session_factory.begin() as session:
+            row = session.get(CrawlRun, run_id)
+            if row is None:
+                row = CrawlRun(run_id=run_id, source_id=source_id or "all", status="running", payload={})
+                session.add(row)
+            else:
+                row.status = "running"
+                row.source_id = source_id or row.source_id
+                row.error_message = ""
+            session.flush()
+            return _crawl_run_row(row)
+
+    def finish_crawl_run(
+        self,
+        run_id: str,
+        status: str,
+        fetched_count: int,
+        inserted_count: int,
+        duplicate_count: int,
+        failed_count: int,
+        error_message: str,
+    ) -> dict[str, Any] | None:
+        self.bootstrap()
+        with self.session_factory.begin() as session:
+            row = session.get(CrawlRun, run_id)
+            if row is None:
+                return None
+            row.status = status
+            row.finished_at = datetime.now(SHANGHAI_TZ)
+            row.fetched_count = fetched_count
+            row.inserted_count = inserted_count
+            row.duplicate_count = duplicate_count
+            row.failed_count = failed_count
+            row.error_message = error_message
+            row.payload = {
+                "fetched_count": fetched_count,
+                "inserted_count": inserted_count,
+                "duplicate_count": duplicate_count,
+                "failed_count": failed_count,
+            }
+            session.flush()
+            return _crawl_run_row(row)
+
+    def save_admin_raw_contents(self, run_id: str, rows: list[dict[str, Any]]) -> RawContentMergeStats:
+        self.bootstrap()
+        with self.session_factory.begin() as session:
+            return _merge_raw_contents(session, run_id, rows)
+
 
 def _merge_runtime_run(session: Session, run_id: str, trace_id: str, artifact_batch_dir: str) -> None:
     row = session.get(RuntimeRun, run_id)
@@ -229,22 +461,46 @@ def _merge_runtime_run(session: Session, run_id: str, trace_id: str, artifact_ba
         row.status = "success"
 
 
-def _merge_raw_contents(session: Session, run_id: str, rows: list[dict[str, Any]]) -> None:
+def _merge_raw_contents(session: Session, run_id: str, rows: list[dict[str, Any]]) -> RawContentMergeStats:
+    stats = RawContentMergeStats(fetched_count=len(rows))
     for item in rows:
-        document_id = str(item.get("document_id") or item.get("id") or f"{run_id}-raw-{len(str(item))}")
-        session.merge(
-            RawContent(
-                document_id=document_id,
-                run_id=run_id,
-                source_id=str(item.get("source_id", "") or ""),
-                source_name=str(item.get("source_name", "") or ""),
-                title=str(item.get("title", "") or ""),
-                url=str(item.get("url", "") or ""),
-                published_at=str(item.get("published_at", "") or ""),
-                content_text=str(item.get("content_text", "") or ""),
-                payload=item,
+        try:
+            source_hash = str(item.get("source_hash") or create_source_hash(item))
+            document_id = str(item.get("document_id") or item.get("id") or source_hash or f"{run_id}-raw-{len(str(item))}")
+            existing = session.get(RawContent, document_id)
+            if existing is None and source_hash:
+                existing = session.execute(select(RawContent).where(RawContent.source_hash == source_hash)).scalars().first()
+            if existing is not None:
+                stats.duplicate_count += 1
+                continue
+            enriched = {**item, "source_hash": source_hash}
+            truth_score = calculate_truth_score(enriched)
+            content_text = str(item.get("content_text", "") or "")
+            session.add(
+                RawContent(
+                    document_id=document_id,
+                    run_id=run_id,
+                    source_id=str(item.get("source_id", "") or ""),
+                    source_hash=source_hash,
+                    source_name=str(item.get("source_name", "") or ""),
+                    title=str(item.get("title", "") or ""),
+                    url=str(item.get("url", "") or ""),
+                    published_at=str(item.get("published_at", "") or ""),
+                    content_text=content_text,
+                    http_status=_int_or_none(item.get("http_status")),
+                    content_length=len(content_text),
+                    license_status=str(item.get("license_status") or "unknown"),
+                    truth_score=truth_score,
+                    authenticity_status=authenticity_status_for_score(truth_score),
+                    review_status=str(item.get("review_status") or "unreviewed"),
+                    reviewer_note=str(item.get("reviewer_note") or ""),
+                    payload=item,
+                )
             )
-        )
+            stats.inserted_count += 1
+        except Exception:
+            stats.failed_count += 1
+    return stats
 
 
 def _merge_normalized_contents(session: Session, run_id: str, rows: list[dict[str, Any]]) -> None:
@@ -540,6 +796,108 @@ def _manifest_created_at(artifacts: dict[str, Any]) -> str:
     if isinstance(manifest, dict):
         return str(manifest.get("created_at") or "")
     return ""
+
+
+def _ensure_raw_content_columns(engine: Engine) -> None:
+    existing = {column["name"] for column in inspect(engine).get_columns("raw_contents")}
+    column_sql = {
+        "source_hash": "VARCHAR(128) DEFAULT ''",
+        "http_status": "INTEGER",
+        "content_length": "INTEGER DEFAULT 0",
+        "license_status": "VARCHAR(40) DEFAULT 'unknown'",
+        "truth_score": "INTEGER DEFAULT 0",
+        "authenticity_status": "VARCHAR(40) DEFAULT 'unchecked'",
+        "review_status": "VARCHAR(40) DEFAULT 'unreviewed'",
+        "reviewer_note": "TEXT DEFAULT ''",
+    }
+    with engine.begin() as connection:
+        for name, definition in column_sql.items():
+            if name not in existing:
+                connection.execute(text(f"ALTER TABLE raw_contents ADD COLUMN {name} {definition}"))
+        connection.execute(text("CREATE INDEX IF NOT EXISTS ix_raw_contents_source_hash ON raw_contents (source_hash)"))
+
+
+def _raw_content_row(row: RawContent, *, include_content: bool) -> dict[str, Any]:
+    payload = {
+        "documentId": row.document_id,
+        "runId": row.run_id,
+        "sourceId": row.source_id,
+        "sourceName": row.source_name,
+        "sourceHash": row.source_hash,
+        "title": row.title,
+        "url": row.url,
+        "publishedAt": row.published_at,
+        "httpStatus": row.http_status,
+        "contentLength": row.content_length,
+        "licenseStatus": row.license_status,
+        "truthScore": row.truth_score,
+        "authenticityStatus": row.authenticity_status,
+        "reviewStatus": row.review_status,
+        "reviewerNote": row.reviewer_note,
+        "createdAt": _iso(row.created_at),
+        "payload": row.payload,
+    }
+    if include_content:
+        payload["contentText"] = row.content_text
+    return payload
+
+
+def _crawl_run_row(row: CrawlRun) -> dict[str, Any]:
+    return {
+        "runId": row.run_id,
+        "sourceId": row.source_id,
+        "status": row.status,
+        "startedAt": _iso(row.started_at),
+        "finishedAt": _iso(row.finished_at),
+        "fetchedCount": row.fetched_count,
+        "insertedCount": row.inserted_count,
+        "duplicateCount": row.duplicate_count,
+        "failedCount": row.failed_count,
+        "errorMessage": row.error_message,
+        "payload": row.payload,
+    }
+
+
+def _get_or_create_setting(session: Session) -> AdminCrawlerSetting:
+    row = session.get(AdminCrawlerSetting, 1)
+    if row is None:
+        row = AdminCrawlerSetting(id=1, enabled=False, schedule_time="09:00", source_id="all")
+        session.add(row)
+        session.flush()
+    return row
+
+
+def _setting_row(row: AdminCrawlerSetting) -> dict[str, Any]:
+    return {
+        "enabled": bool(row.enabled),
+        "scheduleTime": row.schedule_time,
+        "sourceId": row.source_id,
+        "updatedAt": _iso(row.updated_at),
+    }
+
+
+def _is_schedule_time(value: str) -> bool:
+    if len(value) != 5 or value[2] != ":":
+        return False
+    hour, minute = value.split(":", 1)
+    return hour.isdigit() and minute.isdigit() and 0 <= int(hour) <= 23 and 0 <= int(minute) <= 59
+
+
+def _int_or_none(value: Any) -> int | None:
+    try:
+        if value is None or value == "":
+            return None
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def _iso(value: Any) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, datetime):
+        return value.astimezone(SHANGHAI_TZ).isoformat() if value.tzinfo else value.isoformat()
+    return str(value)
 
 
 def _projection_date(artifacts: dict[str, Any]) -> str:

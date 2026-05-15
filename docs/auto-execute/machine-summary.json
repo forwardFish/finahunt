@@ -121,25 +121,73 @@
                                                "kind":  "ui-fidelity"
                                            },
                                            {
-                                               "detail":  "UI screen UI-HOME exceeds fidelity gate: ratio=0.089112881362059 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
+                                               "detail":  "Required UI screen UI-HOME does not meet fidelity threshold. ratio=0.0881007356130711 threshold=0.02 sizeMismatch=True.",
+                                               "path":  "docs\\auto-execute\\gap-list.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-fidelity"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-FERMENTATION does not meet fidelity threshold. ratio=0.0763512959317585 threshold=0.02 sizeMismatch=True.",
+                                               "path":  "docs\\auto-execute\\gap-list.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-fidelity"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-RESEARCH does not meet fidelity threshold. ratio=0.06737224002849 threshold=0.02 sizeMismatch=True.",
+                                               "path":  "docs\\auto-execute\\gap-list.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-fidelity"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-WORKBENCH does not meet fidelity threshold. ratio=0.0816350586756077 threshold=0.02 sizeMismatch=True.",
+                                               "path":  "docs\\auto-execute\\gap-list.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-fidelity"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-HOME does not meet fidelity threshold. ratio=0.0947421890061693 threshold=0.02 sizeMismatch=True.",
+                                               "path":  "docs\\auto-execute\\gap-list.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-fidelity"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-FERMENTATION does not meet fidelity threshold. ratio=0.0851440607684456 threshold=0.02 sizeMismatch=True.",
+                                               "path":  "docs\\auto-execute\\gap-list.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-fidelity"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-RESEARCH does not meet fidelity threshold. ratio=0.0968149038461538 threshold=0.02 sizeMismatch=True.",
+                                               "path":  "docs\\auto-execute\\gap-list.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-fidelity"
+                                           },
+                                           {
+                                               "detail":  "Required UI screen UI-WORKBENCH does not meet fidelity threshold. ratio=0.098937050328304 threshold=0.02 sizeMismatch=True.",
+                                               "path":  "docs\\auto-execute\\gap-list.json",
+                                               "severity":  "IN_SCOPE_GAP",
+                                               "kind":  "ui-fidelity"
+                                           },
+                                           {
+                                               "detail":  "UI screen UI-HOME exceeds fidelity gate: ratio=0.0947421890061693 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
                                                "path":  "docs/auto-execute/results/ui-pixel-diff.json",
                                                "severity":  "IN_SCOPE_GAP",
                                                "kind":  "ui-pixel-diff"
                                            },
                                            {
-                                               "detail":  "UI screen UI-FERMENTATION exceeds fidelity gate: ratio=0.0812332540463692 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
+                                               "detail":  "UI screen UI-FERMENTATION exceeds fidelity gate: ratio=0.0851440607684456 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
                                                "path":  "docs/auto-execute/results/ui-pixel-diff.json",
                                                "severity":  "IN_SCOPE_GAP",
                                                "kind":  "ui-pixel-diff"
                                            },
                                            {
-                                               "detail":  "UI screen UI-RESEARCH exceeds fidelity gate: ratio=0.0760088363603989 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
+                                               "detail":  "UI screen UI-RESEARCH exceeds fidelity gate: ratio=0.0968149038461538 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
                                                "path":  "docs/auto-execute/results/ui-pixel-diff.json",
                                                "severity":  "IN_SCOPE_GAP",
                                                "kind":  "ui-pixel-diff"
                                            },
                                            {
-                                               "detail":  "UI screen UI-WORKBENCH exceeds fidelity gate: ratio=0.0882158729742945 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
+                                               "detail":  "UI screen UI-WORKBENCH exceeds fidelity gate: ratio=0.098937050328304 threshold=0.02 sizeMismatch=True status=PASS_WITH_LIMITATION",
                                                "path":  "docs/auto-execute/results/ui-pixel-diff.json",
                                                "severity":  "IN_SCOPE_GAP",
                                                "kind":  "ui-pixel-diff"
@@ -182,17 +230,9 @@
                       }
                   ],
     "documentedBlockers":  [
-                               {
-                                   "status":  "BLOCKED_BY_ENVIRONMENT",
-                                   "blockers":  [
-                                                    "Docker Postgres service failed to start; see docs/auto-execute/logs/db-postgres-up.log.",
-                                                    "Docker Postgres service is not running; see docs/auto-execute/logs/db-postgres-ps.log."
-                                                ],
-                                   "file":  "docs\\auto-execute\\results\\db-e2e.json",
-                                   "lane":  "db-e2e"
-                               }
+
                            ],
-    "finalVerdict":  "HARD_FAIL",
+    "finalVerdict":  "FAIL",
     "verdictClass":  "failed-hard-gate-or-in-scope-gap",
     "requirementStatus":  "PASS_WITH_LIMITATION",
     "storyStatus":  "PASS",
@@ -232,22 +272,21 @@
     "verdictClassificationReason":  "A HARD_FAIL, FAIL, or IN_SCOPE_GAP remains and prevents final acceptance.",
     "purePassBlockedBy":  [
                               "Requirement verifier is PASS_WITH_LIMITATION",
-                              "DB E2E is BLOCKED_BY_ENVIRONMENT",
                               "UI verifier is HARD_FAIL",
                               "Pixel-perfect visual diff is PASS_WITH_LIMITATION",
-                              "8 unresolved hard/in-scope gap(s)",
+                              "12 unresolved hard/in-scope gap(s)",
                               "machine summary contains hard failures",
                               "requirement-verifier is PASS_WITH_LIMITATION",
+                              "Strict mode does not allow PASS_WITH_LIMITATION for requirement-verifier",
                               "ui-verifier is HARD_FAIL",
-                              "db-e2e is blocked by environment",
+                              "Strict mode requires P0/P1 requirement REQ-P1-001 to be PASS",
+                              "Strict mode does not allow story limitations/manual/deferred outcomes",
                               "required UI screen UI-HOME finalUiStatus is HARD_FAIL",
-                              "required UI screen UI-FERMENTATION finalUiStatus is HARD_FAIL",
-                              "required UI screen UI-RESEARCH finalUiStatus is HARD_FAIL",
                               "acceptance confidence reduced by: requirementsCovered=0.75"
                           ],
-    "nonPurePassExplanation":  "Pure PASS is not allowed because: Requirement verifier is PASS_WITH_LIMITATION; DB E2E is BLOCKED_BY_ENVIRONMENT; UI verifier is HARD_FAIL; Pixel-perfect visual diff is PASS_WITH_LIMITATION; 8 unresolved hard/in-scope gap(s); machine summary contains hard failures; requirement-verifier is PASS_WITH_LIMITATION; ui-verifier is HARD_FAIL; db-e2e is blocked by environment; required UI screen UI-HOME finalUiStatus is HARD_FAIL; required UI screen UI-FERMENTATION finalUiStatus is HARD_FAIL; required UI screen UI-RESEARCH finalUiStatus is HARD_FAIL; acceptance confidence reduced by: requirementsCovered=0.75",
+    "nonPurePassExplanation":  "Pure PASS is not allowed because: Requirement verifier is PASS_WITH_LIMITATION; UI verifier is HARD_FAIL; Pixel-perfect visual diff is PASS_WITH_LIMITATION; 12 unresolved hard/in-scope gap(s); machine summary contains hard failures; requirement-verifier is PASS_WITH_LIMITATION; Strict mode does not allow PASS_WITH_LIMITATION for requirement-verifier; ui-verifier is HARD_FAIL; Strict mode requires P0/P1 requirement REQ-P1-001 to be PASS; Strict mode does not allow story limitations/manual/deferred outcomes; required UI screen UI-HOME finalUiStatus is HARD_FAIL; acceptance confidence reduced by: requirementsCovered=0.75",
     "schemaVersion":  "2.0",
     "finalReport":  "docs\\auto-execute\\final-convergence-report.md",
     "nextRecommendedAction":  "Read final-convergence-report.md, gap-list.json, and next-agent-action.md; repair failed hard gates before final acceptance.",
-    "updatedAt":  "2026-05-15T12:23:24"
+    "updatedAt":  "2026-05-15T18:41:54"
 }

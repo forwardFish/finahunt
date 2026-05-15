@@ -9,6 +9,7 @@ New-Item -ItemType Directory -Force -Path $logs,$results,$screenshots | Out-Null
 $base = "http://127.0.0.1:$Port"
 $serverLog = Join-Path $logs 'ui-capture-next-start.log'
 $proc = $null
+$captureExitCode = 1
 try {
   $proc = Start-Process -FilePath 'npm.cmd' -ArgumentList @('run','start','--','-p',"$Port") -WorkingDirectory $web -RedirectStandardOutput $serverLog -RedirectStandardError (Join-Path $logs 'ui-capture-next-start.err.log') -PassThru -WindowStyle Hidden
   $ready = $false
@@ -79,7 +80,21 @@ sys.exit(0 if status == 'PASS' else 1)
   $tmp = Join-Path $env:TEMP 'finahunt_ui_capture.py'
   $py | Set-Content -Encoding UTF8 -LiteralPath $tmp
   python $tmp $ProjectRoot $base
-  exit $LASTEXITCODE
+  $captureExitCode = $LASTEXITCODE
 } finally {
-  if ($proc -and -not $proc.HasExited) { Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue }
+  if ($proc) {
+    & taskkill.exe /PID $proc.Id /T /F 2>$null | Out-Null
+    if (-not $proc.HasExited) { Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue }
+  }
+  Get-CimInstance Win32_Process -Filter "Name = 'node.exe'" -ErrorAction SilentlyContinue |
+    Where-Object {
+      $_.CommandLine -like "*$web*" -and
+      $_.CommandLine -like "*next*" -and
+      $_.CommandLine -like "*start*" -and
+      $_.CommandLine -like "*-p $Port*"
+    } |
+    ForEach-Object {
+      Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue
+    }
 }
+exit $captureExitCode

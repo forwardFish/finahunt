@@ -1,0 +1,20 @@
+{
+  "reference": "docs\\UI\\后台管理页面.png",
+  "screenshot": "docs\\admin-crawler-visual\\admin-page.png",
+  "diff": "docs\\admin-crawler-visual\\admin-page-diff.png",
+  "referenceSize": [
+    1448,
+    1086
+  ],
+  "screenshotSize": [
+    1452,
+    1024
+  ],
+  "comparedSize": [
+    1448,
+    1024
+  ],
+  "meanChannelDiffRatio": 0.04142436240797539,
+  "changedPixelRatio": 0.8617685223152625,
+  "status": "MANUAL_REVIEW_REQUIRED"
+}

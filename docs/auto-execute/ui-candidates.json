@@ -1,6 +1,6 @@
 ﻿{
     "note":  "UI mapping priority is harness.yml uiMapping, UIReferences auto discovery, filename route guess, then manual review. Actual screenshots must be captured and mapped in ui-target.json before final PASS; auto-guessed mapping cannot claim pure PASS without screenshot and diff evidence.",
-    "generatedAt":  "2026-05-14T15:31:42",
+    "generatedAt":  "2026-05-15T18:37:11",
     "mappingPriority":  [
                             "harness.yml uiMapping",
                             "UIReferences auto discovery",
@@ -188,6 +188,13 @@
                            "id":  "UI-026",
                            "reference":  "docs\\UI\\financial_ui_html_pages\\unlock.html",
                            "kind":  "html",
+                           "status":  "CANDIDATE",
+                           "mappingSource":  "UIReferences auto discovery"
+                       },
+                       {
+                           "id":  "UI-027",
+                           "reference":  "docs\\UI\\后台管理页面.png",
+                           "kind":  "png",
                            "status":  "CANDIDATE",
                            "mappingSource":  "UIReferences auto discovery"
                        }

@@ -3514,3 +3514,297 @@
 - Details: No obvious secret file or content patterns found
 - Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\summaries\secret-guard.md
 
+
+## db:postgres-up
+- Time: 2026-05-15 17:58:39
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-postgres-up.log
+
+
+## db:postgres-ps
+- Time: 2026-05-15 17:58:40
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-postgres-ps.log
+
+
+## db:schema-bootstrap
+- Time: 2026-05-15 17:58:41
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-schema-bootstrap.log
+
+
+## db:runtime-write-snapshot
+- Time: 2026-05-15 17:58:52
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-runtime-write-snapshot.log
+
+
+## db:runtime-write-low-position
+- Time: 2026-05-15 17:59:03
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-runtime-write-low-position.log
+
+
+## db:repository-read-snapshot
+- Time: 2026-05-15 17:59:04
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-repository-read-snapshot.log
+
+
+## db:repository-read-low-position
+- Time: 2026-05-15 17:59:06
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-repository-read-low-position.log
+
+
+## db-e2e
+- Time: 2026-05-15 17:59:06
+- Status: PASS
+- Details: Postgres service/schema/runtime write/repository read completed with status PASS
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\results\db-e2e.json
+
+
+## final-gate
+- Time: 2026-05-15 17:59:21
+- Status: HARD_FAIL
+- Details: Final verdict: FAIL
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\final-convergence-report.md
+
+
+## final-gate
+- Time: 2026-05-15 17:59:45
+- Status: HARD_FAIL
+- Details: Final verdict: FAIL
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\final-convergence-report.md
+
+
+## ui-capture:configured
+- Time: 2026-05-15 18:02:18
+- Status: HARD_FAIL
+- Details: Exit code 1
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\ui-capture.log
+
+
+## ui-capture
+- Time: 2026-05-15 18:02:19
+- Status: HARD_FAIL
+- Details: 27 UI reference candidate(s), 4 required target screen(s), 4 configured uiMapping item(s)
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\ui-candidates.json
+
+
+## ui-capture:configured
+- Time: 2026-05-15 18:14:01
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\ui-capture.log
+
+
+## ui-capture
+- Time: 2026-05-15 18:14:02
+- Status: PASS
+- Details: 27 UI reference candidate(s), 4 required target screen(s), 4 configured uiMapping item(s)
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\ui-candidates.json
+
+
+## ui-capture:configured
+- Time: 2026-05-15 18:25:28
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\ui-capture.log
+
+
+## ui-capture
+- Time: 2026-05-15 18:25:29
+- Status: PASS
+- Details: 27 UI reference candidate(s), 4 required target screen(s), 4 configured uiMapping item(s)
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\ui-candidates.json
+
+
+## ui-capture:configured
+- Time: 2026-05-15 18:37:40
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\ui-capture.log
+
+
+## ui-capture
+- Time: 2026-05-15 18:37:41
+- Status: PASS
+- Details: 27 UI reference candidate(s), 4 required target screen(s), 4 configured uiMapping item(s)
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\ui-candidates.json
+
+
+## db:postgres-up
+- Time: 2026-05-15 18:37:57
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-postgres-up.log
+
+
+## db:postgres-ps
+- Time: 2026-05-15 18:37:58
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-postgres-ps.log
+
+
+## db:schema-bootstrap
+- Time: 2026-05-15 18:38:00
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-schema-bootstrap.log
+
+
+## verifier-dependencies
+- Time: 2026-05-15 18:38:02
+- Status: PASS_WITH_LIMITATION
+- Details: Verifier dependency status: PASS_WITH_LIMITATION
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\results\verifier-dependencies.json
+
+
+## db:runtime-write-snapshot
+- Time: 2026-05-15 18:38:14
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-runtime-write-snapshot.log
+
+
+## compare-ui
+- Time: 2026-05-15 18:38:26
+- Status: PASS_WITH_LIMITATION
+- Details: 0 UI gap(s)
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\gap-list.json
+
+
+## ui-verifier
+- Time: 2026-05-15 18:38:27
+- Status: HARD_FAIL
+- Details: UI verifier completed with status HARD_FAIL
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\visual-diff-report.md
+
+
+## db:runtime-write-low-position
+- Time: 2026-05-15 18:38:28
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-runtime-write-low-position.log
+
+
+## db:runtime-write-low-position
+- Time: 2026-05-15 18:38:28
+- Status: HARD_FAIL
+- Details: The process cannot access the file 'D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\evidence-manifest.json' because it is being used by another process.
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-runtime-write-low-position.log
+
+
+## db:repository-read-snapshot
+- Time: 2026-05-15 18:38:29
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-repository-read-snapshot.log
+
+
+## db:repository-read-low-position
+- Time: 2026-05-15 18:38:31
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-repository-read-low-position.log
+
+
+## db-e2e
+- Time: 2026-05-15 18:38:31
+- Status: HARD_FAIL
+- Details: Postgres service/schema/runtime write/repository read completed with status HARD_FAIL
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\results\db-e2e.json
+
+
+## db:postgres-up
+- Time: 2026-05-15 18:38:46
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-postgres-up.log
+
+
+## db:postgres-ps
+- Time: 2026-05-15 18:38:47
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-postgres-ps.log
+
+
+## db:schema-bootstrap
+- Time: 2026-05-15 18:38:48
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-schema-bootstrap.log
+
+
+## db:runtime-write-snapshot
+- Time: 2026-05-15 18:39:00
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-runtime-write-snapshot.log
+
+
+## db:runtime-write-low-position
+- Time: 2026-05-15 18:39:11
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-runtime-write-low-position.log
+
+
+## db:repository-read-snapshot
+- Time: 2026-05-15 18:39:13
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-repository-read-snapshot.log
+
+
+## db:repository-read-low-position
+- Time: 2026-05-15 18:39:14
+- Status: PASS
+- Details: Exit code 0
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\logs\db-repository-read-low-position.log
+
+
+## db-e2e
+- Time: 2026-05-15 18:39:15
+- Status: PASS
+- Details: Postgres service/schema/runtime write/repository read completed with status PASS
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\results\db-e2e.json
+
+
+## final-gate
+- Time: 2026-05-15 18:40:13
+- Status: HARD_FAIL
+- Details: Final verdict: FAIL
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\final-convergence-report.md
+
+
+## acceptance-compare
+- Time: 2026-05-15 18:40:42
+- Status: HARD_FAIL
+- Details: Comparison round-009 found 20 hard gap(s), 0 limitation(s)
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\comparison\round-009.json
+
+
+## final-gate
+- Time: 2026-05-15 18:41:54
+- Status: HARD_FAIL
+- Details: Final verdict: FAIL
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\final-convergence-report.md
+
+
+## secret-guard
+- Time: 2026-05-15 23:47:39
+- Status: PASS
+- Details: No obvious secret file or content patterns found
+- Evidence: D:\lyh\agent\agent-frame\finahunt\docs\auto-execute\summaries\secret-guard.md
+

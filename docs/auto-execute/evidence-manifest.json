@@ -376,6 +376,36 @@
                               "label":  "UI pixel diff result",
                               "addedAt":  "2026-05-14T17:01:39",
                               "exists":  true
+                          },
+                          {
+                              "path":  "docs\\auto-execute\\ui-candidates.json",
+                              "label":  "UI candidates",
+                              "addedAt":  "2026-05-15T18:02:19",
+                              "exists":  true
+                          },
+                          {
+                              "path":  "docs\\auto-execute\\ui-candidates.json",
+                              "label":  "UI candidates",
+                              "addedAt":  "2026-05-15T18:14:02",
+                              "exists":  true
+                          },
+                          {
+                              "path":  "docs\\auto-execute\\ui-candidates.json",
+                              "label":  "UI candidates",
+                              "addedAt":  "2026-05-15T18:25:29",
+                              "exists":  true
+                          },
+                          {
+                              "path":  "docs\\auto-execute\\ui-candidates.json",
+                              "label":  "UI candidates",
+                              "addedAt":  "2026-05-15T18:37:41",
+                              "exists":  true
+                          },
+                          {
+                              "path":  "docs\\auto-execute\\results\\ui-pixel-diff.json",
+                              "label":  "UI pixel diff result",
+                              "addedAt":  "2026-05-15T18:38:03",
+                              "exists":  true
                           }
                       ],
     "logs":  [
@@ -3726,6 +3756,402 @@
                      "label":  "secret-guard",
                      "addedAt":  "2026-05-15T12:23:49",
                      "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-postgres-up.log",
+                     "label":  "db:postgres-up",
+                     "addedAt":  "2026-05-15T17:58:39",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-postgres-up.log",
+                     "label":  "db:postgres-up",
+                     "addedAt":  "2026-05-15T17:58:40",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-postgres-ps.log",
+                     "label":  "db:postgres-ps",
+                     "addedAt":  "2026-05-15T17:58:40",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-postgres-ps.log",
+                     "label":  "db:postgres-ps",
+                     "addedAt":  "2026-05-15T17:58:40",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-schema-bootstrap.log",
+                     "label":  "db:schema-bootstrap",
+                     "addedAt":  "2026-05-15T17:58:41",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-schema-bootstrap.log",
+                     "label":  "db:schema-bootstrap",
+                     "addedAt":  "2026-05-15T17:58:41",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-runtime-write-snapshot.log",
+                     "label":  "db:runtime-write-snapshot",
+                     "addedAt":  "2026-05-15T17:58:53",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-runtime-write-snapshot.log",
+                     "label":  "db:runtime-write-snapshot",
+                     "addedAt":  "2026-05-15T17:58:53",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-runtime-write-low-position.log",
+                     "label":  "db:runtime-write-low-position",
+                     "addedAt":  "2026-05-15T17:59:03",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-runtime-write-low-position.log",
+                     "label":  "db:runtime-write-low-position",
+                     "addedAt":  "2026-05-15T17:59:03",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-repository-read-snapshot.log",
+                     "label":  "db:repository-read-snapshot",
+                     "addedAt":  "2026-05-15T17:59:04",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-repository-read-snapshot.log",
+                     "label":  "db:repository-read-snapshot",
+                     "addedAt":  "2026-05-15T17:59:05",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-repository-read-low-position.log",
+                     "label":  "db:repository-read-low-position",
+                     "addedAt":  "2026-05-15T17:59:06",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-repository-read-low-position.log",
+                     "label":  "db:repository-read-low-position",
+                     "addedAt":  "2026-05-15T17:59:06",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\results\\db-e2e.json",
+                     "label":  "db-e2e",
+                     "addedAt":  "2026-05-15T17:59:06",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\final-convergence-report.md",
+                     "label":  "final-gate",
+                     "addedAt":  "2026-05-15T17:59:21",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\final-convergence-report.md",
+                     "label":  "final-gate",
+                     "addedAt":  "2026-05-15T17:59:45",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\ui-capture.log",
+                     "label":  "ui-capture:configured",
+                     "addedAt":  "2026-05-15T18:02:18",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\ui-candidates.json",
+                     "label":  "ui-capture",
+                     "addedAt":  "2026-05-15T18:02:19",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\ui-capture.log",
+                     "label":  "ui-capture:configured",
+                     "addedAt":  "2026-05-15T18:14:01",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\ui-capture.log",
+                     "label":  "ui-capture:configured",
+                     "addedAt":  "2026-05-15T18:14:01",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\ui-candidates.json",
+                     "label":  "ui-capture",
+                     "addedAt":  "2026-05-15T18:14:02",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\ui-capture.log",
+                     "label":  "ui-capture:configured",
+                     "addedAt":  "2026-05-15T18:25:28",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\ui-capture.log",
+                     "label":  "ui-capture:configured",
+                     "addedAt":  "2026-05-15T18:25:28",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\ui-candidates.json",
+                     "label":  "ui-capture",
+                     "addedAt":  "2026-05-15T18:25:29",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\ui-capture.log",
+                     "label":  "ui-capture:configured",
+                     "addedAt":  "2026-05-15T18:37:40",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\ui-capture.log",
+                     "label":  "ui-capture:configured",
+                     "addedAt":  "2026-05-15T18:37:40",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\ui-candidates.json",
+                     "label":  "ui-capture",
+                     "addedAt":  "2026-05-15T18:37:41",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-postgres-up.log",
+                     "label":  "db:postgres-up",
+                     "addedAt":  "2026-05-15T18:37:58",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-postgres-up.log",
+                     "label":  "db:postgres-up",
+                     "addedAt":  "2026-05-15T18:37:58",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-postgres-ps.log",
+                     "label":  "db:postgres-ps",
+                     "addedAt":  "2026-05-15T18:37:58",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-postgres-ps.log",
+                     "label":  "db:postgres-ps",
+                     "addedAt":  "2026-05-15T18:37:59",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-schema-bootstrap.log",
+                     "label":  "db:schema-bootstrap",
+                     "addedAt":  "2026-05-15T18:38:00",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-schema-bootstrap.log",
+                     "label":  "db:schema-bootstrap",
+                     "addedAt":  "2026-05-15T18:38:00",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\results\\verifier-dependencies.json",
+                     "label":  "verifier-dependencies",
+                     "addedAt":  "2026-05-15T18:38:02",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\ui-pixel-diff.log",
+                     "label":  "UI pixel diff log",
+                     "addedAt":  "2026-05-15T18:38:02",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-runtime-write-snapshot.log",
+                     "label":  "db:runtime-write-snapshot",
+                     "addedAt":  "2026-05-15T18:38:14",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-runtime-write-snapshot.log",
+                     "label":  "db:runtime-write-snapshot",
+                     "addedAt":  "2026-05-15T18:38:14",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\ui-pixel-diff-python.log",
+                     "label":  "UI pixel diff Python fallback log",
+                     "addedAt":  "2026-05-15T18:38:24",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\gap-list.json",
+                     "label":  "compare-ui",
+                     "addedAt":  "2026-05-15T18:38:26",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\visual-diff-report.md",
+                     "label":  "ui-verifier",
+                     "addedAt":  "2026-05-15T18:38:27",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-runtime-write-low-position.log",
+                     "label":  "db:runtime-write-low-position",
+                     "addedAt":  "2026-05-15T18:38:28",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-repository-read-snapshot.log",
+                     "label":  "db:repository-read-snapshot",
+                     "addedAt":  "2026-05-15T18:38:29",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-repository-read-snapshot.log",
+                     "label":  "db:repository-read-snapshot",
+                     "addedAt":  "2026-05-15T18:38:30",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-repository-read-low-position.log",
+                     "label":  "db:repository-read-low-position",
+                     "addedAt":  "2026-05-15T18:38:31",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-repository-read-low-position.log",
+                     "label":  "db:repository-read-low-position",
+                     "addedAt":  "2026-05-15T18:38:31",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\results\\db-e2e.json",
+                     "label":  "db-e2e",
+                     "addedAt":  "2026-05-15T18:38:31",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-postgres-up.log",
+                     "label":  "db:postgres-up",
+                     "addedAt":  "2026-05-15T18:38:47",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-postgres-up.log",
+                     "label":  "db:postgres-up",
+                     "addedAt":  "2026-05-15T18:38:47",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-postgres-ps.log",
+                     "label":  "db:postgres-ps",
+                     "addedAt":  "2026-05-15T18:38:47",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-postgres-ps.log",
+                     "label":  "db:postgres-ps",
+                     "addedAt":  "2026-05-15T18:38:47",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-schema-bootstrap.log",
+                     "label":  "db:schema-bootstrap",
+                     "addedAt":  "2026-05-15T18:38:48",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-schema-bootstrap.log",
+                     "label":  "db:schema-bootstrap",
+                     "addedAt":  "2026-05-15T18:38:48",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-runtime-write-snapshot.log",
+                     "label":  "db:runtime-write-snapshot",
+                     "addedAt":  "2026-05-15T18:39:00",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-runtime-write-snapshot.log",
+                     "label":  "db:runtime-write-snapshot",
+                     "addedAt":  "2026-05-15T18:39:00",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-runtime-write-low-position.log",
+                     "label":  "db:runtime-write-low-position",
+                     "addedAt":  "2026-05-15T18:39:11",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-runtime-write-low-position.log",
+                     "label":  "db:runtime-write-low-position",
+                     "addedAt":  "2026-05-15T18:39:11",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-repository-read-snapshot.log",
+                     "label":  "db:repository-read-snapshot",
+                     "addedAt":  "2026-05-15T18:39:13",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-repository-read-snapshot.log",
+                     "label":  "db:repository-read-snapshot",
+                     "addedAt":  "2026-05-15T18:39:13",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-repository-read-low-position.log",
+                     "label":  "db:repository-read-low-position",
+                     "addedAt":  "2026-05-15T18:39:14",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\logs\\db-repository-read-low-position.log",
+                     "label":  "db:repository-read-low-position",
+                     "addedAt":  "2026-05-15T18:39:14",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\results\\db-e2e.json",
+                     "label":  "db-e2e",
+                     "addedAt":  "2026-05-15T18:39:15",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\final-convergence-report.md",
+                     "label":  "final-gate",
+                     "addedAt":  "2026-05-15T18:40:13",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\comparison\\round-009.json",
+                     "label":  "acceptance-compare",
+                     "addedAt":  "2026-05-15T18:40:42",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\final-convergence-report.md",
+                     "label":  "final-gate",
+                     "addedAt":  "2026-05-15T18:41:54",
+                     "exists":  true
+                 },
+                 {
+                     "path":  "docs\\auto-execute\\summaries\\secret-guard.md",
+                     "label":  "secret-guard",
+                     "addedAt":  "2026-05-15T23:47:40",
+                     "exists":  true
                  }
              ],
     "other":  [
@@ -6967,6 +7393,114 @@
                       "path":  "docs\\auto-execute\\results\\secret-guard.json",
                       "label":  "secret-guard result",
                       "addedAt":  "2026-05-15T12:23:49",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\db-e2e.json",
+                      "label":  "db-e2e result",
+                      "addedAt":  "2026-05-15T17:59:06",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\final-gate.json",
+                      "label":  "final-gate result",
+                      "addedAt":  "2026-05-15T17:59:21",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\final-gate.json",
+                      "label":  "final-gate result",
+                      "addedAt":  "2026-05-15T17:59:44",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\ui-capture.json",
+                      "label":  "ui-capture result",
+                      "addedAt":  "2026-05-15T18:02:19",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\ui-capture.json",
+                      "label":  "ui-capture result",
+                      "addedAt":  "2026-05-15T18:14:02",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\ui-capture.json",
+                      "label":  "ui-capture result",
+                      "addedAt":  "2026-05-15T18:25:29",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\ui-capture.json",
+                      "label":  "ui-capture result",
+                      "addedAt":  "2026-05-15T18:37:41",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\verifier-dependencies.json",
+                      "label":  "verifier-dependencies result",
+                      "addedAt":  "2026-05-15T18:38:02",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\compare-ui.json",
+                      "label":  "compare-ui result",
+                      "addedAt":  "2026-05-15T18:38:26",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\ui-verifier.json",
+                      "label":  "ui-verifier result",
+                      "addedAt":  "2026-05-15T18:38:27",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\db-e2e.json",
+                      "label":  "db-e2e result",
+                      "addedAt":  "2026-05-15T18:38:31",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\db-e2e.json",
+                      "label":  "db-e2e result",
+                      "addedAt":  "2026-05-15T18:39:15",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\final-gate.json",
+                      "label":  "final-gate result",
+                      "addedAt":  "2026-05-15T18:40:13",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\comparison\\round-009.json",
+                      "label":  "acceptance comparison round-009",
+                      "addedAt":  "2026-05-15T18:40:42",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\comparison\\round-009.md",
+                      "label":  "acceptance comparison round-009 report",
+                      "addedAt":  "2026-05-15T18:40:42",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\acceptance-compare.json",
+                      "label":  "acceptance-compare result",
+                      "addedAt":  "2026-05-15T18:40:42",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\final-gate.json",
+                      "label":  "final-gate result",
+                      "addedAt":  "2026-05-15T18:41:54",
+                      "exists":  true
+                  },
+                  {
+                      "path":  "docs\\auto-execute\\results\\secret-guard.json",
+                      "label":  "secret-guard result",
+                      "addedAt":  "2026-05-15T23:47:40",
                       "exists":  true
                   }
               ]

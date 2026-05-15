@@ -1,6 +1,7 @@
 from packages.storage.repositories import (
     JsonLegacyRepository,
     PostgresRepository,
+    RawContentMergeStats,
     RuntimeRepository,
     StorageWriteStatus,
     get_runtime_repository,
@@ -9,6 +10,7 @@ from packages.storage.repositories import (
 __all__ = [
     "JsonLegacyRepository",
     "PostgresRepository",
+    "RawContentMergeStats",
     "RuntimeRepository",
     "StorageWriteStatus",
     "get_runtime_repository",

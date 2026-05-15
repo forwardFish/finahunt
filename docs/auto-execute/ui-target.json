@@ -15,7 +15,7 @@
                         "id":  "UI-HOME",
                         "reference":  "docs/UI/financial_ui_html_pages/home.html",
                         "route":  "/",
-                        "viewport":  "1440x900",
+                        "viewport":  "1536x900",
                         "required":  true,
                         "mappingSource":  "harness.yml:uiMapping",
                         "structureStatus":  "PASS",
@@ -24,10 +24,10 @@
                         "finalUiStatus":  "HARD_FAIL",
                         "canClaimPixelPerfect":  false,
                         "knownDifferences":  [
-                                                 "Pixel diff ratio 0.0881007356130711 exceeds threshold 0.02.",
+                                                 "Pixel diff ratio 0.0947421890061693 exceeds threshold 0.02.",
                                                  "Reference and actual screenshot dimensions differ."
                                              ],
-                        "pixelDiffRatio":  0.088100735613071135,
+                        "pixelDiffRatio":  0.094742189006169264,
                         "sizeMismatch":  true
                     },
                     {
@@ -45,7 +45,7 @@
                         "id":  "UI-FERMENTATION",
                         "reference":  "docs/UI/financial_ui_html_pages/topics.html",
                         "route":  "/fermentation",
-                        "viewport":  "1440x900",
+                        "viewport":  "1536x900",
                         "required":  true,
                         "mappingSource":  "harness.yml:uiMapping",
                         "structureStatus":  "PASS",
@@ -54,10 +54,10 @@
                         "finalUiStatus":  "HARD_FAIL",
                         "canClaimPixelPerfect":  false,
                         "knownDifferences":  [
-                                                 "Pixel diff ratio 0.0763512959317585 exceeds threshold 0.02.",
+                                                 "Pixel diff ratio 0.0851440607684456 exceeds threshold 0.02.",
                                                  "Reference and actual screenshot dimensions differ."
                                              ],
-                        "pixelDiffRatio":  0.076351295931758531,
+                        "pixelDiffRatio":  0.0851440607684456,
                         "sizeMismatch":  true
                     },
                     {
@@ -75,7 +75,7 @@
                         "id":  "UI-RESEARCH",
                         "reference":  "docs/UI/financial_ui_html_pages/samples.html",
                         "route":  "/research",
-                        "viewport":  "1440x900",
+                        "viewport":  "1536x900",
                         "required":  true,
                         "mappingSource":  "harness.yml:uiMapping",
                         "structureStatus":  "PASS",
@@ -84,10 +84,10 @@
                         "finalUiStatus":  "HARD_FAIL",
                         "canClaimPixelPerfect":  false,
                         "knownDifferences":  [
-                                                 "Pixel diff ratio 0.06737224002849 exceeds threshold 0.02.",
+                                                 "Pixel diff ratio 0.0968149038461538 exceeds threshold 0.02.",
                                                  "Reference and actual screenshot dimensions differ."
                                              ],
-                        "pixelDiffRatio":  0.06737224002849003,
+                        "pixelDiffRatio":  0.096814903846153835,
                         "sizeMismatch":  true
                     },
                     {
@@ -105,7 +105,7 @@
                         "id":  "UI-WORKBENCH",
                         "reference":  "docs/UI/financial_ui_html_pages/search.html",
                         "route":  "/workbench",
-                        "viewport":  "1440x900",
+                        "viewport":  "1536x900",
                         "required":  true,
                         "mappingSource":  "harness.yml:uiMapping",
                         "structureStatus":  "PASS",
@@ -114,10 +114,10 @@
                         "finalUiStatus":  "HARD_FAIL",
                         "canClaimPixelPerfect":  false,
                         "knownDifferences":  [
-                                                 "Pixel diff ratio 0.0816350586756077 exceeds threshold 0.02.",
+                                                 "Pixel diff ratio 0.098937050328304 exceeds threshold 0.02.",
                                                  "Reference and actual screenshot dimensions differ."
                                              ],
-                        "pixelDiffRatio":  0.0816350586756077,
+                        "pixelDiffRatio":  0.098937050328304,
                         "sizeMismatch":  true
                     }
                 ],
@@ -127,9 +127,9 @@
                             "filename route guess",
                             "manual review"
                         ],
-    "generatedAt":  "2026-05-14T15:31:42",
+    "generatedAt":  "2026-05-15T18:37:11",
     "mappingSource":  "harness.yml:uiMapping",
     "schemaVersion":  "2.0",
     "status":  "PENDING",
-    "updatedAt":  "2026-05-14T17:02:05"
+    "updatedAt":  "2026-05-15T18:38:27"
 }

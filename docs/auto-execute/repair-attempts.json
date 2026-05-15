@@ -311,12 +311,6 @@
                                       "status":  "RETRYING",
                                       "updatedAt":  "2026-05-14T18:10:25"
                                   },
-    "db:runtime-write-low-position":  {
-                                          "attempts":  1,
-                                          "lastError":  "Exit code 1",
-                                          "status":  "RETRYING",
-                                          "updatedAt":  "2026-05-14T18:10:40"
-                                      },
     "db:repository-read-snapshot":  {
                                         "attempts":  1,
                                         "lastError":  "Exit code 1",
@@ -340,5 +334,17 @@
                            "lastError":  "Exit code 1",
                            "status":  "RETRYING",
                            "updatedAt":  "2026-05-14T18:11:55"
-                       }
+                       },
+    "ui-capture:configured":  {
+                                  "attempts":  1,
+                                  "lastError":  "Exit code 1",
+                                  "status":  "RETRYING",
+                                  "updatedAt":  "2026-05-15T18:02:19"
+                              },
+    "db:runtime-write-low-position":  {
+                                          "attempts":  2,
+                                          "lastError":  "The process cannot access the file \u0027D:\\lyh\\agent\\agent-frame\\finahunt\\docs\\auto-execute\\evidence-manifest.json\u0027 because it is being used by another process.",
+                                          "status":  "RETRYING",
+                                          "updatedAt":  "2026-05-15T18:38:28"
+                                      }
 }

@@ -9,52 +9,52 @@
     {
       "id": "UI-HOME",
       "status": "PASS_WITH_LIMITATION",
-      "ratio": 0.08810073561307113,
+      "ratio": 0.09474218900616926,
       "diff": "docs/auto-execute/screenshots/diffs/UI-HOME-diff.png",
       "referenceScreenshot": "docs/auto-execute/screenshots/references/UI-HOME-reference.png",
       "actualScreenshot": "docs/auto-execute/screenshots/UI-HOME-desktop.png",
       "comparedSize": "1536x1729",
       "sizeMismatch": true,
       "referenceSize": "1536x1729",
-      "actualSize": "1536x1826"
+      "actualSize": "1536x1772"
     },
     {
       "id": "UI-FERMENTATION",
       "status": "PASS_WITH_LIMITATION",
-      "ratio": 0.07635129593175853,
+      "ratio": 0.0851440607684456,
       "diff": "docs/auto-execute/screenshots/diffs/UI-FERMENTATION-diff.png",
       "referenceScreenshot": "docs/auto-execute/screenshots/references/UI-FERMENTATION-reference.png",
       "actualScreenshot": "docs/auto-execute/screenshots/UI-FERMENTATION-desktop.png",
       "comparedSize": "1536x1143",
       "sizeMismatch": true,
       "referenceSize": "1536x1143",
-      "actualSize": "1536x1280"
+      "actualSize": "1536x1419"
     },
     {
       "id": "UI-RESEARCH",
       "status": "PASS_WITH_LIMITATION",
-      "ratio": 0.06737224002849003,
+      "ratio": 0.09681490384615385,
       "diff": "docs/auto-execute/screenshots/diffs/UI-RESEARCH-diff.png",
       "referenceScreenshot": "docs/auto-execute/screenshots/references/UI-RESEARCH-reference.png",
       "actualScreenshot": "docs/auto-execute/screenshots/UI-RESEARCH-desktop.png",
       "comparedSize": "1536x1170",
       "sizeMismatch": true,
       "referenceSize": "1536x1170",
-      "actualSize": "1536x1233"
+      "actualSize": "1536x1267"
     },
     {
       "id": "UI-WORKBENCH",
       "status": "PASS_WITH_LIMITATION",
-      "ratio": 0.0816350586756077,
+      "ratio": 0.098937050328304,
       "diff": "docs/auto-execute/screenshots/diffs/UI-WORKBENCH-diff.png",
       "referenceScreenshot": "docs/auto-execute/screenshots/references/UI-WORKBENCH-reference.png",
       "actualScreenshot": "docs/auto-execute/screenshots/UI-WORKBENCH-desktop.png",
       "comparedSize": "1536x1193",
       "sizeMismatch": true,
       "referenceSize": "1536x1193",
-      "actualSize": "1536x1284"
+      "actualSize": "1536x1468"
     }
   ],
   "blockers": [],
-  "updatedAt": "2026-05-14T09:01:40.013711+00:00"
+  "updatedAt": "2026-05-15T10:38:03.614561+00:00"
 }

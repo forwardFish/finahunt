@@ -1,22 +1,46 @@
 ﻿{
     "blockers":  [
-                     "Docker Postgres service failed to start; see docs/auto-execute/logs/db-postgres-up.log.",
-                     "Docker Postgres service is not running; see docs/auto-execute/logs/db-postgres-ps.log."
+
                  ],
     "commands":  [
                      {
-                         "status":  "HARD_FAIL",
+                         "status":  "PASS",
                          "command":  "docker compose -f docker/docker-compose.yml up -d postgres",
                          "log":  "docs/auto-execute/logs/db-postgres-up.log"
                      },
                      {
-                         "status":  "HARD_FAIL",
+                         "status":  "PASS",
                          "command":  "docker compose -f docker/docker-compose.yml ps postgres",
                          "log":  "docs/auto-execute/logs/db-postgres-ps.log"
+                     },
+                     {
+                         "status":  "PASS",
+                         "command":  "python -m packages.storage.migrations.bootstrap",
+                         "log":  "docs/auto-execute/logs/db-schema-bootstrap.log"
+                     },
+                     {
+                         "status":  "PASS",
+                         "command":  "python tools/run_latest_snapshot.py --acceptance-smoke",
+                         "log":  "docs/auto-execute/logs/db-runtime-write-snapshot.log"
+                     },
+                     {
+                         "status":  "PASS",
+                         "command":  "python tools/run_low_position_workbench.py --acceptance-smoke",
+                         "log":  "docs/auto-execute/logs/db-runtime-write-low-position.log"
+                     },
+                     {
+                         "status":  "PASS",
+                         "command":  "python tools/query_web_data.py daily-snapshot",
+                         "log":  "docs/auto-execute/logs/db-repository-read-snapshot.log"
+                     },
+                     {
+                         "status":  "PASS",
+                         "command":  "python tools/query_web_data.py low-position-workbench",
+                         "log":  "docs/auto-execute/logs/db-repository-read-low-position.log"
                      }
                  ],
     "lane":  "db-e2e",
-    "status":  "BLOCKED_BY_ENVIRONMENT",
+    "status":  "PASS",
     "evidence":  [
                      "docs/auto-execute/logs/db-schema-bootstrap.log",
                      "docs/auto-execute/logs/db-runtime-write-snapshot.log",
@@ -24,7 +48,7 @@
                  ],
     "schemaVersion":  "2.0",
     "nextActions":  [
-                        "Bring up local Docker Postgres, keep DATABASE_BACKEND=postgres, rerun schema bootstrap, runtime write, and repository/API read checks."
+                        "DB lane is ready; run integrated API/UI smoke to prove Next routes render the same dataset."
                     ],
-    "updatedAt":  "2026-05-14T18:11:56"
+    "updatedAt":  "2026-05-15T18:39:14"
 }

@@ -45,11 +45,19 @@ class RawContent(Base):
     document_id: Mapped[str] = mapped_column(String(160), primary_key=True)
     run_id: Mapped[str] = mapped_column(String(80), index=True)
     source_id: Mapped[str] = mapped_column(String(120), default="", index=True)
+    source_hash: Mapped[str] = mapped_column(String(128), default="", index=True)
     source_name: Mapped[str] = mapped_column(Text, default="")
     title: Mapped[str] = mapped_column(Text, default="")
     url: Mapped[str] = mapped_column(Text, default="")
     published_at: Mapped[str] = mapped_column(String(80), default="")
     content_text: Mapped[str] = mapped_column(Text, default="")
+    http_status: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    content_length: Mapped[int] = mapped_column(Integer, default=0)
+    license_status: Mapped[str] = mapped_column(String(40), default="unknown")
+    truth_score: Mapped[int] = mapped_column(Integer, default=0)
+    authenticity_status: Mapped[str] = mapped_column(String(40), default="unchecked")
+    review_status: Mapped[str] = mapped_column(String(40), default="unreviewed")
+    reviewer_note: Mapped[str] = mapped_column(Text, default="")
     payload: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
@@ -149,3 +157,41 @@ class LowPositionWorkbench(Base):
     data_mode: Mapped[str] = mapped_column(String(40), default="postgres")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+
+
+class CrawlRun(Base):
+    __tablename__ = "crawl_runs"
+
+    run_id: Mapped[str] = mapped_column(String(80), primary_key=True)
+    source_id: Mapped[str] = mapped_column(String(120), default="all", index=True)
+    status: Mapped[str] = mapped_column(String(40), default="running", index=True)
+    started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    fetched_count: Mapped[int] = mapped_column(Integer, default=0)
+    inserted_count: Mapped[int] = mapped_column(Integer, default=0)
+    duplicate_count: Mapped[int] = mapped_column(Integer, default=0)
+    failed_count: Mapped[int] = mapped_column(Integer, default=0)
+    error_message: Mapped[str] = mapped_column(Text, default="")
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict)
+
+
+class AdminCrawlerSetting(Base):
+    __tablename__ = "admin_crawler_settings"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    enabled: Mapped[bool] = mapped_column(Boolean, default=False)
+    schedule_time: Mapped[str] = mapped_column(String(20), default="09:00")
+    source_id: Mapped[str] = mapped_column(String(120), default="all")
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+
+
+class AdminReviewLog(Base):
+    __tablename__ = "admin_review_logs"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    target_type: Mapped[str] = mapped_column(String(40), default="raw_content", index=True)
+    target_id: Mapped[str] = mapped_column(String(160), default="", index=True)
+    action: Mapped[str] = mapped_column(String(40), default="")
+    reviewer_note: Mapped[str] = mapped_column(Text, default="")
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())

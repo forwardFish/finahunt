@@ -14,7 +14,7 @@
   "blockers": [
     "pixelmatch/pngjs are not installed. Automated visual diff cannot run."
   ],
-  "updatedAt": "2026-05-14T09:01:39.133Z",
+  "updatedAt": "2026-05-15T10:38:02.658Z",
   "nextActions": [
     "Allow dev dependency installation or keep pixelPerfectStatus as MANUAL_REVIEW_REQUIRED."
   ]

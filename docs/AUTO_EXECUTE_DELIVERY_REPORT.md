@@ -42,14 +42,14 @@ Status meaning: PASS means automated story evidence passed; PASS_NEEDS_MANUAL_UI
 | STORY-GENERAL-016 | P2 | generated story route/API/E2E tests are executed by `run-generated-story-tests.ps1` and cannot count as coverage until they run; | DEFERRED | 0/ | None | None |
 ## Final Verdict Classification
 
-Final verdict: HARD_FAIL
+Final verdict: FAIL
 
 Reason:
 - Requirement verifier: PASS_WITH_LIMITATION
 - Story verifier: PASS
 - Contract verifier: PASS
 - E2E verifier: PASS
-- DB E2E: BLOCKED_BY_ENVIRONMENT
+- DB E2E: PASS
 - UI verifier: HARD_FAIL
 - Pixel-perfect visual diff: PASS_WITH_LIMITATION
 - Acceptance confidence: 0.96
@@ -71,13 +71,13 @@ A HARD_FAIL, FAIL, or IN_SCOPE_GAP remains and prevents final acceptance.
 
 ## Why Not Pure PASS?
 
-Final verdict: HARD_FAIL
+Final verdict: FAIL
 
 - Requirement verifier: PASS_WITH_LIMITATION
 - Story verifier: PASS
 - Contract verifier: PASS
 - E2E verifier: PASS
-- DB E2E: BLOCKED_BY_ENVIRONMENT
+- DB E2E: PASS
 - UI verifier: HARD_FAIL
 - Pixel-perfect evidence: PASS_WITH_LIMITATION
 - Secret guard: PASS
@@ -86,4 +86,4 @@ Final verdict: HARD_FAIL
 Reason:
 A HARD_FAIL, FAIL, or IN_SCOPE_GAP remains and prevents final acceptance.
 
-Pure PASS is not allowed because: Requirement verifier is PASS_WITH_LIMITATION; DB E2E is BLOCKED_BY_ENVIRONMENT; UI verifier is HARD_FAIL; Pixel-perfect visual diff is PASS_WITH_LIMITATION; 8 unresolved hard/in-scope gap(s); machine summary contains hard failures; requirement-verifier is PASS_WITH_LIMITATION; ui-verifier is HARD_FAIL; db-e2e is blocked by environment; required UI screen UI-HOME finalUiStatus is HARD_FAIL; required UI screen UI-FERMENTATION finalUiStatus is HARD_FAIL; required UI screen UI-RESEARCH finalUiStatus is HARD_FAIL; acceptance confidence reduced by: requirementsCovered=0.75
+Pure PASS is not allowed because: Requirement verifier is PASS_WITH_LIMITATION; UI verifier is HARD_FAIL; Pixel-perfect visual diff is PASS_WITH_LIMITATION; 12 unresolved hard/in-scope gap(s); machine summary contains hard failures; requirement-verifier is PASS_WITH_LIMITATION; Strict mode does not allow PASS_WITH_LIMITATION for requirement-verifier; ui-verifier is HARD_FAIL; Strict mode requires P0/P1 requirement REQ-P1-001 to be PASS; Strict mode does not allow story limitations/manual/deferred outcomes; required UI screen UI-HOME finalUiStatus is HARD_FAIL; acceptance confidence reduced by: requirementsCovered=0.75

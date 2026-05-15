@@ -1,4 +1,5 @@
 from packages.storage import JsonLegacyRepository, PostgresRepository, get_runtime_repository
+from packages.storage.admin_audit import authenticity_status_for_score, calculate_truth_score, create_source_hash, has_garbled_text
 
 
 def test_default_repository_uses_local_postgres(monkeypatch):
@@ -27,19 +28,20 @@ def test_postgres_repository_projects_runtime_artifacts_for_web(tmp_path):
             {
                 "document_id": "raw-1",
                 "source_id": "cls-telegraph",
-                "source_name": "财联社",
-                "title": "机器人产业政策持续落地",
+                "source_name": "CLS",
+                "title": "Robot industry policy continues",
                 "url": "https://example.test/raw-1",
                 "published_at": "2026-05-14T09:00:00+08:00",
-                "content_text": "机器人主题热度提升。",
+                "content_text": "Robot theme heat is improving with public market policy catalysts and supply-chain evidence.",
+                "http_status": 200,
             }
         ],
         "normalized_documents.json": [
             {
                 "document_id": "raw-1",
                 "source_id": "cls-telegraph",
-                "source_name": "财联社",
-                "title": "机器人产业政策持续落地",
+                "source_name": "CLS",
+                "title": "Robot industry policy continues",
                 "url": "https://example.test/raw-1",
                 "published_at": "2026-05-14T09:00:00+08:00",
             }
@@ -47,13 +49,13 @@ def test_postgres_repository_projects_runtime_artifacts_for_web(tmp_path):
         "canonical_events.json": [
             {
                 "event_id": "event-1",
-                "title": "机器人产业政策持续落地",
-                "event_type": "政策",
-                "event_subject": "机器人",
+                "title": "Robot industry policy continues",
+                "event_type": "policy",
+                "event_subject": "robot",
                 "event_time": "2026-05-14T09:00:00+08:00",
-                "summary": "政策催化进入观察窗口。",
-                "related_themes": ["机器人"],
-                "related_industries": ["智能制造"],
+                "summary": "Policy catalyst entered observation window.",
+                "related_themes": ["robot"],
+                "related_industries": ["manufacturing"],
                 "source_refs": ["https://example.test/raw-1"],
                 "metadata": {"source_id": "cls-telegraph"},
             }
@@ -62,7 +64,7 @@ def test_postgres_repository_projects_runtime_artifacts_for_web(tmp_path):
             {
                 "theme_candidate_id": "theme-robot",
                 "cluster_id": "cluster-robot",
-                "theme_name": "机器人",
+                "theme_name": "robot",
                 "heat_score": 81,
                 "catalyst_score": 76,
                 "continuity_score": 70,
@@ -75,16 +77,16 @@ def test_postgres_repository_projects_runtime_artifacts_for_web(tmp_path):
         ],
         "low_position_opportunities.json": [
             {
-                "theme_name": "机器人",
+                "theme_name": "robot",
                 "low_position_score": 66,
-                "low_position_reason": "政策催化强，位置仍需观察。",
-                "risk_notice": "仅供研究观察，不构成投资建议。",
+                "low_position_reason": "Policy catalyst is strong; position still needs observation.",
+                "risk_notice": "Research observation only.",
                 "candidate_stocks": [
                     {
                         "stock_code": "300001",
-                        "stock_name": "示例智能",
+                        "stock_name": "Example Intelligence",
                         "candidate_purity_score": 72,
-                        "mapping_reason": "公开信息显示与机器人链条相关。",
+                        "mapping_reason": "Public information maps it to the robot chain.",
                     }
                 ],
             }
@@ -92,19 +94,19 @@ def test_postgres_repository_projects_runtime_artifacts_for_web(tmp_path):
         "daily_message_workbench.json": {
             "status": "success",
             "message_count": 1,
-            "messages": [{"message": {"message_id": "msg-1", "title": "机器人催化"}}],
+            "messages": [{"message": {"message_id": "msg-1", "title": "robot catalyst"}}],
         },
         "daily_theme_workbench.json": {
             "status": "success",
             "theme_count": 1,
             "themes": [
                 {
-                    "theme_name": "机器人",
+                    "theme_name": "robot",
                     "low_position_score": 66,
-                    "low_position_reason": "政策催化强，位置仍需观察。",
+                    "low_position_reason": "Policy catalyst is strong; position still needs observation.",
                     "validation_bucket": "validated",
-                    "candidate_stocks": [{"stock_code": "300001", "stock_name": "示例智能"}],
-                    "messages": [{"message_id": "msg-1", "title": "机器人催化"}],
+                    "candidate_stocks": [{"stock_code": "300001", "stock_name": "Example Intelligence"}],
+                    "messages": [{"message_id": "msg-1", "title": "robot catalyst"}],
                 }
             ],
         },
@@ -123,11 +125,85 @@ def test_postgres_repository_projects_runtime_artifacts_for_web(tmp_path):
     assert snapshot is not None
     assert snapshot["dataMode"] == "postgres"
     assert snapshot["stats"]["rawDocumentCount"] == 1
-    assert snapshot["themes"][0]["themeName"] == "机器人"
+    assert snapshot["themes"][0]["themeName"] == "robot"
     assert snapshot["events"][0]["eventId"] == "event-1"
 
     workbench = repository.load_low_position_workbench("2026-05-14")
     assert workbench is not None
     assert workbench["dataMode"] == "postgres"
     assert workbench["messageCount"] == 1
-    assert workbench["validatedThemes"][0]["theme_name"] == "机器人"
+    assert workbench["validatedThemes"][0]["theme_name"] == "robot"
+
+
+def test_admin_audit_scores_and_flags_garbled_text():
+    item = {
+        "source_id": "cls",
+        "source_name": "CLS",
+        "title": "Central bank liquidity support",
+        "url": "https://example.test/a",
+        "published_at": "2026-05-15T09:00:00+08:00",
+        "content_text": "A long public-market research note with enough original text to pass the content length threshold and support manual review.",
+        "http_status": 200,
+    }
+
+    source_hash = create_source_hash(item)
+    score = calculate_truth_score({**item, "source_hash": source_hash})
+
+    assert len(source_hash) == 64
+    assert score == 100
+    assert authenticity_status_for_score(score) == "trusted"
+    assert has_garbled_text("\ufffd\ufffd") is True
+
+
+def test_admin_repository_tracks_raw_content_reviews_runs_and_duplicates(tmp_path):
+    repository = PostgresRepository(f"sqlite:///{tmp_path / 'admin.db'}")
+    run_id = "admin-test-run"
+    row = {
+        "document_id": "admin-doc-1",
+        "source_id": "cls",
+        "source_name": "CLS",
+        "title": "Central bank liquidity support",
+        "url": "https://example.test/admin-doc-1",
+        "published_at": "2026-05-15T09:00:00+08:00",
+        "content_text": "A long public-market research note with enough original text to pass the content length threshold and support manual review.",
+        "http_status": 200,
+    }
+
+    repository.create_crawl_run(run_id, "all")
+    first = repository.save_admin_raw_contents(run_id, [row])
+    second = repository.save_admin_raw_contents(run_id, [row])
+    repository.finish_crawl_run(
+        run_id,
+        "success",
+        first.fetched_count + second.fetched_count,
+        first.inserted_count + second.inserted_count,
+        first.duplicate_count + second.duplicate_count,
+        first.failed_count + second.failed_count,
+        "",
+    )
+
+    assert first.inserted_count == 1
+    assert second.duplicate_count == 1
+    raw_rows = repository.list_admin_raw_contents()
+    assert len(raw_rows) == 1
+    assert raw_rows[0]["sourceHash"]
+    assert raw_rows[0]["contentLength"] == len(row["content_text"])
+    assert raw_rows[0]["truthScore"] == 100
+    assert raw_rows[0]["authenticityStatus"] == "trusted"
+
+    detail = repository.get_admin_raw_content("admin-doc-1")
+    assert detail is not None
+    assert detail["contentText"] == row["content_text"]
+
+    reviewed = repository.review_admin_raw_content("admin-doc-1", "garbled", "bad encoding")
+    assert reviewed is not None
+    assert reviewed["reviewStatus"] == "garbled"
+    assert reviewed["authenticityStatus"] == "blocked"
+
+    setting = repository.save_admin_crawler_setting(True, "09:00", "all")
+    assert setting["enabled"] is True
+    assert setting["scheduleTime"] == "09:00"
+
+    runs = repository.list_admin_crawl_runs()
+    assert runs[0]["runId"] == run_id
+    assert runs[0]["duplicateCount"] == 1
